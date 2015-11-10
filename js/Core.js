@@ -16,7 +16,6 @@ var Core = Core || {
         this.lastHeight = $(document).height();
         this.checkChanges();
         $(window).resize(function() {
-            console.log("window resized");
             _this.moveFooter();
         });
     },
@@ -148,17 +147,17 @@ var Core = Core || {
             timer = setTimeout(checkNow, 300);
 
             var $el = $('#stickyheader');
-            if ($(this).scrollTop() >= 60){
+            if ($(this).scrollTop() >= 120){
                 $el.css({'top': '0px'});
             }
-            if ($(this).scrollTop() < 60)
+            if ($(this).scrollTop() < 120)
             {
-                $el.css({'top': (60 - $(this).scrollTop()) + 'px'});
+                $el.css({'top': (120 - $(this).scrollTop()) + 'px'});
             }
 
             $el = $('.menu');
-            var top = (100-$(this).scrollTop());
-            if ($(this).scrollTop() >= 60){
+            var top = ((60 + 60 + 40)-$(this).scrollTop());
+            if ($(this).scrollTop() >= 120){
                 top = 40;
             }
             $el.css({'margin-top': top + 'px'});
