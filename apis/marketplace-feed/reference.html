@@ -21,9 +21,9 @@
         <a class="large-2 medium-2 small-2 columns" href="#">APIs</a>
         <a class="large-2 medium-2 small-2 columns end" href="#">Hello, World</a>
     </nav>
-</div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/marketplace-feed/quickstart.html" class="">Quickstart</a><a href="/apis/marketplace-feed/reference.html" class="">Reference</a><a href="/apis/marketplace-feed/swagger.html" class="">Swagger</a></div><div class="large-4 small-6 end columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#messages">Messages</a></li><li><a class="sidebar-nav-item" href="#arguments">Arguments</a></li><li><a class="sidebar-nav-item" href="#attributes">Attributes</a></li><li><a class="sidebar-nav-item" href="#try-it-out">Try It Out</a></li><li><a class="sidebar-nav-item" href="#code-examples">Code Examples</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1>Marketplace Feed</h1><h2 id="messages">Messages</h2>
+</div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/marketplace-feed/quickstart.html" class="">Quickstart</a><a href="/apis/marketplace-feed/reference.html" class="">Reference</a><a href="/apis/marketplace-feed/swagger.html" class="">Swagger</a></div><div class="large-4 small-6 end columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#messages">Messages</a></li><li><a class="sidebar-nav-item" href="#request-arguments">Request Arguments</a></li><li><a class="sidebar-nav-item" href="#response-attributes">Response Attributes</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1>Marketplace Feed</h1><h2 id="messages">Messages</h2>
 <pre><code>https://marketplace-feed.prod-p.expedia.com/v1/messages
-</code></pre><h3 id="arguments">Arguments</h3>
+</code></pre><h3 id="request-arguments">Request Arguments</h3>
 <table>
 <thead>
 <tr>
@@ -48,7 +48,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="attributes">Attributes</h3>
+<h3 id="response-attributes">Response Attributes</h3>
 <table>
 <thead>
 <tr>
@@ -63,13 +63,13 @@
 <td><code>messages</code></td>
 <td>Array</td>
 <td>A collection of message objects.</td>
-<td><code>[...]</code></td>
+<td><code>[]</code></td>
 </tr>
 <tr>
 <td><code>message</code></td>
 <td>Object</td>
 <td>Contains the details of a single message.</td>
-<td><code>{...}</code></td>
+<td><code>{}</code></td>
 </tr>
 <tr>
 <td><code>category</code></td>
@@ -109,19 +109,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="try-it-out">Try It Out</h3>
-<div class="demo"><code class="language-javascript hljs"><form action="http://marketplace-feed-service.us-west-2.test.expedia.com/v1/messages" data-method="GET" data-isjson="false"><div class="row"><div class="large-6 columns text-right ">HTTP Request Method : </div><div class="large-4 end columns hljs-keyword requestMethod">GET</div></div><div class="row"><div class="large-6 columns text-right ">Endpoint : </div><div class="large-4 end columns hljs-keyword endpoint"><a href="http://marketplace-feed-service.us-west-2.test.expedia.com/v1/messages">http://marketplace-feed-service.us-west-2.test.expedia.com/v1/messages</a></div></div><div class="row">&nbsp;</div><div class="row"><div class="large-6 columns text-right hljs-string">hotelId : </div><div class="large-4 end columns"><input name="hotelId" id="hotelId" class="demoInput" type="text" placeholder="Enter hotelId" data-type="normal"/></div></div></form><div class="large-6 columns text-right ">Header Parameters : </div><div class="row">&nbsp;</div><div class="row"><div class="large-6 columns text-right hljs-string">Client-Id : </div><div class="large-4 end columns"><input name="Client-Id" id="Client-Id" class="demoInput" type="text" placeholder="Enter Client-Id" data-type="header"/></div></div><div class="row"><div class="large-8 large-offset-2 end columns text-center"><a href="#" class="button small expand submit_demo">Submit</a></div></div><div class="large-12 results"></div></code></div>
-
-<h3 id="code-examples">Code Examples</h3>
-<p>Here is an example of writing a simple &#39;hello, world&#39; example in the language you specified:</p>
-<pre><code class="lang-php">echo &quot;Hello, World!&quot;;
-</code></pre>
-<pre><code class="lang-java">System.out.println(&quot;Hello, World!&quot;);
-</code></pre>
-<pre><code class="lang-js">console.log(&quot;Hello, World!&quot;);
-</code></pre>
-<pre><code class="lang-c">printf(&quot;Hello, World!&quot;);
-</code></pre>
 </div></div><div class="row full-width footer">
     <div class="large-6 large-centered columns">
         <div class="show-for-large-up">
