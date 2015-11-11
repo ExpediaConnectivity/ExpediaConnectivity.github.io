@@ -147,17 +147,17 @@ var Core = Core || {
             timer = setTimeout(checkNow, 300);
 
             var $el = $('#stickyheader');
-            if ($(this).scrollTop() >= 120){
+            if ($(this).scrollTop() >= 60){
                 $el.css({'top': '0px'});
             }
-            if ($(this).scrollTop() < 120)
+            if ($(this).scrollTop() < 60)
             {
-                $el.css({'top': (120 - $(this).scrollTop()) + 'px'});
+                $el.css({'top': (60 - $(this).scrollTop()) + 'px'});
             }
 
             $el = $('.menu');
-            var top = ((60 + 60 + 40)-$(this).scrollTop());
-            if ($(this).scrollTop() >= 120){
+            var top = ((60 + 40)-$(this).scrollTop());
+            if ($(this).scrollTop() >= 60){
                 top = 40;
             }
             $el.css({'margin-top': top + 'px'});

@@ -14,11 +14,7 @@
         });
         Core.init();
     });
-</script></head><body><div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div>
-    </nav>
-</div><div class="row full-width" id="apititle"><div class="large-2 small-6 columns">Marketplace Feed</div></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/marketplace-feed/quickstart.html" class="">Quickstart</a><a href="/apis/marketplace-feed/reference.html" class="">Reference</a><a href="/apis/marketplace-feed/swagger.html" class="">Swagger</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="quick-start">Quick Start</h1>
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Marketplace Feed</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/marketplace-feed/quickstart.html" class="">Quickstart</a><a href="/apis/marketplace-feed/reference.html" class="">Reference</a><a href="/apis/marketplace-feed/swagger.html" class="">Swagger</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="quick-start">Quick Start</h1>
 <p>The Marketplace Feed provides a list of messages for a given hotel.  </p>
 <p>Each request should include the hotel credentials in basic auth format, the Client-ID as a header parameter, and the hotelId as a query parameter.</p>
 <pre><code>curl -k -u &#39;username:password&#39; -H&#39;Client-ID: MyClientId&#39; &#39;https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=123&#39;
