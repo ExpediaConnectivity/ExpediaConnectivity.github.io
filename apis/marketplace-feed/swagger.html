@@ -57,19 +57,6 @@
               appName: "your-app-name", 
               scopeSeparator: ","
             });
-            var totalOperations = 0;
-            swaggerApi.apisArray.forEach(function(api) {
-              totalOperations += api.operationsArray.length;
-            });
-            
-            var docExpansion = swaggerUi.mainView.options.swaggerOptions.docExpansion;
-            if (totalOperations < 5 && docExpansion != "full") {
-              swaggerUi.mainView.options.swaggerOptions.docExpansion = "full";
-              swaggerUi.load();
-            } else if (totalOperations >= 5 && totalOperations < 10 && docExpansion != "list") {
-              swaggerUi.mainView.options.swaggerOptions.docExpansion = "list";
-              swaggerUi.load();
-            }
           }
 
           if(window.SwaggerTranslator) {
