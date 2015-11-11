@@ -1,0 +1,299 @@
+<!DOCTYPE html><html><head><title>Understanding Expedia Lodging Data Model - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/foundation/foundation.magellan.js"></script>
+<script src="/js/Core.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.content>pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples.html" class="">Examples</a><a href="/apis/product-api/guides.html" class="">Guides</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li><a class="sidebar-nav-item" href="#api-principles-standards">API Principles & Standards</a></li><li><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li><a class="sidebar-nav-item" href="#entity">Entity</a></li><li><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation & Change Policy</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h1>
+<p>In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:</p>
+<ul>
+<li>Each property has 0 or more room types</li>
+<li>Each room type has one or more rate plans</li>
+<li>Each rate plan belongs to a single room type</li>
+<li>Each rate plan is associated with a single cancellation policy and a single set of additional guest amounts.
+The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.</li>
+</ul>
+<h1 id="api-principles-standards">API Principles &amp; Standards</h1>
+<ul>
+<li><strong>JSON</strong> : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.</li>
+<li><strong>Secure HTTP</strong> : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.</li>
+<li><strong>REST</strong> : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.</li>
+<li><strong>HTTP Status Code</strong> : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Success for read and update operations</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Success for create operations</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Errors induced by user due to incorrect input</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Authentication error</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Authorization error</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Invalid resource</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Invalid/unsupported method on resource</td>
+</tr>
+<tr>
+<td>406</td>
+<td>Unsupported media type for response (only JSON supported)</td>
+</tr>
+<tr>
+<td>409</td>
+<td>Conflicting data</td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported media type (only JSON supported)</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal system error (shouldn’t be retried)</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Internal system error (should be retried, following logic specified in HTTP response header)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>MUST-IGNORE</strong> : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. </li>
+<li><strong>Entity</strong> : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. </li>
+<li><strong>Errors</strong> : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.</li>
+</ul>
+<h1 id="http-headers">HTTP Headers</h1>
+<h2 id="format-request">Format – Request</h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Type</th>
+<th>Required</th>
+<th>Input Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>String</td>
+<td>Required</td>
+<td>Authorization: Basic <username:password encoded by Base64></td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>String</td>
+<td>Required*</td>
+<td>Content-Type: application/json</td>
+</tr>
+<tr>
+<td>Accept</td>
+<td>String</td>
+<td>Required</td>
+<td>Accept: application/json</td>
+</tr>
+<tr>
+<td>Request-ID</td>
+<td>String</td>
+<td>Optional</td>
+<td>Request-ID: UUID This request ID can be provided by the partner and can be referenced later on for troubleshooting purposes. If it is not provided in request, API will generate one and return it in the response. If provided, API will return the same header in the response.</td>
+</tr>
+</tbody>
+</table>
+<p>*required for create and modify requests only</p>
+<h2 id="format-response">Format – Response</h2>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Type</th>
+<th>Input Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Content-Type</td>
+<td>String</td>
+<td>Content-Type: application/json</td>
+</tr>
+<tr>
+<td>Request-ID</td>
+<td>String</td>
+<td>Partner-provided request identifier. If provided in the request, will be returned in the response</td>
+</tr>
+<tr>
+<td>Transaction-ID</td>
+<td>GUID</td>
+<td>Unique transaction ID generated by Expedia for all messages. Expedia recommends storing this identifier. Can be used to reference messages when troubleshooting with Expedia.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</h1>
+<p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
+<h2 id="entity">Entity</h2>
+<p>The entities we support with this API are room type, rate plan and property. These will be described in details in subsequent sections.</p>
+<p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS-Product and EPS-Promo services. </p>
+<p>Consider the following code in Java:</p>
+<pre><code class="lang-Java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
+    private T entity;
+    private List&lt;ErrorDTO&gt; errors;
+}
+</code></pre>
+<p>Entities can be ProductDTO/RatePlanDTO/RoomTypeDTO/PropertyDTO etc.
+Simple entity response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 123,
+    ...
+  }
+}
+</code></pre>
+<p>If a response doesn’t contain an Entity, it will contain Errors:</p>
+<pre><code class="lang-JSON">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: 1000,
+      &quot;message&quot;: &quot;Access denied: your account is not authorized to manage this property.&quot;
+    }
+  ]
+}
+</code></pre>
+<h2 id="entity-vs-errors">Entity vs Errors</h2>
+<p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.
+Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
+A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
+<pre><code class="lang-Java">   ResponseEntity&lt;ResponseWrapperDTO&lt;ProductDTO&gt;&gt; response = restTemplate.exchange(
+            &quot;url&quot;,
+            HttpMethod.POST,
+            entity,
+            new ParameterizedTypeReference&lt;ResponseWrapperDTO&lt;ProductDTO&gt;&gt;() {});
+</code></pre>
+<h1 id="understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</h1>
+<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the rate to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deadline</td>
+<td>Penalty window defined in hours. Hours are relative to checkin date and the property&#39;s cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours.</td>
+</tr>
+<tr>
+<td>Penalty</td>
+<td>Value should match one of the defined values. No other values can be accepted by the API: - None - 1stNightRoomAndTax - 2NightsRoomAndTax - 10PercentCostOfStay - 20PercentCostOfStay - 30PercentCostOfStay - 40PercentCostOfStay - 50PercentCostOfStay - 60PercentCostOfStay - 70PercentCostOfStay - 80PercentCostOfStay - 90PercentCostOfStay - FullCostOfStay</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Flat amount that can be charged if customer cancels.</td>
+</tr>
+</tbody>
+</table>
+<p>Cancellation and change policy is optional when creating a new rate plan.</p>
+<ul>
+<li>If provided, please indicate the cancellation policy values including the deadline for cancellation in hours, and the cancellation penalty.</li>
+<li>If no cancellation policy is provided in a create rate plan request, we will default to select the one which already exists, is refundable, and was most recently used by a standalone active rate plan.</li>
+<li>If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. </li>
+</ul>
+<p>When providing a cancel policy, partners can provide one or two defaultPenalties object.</p>
+<ul>
+<li>At least one defaultPenalty must be provided, with a deadline set to 0.</li>
+<li>If no other default penalty is provided, there will be a single strategy applied, defined by that defaultPenalty per stay fee and amount.</li>
+<li>In addition to the default penalty with a deadline set at 0, only one additional defaultPenalty can be provided (for a total of 2). </li>
+<li>If a second penalty is provided, its deadline must be greater than 0, and less than 1000.</li>
+<li>It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation &amp; change policy.</li>
+</ul>
+<p><strong>Example 1</strong> : Considering the following policy: </p>
+<ul>
+<li>If a customer cancels between 24h or less before property&#39;s cancellation time, he pays for one night.</li>
+<li>If a customer cancels more than 24h before property&#39;s cancellation time, he pays no penalty.</li>
+</ul>
+<p>To reflect such terms, a partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+        &quot;amount&quot;: 0.0
+      }, {
+        &quot;deadline&quot;: 24,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+      }
+    ]
+  }
+</code></pre>
+<p><strong>Example 2</strong> : variation of the above example, where </p>
+<ul>
+<li>cancellations within 24h of property cancellation time deadline should be charged 1 night room and tax</li>
+<li>cancellations further out should incur a 5 unit of currency penalty (for example 5 GBP for a London, UK property, assuming property rate acquisition type is SellLAR)</li>
+</ul>
+<p>To reflect such terms, a partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+        &quot;amount&quot;: 0.0
+      }, {
+        &quot;deadline&quot;: 24,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 5.0
+      }
+    ]
+  }
+</code></pre>
+<p><strong>Example 3</strong> : if a policy is non-refundable, partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;,
+        &quot;amount&quot;: 0.0
+      }
+    ]
+  }
+</code></pre>
+</div></div><div class="row full-width footer">
+    <div class="large-6 large-centered columns">
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+</body></html>
