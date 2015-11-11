@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title></title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><title>Introduction - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <script src="/js/jquery.js"></script>
@@ -14,7 +14,22 @@
         });
         Core.init();
     });
-</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><table>
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#introduction">Introduction</a></li><li><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li><a class="sidebar-nav-item" href="#supported-operations-by-resource-endpoints">Supported operations by resource & endpoints</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="introduction">Introduction</h1>
+<p>The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use ExpediaPartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.</p>
+<h1 id="authentication">Authentication</h1>
+<p>The same credentials used to manage properties via EQC today are compatible with the EPS Product API.
+Partner must include a valid username/password in the HTTP header of the request using the below format: </p>
+<pre><code>Authorization: Basic &lt;username and password encoded by Base64&gt;
+</code></pre><p>Example: </p>
+<pre><code>Authorization: Basic RVFDVXNlcjplUWNQYSQkd29yRA==
+</code></pre><p>Where “RVFDVXNlcjplUWNQYSQkd29yRA==” is the string “EQCUser:eQcPa$$worD (username:password) Base64-encoded.</p>
+<h1 id="supported-operations-by-resource-endpoints">Supported operations by resource &amp; endpoints</h1>
+<ul>
+<li>In order to access property information: /product/properties/{propertyResourceId}. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.</li>
+<li>Room types can be accessed in the context of a property: /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
+<li>Rate plans can be accessed as part of a room type (they belong to a room type): /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
+</ul>
+<table>
 <thead>
 <tr>
 <th>Resource</th>
@@ -26,31 +41,66 @@
 <tbody>
 <tr>
 <td>Property</td>
+<td>Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/">https://services.expediapartnercentral.com/products/v1/properties/</a></td>
+<td>status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default)</td>
+</tr>
+<tr>
+<td>Property</td>
 <td>Read a single property (GET)</td>
 <td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{PropertyID}">https://services.expediapartnercentral.com/products/v1/properties/{PropertyID}</a></td>
 <td>None</td>
 </tr>
 <tr>
-<td>Property</td>
-<td>Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/">https://services.expediapartnercentral.com/products/v1/properties/</a></td>
-<td>status=all (optional)</td>
+<td>Room Type</td>
+<td>Read multiple room types (GET) belonging to a single property</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>status=all (optional) If status is not provided, only active room types are returned.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Read a single room type (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Create a single room type (POST)</td>
+<td>POST <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Update a single room type (PUT) in full overlay mode</td>
+<td>PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Read multiple rate plans belonging to a single room type (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>status=all (optional) If status is not provided, only active rate plans are returned.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Read a single rate plan (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Create a single rate plan (POST)</td>
+<td>POST <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Update a single rate plan (PUT) in full overlay mode</td>
+<td>PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>None</td>
 </tr>
 </tbody>
 </table>
-<p>If status is not provided, only active properties are returned.
-offset=[number starting at 0] (optional, returns results starting at position 0 by default)
-limit=[number between 1 and 200] (optional, 20 by default) |
-| Room Type | Read multiple room types (GET) belonging to a single property | GET <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/</a> | status=all (optional)
-If status is not provided, only active room types are returned.|
-| Room Type | Read a single room type (GET) | GET <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId</a>] | None |
-| Room Type | Create a single room type (POST) | POST <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/</a> | None |
-| Room Type | Update a single room type (PUT) in full overlay mode | PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId</a>] | None |
-| Rate Plan | Read multiple rate plans belonging to a single room type (GET) | GET <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/</a> | status=all (optional)
-If status is not provided, only active rate plans are returned.|
-| Rate Plan | Read a single rate plan (GET) | GET <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/[ratePlanResourceId">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/[ratePlanResourceId</a>] | None |
-| Rate Plan | Create a single rate plan (POST) | POST <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/</a> | None |
-| Rate Plan | Update a single rate plan (PUT) in full overlay mode | PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/[ratePlanResourceId">https://services.expediapartnercentral.com/products/v1/properties/[propertyResourceId]/roomTypes/[roomTypeResourceId]/ratePlans/[ratePlanResourceId</a>] | None |</p>
 </div></div><div class="row full-width footer">
     <div class="large-6 large-centered columns">
         <div class="show-for-large-up">
