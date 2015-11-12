@@ -289,8 +289,21 @@ input.demoInput {
   z-index: 200;
   margin-top: 50px;
 }
+.footer .links {
+  margin-top: 20px;
+}
+.footer .links a,
+.footer .links a:visited {
+  padding: 5px;
+  color: #FFFFFF !important;
+  text-decoration: none !important;
+}
+.footer .links a:hover,
+.footer .links a:active {
+  background-color: #10b8d5 !important;
+}
 .footer-logo {
-  background: url(https://www.expediapartnercentral.com.lisqa7.sb.karmalab.net/Images/common-sprite.png?r=635694464128406672) no-repeat scroll 0 -46px;
+  background: url(https://www.expediapartnercentral.com/Images/common-sprite.png?r=635811163229379650) no-repeat scroll 0 -46px;
   width: 450px;
   height: 51px;
   display: inline-block;
