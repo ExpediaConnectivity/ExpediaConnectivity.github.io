@@ -15,42 +15,99 @@
         Core.init();
     });
 </script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Marketplace Feed</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/marketplace-feed/quickstart.html" class="">Quickstart</a><a href="/apis/marketplace-feed/reference.html" class="">Reference</a><a href="/apis/marketplace-feed/swagger.html" class="">Swagger</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="quick-start">Quick Start</h1>
-<p>The Marketplace Feed provides a list of messages for a given hotel.  </p>
-<p>Each request should include the hotel credentials in basic auth format, the Client-ID as a header parameter, and the hotelId as a query parameter.</p>
-<pre><code>curl -k -u &#39;username:password&#39; -H&#39;Client-ID: MyClientId&#39; &#39;https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=123&#39;
-</code></pre><p>The response contains a Json formatted list of message objects.</p>
+<p>The marketplace-feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel&#39;s availability and rates are, as well as feedback provided by Expedia guests.</p>
+<p>Each request should include hotelier credentials in HTTP basic auth format, a Client-Id HTTP header, and a hotelId query parameter.</p>
+<p>For more information, check out the <a href="reference.html">reference documentation</a>, or try it out live with <a href="swagger.html">swagger</a>.</p>
+<p>For an example request/response, you can send a <code>hotelId=test</code> query parameter.  Valid auth credentials are not required for <code>hotelId=test</code>, but you must still provide a <code>Client-Id</code> header.</p>
+<pre><code>curl -u &#39;username:password&#39; -H&#39;Client-Id: MyClientId&#39; &#39;https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test&#39;
+</code></pre><p>The response contains a JSON list of message objects.</p>
 <pre><code>{
     &quot;messages&quot;: [
         {
-            &quot;category&quot;: &quot;Missing Inventory&quot;,
+            &quot;id&quot;: &quot;d387b4e9a5e23175d6c48073af4ea4c565287272&quot;,
             &quot;hotelId&quot;: &quot;test&quot;,
-            &quot;id&quot;: &quot;95fbaf423d3d6c5cb32a247aedc97d64b9ae1aff&quot;,
-            &quot;longMessage&quot;: &quot;On 2015-10-20 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;,
-            &quot;shortMessage&quot;: &quot;On 2015-10-20 you can sell 5 more rooms with Expedia. Add inventory now.&quot;,
+            &quot;category&quot;: &quot;Missing Inventory&quot;,
+            &quot;shortMessage&quot;: &quot;On 2015-11-12 you can sell 5 more rooms with Expedia. Add inventory now.&quot;,
+            &quot;longMessage&quot;: &quot;On 2015-11-12 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;,
             &quot;values&quot;: {
+                &quot;date&quot;: &quot;2015-11-12&quot;,
                 &quot;currentRooms&quot;: 10,
-                &quot;date&quot;: &quot;2015-10-20&quot;,
-                &quot;roomsToAdd&quot;: 52
-            }
+                &quot;roomsToAdd&quot;: 5
+            },
+            &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
         },
         {
-            &quot;category&quot;: &quot;Missing Inventory&quot;,
+            &quot;id&quot;: &quot;3ceb023491e7df13f067ab8667202f165f81cac3&quot;,
             &quot;hotelId&quot;: &quot;test&quot;,
-            &quot;id&quot;: &quot;98f8ff6232d1fe7f1cb157c34124923895f9e165&quot;,
-            &quot;longMessage&quot;: &quot;On 2015-10-24 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.&quot;,
-            &quot;shortMessage&quot;: &quot;On 2015-10-24 you can sell 7 more rooms with Expedia. Add inventory now.&quot;,
+            &quot;category&quot;: &quot;Missing Inventory&quot;,
+            &quot;shortMessage&quot;: &quot;On 2015-11-16 you can sell 7 more rooms with Expedia. Add inventory now.&quot;,
+            &quot;longMessage&quot;: &quot;On 2015-11-16 you have only 12 rooms left. Our sales forecast shows that we can sell 7 more rooms.&quot;,
             &quot;values&quot;: {
+                &quot;date&quot;: &quot;2015-11-16&quot;,
                 &quot;currentRooms&quot;: 12,
-                &quot;date&quot;: &quot;2015-10-24&quot;,
                 &quot;roomsToAdd&quot;: 7
-            }
+            },
+            &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
+        },
+        {
+            &quot;id&quot;: &quot;9c16e2adf1734b253e405f5d6e3a42c035dab81c&quot;,
+            &quot;hotelId&quot;: &quot;test&quot;,
+            &quot;category&quot;: &quot;Missed Opportunities&quot;,
+            &quot;shortMessage&quot;: &quot;So far, you lost 3 bookings today.&quot;,
+            &quot;longMessage&quot;: &quot;3 travelers arriving in your market today viewed your property but booked elsewhere.&quot;,
+            &quot;values&quot;: {
+                &quot;count&quot;: 3,
+                &quot;missedOpportunities&quot;: [
+                    {
+                        &quot;hotelId&quot;: &quot;25280&quot;,
+                        &quot;hotelName&quot;: &quot;The Verb Hotel&quot;,
+                        &quot;bookings&quot;: 2
+                    },
+                    {
+                        &quot;hotelId&quot;: &quot;119162&quot;,
+                        &quot;hotelName&quot;: &quot;Le Meridien Cambridge-MIT&quot;,
+                        &quot;bookings&quot;: 1
+                    }
+                ]
+            },
+            &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
+        },
+        {
+            &quot;id&quot;: &quot;b7b215a395d3267c92c2c6e3562fa09c11f6454c&quot;,
+            &quot;hotelId&quot;: &quot;test&quot;,
+            &quot;category&quot;: &quot;Real-Time Feedback&quot;,
+            &quot;shortMessage&quot;: &quot;A guest at your property is giving real-time feedback.&quot;,
+            &quot;longMessage&quot;: &quot;Bed was not made :(&quot;,
+            &quot;values&quot;: {
+                &quot;itineraryId&quot;: &quot;12345&quot;,
+                &quot;startDate&quot;: &quot;2015-11-11T01:22:10.126Z&quot;,
+                &quot;endDate&quot;: &quot;2015-11-14T01:22:10.126Z&quot;,
+                &quot;createDate&quot;: &quot;2015-11-12T01:22:10.126Z&quot;,
+                &quot;updateDate&quot;: &quot;2015-11-13T01:22:10.126Z&quot;,
+                &quot;isHappy&quot;: false
+            },
+            &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test&quot;
+        },
+        {
+            &quot;id&quot;: &quot;ff303dc6de6da2b25bfcc9b19724ccfb69edff3a&quot;,
+            &quot;hotelId&quot;: &quot;test&quot;,
+            &quot;category&quot;: &quot;Hotel Review&quot;,
+            &quot;shortMessage&quot;: &quot;A guest just reviewed your property and rated you 4 out of 5 stars.&quot;,
+            &quot;longMessage&quot;: &quot;Great view!&quot;,
+            &quot;values&quot;: {
+                &quot;rating&quot;: &quot;4&quot;,
+                &quot;comment&quot;: &quot;Great view!&quot;,
+                &quot;createDate&quot;: &quot;2015-11-11T01:22:10.126Z&quot;
+            },
+            &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test&quot;
         }
     ]
 }
 </code></pre></div></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
         <div class="links text-right">
-            <a class="link-item" href="/contacts.html">Contact Expedia</a> | <a class="link-item" href="/terms.html">Terms and Conditions</a>
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
         </div>
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
