@@ -5,9 +5,9 @@ var Core = Core || {
     
     init: function() {
         var _this = this;
-        this.createCodeOptions(this.getCodeExamples());
-        this.setOption();
-        this.changeOption();
+        //this.createCodeOptions(this.getCodeExamples());
+        //this.setOption();
+        //this.changeOption();
         this.determineSection();
         this.setMenuFocus();
         this.demoForm();
