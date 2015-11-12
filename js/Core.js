@@ -15,6 +15,7 @@ var Core = Core || {
         this.resizeIframes();
         this.lastHeight = $(document).height();
         this.checkChanges();
+        this.resizeMenuNav();
         $(window).resize(function() {
             _this.moveFooter();
         });
@@ -161,7 +162,17 @@ var Core = Core || {
                 top = 40;
             }
             $el.css({'margin-top': top + 'px'});
+
+            _this.resizeMenuNav();
         });
+    },
+
+    resizeMenuNav: function() {
+        var size = $(window).height();
+        var footerSize = $(window).scrollTop() + $(window).height() - $(".footer").offset().top;
+        if (footerSize > 0) size -= footerSize;
+        size -= ($(".sidebar-nav").offset().top - $(window).scrollTop());
+        $(".sidebar-nav-items").css("max-height", size);
     },
 
     resizeIframes: function() {
