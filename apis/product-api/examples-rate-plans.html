@@ -1,0 +1,927 @@
+<!DOCTYPE html><html><head><title>Intro - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/foundation/foundation.magellan.js"></script>
+<script src="/js/Core.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples-properties.html" class="">Examples Properties</a><a href="/apis/product-api/examples-room-types.html" class="">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html" class="">Examples Rate Plans</a><a href="/apis/product-api/guides.html" class="">Guides</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#intro">Intro</a></li><li><a class="sidebar-nav-item" href="#single-rate-plan-read-request-response">Single Rate Plan Read Request/Response</a></li><li><a class="sidebar-nav-item" href="#read-all-active-rate-plans-for-a-room-type-request-response">Read All Active Rate Plans for a Room Type Request/Response</a></li><li><a class="sidebar-nav-item" href="#request-response-for-an-occupancy-based-pricing-expediacollect-sell-rate-rate-plan">Request/Response for an Occupancy-Based Pricing, ExpediaCollect, Sell Rate Rate Plan</a></li><li><a class="sidebar-nav-item" href="#request-response-for-an-occupancy-based-pricing-hotelcollect-rate-plan">Request/Response for an Occupancy-Based Pricing, HotelCollect Rate Plan</a></li><li><a class="sidebar-nav-item" href="#request-response-for-an-expedia-traveler-preference-rate-plan">Request/Response for an Expedia Traveler Preference Rate Plan</a></li><li><a class="sidebar-nav-item" href="#rate-plan-create-request-and-response-for-a-pdp-merchant-net-property">Rate Plan Create Request and Response for a PDP Merchant Net Property</a></li><li><a class="sidebar-nav-item" href="#create-request-and-response-for-an-expedia-traveler-preference-rate-plan">Create Request and Response for an  Expedia Traveler Preference Rate Plan</a></li><li><a class="sidebar-nav-item" href="#modify-request-and-response-for-an-expedia-traveler-preference-rate-plan">Modify Request and Response for an Expedia Traveler Preference Rate Plan</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="intro">Intro</h1>
+<p>The rate plan resource defines the configuration of a rate that a partner would like to make available to Expedia customers. It contains the more static information about the rate, for example its name, code, cancellation and change policy, what is the base compensation, what are the additional guest amounts to charge, etc.
+More dynamic information like availability and rate information per stay date is exchanged via another API, EQC AR.</p>
+<h2 id="single-rate-plan-read-request-response">Single Rate Plan Read Request/Response</h2>
+<p>This example is for a Per Day Pricing, ExpediaCollect, Net Rate Rate Plan.</p>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204297188
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204309700,
+    &quot;name&quot;: &quot;Room Only&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204309700&quot;,
+        &quot;partnerCode&quot;: &quot;NK2&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0,
+          &quot;exceptions&quot;: [
+            {
+              &quot;dateStart&quot;: &quot;2015-11-01&quot;,
+              &quot;dateEnd&quot;: &quot;2015-11-02&quot;,
+              &quot;minAmount&quot;: 0,
+              &quot;percent&quot;: 0.24,
+              &quot;mon&quot;: true,
+              &quot;tue&quot;: true,
+              &quot;wed&quot;: true,
+              &quot;thu&quot;: true,
+              &quot;fri&quot;: true,
+              &quot;sat&quot;: true,
+              &quot;sun&quot;: true
+            }
+          ]
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 1,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 36
+      }, {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 29.7
+      }, {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeB&quot;,
+        &quot;amount&quot;: 29.7
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+<h3 id="read-all-active-rate-plans-for-a-room-type-request-response">Read All Active Rate Plans for a Room Type Request/Response</h3>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+    &quot;entity&quot;: [
+        {
+            &quot;resourceId&quot;: 205020299,
+            &quot;name&quot;: &quot;RoomOnly22&quot;,
+            &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+            &quot;distributionRules&quot;: [
+                {
+                    &quot;expediaId&quot;: &quot;205020299A&quot;,
+                    &quot;partnerCode&quot;: &quot;RoomOnly22&quot;,
+                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+                    &quot;manageable&quot;: true,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.1
+                    }
+                }
+            ],
+            &quot;status&quot;: &quot;Active&quot;,
+            &quot;type&quot;: &quot;Standalone&quot;,
+            &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+            &quot;occupantsForBaseRate&quot;: 2,
+            &quot;taxInclusive&quot;: false,
+            &quot;cancelPolicy&quot;: {
+                &quot;defaultPenalties&quot;: [
+                    {
+                        &quot;deadline&quot;: 0,
+                        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+                        &quot;amount&quot;: 0
+                    },
+                    {
+                        &quot;deadline&quot;: 24,
+                        &quot;perStayFee&quot;: &quot;None&quot;,
+                        &quot;amount&quot;: 0
+                    }
+                ]
+            },
+            &quot;additionalGuestAmounts&quot;: [
+                {
+                    &quot;dateStart&quot;: &quot;2015-07-10&quot;,
+                    &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;amount&quot;: 0
+                }
+            ],
+            &quot;minLOSDefault&quot;: 1,
+            &quot;maxLOSDefault&quot;: 28,
+            &quot;minAdvBookDays&quot;: 0,
+            &quot;maxAdvBookDays&quot;: 500,
+            &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+            &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
+            &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;mobileOnly&quot;: false
+        },
+        {
+            &quot;resourceId&quot;: 205020302,
+            &quot;name&quot;: &quot;RoomOnly11&quot;,
+            &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+            &quot;distributionRules&quot;: [
+                {
+                    &quot;expediaId&quot;: &quot;205020302A&quot;,
+                    &quot;partnerCode&quot;: &quot;RoomOnly&quot;,
+                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+                    &quot;manageable&quot;: true,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.1
+                    }
+                }
+            ],
+            &quot;status&quot;: &quot;Active&quot;,
+            &quot;type&quot;: &quot;Standalone&quot;,
+            &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+            &quot;occupantsForBaseRate&quot;: 2,
+            &quot;taxInclusive&quot;: false,
+            &quot;cancelPolicy&quot;: {
+                &quot;defaultPenalties&quot;: [
+                    {
+                        &quot;deadline&quot;: 0,
+                        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+                        &quot;amount&quot;: 0
+                    },
+                    {
+                        &quot;deadline&quot;: 24,
+                        &quot;perStayFee&quot;: &quot;None&quot;,
+                        &quot;amount&quot;: 0
+                    }
+                ]
+            },
+            &quot;additionalGuestAmounts&quot;: [
+                {
+                    &quot;dateStart&quot;: &quot;2015-07-10&quot;,
+                    &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;amount&quot;: 0
+                }
+            ],
+            &quot;minLOSDefault&quot;: 1,
+            &quot;maxLOSDefault&quot;: 28,
+            &quot;minAdvBookDays&quot;: 0,
+            &quot;maxAdvBookDays&quot;: 500,
+            &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+            &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
+            &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;mobileOnly&quot;: false
+        },
+        {
+            &quot;resourceId&quot;: 205833985,
+            &quot;name&quot;: &quot;BB&quot;,
+            &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+            &quot;distributionRules&quot;: [
+                {
+                    &quot;expediaId&quot;: &quot;205833985&quot;,
+                    &quot;partnerCode&quot;: &quot;RoomOnly&quot;,
+                    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+                    &quot;manageable&quot;: false,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.23,
+                        &quot;minAmount&quot;: 0
+                    }
+                },
+                {
+                    &quot;expediaId&quot;: &quot;205833985A&quot;,
+                    &quot;partnerCode&quot;: &quot;RoomOnly&quot;,
+                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+                    &quot;manageable&quot;: true,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.23
+                    }
+                }
+            ],
+            &quot;status&quot;: &quot;Active&quot;,
+            &quot;type&quot;: &quot;Standalone&quot;,
+            &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+            &quot;occupantsForBaseRate&quot;: 2,
+            &quot;taxInclusive&quot;: false,
+            &quot;cancelPolicy&quot;: {
+                &quot;defaultPenalties&quot;: [
+                    {
+                        &quot;deadline&quot;: 0,
+                        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+                        &quot;amount&quot;: 0
+                    },
+                    {
+                        &quot;deadline&quot;: 24,
+                        &quot;perStayFee&quot;: &quot;None&quot;,
+                        &quot;amount&quot;: 0
+                    }
+                ]
+            },
+            &quot;additionalGuestAmounts&quot;: [
+                {
+                    &quot;dateStart&quot;: &quot;2015-04-08&quot;,
+                    &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;amount&quot;: 0
+                }
+            ],
+            &quot;minLOSDefault&quot;: 1,
+            &quot;maxLOSDefault&quot;: 28,
+            &quot;minAdvBookDays&quot;: 0,
+            &quot;maxAdvBookDays&quot;: 500,
+            &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+            &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
+            &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;mobileOnly&quot;: false
+        }
+    ]
+}
+</code></pre>
+<h2 id="request-response-for-an-occupancy-based-pricing-expediacollect-sell-rate-rate-plan">Request/Response for an Occupancy-Based Pricing, ExpediaCollect, Sell Rate Rate Plan</h2>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204126855
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204126855,
+    &quot;name&quot;: &quot;Standard&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204126855&quot;,
+        &quot;partnerCode&quot;: &quot;Room Only&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.25,
+          &quot;minAmount&quot;: 10.0
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+    &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;50PercentCostOfStay&quot;,
+         &quot;amount&quot;: 0.0
+
+        }, {
+          &quot;deadline&quot;: 72,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+         &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2014-10-23&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 30
+      }, {
+        &quot;dateStart&quot;: &quot;2014-10-23&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 30
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Breakfast&quot;
+    ],
+    &quot;minLOSDefault&quot;: 2,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 23,
+    &quot;maxAdvBookDays&quot;: 290,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+<h2 id="request-response-for-an-occupancy-based-pricing-hotelcollect-rate-plan">Request/Response for an Occupancy-Based Pricing, HotelCollect Rate Plan</h2>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204321248
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204321248,
+    &quot;name&quot;: &quot;Vikings&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204321248A&quot;,
+        &quot;partnerCode&quot;: &quot;RoomOnly-1&quot;,
+        &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.20,
+          &quot;exceptions&quot;: [
+            {
+              &quot;dateStart&quot;: &quot;2015-04-08&quot;,
+              &quot;dateEnd&quot;: &quot;2015-12-31&quot;,
+              &quot;percent&quot;: 0.15,
+              &quot;mon&quot;: true,
+              &quot;tue&quot;: true,
+              &quot;wed&quot;: true,
+              &quot;thu&quot;: true,
+              &quot;fri&quot;: false,
+              &quot;sat&quot;: false,
+              &quot;sun&quot;: false
+            }, {
+              &quot;dateStart&quot;: &quot;2015-04-08&quot;,
+              &quot;dateEnd&quot;: &quot;2015-12-31&quot;,
+              &quot;percent&quot;: 0.18,
+              &quot;mon&quot;: false,
+              &quot;tue&quot;: false,
+              &quot;wed&quot;: false,
+              &quot;thu&quot;: false,
+              &quot;fri&quot;: true,
+              &quot;sat&quot;: true,
+              &quot;sun&quot;: true
+            }
+          ]
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+    &quot;taxInclusive&quot;: true,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;50PercentCostOfStay&quot;,
+         &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Parking&quot;, &quot;Free Wireless Internet&quot;, &quot;Breakfast Buffet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 7,
+    &quot;maxLOSDefault&quot;: 14,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 30,
+    &quot;bookDateStart&quot;: &quot;2015-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2016-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;2015-01-02&quot;,
+    &quot;travelDateEnd&quot;: &quot;2016-12-31&quot;,
+    &quot;mobileOnly&quot;: true
+  }
+}
+</code></pre>
+<h2 id="request-response-for-an-expedia-traveler-preference-rate-plan">Request/Response for an Expedia Traveler Preference Rate Plan</h2>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200828484/ratePlans/204309700
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204309700,
+    &quot;name&quot;: &quot;Room Only&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204309700&quot;,
+        &quot;partnerCode&quot;: &quot;NK2&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }, {
+        &quot;expediaId&quot;: &quot;204309700A&quot;,
+        &quot;partnerCode&quot;: &quot;ANK2&quot;,
+        &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+        &quot;manageable&quot;: false,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 1,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+         &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 36
+      }, {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 29.7
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Breakfast&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+<h2 id="rate-plan-create-request-and-response-for-a-pdp-merchant-net-property">Rate Plan Create Request and Response for a PDP Merchant Net Property</h2>
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/
+Content-Type: application/json
+Accept: application/json
+Content-Length: 984
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;name&quot;: &quot;My first test rate plan&quot;,
+  &quot;distributionRules&quot;: [
+    {
+      &quot;partnerCode&quot;: &quot;TEST1&quot;,
+      &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
+    }
+  ],
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;type&quot;: &quot;Standalone&quot;,
+  &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+  &quot;occupantsForBaseRate&quot;: 2,
+  &quot;taxInclusive&quot;: false,
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+       &quot;amount&quot;: 0.0
+
+      }
+    ]
+  },
+  &quot;additionalGuestAmounts&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;amount&quot;: 40
+    }, {
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;amount&quot;: 20
+    }, {
+      &quot;ageCategory&quot;: &quot;ChildAgeB&quot;,
+      &quot;amount&quot;: 10
+    }
+  ],
+  &quot;valueAddInclusions&quot;: [
+    &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+  ]
+}
+</code></pre>
+<p>The response would look like:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204886798,
+    &quot;name&quot;: &quot;My first test rate plan&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204886798&quot;,
+        &quot;partnerCode&quot;: &quot;TEST1&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 0.26,
+          &quot;exceptions&quot;: [
+            {
+              &quot;from&quot;: &quot;2015-11-01&quot;,
+              &quot;to&quot;: &quot;2015-11-02&quot;,
+              &quot;minAmount&quot;: 0,
+              &quot;percent&quot;: 0.24,
+              &quot;mon&quot;: true,
+              &quot;tue&quot;: true,
+              &quot;wed&quot;: true,
+              &quot;thu&quot;: true,
+              &quot;fri&quot;: true,
+              &quot;sat&quot;: true,
+              &quot;sun&quot;: true
+            }
+          ]
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 2,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2015-03-17&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeB&quot;,
+        &quot;amount&quot;: 10
+      }, {
+        &quot;dateStart&quot;: &quot;2015-03-17&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 20
+      }, {
+        &quot;dateStart&quot;: &quot;2015-03-17&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 40
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;2015-03-17&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;2015-03-17&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+<h2 id="create-request-and-response-for-an-expedia-traveler-preference-rate-plan">Create Request and Response for an  Expedia Traveler Preference Rate Plan</h2>
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
+Content-Type: application/json
+Accept: application/json
+Content-Length: 984
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in base64]
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;name&quot;: &quot;Room Only&quot;,
+  &quot;distributionRules&quot;: [
+    {
+      &quot;partnerCode&quot;: &quot;NK2&quot;,
+      &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
+    }, {
+      &quot;partnerCode&quot;: &quot;ANK2&quot;,
+      &quot;distributionModel&quot;: &quot;HotelCollect&quot;
+    }
+  ],
+  &quot;occupantsForBaseRate&quot;: 1,
+  &quot;taxInclusive&quot;: false,
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+       &quot;amount&quot;: 0.0
+
+      }
+    ]
+  },
+  &quot;additionalGuestAmounts&quot;: [
+    {
+      &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+      &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;amount&quot;: 36
+    }, {
+      &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+      &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;amount&quot;: 29.7
+    }
+  ],
+  &quot;valueAddInclusions&quot;: [
+    &quot;Free Breakfast&quot;
+  ]
+}
+</code></pre>
+<p>Response would look like:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204309700,
+    &quot;name&quot;: &quot;Room Only&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204309700&quot;,
+        &quot;partnerCode&quot;: &quot;NK2&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }, {
+        &quot;expediaId&quot;: &quot;204309700A&quot;,
+        &quot;partnerCode&quot;: &quot;ANK2&quot;,
+        &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+        &quot;manageable&quot;: false,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 1,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 36
+      }, {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 29.7
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Breakfast&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+<h2 id="modify-request-and-response-for-an-expedia-traveler-preference-rate-plan">Modify Request and Response for an Expedia Traveler Preference Rate Plan</h2>
+<p>In this example, the rate plan created in section 4.2.2 is modified to have a more meaningful name, lower additional guest amounts and free Internet.</p>
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200835/ratePlans/204309700 
+Content-Type: application/json
+Accept: application/json
+Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
+Authorization: Basic [your encoded username:password in base64]
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;resourceId&quot;: 204309700,
+  &quot;name&quot;: &quot;More Meaningful Name&quot;,
+  &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+  &quot;distributionRules&quot;: [
+    {
+      &quot;expediaId&quot;: &quot;204309700&quot;,
+      &quot;partnerCode&quot;: &quot;NK2&quot;,
+      &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+      &quot;manageable&quot;: true,
+      &quot;compensation&quot;: {
+        &quot;percent&quot;: 0.26,
+        &quot;minAmount&quot;: 10.0
+      }
+    }, {
+      &quot;expediaId&quot;: &quot;204309700A&quot;,
+      &quot;partnerCode&quot;: &quot;ANK2&quot;,
+      &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+      &quot;manageable&quot;: false,
+      &quot;compensation&quot;: {
+        &quot;percent&quot;: 0.26,
+        &quot;minAmount&quot;: 10.0
+      }
+    }
+  ],
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;type&quot;: &quot;Standalone&quot;,
+  &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+  &quot;occupantsForBaseRate&quot;: 2,
+  &quot;taxInclusive&quot;: false,
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+       &quot;amount&quot;: 0.0
+
+      }
+    ]
+  },
+  &quot;additionalGuestAmounts&quot;: [
+    {
+      &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+      &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;amount&quot;: 30
+    }, {
+      &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+      &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;amount&quot;: 20
+    }
+  ],
+  &quot;valueAddInclusions&quot;: [
+    &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+  ],
+  &quot;minLOSDefault&quot;: 1,
+  &quot;maxLOSDefault&quot;: 28,
+  &quot;minAdvBookDays&quot;: 0,
+  &quot;maxAdvBookDays&quot;: 500,
+  &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+  &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+  &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+  &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+  &quot;mobileOnly&quot;: false
+}
+</code></pre>
+<p>Response would look like:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 204309700,
+    &quot;name&quot;: &quot;More Meaningful Name&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;distributionRules&quot;: [
+      {
+        &quot;expediaId&quot;: &quot;204309700&quot;,
+        &quot;partnerCode&quot;: &quot;NK2&quot;,
+        &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+        &quot;manageable&quot;: true,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }, {
+        &quot;expediaId&quot;: &quot;204309700A&quot;,
+        &quot;partnerCode&quot;: &quot;ANK2&quot;,
+        &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+        &quot;manageable&quot;: false,
+        &quot;compensation&quot;: {
+          &quot;percent&quot;: 0.26,
+          &quot;minAmount&quot;: 10.0
+        }
+      }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 2,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+      &quot;defaultPenalties&quot;: [
+        {
+          &quot;deadline&quot;: 0,
+          &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+
+        }
+      ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+      {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;amount&quot;: 30
+      }, {
+        &quot;dateStart&quot;: &quot;2014-12-04&quot;,
+        &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;amount&quot;: 20
+      }
+    ],
+    &quot;valueAddInclusions&quot;: [
+      &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1900-01-30&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+  }
+}
+</code></pre>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-right">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+</body></html>

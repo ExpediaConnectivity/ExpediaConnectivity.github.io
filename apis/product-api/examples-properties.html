@@ -1,0 +1,196 @@
+<!DOCTYPE html><html><head><title>Intro - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/foundation/foundation.magellan.js"></script>
+<script src="/js/Core.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples-properties.html" class="">Examples Properties</a><a href="/apis/product-api/examples-room-types.html" class="">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html" class="">Examples Rate Plans</a><a href="/apis/product-api/guides.html" class="">Guides</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#intro">Intro</a></li><li><a class="sidebar-nav-item" href="#single-property-request-response">Single Property Request / Response</a></li><li><a class="sidebar-nav-item" href="#multiple-properties-request-response">Multiple Properties Request/Response</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="intro">Intro</h1>
+<p>This section contains examples on how to query the property resource of the product API.</p>
+<p>Property read allows partners to retrieve several important settings related to their properties’ configuration in Expedia system. It also enables partners to find out which properties are currently assigned to their accounts.
+A read request is a HTTP GET. There are two different read operations available:</p>
+<ul>
+<li>To get a specific property, the property ID needs to be specified on the URL: /properties/{propertyId}</li>
+<li>To get all the properties assigned to a specific user account, omit the property resource ID on the URL: /properties/. 
+By default, only active properties are returned. To get all properties assigned to an account, including ones that might not be active at the moment, an optional status parameter can be added, with value all: /properties?status=all.
+When requesting a single property, EPS Product API will return the property resource information as part of an Entity object:<pre><code class="lang-JSON">{
+&quot;entity&quot;: {
+&quot;resourceId&quot;: 1,
+...
+}
+}
+</code></pre>
+When requesting all properties assigned to a user account, an array of properties is returned:<pre><code class="lang-JSON">{
+&quot;entity&quot;: [
+{
+ &quot;resourceId&quot;: 1,
+ …
+}, {
+ &quot;resourceId&quot;: 2,
+ …
+}
+]
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="single-property-request-response">Single Property Request / Response</h2>
+<p>Request is a simple HTTP GET:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/2268140
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic [your encoded username:password in base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-json">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 2268140,
+    &quot;name&quot;: &quot;Eslington Villa&quot;,
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;currency&quot;: &quot;GBP&quot;,
+    &quot;address&quot;: {
+      &quot;line1&quot;: &quot;199 Some Street&quot;,
+      &quot;line2&quot;: null,
+      &quot;city&quot;: &quot;Glasgow&quot;,
+      &quot;state&quot;: null,
+      &quot;postalCode&quot;: &quot;12345&quot;,
+      &quot;countryCode&quot;: &quot;GBR&quot;
+    },
+    &quot;distributionModels&quot;: [
+      &quot;ExpediaCollect&quot;, &quot;HotelCollect&quot;
+    ],
+    &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+    &quot;taxInclusive&quot;: true,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;baseAllocationEnabled&quot;: false,
+    &quot;minLOSThreshold&quot;: 4,
+    &quot;cancellationTime&quot;: &quot;18:00&quot;,
+    &quot;timezone&quot;: &quot;(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London&quot;,
+    &quot;reservationCutOff&quot;: {
+      &quot;time&quot;: &quot;05:00&quot;,
+      &quot;day&quot;: &quot;nextDay&quot;
+    }
+  }
+}
+</code></pre>
+<h2 id="multiple-properties-request-response">Multiple Properties Request/Response</h2>
+<p>When using GET for multiple properties, additional parameters can be provided to navigate through the result set. By default, only 20 properties are returned at a time. Partners who have more than 20 properties assigned to their accounts and want to get through all their properties have to use offset and limit parameters.
+For example, a partner wanting to get 3 results at a time would do a request like this:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties?offset=0&amp;limit=3
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic [your encoded username:password in base64]
+</code></pre>
+<p>The Product API will sort all properties assigned to this account by resourceId, ascending, and return the 3 lowest property resource ids. Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: [
+    {
+      &quot;resourceId&quot;: 2268142,
+      &quot;name&quot;: &quot;Eslington Villa&quot;,
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;currency&quot;: &quot;GBP&quot;,
+      &quot;address&quot;: {
+        &quot;line1&quot;: &quot;199 Some Street&quot;,
+        &quot;city&quot;: &quot;Glasgow&quot;,
+        &quot;postalCode&quot;: &quot;PL99A9&quot;,
+        &quot;state&quot;: &quot;Scotland&quot;,
+        &quot;countryCode&quot;: &quot;GBR&quot;
+      },
+      &quot;distributionModels&quot;: [
+        &quot;ExpediaCollect&quot;, &quot;HotelCollect&quot;
+      ],
+      &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+      &quot;taxInclusive&quot;: true,
+      &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+      &quot;baseAllocationEnabled&quot;: false,
+      &quot;minLOSThreshold&quot;: 4,
+      &quot;cancellationTime&quot;: &quot;18:00&quot;,
+      &quot;timezone&quot;: &quot;(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London&quot;,
+      &quot;reservationCutOff&quot;: {
+        &quot;time&quot;: &quot;05:00&quot;,
+        &quot;day&quot;: &quot;nextDay&quot;
+      }
+    }, {
+      &quot;resourceId&quot;: 2268141,
+      &quot;name&quot;: &quot;Hotel Downtown&quot;,
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;currency&quot;: &quot;CAD&quot;,
+      &quot;address&quot;: {
+        &quot;line1&quot;: &quot;299 Some Other Street&quot;,
+        &quot;line2&quot;: &quot;with a very long name&quot;,
+        &quot;city&quot;: &quot;Montreal&quot;,
+        &quot;state&quot;: &quot;Quebec&quot;,
+        &quot;postalCode&quot;: &quot;H11H1H&quot;,
+        &quot;countryCode&quot;: &quot;CAN&quot;
+      },
+      &quot;distributionModels&quot;: [
+        &quot;ExpediaCollect&quot;
+      ],
+      &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+      &quot;taxInclusive&quot;: false,
+      &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+      &quot;baseAllocationEnabled&quot;: false,
+      &quot;minLOSThreshold&quot;: 14,
+      &quot;cancellationTime&quot;: &quot;18:00&quot;,
+      &quot;timezone&quot;: &quot;(GMT-05:00) Eastern Time (US &amp; Canada)&quot;,
+      &quot;reservationCutOff&quot;: {
+        &quot;time&quot;: &quot;23:59&quot;,
+        &quot;day&quot;: &quot;sameDay&quot;
+      }
+    }, {
+      &quot;resourceId&quot;: 2268140,
+      &quot;name&quot;: &quot;Villa by the Sea&quot;,
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;currency&quot;: &quot;EUR&quot;,
+      &quot;address&quot;: {
+        &quot;line1&quot;: &quot;299 Some Other Street&quot;,
+        &quot;city&quot;: &quot;Palma de Mallorca&quot;,
+        &quot;postalCode&quot;: &quot;7610&quot;,
+        &quot;countryCode&quot;: &quot;ESP&quot;
+      },
+      &quot;distributionModels&quot;: [
+        &quot;ExpediaCollect&quot;, &quot;HotelCollect&quot;
+      ],
+      &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+      &quot;taxInclusive&quot;: true,
+      &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+      &quot;baseAllocationEnabled&quot;: false,
+      &quot;minLOSThreshold&quot;: 28,
+      &quot;cancellationTime&quot;: &quot;18:00&quot;,
+      &quot;timezone&quot;: &quot;(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna&quot;,
+      &quot;reservationCutOff&quot;: {
+        &quot;time&quot;: &quot;05:00&quot;,
+        &quot;day&quot;: &quot;nextDay&quot;
+      }
+    }
+  ]
+}
+</code></pre>
+<p>Partners can then iterate through their properties by increasing the offset parameter. To get the next 3 properties, partners would issue a GET with offset=3, limit=3</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties?offset=3&amp;limit=3
+</code></pre>
+<p>To get the next results, offset would become 6:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties?offset=6&amp;limit=3
+</code></pre>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-right">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+</body></html>

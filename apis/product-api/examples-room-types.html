@@ -1,0 +1,703 @@
+<!DOCTYPE html><html><head><title>Intro - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/foundation/foundation.magellan.js"></script>
+<script src="/js/Core.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width" id="stickyheader"><div class="large-4 small-6 columns sections text-center"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples-properties.html" class="">Examples Properties</a><a href="/apis/product-api/examples-room-types.html" class="">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html" class="">Examples Rate Plans</a><a href="/apis/product-api/guides.html" class="">Guides</a></div><div class="large-4 small-6gu columns options_header"></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li><a class="sidebar-nav-item" href="#intro">Intro</a></li><li><a class="sidebar-nav-item" href="#single-room-type-read-request-response">Single Room Type Read Request/Response</a></li><li><a class="sidebar-nav-item" href="#all-room-types-read-request-response">All Room Types Read Request/Response</a></li><li><a class="sidebar-nav-item" href="#room-type-create-request-response-with-a-predefined-room-name">Room Type Create Request/Response with a Predefined Room Name</a></li><li><a class="sidebar-nav-item" href="#room-type-create-request-response-with-room-name-attributes">Room Type Create Request/Response with Room Name Attributes</a></li><li><a class="sidebar-nav-item" href="#room-type-create-request-response-with-ignored-room-name-attributes">Room Type Create Request/Response with Ignored Room Name Attributes</a></li><li><a class="sidebar-nav-item" href="#room-type-modify-request-response-changing-predefined-name-code-and-age-categories">Room Type Modify Request/Response, Changing Predefined Name, Code and Age Categories</a></li><li><a class="sidebar-nav-item" href="#modify-room-name-from-using-a-predefined-name-to-using-name-attributes">Modify Room Name from using a Predefined Name to using Name Attributes</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="intro">Intro</h1>
+<p>The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to hotels, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.</p>
+<p>Against the room type resource, partners can retrieve a list of room types or a specific room type. Partners can also create new room types (one at a time), and edit an existing room type (one at a time, full overlay operation).</p>
+<h2 id="single-room-type-read-request-response">Single Room Type Read Request/Response</h2>
+<p>This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bed types, and supporting both smoking and non-smoking</p>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780044/roomTypes/200616960
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 211705,
+    &quot;partnerCode&quot;: &quot;MySuiteCode123&quot;,
+    &quot;name&quot;: {
+      &quot;attributes&quot;: {
+        &quot;typeOfRoom&quot;: &quot;Suite&quot;,
+        &quot;roomClass&quot;: &quot;Deluxe&quot;,
+        &quot;includeBedType&quot;: true,
+        &quot;featuredAmenity&quot;: &quot;Terrace&quot;,
+        &quot;view&quot;: &quot;Ocean View&quot;
+      },
+      &quot;value&quot;: &quot;Deluxe Suite, 1 King Bed with Sofabed, Terrace, Ocean View&quot;
+    },
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;maxOccupants&quot;: 4,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 4
+      }, {
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 3
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.67&quot;,
+        &quot;name&quot;: &quot;1 king and 1 sofa bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }, {
+        &quot;id&quot;: &quot;2.2&quot;,
+        &quot;name&quot;: &quot;Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="all-room-types-read-request-response">All Room Types Read Request/Response</h2>
+<p>This example shows how to do a read request to retrieve all room types under a given property. We&#39;ll illustrate how to add the status param on the request to get all active and inactive room types. In this example, the property has 2 active and 2 inactive room types, so the request will return 4 room types, sorted by resourceId.</p>
+<p>Request:</p>
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes?status=all
+Content-Type: application/json
+Accept: application/json
+Authorization: Basic [your encoded username:password in Base64]
+</code></pre>
+<p>Response:</p>
+<pre><code class="lang-JSON">{
+    &quot;entity&quot;: [
+        {
+            &quot;resourceId&quot;: 204830,
+            &quot;partnerCode&quot;: &quot;Standard Room &quot;,
+            &quot;name&quot;: {
+                &quot;value&quot;: &quot;Standard Room&quot;
+            },
+            &quot;status&quot;: &quot;Inactive&quot;,
+            &quot;maxOccupants&quot;: 2,
+            &quot;occupancyByAge&quot;: [
+                {
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;minAge&quot;: 18,
+                    &quot;maxOccupants&quot;: 2
+                }
+            ],
+            &quot;bedTypes&quot;: [
+                {
+                    &quot;id&quot;: &quot;1.14&quot;,
+                    &quot;name&quot;: &quot;1 king bed&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;1.15&quot;,
+                    &quot;name&quot;: &quot;1 queen bed&quot;
+                }
+            ],
+            &quot;smokingPreferences&quot;: [
+                {
+                    &quot;id&quot;: &quot;2.1&quot;,
+                    &quot;name&quot;: &quot;Non-Smoking&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;2.2&quot;,
+                    &quot;name&quot;: &quot;Smoking&quot;
+                }
+            ]
+        },
+        {
+            &quot;resourceId&quot;: 204832,
+            &quot;partnerCode&quot;: &quot;Superior Room &quot;,
+            &quot;name&quot;: {
+                &quot;value&quot;: &quot;Superior Room&quot;
+            },
+            &quot;status&quot;: &quot;Inactive&quot;,
+            &quot;maxOccupants&quot;: 3,
+            &quot;occupancyByAge&quot;: [
+                {
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;minAge&quot;: 18,
+                    &quot;maxOccupants&quot;: 2
+                },
+                {
+                    &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+                    &quot;minAge&quot;: 2,
+                    &quot;maxOccupants&quot;: 2
+                },
+                {
+                    &quot;ageCategory&quot;: &quot;Infant&quot;,
+                    &quot;minAge&quot;: 0,
+                    &quot;maxOccupants&quot;: 2
+                }
+            ],
+            &quot;bedTypes&quot;: [
+                {
+                    &quot;id&quot;: &quot;1.14&quot;,
+                    &quot;name&quot;: &quot;1 king bed&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;1.15&quot;,
+                    &quot;name&quot;: &quot;1 queen bed&quot;
+                }
+            ],
+            &quot;smokingPreferences&quot;: [
+                {
+                    &quot;id&quot;: &quot;2.1&quot;,
+                    &quot;name&quot;: &quot;Non-Smoking&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;2.2&quot;,
+                    &quot;name&quot;: &quot;Smoking&quot;
+                }
+            ]
+        },
+        {
+            &quot;resourceId&quot;: 209857,
+            &quot;partnerCode&quot;: &quot;Deluxe Suite&quot;,
+            &quot;name&quot;: {
+                &quot;attributes&quot;: {
+                    &quot;typeOfRoom&quot;: &quot;Suite&quot;,
+                    &quot;roomClass&quot;: &quot;Deluxe&quot;
+                },
+                &quot;value&quot;: &quot;Deluxe Suite&quot;
+            },
+            &quot;status&quot;: &quot;Active&quot;,
+            &quot;maxOccupants&quot;: 3,
+            &quot;occupancyByAge&quot;: [
+                {
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;minAge&quot;: 17,
+                    &quot;maxOccupants&quot;: 2
+                },
+                {
+                    &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+                    &quot;minAge&quot;: 0,
+                    &quot;maxOccupants&quot;: 2
+                }
+            ],
+            &quot;bedTypes&quot;: [
+                {
+                    &quot;id&quot;: &quot;1.14&quot;,
+                    &quot;name&quot;: &quot;1 king bed&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;1.21&quot;,
+                    &quot;name&quot;: &quot;2 double beds&quot;
+                }
+            ],
+            &quot;smokingPreferences&quot;: [
+                {
+                    &quot;id&quot;: &quot;2.1&quot;,
+                    &quot;name&quot;: &quot;Non-Smoking&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;2.2&quot;,
+                    &quot;name&quot;: &quot;Smoking&quot;
+                }
+            ]
+        },
+        {
+            &quot;resourceId&quot;: 211705,
+            &quot;partnerCode&quot;: &quot;211705&quot;,
+            &quot;name&quot;: {
+                &quot;value&quot;: &quot;Junior Suite&quot;
+            },
+            &quot;status&quot;: &quot;Active&quot;,
+            &quot;maxOccupants&quot;: 3,
+            &quot;occupancyByAge&quot;: [
+                {
+                    &quot;ageCategory&quot;: &quot;Adult&quot;,
+                    &quot;minAge&quot;: 18,
+                    &quot;maxOccupants&quot;: 2
+                },
+                {
+                    &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+                    &quot;minAge&quot;: 0,
+                    &quot;maxOccupants&quot;: 2
+                }
+            ],
+            &quot;bedTypes&quot;: [
+                {
+                    &quot;id&quot;: &quot;1.14&quot;,
+                    &quot;name&quot;: &quot;1 king bed&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;1.21&quot;,
+                    &quot;name&quot;: &quot;2 double beds&quot;
+                }
+            ],
+            &quot;smokingPreferences&quot;: [
+                {
+                    &quot;id&quot;: &quot;2.1&quot;,
+                    &quot;name&quot;: &quot;Non-Smoking&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;2.2&quot;,
+                    &quot;name&quot;: &quot;Smoking&quot;
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<h2 id="room-type-create-request-response-with-a-predefined-room-name">Room Type Create Request/Response with a Predefined Room Name</h2>
+<p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
+<p>This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking</p>
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;partnerCode&quot;: &quot;JS001&quot;,
+  &quot;name&quot;: {
+    &quot;value&quot;: &quot;Junior Suite&quot;
+  },
+  &quot;maxOccupants&quot;: 5,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18,
+      &quot;maxOccupants&quot;: 2
+    }, {
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;minAge&quot;: 3,
+      &quot;maxOccupants&quot;: 2
+    }, {
+      &quot;ageCategory&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 2
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;1.88&quot;,
+      &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1&quot;,
+      &quot;name&quot;: &quot;Non-Smoking&quot;
+    }
+  ]
+}
+</code></pre>
+<p>When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 201171339,
+    &quot;partnerCode&quot;: &quot;JS001&quot;,
+    &quot;name&quot;: {
+      &quot;value&quot;: &quot;Junior Suite&quot;
+    },
+    &quot;status&quot;: &quot;Inactive&quot;,
+    &quot;maxOccupants&quot;: 5,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 2
+      }, {
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;minAge&quot;: 3,
+        &quot;maxOccupants&quot;: 2
+      }, {
+        &quot;ageCategory&quot;: &quot;Infant&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 2
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.88&quot;,
+        &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="room-type-create-request-response-with-room-name-attributes">Room Type Create Request/Response with Room Name Attributes</h2>
+<p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
+<p>This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking</p>
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;partnerCode&quot;: &quot;JS001&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Condo&quot;,
+      &quot;bedroomDetails&quot;: &quot;3 Bedrooms&quot;,
+      &quot;featuredAmenity&quot;: &quot;2 Bathrooms&quot;,
+      &quot;view&quot;: &quot;Partial Ocean View&quot;
+    }
+  },
+  &quot;maxOccupants&quot;: 8,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18,
+      &quot;maxOccupants&quot;: 7
+    }, {
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;minAge&quot;: 3,
+      &quot;maxOccupants&quot;: 5
+    }, {
+      &quot;ageCategory&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 2
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;1.149&quot;,
+      &quot;name&quot;: &quot;3 double and 1 sofa bed&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1&quot;,
+      &quot;name&quot;: &quot;Non-Smoking&quot;
+    }
+  ]
+}
+</code></pre>
+<p>When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 201171339,
+    &quot;partnerCode&quot;: &quot;JS001&quot;,
+    &quot;name&quot;: {
+      &quot;attributes&quot;: {
+        &quot;typeOfRoom&quot;: &quot;Condo&quot;,
+        &quot;bedroomDetails&quot;: &quot;3 Bedrooms&quot;,
+        &quot;featuredAmenity&quot;: &quot;2 Bathrooms&quot;,
+        &quot;view&quot;: &quot;Partial Ocean View&quot;
+      },
+      &quot;value&quot;: &quot;Condo, 3 Bedrooms, 2 Bathrooms, Partial Ocean View&quot;
+    },
+    &quot;maxOccupants&quot;: 8,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 7
+      }, {
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;minAge&quot;: 3,
+        &quot;maxOccupants&quot;: 5
+      }, {
+        &quot;ageCategory&quot;: &quot;Infant&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 2
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.149&quot;,
+        &quot;name&quot;: &quot;3 double and 1 sofa bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="room-type-create-request-response-with-ignored-room-name-attributes">Room Type Create Request/Response with Ignored Room Name Attributes</h2>
+<p>When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our Guides section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.
+Request:</p>
+<pre><code class="lang-JSON">{
+  &quot;partnerCode&quot;: &quot;JS001&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Studio&quot;,
+      &quot;roomClass&quot;: &quot;Basic&quot;,
+      &quot;includeBedType&quot;: true,
+      &quot;bedroomDetails&quot;: &quot;1 Bedroom&quot;,
+      &quot;includeSmokingPref&quot;: true,
+      &quot;accessibility&quot;: true,
+      &quot;view&quot;: &quot;Beach View&quot;,
+      &quot;featuredAmenity&quot;: &quot;Hot Tub&quot;,
+      &quot;area&quot;: &quot;Corner&quot;,
+      &quot;customLabel&quot;: &quot;Blue Room&quot;
+    }
+  },
+  &quot;maxOccupants&quot;: 8,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18,
+      &quot;maxOccupants&quot;: 7
+    }, {
+      &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+      &quot;minAge&quot;: 3,
+      &quot;maxOccupants&quot;: 5
+    }, {
+      &quot;ageCategory&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 2
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;1.15&quot;,
+      &quot;name&quot;: &quot;1 queen bed&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1&quot;,
+      &quot;name&quot;: &quot;Non-Smoking&quot;
+    }
+  ]
+}
+</code></pre>
+<p>The response will not include bedroom details, view, featured amenity and area as we cannot used all attributes to build a name. </p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 201171339,
+    &quot;partnerCode&quot;: &quot;JS001&quot;,
+    &quot;name&quot;: {
+      &quot;attributes&quot;: {
+        &quot;typeOfRoom&quot;: &quot;Studio&quot;,
+        &quot;roomClass&quot;: &quot;Basic&quot;,
+        &quot;includeBedType&quot;: true,
+        &quot;includeSmokingPref&quot;: true,
+        &quot;accessibility&quot;: true,
+        &quot;customLabel&quot;: &quot;Blue Room&quot;
+      },
+      &quot;value&quot;: &quot;Basic Studio, 1 Queen Bed, Accessible, Non Smoking (Blue Room)&quot;
+    },
+    &quot;maxOccupants&quot;: 8,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 7
+      }, {
+        &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+        &quot;minAge&quot;: 3,
+        &quot;maxOccupants&quot;: 5
+      }, {
+        &quot;ageCategory&quot;: &quot;Infant&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 2
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.15&quot;,
+        &quot;name&quot;: &quot;1 queen bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="room-type-modify-request-response-changing-predefined-name-code-and-age-categories">Room Type Modify Request/Response, Changing Predefined Name, Code and Age Categories</h2>
+<p>Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.</p>
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;resourceId&quot;: 201171339,
+  &quot;partnerCode&quot;: &quot;JS002&quot;,
+  &quot;name&quot;: {
+    &quot;value&quot;: &quot;Executive Suite&quot;
+  },
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;maxOccupants&quot;: 5,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18,
+      &quot;maxOccupants&quot;: 2
+    }, {
+      &quot;ageCategory&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 2
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;1.88&quot;,
+      &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1&quot;,
+      &quot;name&quot;: &quot;Non-Smoking&quot;
+    }
+  ]
+}
+</code></pre>
+<p>Response look like</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 201171339,
+    &quot;partnerCode&quot;: &quot;JS002&quot;,
+    &quot;name&quot;: {
+      &quot;value&quot;: &quot;Executive Suite&quot;
+    },
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;maxOccupants&quot;: 5,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 2
+      }, {
+        &quot;ageCategory&quot;: &quot;Infant&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 2
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.88&quot;,
+        &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+<h2 id="modify-room-name-from-using-a-predefined-name-to-using-name-attributes">Modify Room Name from using a Predefined Name to using Name Attributes</h2>
+<p>Leveraging the Create example from above, predefined name is modified to a new room name built from attributes, child age category is removed, and partner code is changed.</p>
+<p>The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.</p>
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+Accept: application/json
+Content-Type: application/json
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;resourceId&quot;: 201171339,
+  &quot;partnerCode&quot;: &quot;JS002&quot;,
+  &quot;name&quot;: {
+    &quot;roomNameAttributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Suite&quot;,
+      &quot;roomClass&quot;: &quot;Executive&quot;,
+      &quot;bedroomDetails&quot;: &quot;1 Bedroom&quot;,
+      &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;,
+      &quot;view&quot;: &quot;City View&quot;
+    },
+    &quot;value&quot;: &quot;Executive Suite&quot;
+  },
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;maxOccupants&quot;: 5,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18,
+      &quot;maxOccupants&quot;: 2
+    }, {
+      &quot;ageCategory&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 2
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;1.88&quot;,
+      &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1&quot;,
+      &quot;name&quot;: &quot;Non-Smoking&quot;
+    }
+  ]
+}
+</code></pre>
+<p>Response looks like</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 201171339,
+    &quot;partnerCode&quot;: &quot;JS002&quot;,
+    &quot;name&quot;: {
+      &quot;attributes&quot;: {
+        &quot;typeOfRoom&quot;: &quot;Suite&quot;,
+        &quot;roomClass&quot;: &quot;Executive&quot;,
+        &quot;bedroomDetails&quot;: &quot;1 Bedroom&quot;,
+        &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;,
+        &quot;view&quot;: &quot;City View&quot;
+      },
+      &quot;value&quot;: &quot;Executive Suite, 1 Bedroom, Jetted Tub, City View&quot;
+    },
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;maxOccupants&quot;: 5,
+    &quot;occupancyByAge&quot;: [
+      {
+        &quot;ageCategory&quot;: &quot;Adult&quot;,
+        &quot;minAge&quot;: 18,
+        &quot;maxOccupants&quot;: 2
+      }, {
+        &quot;ageCategory&quot;: &quot;Infant&quot;,
+        &quot;minAge&quot;: 0,
+        &quot;maxOccupants&quot;: 2
+      }
+    ],
+    &quot;bedTypes&quot;: [
+      {
+        &quot;id&quot;: &quot;1.88&quot;,
+        &quot;name&quot;: &quot;2 queen and 1 sofa bed&quot;
+      }
+    ],
+    &quot;smokingPreferences&quot;: [
+      {
+        &quot;id&quot;: &quot;2.1&quot;,
+        &quot;name&quot;: &quot;Non-Smoking&quot;
+      }
+    ]
+  }
+}
+</code></pre>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-right">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+</body></html>
