@@ -5,9 +5,6 @@ var Core = Core || {
     
     init: function() {
         var _this = this;
-        //this.createCodeOptions(this.getCodeExamples());
-        //this.setOption();
-        //this.changeOption();
         this.determineSection();
         this.setMenuFocus();
         this.demoForm();
@@ -29,68 +26,6 @@ var Core = Core || {
         }
 
         setTimeout(Core.checkChanges, 500);
-    },
-
-    createCodeOptions: function(langs) {
-        langs.forEach(function(lang) {
-            var option = $("<div></div>").addClass("option").html(lang).attr("data-option", lang);
-            $(".options_header").append(option);
-        });
-    },
-
-    getCodeExamples: function() {
-        var langs = [];
-        $(".hljs").each(function(index, element) {
-            element.className.split(' ').forEach(function(classname) {
-                if (classname.indexOf('lang-') == 0) {
-                    langs.push(classname.substr(5));
-                }
-            });
-        });
-        return langs;
-    },
-
-    setOption: function() {
-        var _this = this;
-        var option_name = 'option ' + $(location).attr('pathname');
-        if(localStorage.getItem(option_name) == null) {
-            var selectedOption = $('.options_header .option.active').data('option');
-            if(selectedOption != undefined) {
-                localStorage.setItem(option_name, selectedOption);
-                console.log('should set one to localStorage');
-            } else {
-                _this.selectFirstOption(option_name);
-                console.log('its selecting the first one');
-            }
-        } else {
-            var setOption = localStorage.getItem(option_name);
-            _this.displayOption(setOption);
-        }
-    },
-
-    displayOption: function(setOption) {
-        $('.options_header .option').removeClass('active');
-        var option = $('.options_header .option[data-option="'+setOption+'"]');
-        option.addClass('active');
-        $(".content code.hljs[class*='lang-']").hide();
-        $(".content code.hljs.lang-" + option.data('option')).show();
-    },
-
-    selectFirstOption: function(option_name) {
-        // select the first one, and set the localStorage
-        var firstOption = $('.options_header .option').first();
-        this.displayOption(firstOption.data('option'));
-        localStorage.setItem(option_name, firstOption.data('option'));
-    },
-
-    changeOption: function() {
-        var _this = this;
-        var option_name = 'option ' + $(location).attr('pathname');
-        $('.options_header .option').on('click', function() {
-            var option = $(this).data('option');
-            _this.displayOption(option);
-            localStorage.setItem(option_name, option);
-        });
     },
 
     determineSection: function() {

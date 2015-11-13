@@ -80,7 +80,7 @@ h4 > a:hover {
   line-height: 20px;
   list-style: none;
   margin: 0 0 150px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .sidebar-nav-items li {
   line-height: 20px;
@@ -122,29 +122,6 @@ h4 > a:hover {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.options_header {
-  text-align: right;
-  line-height: 40px;
-}
-.option {
-  cursor: pointer;
-  color: #888888;
-  padding: 0px 10px;
-  margin: 5px 5px;
-  border-radius: 4px;
-  font-size: 100%;
-  line-height: 30px;
-  display: inline-block;
-}
-.option:hover {
-  color: #FFFFFF;
-}
-.option.active {
-  background: #FEC633;
-  border-color: #FEC633;
-  color: #FFFFFF;
-  text-shadow: 0 0 0 rgba(65, 66, 69, 0.8);
-}
 .content_section {
   max-width: 100%;
 }
@@ -165,7 +142,7 @@ h4 > a:hover {
   font-weight: 500;
   font-family: Roboto, sans-serif;
   line-height: 40px;
-  margin-left: 20px;
+  margin-left: 5px;
 }
 .sections a {
   float: left;
