@@ -82,7 +82,7 @@ var Core = Core || {
             }
             timer = setTimeout(checkNow, 300);
 
-            var $el = $('#stickyheader');
+            var $el = $('.stickyheader');
             if ($(this).scrollTop() >= 60){
                 $el.css({'top': '0px'});
             }

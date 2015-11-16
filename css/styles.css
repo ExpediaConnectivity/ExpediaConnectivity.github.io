@@ -230,7 +230,7 @@ input.demoInput {
   max-width: 100%;
   width: 100%;
 }
-#stickyheader {
+.stickyheader {
   background-color: #272B2D;
   z-index: 100;
   height: 40px;
