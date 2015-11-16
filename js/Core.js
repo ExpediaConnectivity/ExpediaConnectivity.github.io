@@ -103,10 +103,16 @@ var Core = Core || {
     },
 
     resizeMenuNav: function() {
+        var sidebar = $(".sidebar-nav");
+        if (sidebar.length == 0) {
+            return;
+        }
         var size = $(window).height();
         var footerSize = $(window).scrollTop() + $(window).height() - $(".footer").offset().top;
-        if (footerSize > 0) size -= footerSize;
-        size -= ($(".sidebar-nav").offset().top - $(window).scrollTop());
+        if (footerSize > 0) {
+            size -= footerSize;
+        }
+        size -= sidebar.offset().top - $(window).scrollTop();
         $(".sidebar-nav-items").css("max-height", size);
     },
 

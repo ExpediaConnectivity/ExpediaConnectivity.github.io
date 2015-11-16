@@ -23,7 +23,7 @@
 <li>Each rate plan is associated with a single cancellation policy and a single set of additional guest amounts.
 The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.</li>
 </ul>
-<h1 id="api-principles-standards">API Principles &amp; Standards</h1>
+<h1 id="api-principles-amp-standards">API Principles &amp; Standards</h1>
 <ul>
 <li><strong>JSON</strong> : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.</li>
 <li><strong>Secure HTTP</strong> : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.</li>
@@ -199,7 +199,7 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
             entity,
             new ParameterizedTypeReference&lt;ResponseWrapperDTO&lt;ProductDTO&gt;&gt;() {});
 </code></pre>
-<h1 id="understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</h1>
+<h1 id="understanding-cancellation-amp-change-policy">Understanding Cancellation &amp; Change Policy</h1>
 <p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the rate to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
 <table>
 <thead>
@@ -294,7 +294,7 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
 <p>For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.</p>
 <h1 id="how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</h1>
 <p>Need to give some info on that - to complete.</p>
-<h1 id="understanding-expedia-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</h1>
+<h1 id="understanding-expedia-39-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</h1>
 <p>Need to give some more info on that - to complete</p>
 <h1 id="optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</h1>
 <p>In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in Section 4.4. Some of the fields cannot be set by the user; these will default to values defined by Expedia. </p>
