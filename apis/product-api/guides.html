@@ -14,7 +14,7 @@
         });
         Core.init();
     });
-</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples-properties.html" class="">Examples Properties</a><a href="/apis/product-api/examples-room-types.html" class="">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html" class="">Examples Rate Plans</a><a href="/apis/product-api/guides.html" class="">Guides</a></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth1"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth1"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth1"><a class="sidebar-nav-item" href="#how-to-use-modify-operation">How to use modify operation</a></li><li class="depth1"><a class="sidebar-nav-item" href="#how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</a></li><li class="depth1"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h1>
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><div class="large-2 small-6 columns logo"><a href="/"><img src="/images/epc-logo.png"/></a></div><div id="apititle" class="large-4 small-4 end columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html" class="">Quickstart</a><a href="/apis/product-api/examples-properties.html" class="">Examples Properties</a><a href="/apis/product-api/examples-room-types.html" class="">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html" class="">Examples Rate Plans</a><a href="/apis/product-api/guides.html" class="">Guides</a></div></div><div class="large-2 small-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth1"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-connectivity-requirements">Basic Connectivity Requirements</a></li><li class="depth1"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth1"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth2"><a class="sidebar-nav-item" href="#single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth1"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth1"><a class="sidebar-nav-item" href="#how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</a></li><li class="depth1"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li></ul></nav></div><div class="row full-width"><div class="large-8 large-offset-2 small-10 small-offset-2 columns content"><h1 id="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h1>
 <p>In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:</p>
 <ul>
 <li>Each property has 0 or more room types</li>
@@ -22,7 +22,10 @@
 <li>Each rate plan belongs to a single room type</li>
 <li>Each rate plan is associated with a single cancellation policy and a single set of additional guest amounts.
 The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.</li>
+<li>Additionally, for most of our partners, their contract requires that they offer a package rate plan for each standalone rate plan made available to Expedia.</li>
 </ul>
+<p>The following example illustrates the model and gives an overview of the type of data that needs to be set at various levels.</p>
+<p><img src="/images/ExpDataModelToday.png" alt="Data Model Overview with an Example"></p>
 <h1 id="api-principles-amp-standards">API Principles &amp; Standards</h1>
 <ul>
 <li><strong>JSON</strong> : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.</li>
@@ -93,6 +96,8 @@ The Product API enables partners to first create a room type, and subsequently c
 <li><strong>Entity</strong> : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. </li>
 <li><strong>Errors</strong> : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.</li>
 </ul>
+<h1 id="basic-connectivity-requirements">Basic Connectivity Requirements</h1>
+<p>Need a paragraph to cover our basic requirements. TLS v1.1 is one, HTTP 1.1 is one as well. TBD.</p>
 <h1 id="http-headers">HTTP Headers</h1>
 <h2 id="format-request">Format – Request</h2>
 <table>
@@ -159,6 +164,10 @@ The Product API enables partners to first create a room type, and subsequently c
 </tr>
 </tbody>
 </table>
+<h1 id="getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</h1>
+<p>By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:</p>
+<pre><code class="lang-HTML">/properties?status=all.
+</code></pre>
 <h1 id="basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</h1>
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
 <h2 id="entity">Entity</h2>
@@ -189,10 +198,37 @@ Simple entity response:</p>
   ]
 }
 </code></pre>
+<h2 id="single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</h2>
+<p>There are two different read operations available against the Product API resources:</p>
+<ul>
+<li>To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}</li>
+<li>To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. </li>
+</ul>
+<p>For example, when requesting a single property, EPS Product API will return the property resource information as part of an Entity object:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: {
+    &quot;resourceId&quot;: 1,
+    ...
+  }
+}
+</code></pre>
+<p>When requesting all properties assigned to a user account, an array of properties is returned:</p>
+<pre><code class="lang-JSON">{
+  &quot;entity&quot;: [
+    {
+      &quot;resourceId&quot;: 1,
+      …
+    }, {
+      &quot;resourceId&quot;: 2,
+      …
+    }
+  ]
+}
+</code></pre>
 <h2 id="entity-vs-errors">Entity vs Errors</h2>
-<p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.
-Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.
-A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
+<p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.</p>
+<p>Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.</p>
+<p>A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
 <pre><code class="lang-Java">   ResponseEntity&lt;ResponseWrapperDTO&lt;ProductDTO&gt;&gt; response = restTemplate.exchange(
             &quot;url&quot;,
             HttpMethod.POST,
@@ -288,10 +324,11 @@ A Java implementation to handle this, using Spring’s RestTemplate, could look 
     ]
   }
 </code></pre>
-<h1 id="how-to-use-modify-operation">How to use modify operation</h1>
+<h1 id="modify-as-a-full-overlay">Modify as a full overlay</h1>
 <p>The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.</p>
 <p>Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.</p>
 <p>For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.</p>
+<p>It is currently not possible to make partial updates to a resource.</p>
 <h1 id="how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</h1>
 <p>Need to give some info on that - to complete.</p>
 <h1 id="understanding-expedia-39-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</h1>
