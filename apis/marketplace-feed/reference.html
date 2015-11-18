@@ -196,19 +196,26 @@
 <td>The number of extra rooms the forecast suggests we could sell.</td>
 <td><code>5</code></td>
 </tr>
+<tr>
+<td><code>roomTypeId</code></td>
+<td>String</td>
+<td>The Expedia room type ID we suggest adding rooms to.</td>
+<td><code>&quot;12345&quot;</code></td>
+</tr>
 </tbody>
 </table>
 <h6 id="example-missing-inventory-message">Example Missing Inventory Message</h6>
 <pre><code>{
-    &quot;id&quot;: &quot;d387b4e9a5e23175d6c48073af4ea4c565287272&quot;,
+    &quot;id&quot;: &quot;2379cce04a79d3669717de302c8a45bf20f0cf5e&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Missing Inventory&quot;,
-    &quot;shortMessage&quot;: &quot;On 2015-11-12 you can sell 5 more rooms with Expedia. Add inventory now.&quot;,
-    &quot;longMessage&quot;: &quot;On 2015-11-12 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;,
+    &quot;shortMessage&quot;: &quot;On Nov 19, 2015 you can sell 5 more rooms with Expedia. Add inventory now.&quot;,
+    &quot;longMessage&quot;: &quot;On Nov 19, 2015 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;,
     &quot;values&quot;: {
-        &quot;date&quot;: &quot;2015-11-12&quot;,
+        &quot;date&quot;: &quot;2015-11-19&quot;,
         &quot;currentRooms&quot;: 10,
-        &quot;roomsToAdd&quot;: 5
+        &quot;roomsToAdd&quot;: 5,
+        &quot;roomTypeId&quot;: &quot;12345&quot;
     },
     &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
 }
