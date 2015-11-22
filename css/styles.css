@@ -254,17 +254,18 @@ code.hljs {
   padding-left: 0;
   margin-bottom: 40px;
 }
-#sitenav a {
+#sitenav a.logo {
   font-size: 0.8em;
   color: #FFF;
-  text-align: center;
   font-family: Roboto, sans-serif;
+  line-height: 60px;
+  margin-left: 10px;
   display: inline-block;
-  height: 60px;
-  background-image: url(/images/DevLogo2.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  padding: 0;
+  vertical-align: middle;
+}
+#sitenav a.logo img {
+  height: 37px;
 }
 #sitenav a:hover {
   text-decoration: none;
@@ -274,6 +275,7 @@ code.hljs {
   display: inline-block;
   padding: 0;
   vertical-align: middle;
+  height: 60px;
 }
 .full-width {
   max-width: 100%;
