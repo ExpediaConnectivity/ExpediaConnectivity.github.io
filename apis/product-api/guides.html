@@ -14,7 +14,7 @@
         });
         Core.init();
     });
-</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><a class="logo" href="/"><img src="/images/DevLogo2.png"/></a><div id="apititle" class="large-offset-2 small-offset-2 columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html">Quickstart</a><a href="/apis/product-api/examples-properties.html">Examples Properties</a><a href="/apis/product-api/examples-room-types.html">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html">Examples Rate Plans</a><a href="/apis/product-api/guides.html">Guides</a></div></div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth1"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-connectivity-requirements">Basic Connectivity Requirements</a></li><li class="depth1"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth1"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth2"><a class="sidebar-nav-item" href="#single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth1"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth1"><a class="sidebar-nav-item" href="#how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</a></li><li class="depth1"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-10 large-offset-2 columns content"><h1 id="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h1>
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><a class="logo" href="/"><img src="/images/DevLogo2.png"/></a><div id="apititle" class="large-offset-2 small-offset-2 columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html">Quickstart</a><a href="/apis/product-api/examples-properties.html">Examples Properties</a><a href="/apis/product-api/examples-room-types.html">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html">Examples Rate Plans</a><a href="/apis/product-api/guides.html">Guides</a></div></div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth1"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth1"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth2"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth1"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth1"><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth2"><a class="sidebar-nav-item" href="#single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth1"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth1"><a class="sidebar-nav-item" href="#expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</a></li><li class="depth2"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</a></li><li class="depth2"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</a></li><li class="depth2"><a class="sidebar-nav-item" href="#creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</a></li><li class="depth2"><a class="sidebar-nav-item" href="#what-if-my-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerprogram-">What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?</a></li><li class="depth1"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</a></li><li class="depth1"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-10 large-offset-2 columns content"><h1 id="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h1>
 <p>In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:</p>
 <ul>
 <li>Each property has 0 or more room types</li>
@@ -28,8 +28,9 @@ The Product API enables partners to first create a room type, and subsequently c
 <p><img src="/images/ExpDataModelToday.png" alt="Data Model Overview with an Example"></p>
 <h1 id="api-principles-amp-standards">API Principles &amp; Standards</h1>
 <ul>
+<li><strong>HTTP 1.1</strong> : Our API only supports HTTP 1.1. Requests made with HTTP 1.0 explicitly will be denied.</li>
 <li><strong>JSON</strong> : The service will return JSON documents for read, create, and update requests, and accept JSON payloads for create and update requests.</li>
-<li><strong>Secure HTTP</strong> : The API is available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations.</li>
+<li><strong>Secure HTTP w/TLS v1.1+</strong> : The API is only available via HTTPS, and supports GET (read), POST (create), and PUT (update) operations. Our API will not accept connections using SSL or TLS v1.0 protocol. We will only establish connections with TLS v1.1+ protocol.</li>
 <li><strong>REST</strong> : The service adheres to REST principles and exposes three resources: Rate Plans, Room Types, and Properties.</li>
 <li><strong>HTTP Status Code</strong> : The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: </li>
 </ul>
@@ -79,7 +80,7 @@ The Product API enables partners to first create a room type, and subsequently c
 </tr>
 <tr>
 <td>415</td>
-<td>Unsupported media type (only JSON supported)</td>
+<td>Unsupported media type (only JSON is supported)</td>
 </tr>
 <tr>
 <td>500</td>
@@ -87,17 +88,15 @@ The Product API enables partners to first create a room type, and subsequently c
 </tr>
 <tr>
 <td>503</td>
-<td>Internal system error (should be retried, following logic specified in HTTP response header)</td>
+<td>Internal system error (should be retried)</td>
 </tr>
 </tbody>
 </table>
 <ul>
-<li><strong>MUST-IGNORE</strong> : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. </li>
+<li><strong>MUST-IGNORE</strong> : The service is constantly evolving and we expect consumers of our service to enforce a must-ignore policy. If the Product API starts returning additional data elements in responses, partners should ignore the data elements they do not need. Partners should also be able to serve the additional data back in an update request, as our update requests are full overlay, and failure to provide additional data back in update requests could cause data to be removed.</li>
 <li><strong>Entity</strong> : All responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make responses generic across different operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. When partners integrate with our APIs, in most cases, they will use serialization/deserialization to deal with messages natively, using the programming language of their choice. </li>
 <li><strong>Errors</strong> : Alternatively, if the request produces errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.</li>
 </ul>
-<h1 id="basic-connectivity-requirements">Basic Connectivity Requirements</h1>
-<p>Need a paragraph to cover our basic requirements. TLS v1.1 is one, HTTP 1.1 is one as well. TBD.</p>
 <h1 id="http-headers">HTTP Headers</h1>
 <h2 id="format-request">Format – Request</h2>
 <table>
@@ -132,7 +131,7 @@ The Product API enables partners to first create a room type, and subsequently c
 <td>Request-ID</td>
 <td>String</td>
 <td>Optional</td>
-<td>Request-ID: UUID This request ID can be provided by the partner and can be referenced later on for troubleshooting purposes. If it is not provided in request, API will generate one and return it in the response. If provided, API will return the same header in the response.</td>
+<td>Can be provided by the partner and can be referenced later on for troubleshooting purposes. When provided by the partner, it can be anything, and no validations will be performed to insure uniqueness of this ID. If it is not provided in request, API will generate a UUID and return it in the response.</td>
 </tr>
 </tbody>
 </table>
@@ -155,23 +154,26 @@ The Product API enables partners to first create a room type, and subsequently c
 <tr>
 <td>Request-ID</td>
 <td>String</td>
-<td>Partner-provided request identifier. If provided in the request, will be returned in the response</td>
+<td>Partner-provided request identifier. If it was not provided in the request, Expedia will generate a UUID and return it in the response</td>
 </tr>
 <tr>
 <td>Transaction-ID</td>
 <td>GUID</td>
-<td>Unique transaction ID generated by Expedia for all messages. Expedia recommends storing this identifier. Can be used to reference messages when troubleshooting with Expedia.</td>
+<td>Unique transaction ID generated by Expedia for all messages. Expedia recommends storing this identifier. Can be used to reference messages when troubleshooting with Expedia</td>
 </tr>
 </tbody>
 </table>
 <h1 id="getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</h1>
 <p>By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:</p>
-<pre><code class="lang-HTML">/properties?status=all.
+<pre><code class="lang-HTML">/properties?status=all
+</code></pre>
+<p>This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:</p>
+<pre><code class="lang-HTML">/products/v1/properties/123/roomTypes?status=all
 </code></pre>
 <h1 id="basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</h1>
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
 <h2 id="entity">Entity</h2>
-<p>The entities we support with this API are room type, rate plan and property. These will be described in details in subsequent sections.</p>
+<p>The entities supported by the product API are rate plans, room types and properties.</p>
 <p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS-Product and EPS-Promo services. </p>
 <p>Consider the following code in Java:</p>
 <pre><code class="lang-Java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
@@ -236,7 +238,7 @@ Simple entity response:</p>
             new ParameterizedTypeReference&lt;ResponseWrapperDTO&lt;ProductDTO&gt;&gt;() {});
 </code></pre>
 <h1 id="understanding-cancellation-amp-change-policy">Understanding Cancellation &amp; Change Policy</h1>
-<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the rate to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
+<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
 <table>
 <thead>
 <tr>
@@ -261,9 +263,9 @@ Simple entity response:</p>
 </table>
 <p>Cancellation and change policy is optional when creating a new rate plan.</p>
 <ul>
-<li>If provided, please indicate the cancellation policy values including the deadline for cancellation in hours, and the cancellation penalty.</li>
-<li>If no cancellation policy is provided in a create rate plan request, we will default to select the one which already exists, is refundable, and was most recently used by a standalone active rate plan.</li>
-<li>If no cancellation policy can be found due to not having any active standalone rate plans, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. </li>
+<li>If provided, partners are required to provide at least one deadline in hours, and a cancellation penalty.</li>
+<li>If no cancellation policy is provided in a create rate plan request, Expedia will try to select one which already exists, is refundable, and was most recently used by an active rate plan of the same type (standalone, package or corporate)</li>
+<li>If no cancellation policy can be found due to not having any active rate plan of the required type, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. </li>
 </ul>
 <p>When providing a cancel policy, partners can provide one or two defaultPenalties object.</p>
 <ul>
@@ -329,12 +331,77 @@ Simple entity response:</p>
 <p>Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.</p>
 <p>For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.</p>
 <p>It is currently not possible to make partial updates to a resource.</p>
-<h1 id="how-is-expedia-traveler-preference-reflected-in-the-rate-plan-resource">How is Expedia Traveler Preference Reflected in the Rate Plan Resource</h1>
-<p>Need to give some info on that - to complete.</p>
-<h1 id="understanding-expedia-39-s-logic-around-room-name-attributes">Understanding Expedia&#39;s Logic Around Room Name Attributes</h1>
-<p>Need to give some more info on that - to complete</p>
+<h1 id="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</h1>
+<p>Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.</p>
+<p>In order to be able to offer this option to their customers, Expedia requires from the participating properties that they allow their rate plans to be sold either as ExpediaCollect, where Expedia will collect payment from customer at time of booking, or HotelCollect, where the property will collect payment from the customer at time of check out.</p>
+<h2 id="identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</h2>
+<p>To identify if a property is enabled on the program, the property resource will return an array of 2 distributionModels: ExpediaCollect and HotelCollect:</p>
+<pre><code class="lang-JSON">        &quot;distributionModels&quot;: [
+            &quot;ExpediaCollect&quot;,
+            &quot;HotelCollect&quot;
+        ],
+</code></pre>
+<h2 id="identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</h2>
+<p>When properties have opted in the program, all their standalone rate plans are required to be enabled for the ExpediaTravelerPreference program. It will translate in having 2 different distribution rules configured for each rate plan. For example, when doing a GET on a rate plan enabled for the program, something like this would be returned:</p>
+<pre><code class="lang-JSON"> {
+    &quot;entity&quot;: 
+        {
+            &quot;resourceId&quot;: 200086494,
+            ...
+            &quot;distributionRules&quot;: [
+                {
+                    &quot;expediaId&quot;: &quot;200086494&quot;,
+                    &quot;partnerCode&quot;: &quot;ABC123&quot;,
+                    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+                    &quot;manageable&quot;: true,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.25,
+                        &quot;minAmount&quot;: 20
+                    }
+                },
+                {
+                    &quot;expediaId&quot;: &quot;200086494A&quot;,
+                    &quot;partnerCode&quot;: &quot;DEF123&quot;,
+                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+                    &quot;manageable&quot;: false,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.25
+                    }
+                }
+            ],
+            ...
+                }
+}
+</code></pre>
+<h2 id="creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</h2>
+<p>When a property opted in the program, all its standalone rate plans are requirement to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn&#39;t have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique to this specific rate plan. Example:</p>
+<pre><code class="lang-JSON">{
+        &quot;distributionRules&quot;: [
+            {
+                &quot;partnerCode&quot;: &quot;A123&quot;,
+                &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
+            },
+            {
+                &quot;partnerCode&quot;: &quot;D123&quot;,
+                &quot;distributionModel&quot;: &quot;HotelCollect&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<p>This will create a rate plan with these 2 codes, and will default everything else.</p>
+<h2 id="what-if-my-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerprogram-">What if my System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerProgram?</h2>
+<p>For our partners that need to create 2 distinct rate plans to support the ExpediaTravelerPreferenceProgram, they will need to combine these into 1 rate plan creation request to Expedia, and they should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.</p>
+<h1 id="understanding-expedia-39-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</h1>
+<p>When naming their room types, partners using the room type resource are required to provide the name in one of 2 ways:</p>
+<ul>
+<li>Use one of the predefined room names</li>
+<li>Building a name from room-level attributes</li>
+</ul>
+<p>TO COMPLETE</p>
 <h1 id="optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</h1>
-<p>In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in Section 4.4. Some of the fields cannot be set by the user; these will default to values defined by Expedia. </p>
+<p>In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the reference section. </p>
+<p>Some of the fields cannot be set by the user; these will default to values defined by Expedia. </p>
 <p>The create response will contain all the fields originally provided in the request. It also includes the default values of the fields that were not provided in the request. If an error occurred, the response contains one or more errors.</p>
 <p><em>About optional fields</em>: some optional fields may not have any values defined in the Expedia system. In this case the fields are omitted completely in the response.</p>
 <p><em>About fields documented as not accepted in request, but returned in response</em>: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not.</p>
