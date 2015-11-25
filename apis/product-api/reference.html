@@ -1,0 +1,2193 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>EPS Product API - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/foundation/foundation.magellan.js"></script>
+<script src="/js/Core.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><a class="logo" href="/"><img src="/images/DevLogo2.png"/></a><div id="apititle" class="large-offset-2 small-offset-2 columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html">Quickstart</a><a href="/apis/product-api/examples-properties.html">Examples Properties</a><a href="/apis/product-api/examples-room-types.html">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html">Examples Rate Plans</a><a href="/apis/product-api/guides.html">Guides</a><a href="/apis/product-api/reference.html">Reference</a></div></div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#eps-product-api">EPS Product API</a></li><li class="depth2"><a class="sidebar-nav-item" href="#error-codes">Error codes</a></li><li class="depth3"><a class="sidebar-nav-item" href="#renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses">Success Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#property">Property</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-properties">Obtain a list of properties</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-2">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-property">Read a single property</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-2">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-3">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-2">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#room-type">Room type</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-3">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-4">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-3">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-4">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-5">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-4">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-5">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-6">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-5">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-6">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-7">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-6">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#rate-plan">Rate plan</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-rate-plans">Obtain a list of rate plans</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-7">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-8">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-7">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#creates-a-new-rate-plan">Creates a new rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-8">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-9">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-8">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-rate-plan">Read a single rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-9">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-10">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-9">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#modify-an-existing-rate-plan">Modify an existing rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-10">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-11">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-10">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-10 large-offset-2 columns content"><h1 id="eps-product-api">EPS Product API</h1>
+<p>The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs,
+                                    without having to use EPC or contact their market manager. The API also enables our partners to read the
+                                    definition of the room types and rate plans created in the system.</p>
+<h2 id="error-codes">Error codes</h2>
+<h3 id="renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/documentation/api/errors">https://ws.expediaquickconnect.com/v1/documentation/api/errors</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>text/html</code></li>
+</ul>
+<h4 id="success-responses">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>successful operation</td>
+<td>#/definitions/undefined</td>
+</tr>
+</tbody>
+</table>
+<h2 id="property">Property</h2>
+<h3 id="obtain-a-list-of-properties">Obtain a list of properties</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties">https://ws.expediaquickconnect.com/v1/properties</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TUID</td>
+<td>header</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
+<td>false</td>
+<td>string</td>
+<td>active</td>
+</tr>
+<tr>
+<td>offset</td>
+<td>query</td>
+<td>Pagination offset. Integer starting at 0</td>
+<td>false</td>
+<td>string</td>
+<td>0</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>query</td>
+<td>Pagination limit. Integer between 1 and 200.</td>
+<td>false</td>
+<td>string</td>
+<td>20</td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-2">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/PropertyDTO">PropertyDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="read-a-single-property">Read a single property</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-2">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-3">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/PropertyDTO">PropertyDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-2">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="room-type">Room type</h2>
+<h3 id="obtain-a-list-of-room-types">Obtain a list of room types</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-3">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
+<td>false</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-4">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-3">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="creates-a-new-room-type">Creates a new room type</h3>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-4">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property Id</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message describing the new room type</td>
+<td>true</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+  &quot;resourceId&quot;: 0,
+  &quot;partnerCode&quot;: &quot;string&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;string&quot;,
+      &quot;roomClass&quot;: &quot;string&quot;,
+      &quot;includeBedType&quot;: false,
+      &quot;bedroomDetails&quot;: &quot;string&quot;,
+      &quot;includeSmokingPref&quot;: false,
+      &quot;accessibility&quot;: false,
+      &quot;view&quot;: &quot;string&quot;,
+      &quot;featuredAmenity&quot;: &quot;string&quot;,
+      &quot;area&quot;: &quot;string&quot;,
+      &quot;customLabel&quot;: &quot;string&quot;
+    },
+    &quot;value&quot;: &quot;string&quot;
+  },
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;maxOccupants&quot;: 0,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 0
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1 (Non-Smoking) and 2.2 (Smoking)&quot;,
+      &quot;name&quot;: &quot;string&quot;
+    }
+  ]
+}
+</code></pre><h4 id="success-responses-5">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-4">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="read-a-single-room-type">Read a single room type</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-5">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID. Integer</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-6">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-5">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="modify-an-existing-room-type">Modify an existing room type</h3>
+<ul>
+<li>Method: <code>PUT</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-6">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property Id</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message with modified room type</td>
+<td>true</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+  &quot;resourceId&quot;: 0,
+  &quot;partnerCode&quot;: &quot;string&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;string&quot;,
+      &quot;roomClass&quot;: &quot;string&quot;,
+      &quot;includeBedType&quot;: false,
+      &quot;bedroomDetails&quot;: &quot;string&quot;,
+      &quot;includeSmokingPref&quot;: false,
+      &quot;accessibility&quot;: false,
+      &quot;view&quot;: &quot;string&quot;,
+      &quot;featuredAmenity&quot;: &quot;string&quot;,
+      &quot;area&quot;: &quot;string&quot;,
+      &quot;customLabel&quot;: &quot;string&quot;
+    },
+    &quot;value&quot;: &quot;string&quot;
+  },
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;maxOccupants&quot;: 0,
+  &quot;occupancyByAge&quot;: [
+    {
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 0,
+      &quot;maxOccupants&quot;: 0
+    }
+  ],
+  &quot;bedTypes&quot;: [
+    {
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;
+    }
+  ],
+  &quot;smokingPreferences&quot;: [
+    {
+      &quot;id&quot;: &quot;2.1 (Non-Smoking) and 2.2 (Smoking)&quot;,
+      &quot;name&quot;: &quot;string&quot;
+    }
+  ]
+}
+</code></pre><h4 id="success-responses-7">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomTypeDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-6">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="rate-plan">Rate plan</h2>
+<h3 id="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
+<td>false</td>
+<td>string</td>
+<td>active</td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-8">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-7">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="creates-a-new-rate-plan">Creates a new rate plan</h3>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message describing the new rate plan</td>
+<td>true</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+  &quot;resourceId&quot;: 0,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;rateAcquisitionType&quot;: &quot;string&quot;,
+  &quot;distributionRules&quot;: [
+    {
+      &quot;expediaId&quot;: &quot;string&quot;,
+      &quot;partnerCode&quot;: &quot;string&quot;,
+      &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+      &quot;manageable&quot;: false,
+      &quot;compensation&quot;: {
+        &quot;percent&quot;: 0,
+        &quot;minAmount&quot;: 0,
+        &quot;exceptions&quot;: [
+          {
+            &quot;dateStart&quot;: &quot;2015-11-25&quot;,
+            &quot;dateEnd&quot;: &quot;2015-11-25&quot;,
+            &quot;minAmount&quot;: 0,
+            &quot;percent&quot;: 0,
+            &quot;mon&quot;: false,
+            &quot;tue&quot;: false,
+            &quot;wed&quot;: false,
+            &quot;thu&quot;: false,
+            &quot;fri&quot;: false,
+            &quot;sat&quot;: false,
+            &quot;sun&quot;: false
+          }
+        ]
+      }
+    }
+  ],
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;type&quot;: &quot;Standalone&quot;,
+  &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+  &quot;occupantsForBaseRate&quot;: 0,
+  &quot;taxInclusive&quot;: false,
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;string&quot;,
+        &quot;amount&quot;: 0
+      }
+    ],
+    &quot;exceptions&quot;: [
+      {
+        &quot;startDate&quot;: &quot;2015-11-25&quot;,
+        &quot;endDate&quot;: &quot;2015-11-25&quot;,
+        &quot;penalties&quot;: [
+          {
+            &quot;deadline&quot;: 0,
+            &quot;perStayFee&quot;: &quot;string&quot;,
+            &quot;amount&quot;: 0
+          }
+        ]
+      }
+    ]
+  },
+  &quot;additionalGuestAmounts&quot;: [
+    {
+      &quot;dateStart&quot;: &quot;2015-11-25&quot;,
+      &quot;dateEnd&quot;: &quot;2015-11-25&quot;,
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;amount&quot;: 0
+    }
+  ],
+  &quot;valueAddInclusions&quot;: [
+    &quot;string&quot;
+  ],
+  &quot;minLOSDefault&quot;: 0,
+  &quot;maxLOSDefault&quot;: 0,
+  &quot;minAdvBookDays&quot;: 0,
+  &quot;maxAdvBookDays&quot;: 0,
+  &quot;bookDateStart&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;bookDateEnd&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;travelDateStart&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;travelDateEnd&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;mobileOnly&quot;: false
+}
+</code></pre><h4 id="success-responses-9">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-8">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="read-a-single-rate-plan">Read a single rate plan</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-9">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>ratePlanId</td>
+<td>path</td>
+<td>Rate plan resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-10">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-9">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
+<ul>
+<li>Method: <code>PUT</code></li>
+<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-10">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>ratePlanId</td>
+<td>path</td>
+<td>Rate plan resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message of modified rate plan</td>
+<td>true</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+  &quot;resourceId&quot;: 0,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;rateAcquisitionType&quot;: &quot;string&quot;,
+  &quot;distributionRules&quot;: [
+    {
+      &quot;expediaId&quot;: &quot;string&quot;,
+      &quot;partnerCode&quot;: &quot;string&quot;,
+      &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+      &quot;manageable&quot;: false,
+      &quot;compensation&quot;: {
+        &quot;percent&quot;: 0,
+        &quot;minAmount&quot;: 0,
+        &quot;exceptions&quot;: [
+          {
+            &quot;dateStart&quot;: &quot;2015-11-25&quot;,
+            &quot;dateEnd&quot;: &quot;2015-11-25&quot;,
+            &quot;minAmount&quot;: 0,
+            &quot;percent&quot;: 0,
+            &quot;mon&quot;: false,
+            &quot;tue&quot;: false,
+            &quot;wed&quot;: false,
+            &quot;thu&quot;: false,
+            &quot;fri&quot;: false,
+            &quot;sat&quot;: false,
+            &quot;sun&quot;: false
+          }
+        ]
+      }
+    }
+  ],
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;type&quot;: &quot;Standalone&quot;,
+  &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+  &quot;occupantsForBaseRate&quot;: 0,
+  &quot;taxInclusive&quot;: false,
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;string&quot;,
+        &quot;amount&quot;: 0
+      }
+    ],
+    &quot;exceptions&quot;: [
+      {
+        &quot;startDate&quot;: &quot;2015-11-25&quot;,
+        &quot;endDate&quot;: &quot;2015-11-25&quot;,
+        &quot;penalties&quot;: [
+          {
+            &quot;deadline&quot;: 0,
+            &quot;perStayFee&quot;: &quot;string&quot;,
+            &quot;amount&quot;: 0
+          }
+        ]
+      }
+    ]
+  },
+  &quot;additionalGuestAmounts&quot;: [
+    {
+      &quot;dateStart&quot;: &quot;2015-11-25&quot;,
+      &quot;dateEnd&quot;: &quot;2015-11-25&quot;,
+      &quot;ageCategory&quot;: &quot;Adult&quot;,
+      &quot;amount&quot;: 0
+    }
+  ],
+  &quot;valueAddInclusions&quot;: [
+    &quot;string&quot;
+  ],
+  &quot;minLOSDefault&quot;: 0,
+  &quot;maxLOSDefault&quot;: 0,
+  &quot;minAdvBookDays&quot;: 0,
+  &quot;maxAdvBookDays&quot;: 0,
+  &quot;bookDateStart&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;bookDateEnd&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;travelDateStart&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;travelDateEnd&quot;: {
+    &quot;year&quot;: 0,
+    &quot;month&quot;: &quot;JANUARY&quot;,
+    &quot;monthValue&quot;: 0,
+    &quot;chronology&quot;: {
+      &quot;calendarType&quot;: &quot;string&quot;,
+      &quot;id&quot;: &quot;string&quot;
+    },
+    &quot;dayOfMonth&quot;: 0,
+    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
+    &quot;era&quot;: {
+      &quot;value&quot;: 0
+    },
+    &quot;dayOfYear&quot;: 0,
+    &quot;leapYear&quot;: false
+  },
+  &quot;mobileOnly&quot;: false
+}
+</code></pre><h4 id="success-responses-11">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="potential-error-responses-10">Potential Error Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>Bad Request</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>415</td>
+<td>Unsupported Media Type</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error</td>
+<td><a href="#/definitions/ResponseWrapperDTO">ResponseWrapperDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="definitions">Definitions</h2>
+<ul>
+<li><a name="/definitions/AdditionalGuestAmountDTO"></a>AdditionalGuestAmountDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dateStart</td>
+<td>string</td>
+<td>Date at which this amount started being applicable, can be in the past</td>
+</tr>
+<tr>
+<td>dateEnd</td>
+<td>string</td>
+<td>Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06.</td>
+</tr>
+<tr>
+<td>ageCategory</td>
+<td>string</td>
+<td>The age category for the additional guests</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Min value 0.000, accepts up to 3 decimal points</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/BedTypeDTO"></a>BedTypeDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The code identifying the bed type. These ids are pre-defined (see full spec)</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name identifying the bed type, provided here for information purposes only</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/CancelPenaltyExceptionRuleDTO"></a>CancelPenaltyExceptionRuleDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startDate</td>
+<td>string</td>
+<td>Format: YYYY-MM-DD. Cancel penalty exception&#39;s starting date</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>string</td>
+<td>Format: YYYY-MM-DD. Cancel penalty exception&#39;s end date</td>
+</tr>
+<tr>
+<td>penalties</td>
+<td>Array[<a href="#/definitions/PenaltyDTO">PenaltyDTO</a>]</td>
+<td>Definition of the exception penalties applied</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/CancelPolicyDTO"></a>CancelPolicyDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>defaultPenalties</td>
+<td>Array[<a href="#/definitions/PenaltyDTO">PenaltyDTO</a>]</td>
+<td>Default penalties&#39; definition. Min 1, Max 2 penalties defined</td>
+</tr>
+<tr>
+<td>exceptions</td>
+<td>Array[<a href="#/definitions/CancelPenaltyExceptionRuleDTO">CancelPenaltyExceptionRuleDTO</a>]</td>
+<td>List os exceptional cancel penalties defined for the Rate Plan</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/CompensationExceptionRuleDTO"></a>CompensationExceptionRuleDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dateStart</td>
+<td>string</td>
+<td>Starting date of the exception rule. Accepted format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>dateEnd</td>
+<td>string</td>
+<td>End date of the exception rule. Accepted format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>minAmount</td>
+<td>number</td>
+<td>Accepts up to 3 decimal points</td>
+</tr>
+<tr>
+<td>percent</td>
+<td>number</td>
+<td>Between 0 and 1, accepts up to 3 decimal points</td>
+</tr>
+<tr>
+<td>mon</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>tue</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>wed</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>thu</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>fri</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>sat</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+<tr>
+<td>sun</td>
+<td>boolean</td>
+<td>For any exception, all 7 days of week are returned with a true/false indicator.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/CompensationRuleDTO"></a>CompensationRuleDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>percent</td>
+<td>number</td>
+<td>Compensation percentage applied by default. Expressed as a value. Between 0 and 1, accepts up to 4 decimal points</td>
+</tr>
+<tr>
+<td>minAmount</td>
+<td>number</td>
+<td>Minimum amount. Accepts up to 3 decimal points. Only applicable to ExpediaCollect distribution rules</td>
+</tr>
+<tr>
+<td>exceptions</td>
+<td>Array[<a href="#/definitions/CompensationExceptionRuleDTO">CompensationExceptionRuleDTO</a>]</td>
+<td>Depending on the contractual agreement between Expedia and the partner, compensation can vary based on different criteria. This array of exceptions will reflect this</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/CutOffDTO"></a>CutOffDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Indicates at which time we’ll stop making inventory available for same day reservations</td>
+</tr>
+<tr>
+<td>day</td>
+<td>string</td>
+<td>Can be of same day or next day. Complements the time attribute</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/DistributionRuleDTO"></a>DistributionRuleDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expediaId</td>
+<td>string</td>
+<td>String, min 1, max 50 characters. Expedia rate plan ID that will be specified in booking messages and that should be used to manage avail/rates if this set of distribution rules is marked as manageable.</td>
+</tr>
+<tr>
+<td>partnerCode</td>
+<td>string</td>
+<td>Unique partner identifier for the rate plan. For a given room type, this code has to be unique per distribution model (e.g. for all ExpediaCollect rate plan distribution rules under this room, this code has to be unique). Uniqueness will be validated by Expedia during create or update operations.</td>
+</tr>
+<tr>
+<td>distributionModel</td>
+<td>string</td>
+<td>Distribution model adopted by the rate plan, matching property configuration.</td>
+</tr>
+<tr>
+<td>manageable</td>
+<td>boolean</td>
+<td>Cannot be provided in a create request. Default to yes for HotelCollect-only or ExpediaCollect-only rate plans. For ExpediaTravelerPreference rate plans, if rate acquisition type is net, ExpediaCollect will default to true; if rate acquisition type is Sell/LAR, HotelCollect will default to true.</td>
+</tr>
+<tr>
+<td>compensation</td>
+<td><a href="#/definitions/CompensationRuleDTO">CompensationRuleDTO</a></td>
+<td>Applicable compensation rules for this distribution model. Defaults to the value defined on the contract with the partner</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/Era"></a>Era</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>integer</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/ErrorDTO"></a>ErrorDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/IsoChronology"></a>IsoChronology</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>calendarType</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/LocalDate"></a>LocalDate</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>year</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>month</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>monthValue</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>chronology</td>
+<td><a href="#/definitions/IsoChronology">IsoChronology</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dayOfMonth</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>dayOfWeek</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>era</td>
+<td><a href="#/definitions/Era">Era</a></td>
+<td></td>
+</tr>
+<tr>
+<td>dayOfYear</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>leapYear</td>
+<td>boolean</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/OccupancyByAgeDTO"></a>OccupancyByAgeDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ageCategory</td>
+<td>string</td>
+<td>The age category whose occupancy is being defined</td>
+</tr>
+<tr>
+<td>minAge</td>
+<td>integer</td>
+<td>Minimum age allowed for the category. Min 0, max 99</td>
+</tr>
+<tr>
+<td>maxOccupants</td>
+<td>integer</td>
+<td>Max number of occupants on the category. Min 0, max 20</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/PenaltyDTO"></a>PenaltyDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deadline</td>
+<td>integer</td>
+<td>Number of hours prior to the arrival of the guest. When set to 0, it means up until end of the day of arrival. Min 0, Max 999</td>
+</tr>
+<tr>
+<td>perStayFee</td>
+<td>string</td>
+<td>Fee that will be charged if the customer cancels within the specified deadline.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Min value 0.000 (3 decimal points). The amount provided here should be based on the property rate acquisition type. If the property rate acquisition type is Net, the rate provided here should be net of Expedia compensation. If it is SellLAR, the rate should be what the customer will be charged (inclusive of Expedia compensation). Used to define a flat amount that would be charged as a cancel or change penalty. This would normally replace a per-stay fee, but it can also be added on top of a per-stay fee if that is what the partner requires</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/PropertyAddressDTO"></a>PropertyAddressDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>First line of address</td>
+</tr>
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Second line of address, not always available</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City in which the property is located</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>State/Province, which is optional and thus might not be available</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Postal or State Code, might not be available</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>ISO 3166-1 Alpha 3 country code, for the country where the property is located</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/PropertyDTO"></a>PropertyDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceId</td>
+<td>integer</td>
+<td>Expedia ID for this resource. Generated when created. Generated on POST, required on PUT</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name describing the property. Max. 255 characters</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.</td>
+</tr>
+<tr>
+<td>address</td>
+<td><a href="#/definitions/PropertyAddressDTO">PropertyAddressDTO</a></td>
+<td>Property address details</td>
+</tr>
+<tr>
+<td>distributionModels</td>
+<td>Array[string]</td>
+<td>Distribution model(s) under which the property is configured to work with Expedia</td>
+</tr>
+<tr>
+<td>rateAcquisitionType</td>
+<td>string</td>
+<td>Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs.</td>
+</tr>
+<tr>
+<td>taxInclusive</td>
+<td>boolean</td>
+<td>Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.</td>
+</tr>
+<tr>
+<td>pricingModel</td>
+<td>string</td>
+<td>Configuration of the property when it comes to pricing rooms and rates.</td>
+</tr>
+<tr>
+<td>baseAllocationEnabled</td>
+<td>boolean</td>
+<td>Boolean to indicate whether this property has a base allocation contract with Expedia.</td>
+</tr>
+<tr>
+<td>minLOSThreshold</td>
+<td>integer</td>
+<td>This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.</td>
+</tr>
+<tr>
+<td>cancellationTime</td>
+<td>string</td>
+<td>Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name.</td>
+</tr>
+<tr>
+<td>reservationCutOff</td>
+<td><a href="#/definitions/CutOffDTO">CutOffDTO</a></td>
+<td>Used to indicate when we stop making rate plans available to book for same day reservations.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/RatePlanDTO"></a>RatePlanDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceId</td>
+<td>integer</td>
+<td>Expedia ID for this resource. Generated when created. Generated on POST, required on PUT</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the rate plan, for information/identification purposes. Min 1, Max 40 characters. If not provided, defaults to the manageable rate plan partner code.</td>
+</tr>
+<tr>
+<td>rateAcquisitionType</td>
+<td>string</td>
+<td>Rate acquisition type, inherited from the Property</td>
+</tr>
+<tr>
+<td>distributionRules</td>
+<td>Array[<a href="#/definitions/DistributionRuleDTO">DistributionRuleDTO</a>]</td>
+<td>Used to provide information about how this rate plan can be sold (ExpediaCollect, HotelCollect or both).</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Defaults to active if not provided during creation</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Rate Plan type. Only Standalone type can be managed through the Product API. Defaults to Standalone if not provided during creation</td>
+</tr>
+<tr>
+<td>pricingModel</td>
+<td>string</td>
+<td>Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model</td>
+</tr>
+<tr>
+<td>occupantsForBaseRate</td>
+<td>integer</td>
+<td>Max occupants allowed for the base rate. Min 1, Max 20. This is only applicable for per day pricing properties, and required in create requests. It indicates how many occupants the per day price applies to</td>
+</tr>
+<tr>
+<td>taxInclusive</td>
+<td>boolean</td>
+<td>Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property&#39;s configuration</td>
+</tr>
+<tr>
+<td>cancelPolicy</td>
+<td><a href="#/definitions/CancelPolicyDTO">CancelPolicyDTO</a></td>
+<td>Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property</td>
+</tr>
+<tr>
+<td>additionalGuestAmounts</td>
+<td>Array[<a href="#/definitions/AdditionalGuestAmountDTO">AdditionalGuestAmountDTO</a>]</td>
+<td>Array of additional guest amounts. Up to 6 can be specified, 1 per category. Only 1 amount can be given per category, for all dates</td>
+</tr>
+<tr>
+<td>valueAddInclusions</td>
+<td>Array[string]</td>
+<td>Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones</td>
+</tr>
+<tr>
+<td>minLOSDefault</td>
+<td>integer</td>
+<td>Default minimum LengthOfStay restriction. Min 1, Max 28. Set to 1 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail</td>
+</tr>
+<tr>
+<td>maxLOSDefault</td>
+<td>integer</td>
+<td>Default maximum LengthOfStay restriction. Min 1, Max 28. Set to 28 by default if not provided in a create request. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail</td>
+</tr>
+<tr>
+<td>minAdvBookDays</td>
+<td>integer</td>
+<td>The minimum days before a stay date that the rate plan can be sold. Min 1, Max 500</td>
+</tr>
+<tr>
+<td>maxAdvBookDays</td>
+<td>integer</td>
+<td>The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500</td>
+</tr>
+<tr>
+<td>bookDateStart</td>
+<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01</td>
+</tr>
+<tr>
+<td>bookDateEnd</td>
+<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted</td>
+</tr>
+<tr>
+<td>travelDateStart</td>
+<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted</td>
+</tr>
+<tr>
+<td>travelDateEnd</td>
+<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted</td>
+</tr>
+<tr>
+<td>mobileOnly</td>
+<td>boolean</td>
+<td>Indicates this rate plan is only available through shopping done on mobile devices</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/ResponseWrapperDTO"></a>ResponseWrapperDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entity</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array[<a href="#/definitions/ErrorDTO">ErrorDTO</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/RnsAttributesDTO"></a>RnsAttributesDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeOfRoom</td>
+<td>string</td>
+<td>Attribute that determines the type of room, which is used to compose the name</td>
+</tr>
+<tr>
+<td>roomClass</td>
+<td>string</td>
+<td>Attribute that described the class of room, which is used to compose the name</td>
+</tr>
+<tr>
+<td>includeBedType</td>
+<td>boolean</td>
+<td>Attribute that determines whether or not to include bed type on the room name</td>
+</tr>
+<tr>
+<td>bedroomDetails</td>
+<td>string</td>
+<td>Attribute that describes details of the bedroom used to compose the name of the room</td>
+</tr>
+<tr>
+<td>includeSmokingPref</td>
+<td>boolean</td>
+<td>Attribute that determines if room has smoking preference</td>
+</tr>
+<tr>
+<td>accessibility</td>
+<td>boolean</td>
+<td>Attribute that determines if room is considered wheelchair accessible</td>
+</tr>
+<tr>
+<td>view</td>
+<td>string</td>
+<td>Attribute that gives additional information about the view of the room</td>
+</tr>
+<tr>
+<td>featuredAmenity</td>
+<td>string</td>
+<td>Attribute used to highlight a feature of the room on its name</td>
+</tr>
+<tr>
+<td>area</td>
+<td>string</td>
+<td>Attributed used to highlight the location of the room</td>
+</tr>
+<tr>
+<td>customLabel</td>
+<td>string</td>
+<td>Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/RoomTypeDTO"></a>RoomTypeDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceId</td>
+<td>integer</td>
+<td>Expedia ID for this resource. Generated when created. Generated on POST, required on PUT</td>
+</tr>
+<tr>
+<td>partnerCode</td>
+<td>string</td>
+<td>Partner room type code/identifier. Max. 40 characters</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#/definitions/RoomTypeNameDTO">RoomTypeNameDTO</a></td>
+<td>Formed by a [ISO 639-1]-[ISO-3166-1]. If applicable, it contains the RNS attributes used to generate the value. Max 255 characters</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Room type status is derived from the rate plans under the room type: if at least 1 rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well.</td>
+</tr>
+<tr>
+<td>maxOccupants</td>
+<td>integer</td>
+<td>Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.</td>
+</tr>
+<tr>
+<td>occupancyByAge</td>
+<td>Array[<a href="#/definitions/OccupancyByAgeDTO">OccupancyByAgeDTO</a>]</td>
+<td>Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line.</td>
+</tr>
+<tr>
+<td>bedTypes</td>
+<td>Array[<a href="#/definitions/BedTypeDTO">BedTypeDTO</a>]</td>
+<td>Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking.</td>
+</tr>
+<tr>
+<td>smokingPreferences</td>
+<td>Array[<a href="#/definitions/SmokingPreferenceDTO">SmokingPreferenceDTO</a>]</td>
+<td>Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/RoomTypeNameDTO"></a>RoomTypeNameDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attributes</td>
+<td><a href="#/definitions/RnsAttributesDTO">RnsAttributesDTO</a></td>
+<td>Defines the attributes used to compose the common name for the room. You should not provide a custom name when using these attributes</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>The custom name provided for the room. Max. 255 characters. Not to be used in conjunction with the attributes</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a name="/definitions/SmokingPreferenceDTO"></a>SmokingPreferenceDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Id identifying the smoking preference.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name identifying the smoking preference.</td>
+</tr>
+</tbody>
+</table>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+</body></html>
