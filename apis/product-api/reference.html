@@ -26,7 +26,7 @@
 <h3 id="renders-the-page-describing-the-business-error-codes-used-by-the-api" data-magellan-destination="renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/documentation/api/errors">https://ws.expediaquickconnect.com/v1/documentation/api/errors</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/documentation/api/errors">https://services.expediapartnercentral.com/v1/documentation/api/errors</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>text/html</code></li>
 </ul>
@@ -51,7 +51,7 @@
 <h3 id="obtain-a-list-of-properties" data-magellan-destination="obtain-a-list-of-properties">Obtain a list of properties</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties">https://ws.expediaquickconnect.com/v1/properties</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties">https://services.expediapartnercentral.com/v1/properties</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -149,7 +149,7 @@
 <h3 id="read-a-single-property" data-magellan-destination="read-a-single-property">Read a single property</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}">https://services.expediapartnercentral.com/v1/properties/{propertyId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -224,7 +224,7 @@
 <h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -306,7 +306,7 @@
 <h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
 <ul>
 <li>Method: <code>POST</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -380,7 +380,11 @@
       &quot;id&quot;: &quot;2.1 (Non-Smoking) and 2.2 (Smoking)&quot;,
       &quot;name&quot;: &quot;string&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 0,
+    &quot;squareMeters&quot;: 0
+  }
 }
 </code></pre><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
 <table>
@@ -429,7 +433,7 @@
 <h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -511,7 +515,7 @@
 <h3 id="modify-an-existing-room-type" data-magellan-destination="modify-an-existing-room-type">Modify an existing room type</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -593,7 +597,11 @@
       &quot;id&quot;: &quot;2.1 (Non-Smoking) and 2.2 (Smoking)&quot;,
       &quot;name&quot;: &quot;string&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 0,
+    &quot;squareMeters&quot;: 0
+  }
 }
 </code></pre><h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
 <table>
@@ -643,7 +651,7 @@
 <h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -733,7 +741,7 @@
 <h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
 <ul>
 <li>Method: <code>POST</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -850,70 +858,10 @@
   &quot;maxLOSDefault&quot;: 0,
   &quot;minAdvBookDays&quot;: 0,
   &quot;maxAdvBookDays&quot;: 0,
-  &quot;bookDateStart&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;bookDateEnd&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;travelDateStart&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;travelDateEnd&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
+  &quot;bookDateStart&quot;: &quot;2015-11-25&quot;,
+  &quot;bookDateEnd&quot;: &quot;2015-11-25&quot;,
+  &quot;travelDateStart&quot;: &quot;2015-11-25&quot;,
+  &quot;travelDateEnd&quot;: &quot;2015-11-25&quot;,
   &quot;mobileOnly&quot;: false
 }
 </code></pre><h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
@@ -963,7 +911,7 @@
 <h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -1053,7 +1001,7 @@
 <h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -1178,70 +1126,10 @@
   &quot;maxLOSDefault&quot;: 0,
   &quot;minAdvBookDays&quot;: 0,
   &quot;maxAdvBookDays&quot;: 0,
-  &quot;bookDateStart&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;bookDateEnd&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;travelDateStart&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
-  &quot;travelDateEnd&quot;: {
-    &quot;year&quot;: 0,
-    &quot;month&quot;: &quot;JANUARY&quot;,
-    &quot;monthValue&quot;: 0,
-    &quot;chronology&quot;: {
-      &quot;calendarType&quot;: &quot;string&quot;,
-      &quot;id&quot;: &quot;string&quot;
-    },
-    &quot;dayOfMonth&quot;: 0,
-    &quot;dayOfWeek&quot;: &quot;MONDAY&quot;,
-    &quot;era&quot;: {
-      &quot;value&quot;: 0
-    },
-    &quot;dayOfYear&quot;: 0,
-    &quot;leapYear&quot;: false
-  },
+  &quot;bookDateStart&quot;: &quot;2015-11-25&quot;,
+  &quot;bookDateEnd&quot;: &quot;2015-11-25&quot;,
+  &quot;travelDateStart&quot;: &quot;2015-11-25&quot;,
+  &quot;travelDateEnd&quot;: &quot;2015-11-25&quot;,
   &quot;mobileOnly&quot;: false
 }
 </code></pre><h4 id="success-responses-11" data-magellan-destination="success-responses-11">Success Responses</h4>
@@ -1562,25 +1450,6 @@
 </tbody>
 </table>
 <ul>
-<li><a name="/definitions/Era"></a>Era</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>value</td>
-<td>integer</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
 <li><a name="/definitions/ErrorDTO"></a>ErrorDTO</li>
 </ul>
 <table>
@@ -1600,89 +1469,6 @@
 <tr>
 <td>message</td>
 <td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a name="/definitions/IsoChronology"></a>IsoChronology</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>calendarType</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>id</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><a name="/definitions/LocalDate"></a>LocalDate</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>year</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>month</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>monthValue</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>chronology</td>
-<td><a href="#/definitions/IsoChronology">IsoChronology</a></td>
-<td></td>
-</tr>
-<tr>
-<td>dayOfMonth</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>dayOfWeek</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>era</td>
-<td><a href="#/definitions/Era">Era</a></td>
-<td></td>
-</tr>
-<tr>
-<td>dayOfYear</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>leapYear</td>
-<td>boolean</td>
 <td></td>
 </tr>
 </tbody>
@@ -1967,22 +1753,22 @@
 </tr>
 <tr>
 <td>bookDateStart</td>
-<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>string</td>
 <td>Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01</td>
 </tr>
 <tr>
 <td>bookDateEnd</td>
-<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>string</td>
 <td>Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted</td>
 </tr>
 <tr>
 <td>travelDateStart</td>
-<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>string</td>
 <td>Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted</td>
 </tr>
 <tr>
 <td>travelDateEnd</td>
-<td><a href="#/definitions/LocalDate">LocalDate</a></td>
+<td>string</td>
 <td>Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted</td>
 </tr>
 <tr>
@@ -2081,6 +1867,30 @@
 </tbody>
 </table>
 <ul>
+<li><a name="/definitions/RoomSizeDTO"></a>RoomSizeDTO</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>squareFeet</td>
+<td>integer</td>
+<td>Room size in square feet. No decimals.</td>
+</tr>
+<tr>
+<td>squareMeters</td>
+<td>integer</td>
+<td>Room size in square meters. No decimals.</td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><a name="/definitions/RoomTypeDTO"></a>RoomTypeDTO</li>
 </ul>
 <table>
@@ -2131,6 +1941,11 @@
 <td>smokingPreferences</td>
 <td>Array[<a href="#/definitions/SmokingPreferenceDTO">SmokingPreferenceDTO</a>]</td>
 <td>Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner</td>
+</tr>
+<tr>
+<td>roomSize</td>
+<td><a href="#/definitions/RoomSizeDTO">RoomSizeDTO</a></td>
+<td>Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
 </tr>
 </tbody>
 </table>
