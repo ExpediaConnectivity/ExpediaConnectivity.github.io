@@ -2,8 +2,20 @@
 
 var Core = Core || {
 
-    
     init: function() {
+        $(document).foundation({
+            "magellan-expedition": {
+                active_class : 'active',
+                threshold : 0,
+                destination_threshold : 20,
+                throttle_delay : 30,
+                fixed_top : 0,
+                offset_by_height : false,
+                duration : 150,
+                easing : 'swing'
+            }
+        });
+
         var _this = this;
         this.determineSection();
         this.setMenuFocus();
@@ -58,43 +70,13 @@ var Core = Core || {
         }
     },
 
-    checkIfContentIsVisible: function() {
-        var _this = this;
-        var content_section = $('.content_section .documentation_header');
-        $.each(content_section, function(i, section) {
-            var id = $(section).attr('id');
-            if(Core.isElementVisible('.content_section .documentation_header#'+id)) {
-                $('.sidebar-nav-items a').removeClass('active');
-                $('.sidebar-nav-items a[href="#'+id+'"]').addClass('active');
-            }
-        });
-    },
-
     setMenuFocus: function() {
         var _this = this;
-        var timer = 0;
         $(window).scroll(function() {
-            function checkNow () {            
-                _this.checkIfContentIsVisible();
-            }
-            if (timer) {
-                clearTimeout(timer);
-            }
-            timer = setTimeout(checkNow, 300);
-
-            var $el = $('.stickyheader');
-            if ($(this).scrollTop() >= 60){
-                $el.css({'top': '0px'});
-            }
-            if ($(this).scrollTop() < 60)
-            {
-                $el.css({'top': (60 - $(this).scrollTop()) + 'px'});
-            }
-
             $el = $('.menu');
-            var top = ((60 + 40)-$(this).scrollTop());
-            if ($(this).scrollTop() >= 60){
-                top = 40;
+            var top = (80-$(this).scrollTop());
+            if ($(this).scrollTop() >= 80){
+                top = 0;
             }
             $el.css({'margin-top': top + 'px'});
 
@@ -112,7 +94,7 @@ var Core = Core || {
         if (footerSize > 0) {
             size -= footerSize;
         }
-        size -= sidebar.offset().top - $(window).scrollTop();
+        size -= sidebar.offset().top - $(window).scrollTop() - $(".sidebar-nav>header").height();
         $(".sidebar-nav-items").css("max-height", size);
     },
 

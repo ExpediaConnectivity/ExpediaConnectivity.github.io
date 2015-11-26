@@ -14,19 +14,23 @@
         });
         Core.init();
     });
-</script></head><body><div class="row full-width"><nav class="large-12 small-12 columns" id="sitenav"><a class="logo" href="/"><img src="/images/DevLogo2.png"/></a><div id="apititle" class="large-offset-2 small-offset-2 columns"><div>Product API</div></div></nav></div><div class="row full-width stickyheader"><div class="large-12 columns sections"><a href="/apis/product-api/quickstart.html">Quickstart</a><a href="/apis/product-api/examples-properties.html">Examples Properties</a><a href="/apis/product-api/examples-room-types.html">Examples Room Types</a><a href="/apis/product-api/examples-rate-plans.html">Examples Rate Plans</a><a href="/apis/product-api/guides.html">Guides</a><a href="/apis/product-api/reference.html">Reference</a></div></div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><ul class="sidebar-nav-items"><li class="depth1"><a class="sidebar-nav-item" href="#eps-product-api">EPS Product API</a></li><li class="depth2"><a class="sidebar-nav-item" href="#error-codes">Error codes</a></li><li class="depth3"><a class="sidebar-nav-item" href="#renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses">Success Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#property">Property</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-properties">Obtain a list of properties</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-2">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-property">Read a single property</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-2">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-3">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-2">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#room-type">Room type</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-3">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-4">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-3">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-4">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-5">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-4">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-5">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-6">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-5">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-6">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-7">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-6">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#rate-plan">Rate plan</a></li><li class="depth3"><a class="sidebar-nav-item" href="#obtain-a-list-of-rate-plans">Obtain a list of rate plans</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-7">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-8">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-7">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#creates-a-new-rate-plan">Creates a new rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-8">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-9">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-8">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#read-a-single-rate-plan">Read a single rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-9">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-10">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-9">Potential Error Responses</a></li><li class="depth3"><a class="sidebar-nav-item" href="#modify-an-existing-rate-plan">Modify an existing rate plan</a></li><li class="depth4"><a class="sidebar-nav-item" href="#parameters-10">Parameters</a></li><li class="depth4"><a class="sidebar-nav-item" href="#success-responses-11">Success Responses</a></li><li class="depth4"><a class="sidebar-nav-item" href="#potential-error-responses-10">Potential Error Responses</a></li><li class="depth2"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-10 large-offset-2 columns content"><h1 id="eps-product-api">EPS Product API</h1>
+</script></head><body><div class="row full-width">
+    <nav class="large-12 small-12 columns" id="sitenav">
+        <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
+    </nav>
+</div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><header class="columns">Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/quickstart.html">Introduction</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-properties.html">Intro</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-room-types.html">Intro</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-rate-plans.html">Intro</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/guides.html">Understanding Expedia Lodging Data Model</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/reference.html">EPS Product API</a></li><li class="depth2" data-magellan-arrival="error-codes"><a class="sidebar-nav-item" href="#error-codes">Error codes</a></li><li class="depth3" data-magellan-arrival="renders-the-page-describing-the-business-error-codes-used-by-the-api"><a class="sidebar-nav-item" href="#renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</a></li><li class="depth4" data-magellan-arrival="success-responses"><a class="sidebar-nav-item" href="#success-responses">Success Responses</a></li><li class="depth2" data-magellan-arrival="property"><a class="sidebar-nav-item" href="#property">Property</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-properties"><a class="sidebar-nav-item" href="#obtain-a-list-of-properties">Obtain a list of properties</a></li><li class="depth4" data-magellan-arrival="parameters"><a class="sidebar-nav-item" href="#parameters">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-2"><a class="sidebar-nav-item" href="#success-responses-2">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses"><a class="sidebar-nav-item" href="#potential-error-responses">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="read-a-single-property"><a class="sidebar-nav-item" href="#read-a-single-property">Read a single property</a></li><li class="depth4" data-magellan-arrival="parameters-2"><a class="sidebar-nav-item" href="#parameters-2">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-3"><a class="sidebar-nav-item" href="#success-responses-3">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-2"><a class="sidebar-nav-item" href="#potential-error-responses-2">Potential Error Responses</a></li><li class="depth2" data-magellan-arrival="room-type"><a class="sidebar-nav-item" href="#room-type">Room type</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth4" data-magellan-arrival="parameters-3"><a class="sidebar-nav-item" href="#parameters-3">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-4"><a class="sidebar-nav-item" href="#success-responses-4">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-3"><a class="sidebar-nav-item" href="#potential-error-responses-3">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth4" data-magellan-arrival="parameters-4"><a class="sidebar-nav-item" href="#parameters-4">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-5"><a class="sidebar-nav-item" href="#success-responses-5">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-4"><a class="sidebar-nav-item" href="#potential-error-responses-4">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth4" data-magellan-arrival="parameters-5"><a class="sidebar-nav-item" href="#parameters-5">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-6"><a class="sidebar-nav-item" href="#success-responses-6">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-5"><a class="sidebar-nav-item" href="#potential-error-responses-5">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth4" data-magellan-arrival="parameters-6"><a class="sidebar-nav-item" href="#parameters-6">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-7"><a class="sidebar-nav-item" href="#success-responses-7">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-6"><a class="sidebar-nav-item" href="#potential-error-responses-6">Potential Error Responses</a></li><li class="depth2" data-magellan-arrival="rate-plan"><a class="sidebar-nav-item" href="#rate-plan">Rate plan</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-rate-plans"><a class="sidebar-nav-item" href="#obtain-a-list-of-rate-plans">Obtain a list of rate plans</a></li><li class="depth4" data-magellan-arrival="parameters-7"><a class="sidebar-nav-item" href="#parameters-7">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-8"><a class="sidebar-nav-item" href="#success-responses-8">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-7"><a class="sidebar-nav-item" href="#potential-error-responses-7">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="creates-a-new-rate-plan"><a class="sidebar-nav-item" href="#creates-a-new-rate-plan">Creates a new rate plan</a></li><li class="depth4" data-magellan-arrival="parameters-8"><a class="sidebar-nav-item" href="#parameters-8">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-9"><a class="sidebar-nav-item" href="#success-responses-9">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-8"><a class="sidebar-nav-item" href="#potential-error-responses-8">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="read-a-single-rate-plan"><a class="sidebar-nav-item" href="#read-a-single-rate-plan">Read a single rate plan</a></li><li class="depth4" data-magellan-arrival="parameters-9"><a class="sidebar-nav-item" href="#parameters-9">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-10"><a class="sidebar-nav-item" href="#success-responses-10">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-9"><a class="sidebar-nav-item" href="#potential-error-responses-9">Potential Error Responses</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-rate-plan"><a class="sidebar-nav-item" href="#modify-an-existing-rate-plan">Modify an existing rate plan</a></li><li class="depth4" data-magellan-arrival="parameters-10"><a class="sidebar-nav-item" href="#parameters-10">Parameters</a></li><li class="depth4" data-magellan-arrival="success-responses-11"><a class="sidebar-nav-item" href="#success-responses-11">Success Responses</a></li><li class="depth4" data-magellan-arrival="potential-error-responses-10"><a class="sidebar-nav-item" href="#potential-error-responses-10">Potential Error Responses</a></li><li class="depth2" data-magellan-arrival="definitions"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-6 large-offset-2 columns api-content"><h1 id="eps-product-api" data-magellan-destination="eps-product-api">EPS Product API</h1>
 <p>The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs,
                                     without having to use EPC or contact their market manager. The API also enables our partners to read the
                                     definition of the room types and rate plans created in the system.</p>
-<h2 id="error-codes">Error codes</h2>
-<h3 id="renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</h3>
+<h2 id="error-codes" data-magellan-destination="error-codes">Error codes</h2>
+<h3 id="renders-the-page-describing-the-business-error-codes-used-by-the-api" data-magellan-destination="renders-the-page-describing-the-business-error-codes-used-by-the-api">Renders the page describing the business error codes used by the API</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/documentation/api/errors">https://ws.expediaquickconnect.com/v1/documentation/api/errors</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>text/html</code></li>
 </ul>
-<h4 id="success-responses">Success Responses</h4>
+<h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -43,15 +47,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="property">Property</h2>
-<h3 id="obtain-a-list-of-properties">Obtain a list of properties</h3>
+<h2 id="property" data-magellan-destination="property">Property</h2>
+<h3 id="obtain-a-list-of-properties" data-magellan-destination="obtain-a-list-of-properties">Obtain a list of properties</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties">https://ws.expediaquickconnect.com/v1/properties</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters">Parameters</h4>
+<h4 id="parameters" data-magellan-destination="parameters">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -98,7 +102,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-2">Success Responses</h4>
+<h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -115,7 +119,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses">Potential Error Responses</h4>
+<h4 id="potential-error-responses" data-magellan-destination="potential-error-responses">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -142,14 +146,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-property">Read a single property</h3>
+<h3 id="read-a-single-property" data-magellan-destination="read-a-single-property">Read a single property</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-2">Parameters</h4>
+<h4 id="parameters-2" data-magellan-destination="parameters-2">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -172,7 +176,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-3">Success Responses</h4>
+<h4 id="success-responses-3" data-magellan-destination="success-responses-3">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -189,7 +193,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-2">Potential Error Responses</h4>
+<h4 id="potential-error-responses-2" data-magellan-destination="potential-error-responses-2">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -216,15 +220,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="room-type">Room type</h2>
-<h3 id="obtain-a-list-of-room-types">Obtain a list of room types</h3>
+<h2 id="room-type" data-magellan-destination="room-type">Room type</h2>
+<h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-3">Parameters</h4>
+<h4 id="parameters-3" data-magellan-destination="parameters-3">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -255,7 +259,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-4">Success Responses</h4>
+<h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -272,7 +276,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-3">Potential Error Responses</h4>
+<h4 id="potential-error-responses-3" data-magellan-destination="potential-error-responses-3">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -299,14 +303,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="creates-a-new-room-type">Creates a new room type</h3>
+<h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
 <ul>
 <li>Method: <code>POST</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-4">Parameters</h4>
+<h4 id="parameters-4" data-magellan-destination="parameters-4">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -378,7 +382,7 @@
     }
   ]
 }
-</code></pre><h4 id="success-responses-5">Success Responses</h4>
+</code></pre><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -395,7 +399,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-4">Potential Error Responses</h4>
+<h4 id="potential-error-responses-4" data-magellan-destination="potential-error-responses-4">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -422,14 +426,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-room-type">Read a single room type</h3>
+<h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-5">Parameters</h4>
+<h4 id="parameters-5" data-magellan-destination="parameters-5">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -460,7 +464,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-6">Success Responses</h4>
+<h4 id="success-responses-6" data-magellan-destination="success-responses-6">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -477,7 +481,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-5">Potential Error Responses</h4>
+<h4 id="potential-error-responses-5" data-magellan-destination="potential-error-responses-5">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -504,14 +508,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="modify-an-existing-room-type">Modify an existing room type</h3>
+<h3 id="modify-an-existing-room-type" data-magellan-destination="modify-an-existing-room-type">Modify an existing room type</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-6">Parameters</h4>
+<h4 id="parameters-6" data-magellan-destination="parameters-6">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -591,7 +595,7 @@
     }
   ]
 }
-</code></pre><h4 id="success-responses-7">Success Responses</h4>
+</code></pre><h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -608,7 +612,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-6">Potential Error Responses</h4>
+<h4 id="potential-error-responses-6" data-magellan-destination="potential-error-responses-6">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -635,15 +639,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="rate-plan">Rate plan</h2>
-<h3 id="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
+<h2 id="rate-plan" data-magellan-destination="rate-plan">Rate plan</h2>
+<h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-7">Parameters</h4>
+<h4 id="parameters-7" data-magellan-destination="parameters-7">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -682,7 +686,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-8">Success Responses</h4>
+<h4 id="success-responses-8" data-magellan-destination="success-responses-8">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -699,7 +703,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-7">Potential Error Responses</h4>
+<h4 id="potential-error-responses-7" data-magellan-destination="potential-error-responses-7">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -726,14 +730,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="creates-a-new-rate-plan">Creates a new rate plan</h3>
+<h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
 <ul>
 <li>Method: <code>POST</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-8">Parameters</h4>
+<h4 id="parameters-8" data-magellan-destination="parameters-8">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -912,7 +916,7 @@
   },
   &quot;mobileOnly&quot;: false
 }
-</code></pre><h4 id="success-responses-9">Success Responses</h4>
+</code></pre><h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -929,7 +933,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-8">Potential Error Responses</h4>
+<h4 id="potential-error-responses-8" data-magellan-destination="potential-error-responses-8">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -956,14 +960,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-rate-plan">Read a single rate plan</h3>
+<h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-9">Parameters</h4>
+<h4 id="parameters-9" data-magellan-destination="parameters-9">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1002,7 +1006,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-10">Success Responses</h4>
+<h4 id="success-responses-10" data-magellan-destination="success-responses-10">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -1019,7 +1023,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-9">Potential Error Responses</h4>
+<h4 id="potential-error-responses-9" data-magellan-destination="potential-error-responses-9">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -1046,14 +1050,14 @@
 </tr>
 </tbody>
 </table>
-<h3 id="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
+<h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
 <li>Url: <a href="https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://ws.expediaquickconnect.com/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
-<h4 id="parameters-10">Parameters</h4>
+<h4 id="parameters-10" data-magellan-destination="parameters-10">Parameters</h4>
 <table>
 <thead>
 <tr>
@@ -1240,7 +1244,7 @@
   },
   &quot;mobileOnly&quot;: false
 }
-</code></pre><h4 id="success-responses-11">Success Responses</h4>
+</code></pre><h4 id="success-responses-11" data-magellan-destination="success-responses-11">Success Responses</h4>
 <table>
 <thead>
 <tr>
@@ -1257,7 +1261,7 @@
 </tr>
 </tbody>
 </table>
-<h4 id="potential-error-responses-10">Potential Error Responses</h4>
+<h4 id="potential-error-responses-10" data-magellan-destination="potential-error-responses-10">Potential Error Responses</h4>
 <table>
 <thead>
 <tr>
@@ -1284,7 +1288,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="definitions">Definitions</h2>
+<h2 id="definitions" data-magellan-destination="definitions">Definitions</h2>
 <ul>
 <li><a name="/definitions/AdditionalGuestAmountDTO"></a>AdditionalGuestAmountDTO</li>
 </ul>
