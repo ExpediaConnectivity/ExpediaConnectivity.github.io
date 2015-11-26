@@ -344,7 +344,12 @@ code.hljs {
   width: 100%;
 }
 .index-content {
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+.index-content p {
   font-size: 1.3em;
+  margin-bottom: 0;
 }
 .footer {
   background: #3f3f3f;
