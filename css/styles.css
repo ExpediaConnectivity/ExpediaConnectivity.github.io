@@ -103,6 +103,9 @@
   color: #0065B8;
   text-decoration: underline;
 }
+.sidebar-nav .active {
+  background-color: #EFEFEF;
+}
 .sidebar-nav .active a {
   color: #0065B8;
   text-decoration: underline;
