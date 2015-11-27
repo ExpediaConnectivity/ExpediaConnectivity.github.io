@@ -41,6 +41,10 @@
 .api-content :first-child {
   margin-top: 0;
 }
+.api-content hr {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
 .api-content h1,
 .api-content h2,
 .api-content h3,
@@ -324,29 +328,29 @@ code.hljs {
   height: 80px;
   padding: 0;
 }
-#sitenav a.logo {
+#sitenav a {
   font-size: 0.8em;
   color: #FFF;
   font-family: Roboto, sans-serif;
-  line-height: 80px;
-  margin-left: 20px;
   display: inline-block;
+  line-height: 80px;
+  height: 80px;
   padding: 0;
+}
+#sitenav a.logo {
+  margin-left: 20px;
   vertical-align: middle;
   position: absolute;
 }
 #sitenav a.logo img {
   height: 37px;
 }
-#sitenav a:hover {
+#sitenav a.logo :hover {
   text-decoration: none;
 }
-#sitenav .logo {
-  text-align: center;
-  display: inline-block;
-  padding: 0;
-  vertical-align: middle;
-  height: 80px;
+#sitenav a.feedback {
+  float: right;
+  margin-right: 100px;
 }
 .full-width {
   max-width: 100%;

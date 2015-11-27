@@ -85,7 +85,7 @@ var Core = Core || {
     },
 
     resizeMenuNav: function() {
-        var sidebar = $(".sidebar-nav");
+        var sidebar = $(".sidebar-nav-items");
         if (sidebar.length == 0) {
             return;
         }
@@ -94,8 +94,8 @@ var Core = Core || {
         if (footerSize > 0) {
             size -= footerSize;
         }
-        size -= sidebar.offset().top - $(window).scrollTop() - $(".sidebar-nav>header").height();
-        $(".sidebar-nav-items").css("max-height", size);
+        size -= sidebar.offset().top - $(window).scrollTop();
+        sidebar.css("max-height", size);
     },
 
     resizeIframes: function() {
