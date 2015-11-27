@@ -72,12 +72,13 @@
   color: #4F4F4F;
   font-size: 1.2em;
   margin-top: 50px;
-  margin-bottom: 15px;
+  margin-bottom: 0.8em;
 }
 .sidebar-nav .sidebar-nav-items {
   line-height: 20px;
   list-style-type: none;
   padding-left: 10px;
+  padding-top: 0;
   margin: 0 0 150px;
   overflow-y: auto;
   background-color: #f5f5f5;
