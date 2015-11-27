@@ -9,7 +9,7 @@
 <script>
 
     $(document).ready(function() {
-        $('.content pre>code').each(function(i, block) {
+        $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
@@ -18,7 +18,7 @@
     <nav class="large-12 small-12 columns" id="sitenav">
         <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
     </nav>
-</div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><header class="columns">Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/quickstart.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/reference.html">Marketplace Feed API</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Swagger</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-6 large-offset-2 columns api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+</div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/quickstart.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/reference.html">Marketplace Feed API</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Swagger</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-6 large-offset-2 columns api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
 <p>The Marketplace Feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel&#39;s availability and rates are, as well as feedback provided by Expedia guests.</p>
 <p>Each request should include hotelier credentials in HTTP basic auth format, a Client-Id HTTP header, and a hotelId query parameter.</p>
 <p>For more information, check out the <a href="reference.html">reference documentation</a>, or try it out live with <a href="swagger.html">swagger</a>.</p>

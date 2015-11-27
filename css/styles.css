@@ -8,6 +8,7 @@
   padding-left: 60px;
   padding-right: 60px;
   color: #5E5E5E;
+  padding-top: 50px;
 }
 .api-content a {
   color: inherit;
@@ -31,10 +32,14 @@
 .api-content ul li {
   color: #5E5E5E;
   line-height: 1.4em;
+  margin-bottom: 0.5em;
 }
 .api-content p {
   color: #5E5E5E;
   line-height: 1.4em;
+}
+.api-content :first-child {
+  margin-top: 0;
 }
 .api-content h1,
 .api-content h2,
@@ -42,6 +47,7 @@
 .api-content h4,
 .api-content h5,
 .api-content h6 {
+  margin-top: 2rem;
   color: #0a0a0a;
 }
 .menu {
@@ -67,6 +73,7 @@
 .sidebar-nav .sidebar-nav-items {
   line-height: 20px;
   list-style-type: none;
+  padding-left: 10px;
   margin: 0 0 150px;
   overflow-y: auto;
   background-color: #f5f5f5;
@@ -259,23 +266,23 @@ h4 > a:hover {
   color: inherit;
 }
 h1 {
-  font-size: 30px;
-  line-height: 36px;
-}
-h2 {
   font-size: 25px;
   line-height: 30px;
 }
-h3 {
+h2 {
   font-size: 20px;
   line-height: 24px;
 }
-h4 {
+h3 {
   font-size: 17px;
   line-height: 24px;
 }
-h5 {
+h4 {
   font-size: 15px;
+  line-height: 18px;
+}
+h5 {
+  font-size: 13px;
   line-height: 18px;
 }
 h6 {
@@ -291,7 +298,6 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 2rem;
   margin-bottom: 0.8rem;
 }
 code {
