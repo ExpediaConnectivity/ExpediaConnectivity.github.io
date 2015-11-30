@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Reference - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Definition - Product API API</title><link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <script src="/js/jquery.js"></script>
@@ -19,7 +19,7 @@
         <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
         <a class="feedback show-for-medium-up" href="mailto:conpm@expedia.com">Feedback</a>
     </nav>
-</div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/quickstart.html">Quickstart</a></li><li class="pagename"><a class="sidebar-nav-item" href="#api-reference">API Reference</a></li><li class="depth2" data-magellan-arrival="api-principles-standards"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth2" data-magellan-arrival="http-status-code"><a class="sidebar-nav-item" href="#http-status-code">HTTP Status Code</a></li><li class="depth2" data-magellan-arrival="http-headers"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth3" data-magellan-arrival="format-request"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth3" data-magellan-arrival="format-response"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth2" data-magellan-arrival="basic-response-structure-with-entity-and-errors"><a class="sidebar-nav-item" href="#basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</a></li><li class="depth3" data-magellan-arrival="entity"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth3" data-magellan-arrival="single-entity-vs-entity-array-in-read-get-responses"><a class="sidebar-nav-item" href="#single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</a></li><li class="depth3" data-magellan-arrival="entity-vs-errors"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth2" data-magellan-arrival="property"><a class="sidebar-nav-item" href="#property">Property</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-properties"><a class="sidebar-nav-item" href="#obtain-a-list-of-properties">Obtain a list of properties</a></li><li class="depth3" data-magellan-arrival="read-a-single-property"><a class="sidebar-nav-item" href="#read-a-single-property">Read a single property</a></li><li class="depth2" data-magellan-arrival="room-type"><a class="sidebar-nav-item" href="#room-type">Room type</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth2" data-magellan-arrival="rate-plan"><a class="sidebar-nav-item" href="#rate-plan">Rate plan</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-rate-plans"><a class="sidebar-nav-item" href="#obtain-a-list-of-rate-plans">Obtain a list of rate plans</a></li><li class="depth3" data-magellan-arrival="creates-a-new-rate-plan"><a class="sidebar-nav-item" href="#creates-a-new-rate-plan">Creates a new rate plan</a></li><li class="depth3" data-magellan-arrival="read-a-single-rate-plan"><a class="sidebar-nav-item" href="#read-a-single-rate-plan">Read a single rate plan</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-rate-plan"><a class="sidebar-nav-item" href="#modify-an-existing-rate-plan">Modify an existing rate plan</a></li><li class="depth2" data-magellan-arrival="error-codes"><a class="sidebar-nav-item" href="#error-codes">Error codes</a></li><li class="depth2" data-magellan-arrival="definitions"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li><li class="depth3" data-magellan-arrival="propertydto"><a class="sidebar-nav-item" href="#propertydto">PropertyDTO</a></li><li class="depth3" data-magellan-arrival="roomtypedto"><a class="sidebar-nav-item" href="#roomtypedto">RoomTypeDTO</a></li><li class="depth3" data-magellan-arrival="rateplandto"><a class="sidebar-nav-item" href="#rateplandto">RatePlanDTO</a></li><li class="depth3" data-magellan-arrival="responsewrapperdto"><a class="sidebar-nav-item" href="#responsewrapperdto">ResponseWrapperDTO</a></li><li class="depth3" data-magellan-arrival="errordto"><a class="sidebar-nav-item" href="#errordto">ErrorDTO</a></li><li class="depth3" data-magellan-arrival="predefinedroomnamesenum"><a class="sidebar-nav-item" href="#predefinedroomnamesenum">PredefinedRoomNamesEnum</a></li><li class="depth3" data-magellan-arrival="typeofroomemum"><a class="sidebar-nav-item" href="#typeofroomemum">typeOfRoomEmum</a></li><li class="depth3" data-magellan-arrival="roomclassenum"><a class="sidebar-nav-item" href="#roomclassenum">roomClassEnum</a></li><li class="depth3" data-magellan-arrival="bedroomdetailsenum"><a class="sidebar-nav-item" href="#bedroomdetailsenum">bedroomDetailsEnum</a></li><li class="depth3" data-magellan-arrival="featuredamenityenum"><a class="sidebar-nav-item" href="#featuredamenityenum">featuredAmenityEnum</a></li><li class="depth3" data-magellan-arrival="viewenum"><a class="sidebar-nav-item" href="#viewenum">viewEnum</a></li><li class="depth3" data-magellan-arrival="areaenum"><a class="sidebar-nav-item" href="#areaenum">areaEnum</a></li><li class="depth3" data-magellan-arrival="bedtypeidenum"><a class="sidebar-nav-item" href="#bedtypeidenum">bedTypeIdEnum</a></li><li class="depth3" data-magellan-arrival="valueaddinclusionsenum"><a class="sidebar-nav-item" href="#valueaddinclusionsenum">valueAddInclusionsEnum</a></li><li class="depth3" data-magellan-arrival="perstayfeeenum"><a class="sidebar-nav-item" href="#perstayfeeenum">perStayFeeEnum</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/guides.html">Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-properties.html">Property Examples</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-room-types.html">Room Type Examples</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/examples-rate-plans.html">Rate Plan Examples</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns api-content"><h1 id="api-reference" data-magellan-destination="api-reference">API Reference</h1>
+</div><div class="hide-for-small-only medium-3 large-2 menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/quick-start.html">Quickstart</a></li><li class="pagename"><a class="sidebar-nav-item" href="#api-definition">API Definition</a></li><li class="depth2" data-magellan-arrival="api-principles-standards"><a class="sidebar-nav-item" href="#api-principles-standards">API Principles &amp; Standards</a></li><li class="depth2" data-magellan-arrival="resources-endpoints-overview"><a class="sidebar-nav-item" href="#resources-endpoints-overview">Resources &amp; Endpoints Overview</a></li><li class="depth2" data-magellan-arrival="http-status-code"><a class="sidebar-nav-item" href="#http-status-code">HTTP Status Code</a></li><li class="depth2" data-magellan-arrival="http-headers"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth3" data-magellan-arrival="format-request"><a class="sidebar-nav-item" href="#format-request">Format – Request</a></li><li class="depth3" data-magellan-arrival="format-response"><a class="sidebar-nav-item" href="#format-response">Format – Response</a></li><li class="depth2" data-magellan-arrival="basic-response-wrapper-structure-with-entity-and-errors"><a class="sidebar-nav-item" href="#basic-response-wrapper-structure-with-entity-and-errors">Basic Response Wrapper Structure with Entity and Errors</a></li><li class="depth3" data-magellan-arrival="responsewrapperdto"><a class="sidebar-nav-item" href="#responsewrapperdto">ResponseWrapperDTO</a></li><li class="depth3" data-magellan-arrival="entity"><a class="sidebar-nav-item" href="#entity">Entity</a></li><li class="depth3" data-magellan-arrival="single-entity-vs-entity-array-in-read-get-responses"><a class="sidebar-nav-item" href="#single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</a></li><li class="depth3" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="depth3" data-magellan-arrival="entity-vs-errors"><a class="sidebar-nav-item" href="#entity-vs-errors">Entity vs Errors</a></li><li class="depth2" data-magellan-arrival="property"><a class="sidebar-nav-item" href="#property">Property</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-properties"><a class="sidebar-nav-item" href="#obtain-a-list-of-properties">Obtain a list of properties</a></li><li class="depth3" data-magellan-arrival="read-a-single-property"><a class="sidebar-nav-item" href="#read-a-single-property">Read a single property</a></li><li class="depth3" data-magellan-arrival="propertydto-definition"><a class="sidebar-nav-item" href="#propertydto-definition">PropertyDTO Definition</a></li><li class="depth2" data-magellan-arrival="room-type"><a class="sidebar-nav-item" href="#room-type">Room type</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth3" data-magellan-arrival="roomtypedto-definition"><a class="sidebar-nav-item" href="#roomtypedto-definition">RoomTypeDTO Definition</a></li><li class="depth2" data-magellan-arrival="rate-plan"><a class="sidebar-nav-item" href="#rate-plan">Rate plan</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-rate-plans"><a class="sidebar-nav-item" href="#obtain-a-list-of-rate-plans">Obtain a list of rate plans</a></li><li class="depth3" data-magellan-arrival="creates-a-new-rate-plan"><a class="sidebar-nav-item" href="#creates-a-new-rate-plan">Creates a new rate plan</a></li><li class="depth3" data-magellan-arrival="read-a-single-rate-plan"><a class="sidebar-nav-item" href="#read-a-single-rate-plan">Read a single rate plan</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-rate-plan"><a class="sidebar-nav-item" href="#modify-an-existing-rate-plan">Modify an existing rate plan</a></li><li class="depth3" data-magellan-arrival="rateplandto-definition"><a class="sidebar-nav-item" href="#rateplandto-definition">RatePlanDTO Definition</a></li><li class="depth2" data-magellan-arrival="error-codes"><a class="sidebar-nav-item" href="#error-codes">Error codes</a></li><li class="depth2" data-magellan-arrival="enumerations-domain-values"><a class="sidebar-nav-item" href="#enumerations-domain-values">Enumerations &amp; Domain Values</a></li><li class="depth3" data-magellan-arrival="predefinedroomnamesenum"><a class="sidebar-nav-item" href="#predefinedroomnamesenum">PredefinedRoomNamesEnum</a></li><li class="depth3" data-magellan-arrival="typeofroomemum"><a class="sidebar-nav-item" href="#typeofroomemum">typeOfRoomEmum</a></li><li class="depth3" data-magellan-arrival="roomclassenum"><a class="sidebar-nav-item" href="#roomclassenum">roomClassEnum</a></li><li class="depth3" data-magellan-arrival="bedroomdetailsenum"><a class="sidebar-nav-item" href="#bedroomdetailsenum">bedroomDetailsEnum</a></li><li class="depth3" data-magellan-arrival="featuredamenityenum"><a class="sidebar-nav-item" href="#featuredamenityenum">featuredAmenityEnum</a></li><li class="depth3" data-magellan-arrival="viewenum"><a class="sidebar-nav-item" href="#viewenum">viewEnum</a></li><li class="depth3" data-magellan-arrival="areaenum"><a class="sidebar-nav-item" href="#areaenum">areaEnum</a></li><li class="depth3" data-magellan-arrival="bedtypeidenum"><a class="sidebar-nav-item" href="#bedtypeidenum">bedTypeIdEnum</a></li><li class="depth3" data-magellan-arrival="valueaddinclusionsenum"><a class="sidebar-nav-item" href="#valueaddinclusionsenum">valueAddInclusionsEnum</a></li><li class="depth3" data-magellan-arrival="perstayfeeenum"><a class="sidebar-nav-item" href="#perstayfeeenum">perStayFeeEnum</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/guides.html">Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-api/sample-messages.html">Sample Messages</a></li></ul></nav></div><div class="row full-width"><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns api-content"><h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
 <p>The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs, without having to use EPC or contact their market manager. The API also enables our partners to read the definition of the room types and rate plans created in the system.</p>
 <h2 id="api-principles-standards" data-magellan-destination="api-principles-standards">API Principles &amp; Standards</h2>
 <ul>
@@ -31,6 +31,84 @@
 <li><strong>Entity</strong> : All successful responses returned by EPS services are encapsulated within an HTTP Entity. Entity is used as a way to make successful responses generic across different resources and operations. The Entity element may represent a single object, or multiple objects; if the latter, it would be an array. </li>
 <li><strong>Errors</strong> : If a request produces one or more errors, the response will return an array of one or more errors. If Errors are present, Entity will not be present.</li>
 </ul>
+<h2 id="resources-endpoints-overview" data-magellan-destination="resources-endpoints-overview">Resources &amp; Endpoints Overview</h2>
+<ul>
+<li>In order to access property information: /product/properties/{propertyResourceId}. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.</li>
+<li>Room types can be accessed in the context of a property: /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
+<li>Rate plans can be accessed as part of a room type (they belong to a room type): /product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Resource</th>
+<th>Supported Operations</th>
+<th>Production Endpoint</th>
+<th>Parameters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Property</td>
+<td>Read multiple properties (GET) (limited to max 200 at a time) belonging to the user credentials provided</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/">https://services.expediapartnercentral.com/products/v1/properties/</a></td>
+<td>status=all (optional) If status is not provided, only active properties are returned. offset={number starting at 0} (optional, returns results starting at position 0 by default) limit={number between 1 and 200} (optional, 20 by default)</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>Read a single property (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{PropertyID}">https://services.expediapartnercentral.com/products/v1/properties/{PropertyID}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Read multiple room types (GET) belonging to a single property</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>status=all (optional) If status is not provided, only active room types are returned.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Read a single room type (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Create a single room type (POST)</td>
+<td>POST <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>Update a single room type (PUT) in full overlay mode</td>
+<td>PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Read multiple rate plans belonging to a single room type (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>status=all (optional) If status is not provided, only active rate plans are returned.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Read a single rate plan (GET)</td>
+<td>GET <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Create a single rate plan (POST)</td>
+<td>POST <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>None</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>Update a single rate plan (PUT) in full overlay mode</td>
+<td>PUT <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
 <h2 id="http-status-code" data-magellan-destination="http-status-code">HTTP Status Code</h2>
 <p>The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: </p>
 <table>
@@ -158,8 +236,30 @@
 </tr>
 </tbody>
 </table>
-<h2 id="basic-response-structure-with-entity-and-errors" data-magellan-destination="basic-response-structure-with-entity-and-errors">Basic response structure with Entity and Errors</h2>
+<h2 id="basic-response-wrapper-structure-with-entity-and-errors" data-magellan-destination="basic-response-wrapper-structure-with-entity-and-errors">Basic Response Wrapper Structure with Entity and Errors</h2>
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
+<h3 id="responsewrapperdto" data-magellan-destination="responsewrapperdto">ResponseWrapperDTO</h3>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>entity</td>
+<td>object</td>
+<td></td>
+</tr>
+<tr>
+<td>errors</td>
+<td>Array[<a href="#/definitions/ErrorDTO">ErrorDTO</a>]</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="entity" data-magellan-destination="entity">Entity</h3>
 <p>The entities supported by the product API are rate plans, room types and properties.</p>
 <p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. </p>
@@ -176,16 +276,6 @@ Simple entity response:</p>
     &quot;resourceId&quot;: 123,
     ...
   }
-}
-</code></pre>
-<p>If a response doesn’t contain an Entity, it will contain Errors:</p>
-<pre><code class="lang-JSON">{
-  &quot;errors&quot;: [
-    {
-      &quot;code&quot;: 1000,
-      &quot;message&quot;: &quot;Access denied: your account is not authorized to manage this property.&quot;
-    }
-  ]
 }
 </code></pre>
 <h3 id="single-entity-vs-entity-array-in-read-get-responses" data-magellan-destination="single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</h3>
@@ -215,6 +305,40 @@ Simple entity response:</p>
   ]
 }
 </code></pre>
+<h3 id="errors" data-magellan-destination="errors">Errors</h3>
+<p>If a response doesn’t contain an Entity, it will contain Errors:</p>
+<pre><code class="lang-JSON">{
+  &quot;errors&quot;: [
+    {
+      &quot;code&quot;: 1000,
+      &quot;message&quot;: &quot;Access denied: your account is not authorized to manage this property.&quot;
+    }
+  ]
+}
+</code></pre>
+<p><a name="/definitions/ErrorDTO"></a></p>
+<h4 id="errordto" data-magellan-destination="errordto">ErrorDTO</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>integer</td>
+<td><a href="#/definitions/ErrorCodes">Full list of error codes</a>.</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h3 id="entity-vs-errors" data-magellan-destination="entity-vs-errors">Entity vs Errors</h3>
 <p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.</p>
 <p>Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.</p>
@@ -333,6 +457,155 @@ Simple entity response:</p>
 <td>200</td>
 <td>OK</td>
 <td><a href="#/definitions/PropertyDTO">PropertyDTO</a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="/definitions/PropertyDTO"></a></p>
+<h3 id="propertydto-definition" data-magellan-destination="propertydto-definition">PropertyDTO Definition</h3>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceId</td>
+<td>integer</td>
+<td>Expedia property ID.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name describing the property. Max. 255 characters.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.</td>
+</tr>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.</td>
+</tr>
+<tr>
+<td>address</td>
+<td><a href="#/definitions/PropertyAddressDTO">PropertyAddressDTO</a></td>
+<td>Property address details.</td>
+</tr>
+<tr>
+<td>distributionModels</td>
+<td>Array[Enum]</td>
+<td>Distribution model(s) under which the property is configured to work with Expedia. Possible values are: ExpediaCollect, HotelCollect. Properties that opted in the ExpediaTravelerPreference program will have both.</td>
+</tr>
+<tr>
+<td>rateAcquisitionType</td>
+<td>Enum</td>
+<td>Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs. Possible value s are NetRate (rate net of Expedia’s compensation) and SellLAR (rate inclusive of compensation).</td>
+</tr>
+<tr>
+<td>taxInclusive</td>
+<td>boolean</td>
+<td>Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.</td>
+</tr>
+<tr>
+<td>pricingModel</td>
+<td>Enum</td>
+<td>Configuration of the property when it comes to pricing rooms and rates. Possible values are PerDayPricing and OccupancyBasedPricing.</td>
+</tr>
+<tr>
+<td>baseAllocationEnabled</td>
+<td>boolean</td>
+<td>Boolean to indicate whether this property has a base allocation contract with Expedia.</td>
+</tr>
+<tr>
+<td>minLOSThreshold</td>
+<td>integer</td>
+<td>This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.</td>
+</tr>
+<tr>
+<td>cancellationTime</td>
+<td>string</td>
+<td>Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration.</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>string</td>
+<td>Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.</td>
+</tr>
+<tr>
+<td>reservationCutOff</td>
+<td><a href="#/definitions/CutOffDTO">CutOffDTO</a></td>
+<td>Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).</td>
+</tr>
+</tbody>
+</table>
+<p><a name="/definitions/CutOffDTO"></a></p>
+<h4 id="cutoffdto" data-magellan-destination="cutoffdto">CutOffDTO</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>string</td>
+<td>Indicates at which time we’ll stop making inventory available for same day reservations</td>
+</tr>
+<tr>
+<td>day</td>
+<td>string</td>
+<td>Can take one of 2 values: sameDay or nextDay. It complements the time attribute.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="/definitions/PropertyAddressDTO"></a></p>
+<h4 id="propertyaddressdto" data-magellan-destination="propertyaddressdto">PropertyAddressDTO</h4>
+<table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>line1</td>
+<td>string</td>
+<td>First line of address.</td>
+</tr>
+<tr>
+<td>line2</td>
+<td>string</td>
+<td>Optional. Second line of address.</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>City in which the property is located.</td>
+</tr>
+<tr>
+<td>state</td>
+<td>string</td>
+<td>Optional. State/Province.</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>string</td>
+<td>Optional. Postal or State Code.</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>string</td>
+<td>ISO 3166-1 Alpha 3 country code, for the country where the property is located.</td>
 </tr>
 </tbody>
 </table>
@@ -654,566 +927,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="rate-plan" data-magellan-destination="rate-plan">Rate plan</h2>
-<h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
-<ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
-<li>Consumes: <code>HTTP Request (GET)</code></li>
-<li>Produces: <code>application/json</code></li>
-</ul>
-<h4 id="parameters-7" data-magellan-destination="parameters-7">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>propertyId</td>
-<td>path</td>
-<td>Expedia Property ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>roomTypeId</td>
-<td>path</td>
-<td>Room type resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>status</td>
-<td>query</td>
-<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
-<td>false</td>
-<td>string</td>
-<td>active</td>
-</tr>
-</tbody>
-</table>
-<h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
-<ul>
-<li>Method: <code>POST</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
-<li>Consumes: <code>application/json</code></li>
-<li>Produces: <code>application/json</code></li>
-</ul>
-<h4 id="parameters-8" data-magellan-destination="parameters-8">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>propertyId</td>
-<td>path</td>
-<td>Expedia Property ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>roomTypeId</td>
-<td>path</td>
-<td>Room type resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>body</td>
-<td>body</td>
-<td>JSON message describing the new rate plan</td>
-<td>true</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Examples</strong></p>
-<pre><code>{
-    &quot;name&quot;: &quot;My Rate Plan Name&quot;,
-    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
-    &quot;distributionRules&quot;: [
-        {
-            &quot;partnerCode&quot;: &quot;ECCode&quot;,
-            &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
-        }, {
-            &quot;partnerCode&quot;: &quot;HCCode&quot;,
-            &quot;distributionModel&quot;: &quot;HotelCollect&quot;
-        }
-    ],
-    &quot;status&quot;: &quot;Active&quot;,
-    &quot;type&quot;: &quot;Standalone&quot;,
-    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
-    &quot;occupantsForBaseRate&quot;: 2,
-    &quot;taxInclusive&quot;: false,
-    &quot;cancelPolicy&quot;: {
-        &quot;defaultPenalties&quot;: [
-            {
-                &quot;deadline&quot;: 0,
-                &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
-                &quot;amount&quot;: 0
-            }, {
-                &quot;deadline&quot;: 24,
-                &quot;perStayFee&quot;: &quot;None&quot;,
-                &quot;amount&quot;: 0
-            }
-        ]
-    },
-    &quot;additionalGuestAmounts&quot;: [
-        {
-            &quot;ageCategory&quot;: &quot;Adult&quot;,
-            &quot;amount&quot;: 8.73
-        }, {
-            &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
-            &quot;amount&quot;: 5
-        }
-    ],
-    &quot;valueAddInclusions&quot;: [
-        &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
-    ],
-    &quot;minLOSDefault&quot;: 1,
-    &quot;maxLOSDefault&quot;: 28,
-    &quot;minAdvBookDays&quot;: 0,
-    &quot;maxAdvBookDays&quot;: 500,
-    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
-    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
-    &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
-    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
-    &quot;mobileOnly&quot;: false
-}
-</code></pre><h4 id="success-responses-8" data-magellan-destination="success-responses-8">Success Responses</h4>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
-<ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
-<li>Consumes: HTTP Request (GET)</li>
-<li>Produces: <code>application/json</code></li>
-</ul>
-<h4 id="parameters-9" data-magellan-destination="parameters-9">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>propertyId</td>
-<td>path</td>
-<td>Expedia Property ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>roomTypeId</td>
-<td>path</td>
-<td>Room type resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>ratePlanId</td>
-<td>path</td>
-<td>Rate plan resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
-<ul>
-<li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
-<li>Consumes: <code>application/json</code></li>
-<li>Produces: <code>application/json</code></li>
-</ul>
-<h4 id="parameters-10" data-magellan-destination="parameters-10">Parameters</h4>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>propertyId</td>
-<td>path</td>
-<td>Expedia Property ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>roomTypeId</td>
-<td>path</td>
-<td>Room type resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>ratePlanId</td>
-<td>path</td>
-<td>Rate plan resource ID</td>
-<td>true</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>body</td>
-<td>body</td>
-<td>JSON message of modified rate plan</td>
-<td>true</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Examples</strong></p>
-<pre><code>{
-    &quot;resourceId&quot;: 205020307,
-    &quot;name&quot;: &quot;My Rate Plan Name&quot;,
-    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
-    &quot;distributionRules&quot;: [
-        {
-            &quot;expediaId&quot;: &quot;205020307&quot;,
-            &quot;partnerCode&quot;: &quot;ECCode&quot;,
-            &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
-            &quot;manageable&quot;: true,
-            &quot;compensation&quot;: {
-                &quot;percent&quot;: 0.23,
-                &quot;minAmount&quot;: 0
-            }
-        }, {
-            &quot;expediaId&quot;: &quot;205020307A&quot;,
-            &quot;partnerCode&quot;: &quot;HCCode&quot;,
-            &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
-            &quot;manageable&quot;: true,
-            &quot;compensation&quot;: {
-                &quot;percent&quot;: 0.23
-            }
-        }
-    ],
-    &quot;status&quot;: &quot;Active&quot;,
-    &quot;type&quot;: &quot;Standalone&quot;,
-    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
-    &quot;occupantsForBaseRate&quot;: 2,
-    &quot;taxInclusive&quot;: false,
-    &quot;cancelPolicy&quot;: {
-        &quot;defaultPenalties&quot;: [
-            {
-                &quot;deadline&quot;: 0,
-                &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
-                &quot;amount&quot;: 0
-            }, {
-                &quot;deadline&quot;: 24,
-                &quot;perStayFee&quot;: &quot;None&quot;,
-                &quot;amount&quot;: 0
-            }
-        ]
-    },
-    &quot;additionalGuestAmounts&quot;: [
-        {
-            &quot;dateStart&quot;: &quot;2015-11-27&quot;,
-            &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
-            &quot;ageCategory&quot;: &quot;Adult&quot;,
-            &quot;amount&quot;: 8.73
-        }, {
-            &quot;dateStart&quot;: &quot;2015-11-27&quot;,
-            &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
-            &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
-            &quot;amount&quot;: 5
-        }
-    ],
-    &quot;valueAddInclusions&quot;: [
-        &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
-    ],
-    &quot;minLOSDefault&quot;: 1,
-    &quot;maxLOSDefault&quot;: 28,
-    &quot;minAdvBookDays&quot;: 0,
-    &quot;maxAdvBookDays&quot;: 500,
-    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
-    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
-    &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
-    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
-    &quot;mobileOnly&quot;: false
-}
-</code></pre><h4 id="success-responses-10" data-magellan-destination="success-responses-10">Success Responses</h4>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="error-codes" data-magellan-destination="error-codes">Error codes</h2>
-<p>Renders the page describing the business error codes used by the API</p>
-<ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/documentation/api/errors">https://services.expediapartnercentral.com/products/v1/documentation/api/errors</a></li>
-<li>Consumes: <code>HTTP Request (GET)</code></li>
-<li>Produces: <code>text/html</code></li>
-</ul>
-<h4 id="success-responses-11" data-magellan-destination="success-responses-11">Success Responses</h4>
-<table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>successful operation</td>
-<td>HTML Page</td>
-</tr>
-</tbody>
-</table>
-<p><a name="/definitions/PropertyDTO"></a></p>
-<h2 id="definitions" data-magellan-destination="definitions">Definitions</h2>
-<h3 id="propertydto" data-magellan-destination="propertydto">PropertyDTO</h3>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>resourceId</td>
-<td>integer</td>
-<td>Expedia property ID.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>string</td>
-<td>Name describing the property. Max. 255 characters.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>string</td>
-<td>Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.</td>
-</tr>
-<tr>
-<td>currency</td>
-<td>string</td>
-<td>Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.</td>
-</tr>
-<tr>
-<td>address</td>
-<td><a href="#/definitions/PropertyAddressDTO">PropertyAddressDTO</a></td>
-<td>Property address details.</td>
-</tr>
-<tr>
-<td>distributionModels</td>
-<td>Array[Enum]</td>
-<td>Distribution model(s) under which the property is configured to work with Expedia. Possible values are: ExpediaCollect, HotelCollect. Properties that opted in the ExpediaTravelerPreference program will have both.</td>
-</tr>
-<tr>
-<td>rateAcquisitionType</td>
-<td>Enum</td>
-<td>Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs. Possible value s are NetRate (rate net of Expedia’s compensation) and SellLAR (rate inclusive of compensation).</td>
-</tr>
-<tr>
-<td>taxInclusive</td>
-<td>boolean</td>
-<td>Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not.</td>
-</tr>
-<tr>
-<td>pricingModel</td>
-<td>Enum</td>
-<td>Configuration of the property when it comes to pricing rooms and rates. Possible values are PerDayPricing and OccupancyBasedPricing.</td>
-</tr>
-<tr>
-<td>baseAllocationEnabled</td>
-<td>boolean</td>
-<td>Boolean to indicate whether this property has a base allocation contract with Expedia.</td>
-</tr>
-<tr>
-<td>minLOSThreshold</td>
-<td>integer</td>
-<td>This property configuration is used by Expedia when MinLOS Restrictions updates are received via EQC AR. If the MinLOS restriction update attempted via EQC AR is greater than this value, the update will be rejected.</td>
-</tr>
-<tr>
-<td>cancellationTime</td>
-<td>string</td>
-<td>Cancellation deadline reference time. When cancel policies are defined and exchanged via the rate plan resource, a deadline in hours is provided. The deadline in hours is always relative to this property cancellation deadline reference time configuration.</td>
-</tr>
-<tr>
-<td>timezone</td>
-<td>string</td>
-<td>Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.</td>
-</tr>
-<tr>
-<td>reservationCutOff</td>
-<td><a href="#/definitions/CutOffDTO">CutOffDTO</a></td>
-<td>Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).</td>
-</tr>
-</tbody>
-</table>
-<p><a name="/definitions/CutOffDTO"></a></p>
-<h4 id="cutoffdto" data-magellan-destination="cutoffdto">CutOffDTO</h4>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>time</td>
-<td>string</td>
-<td>Indicates at which time we’ll stop making inventory available for same day reservations</td>
-</tr>
-<tr>
-<td>day</td>
-<td>string</td>
-<td>Can take one of 2 values: sameDay or nextDay. It complements the time attribute.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="/definitions/PropertyAddressDTO"></a></p>
-<h4 id="propertyaddressdto" data-magellan-destination="propertyaddressdto">PropertyAddressDTO</h4>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>line1</td>
-<td>string</td>
-<td>First line of address.</td>
-</tr>
-<tr>
-<td>line2</td>
-<td>string</td>
-<td>Optional. Second line of address.</td>
-</tr>
-<tr>
-<td>city</td>
-<td>string</td>
-<td>City in which the property is located.</td>
-</tr>
-<tr>
-<td>state</td>
-<td>string</td>
-<td>Optional. State/Province.</td>
-</tr>
-<tr>
-<td>postalCode</td>
-<td>string</td>
-<td>Optional. Postal or State Code.</td>
-</tr>
-<tr>
-<td>countryCode</td>
-<td>string</td>
-<td>ISO 3166-1 Alpha 3 country code, for the country where the property is located.</td>
-</tr>
-</tbody>
-</table>
 <p><a name="/definitions/RoomTypeDTO"></a></p>
-<h3 id="roomtypedto" data-magellan-destination="roomtypedto">RoomTypeDTO</h3>
+<h3 id="roomtypedto-definition" data-magellan-destination="roomtypedto-definition">RoomTypeDTO Definition</h3>
 <table>
 <thead>
 <tr>
@@ -1453,8 +1168,391 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
+<h2 id="rate-plan" data-magellan-destination="rate-plan">Rate plan</h2>
+<h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Consumes: <code>HTTP Request (GET)</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-7" data-magellan-destination="parameters-7">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
+<td>false</td>
+<td>string</td>
+<td>active</td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-8" data-magellan-destination="parameters-8">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message describing the new rate plan</td>
+<td>true</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+    &quot;name&quot;: &quot;My Rate Plan Name&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;distributionRules&quot;: [
+        {
+            &quot;partnerCode&quot;: &quot;ECCode&quot;,
+            &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
+        }, {
+            &quot;partnerCode&quot;: &quot;HCCode&quot;,
+            &quot;distributionModel&quot;: &quot;HotelCollect&quot;
+        }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 2,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+        &quot;defaultPenalties&quot;: [
+            {
+                &quot;deadline&quot;: 0,
+                &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+                &quot;amount&quot;: 0
+            }, {
+                &quot;deadline&quot;: 24,
+                &quot;perStayFee&quot;: &quot;None&quot;,
+                &quot;amount&quot;: 0
+            }
+        ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+        {
+            &quot;ageCategory&quot;: &quot;Adult&quot;,
+            &quot;amount&quot;: 8.73
+        }, {
+            &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+            &quot;amount&quot;: 5
+        }
+    ],
+    &quot;valueAddInclusions&quot;: [
+        &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+}
+</code></pre><h4 id="success-responses-8" data-magellan-destination="success-responses-8">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Consumes: HTTP Request (GET)</li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-9" data-magellan-destination="parameters-9">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>ratePlanId</td>
+<td>path</td>
+<td>Rate plan resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
+<ul>
+<li>Method: <code>PUT</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-10" data-magellan-destination="parameters-10">Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>ratePlanId</td>
+<td>path</td>
+<td>Rate plan resource ID</td>
+<td>true</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message of modified rate plan</td>
+<td>true</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Examples</strong></p>
+<pre><code>{
+    &quot;resourceId&quot;: 205020307,
+    &quot;name&quot;: &quot;My Rate Plan Name&quot;,
+    &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
+    &quot;distributionRules&quot;: [
+        {
+            &quot;expediaId&quot;: &quot;205020307&quot;,
+            &quot;partnerCode&quot;: &quot;ECCode&quot;,
+            &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+            &quot;manageable&quot;: true,
+            &quot;compensation&quot;: {
+                &quot;percent&quot;: 0.23,
+                &quot;minAmount&quot;: 0
+            }
+        }, {
+            &quot;expediaId&quot;: &quot;205020307A&quot;,
+            &quot;partnerCode&quot;: &quot;HCCode&quot;,
+            &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+            &quot;manageable&quot;: true,
+            &quot;compensation&quot;: {
+                &quot;percent&quot;: 0.23
+            }
+        }
+    ],
+    &quot;status&quot;: &quot;Active&quot;,
+    &quot;type&quot;: &quot;Standalone&quot;,
+    &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
+    &quot;occupantsForBaseRate&quot;: 2,
+    &quot;taxInclusive&quot;: false,
+    &quot;cancelPolicy&quot;: {
+        &quot;defaultPenalties&quot;: [
+            {
+                &quot;deadline&quot;: 0,
+                &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+                &quot;amount&quot;: 0
+            }, {
+                &quot;deadline&quot;: 24,
+                &quot;perStayFee&quot;: &quot;None&quot;,
+                &quot;amount&quot;: 0
+            }
+        ]
+    },
+    &quot;additionalGuestAmounts&quot;: [
+        {
+            &quot;dateStart&quot;: &quot;2015-11-27&quot;,
+            &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;ageCategory&quot;: &quot;Adult&quot;,
+            &quot;amount&quot;: 8.73
+        }, {
+            &quot;dateStart&quot;: &quot;2015-11-27&quot;,
+            &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+            &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+            &quot;amount&quot;: 5
+        }
+    ],
+    &quot;valueAddInclusions&quot;: [
+        &quot;Free Parking&quot;, &quot;Free Breakfast&quot;, &quot;Free Internet&quot;
+    ],
+    &quot;minLOSDefault&quot;: 1,
+    &quot;maxLOSDefault&quot;: 28,
+    &quot;minAdvBookDays&quot;: 0,
+    &quot;maxAdvBookDays&quot;: 500,
+    &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
+    &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
+    &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
+    &quot;mobileOnly&quot;: false
+}
+</code></pre><h4 id="success-responses-10" data-magellan-destination="success-responses-10">Success Responses</h4>
+<table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RatePlanDTO">RatePlanDTO</a></td>
+</tr>
+</tbody>
+</table>
 <p><a name="/definitions/RatePlanDTO"></a></p>
-<h3 id="rateplandto" data-magellan-destination="rateplandto">RatePlanDTO</h3>
+<h3 id="rateplandto-definition" data-magellan-destination="rateplandto-definition">RatePlanDTO Definition</h3>
 <table>
 <thead>
 <tr>
@@ -1784,52 +1882,33 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/ResponseWrapperDTO"></a></p>
-<h3 id="responsewrapperdto" data-magellan-destination="responsewrapperdto">ResponseWrapperDTO</h3>
+<p><a name="/definitions/ErrorCodes"></a></p>
+<h2 id="error-codes" data-magellan-destination="error-codes">Error codes</h2>
+<p>Renders the page describing the business error codes used by the API</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/products/v1/documentation/api/errors">https://services.expediapartnercentral.com/products/v1/documentation/api/errors</a></li>
+<li>Consumes: <code>HTTP Request (GET)</code></li>
+<li>Produces: <code>text/html</code></li>
+</ul>
+<h4 id="success-responses-11" data-magellan-destination="success-responses-11">Success Responses</h4>
 <table>
 <thead>
 <tr>
-<th>Property Name</th>
-<th>Type</th>
+<th>Status Code</th>
 <th>Description</th>
+<th>Response Model</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>entity</td>
-<td>object</td>
-<td></td>
-</tr>
-<tr>
-<td>errors</td>
-<td>Array[<a href="#/definitions/ErrorDTO">ErrorDTO</a>]</td>
-<td></td>
+<td>200</td>
+<td>successful operation</td>
+<td>HTML Page</td>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/ErrorDTO"></a></p>
-<h3 id="errordto" data-magellan-destination="errordto">ErrorDTO</h3>
-<table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>code</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>message</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h2 id="enumerations-domain-values" data-magellan-destination="enumerations-domain-values">Enumerations &amp; Domain Values</h2>
 <p><a name="/definitions/PredefinedRoomNamesEnum"></a></p>
 <h3 id="predefinedroomnamesenum" data-magellan-destination="predefinedroomnamesenum">PredefinedRoomNamesEnum</h3>
 <table>
