@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Marketplace Feed API - Marketplace Feed API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Marketplace Feed API</title><link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <script src="/js/jquery.js"></script>
@@ -19,7 +19,7 @@
         <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
         <a class="feedback show-for-medium-up" href="mailto:conpm@expedia.com">Feedback</a>
     </nav>
-</div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/quickstart.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="#marketplace-feed-api">Marketplace Feed API</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="messages-endpoint"><a class="sidebar-nav-item" href="#messages-endpoint">Messages Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="marketplace-feed-api" data-magellan-destination="marketplace-feed-api">Marketplace Feed API</h1>
+</div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/quickstart.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="messages-endpoint"><a class="sidebar-nav-item" href="#messages-endpoint">Messages Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>The Marketplace Feed API requires HTTP basic auth credentials to be supplied with every request.</p>
 <p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to acess data for those hotels.</p>
@@ -41,20 +41,20 @@
 </thead>
 <tbody>
 <tr>
-<td><code>hotelId</code></td>
-<td>Query</td>
-<td>String</td>
-<td><code>123</code></td>
-</tr>
-<tr>
 <td><code>Authorization</code></td>
 <td>Header</td>
 <td>String</td>
 <td><code>Basic dGVzdDp0ZXN0</code></td>
 </tr>
 <tr>
-<td><code>Client-Id</code></td>
-<td>Header</td>
+<td><code>hotelId</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>123</code></td>
+</tr>
+<tr>
+<td><code>clientId</code></td>
+<td>Query</td>
 <td>String</td>
 <td><code>YourOrganization</code></td>
 </tr>
@@ -88,7 +88,7 @@
 </tr>
 <tr>
 <td>412 Precondition Failed</td>
-<td>Client-Id header or hotelId query parameter is invalid/missing.</td>
+<td>clientId and/or hotelId query parameters are invalid/missing.</td>
 </tr>
 </tbody>
 </table>

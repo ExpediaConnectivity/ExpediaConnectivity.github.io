@@ -19,12 +19,12 @@
         <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
         <a class="feedback show-for-medium-up" href="mailto:conpm@expedia.com">Feedback</a>
     </nav>
-</div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/reference.html">Marketplace Feed API</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+</div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
 <p>The Marketplace Feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel&#39;s availability and rates are, as well as feedback provided by Expedia guests.</p>
-<p>Each request should include hotelier credentials in HTTP basic auth format, a Client-Id HTTP header, and a hotelId query parameter.</p>
+<p>Each request should include hotelier credentials in HTTP basic auth format, a <code>clientId</code> query parameter, and a <code>hotelId</code> query parameter.</p>
 <p>For more information, check out the <a href="reference.html">reference documentation</a>, or try it out live with <a href="swagger.html">swagger</a>.</p>
-<p>For an example request/response, you can send a <code>hotelId=test</code> query parameter.  Valid auth credentials are not required for <code>hotelId=test</code>, but you must still provide a <code>Client-Id</code> header.</p>
-<pre><code>curl -u &#39;username:password&#39; -H&#39;Client-Id: MyClientId&#39; &#39;https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test&#39;
+<p>For an example request/response, you can send a <code>hotelId=test</code> query parameter.  Valid auth credentials are not required for <code>hotelId=test</code>, but you must still provide a <code>clientId</code> parameter.</p>
+<pre><code>curl -u &#39;username:password&#39; &#39;https://marketplace-feed.prod-p.expedia.com/v1/messages?hotelId=test&amp;clientId=YourOrganization&#39;
 </code></pre><p>The response contains a JSON list of message objects.</p>
 <pre><code>{
     &quot;messages&quot;: [
