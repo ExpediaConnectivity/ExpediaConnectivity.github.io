@@ -3,18 +3,20 @@
 var Core = Core || {
 
     init: function() {
-        $(document).foundation({
-            "magellan-expedition": {
-                active_class : 'active',
-                threshold : 0,
-                destination_threshold : 20,
-                throttle_delay : 30,
-                fixed_top : 0,
-                offset_by_height : false,
-                duration : 150,
-                easing : 'swing'
-            }
-        });
+        if ($(document).foundation) {
+            $(document).foundation({
+                "magellan-expedition": {
+                    active_class : 'active',
+                    threshold : 0,
+                    destination_threshold : 20,
+                    throttle_delay : 30,
+                    fixed_top : 0,
+                    offset_by_height : false,
+                    duration : 150,
+                    easing : 'swing'
+                }
+            });
+        }
 
         var _this = this;
         this.determineSection();

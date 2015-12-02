@@ -115,6 +115,9 @@
   color: #0065B8;
   text-decoration: underline;
 }
+.nofloat {
+  float: none;
+}
 .demo {
   color: #FFF;
   margin-top: 50px;
