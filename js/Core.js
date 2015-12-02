@@ -3,8 +3,6 @@
 var Core = Core || {
 
     init: function() {
-        this.cloneSideMenuToOffCanvas();
-
         if ($(document).foundation) {
             $(document).foundation({
                 "magellan-expedition": {
@@ -20,39 +18,39 @@ var Core = Core || {
             });
         }
 
-        this.determineSection();
+        this.cloneSideMenuToOffCanvas();
         this.setMenuFocus();
         this.demoForm();
         this.moveFooter();
         this.resizeIframes();
         this.lastHeight = $(document).height();
-        this.checkChanges();
         this.resizeMenuNav();
 
+        this.checkChanges();
+        this.handleEvents();
+    },
+
+    handleEvents: function() {
         var _this = this;
+        var resizeTimer, scrollTimer;
+
         $(window).resize(function() {
-            _this.moveFooter();
-            _this.checkOffCanvas();
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() { _this.onResize(); }, 50);
+        });
+        $(window).scroll(function() {
+            clearTimeout(scrollTimer);
+            scrollTimer = setTimeout(function() { _this.onScroll(); }, 50);
         });
     },
 
-
+    // Check if document height changed
     checkChanges: function() {
         if ($(document).height() != Core.lastHeight) {
             Core.lastHeight = $(document).height();
-            _this.moveFooter();
+            this.onResize();
         }
-
-        setTimeout(Core.checkChanges, 500);
-    },
-
-    determineSection: function() {
-        var sections = $('.sections a');
-        $.each(sections, function(i, section) {
-            if($(section).attr('href') == window.location.pathname) {
-                $(section).addClass('active');
-            }
-        });
+        setTimeout(function() { this.checkChanges }, 500);
     },
 
     moveFooter: function() {
@@ -77,17 +75,11 @@ var Core = Core || {
     },
 
     setMenuFocus: function() {
-        var _this = this;
-        $(window).scroll(function() {
-            $el = $('.menu');
-            var top = (80-$(this).scrollTop());
-            if ($(this).scrollTop() >= 80){
-                top = 0;
-            }
-            $el.css({'margin-top': top + 'px'});
-
-            _this.resizeMenuNav();
-        });
+        var top = 80 - $(document).scrollTop();
+        if ($(document).scrollTop() >= 80){
+            top = 0;
+        }
+        $('.menu').css({'margin-top': top + 'px'});
     },
 
     resizeMenuNav: function() {
@@ -100,8 +92,10 @@ var Core = Core || {
         if (footerSize > 0) {
             size -= footerSize;
         }
-        size -= sidebar.offset().top - $(window).scrollTop();
-        sidebar.css("max-height", size);
+        sidebar.each(function() {
+            var newSize = size - ($(this).offset().top - $(window).scrollTop());
+            $(this).css("max-height", newSize);
+        });
     },
 
     resizeIframes: function() {
@@ -137,21 +131,42 @@ var Core = Core || {
 
         // Copy header to menu title
         var header = menu.find('header').detach();
-        $('.off-canvas-wrap .tab-bar-section .title').append(header);
+        $('.off-canvas-nav-bar .tab-bar-section .title').append(header);
 
         // Close menu when an item is clicked.
         menu.find('a').click(function() {
             $('.exit-off-canvas').trigger('click');
         });
+        menu.foundation("magellan-expedition", {destination_threshold: 10 + $('.off-canvas-nav-bar').height()});
 
         $('.left-off-canvas-menu').append(menu);
     },
 
-    checkOffCanvas: function() {
+    checkOffCanvasVisibility: function() {
         // Reset off canvas section if medium-up
         if (Foundation.utils.is_medium_up()) {
             $('.exit-off-canvas').trigger('click');
         }
+    },
+
+    checkOffCanvasMenuPosition: function() {
+        var top = $(document).scrollTop() - $('.off-canvas-wrap').offset().top + $('.off-canvas-nav-bar').height();
+        if (top < 0) {
+          top = 0;
+        }
+        $('.left-off-canvas-menu').css('margin-top', top);
+    },
+
+    onResize: function() {
+        this.moveFooter();
+        this.checkOffCanvasVisibility();
+        this.resizeMenuNav();
+    },
+
+    onScroll: function() {
+        this.setMenuFocus();
+        this.checkOffCanvasMenuPosition();
+        this.resizeMenuNav();
     },
 
     demoForm: function() {
