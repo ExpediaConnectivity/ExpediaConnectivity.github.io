@@ -10,6 +10,11 @@
   color: #5E5E5E;
   padding-top: 50px;
 }
+@media only screen and (max-width: 40em) {
+  .api-content {
+    padding: 1em;
+  }
+}
 .api-content table td a {
   word-break: break-all;
   word-break: break-word;
@@ -117,6 +122,16 @@
 }
 .nofloat {
   float: none;
+}
+.left-off-canvas-menu {
+  background-color: #f5f5f5;
+}
+.left-off-canvas-menu .sidebar-nav {
+  padding-right: 15px;
+  padding-left: 5px;
+}
+.left-off-canvas-menu .sidebar-nav header {
+  margin-top: 5px;
 }
 .demo {
   color: #FFF;

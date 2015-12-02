@@ -3,6 +3,8 @@
 var Core = Core || {
 
     init: function() {
+        this.cloneSideMenuToOffCanvas();
+
         if ($(document).foundation) {
             $(document).foundation({
                 "magellan-expedition": {
@@ -18,7 +20,6 @@ var Core = Core || {
             });
         }
 
-        var _this = this;
         this.determineSection();
         this.setMenuFocus();
         this.demoForm();
@@ -27,8 +28,11 @@ var Core = Core || {
         this.lastHeight = $(document).height();
         this.checkChanges();
         this.resizeMenuNav();
+
+        var _this = this;
         $(window).resize(function() {
             _this.moveFooter();
+            _this.checkOffCanvas();
         });
     },
 
@@ -121,6 +125,32 @@ var Core = Core || {
             $("iframe").each(function() {
                 $(this).css("width", "100%");
             });
+        }
+    },
+
+    cloneSideMenuToOffCanvas: function() {
+        var src = $('.sidebar-nav');
+        if (src.length == 0) {
+            return;
+        }
+        var menu = src.clone();
+
+        // Copy header to menu title
+        var header = menu.find('header').detach();
+        $('.off-canvas-wrap .tab-bar-section .title').append(header);
+
+        // Close menu when an item is clicked.
+        menu.find('a').click(function() {
+            $('.exit-off-canvas').trigger('click');
+        });
+
+        $('.left-off-canvas-menu').append(menu);
+    },
+
+    checkOffCanvas: function() {
+        // Reset off canvas section if medium-up
+        if (Foundation.utils.is_medium_up()) {
+            $('.exit-off-canvas').trigger('click');
         }
     },
 
