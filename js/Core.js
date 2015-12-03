@@ -19,13 +19,12 @@ var Core = Core || {
         }
 
         this.cloneSideMenuToOffCanvas();
-        this.setMenuFocus();
         this.demoForm();
-        this.moveFooter();
         this.resizeIframes();
         this.lastHeight = $(document).height();
-        this.resizeMenuNav();
 
+        this.onResize();
+        this.onScroll();
         this.checkChanges();
         this.handleEvents();
     },
@@ -46,11 +45,13 @@ var Core = Core || {
 
     // Check if document height changed
     checkChanges: function() {
-        if ($(document).height() != Core.lastHeight) {
-            Core.lastHeight = $(document).height();
+        var _this = this;
+        var newHeight = $(document).height();
+        if (newHeight != this.lastHeight) {
+            this.lastHeight = newHeight;
             this.onResize();
         }
-        setTimeout(function() { this.checkChanges }, 500);
+        setTimeout(function() { _this.checkChanges() }, 500);
     },
 
     moveFooter: function() {
@@ -124,7 +125,8 @@ var Core = Core || {
 
     cloneSideMenuToOffCanvas: function() {
         var src = $('.sidebar-nav');
-        if (src.length == 0) {
+        var dest = $('.left-off-canvas-menu');
+        if (src.length == 0 || dest.length == 0) {
             return;
         }
         var menu = src.clone();
@@ -139,7 +141,7 @@ var Core = Core || {
         });
         menu.foundation("magellan-expedition", {destination_threshold: 10 + $('.off-canvas-nav-bar').height()});
 
-        $('.left-off-canvas-menu').append(menu);
+        dest.append(menu);
     },
 
     checkOffCanvasVisibility: function() {
@@ -150,11 +152,15 @@ var Core = Core || {
     },
 
     checkOffCanvasMenuPosition: function() {
+        var menu = $('.left-off-canvas-menu');
+        if (menu.length == 0) {
+            return;
+        }
         var top = $(document).scrollTop() - $('.off-canvas-wrap').offset().top + $('.off-canvas-nav-bar').height();
         if (top < 0) {
           top = 0;
         }
-        $('.left-off-canvas-menu').css('margin-top', top);
+        menu.css('margin-top', top);
     },
 
     onResize: function() {
