@@ -3,21 +3,6 @@
 var Core = Core || {
 
     init: function() {
-        if ($(document).foundation) {
-            $(document).foundation({
-                "magellan-expedition": {
-                    active_class : 'active',
-                    threshold : 0,
-                    destination_threshold : 20,
-                    throttle_delay : 30,
-                    fixed_top : 0,
-                    offset_by_height : false,
-                    duration : 150,
-                    easing : 'swing'
-                }
-            });
-        }
-
         this.cloneSideMenuToOffCanvas();
         this.demoForm();
         this.resizeIframes();
@@ -27,6 +12,22 @@ var Core = Core || {
         this.onScroll();
         this.checkChanges();
         this.handleEvents();
+
+        if ($(document).foundation) {
+            $(document).foundation({
+                "magellan-expedition": {
+                    active_class : 'active',
+                    threshold : 0,
+                    destination_threshold : 40,
+                    throttle_delay : 30,
+                    fixed_top : 0,
+                    offset_by_height : false,
+                    duration : 150,
+                    easing : 'swing'
+                }
+            });
+        }
+
     },
 
     handleEvents: function() {
@@ -139,8 +140,6 @@ var Core = Core || {
         menu.find('a').click(function() {
             $('.exit-off-canvas').trigger('click');
         });
-        menu.foundation("magellan-expedition", {destination_threshold: 10 + $('.off-canvas-nav-bar').height()});
-
         dest.append(menu);
     },
 
