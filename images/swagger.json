@@ -7,14 +7,22 @@
   },
   "host" : "services.expediapartnercentral.com",
   "basePath" : "/products",
-  "tags" : [{
-    "name" : "Room type"
-  }, {
+  "tags" : [ {
     "name" : "Property"
+  }, {
+    "name" : "Room type"
   }, {
     "name" : "Rate plan"
   } ],
   "schemes" : [ "https" ],
+  "security": [
+		"eps-security"
+	],
+	"securityDefinitions": {
+		"eps-security": {
+			"type": "basic"
+		}
+	},	
   "paths" : {
     "/v1/properties" : {
       "get" : {
@@ -58,10 +66,7 @@
               "$ref" : "#/definitions/PropertyDTO"
             }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        } 
       }
     },
     "/v1/properties/{propertyId}" : {
@@ -72,11 +77,18 @@
         "operationId" : "getProperty",
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        },{
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "12933873"
         } ],
         "responses" : {
           "200" : {
@@ -84,29 +96,8 @@
             "schema" : {
               "$ref" : "#/definitions/PropertyDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       }
     },
     "/v1/properties/{propertyId}/roomTypes" : {
@@ -116,18 +107,25 @@
         "description" : "",
         "operationId" : "getRoomTypes",
         "produces" : [ "application/json" ],
-        "parameters" : [ {
+        "parameters" : [{
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "status",
           "in" : "query",
           "description" : "Status filter. String. Only supported value is \"all\".",
           "required" : false,
-          "type" : "string"
+          "type" : "enum"
         } ],
         "responses" : {
           "200" : {
@@ -135,29 +133,8 @@
             "schema" : {
               "$ref" : "#/definitions/RoomTypeDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       },
       "post" : {
         "tags" : [ "Room type" ],
@@ -167,11 +144,18 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property Id",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "in" : "body",
           "name" : "body",
@@ -187,29 +171,8 @@
             "schema" : {
               "$ref" : "#/definitions/RoomTypeDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       }
     },
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}" : {
@@ -220,17 +183,25 @@
         "operationId" : "getRoomType",
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID. Integer",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "201357991"
         } ],
         "responses" : {
           "200" : {
@@ -238,29 +209,8 @@
             "schema" : {
               "$ref" : "#/definitions/RoomTypeDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       },
       "put" : {
         "tags" : [ "Room type" ],
@@ -270,17 +220,25 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property Id",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "201357991"
         }, {
           "in" : "body",
           "name" : "body",
@@ -296,29 +254,8 @@
             "schema" : {
               "$ref" : "#/definitions/RoomTypeDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       }
     },
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans" : {
@@ -329,24 +266,31 @@
         "operationId" : "getRatePlans",
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "201357991"
         }, {
           "name" : "status",
           "in" : "query",
           "description" : "Status filter. String. Only supported value is \"all\".",
           "required" : false,
-          "type" : "string",
-          "default" : "active"
+          "type" : "enum"
         } ],
         "responses" : {
           "200" : {
@@ -354,29 +298,8 @@
             "schema" : {
               "$ref" : "#/definitions/RatePlanDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       },
       "post" : {
         "tags" : [ "Rate plan" ],
@@ -386,17 +309,24 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer"
         }, {
           "in" : "body",
           "name" : "body",
@@ -407,34 +337,13 @@
           }
         } ],
         "responses" : {
-          "200" : {
-            "description" : "OK",
+          "201" : {
+            "description" : "Created",
             "schema" : {
               "$ref" : "#/definitions/RatePlanDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       }
     },
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}" : {
@@ -445,23 +354,32 @@
         "operationId" : "getRatePlan",
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "201357991"
         }, {
           "name" : "ratePlanId",
           "in" : "path",
           "description" : "Rate plan resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default" : "206651852"
         } ],
         "responses" : {
           "200" : {
@@ -469,29 +387,8 @@
             "schema" : {
               "$ref" : "#/definitions/RatePlanDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       },
       "put" : {
         "tags" : [ "Rate plan" ],
@@ -501,23 +398,30 @@
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
         "parameters" : [ {
+          "name" : "Authorization",
+          "in" : "header",
+          "required" : true,
+          "type" : "Base64 encoded auth token",
+          "default" : "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+        }, {
           "name" : "propertyId",
           "in" : "path",
           "description" : "Expedia Property ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer",
+          "default":"12933873"
         }, {
           "name" : "roomTypeId",
           "in" : "path",
           "description" : "Room type resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer"
         }, {
           "name" : "ratePlanId",
           "in" : "path",
           "description" : "Rate plan resource ID",
           "required" : true,
-          "type" : "string"
+          "type" : "integer"
         }, {
           "in" : "body",
           "name" : "body",
@@ -533,37 +437,9 @@
             "schema" : {
               "$ref" : "#/definitions/RatePlanDTO"
             }
-          },
-          "400" : {
-            "description" : "Bad Request",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "415" : {
-            "description" : "Unsupported Media Type",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
-          },
-          "500" : {
-            "description" : "Internal Server Error",
-            "schema" : {
-              "$ref" : "#/definitions/ResponseWrapperDTO"
-            }
           }
-        },
-        "security" : [ {
-          "eps-security" : [ ]
-        } ]
+        }
       }
-    }
-  },
-  "securityDefinitions" : {
-    "eps-security" : {
-      "type" : "apiKey",
-      "name" : "Authorization",
-      "in" : "header"
     }
   },
   "definitions" : {
@@ -571,13 +447,13 @@
       "type" : "object",
       "properties" : {
         "dateStart" : {
-          "type" : "string",
-          "format" : "date",
+          "type" : "date",
+          "format" : "YYYY-MM-DD",
           "description" : "Date at which this amount started being applicable, can be in the past"
         },
         "dateEnd" : {
-          "type" : "string",
-          "format" : "date",
+          "type" : "date",
+          "format" : "YYYY-MM-DD",
           "description" : "Date at which this amount will not be effective anymore. If no end date defined, will be returned as 2079-06-06."
         },
         "ageCategory" : {
