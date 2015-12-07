@@ -185,7 +185,7 @@
 <tr>
 <td><code>date</code></td>
 <td>String</td>
-<td>The date the forecast applies to (YYYY-MM-DD).</td>
+<td>The stay date the forecast applies to (YYYY-MM-DD).</td>
 <td><code>&quot;2016-07-10&quot;</code></td>
 </tr>
 <tr>
@@ -224,7 +224,7 @@
     &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
 }
 </code></pre><h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
-<p>Travelers viewed the requested hotel, but booked elsewhere.</p>
+<p>Travelers viewed the requested hotel today, but booked elsewhere.</p>
 <h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
 <table>
 <thead>
@@ -239,18 +239,18 @@
 <tr>
 <td><code>count</code></td>
 <td>Integer</td>
-<td>The number of travelers checking in today with another hotel.</td>
+<td>The total number of lost bookings.</td>
 <td><code>3</code></td>
 </tr>
 <tr>
 <td><code>missedOpportunities</code></td>
 <td>Array</td>
-<td>A collection of <code>Missed Opportunity</code> objects.</td>
+<td>A collection of <code>Missed Opportunities</code> objects.</td>
 <td>[]</td>
 </tr>
 </tbody>
 </table>
-<p><code>Missed Opportunity</code> objects have the following properties:</p>
+<p><code>Missed Opportunities</code> objects have the following properties:</p>
 <table>
 <thead>
 <tr>
@@ -274,32 +274,88 @@
 <td><code>&quot;The Verb Hotel&quot;</code></td>
 </tr>
 <tr>
-<td><code>bookings</code></td>
+<td><code>lostBookings</code></td>
 <td>Integer</td>
-<td>The number of travelers checking in today who booked with this hotel after viewing the requested hotel.</td>
+<td>The number of travelers who booked with this hotel after viewing the requested hotel today.</td>
 <td><code>2</code></td>
+</tr>
+<tr>
+<td><code>details</code></td>
+<td>Array</td>
+<td>A collection of <code>Missed Opportunity Details</code> objects.</td>
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+<p><code>Missed Opportunity Details</code> objects have the following properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>viewedPrice</code></td>
+<td>Float</td>
+<td>The price of the requested hotel the customer viewed.</td>
+<td><code>123.45</code></td>
+</tr>
+<tr>
+<td><code>bookedPrice</code></td>
+<td>Float</td>
+<td>The price of the hotel the customer ended up booking.</td>
+<td><code>100.0</code></td>
+</tr>
+<tr>
+<td><code>checkInDate</code></td>
+<td>String</td>
+<td>The check-in date of the customer&#39;s booking (YYYY-MM-DD).</td>
+<td><code>&quot;2016-10-03&quot;</code></td>
 </tr>
 </tbody>
 </table>
 <h6 id="example-missed-opportunities-message" data-magellan-destination="example-missed-opportunities-message">Example Missed Opportunities Message</h6>
 <pre><code>{
-    &quot;id&quot;: &quot;9c16e2adf1734b253e405f5d6e3a42c035dab81c&quot;,
+    &quot;id&quot;: &quot;d3a0077c59741f2f03b78f20e63ef61be6b4cec3&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Missed Opportunities&quot;,
     &quot;shortMessage&quot;: &quot;So far, you lost 3 bookings today.&quot;,
-    &quot;longMessage&quot;: &quot;3 travelers arriving in your market today viewed your property but booked elsewhere.&quot;,
+    &quot;longMessage&quot;: &quot;3 travelers viewed your property today but booked elsewhere.&quot;,
     &quot;values&quot;: {
         &quot;count&quot;: 3,
         &quot;missedOpportunities&quot;: [
             {
                 &quot;hotelId&quot;: &quot;25280&quot;,
                 &quot;hotelName&quot;: &quot;The Verb Hotel&quot;,
-                &quot;bookings&quot;: 2
+                &quot;lostBookings&quot;: 2,
+                &quot;details&quot;: [
+                    {
+                        &quot;viewedPrice&quot;: 123.45,
+                        &quot;bookedPrice&quot;: 100.0,
+                        &quot;checkInDate&quot;: &quot;2015-11-27&quot;
+                    },
+                    {
+                        &quot;viewedPrice&quot;: 200.0,
+                        &quot;bookedPrice&quot;: 149.99,
+                        &quot;checkInDate&quot;: &quot;2015-11-22&quot;
+                    }
+                ]
             },
             {
                 &quot;hotelId&quot;: &quot;119162&quot;,
                 &quot;hotelName&quot;: &quot;Le Meridien Cambridge-MIT&quot;,
-                &quot;bookings&quot;: 1
+                &quot;lostBookings&quot;: 1,
+                &quot;details&quot;: [
+                    {
+                        &quot;viewedPrice&quot;: 123.45,
+                        &quot;bookedPrice&quot;: 150.0,
+                        &quot;checkInDate&quot;: &quot;2015-11-24&quot;
+                    }
+                ]
             }
         ]
     },
