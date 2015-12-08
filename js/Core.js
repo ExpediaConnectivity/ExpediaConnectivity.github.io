@@ -169,7 +169,7 @@ var Core = Core || {
     },
 
     onScroll: function() {
-        this.setMenuFocus();
+        //this.setMenuFocus();
         this.checkOffCanvasMenuPosition();
         this.resizeMenuNav();
     },
