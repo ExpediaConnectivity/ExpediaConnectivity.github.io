@@ -13,6 +13,11 @@
     padding: 1em;
   }
 }
+.api-content table {
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: auto;
+}
 .api-content table td a {
   word-break: break-all;
   word-break: break-word;
