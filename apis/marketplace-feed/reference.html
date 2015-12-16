@@ -5,6 +5,8 @@
 <script src="/js/highlight.pack.js"></script>
 <script src="/js/foundation.min.js"></script>
 <script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
 <script>
 
     $(document).ready(function() {
@@ -29,7 +31,7 @@
 <p>Addition of new properties is not considered a breaking API change, and will not necessarily result in a new API version - you should build your clients with this assumption in mind.</p>
 <p>Addition of new message categories (and their corresponding new <code>values</code> properties) is also not considered a breaking change - your client should ignore any messages belonging to a category it doesn&#39;t understand.</p>
 <h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Name</th>
@@ -59,9 +61,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="response" data-magellan-destination="response">Response</h3>
+</div><h3 id="response" data-magellan-destination="response">Response</h3>
 <h4 id="http-status-codes" data-magellan-destination="http-status-codes">HTTP Status Codes</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Code</th>
@@ -91,10 +93,10 @@
 </tr>
 </tbody>
 </table>
-<h4 id="response-content" data-magellan-destination="response-content">Response Content</h4>
+</div><h4 id="response-content" data-magellan-destination="response-content">Response Content</h4>
 <p>When successful, the <code>/v1/messages</code> endpoint responds with a JSON object with <code>Content-Type: application/json</code>.</p>
 <h5 id="top-level-properties" data-magellan-destination="top-level-properties">Top-Level Properties</h5>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Name</th>
@@ -112,8 +114,8 @@
 </tr>
 </tbody>
 </table>
-<h5 id="standard-message-properties" data-magellan-destination="standard-message-properties">Standard Message Properties</h5>
-<table>
+</div><h5 id="standard-message-properties" data-magellan-destination="standard-message-properties">Standard Message Properties</h5>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -167,12 +169,12 @@
 </tr>
 </tbody>
 </table>
-<h4 id="message-categories" data-magellan-destination="message-categories">Message Categories</h4>
+</div><h4 id="message-categories" data-magellan-destination="message-categories">Message Categories</h4>
 <p>Each message may belong to one of the following categories (as indicated by its <code>category</code> property).</p>
 <h5 id="missing-inventory" data-magellan-destination="missing-inventory">Missing Inventory</h5>
 <p>Our sales forecast indicates that we can sell more inventory for the requested hotel on a certain night.</p>
 <h6 id="-values-properties" data-magellan-destination="-values-properties"><code>values</code> Properties</h6>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -208,7 +210,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="example-missing-inventory-message" data-magellan-destination="example-missing-inventory-message">Example Missing Inventory Message</h6>
+</div><h6 id="example-missing-inventory-message" data-magellan-destination="example-missing-inventory-message">Example Missing Inventory Message</h6>
 <pre><code>{
     &quot;id&quot;: &quot;2379cce04a79d3669717de302c8a45bf20f0cf5e&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
@@ -226,7 +228,7 @@
 </code></pre><h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
 <p>Travelers viewed the requested hotel today, but booked elsewhere.</p>
 <h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -250,8 +252,8 @@
 </tr>
 </tbody>
 </table>
-<p><code>Missed Opportunities</code> objects have the following properties:</p>
-<table>
+</div><p><code>Missed Opportunities</code> objects have the following properties:</p>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -287,8 +289,8 @@
 </tr>
 </tbody>
 </table>
-<p><code>Missed Opportunity Details</code> objects have the following properties:</p>
-<table>
+</div><p><code>Missed Opportunity Details</code> objects have the following properties:</p>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -318,7 +320,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="example-missed-opportunities-message" data-magellan-destination="example-missed-opportunities-message">Example Missed Opportunities Message</h6>
+</div><h6 id="example-missed-opportunities-message" data-magellan-destination="example-missed-opportunities-message">Example Missed Opportunities Message</h6>
 <pre><code>{
     &quot;id&quot;: &quot;d3a0077c59741f2f03b78f20e63ef61be6b4cec3&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
@@ -364,7 +366,7 @@
 </code></pre><h5 id="real-time-feedback" data-magellan-destination="real-time-feedback">Real-Time Feedback</h5>
 <p>A guest currently staying at the requested hotel has provided real-time feedback that management has not yet responded to.</p>
 <h6 id="-values-properties-3" data-magellan-destination="-values-properties-3"><code>values</code> Properties</h6>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -412,7 +414,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="example-real-time-feedback-message" data-magellan-destination="example-real-time-feedback-message">Example Real-Time Feedback Message</h6>
+</div><h6 id="example-real-time-feedback-message" data-magellan-destination="example-real-time-feedback-message">Example Real-Time Feedback Message</h6>
 <pre><code>{
     &quot;id&quot;: &quot;b7b215a395d3267c92c2c6e3562fa09c11f6454c&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
@@ -432,7 +434,7 @@
 </code></pre><h5 id="hotel-review" data-magellan-destination="hotel-review">Hotel Review</h5>
 <p>A guest has provided a review for the requested hotel that management has not yet responded to.</p>
 <h6 id="-values-properties-4" data-magellan-destination="-values-properties-4"><code>values</code> Properties</h6>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property</th>
@@ -474,7 +476,7 @@
 </tr>
 </tbody>
 </table>
-<h6 id="example-hotel-review-message" data-magellan-destination="example-hotel-review-message">Example Hotel Review Message</h6>
+</div><h6 id="example-hotel-review-message" data-magellan-destination="example-hotel-review-message">Example Hotel Review Message</h6>
 <pre><code>{
     &quot;id&quot;: &quot;fc58dbb7e4ce17c79d0a54fec74eea613e1bd01b&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
@@ -502,4 +504,6 @@
         <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
 </div>
-</body></html>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Marketplace Feed API"/></body></html>

@@ -13,21 +13,18 @@ var Core = Core || {
         this.checkChanges();
         this.handleEvents();
 
-        if ($(document).foundation) {
-            $(document).foundation({
-                "magellan-expedition": {
-                    active_class : 'active',
-                    threshold : 0,
-                    destination_threshold : 40,
-                    throttle_delay : 30,
-                    fixed_top : 0,
-                    offset_by_height : false,
-                    duration : 150,
-                    easing : 'swing'
-                }
-            });
-        }
-
+        $(document).foundation({
+            "magellan-expedition": {
+                active_class : 'active',
+                threshold : 0,
+                destination_threshold : 40,
+                throttle_delay : 30,
+                fixed_top : 0,
+                offset_by_height : false,
+                duration : 150,
+                easing : 'swing'
+            }
+        });
     },
 
     handleEvents: function() {
@@ -52,6 +49,8 @@ var Core = Core || {
             this.lastHeight = newHeight;
             this.onResize();
         }
+        // Always check if iframe height changed
+        this.resizeIframes();
         setTimeout(function() { _this.checkChanges() }, 500);
     },
 
@@ -78,10 +77,10 @@ var Core = Core || {
 
     setMenuFocus: function() {
         var top = 80 - $(document).scrollTop();
-        if ($(document).scrollTop() >= 80){
+        if ($(document).scrollTop() >= 80) {
             top = 0;
         }
-        $('.menu').css({'margin-top': top + 'px'});
+        $('.menu').css('margin-top', top);
     },
 
     resizeMenuNav: function() {
@@ -101,27 +100,18 @@ var Core = Core || {
     },
 
     resizeIframes: function() {
-        var isSmall = function() {
-            return matchMedia(Foundation.media_queries['small']).matches && !matchMedia(Foundation.media_queries.medium).matches;
-        };
-
-        var isMedium = function() {
-            return matchMedia(Foundation.media_queries['medium']).matches && !matchMedia(Foundation.media_queries.large).matches;
-        };
-
-        var isLarge = function() {
-            return matchMedia(Foundation.media_queries['large']).matches;
-        };
-
-        if (isMedium() || isLarge()) {
-            $("iframe").each(function() {
-                $(this).height( $(this).parent().parent().siblings(".documentation_header").height() );
-            });
-        } else if (isSmall()) {
-            $("iframe").each(function() {
-                $(this).css("width", "100%");
-            });
-        }
+        $('iframe').each(function() {
+            var height = $(this).contents().find('body').height();
+            if (!height) {
+                height = $(this).contents().height();
+                if (!height) {
+                    height = 600;
+                }
+            }
+            if (height != $(this).height()) {
+                $(this).height(height);
+            }
+        });
     },
 
     cloneSideMenuToOffCanvas: function() {

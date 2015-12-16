@@ -5,6 +5,8 @@
 <script src="/js/highlight.pack.js"></script>
 <script src="/js/foundation.min.js"></script>
 <script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
 <script>
 
     $(document).ready(function() {
@@ -161,7 +163,7 @@ The Product API enables partners to first create a room type, and subsequently c
 }
 </code></pre>
 <p>For partners who want more control over their names and which attributes get used, they can refer to the table below indicating our groupings and what is the maximum number of attributes Expedia will use from each group.</p>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Attribute name</th>
@@ -233,10 +235,10 @@ The Product API enables partners to first create a room type, and subsequently c
 </tr>
 </tbody>
 </table>
-<p>For more information about the various possible values and constraints on each of these attributes, please refer to the <a href="reference.html#/definitions/RnsAttributesDTO">API Definition section</a>.</p>
+</div><p>For more information about the various possible values and constraints on each of these attributes, please refer to the <a href="reference.html#/definitions/RnsAttributesDTO">API Definition section</a>.</p>
 <h2 id="understanding-cancellation-change-policy" data-magellan-destination="understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</h2>
 <p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Attribute Name</th>
@@ -258,7 +260,7 @@ The Product API enables partners to first create a room type, and subsequently c
 </tr>
 </tbody>
 </table>
-<p>Cancellation and change policy is optional when creating a new rate plan.</p>
+</div><p>Cancellation and change policy is optional when creating a new rate plan.</p>
 <ul>
 <li>If provided, partners are required to provide at least one deadline in hours, and a cancellation penalty.</li>
 <li>If no cancellation policy is provided in a create rate plan request, Expedia will try to select one which already exists, is refundable, and was most recently used by an active rate plan of the same type (standalone, package or corporate)</li>
@@ -341,4 +343,6 @@ The Product API enables partners to first create a room type, and subsequently c
         <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
 </div>
-</body></html>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="FAQ & Guides - Product API API"/></body></html>

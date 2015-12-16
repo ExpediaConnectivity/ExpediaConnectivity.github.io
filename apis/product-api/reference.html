@@ -5,6 +5,8 @@
 <script src="/js/highlight.pack.js"></script>
 <script src="/js/foundation.min.js"></script>
 <script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
 <script>
 
     $(document).ready(function() {
@@ -44,7 +46,7 @@
 <li>Room types can be accessed in the context of a property: <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</code>. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
 <li>Rate plans can be accessed as part of a room type (they belong to a room type): <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</code>. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
 </ul>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Resource</th>
@@ -116,9 +118,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="http-status-code" data-magellan-destination="http-status-code">HTTP Status Code</h2>
+</div><h2 id="http-status-code" data-magellan-destination="http-status-code">HTTP Status Code</h2>
 <p>The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: </p>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -176,10 +178,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="http-headers" data-magellan-destination="http-headers">HTTP Headers</h2>
+</div><h2 id="http-headers" data-magellan-destination="http-headers">HTTP Headers</h2>
 <p>HTTP headers are slightly different between a request made to the EPS Product API, and responses returned.</p>
 <h3 id="format-request" data-magellan-destination="format-request">Format – Request</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Header</th>
@@ -215,9 +217,9 @@
 </tr>
 </tbody>
 </table>
-<p>*required for create and modify requests only</p>
+</div><p>*required for create and modify requests only</p>
 <h3 id="format-response" data-magellan-destination="format-response">Format – Response</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Header</th>
@@ -243,7 +245,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="basic-response-wrapper-structure-with-entity-and-errors" data-magellan-destination="basic-response-wrapper-structure-with-entity-and-errors">Basic Response Wrapper Structure with Entity and Errors</h2>
+</div><h2 id="basic-response-wrapper-structure-with-entity-and-errors" data-magellan-destination="basic-response-wrapper-structure-with-entity-and-errors">Basic Response Wrapper Structure with Entity and Errors</h2>
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
 <h3 id="entity" data-magellan-destination="entity">Entity</h3>
 <p>The entities supported by the product API are rate plans, room types and properties.</p>
@@ -303,7 +305,7 @@ Simple entity response:</p>
 </code></pre>
 <p><a name="/definitions/ErrorDTO"></a></p>
 <h4 id="error" data-magellan-destination="error">Error</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -324,7 +326,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="entity-vs-errors" data-magellan-destination="entity-vs-errors">Entity vs Errors</h3>
+</div><h3 id="entity-vs-errors" data-magellan-destination="entity-vs-errors">Entity vs Errors</h3>
 <p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.</p>
 <p>Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.</p>
 <p>A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
@@ -343,7 +345,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters" data-magellan-destination="parameters">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -381,8 +383,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
-<table>
+</div><h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -398,7 +400,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-property" data-magellan-destination="read-a-single-property">Read a single property</h3>
+</div><h3 id="read-a-single-property" data-magellan-destination="read-a-single-property">Read a single property</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}</a></li>
@@ -406,7 +408,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-2" data-magellan-destination="parameters-2">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -428,8 +430,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
-<table>
+</div><h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -445,9 +447,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/PropertyDTO"></a></p>
+</div><p><a name="/definitions/PropertyDTO"></a></p>
 <h3 id="property-resource-definition" data-magellan-destination="property-resource-definition">Property Resource Definition</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -528,9 +530,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/CutOffDTO"></a></p>
+</div><p><a name="/definitions/CutOffDTO"></a></p>
 <h4 id="cutoff" data-magellan-destination="cutoff">CutOff</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -551,9 +553,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/PropertyAddressDTO"></a></p>
+</div><p><a name="/definitions/PropertyAddressDTO"></a></p>
 <h4 id="propertyaddress" data-magellan-destination="propertyaddress">PropertyAddress</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -594,7 +596,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="room-type" data-magellan-destination="room-type">Room type</h2>
+</div><h2 id="room-type" data-magellan-destination="room-type">Room type</h2>
 <h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
 <ul>
 <li>Method: <code>GET</code></li>
@@ -603,7 +605,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-3" data-magellan-destination="parameters-3">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -633,8 +635,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-3" data-magellan-destination="success-responses-3">Success Responses</h4>
-<table>
+</div><h4 id="success-responses-3" data-magellan-destination="success-responses-3">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -650,7 +652,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
+</div><h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
 <ul>
 <li>Method: <code>POST</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes</a></li>
@@ -658,7 +660,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-4" data-magellan-destination="parameters-4">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -688,7 +690,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Examples</strong></p>
+</div><p><strong>Examples</strong></p>
 <pre><code>{
         &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
         &quot;name&quot;: {
@@ -732,7 +734,7 @@ Simple entity response:</p>
         }
 }
 </code></pre><h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -748,7 +750,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
+</div><h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
@@ -756,7 +758,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-5" data-magellan-destination="parameters-5">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -786,8 +788,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
-<table>
+</div><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -803,7 +805,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="modify-an-existing-room-type" data-magellan-destination="modify-an-existing-room-type">Modify an existing room type</h3>
+</div><h3 id="modify-an-existing-room-type" data-magellan-destination="modify-an-existing-room-type">Modify an existing room type</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
@@ -811,7 +813,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-6" data-magellan-destination="parameters-6">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -849,7 +851,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Examples</strong></p>
+</div><p><strong>Examples</strong></p>
 <pre><code>{
         &quot;resourceId&quot;: 200142893,
         &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
@@ -896,7 +898,7 @@ Simple entity response:</p>
         }
 }
 </code></pre><h4 id="success-responses-6" data-magellan-destination="success-responses-6">Success Responses</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -912,9 +914,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/RoomTypeDTO"></a></p>
+</div><p><a name="/definitions/RoomTypeDTO"></a></p>
 <h3 id="roomtype-resource-definition" data-magellan-destination="roomtype-resource-definition">RoomType Resource Definition</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -970,9 +972,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/RoomTypeNameDTO"></a></p>
+</div><p><a name="/definitions/RoomTypeNameDTO"></a></p>
 <h4 id="roomtypename" data-magellan-destination="roomtypename">RoomTypeName</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -993,9 +995,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/RnsAttributesDTO"></a></p>
+</div><p><a name="/definitions/RnsAttributesDTO"></a></p>
 <h4 id="roomnameattributes" data-magellan-destination="roomnameattributes">RoomNameAttributes</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1056,9 +1058,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/BedTypeDTO"></a></p>
+</div><p><a name="/definitions/BedTypeDTO"></a></p>
 <h4 id="bedtype" data-magellan-destination="bedtype">BedType</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1079,9 +1081,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/OccupancyByAgeDTO"></a></p>
+</div><p><a name="/definitions/OccupancyByAgeDTO"></a></p>
 <h4 id="occupancybyage" data-magellan-destination="occupancybyage">OccupancyByAge</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1107,9 +1109,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/SmokingPreferenceDTO"></a></p>
+</div><p><a name="/definitions/SmokingPreferenceDTO"></a></p>
 <h4 id="smokingpreference" data-magellan-destination="smokingpreference">SmokingPreference</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1130,9 +1132,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/RoomSizeDTO"></a></p>
+</div><p><a name="/definitions/RoomSizeDTO"></a></p>
 <h4 id="roomsize" data-magellan-destination="roomsize">RoomSize</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1153,7 +1155,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="rate-plan" data-magellan-destination="rate-plan">Rate plan</h2>
+</div><h2 id="rate-plan" data-magellan-destination="rate-plan">Rate plan</h2>
 <h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
 <ul>
 <li>Method: <code>GET</code></li>
@@ -1162,7 +1164,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-7" data-magellan-destination="parameters-7">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -1200,8 +1202,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
-<table>
+</div><h4 id="success-responses-7" data-magellan-destination="success-responses-7">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -1217,7 +1219,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
+</div><h3 id="creates-a-new-rate-plan" data-magellan-destination="creates-a-new-rate-plan">Creates a new rate plan</h3>
 <ul>
 <li>Method: <code>POST</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
@@ -1225,7 +1227,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-8" data-magellan-destination="parameters-8">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -1263,7 +1265,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Examples</strong></p>
+</div><p><strong>Examples</strong></p>
 <pre><code>{
     &quot;name&quot;: &quot;My Rate Plan Name&quot;,
     &quot;rateAcquisitionType&quot;: &quot;NetRate&quot;,
@@ -1317,7 +1319,7 @@ Simple entity response:</p>
     &quot;mobileOnly&quot;: false
 }
 </code></pre><h4 id="success-responses-8" data-magellan-destination="success-responses-8">Success Responses</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -1333,7 +1335,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
+</div><h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
@@ -1341,7 +1343,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-9" data-magellan-destination="parameters-9">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -1379,8 +1381,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
-<table>
+</div><h4 id="success-responses-9" data-magellan-destination="success-responses-9">Success Responses</h4>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -1396,7 +1398,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
+</div><h3 id="modify-an-existing-rate-plan" data-magellan-destination="modify-an-existing-rate-plan">Modify an existing rate plan</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
@@ -1404,7 +1406,7 @@ Simple entity response:</p>
 <li>Produces: <code>application/json</code></li>
 </ul>
 <h4 id="parameters-10" data-magellan-destination="parameters-10">Parameters</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Parameter</th>
@@ -1450,7 +1452,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Examples</strong></p>
+</div><p><strong>Examples</strong></p>
 <pre><code>{
     &quot;resourceId&quot;: 205020307,
     &quot;name&quot;: &quot;My Rate Plan Name&quot;,
@@ -1520,7 +1522,7 @@ Simple entity response:</p>
     &quot;mobileOnly&quot;: false
 }
 </code></pre><h4 id="success-responses-10" data-magellan-destination="success-responses-10">Success Responses</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -1536,9 +1538,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/RatePlanDTO"></a></p>
+</div><p><a name="/definitions/RatePlanDTO"></a></p>
 <h3 id="rateplan-resource-definition" data-magellan-destination="rateplan-resource-definition">RatePlan Resource Definition</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1654,9 +1656,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/AdditionalGuestAmountDTO"></a></p>
+</div><p><a name="/definitions/AdditionalGuestAmountDTO"></a></p>
 <h4 id="additionalguestamount" data-magellan-destination="additionalguestamount">AdditionalGuestAmount</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1687,9 +1689,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/CancelPolicyDTO"></a></p>
+</div><p><a name="/definitions/CancelPolicyDTO"></a></p>
 <h4 id="cancelpolicy" data-magellan-destination="cancelpolicy">CancelPolicy</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1705,9 +1707,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/PenaltyDTO"></a></p>
+</div><p><a name="/definitions/PenaltyDTO"></a></p>
 <h4 id="penalty" data-magellan-destination="penalty">Penalty</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1733,9 +1735,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/DistributionRuleDTO"></a></p>
+</div><p><a name="/definitions/DistributionRuleDTO"></a></p>
 <h4 id="distributionrule" data-magellan-destination="distributionrule">DistributionRule</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1771,9 +1773,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/CompensationRuleDTO"></a></p>
+</div><p><a name="/definitions/CompensationRuleDTO"></a></p>
 <h4 id="compensationrule" data-magellan-destination="compensationrule">CompensationRule</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1799,9 +1801,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/CompensationExceptionRuleDTO"></a></p>
+</div><p><a name="/definitions/CompensationExceptionRuleDTO"></a></p>
 <h4 id="compensationexceptionrule" data-magellan-destination="compensationexceptionrule">CompensationExceptionRule</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Property Name</th>
@@ -1867,7 +1869,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/ErrorCodes"></a></p>
+</div><p><a name="/definitions/ErrorCodes"></a></p>
 <h2 id="error-codes" data-magellan-destination="error-codes">Error codes</h2>
 <p>Renders the page describing the business error codes used by the API</p>
 <ul>
@@ -1877,7 +1879,7 @@ Simple entity response:</p>
 <li>Produces: <code>text/html</code></li>
 </ul>
 <h4 id="success-responses-11" data-magellan-destination="success-responses-11">Success Responses</h4>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Status Code</th>
@@ -1893,10 +1895,10 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<h2 id="enumerations-domain-values" data-magellan-destination="enumerations-domain-values">Enumerations &amp; Domain Values</h2>
+</div><h2 id="enumerations-domain-values" data-magellan-destination="enumerations-domain-values">Enumerations &amp; Domain Values</h2>
 <p><a name="/definitions/PredefinedRoomNamesEnum"></a></p>
 <h3 id="predefinedroomnamesenum" data-magellan-destination="predefinedroomnamesenum">PredefinedRoomNamesEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>Room Type Name</th>
@@ -1992,9 +1994,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/typeOfRoomEnum"></a></p>
+</div><p><a name="/definitions/typeOfRoomEnum"></a></p>
 <h3 id="typeofroomenum" data-magellan-destination="typeofroomenum">typeOfRoomEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>typeOfRoom</th>
@@ -2084,9 +2086,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/roomClassEnum"></a></p>
+</div><p><a name="/definitions/roomClassEnum"></a></p>
 <h3 id="roomclassenum" data-magellan-destination="roomclassenum">roomClassEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>roomClass</th>
@@ -2182,9 +2184,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/bedroomDetailsEnum"></a></p>
+</div><p><a name="/definitions/bedroomDetailsEnum"></a></p>
 <h3 id="bedroomdetailsenum" data-magellan-destination="bedroomdetailsenum">bedroomDetailsEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>bedroomDetails</th>
@@ -2223,9 +2225,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/featuredAmenityEnum"></a></p>
+</div><p><a name="/definitions/featuredAmenityEnum"></a></p>
 <h3 id="featuredamenityenum" data-magellan-destination="featuredamenityenum">featuredAmenityEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>featuredAmenity</th>
@@ -2309,9 +2311,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/viewEnum"></a></p>
+</div><p><a name="/definitions/viewEnum"></a></p>
 <h3 id="viewenum" data-magellan-destination="viewenum">viewEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>view</th>
@@ -2404,9 +2406,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/areaEnum"></a></p>
+</div><p><a name="/definitions/areaEnum"></a></p>
 <h3 id="areaenum" data-magellan-destination="areaenum">areaEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>area</th>
@@ -2469,9 +2471,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/bedTypeIdEnum"></a></p>
+</div><p><a name="/definitions/bedTypeIdEnum"></a></p>
 <h3 id="bedtypeidenum" data-magellan-destination="bedtypeidenum">bedTypeIdEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>bedTypeId</th>
@@ -3381,9 +3383,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/valueAddInclusionsEnum"></a></p>
+</div><p><a name="/definitions/valueAddInclusionsEnum"></a></p>
 <h3 id="valueaddinclusionsenum" data-magellan-destination="valueaddinclusionsenum">valueAddInclusionsEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>valueAddInclusions</th>
@@ -3503,9 +3505,9 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-<p><a name="/definitions/perStayFeeEnum"></a></p>
+</div><p><a name="/definitions/perStayFeeEnum"></a></p>
 <h3 id="perstayfeeenum" data-magellan-destination="perstayfeeenum">perStayFeeEnum</h3>
-<table>
+<div><table>
 <thead>
 <tr>
 <th>perStayFee</th>
@@ -3553,7 +3555,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -3565,4 +3567,6 @@ Simple entity response:</p>
         <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
 </div>
-</body></html>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="API Definition - Product API API"/></body></html>
