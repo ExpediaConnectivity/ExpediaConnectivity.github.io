@@ -15,6 +15,7 @@
 <body class="swagger-section">
   <div id="message-bar" class="swagger-ui-wrap" data-sw-translate>&nbsp;</div>
   <div id="swagger-ui-container" class="swagger-ui-wrap"></div>
+
   <script src='lib/jquery-1.8.0.min.js' type='text/javascript'></script>
   <script src='lib/jquery.slideto.min.js' type='text/javascript'></script>
   <script src='lib/jquery.wiggle.min.js' type='text/javascript'></script>
@@ -55,8 +56,9 @@
               clientId: "your-client-id",
               clientSecret: "your-client-secret-if-required",
               realm: "your-realms",
-              appName: "your-app-name",
-              scopeSeparator: ","
+              appName: "your-app-name", 
+              scopeSeparator: ",",
+              additionalQueryStringParams: {}
             });
           }
 
@@ -64,24 +66,12 @@
             window.SwaggerTranslator.translate();
           }
 
-          var totalOperations = 0;
-          swaggerApi.apisArray.forEach(function(api) {
-            totalOperations += api.operationsArray.length;
-          });
-
-          var docExpansion = swaggerUi.mainView.options.swaggerOptions.docExpansion;
-          if (totalOperations < 5 && docExpansion != "full") {
-            swaggerUi.mainView.options.swaggerOptions.docExpansion = "full";
-            swaggerUi.load();
-          } else if (totalOperations >= 5 && totalOperations < 10 && docExpansion != "list") {
-            swaggerUi.mainView.options.swaggerOptions.docExpansion = "list";
-            swaggerUi.load();
-          }
-
           $('pre code').each(function(i, e) {
             hljs.highlightBlock(e)
           });
 
+          // Automatically expand APIs depending number of operations
+          expandOperations(swaggerApi, swaggerUi);
         },
         onFailure: function(data) {
           log("Unable to Load SwaggerUI");
@@ -90,7 +80,8 @@
         apisSorter: "alpha",
         defaultModelRendering: 'schema',
         showRequestHeaders: true,
-        validatorUrl: false
+        validatorUrl: false,
+        enableCookies: true
       });
 
       window.swaggerUi.load();
@@ -98,6 +89,18 @@
       function log() {
         if ('console' in window) {
           console.log.apply(console, arguments);
+        }
+      }
+
+      function expandOperations(swaggerApi, swaggerUi) {
+        var totalOperations = 0;
+        swaggerApi.apisArray.forEach(function(api) {
+          totalOperations += api.operationsArray.length;
+        });
+        if (totalOperations < 5) {
+          swaggerUi.expandAll();
+        } else if (totalOperations < 10) {
+          swaggerUi.listAll();
         }
       }
   });

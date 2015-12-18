@@ -3,16 +3,12 @@
 var Core = Core || {
 
     init: function() {
+        // Initialise
+        this.lastHeight = 0;
+
+        // Dom manipulating and handling
         this.cloneSideMenuToOffCanvas();
-        this.demoForm();
-        this.resizeIframes();
-        this.lastHeight = $(document).height();
-
-        this.onResize();
-        this.onScroll();
-        this.checkChanges();
         this.handleEvents();
-
         $(document).foundation({
             "magellan-expedition": {
                 active_class : 'active',
@@ -25,6 +21,12 @@ var Core = Core || {
                 easing : 'swing'
             }
         });
+
+        // Set size
+        this.demoForm();
+        this.onResize();
+        this.onScroll();
+        this.checkChanges();
     },
 
     handleEvents: function() {
@@ -33,11 +35,11 @@ var Core = Core || {
 
         $(window).resize(function() {
             clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(function() { _this.onResize(); }, 50);
+            resizeTimer = setTimeout(function() { _this.onResize(); }, 10);
         });
         $(window).scroll(function() {
             clearTimeout(scrollTimer);
-            scrollTimer = setTimeout(function() { _this.onScroll(); }, 50);
+            scrollTimer = setTimeout(function() { _this.onScroll(); }, 10);
         });
     },
 
@@ -57,9 +59,11 @@ var Core = Core || {
     moveFooter: function() {
         var footer = $(".footer");
         if ($(document).height() <= $(window).height()) {
-            footer.css({bottom: 0});
+            footer.prev().css('margin-bottom', footer.height());
+            footer.css('bottom', 0);
         } else {
-            footer.removeAttr("style");
+            footer.prev().css('margin-bottom', '');
+            footer.css('bottom', '');
         }
     },
 
@@ -101,15 +105,18 @@ var Core = Core || {
 
     resizeIframes: function() {
         $('iframe').each(function() {
-            var height = $(this).contents().find('body').height();
+            var $this = $(this);
+            var height = $this.contents().find('html').height();
             if (!height) {
-                height = $(this).contents().height();
+                height = $this.contents().height();
                 if (!height) {
                     height = 600;
                 }
             }
-            if (height != $(this).height()) {
-                $(this).height(height);
+            // Still need some more space to eliminate scroll bar for swagger page
+            height += 10;
+            if (height != $this.height()) {
+                $this.height(height);
             }
         });
     },
