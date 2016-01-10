@@ -740,7 +740,11 @@ Simple entity response:</p>
         &quot;roomSize&quot;: {
             &quot;squareFeet&quot;: 1200,
             &quot;squareMeters&quot;: 111
-        }
+        },
+        &quot;views&quot;: [
+            &quot;Ocean View&quot;,
+            &quot;Beach View&quot;
+        ]
 }
 </code></pre><h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
 <div><table>
@@ -904,7 +908,12 @@ Simple entity response:</p>
         &quot;roomSize&quot;: {
             &quot;squareFeet&quot;: 1200,
             &quot;squareMeters&quot;: 111
-        }
+        },
+        &quot;views&quot;: [
+            &quot;Ocean View&quot;,
+            &quot;Beach View&quot;
+        ],
+        &quot;wheelchairAccessibility&quot;: true
 }
 </code></pre><h4 id="success-responses-6" data-magellan-destination="success-responses-6">Success Responses</h4>
 <div><table>
@@ -977,7 +986,17 @@ Simple entity response:</p>
 <tr>
 <td>roomSize</td>
 <td><a href="#/definitions/RoomSizeDTO">RoomSize</a></td>
-<td>Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
+<td>Optional. Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Array[<a href="#/definitions/viewEnum">viewEnum</a>]</td>
+<td>Optional. Used to define view(s) from the room. There can be up to 2 different views defined per room type.</td>
+</tr>
+<tr>
+<td>wheelchairAccessibility</td>
+<td>boolean</td>
+<td>Optional. Used to indicate whether the room is configured to be wheelchair accessible or not.</td>
 </tr>
 </tbody>
 </table>
@@ -1615,7 +1634,7 @@ Simple entity response:</p>
 </tr>
 <tr>
 <td>valueAddInclusions</td>
-<td>Array[string]</td>
+<td>Array[<a href="#/definitions/valueAddInclusionsEnum">valueAddInclusionsEnum</a>]</td>
 <td>Array of value add inclusions. Value add inclusions are special features included with this rate. Breakfast, Internet, or parking inclusions are the most frequently used ones</td>
 </tr>
 <tr>

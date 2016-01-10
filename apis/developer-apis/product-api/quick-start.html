@@ -82,94 +82,108 @@ password: cc47an46
 <a href="https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes">https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes</a></p>
 <p>The result will be an array of active room types under this property. For example:</p>
 <pre><code class="lang-JSON">{
-    &quot;entity&quot;: [
+  &quot;entity&quot;: [
+    {
+      &quot;resourceId&quot;: 201357991,
+      &quot;partnerCode&quot;: &quot;DLXRM&quot;,
+      &quot;name&quot;: {
+        &quot;attributes&quot;: {
+          &quot;typeOfRoom&quot;: &quot;Room&quot;,
+          &quot;roomClass&quot;: &quot;Deluxe&quot;,
+          &quot;view&quot;: &quot;Mountain View&quot;,
+          &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
+        },
+        &quot;value&quot;: &quot;Deluxe Room, Jetted Tub, Mountain View&quot;
+      },
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;maxOccupants&quot;: 4,
+      &quot;occupancyByAge&quot;: [
         {
-            &quot;resourceId&quot;: 201357991,
-            &quot;partnerCode&quot;: &quot;DLXRM&quot;,
-            &quot;name&quot;: {
-                &quot;attributes&quot;: {
-                    &quot;typeOfRoom&quot;: &quot;Room&quot;,
-                    &quot;roomClass&quot;: &quot;Deluxe&quot;,
-                    &quot;includeBedType&quot;: true,
-                    &quot;view&quot;: &quot;Mountain View&quot;,
-                    &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
-                },
-                &quot;value&quot;: &quot;Deluxe Room, Multiple Beds, Jetted Tub, Mountain View&quot;
-            },
-            &quot;status&quot;: &quot;Active&quot;,
-            &quot;maxOccupants&quot;: 4,
-            &quot;occupancyByAge&quot;: [
-                {
-                    &quot;ageCategory&quot;: &quot;Adult&quot;,
-                    &quot;minAge&quot;: 18,
-                    &quot;maxOccupants&quot;: 4
-                },
-                {
-                    &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
-                    &quot;minAge&quot;: 2,
-                    &quot;maxOccupants&quot;: 3
-                },
-                {
-                    &quot;ageCategory&quot;: &quot;Infant&quot;,
-                    &quot;minAge&quot;: 0,
-                    &quot;maxOccupants&quot;: 3
-                }
-            ],
-            &quot;bedTypes&quot;: [
-                {
-                    &quot;id&quot;: &quot;1.66&quot;,
-                    &quot;name&quot;: &quot;1 double and 2 single beds&quot;
-                }
-            ],
-            &quot;smokingPreferences&quot;: [
-                {
-                    &quot;id&quot;: &quot;2.1&quot;,
-                    &quot;name&quot;: &quot;Non-Smoking&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;2.2&quot;,
-                    &quot;name&quot;: &quot;Smoking&quot;
-                }
-            ]
+          &quot;ageCategory&quot;: &quot;Adult&quot;,
+          &quot;minAge&quot;: 18,
+          &quot;maxOccupants&quot;: 4
         },
         {
-            &quot;resourceId&quot;: 201357992,
-            &quot;partnerCode&quot;: &quot;Executive Room&quot;,
-            &quot;name&quot;: {
-                &quot;value&quot;: &quot;Executive Suite&quot;
-            },
-            &quot;status&quot;: &quot;Active&quot;,
-            &quot;maxOccupants&quot;: 6,
-            &quot;occupancyByAge&quot;: [
-                {
-                    &quot;ageCategory&quot;: &quot;Adult&quot;,
-                    &quot;minAge&quot;: 18,
-                    &quot;maxOccupants&quot;: 6
-                },
-                {
-                    &quot;ageCategory&quot;: &quot;Infant&quot;,
-                    &quot;minAge&quot;: 0,
-                    &quot;maxOccupants&quot;: 5
-                }
-            ],
-            &quot;bedTypes&quot;: [
-                {
-                    &quot;id&quot;: &quot;1.100&quot;,
-                    &quot;name&quot;: &quot;1 double and 2 bunk beds&quot;
-                }
-            ],
-            &quot;smokingPreferences&quot;: [
-                {
-                    &quot;id&quot;: &quot;2.1&quot;,
-                    &quot;name&quot;: &quot;Non-Smoking&quot;
-                },
-                {
-                    &quot;id&quot;: &quot;2.2&quot;,
-                    &quot;name&quot;: &quot;Smoking&quot;
-                }
-            ]
+          &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+          &quot;minAge&quot;: 2,
+          &quot;maxOccupants&quot;: 3
+        },
+        {
+          &quot;ageCategory&quot;: &quot;Infant&quot;,
+          &quot;minAge&quot;: 0,
+          &quot;maxOccupants&quot;: 3
         }
-    ]
+      ],
+      &quot;bedTypes&quot;: [
+        {
+          &quot;id&quot;: &quot;1.66&quot;,
+          &quot;name&quot;: &quot;1 double and 2 single beds&quot;
+        }
+      ],
+      &quot;smokingPreferences&quot;: [
+        {
+          &quot;id&quot;: &quot;2.1&quot;,
+          &quot;name&quot;: &quot;Non-Smoking&quot;
+        },
+        {
+          &quot;id&quot;: &quot;2.2&quot;,
+          &quot;name&quot;: &quot;Smoking&quot;
+        }
+      ],
+      &quot;roomSize&quot;: {
+        &quot;squareFeet&quot;: 915,
+        &quot;squareMeters&quot;: 85
+      },
+      &quot;views&quot;: [
+        &quot;Mountain View&quot;
+      ]
+    },
+    {
+      &quot;resourceId&quot;: 201357992,
+      &quot;partnerCode&quot;: &quot;Executive Room&quot;,
+      &quot;name&quot;: {
+        &quot;value&quot;: &quot;Executive Suite&quot;
+      },
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;maxOccupants&quot;: 6,
+      &quot;occupancyByAge&quot;: [
+        {
+          &quot;ageCategory&quot;: &quot;Adult&quot;,
+          &quot;minAge&quot;: 18,
+          &quot;maxOccupants&quot;: 6
+        },
+        {
+          &quot;ageCategory&quot;: &quot;Infant&quot;,
+          &quot;minAge&quot;: 0,
+          &quot;maxOccupants&quot;: 5
+        }
+      ],
+      &quot;bedTypes&quot;: [
+        {
+          &quot;id&quot;: &quot;1.100&quot;,
+          &quot;name&quot;: &quot;1 double and 2 bunk beds&quot;
+        }
+      ],
+      &quot;smokingPreferences&quot;: [
+        {
+          &quot;id&quot;: &quot;2.1&quot;,
+          &quot;name&quot;: &quot;Non-Smoking&quot;
+        },
+        {
+          &quot;id&quot;: &quot;2.2&quot;,
+          &quot;name&quot;: &quot;Smoking&quot;
+        }
+      ],
+      &quot;roomSize&quot;: {
+        &quot;squareFeet&quot;: 1023,
+        &quot;squareMeters&quot;: 95
+      },
+      &quot;views&quot;: [
+        &quot;Ocean View&quot;,
+        &quot;Beach View&quot;
+      ]
+    }
+  ]
 }
 </code></pre>
 <p>Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:

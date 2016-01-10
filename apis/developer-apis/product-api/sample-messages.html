@@ -222,7 +222,16 @@ Authorization: Basic [your encoded username:password in Base64]
                     &quot;id&quot;: &quot;2.2&quot;,
                     &quot;name&quot;: &quot;Smoking&quot;
                 }
-            ]
+            ],
+            &quot;roomSize&quot;: {
+              &quot;squareFeet&quot;: 1023,
+              &quot;squareMeters&quot;: 95
+            },
+            &quot;views&quot;: [
+              &quot;Ocean View&quot;,
+              &quot;Beach View&quot;
+            ],
+            &quot;wheelchairAccessibility&quot;: false
         },
         {
             &quot;resourceId&quot;: 204832,
@@ -268,7 +277,15 @@ Authorization: Basic [your encoded username:password in Base64]
                     &quot;id&quot;: &quot;2.2&quot;,
                     &quot;name&quot;: &quot;Smoking&quot;
                 }
-            ]
+            ],
+            &quot;roomSize&quot;: {
+              &quot;squareFeet&quot;: 1023,
+              &quot;squareMeters&quot;: 95
+            },
+            &quot;views&quot;: [
+              &quot;Ocean View&quot;
+            ],
+            &quot;wheelchairAccessibility&quot;: false
         },
         {
             &quot;resourceId&quot;: 209857,
@@ -313,7 +330,15 @@ Authorization: Basic [your encoded username:password in Base64]
                     &quot;id&quot;: &quot;2.2&quot;,
                     &quot;name&quot;: &quot;Smoking&quot;
                 }
-            ]
+            ],
+            &quot;roomSize&quot;: {
+              &quot;squareFeet&quot;: 1023,
+              &quot;squareMeters&quot;: 95
+            },
+            &quot;views&quot;: [
+              &quot;Beach View&quot;
+            ],
+            &quot;wheelchairAccessibility&quot;: false
         },
         {
             &quot;resourceId&quot;: 211705,
@@ -354,7 +379,12 @@ Authorization: Basic [your encoded username:password in Base64]
                     &quot;id&quot;: &quot;2.2&quot;,
                     &quot;name&quot;: &quot;Smoking&quot;
                 }
-            ]
+            ],
+            &quot;roomSize&quot;: {
+              &quot;squareFeet&quot;: 1023,
+              &quot;squareMeters&quot;: 95
+            },
+            &quot;wheelchairAccessibility&quot;: false
         }
     ]
 }
@@ -409,7 +439,16 @@ Authorization: Basic [your encoded username:password in Base64]
         &quot;id&quot;: &quot;2.2&quot;,
         &quot;name&quot;: &quot;Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
@@ -452,7 +491,16 @@ Content-Type: application/json
       &quot;id&quot;: &quot;2.1&quot;,
       &quot;name&quot;: &quot;Non-Smoking&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 1023,
+    &quot;squareMeters&quot;: 95
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: false
 }
 </code></pre>
 <p>When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.</p>
@@ -491,7 +539,16 @@ Content-Type: application/json
         &quot;id&quot;: &quot;2.1&quot;,
         &quot;name&quot;: &quot;Non-Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
@@ -539,7 +596,16 @@ Content-Type: application/json
       &quot;id&quot;: &quot;2.1&quot;,
       &quot;name&quot;: &quot;Non-Smoking&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 1023,
+    &quot;squareMeters&quot;: 95
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: false
 }
 </code></pre>
 <p>When successful, the API will respond with what Expedia created. Please note that room types are always created as inactive, and will become active automatically when the first active rate plan is created.</p>
@@ -583,7 +649,16 @@ Content-Type: application/json
         &quot;id&quot;: &quot;2.1&quot;,
         &quot;name&quot;: &quot;Non-Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
@@ -633,7 +708,16 @@ Content-Type: application/json
       &quot;id&quot;: &quot;2.1&quot;,
       &quot;name&quot;: &quot;Non-Smoking&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 1023,
+    &quot;squareMeters&quot;: 95
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: false
 }
 </code></pre>
 <p>The response will not include bedroom details, view, featured amenity and area as we cannot used all attributes to build a name. </p>
@@ -679,7 +763,16 @@ Content-Type: application/json
         &quot;id&quot;: &quot;2.1&quot;,
         &quot;name&quot;: &quot;Non-Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
@@ -719,7 +812,16 @@ Content-Type: application/json
       &quot;id&quot;: &quot;2.1&quot;,
       &quot;name&quot;: &quot;Non-Smoking&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 1023,
+    &quot;squareMeters&quot;: 95
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: false
 }
 </code></pre>
 <p>Response look like</p>
@@ -754,7 +856,16 @@ Content-Type: application/json
         &quot;id&quot;: &quot;2.1&quot;,
         &quot;name&quot;: &quot;Non-Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
@@ -802,7 +913,16 @@ Content-Type: application/json
       &quot;id&quot;: &quot;2.1&quot;,
       &quot;name&quot;: &quot;Non-Smoking&quot;
     }
-  ]
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 1023,
+    &quot;squareMeters&quot;: 95
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: false
 }
 </code></pre>
 <p>Response looks like</p>
@@ -844,7 +964,16 @@ Content-Type: application/json
         &quot;id&quot;: &quot;2.1&quot;,
         &quot;name&quot;: &quot;Non-Smoking&quot;
       }
-    ]
+    ],
+    &quot;roomSize&quot;: {
+      &quot;squareFeet&quot;: 1023,
+      &quot;squareMeters&quot;: 95
+    },
+    &quot;views&quot;: [
+      &quot;Ocean View&quot;,
+      &quot;Beach View&quot;
+    ],
+    &quot;wheelchairAccessibility&quot;: false
   }
 }
 </code></pre>
