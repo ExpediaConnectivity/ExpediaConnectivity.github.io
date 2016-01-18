@@ -392,6 +392,12 @@
 <td><code>&quot;12345&quot;</code></td>
 </tr>
 <tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The name the guest used when booking.</td>
+<td><code>&quot;Joe Bloggs&quot;</code></td>
+</tr>
+<tr>
 <td><code>startDate</code></td>
 <td>String</td>
 <td>The guest&#39;s checkin date/time, in ISO-8601 format.</td>
@@ -425,17 +431,18 @@
 </table>
 </div><h6 id="example-real-time-feedback-message" data-magellan-destination="example-real-time-feedback-message">Example Real-Time Feedback Message</h6>
 <pre><code>{
-    &quot;id&quot;: &quot;b7b215a395d3267c92c2c6e3562fa09c11f6454c&quot;,
+    &quot;id&quot;: &quot;6cb0849556ffe8eb0b18397a80982f8a50960a9e&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Real-Time Feedback&quot;,
     &quot;shortMessage&quot;: &quot;A guest at your property is giving real-time feedback.&quot;,
     &quot;longMessage&quot;: &quot;Bed was not made :(&quot;,
     &quot;values&quot;: {
         &quot;itineraryId&quot;: &quot;12345&quot;,
-        &quot;startDate&quot;: &quot;2015-11-11T01:22:10.126Z&quot;,
-        &quot;endDate&quot;: &quot;2015-11-14T01:22:10.126Z&quot;,
-        &quot;createDate&quot;: &quot;2015-11-12T01:22:10.126Z&quot;,
-        &quot;updateDate&quot;: &quot;2015-11-13T01:22:10.126Z&quot;,
+        &quot;name&quot;: &quot;Joe Bloggs&quot;,
+        &quot;startDate&quot;: &quot;2016-01-18T05:27:38.675Z&quot;,
+        &quot;endDate&quot;: &quot;2016-01-21T05:27:38.675Z&quot;,
+        &quot;createDate&quot;: &quot;2016-01-19T05:27:38.675Z&quot;,
+        &quot;updateDate&quot;: &quot;2016-01-20T05:27:38.675Z&quot;,
         &quot;isHappy&quot;: false
     },
     &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test&quot;
@@ -466,6 +473,12 @@
 <td><code>&quot;12345&quot;</code></td>
 </tr>
 <tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The nickname the guest used when submitting the review, or <code>&quot;Anonymous&quot;</code>.</td>
+<td><code>&quot;Joe Bloggs&quot;</code></td>
+</tr>
+<tr>
 <td><code>rating</code></td>
 <td>Integer</td>
 <td>The rating out of five.</td>
@@ -487,7 +500,7 @@
 </table>
 </div><h6 id="example-hotel-review-message" data-magellan-destination="example-hotel-review-message">Example Hotel Review Message</h6>
 <pre><code>{
-    &quot;id&quot;: &quot;fc58dbb7e4ce17c79d0a54fec74eea613e1bd01b&quot;,
+    &quot;id&quot;: &quot;2ca5a62a93bcae5da08dc5bfdee0c53a4352577a&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Hotel Review&quot;,
     &quot;shortMessage&quot;: &quot;A guest just reviewed your property and rated you 4 out of 5 stars.&quot;,
@@ -495,11 +508,12 @@
     &quot;values&quot;: {
         &quot;reviewId&quot;: &quot;123&quot;,
         &quot;itineraryId&quot;: &quot;456&quot;,
+        &quot;name&quot;: &quot;Anonymous&quot;,
         &quot;rating&quot;: 4,
         &quot;comment&quot;: &quot;Great view!&quot;,
-        &quot;createDate&quot;: &quot;2015-11-12T05:03:52.138Z&quot;
+        &quot;createDate&quot;: &quot;2016-01-18T05:27:38.675Z&quot;
     },
-    &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test&quot;
+    &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123&quot;
 }
 </code></pre></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
