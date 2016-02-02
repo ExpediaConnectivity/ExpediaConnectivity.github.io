@@ -11,9 +11,11 @@
     {
       "name": "Property"
     }, {
-      "name": "Room type"
-    }, {
-      "name": "Rate plan"
+      "name": "Room Type"
+    },  {
+      "name": "Room Type Amenities"
+    },{
+      "name": "Rate Plan"
     }
   ],
   "schemes": [
@@ -119,7 +121,7 @@
     "/v1/properties/{propertyId}/roomTypes": {
       "get": {
         "tags": [
-          "Room type"
+          "Room Type"
         ],
         "summary": "Obtain a list of room types",
         "description": "",
@@ -160,7 +162,7 @@
       },
       "post": {
         "tags": [
-          "Room type"
+          "Room Type"
         ],
         "summary": "Creates a new room type",
         "description": "",
@@ -208,7 +210,7 @@
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}": {
       "get": {
         "tags": [
-          "Room type"
+          "Room Type"
         ],
         "summary": "Read a single room type",
         "description": "",
@@ -250,7 +252,7 @@
       },
       "put": {
         "tags": [
-          "Room type"
+          "Room Type"
         ],
         "summary": "Modify an existing room type",
         "description": "",
@@ -302,10 +304,95 @@
         }
       }
     },
+    "/v1/properties/{propertyId}/roomTypes/{roomTypeId}/amenities" : {
+      "get" : {
+        "tags" : [ "Room Type Amenities" ],
+        "summary" : "Read a single room type's amenities",
+        "description" : "",
+        "operationId" : "getRoomTypeAmenities",
+        "produces" : [ "application/json" ],
+        "parameters" : [  {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "Base64 encoded auth token",
+            "default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+          },{
+          "name" : "propertyId",
+          "in" : "path",
+          "description" : "Expedia Property ID",
+          "required" : true,
+          "type" : "string",
+           "default": "12933873"
+        }, {
+          "name" : "roomTypeId",
+          "in" : "path",
+          "description" : "Room type resource ID. Integer",
+          "required" : true,
+          "type" : "string",
+           "default": "201357991"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/RoomTypeAmenityDTO"
+            }
+          }
+        }
+      },
+      "put" : {
+        "tags" : [ "Room Type Amenities" ],
+        "summary" : "Set room type amenities to an existing room type",
+        "description" : "",
+        "operationId" : "setRoomTypeAmenities",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "Base64 encoded auth token",
+            "default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+          },{
+          "name" : "propertyId",
+          "in" : "path",
+          "description" : "Expedia Property Id",
+          "required" : true,
+          "type" : "integer",
+           "default": "12933873"
+        }, {
+          "name" : "roomTypeId",
+          "in" : "path",
+          "description" : "Room type resource ID",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "name" : "body",
+          "description" : "JSON message with the room type amenities",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/RoomTypeAmenityDTO"
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/RoomTypeAmenityDTO"
+            }
+          }
+        }
+      }
+    },
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans": {
       "get": {
         "tags": [
-          "Rate plan"
+          "Rate Plan"
         ],
         "summary": "Obtain a list of rate plans",
         "description": "",
@@ -353,7 +440,7 @@
       },
       "post": {
         "tags": [
-          "Rate plan"
+          "Rate Plan"
         ],
         "summary": "Creates a new rate plan",
         "description": "",
@@ -407,7 +494,7 @@
     "/v1/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}": {
       "get": {
         "tags": [
-          "Rate plan"
+          "Rate Plan"
         ],
         "summary": "Read a single rate plan",
         "description": "",
@@ -456,7 +543,7 @@
       },
       "put": {
         "tags": [
-          "Rate plan"
+          "Rate Plan"
         ],
         "summary": "Modify an existing rate plan",
         "description": "",
@@ -746,6 +833,24 @@
           "type": "integer",
           "format": "int32",
           "description": "Max number of occupants on the category. Min 0, max 20"
+        }
+      }
+    },
+    "RoomTypeAmenityDTO" : {
+      "type" : "object",
+      "required" : [ "code" ],
+      "properties" : {
+        "code" : {
+          "type" : "string",
+          "description" : "Uniquely identifies an amenitiy"
+        },
+        "detailCode" : {
+          "type" : "string",
+          "description" : "Adds precision or qualifies the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities."
+        },
+        "value" : {
+          "type" : "string",
+          "description" : "Integer. Adds precision to the amenity. Mandatory for some amenity, optional for other and prohibited by the rest of the amenities."
         }
       }
     },
