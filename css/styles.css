@@ -194,6 +194,14 @@
 .cards {
   margin-bottom: 50px;
 }
+.cards .category {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
+}
+.cards .category:first-of-type {
+  margin-top: 0;
+}
 .cards .card {
   margin-top: 20px;
   background: #f8f8f8;
