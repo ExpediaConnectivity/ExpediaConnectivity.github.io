@@ -51,6 +51,11 @@ var Core = Core || {
             this.lastHeight = newHeight;
             this.onResize();
         }
+        // Check for Google Translate modifications
+        if ($(document.body).css("top") != "0px" && $(document.body).css("top") != "auto") {
+            $(".menu").css("top", $(document.body).css("top"));
+        }
+
         // Always check if iframe height changed
         this.resizeIframes();
         setTimeout(function() { _this.checkChanges() }, 500);
@@ -104,7 +109,7 @@ var Core = Core || {
     },
 
     resizeIframes: function() {
-        $('iframe').each(function() {
+        $('.api-content iframe').each(function() {
             var $this = $(this);
             var height = $this.contents().find('html').height();
             if (!height) {
