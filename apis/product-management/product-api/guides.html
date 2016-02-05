@@ -1,0 +1,362 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>FAQ &amp; Guides - Product API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script></head><body><div class="row full-width">
+    <nav class="large-12 small-12 columns" id="sitenav">
+        <a class="logo" href="/"><img src="/images/DevLogo2.png"/></a>
+        <a class="feedback show-for-medium-up" href="mailto:conpm@expedia.com">Feedback</a>
+    </nav>
+</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename" data-magellan-arrival="faq-guides"><a class="sidebar-nav-item" href="#faq-guides">FAQ &amp; Guides</a></li><li class="depth2" data-magellan-arrival="how-to-get-started-for-first-time-api-users"><a class="sidebar-nav-item" href="#how-to-get-started-for-first-time-api-users">How to Get Started for First Time API Users</a></li><li class="depth2" data-magellan-arrival="how-to-get-authorized-to-access-specific-properties"><a class="sidebar-nav-item" href="#how-to-get-authorized-to-access-specific-properties">How to Get Authorized to Access Specific Properties</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-lodging-data-model"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth2" data-magellan-arrival="simplified-mapping-process-with-product-api"><a class="sidebar-nav-item" href="#simplified-mapping-process-with-product-api">Simplified mapping process with Product API</a></li><li class="depth2" data-magellan-arrival="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-"><a class="sidebar-nav-item" href="#expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-properties"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="creating-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-"><a class="sidebar-nav-item" href="#what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-">What if a Partner System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerPreference Program?</a></li><li class="depth2" data-magellan-arrival="getting-active-or-all-resources-when-calling-a-list-endpoint"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth2" data-magellan-arrival="modify-as-a-full-overlay"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-s-logic-around-room-names"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</a></li><li class="depth3" data-magellan-arrival="using-predefined-names"><a class="sidebar-nav-item" href="#using-predefined-names">Using Predefined Names</a></li><li class="depth3" data-magellan-arrival="using-room-name-attributes"><a class="sidebar-nav-item" href="#using-room-name-attributes">Using Room Name Attributes</a></li><li class="depth2" data-magellan-arrival="understanding-cancellation-change-policy"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth2" data-magellan-arrival="optional-fields-in-a-rate-plan-create-request"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="faq-guides" data-magellan-destination="faq-guides">FAQ &amp; Guides</h1>
+<p>This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner&#39;s intent when managing room types and rate plans.</p>
+<p><a name="/howtogetstarted"></a></p>
+<h2 id="how-to-get-started-for-first-time-api-users" data-magellan-destination="how-to-get-started-for-first-time-api-users">How to Get Started for First Time API Users</h2>
+<p>In order to get started with using the API, it is required to register with Expedia and obtain API credentials. It is also possible to obtain the rights to use a test property to run some tests before going to production with a new integration. To get started, new partners need to send an email to eqcss@expedia.com.</p>
+<h2 id="how-to-get-authorized-to-access-specific-properties" data-magellan-destination="how-to-get-authorized-to-access-specific-properties">How to Get Authorized to Access Specific Properties</h2>
+<p>In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.</p>
+<p>After a partner successfully registered with Expedia (see <a href="#/howtogetstarted">above section</a> for details on how to get started), properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email notification. The email will contain the confirmation that the partner is now authorized to manage this hotel via API calls. It will also either contain a specific set of credentials for this property, or will indicate that the partner&#39;s unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.</p>
+<h2 id="understanding-expedia-lodging-data-model" data-magellan-destination="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h2>
+<p>In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:</p>
+<ul>
+<li>Each property has 0 or more room types</li>
+<li>Each room type has one or more rate plans</li>
+<li>Each rate plan belongs to a single room type</li>
+<li>Each rate plan is associated with a single cancellation policy and a single set of additional guest amounts.
+The Product API enables partners to first create a room type, and subsequently create rate plans for that room type. For every room type created, the partner is expected to add rate plans to it even if the system will not enforce this rule automatically.</li>
+<li>Additionally, for most of our partners, their contract requires that they offer a package rate plan for each standalone rate plan made available to Expedia.</li>
+</ul>
+<p>The following example illustrates the model and gives an overview of the type of data that needs to be set at various levels.</p>
+<p><img src="/images/ExpDataModelToday.png" alt="Data Model Overview with an Example"></p>
+<h2 id="simplified-mapping-process-with-product-api" data-magellan-destination="simplified-mapping-process-with-product-api">Simplified mapping process with Product API</h2>
+<p>In order to be able to start sending inventory and rates to Expedia, time consuming manual steps used to be required:</p>
+<ul>
+<li>Contact Expedia via either phone or email to make sure the right room types and rate plans are created</li>
+<li>Work with the connectivity system provider to acquire the room types and rate plans loaded in the Expedia system, through either a CSV spreadsheet or an API call</li>
+<li>Manually look at the room types and rate plans in the connectivity system, and map them to the corresponding Expedia room types and rate plan IDs</li>
+</ul>
+<p>With the new product API, these steps can go away. Once the room types and rate plans are defined and exist in the partner connectivity system, the partner simply needs to automatically call the product API to create the room types and rate plans. In the responses returned by the API, the IDs required for mapping are included. The system will know right away what are the IDs to be subsequently used and should be able to map them automatically, right away, using the product API response.</p>
+<p><img src="/images/mapping-process.png" alt="Simplified Mapping Process Overview"></p>
+<h2 id="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-" data-magellan-destination="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</h2>
+<p>Expedia Traveler Preference (ETP) is a program allowing customer to decide whether pay for their reservation at the time of booking or at the hotel.</p>
+<p>In order to be able to offer this option to their customers, Expedia requires from the participating properties that they allow their rate plans to be sold either as ExpediaCollect, where Expedia will collect payment from customer at time of booking, or HotelCollect, where the property will collect payment from the customer at time of check out.</p>
+<h3 id="identifying-expediatravelerpreference-properties" data-magellan-destination="identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</h3>
+<p>To identify if a property is enabled on the program, the property resource will return an array of 2 distributionModels: ExpediaCollect and HotelCollect:</p>
+<pre><code class="lang-JSON">        &quot;distributionModels&quot;: [
+            &quot;ExpediaCollect&quot;,
+            &quot;HotelCollect&quot;
+        ],
+</code></pre>
+<h3 id="identifying-expediatravelerpreference-rate-plans" data-magellan-destination="identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</h3>
+<p>When properties have opted in the program, all their standalone rate plans are required to be enabled for the ExpediaTravelerPreference program. It will translate in having 2 different distribution rules configured for each rate plan. For example, when doing a GET on a rate plan enabled for the program, something like this would be returned:</p>
+<pre><code class="lang-JSON"> {
+    &quot;entity&quot;: 
+        {
+            &quot;resourceId&quot;: 200086494,
+            ...
+            &quot;distributionRules&quot;: [
+                {
+                    &quot;expediaId&quot;: &quot;200086494&quot;,
+                    &quot;partnerCode&quot;: &quot;ABC123&quot;,
+                    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+                    &quot;manageable&quot;: true,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.25,
+                        &quot;minAmount&quot;: 20
+                    }
+                },
+                {
+                    &quot;expediaId&quot;: &quot;200086494A&quot;,
+                    &quot;partnerCode&quot;: &quot;DEF123&quot;,
+                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+                    &quot;manageable&quot;: false,
+                    &quot;compensation&quot;: {
+                        &quot;percent&quot;: 0.25
+                    }
+                }
+            ],
+            ...
+                }
+}
+</code></pre>
+<h3 id="creating-expediatravelerpreference-rate-plans" data-magellan-destination="creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</h3>
+<p>When a property opted in the program, all its standalone rate plans are required to be enabled for ExpediaTravelerPreference. In order to create an ExpediaTravelerPreference-enabled rate plan with the least amount of information, it minimally needs to contain 2 distribution rules, along with a partner code for each. The partner code doesn&#39;t have to be different between ExpediaCollect and HotelCollect rules, but it has to be unique across all the rate plans under the room type it is created under. Example:</p>
+<pre><code class="lang-JSON">{
+        &quot;distributionRules&quot;: [
+            {
+                &quot;partnerCode&quot;: &quot;A123&quot;,
+                &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;
+            },
+            {
+                &quot;partnerCode&quot;: &quot;D123&quot;,
+                &quot;distributionModel&quot;: &quot;HotelCollect&quot;
+            }
+        ]
+    }
+}
+</code></pre>
+<p>This will create a rate plan with these 2 codes, and will default everything else.</p>
+<h3 id="what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-" data-magellan-destination="what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-">What if a Partner System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerPreference Program?</h3>
+<p>Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference program will need to combine these into 1 rate plan creation request to Expedia. Partners should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.</p>
+<h2 id="getting-active-or-all-resources-when-calling-a-list-endpoint" data-magellan-destination="getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</h2>
+<p>By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:</p>
+<pre><code class="lang-HTML">/properties?status=all
+</code></pre>
+<p>This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:</p>
+<pre><code class="lang-HTML">/products/v1/properties/123/roomTypes?status=all
+</code></pre>
+<h2 id="modify-as-a-full-overlay" data-magellan-destination="modify-as-a-full-overlay">Modify as a full overlay</h2>
+<p>The modify (PUT) operation is a full overlay. The payload of the modify request needs to include all the elements/attributes returned by read (GET) of this resource (with the exception of the entity element). In the context of a room type modify, if elements such as bed types or age categories are removed, the system will understand this as the user wanting to remove them from the room type.</p>
+<p>Partners are expected to first issue a GET request to read the resource, and then edit what they need to change. Once done, they should resubmit the whole payload with the changes. Issuing a GET first, before making any modification, is quite important as changes to resources can be made via other means. Partners or Expedia Market Managers can make changes via ExpediaPartnerCentral. To find out the latest state of the resource, it is best to do a GET first before making any change to it.</p>
+<p>For the most part, partners are allowed to modify the same objects that are manageable in the create operation. In the context of the room type, it is true for most objects/elements. In the context of a rate plan, some things cannot be changed after creation, like the distribution models for example.</p>
+<p>It is currently not possible to make partial updates to a resource.</p>
+<h2 id="understanding-expedia-s-logic-around-room-names" data-magellan-destination="understanding-expedia-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</h2>
+<p>When naming their room types, partners using the room type resource are required to provide the name in one of 2 ways:</p>
+<ul>
+<li>Use one of the predefined room names</li>
+<li>Building a name from room-level attributes</li>
+</ul>
+<p>Expedia is unable to accept free text room names from its partners. Because Expedia has points of sale in more than 45 languages, and want to offer the best experience to all its customers around the world, it requires to receive names in a structured way, to enable instant availability in all languages.</p>
+<h3 id="using-predefined-names" data-magellan-destination="using-predefined-names">Using Predefined Names</h3>
+<p>When using a predefined room name, creating a room type is quite straightforward. When it comes to providing the name, all a partner has to do is provide one of these predefined names under the value element:</p>
+<pre><code class="lang-JSON">{
+...
+  &quot;name&quot;: {
+    &quot;value&quot;: &quot;Junior Suite&quot;
+  },
+...
+}
+</code></pre>
+<p><a href="reference.html#/definitions/PredefinedRoomNamesEnum">Available predefined room names</a> can be found in the API Definition section.</p>
+<h3 id="using-room-name-attributes" data-magellan-destination="using-room-name-attributes">Using Room Name Attributes</h3>
+<p>For partners who want to convey more information about their room with their room names,  Expedia offers the possibility to build a name from structured attributes. There are up to 10 different attributes that can be used to build a name. However, because Expedia also has a constraint on the lenght of the room names, not all 10 attributes can be used all at once.</p>
+<p>It is recommended for our partners to provide all the attributes they would like to be part of the name. Expedia will then only use the ones deemed more relevant if too many attributes are received. Example with all attributes selected:</p>
+<pre><code class="lang-JSON">{
+...
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Studio&quot;,
+      &quot;roomClass&quot;: &quot;Basic&quot;,
+      &quot;includeBedType&quot;: true,
+      &quot;bedroomDetails&quot;: &quot;1 Bedroom&quot;,
+      &quot;includeSmokingPref&quot;: true,
+      &quot;accessibility&quot;: true,
+      &quot;view&quot;: &quot;Beach View&quot;,
+      &quot;featuredAmenity&quot;: &quot;Hot Tub&quot;,
+      &quot;area&quot;: &quot;Corner&quot;,
+      &quot;customLabel&quot;: &quot;Blue Room&quot;
+    }
+  },
+...
+}
+</code></pre>
+<p>For partners who want more control over their names and which attributes get used, they can refer to the table below indicating our groupings and what is the maximum number of attributes Expedia will use from each group.</p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute name</th>
+<th>Group</th>
+<th>Optional</th>
+<th>Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeOfRoom</td>
+<td>-</td>
+<td>No</td>
+<td>Required and always used.</td>
+</tr>
+<tr>
+<td>roomClass</td>
+<td>-</td>
+<td>Yes</td>
+<td>Always used in name if provided.</td>
+</tr>
+<tr>
+<td>includeBedType</td>
+<td>Bedding</td>
+<td>Yes</td>
+<td>Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group. Bed type name might not be used as is for the more complicated options. Expedia can default to use &quot;Multiple Beds&quot;.</td>
+</tr>
+<tr>
+<td>bedroomDetails</td>
+<td>Bedding</td>
+<td>Yes</td>
+<td>Part of a grouping of 2 elements. Only 1 of the 2 will be used if both are specified in this group.</td>
+</tr>
+<tr>
+<td>includeSmokingPref</td>
+<td>Key Features</td>
+<td>Yes</td>
+<td>Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group.</td>
+</tr>
+<tr>
+<td>accessibility</td>
+<td>Key Features</td>
+<td>Yes</td>
+<td>Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group. Indicate if room is accessible to wheelchairs.</td>
+</tr>
+<tr>
+<td>view</td>
+<td>Key Features</td>
+<td>Yes</td>
+<td>Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group.</td>
+</tr>
+<tr>
+<td>featuredAmenity</td>
+<td>Key Features</td>
+<td>Yes</td>
+<td>Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group.</td>
+</tr>
+<tr>
+<td>area</td>
+<td>Key Features</td>
+<td>Yes</td>
+<td>Part of a grouping of 5 elements. Expedia will use a maximum of 2 attributes from this group.</td>
+</tr>
+<tr>
+<td>customLabel</td>
+<td>-</td>
+<td>Yes</td>
+<td>Always used in name if provided.</td>
+</tr>
+</tbody>
+</table>
+</div><p>For more information about the various possible values and constraints on each of these attributes, please refer to the <a href="reference.html#/definitions/RnsAttributesDTO">API Definition section</a>.</p>
+<h2 id="understanding-cancellation-change-policy" data-magellan-destination="understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</h2>
+<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Deadline</td>
+<td>Penalty window defined in hours. Hours are relative to checkin date and the property&#39;s cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours.</td>
+</tr>
+<tr>
+<td>Penalty</td>
+<td>Value should match one of the <a href="reference.html#/definitions/perStayFeeEnum">predefined values</a>.</td>
+</tr>
+<tr>
+<td>Amount</td>
+<td>Flat amount that can be charged if customer cancels.</td>
+</tr>
+</tbody>
+</table>
+</div><p>Cancellation and change policy is optional when creating a new rate plan.</p>
+<ul>
+<li>If provided, partners are required to provide at least one deadline in hours, and a cancellation penalty.</li>
+<li>If no cancellation policy is provided in a create rate plan request, Expedia will try to select one which already exists, is refundable, and was most recently used by an active rate plan of the same type (standalone, package or corporate)</li>
+<li>If no cancellation policy can be found due to not having any active rate plan of the required type, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. </li>
+</ul>
+<p>When providing a cancel policy, partners can provide one or two defaultPenalties object.</p>
+<ul>
+<li>At least one defaultPenalty must be provided, with a deadline set to 0.</li>
+<li>If no other default penalty is provided, there will be a single strategy applied, defined by that defaultPenalty per stay fee and amount.</li>
+<li>In addition to the default penalty with a deadline set at 0, only one additional defaultPenalty can be provided (for a total of 2). </li>
+<li>If a second penalty is provided, its deadline must be greater than 0, and less than 1000.</li>
+<li>It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation &amp; change policy.</li>
+</ul>
+<p><strong>Example 1</strong> : Considering the following policy: </p>
+<ul>
+<li>If a customer cancels between 24h or less before property&#39;s cancellation time, the customer pays for one night.</li>
+<li>If a customer cancels more than 24h before property&#39;s cancellation time, the customer pays no penalty.</li>
+</ul>
+<p>To reflect such terms, a partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+        &quot;amount&quot;: 0.0
+      }, {
+        &quot;deadline&quot;: 24,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0.0
+      }
+    ]
+  }
+</code></pre>
+<p><strong>Example 2</strong> : variation of the above example, where </p>
+<ul>
+<li>cancellations within 24h of property cancellation time deadline should be charged 1 night room and tax</li>
+<li>cancellations further out should incur a 5 unit of currency penalty (for example 5 GBP for a London, UK property, assuming property rate acquisition type is SellLAR)</li>
+</ul>
+<p>To reflect such terms, a partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;,
+        &quot;amount&quot;: 0.0
+      }, {
+        &quot;deadline&quot;: 24,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 5.0
+      }
+    ]
+  }
+</code></pre>
+<p><strong>Example 3</strong> : if a policy is non-refundable, partner should send:</p>
+<pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;,
+        &quot;amount&quot;: 0.0
+      }
+    ]
+  }
+</code></pre>
+<h2 id="optional-fields-in-a-rate-plan-create-request" data-magellan-destination="optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</h2>
+<p>In a rate plan create request, most fields are optional. If an optional field is not provided, it will be defaulted per specific rules found in the API Definition section. </p>
+<p>Some of the fields cannot be set by the user; these will default to values defined by Expedia. </p>
+<p>The create response will contain all the fields originally provided in the request. It also includes the default values of the fields that were not provided in the request. If an error occurred, the response contains one or more errors.</p>
+<p><em>About optional fields</em>: some optional fields may not have any values defined in the Expedia system. In this case the fields are omitted completely in the response.</p>
+<p><em>About fields documented as not accepted in request, but returned in response</em>: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not.</p>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" />
+<div id="google_translate_element"></div><script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script><input type="hidden" id="eventTrackingPageName" value="FAQ & Guides - Product API"/></body></html>
