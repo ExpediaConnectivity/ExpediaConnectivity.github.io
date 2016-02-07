@@ -1851,18 +1851,18 @@ Simple entity response:</p>
 </tr>
 <tr>
 <td>status</td>
-<td>string</td>
-<td>Defaults to active if not provided during creation.</td>
+<td>enum</td>
+<td>Defaults to Active if not provided during creation. Possible values: Active, Inactive.</td>
 </tr>
 <tr>
 <td>type</td>
-<td>string</td>
-<td>Rate Plan type. Defaults to Standalone if not provided during creation.</td>
+<td>enum</td>
+<td>Rate Plan type. Defaults to Standalone if not provided during creation. Possible values: Standalone, Package, Corporate.</td>
 </tr>
 <tr>
 <td>pricingModel</td>
-<td>string</td>
-<td>Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model.</td>
+<td>enum</td>
+<td>Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model. Possible values are: PerDayPricing, PerDayPricingByDayOfArrival, OccupancyBasedPricing, OccupancyBasedPricingByDayOfArrival.</td>
 </tr>
 <tr>
 <td>occupantsForBaseRate</td>
