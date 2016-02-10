@@ -55,6 +55,26 @@ var Core = Core || {
         if ($(document.body).css("top") != "0px" && $(document.body).css("top") != "auto") {
             $(".menu").css("top", $(document.body).css("top"));
         }
+        try {
+            if ($("html").hasClass("translated-ltr") || $("html").hasClass("translated-rtl")) {
+                lang = google.translate.TranslateElement().f;
+                if (typeof lang != "undefined" && lang != this.previouslang) {
+                    ga('send', 'event', 'Google Translate', 'translate', 'developer.expediapartnercentral.com/translate', lang, {
+                        nonInteraction: true
+                    });
+                    console.log("Translated to " + lang + " (from " + this.previouslang + ")");
+                    this.previouslang = lang;
+                }
+            } else if (typeof this.previouslang != "undefined") {
+                ga('send', 'event', 'Google Translate', 'translate', 'developer.expediapartnercentral.com/translate', "en", {
+                    nonInteraction: true
+                });
+                console.log("Translate returned to en from " + this.previouslang);
+                delete this.previouslang;
+            }
+        } catch(e) {
+            console.log("Couldn't get translate data: " + e);
+        }
 
         // Always check if iframe height changed
         this.resizeIframes();
