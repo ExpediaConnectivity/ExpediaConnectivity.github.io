@@ -389,6 +389,11 @@ code.hljs {
   font-size: 1.3em;
   margin-bottom: 0;
 }
+.welcome {
+  text-align: center;
+  font-size: 1.3em;
+  margin-top: 60px;
+}
 .footer {
   background: #3f3f3f;
   color: #FFF !important;
