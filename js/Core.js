@@ -59,14 +59,14 @@ var Core = Core || {
             if ($("html").hasClass("translated-ltr") || $("html").hasClass("translated-rtl")) {
                 lang = google.translate.TranslateElement().f;
                 if (typeof lang != "undefined" && lang != this.previouslang) {
-                    result = ga('send', 'event', 'Google Translate', 'translate', 'developer.expediapartnercentral.com/translate', lang, {
+                    result = ga('send', 'event', 'EPC Google Translate', 'translate', lang, {
                         nonInteraction: true
                     });
                     console.log("Translated to " + lang + " (from " + this.previouslang + ") result: " + result);
                     this.previouslang = lang;
                 }
             } else if (typeof this.previouslang != "undefined") {
-                result = ga('send', 'event', 'Google Translate', 'translate', 'developer.expediapartnercentral.com/translate', "en", {
+                result = ga('send', 'event', 'EPC Google Translate', 'translate', "en", {
                     nonInteraction: true
                 });
                 console.log("Translate returned to en (from " + this.previouslang + ") result: " + result);
