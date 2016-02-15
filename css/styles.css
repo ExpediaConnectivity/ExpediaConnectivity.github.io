@@ -389,8 +389,11 @@ code.hljs {
   font-size: 1.3em;
   margin-bottom: 0;
 }
-.welcome {
+.center {
   text-align: center;
+}
+.announce {
+  text-align: justify;
   font-size: 1.3em;
   margin-top: 60px;
 }
