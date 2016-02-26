@@ -612,28 +612,17 @@ When a rate plan is managed through rate plan linkage, child products can still 
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
 <p>The following successful scenarios are supported by the PARR simulator. The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR.</p>
-<p><strong>Request to retrieve Product information with no additional parameter</strong>
-Will return all products listed above for the hotel the request is for | </p>
-<p><strong>Request to retrieve Active Product information</strong>
-Will return all active products |                     </p>
-<p><strong>Request to retrieve Inactive Product information</strong>
-Will return an empty success response (no inactive products)                                                                   </p>
-<p><strong>Request for a room type ID only</strong>
-Will return all its rate plans as per the definitions above |                                                                  </p>
-<p><strong>Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans</strong>
-Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. </p>
-<p><strong>Request can also attempt to filter data set for response</strong>
-Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans).</p>
-<p><strong>Request to obtain rate linkage information</strong>
-Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ, will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions,book and travel start and end dates, mobile only indicator, day of week booking restrictions, create and update date and times.</p>
-<p><strong>Request to obtain additional room type data</strong>
-Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types</p>
-<p><strong>Request to obtain compensation data</strong>
-Unless explicitey asked, PARR will not return compensation data. If specified in the request, it will return compensation data for each rate plan.</p>
-<p><strong>Request to obtain cancellation policy data</strong>
-Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             </p>
-<p><strong>Request to obtain all PARR data available</strong>
-All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS.</p>
+<p><strong>Request to retrieve Product information with no additional parameter</strong><br>Will return all products listed above for the hotel the request is for  </p>
+<p><strong>Request to retrieve Active Product information</strong><br>Will return all active products      </p>
+<p><strong>Request to retrieve Inactive Product information</strong><br>Will return an empty success response (no inactive products)                                                                   </p>
+<p><strong>Request for a room type ID only</strong><br>Will return all its rate plans as per the definitions above                                                        </p>
+<p><strong>Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans</strong><br>Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. </p>
+<p><strong>Request can also attempt to filter data set for response</strong><br>Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans).</p>
+<p><strong>Request to obtain rate linkage information</strong><br>Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ, will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions,book and travel start and end dates, mobile only indicator, day of week booking restrictions, create and update date and times.</p>
+<p><strong>Request to obtain additional room type data</strong><br>Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types</p>
+<p><strong>Request to obtain compensation data</strong><br>Unless explicitey asked, PARR will not return compensation data. If specified in the request, it will return compensation data for each rate plan.</p>
+<p><strong>Request to obtain cancellation policy data</strong><br>Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             </p>
+<p><strong>Request to obtain all PARR data available</strong><br>All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS.</p>
 <p><strong>Please note:</strong>
 The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR</p>
 <h3 id="erroneous-update-scenarios-parr" data-magellan-destination="erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</h3>
@@ -647,24 +636,15 @@ The data provided back in the response being randomized, systems cannot attempt 
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
 <p>EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request. Only one error should be returned in case multiple are bundled.</p>
-<p><strong>Invalid password</strong>
-Response with error code 1001</p>
-<p><strong>Using EQC Simulator with a  previous namespace version</strong>
-Response with error code 2010, specific to EQC Simulator. Previous versions are still supported in production but partners are strongly encouraged to upgrade to latest versions.</p>
-<p><strong>XML that doesn’t conform to schema</strong>
-Response with error code 3010</p>
-<p><strong>Request for start date before yesterday</strong>
-Response with error code 3020</p>
-<p><strong>Request for start date &gt; end date</strong>
-Response with error code 3021</p>
-<p><strong>Invalid hotel ID</strong>
-Response with error code 3202</p>
-<p><strong>Invalid room type ID</strong>
-Response with error code 3203</p>
-<p><strong>Invalid rate plan ID</strong>
-Response with error code 3204</p>
-<p><strong>Rate plan ID given doesn’t match with Room Type ID described in data set</strong>
-Response with error code 3205</p>
+<p><strong>Invalid password</strong><br>Response with error code 1001</p>
+<p><strong>Using EQC Simulator with a  previous namespace version</strong><br>Response with error code 2010, specific to EQC Simulator. Previous versions are still supported in production but partners are strongly encouraged to upgrade to latest versions.</p>
+<p><strong>XML that doesn’t conform to schema</strong><br>Response with error code 3010</p>
+<p><strong>Request for start date before yesterday</strong><br>Response with error code 3020</p>
+<p><strong>Request for start date &gt; end date</strong><br>Response with error code 3021</p>
+<p><strong>Invalid hotel ID</strong><br>Response with error code 3202</p>
+<p><strong>Invalid room type ID</strong><br>Response with error code 3203</p>
+<p><strong>Invalid rate plan ID</strong><br>Response with error code 3204</p>
+<p><strong>Rate plan ID given doesn’t match with Room Type ID described in data set</strong><br>Response with error code 3205</p>
 <h2 id="br" data-magellan-destination="br">BR</h2>
 <p>This section describes how the BR simulator is configured and what kind of scenario can be tested using it.</p>
 <p>The simulator only supports the latest version of BR namespace:
@@ -737,8 +717,7 @@ Country: US</p>
 &lt;/BookingRetrievalRQ&gt;
 </code></pre>
 <p>Below are the sample scenarios for hotel ID &quot;111&quot; Expedia Collect hotel.</p>
-<p><strong>1 Retrieve pending bookings</strong>
-Username/password only, no other parameters.
+<p><strong>1 Retrieve pending bookings</strong><br>Username/password only, no other parameters.
 1 or more statuses can optionally be specified.
 The BR simulator will return 3 bookings.</p>
 <ul>
@@ -749,141 +728,79 @@ The BR simulator will return 3 bookings.</p>
 <p>These are the basic Expedia Collect bookings.</p>
 <p>If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.</p>
 <p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>2 Retrieve single booking by booking ID</strong>
-Username/password, and a booking ID in the range of 1 to 103
-The BR simulator may or may not return payment card information for EVC depending on the booking ID value.
-It may also return child ages depending on the booking ID value. See table above.
-Booking status will be confirmed.
-Booking confirmation number will be a random number between 1000000 and 10000000.</p>
-<p><strong>3 Retrieve bookings by hotel ID for the last 1 day</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=1
-1 or more statuses can optionally be specified.
-The BR simulator will return 10 bookings, all of them contain payment card information for EVC.
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>4 Retrieve bookings by hotel ID for the last 2 days</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=2
-1 or more statuses can optionally be specified.
-The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.
-If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>5 Retrieve bookings by hotel ID for the last 3 days</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=3
-1 or more statuses can optionally be specified.
-The BR simulator will return 3 bookings.</p>
+<p><strong>2 Retrieve single booking by booking ID</strong><br>Username/password, and a booking ID in the range of 1 to 103<br>The BR simulator may or may not return payment card information for EVC depending on the booking ID value.<br>It may also return child ages depending on the booking ID value. See table above.<br>Booking status will be confirmed.<br>Booking confirmation number will be a random number between 1000000 and 10000000.</p>
+<p><strong>3 Retrieve bookings by hotel ID for the last 1 day</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=1<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 10 bookings, all of them contain payment card information for EVC.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>4 Retrieve bookings by hotel ID for the last 2 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=2<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>5 Retrieve bookings by hotel ID for the last 3 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=3<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 3 bookings.  </p>
 <ul>
 <li>A cancellation.</li>
 <li>A modification contains a special request code &quot;5&quot; indicating booking is paid by EVC.</li>
 <li>A reservation contains payment card information for EVC.</li>
 </ul>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>6 Retrieve bookings by hotel ID for the last 4 days</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=4
-1 or more statuses can optionally be specified.
-The BR simulator will return 1 booking.</p>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>6 Retrieve bookings by hotel ID for the last 4 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=4<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 1 booking.  </p>
 <ul>
 <li>A cancellation.</li>
 </ul>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>7 Retrieve bookings by hotel ID for the last 5 days</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=5
-1 or more statuses can optionally be specified.
-The BR simulator will return 2 bookings.</p>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>7 Retrieve bookings by hotel ID for the last 5 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=5<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 2 bookings.  </p>
 <ul>
 <li>A modification.</li>
 <li>A cancellation.</li>
 </ul>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>8 Retrieve bookings by hotel ID for the last 6 days</strong>
-Username/password, and a hotel ID=&quot;111&quot;  and number of days=6
-1 or more statuses can optionally be specified.
-The BR simulator will return 3 bookings.</p>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>8 Retrieve bookings by hotel ID for the last 6 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=6<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 3 bookings.  </p>
 <ul>
 <li>A cancellation.</li>
 <li>A modification, non-EVC.</li>
 <li>A reservation, non-EVC.</li>
 </ul>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.
-Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>9 Retrieve bookings without a hotel ID for the last 30 days</strong>
-Username/password, and number of days=30
-1 or more statuses can optionally be specified.
-The BR simulator will return 103 bookings.</p>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>9 Retrieve bookings without a hotel ID for the last 30 days</strong><br>Username/password, and number of days=30<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 103 bookings.  </p>
 <ul>
 <li>A cancellation.</li>
 <li>A modification, non-EVC.</li>
 <li>A reservation, non-EVC.</li>
-<li>The rest of 100 bookings will contain either payment card information or special request code &quot;5&quot; or none of the two.</li>
+<li>The rest of 100 bookings will contain either payment card information or special request code &quot;5&quot; or none of the two.  </li>
 </ul>
-<p>For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5&quot; randomly.
-Booking ID will be numbered from &quot;1&quot; to &quot;103&quot;, and the child count and child age will be populated based on the last digit of booking ID value.</p>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.</p>
-<p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p>For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5&quot; randomly.<br>Booking ID will be numbered from &quot;1&quot; to &quot;103&quot;, and the child count and child age will be populated based on the last digit of booking ID value.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
 <p><strong>10-19 Detailed scenarios for retrieval by booking ID with value ending with 0 to 9</strong>
-Username/password, and a booking ID ending with 0 to 9
-The BR simulator will return a single booking with variable attribute values. See table below.</p>
-<p><strong>20 Adding hotel ID as input parameter to any of the scenarios above will produce the same result.</strong></p>
-<p>And below are the sample scenarios for hotel ID &quot;211&quot; ETP hotel and hotel ID &quot;311&quot; Hotel Collect only hotel.</p>
-<p><strong>23 Retrieve bookings by hotel ID – ETP hotel</strong>
-Username/password, and hotel ID=&quot;211&quot;
-1 or more statuses can optionally be specified.
-BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.</p>
+Username/password, and a booking ID ending with 0 to 9<br>The BR simulator will return a single booking with variable attribute values. See table below.</p>
+<p><strong>20 Adding hotel ID as input parameter to any of the scenarios above will produce the same result.</strong><br>And below are the sample scenarios for hotel ID &quot;211&quot; ETP hotel and hotel ID &quot;311&quot; Hotel Collect only hotel.</p>
+<p><strong>23 Retrieve bookings by hotel ID – ETP hotel</strong><br>Username/password, and hotel ID=&quot;211&quot;<br>1 or more statuses can optionally be specified.<br>BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.  </p>
 <ul>
 <li>A reservation associated with EVC</li>
 <li>A modification associated with EVC</li>
 <li>A cancellation</li>
 <li>A reservation associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=21000A, as well as customer CC.</li>
 <li>A modification associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=21000A, as well as customer CC.</li>
-<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.</li>
+<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.
+Each booking will have unique booking ID.<br>If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
 </ul>
-<p>Each booking will have unique booking ID.</p>
-<p>If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.</p>
-<p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>24 Retrieve bookings by hotel ID –Hotel Collect only hotel</strong>
-Username/password, and hotel ID=&quot;311&quot;
-1 or more statuses can optionally be specified.
-BR simulator to return 3 Hotel Collect bookings.</p>
+<p><strong>24 Retrieve bookings by hotel ID –Hotel Collect only hotel</strong><br>Username/password, and hotel ID=&quot;311&quot;<br>1 or more statuses can optionally be specified.<br>BR simulator to return 3 Hotel Collect bookings.  </p>
 <ul>
 <li>A reservation associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=31000A, as well as customer CC.</li>
 <li>A modification associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=31000A, as well as customer CC.</li>
-<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.</li>
+<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.
+Each booking should have a unique booking ID.<br>If specified in the request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
 </ul>
-<p>Each booking should have a unique booking ID.</p>
-<p>If specified in the request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.</p>
-<p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>25 Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings</strong>
-Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and number of days=30
-1 or more statuses can optionally be specified.
-BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.</p>
+<p><strong>25 Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings</strong><br>Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and number of days=30<br>1 or more statuses can optionally be specified.<br>BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.  </p>
 <ul>
 <li>Hotel ID=&quot;111&quot;, same as scenario #9 above. Return 103 Expedia Collect bookings.</li>
 <li>Hotel ID=&quot;211&quot;, similar to scenario #9, but include some Hotel Collect bookings randomly.</li>
-<li>Hotel ID=&quot;311&quot;, similar to scenario #9, but return 103 Hotel Collect bookings.</li>
+<li>Hotel ID=&quot;311&quot;, similar to scenario #9, but return 103 Hotel Collect bookings.
+All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
 </ul>
-<p>All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.</p>
-<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.</p>
-<p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
-<p><strong>26 Retrieve single booking by booking ID and hotel ID – Hotel Collect booking</strong>
-Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and booking ID in the range of 1 to 103
-BR simulator to return one of the three Hotel Collect bookings.</p>
+<p><strong>26 Retrieve single booking by booking ID and hotel ID – Hotel Collect booking</strong><br>Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and booking ID in the range of 1 to 103<br>BR simulator to return one of the three Hotel Collect bookings.  </p>
 <ul>
 <li>Hotel ID=&quot;111&quot;, same as no ID is passed.</li>
 <li>Hotel ID=&quot;211&quot;, return a single Expedia Collect or Hotel Collect booking randomly.</li>
-<li>Hotel ID=&quot;311&quot;, return a single Hotel Collect booking.</li>
+<li>Hotel ID=&quot;311&quot;, return a single Hotel Collect booking.
+The simulator will generate booking content based on hotel ID and booking ID as described above.<br>Booking status will be confirmed.<br>Booking confirmation number will be a random number between 1000000 and 10000000.</li>
 </ul>
-<p>The simulator will generate booking content based on hotel ID and booking ID as described above.</p>
-<p>Booking status will be confirmed.</p>
-<p>Booking confirmation number will be a random number between 1000000 and 10000000.</p>
 <h4 id="erroneous-scenarios" data-magellan-destination="erroneous-scenarios">Erroneous scenarios</h4>
-<p><strong>21 Retrieve pending bookings with invalid password</strong>
-Username and any password other than the provided values.
-The BR simulator will return error code 1001: invalid username/password.</p>
-<p><strong>22 Retrieve pending bookings with invalid hotel ID</strong>
-Username/password and any hotel ID other than &quot;111&quot;, &quot;211&quot; or &quot;311&quot;.
-The BR simulator will return error code 3202: invalid hotel ID.</p>
+<p><strong>21 Retrieve pending bookings with invalid password</strong><br>Username and any password other than the provided values.<br>The BR simulator will return error code 1001: invalid username/password.</p>
+<p><strong>22 Retrieve pending bookings with invalid hotel ID</strong><br>Username/password and any hotel ID other than &quot;111&quot;, &quot;211&quot; or &quot;311&quot;.<br>The BR simulator will return error code 3202: invalid hotel ID.</p>
 <h2 id="bc" data-magellan-destination="bc">BC</h2>
 <p>This section describes how the BC simulator is configured and what kind of scenario can be tested using it.</p>
 <p>Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:</p>
@@ -911,18 +828,12 @@ The BR simulator will return error code 3202: invalid hotel ID.</p>
 <p>The simulator will return warning 10080 in the response if there is an invalid bookingID (not between 000001 and 000103) in the request. It will return warning 10100 if the bookingType and bookingID do not match in the request.</p>
 <h3 id="erroneous-update-scenarios" data-magellan-destination="erroneous-update-scenarios">Erroneous Update Scenarios</h3>
 <p>EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request.</p>
-<p><strong>Invalid password</strong>
-Response with error code 1001</p>
-<p><strong>Invalid XML</strong>
-Response with error code 2002</p>
-<p><strong>Old or invalid namespace</strong>
-Response with error code 2010</p>
-<p><strong>Invalid XML with invalid structure (XSD validation)</strong>
-Response with error code 3010</p>
-<p><strong>More than 10 ConfirmationNumber elements</strong>
-Response with error code 3301</p>
-<p><strong>Invalid hotel ID</strong>
-Response with error code 3202</p>
+<p><strong>Invalid password</strong><br>Response with error code 1001</p>
+<p><strong>Invalid XML</strong><br>Response with error code 2002</p>
+<p><strong>Old or invalid namespace</strong><br>Response with error code 2010</p>
+<p><strong>Invalid XML with invalid structure (XSD validation)</strong><br>Response with error code 3010</p>
+<p><strong>More than 10 ConfirmationNumber elements</strong><br>Response with error code 3301</p>
+<p><strong>Invalid hotel ID</strong><br>Response with error code 3202</p>
 <h3 id="troubleshooting" data-magellan-destination="troubleshooting">TROUBLESHOOTING</h3>
 <p>If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:</p>
 <p> BR: <a href="https://simulator.expediaquickconnect.com/connect/br">https://simulator.expediaquickconnect.com/connect/br</a>
