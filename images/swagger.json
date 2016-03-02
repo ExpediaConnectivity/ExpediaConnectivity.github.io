@@ -914,6 +914,10 @@
           "type": "string",
           "description": "Name describing the property. Max. 255 characters"
         },
+        "partnerCode": {
+          "type": "string",
+          "description": "Partner property code/identifier. Max 64 characters. Optional field returned for connected properties. This code allows partner to uniquely identify the property in its system."
+        },
         "status": {
           "type": "string",
           "description": "Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion"

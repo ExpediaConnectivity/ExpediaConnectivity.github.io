@@ -510,6 +510,11 @@ Simple entity response:</p>
 <td>Name describing the property. Max. 255 characters.</td>
 </tr>
 <tr>
+<td>partnerCode</td>
+<td>string</td>
+<td>Partner property code/identifier. Max 64 characters. Optional field returned for connected properties. This code allows partner to uniquely identify the property in its system.</td>
+</tr>
+<tr>
 <td>status</td>
 <td>string</td>
 <td>Status in which the property can be in; Allowed values are: Active, Inactive, Onboarding, UnderConversion.</td>
@@ -517,7 +522,7 @@ Simple entity response:</p>
 <tr>
 <td>currency</td>
 <td>string</td>
-<td>Format: ISO 4217 Alpha 3. This currency code is applicable to all amounts found in any resources available as part of the EPS Product API.</td>
+<td>Currency code applicable to all amounts found in any resources available as part of the EPS Product API. Format: <a href="http://www.iso.org/iso/home/standards/currency_codes.htm">ISO 4217</a>. E.g.: &quot;USD&quot; (for US dollars), &quot;CAD&quot; (for Canadian dollars) etc.</td>
 </tr>
 <tr>
 <td>address</td>
@@ -562,12 +567,12 @@ Simple entity response:</p>
 <tr>
 <td>timezone</td>
 <td>string</td>
-<td>Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time.</td>
+<td>Descriptive information about property timezone configuration in Expedia system. Description will start by a GMT offset, followed by a friendly name. Any configuration or settings related to date or time for a property will always be relative to this timezone. Examples of such configurations include property cancellation time and property reservation cutoff time. E.g.: &quot;(GMT) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London&quot;</td>
 </tr>
 <tr>
 <td>reservationCutOff</td>
 <td><a href="#/definitions/CutOffDTO">CutOff</a></td>
-<td>Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00am on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5am (based on property timezone).</td>
+<td>Used to indicate when we stop making rate plans available to book for same day reservations. Expedia can configure properties to accept last minute bookings up until 5:00 AM on the next day. If configured this way, a property would accept that Expedia uses availability and rates from September 1st, and sell it up until September 2nd, 5:00 AM (based on property timezone).</td>
 </tr>
 </tbody>
 </table>
