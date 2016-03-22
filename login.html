@@ -47,14 +47,29 @@
     <div id="result" class="formline center error"></div>
     <div class="formline"><input class="submit" type="submit" value="Login"/></div>
 </form>
+<!--[if lte IE 9]>
+<script src="/js/base64.js"></script>
+<!--<![endif]-->
 <script>
     function login(form) {
         var username = $(form).find("#username").val();
         var password = $(form).find("#password").val();
 
-        $.post("/test", {
-            username: username,
-            password: password
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/properties/login",
+            xhrFields: {
+                withCredentials: true,
+                XDomainRequest: true
+            },
+            beforeSend: function(xhr) {
+                if (username) {
+                    if (typeof(btoa) !== "function") {
+                        btoa = Base64.encode
+                    }
+                    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+                }
+            }
         }).done(function(data, textStatus, jqxhr) {
             $("#result").html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data));
         }).fail(function(jqxhr) {
