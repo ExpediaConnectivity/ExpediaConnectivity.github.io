@@ -7,6 +7,7 @@
 .api-content {
   padding: 50px 60px 50px 60px;
   color: #5E5E5E;
+  text-align: justify;
 }
 @media only screen and (max-width: 40em) {
   .api-content {
@@ -165,6 +166,27 @@
 }
 .demo .error-results {
   color: #D62D20;
+}
+.edit-on-github {
+  text-align: right;
+  position: absolute;
+  display: table !important;
+  height: 50px;
+  z-index: 1;
+  padding-right: 60px;
+}
+.edit-on-github div {
+  display: table-cell;
+  vertical-align: middle;
+}
+.edit-on-github div a {
+  display: inline-block;
+  width: 150px;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  border: 1px solid #0065B8;
+  border-radius: 4px;
 }
 #apititle {
   line-height: 80px;
