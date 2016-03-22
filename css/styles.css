@@ -9,6 +9,10 @@
   color: #5E5E5E;
   text-align: justify;
 }
+.api-content a {
+  word-break: break-all;
+  word-break: break-word;
+}
 @media only screen and (max-width: 40em) {
   .api-content {
     padding: 1em;
