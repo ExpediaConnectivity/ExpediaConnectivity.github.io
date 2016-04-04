@@ -425,19 +425,19 @@ code.hljs {
   font-size: 1.3em;
   margin-top: 60px;
 }
-.formline {
+form .formline {
   line-height: 1.5;
   margin-bottom: 10px;
   vertical-align: middle;
 }
-.formline > span {
+form .formline > span {
   display: inline-block;
   width: 40%;
   margin-right: 10%;
   font-size: inherit;
   vertical-align: middle;
 }
-.formline > input {
+form .formline > input {
   display: inline-block;
   width: 49%;
   border: 1px solid #EFEFEF;
@@ -447,7 +447,7 @@ code.hljs {
   font-size: 0.8em;
   margin: 0;
 }
-.formline > .submit {
+form .formline > .submit {
   display: inline-block;
   width: 49%;
   margin-left: 50%;
@@ -457,7 +457,7 @@ code.hljs {
   background: #FECB2F;
   cursor: pointer;
 }
-.formline.error {
+form .error {
   font-size: 0.7em;
   color: #D62D20;
 }
@@ -491,6 +491,13 @@ code.hljs {
   display: inline-block;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.dataTables_paginate {
+  padding-top: 0.755em !important;
+}
+.paginate_button {
+  padding: 0 0.5em !important;
 }
 
 

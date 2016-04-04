@@ -1,14 +1,15 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Try It - Promo API</title><link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/styles.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/styles.css">
 <script src="/js/jquery.js"></script>
+<script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
 <script src="/js/foundation.min.js"></script>
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
 <script>
-
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
@@ -37,7 +38,7 @@
         <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
         <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="hide-for-small-only edit-on-github medium-9 medium-offset-3 large-8 large-offset-2 columns end"><div><a href="https://github.com/ExpediaConnectivity/ConnectivityContent/tree/master/apis/02-Product Management/02-Promo-API/05-try-it.md">Edit on Github</a></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Promo API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/api-definition.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/faq-guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/examples.html">Examples</a></li><li class="pagename" data-magellan-arrival="try-it"><a class="sidebar-nav-item" href="#try-it">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><div><a name="swagger" data-magellan-destination="swagger"></a></div><iframe src="/swagger-ui/index.html?url=%2Fimages%2Fswagger_promo.json" seamless="seamless" scrolling="no"></iframe></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Promo API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/api-definition.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/faq-guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/examples.html">Examples</a></li><li class="pagename" data-magellan-arrival="try-it"><a class="sidebar-nav-item" href="#try-it">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><div><a name="swagger" data-magellan-destination="swagger"></a></div><iframe src="/swagger-ui/index.html?url=%2Fimages%2Fswagger_promo.json" seamless="seamless" scrolling="no"></iframe></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
