@@ -187,7 +187,7 @@ Authorization: Basic [your encoded username:password in base64]
 }
 </code></pre>
 <h2 id="room-type-resource-examples" data-magellan-destination="room-type-resource-examples">Room Type Resource Examples</h2>
-<p>The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to hotels, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.</p>
+<p>The room type resource describes the configuration of a specific room type/class/category in the Expedia system. Room types belong to properties, and room types contain one to many rate plans. A room type resource will contain information such as bed types, smoking preferences, occupancy settings by age categories, etc.</p>
 <p>Against the room type resource, partners can retrieve a list of room types or a specific room type. Partners can also create new room types (one at a time), and edit an existing room type (one at a time, full overlay operation).</p>
 <h3 id="all-room-types-read" data-magellan-destination="all-room-types-read">All Room Types Read</h3>
 <p>This example shows how to do a read request to retrieve all room types under a given property. We&#39;ll illustrate how to add the status param on the request to get all active and inactive room types. In this example, the property has 2 active and 2 inactive room types, so the request will return 4 room types, sorted by resourceId.</p>
@@ -467,7 +467,7 @@ Authorization: Basic [your encoded username:password in Base64]
 <h3 id="room-type-create-predefined-room-name-" data-magellan-destination="room-type-create-predefined-room-name-">Room Type Create (Predefined Room Name)</h3>
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking</p>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
 Accept: application/json
 Content-Type: application/json
 </code></pre>
@@ -567,7 +567,7 @@ Content-Type: application/json
 <h3 id="room-type-create-room-name-attributes-" data-magellan-destination="room-type-create-room-name-attributes-">Room Type Create (Room Name Attributes)</h3>
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking</p>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes
 Accept: application/json
 Content-Type: application/json
 </code></pre>
@@ -790,7 +790,7 @@ Content-Type: application/json
 </code></pre>
 <h3 id="room-type-modify-predefined-name-code-and-age-categories-" data-magellan-destination="room-type-modify-predefined-name-code-and-age-categories-">Room Type Modify (Predefined Name, Code and Age Categories)</h3>
 <p>Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.</p>
-<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
 Accept: application/json
 Content-Type: application/json
 </code></pre>
@@ -884,7 +884,7 @@ Content-Type: application/json
 <h3 id="modify-room-type-predefined-name-to-name-attributes-" data-magellan-destination="modify-room-type-predefined-name-to-name-attributes-">Modify Room Type (Predefined Name to Name Attributes)</h3>
 <p>Leveraging the Create example from above, predefined name is modified to a new room name built from attributes, child age category is removed, and partner code is changed.</p>
 <p>The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.</p>
-<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/hotels/1780041/roomTypes/201171339
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/v1/properties/1780041/roomTypes/201171339
 Accept: application/json
 Content-Type: application/json
 </code></pre>
@@ -892,7 +892,7 @@ Content-Type: application/json
   &quot;resourceId&quot;: 201171339,
   &quot;partnerCode&quot;: &quot;JS002&quot;,
   &quot;name&quot;: {
-    &quot;roomNameAttributes&quot;: {
+    &quot;attributes&quot;: {
       &quot;typeOfRoom&quot;: &quot;Suite&quot;,
       &quot;roomClass&quot;: &quot;Executive&quot;,
       &quot;bedroomDetails&quot;: &quot;1 Bedroom&quot;,

@@ -547,7 +547,7 @@ Simple entity response:</p>
 <tr>
 <td>pricingModel</td>
 <td>Enum</td>
-<td>Configuration of the property when it comes to pricing rooms and rates. Possible values are PerDayPricing and OccupancyBasedPricing.</td>
+<td>Configuration of the property when it comes to pricing rooms and rates. Possible values are PerDayPricing and OccupancyBasedPricing. This list is different from the rate plan pricing model list, as rate plans can have more detailed pricing schemes (arrival and lenght of stay).</td>
 </tr>
 <tr>
 <td>baseAllocationEnabled</td>
@@ -994,6 +994,7 @@ Simple entity response:</p>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required for POST</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1001,62 +1002,74 @@ Simple entity response:</p>
 <tr>
 <td>resourceId</td>
 <td>integer</td>
+<td>No</td>
 <td>Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.</td>
 </tr>
 <tr>
 <td>partnerCode</td>
 <td>string</td>
-<td>Partner room type code/identifier. Max. 40 characters. Required in create or modify request, and has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.</td>
+<td>Yes</td>
+<td>Partner room type code/identifier. Max. 40 characters. Has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.</td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="#/definitions/RoomTypeNameDTO">RoomTypeName</a></td>
+<td>Yes</td>
 <td>Name object. Collection of elements/attributes related the name of a room.</td>
 </tr>
 <tr>
 <td>status</td>
 <td>enum</td>
+<td>No</td>
 <td>Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.</td>
 </tr>
 <tr>
 <td>maxOccupants</td>
 <td>integer</td>
+<td>Yes</td>
 <td>Min 1, max 20. Maximum number of people the room can accommodate, across all age categories.</td>
 </tr>
 <tr>
 <td>occupancyByAge</td>
 <td>Array[<a href="#/definitions/OccupancyByAgeDTO">OccupancyByAge</a>]</td>
-<td>Array of occupancies by age. A room will minimally have 1 age category (adult). Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room&#39;s max occupancy.</td>
+<td>Yes</td>
+<td>Array of occupancies by age. A room is required to have at least 1 age category: adult. Indicates, for each age category supported by the room, how many occupants of each category the room supports, as well as the minimum age for each category. The maximum age of a category is 1 less than the minimum of the next category in line. The maximum number of non-adults allowed is 1 less than the room&#39;s max occupancy.</td>
 </tr>
 <tr>
 <td>bedTypes</td>
 <td>Array[<a href="#/definitions/BedTypeDTO">BedType</a>]</td>
+<td>Yes</td>
 <td>Used to define bed type configuration of the room. If more than one bed type is provided, it means that the room type offers different types of configurations, and the customer will be presented with the opportunity to request one at time of booking. If a single bed type is specified, and the name indicates multiple types of bed, for example “2 king, 5 double, and 2 single beds”, it means the room type will have all of these bed types in it.</td>
 </tr>
 <tr>
 <td>smokingPreferences</td>
 <td>Array[<a href="#/definitions/SmokingPreferenceDTO">SmokingPreference</a>]</td>
+<td>Yes</td>
 <td>Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner</td>
 </tr>
 <tr>
 <td>roomSize</td>
 <td><a href="#/definitions/RoomSizeDTO">RoomSize</a></td>
-<td>Optional. Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
+<td>No</td>
+<td>Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
 </tr>
 <tr>
 <td>views</td>
 <td>Array[<a href="#/definitions/viewEnum">viewEnum</a>]</td>
-<td>Optional. Used to define view(s) from the room. There can be up to 2 different views defined per room type.</td>
+<td>No</td>
+<td>Used to define view(s) from the room. There can be up to 2 different views defined per room type.</td>
 </tr>
 <tr>
 <td>wheelchairAccessibility</td>
 <td>boolean</td>
-<td>Optional. Used to indicate whether the room is configured to be wheelchair accessible or not.</td>
+<td>No</td>
+<td>Used to indicate whether the room is configured to be wheelchair accessible or not.</td>
 </tr>
 </tbody>
 </table>
 </div><p><a name="/definitions/RoomTypeNameDTO"></a></p>
 <h4 id="roomtypename" data-magellan-destination="roomtypename">RoomTypeName</h4>
+<p>More information can be found on room type names in the &quot;FAQ and Guides&quot; section, under &quot;Understanding Expedia&#39;s Logic Around Room Names&quot; section.</p>
 <div><table>
 <thead>
 <tr>
@@ -1080,11 +1093,13 @@ Simple entity response:</p>
 </table>
 </div><p><a name="/definitions/RnsAttributesDTO"></a></p>
 <h4 id="roomnameattributes" data-magellan-destination="roomnameattributes">RoomNameAttributes</h4>
+<p>More information can be found on room type names in the &quot;FAQ and Guides&quot; section, under &quot;Understanding Expedia&#39;s Logic Around Room Names&quot; section.</p>
 <div><table>
 <thead>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1092,52 +1107,62 @@ Simple entity response:</p>
 <tr>
 <td>typeOfRoom</td>
 <td><a href="#/definitions/typeOfRoomEnum">typeOfRoomEnum</a></td>
+<td>Yes</td>
 <td>Attribute that determines the type of room, which is used to compose the name</td>
 </tr>
 <tr>
 <td>roomClass</td>
 <td><a href="#/definitions/roomClassEnum">roomClassEnum</a></td>
+<td>No</td>
 <td>Attribute that described the class of room, which is used to compose the name</td>
 </tr>
 <tr>
 <td>includeBedType</td>
 <td>boolean</td>
+<td>No</td>
 <td>Attribute that determines whether or not to include bed type on the room name</td>
 </tr>
 <tr>
 <td>bedroomDetails</td>
 <td><a href="#/definitions/bedroomDetailsEnum">bedroomDetailsEnum</a></td>
+<td>No</td>
 <td>Attribute that describes details of the bedroom used to compose the name of the room</td>
 </tr>
 <tr>
 <td>includeSmokingPref</td>
 <td>boolean</td>
+<td>No</td>
 <td>Attribute that determines if room has smoking preference</td>
 </tr>
 <tr>
 <td>accessibility</td>
 <td>boolean</td>
+<td>No</td>
 <td>Attribute that determines if room is considered wheelchair accessible</td>
 </tr>
 <tr>
 <td>view</td>
 <td><a href="#/definitions/viewEnum">viewEnum</a></td>
+<td>No</td>
 <td>Attribute that gives additional information about the view of the room</td>
 </tr>
 <tr>
 <td>featuredAmenity</td>
 <td><a href="#/definitions/featuredAmenityEnum">featuredAmenityEnum</a></td>
+<td>No</td>
 <td>Attribute used to highlight a feature of the room on its name</td>
 </tr>
 <tr>
 <td>area</td>
 <td><a href="#/definitions/areaEnum">areaEnum</a></td>
+<td>No</td>
 <td>Attributed used to highlight the location of the room</td>
 </tr>
 <tr>
 <td>customLabel</td>
 <td>string</td>
-<td>Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged (see full spec). Max 37 characters</td>
+<td>No</td>
+<td>Free text that can be appended to the name generated by the attributes. Use of this attribute is discouraged. Max 37 characters</td>
 </tr>
 </tbody>
 </table>
@@ -1148,6 +1173,7 @@ Simple entity response:</p>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1155,11 +1181,13 @@ Simple entity response:</p>
 <tr>
 <td>id</td>
 <td><a href="#/definitions/bedTypeIdEnum">bedTypeIdEnum</a></td>
+<td>Yes</td>
 <td>The code identifying the bed type. </td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="#/definitions/bedTypeIdEnum">bedTypeIdEnum</a></td>
+<td>No</td>
 <td>Name identifying the bed type. This is provided as informational data, and will be ignored during create or update operations.</td>
 </tr>
 </tbody>
@@ -1171,6 +1199,7 @@ Simple entity response:</p>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1178,16 +1207,19 @@ Simple entity response:</p>
 <tr>
 <td>ageCategory</td>
 <td>enum</td>
+<td>Yes</td>
 <td>The age category whose occupancy is being defined. Possible values are Adult, ChildAgeA, ChildAgeB, ChildAgeC, ChildAgeD, Infant.</td>
 </tr>
 <tr>
 <td>minAge</td>
 <td>integer</td>
+<td>Yes</td>
 <td>Minimum age allowed for the category. Min 0, max 99</td>
 </tr>
 <tr>
 <td>maxOccupants</td>
 <td>integer</td>
+<td>Yes</td>
 <td>Max number of occupants on the category. Min 0, max 20</td>
 </tr>
 </tbody>
@@ -1199,6 +1231,7 @@ Simple entity response:</p>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1206,12 +1239,14 @@ Simple entity response:</p>
 <tr>
 <td>id</td>
 <td>enum</td>
+<td>Yes</td>
 <td>Id identifying the smoking preference. Possible values are 2.1 (Non-Smoking) and 2.2 (Smoking).</td>
 </tr>
 <tr>
 <td>name</td>
 <td>string</td>
-<td>Name identifying the smoking preference.</td>
+<td>No</td>
+<td>Name identifying the smoking preference.  This is provided as informational data, and will be ignored during create or update operations.</td>
 </tr>
 </tbody>
 </table>
@@ -1222,6 +1257,7 @@ Simple entity response:</p>
 <tr>
 <th>Property Name</th>
 <th>Type</th>
+<th>Required</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -1229,11 +1265,13 @@ Simple entity response:</p>
 <tr>
 <td>squareFeet</td>
 <td>integer</td>
+<td>Yes</td>
 <td>Room size in square feet.</td>
 </tr>
 <tr>
 <td>squareMeters</td>
 <td>integer</td>
+<td>Yes</td>
 <td>Room size in square meters.</td>
 </tr>
 </tbody>
@@ -1868,7 +1906,7 @@ Simple entity response:</p>
 <tr>
 <td>pricingModel</td>
 <td>enum</td>
-<td>Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model. Possible values are: PerDayPricing, PerDayPricingByDayOfArrival, OccupancyBasedPricing, OccupancyBasedPricingByDayOfArrival.</td>
+<td>Rate Plan pricing model. Will default to property’s pricing model, and if provided, it has to match the property’s pricing model. Possible values are: PerDayPricing, PerDayPricingByDayOfArrival, PerDayPricingByLenghtOfStay, OccupancyBasedPricing, OccupancyBasedPricingByDayOfArrival, OccupancyBasedPricingByLengthOfStay.</td>
 </tr>
 <tr>
 <td>occupantsForBaseRate</td>
@@ -3671,30 +3709,181 @@ Simple entity response:</p>
 </table>
 </div><p><a name="/definitions/valueAddInclusionsEnum"></a></p>
 <h3 id="valueaddinclusionsenum" data-magellan-destination="valueaddinclusionsenum">valueAddInclusionsEnum</h3>
+<p>There are 2 possible enums. One applies to all rate plans of type Standalone and Package, the other to rate plans of type Corporate.</p>
 <div><table>
 <thead>
 <tr>
-<th>valueAddInclusions</th>
+<th>valueAddInclusions for Standalone and Package rate plans</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Free Internet</td>
-</tr>
-<tr>
-<td>Free Parking</td>
-</tr>
-<tr>
 <td>Free Breakfast</td>
 </tr>
 <tr>
-<td>Free Wireless Internet</td>
+<td>Continental Breakfast</td>
+</tr>
+<tr>
+<td>Continental Breakfast for 2</td>
 </tr>
 <tr>
 <td>Breakfast Buffet</td>
 </tr>
 <tr>
+<td>Full Breakfast</td>
+</tr>
+<tr>
+<td>English Breakfast</td>
+</tr>
+<tr>
+<td>Breakfast for 1</td>
+</tr>
+<tr>
+<td>Breakfast for 2</td>
+</tr>
+<tr>
+<td>Free Internet</td>
+</tr>
+<tr>
+<td>Free Wireless Internet</td>
+</tr>
+<tr>
 <td>Free High-Speed Internet</td>
+</tr>
+<tr>
+<td>Free Parking</td>
+</tr>
+<tr>
+<td>Free welcome drink</td>
+</tr>
+<tr>
+<td>Drinks and hors doeuvres</td>
+</tr>
+<tr>
+<td>All Meals</td>
+</tr>
+<tr>
+<td>Half Board</td>
+</tr>
+<tr>
+<td>Full Board</td>
+</tr>
+<tr>
+<td>Free Lunch</td>
+</tr>
+<tr>
+<td>Free Dinner</td>
+</tr>
+<tr>
+<td>All-Inclusive</td>
+</tr>
+<tr>
+<td>Food/Beverage Credit</td>
+</tr>
+<tr>
+<td>Free Airport Parking</td>
+</tr>
+<tr>
+<td>Free Valet Parking</td>
+</tr>
+<tr>
+<td>Free Airport Shuttle</td>
+</tr>
+<tr>
+<td>Free Room Upgrade</td>
+</tr>
+<tr>
+<td>Resort Credit Included</td>
+</tr>
+<tr>
+<td>Welcome Gift Upon Arrival</td>
+</tr>
+<tr>
+<td>Spa Credit</td>
+</tr>
+<tr>
+<td>Golf Credit</td>
+</tr>
+<tr>
+<td>VIP Line Access to Nightclub(s)</td>
+</tr>
+<tr>
+<td>2-for-1 Buffet</td>
+</tr>
+<tr>
+<td>Free Ski Lift Ticket &amp; Rental</td>
+</tr>
+<tr>
+<td>Full Kitchen</td>
+</tr>
+<tr>
+<td>Complimentary green fees</td>
+</tr>
+<tr>
+<td>Free one-way airport transfer</td>
+</tr>
+<tr>
+<td>Free return airport transfer</td>
+</tr>
+<tr>
+<td>Free water park passes</td>
+</tr>
+<tr>
+<td>2 Game Drives per night</td>
+</tr>
+<tr>
+<td>1 Game Drive per night</td>
+</tr>
+<tr>
+<td>Early Check-in</td>
+</tr>
+<tr>
+<td>Late Check-out</td>
+</tr>
+<tr>
+<td>Free massage included</td>
+</tr>
+<tr>
+<td>Free minibar</td>
+</tr>
+<tr>
+<td>Ski pass included</td>
+</tr>
+<tr>
+<td>Disney Park tickets</td>
+</tr>
+<tr>
+<td>Spa access</td>
+</tr>
+<tr>
+<td>Slot Play</td>
+</tr>
+<tr>
+<td>Casino Credit</td>
+</tr>
+<tr>
+<td>Match Play</td>
+</tr>
+</tbody>
+</table>
+</div><div><table>
+<thead>
+<tr>
+<th>valueAddInclusions for Corporate rate plans</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Same-Day Cancellation</td>
+</tr>
+<tr>
+<td>Eligibility for Hotel Loy Points</td>
+</tr>
+<tr>
+<td>Free High-Speed Internet</td>
+</tr>
+<tr>
+<td>Free Breakfast</td>
 </tr>
 <tr>
 <td>Continental Breakfast</td>
@@ -3703,91 +3892,106 @@ Simple entity response:</p>
 <td>Full Breakfast</td>
 </tr>
 <tr>
-<td>Half Board</td>
+<td>Breakfast Buffet</td>
 </tr>
 <tr>
-<td>Breakfast for 2</td>
+<td>Free Fitness Center Access</td>
 </tr>
 <tr>
-<td>All-Inclusive</td>
-</tr>
-<tr>
-<td>Full Kitchen</td>
+<td>Free Business Center Access</td>
 </tr>
 <tr>
 <td>Free Airport Shuttle</td>
 </tr>
 <tr>
-<td>Full Board</td>
-</tr>
-<tr>
-<td>Free Dinner</td>
-</tr>
-<tr>
-<td>English Breakfast</td>
-</tr>
-<tr>
-<td>Resort Credit Included</td>
-</tr>
-<tr>
-<td>Spa Credit</td>
+<td>Free Hotel Parking</td>
 </tr>
 <tr>
 <td>Free Valet Parking</td>
 </tr>
 <tr>
-<td>Welcome Gift Upon Arrival</td>
+<td>Welcome Drink Upon Arrival</td>
 </tr>
 <tr>
-<td>Free welcome drink</td>
+<td>Free Local Calls</td>
 </tr>
 <tr>
-<td>Food/Beverage Credit</td>
+<td>Complimentary Wine Reception</td>
 </tr>
 <tr>
-<td>Spa access</td>
+<td>Free Wireless Internet</td>
 </tr>
 <tr>
-<td>All Meals</td>
+<td>Free Local Shuttle</td>
 </tr>
 <tr>
-<td>Drinks and hors doeuvres</td>
+<td>Free Local Newspaper</td>
 </tr>
 <tr>
-<td>Continental Breakfast for 2</td>
+<td>Includes One Free In-Room Movie</td>
 </tr>
 <tr>
-<td>Free Lunch</td>
+<td>Room Upgrade Upon Availability</td>
 </tr>
 <tr>
-<td>Free Room Upgrade</td>
+<td>Guaranteed Room Upgrade</td>
 </tr>
 <tr>
-<td>Free Airport Parking</td>
+<td>Early Check-In Privilege</td>
 </tr>
 <tr>
-<td>Golf Credit</td>
+<td>Late Check-Out Privilege</td>
 </tr>
 <tr>
-<td>Disney Park tickets</td>
+<td>Free Bottled Water</td>
 </tr>
 <tr>
-<td>Casino Credit</td>
+<td>City Tax Included</td>
 </tr>
 <tr>
-<td>Match Play</td>
+<td>Free Train Shuttle</td>
 </tr>
 <tr>
-<td>2-for-1 Buffet</td>
+<td>Free Breakfast for 1 Adult</td>
 </tr>
 <tr>
-<td>VIP Line Access to Nightclub(s)</td>
+<td>Upgrade to Club Floor</td>
 </tr>
 <tr>
-<td>Slot Play</td>
+<td>Upgrade to Business Floor</td>
 </tr>
 <tr>
-<td>Free Ski Lift Ticket &amp; Rental</td>
+<td>Complimentary Minibar Items</td>
+</tr>
+<tr>
+<td>Free Dinner</td>
+</tr>
+<tr>
+<td>Free Dinner for 1 Adult</td>
+</tr>
+<tr>
+<td>Full Kitchen</td>
+</tr>
+<tr>
+<td>Incl. 1000 CP Reward Pts.</td>
+</tr>
+<tr>
+<td>Incl. 500 CP Reward Pts.</td>
+</tr>
+<tr>
+<td>Incl. 5000 CP Reward Pts.</td>
+</tr>
+<tr>
+<td>Incl. 4000 CP Reward Pts.</td>
+</tr>
+<tr>
+<td>Evening Manager&#39;s Reception</td>
+</tr>
+<tr>
+<td>Egencia Exclusive Rate</td>
+</tr>
+<tr>
+<td>Food-and-Beverage Discount</td>
 </tr>
 </tbody>
 </table>
