@@ -51,6 +51,8 @@
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
 <script>
+    var datatable = false;
+
     function dateNow(h) {
         var instant = new Date();
         if (typeof h == 'undefined') return instant.toString();
@@ -58,14 +60,38 @@
         return instant.toString();
     }
 
-    var testdata = [
-        [ "0001", "Hotel1", dateNow(1), dateNow(4) ],
-        [ "0002", "Hotel2", dateNow(2), dateNow(8) ],
-        [ "0003", "Hotel3", dateNow(3), dateNow(16) ],
-        [ "0004", "Hotel4", dateNow(4), dateNow(24) ],
-        [ "0005", "Hotel5", dateNow(5), dateNow(32) ],
-        [ "0006", "Hotel6", dateNow(6), dateNow(40) ],
-        [ "0007", "Hotel7", dateNow(7), dateNow(48) ]
+    var testAssignment = [
+        {
+            "tuid": "0123",
+            "hotels": [
+                {
+                    "hotelId": "H4321",
+                    "dates": [
+                        {
+                            "start": dateNow(1),
+                            "end": dateNow(24)
+                        },
+                        {
+                            "start": dateNow(2),
+                            "end": dateNow(48)
+                        }
+                    ]
+                },
+                {
+                    "hotelId": "H1234",
+                    "dates": [
+                        {
+                            "start": dateNow(1),
+                            "end": dateNow(16)
+                        },
+                        {
+                            "start": dateNow(3),
+                            "end": dateNow(72)
+                        }
+                    ]
+                }
+            ]
+        }
     ];
 
     var columns = [
@@ -96,30 +122,49 @@
         }).done(done).fail(error);
     }
 
-    function getHotelsByJwt() {
-        jwtRequest("http://localhost:8080/properties/jwt", function(data, textStatus, jqxhr) {
-            console.log("Ajax Success: " + jqxhr.url);
-            console.log("Response: " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
-        }, ajaxError);
-    }
-
-    function autoAssignHotel() {
-        jwtRequest("http://localhost:8080/properties/jwt", function(data, textStatus, jqxhr) {
-            console.log("Ajax Success: " + jqxhr.url);
-            console.log("Response: " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
-        }, function(jqxhr) {
-            ajaxError(jqxhr);
-            $("#hotels").DataTable({ data: testdata, columns: columns });
-            $("#hotels").show();
-        });
+    function displayTable(data) {
+        var table = [];
+        for (tuid of data) {
+            for (hotel of tuid.hotels) {
+                for (date of hotel.dates) {
+                    table.push([tuid.tuid, hotel.hotelId, date.start, date.end]);
+                    console.log("Start: " + date.start);
+                }
+            }
+        }
+        if (datatable) {
+            datatable.destroy();
+        }
+        datatable = $("#hotels").DataTable({ data: table, columns: columns });
+        datatable.order([ 2, "asc" ]).draw();
+        $("#hotels").show();
     }
 
     function ajaxError(jqxhr) {
         console.log("Ajax Error: " + jqxhr.url);
         console.log("Error Response: " + jqxhr.responseText);
         $("#result").addClass("error").text("Error: " + jqxhr.responseText);
+    }
+
+    function getHotelsByJwt() {
+        jwtRequest("http://localhost:8080/v1/schedule", function(data, textStatus, jqxhr) {
+            console.log("Ajax Success: " + jqxhr.url);
+            console.log("Response: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+        }, function(jqxhr) {
+            ajaxError(jqxhr);
+            displayTable(testAssignment);
+        });
+    }
+
+    function autoAssignHotel() {
+        jwtRequest("http://localhost:8080/v1/schedule/assign", function(data, textStatus, jqxhr) {
+            console.log("Ajax Success: " + jqxhr.url);
+            console.log("Response: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+        }, function(jqxhr) {
+            ajaxError(jqxhr);
+        });
     }
 </script></div></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
