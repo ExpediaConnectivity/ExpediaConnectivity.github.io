@@ -1,0 +1,862 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Simulator Tool - EQC API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
+<div class="row full-width">
+    <nav class="large-12 small-12 columns" id="sitenav">
+        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
+        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
+        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+    </nav>
+</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>EQC API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="parr-and-ar"><a class="sidebar-nav-item" href="#parr-and-ar">PARR and AR</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios-ar"><a class="sidebar-nav-item" href="#successful-update-scenarios-ar">Successful Update Scenarios - AR</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario-ar"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-ar"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios-parr"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-parr"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</a></li><li class="depth2" data-magellan-arrival="br"><a class="sidebar-nav-item" href="#br">BR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios">Successful Retrieval Scenarios</a></li><li class="depth2" data-magellan-arrival="bc"><a class="sidebar-nav-item" href="#bc">BC</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios"><a class="sidebar-nav-item" href="#successful-update-scenarios">Successful Update Scenarios</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario">Successful Update with Warning Scenario</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios"><a class="sidebar-nav-item" href="#erroneous-update-scenarios">Erroneous Update Scenarios</a></li><li class="depth3" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">TROUBLESHOOTING</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
+<p>The EQC Simulator is a tool provided by Expedia to help EQC partners develop and verify their EQC implementation of the AR, BR, BC and/or PARR APIs before going live on the production system. It exposes a reduced set of functionalities, mainly targeted at helping EQC partners validate XML syntax and a few basic error/warning handling scenarios.</p>
+<h2 id="parr-and-ar" data-magellan-destination="parr-and-ar">PARR and AR</h2>
+<p>This section describes how the PARR and AR simulators are configured and what kind of scenario can be tested using them.</p>
+<p>The following data set is assumed when using the AR and PARR simulators:</p>
+<p>The data set for PARR and AR interfaces:</p>
+<ul>
+<li>The simulator uses 365 days of future rates and availabilty defined for a hotel, relative to the date of the PARR RQ</li>
+<li>There are 6 hotels: 111, 211, 311, 411, 511, 611</li>
+</ul>
+<div><table>
+<thead>
+<tr>
+<th>Hotel ID</th>
+<th>Base alloc enabled</th>
+<th>Pricing Model</th>
+<th>Product Type</th>
+<th>Rate Acquisition Type</th>
+<th>Room Type + Rate Plan variation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>111</td>
+<td>No</td>
+<td>Per day pricing based on day of arrival</td>
+<td>Expedia Collect only products base allocation enabled.</td>
+<td>Lowest Available Rate</td>
+<td>1 room type and 2 rate plans with 1 standalone and 1 package rate</td>
+</tr>
+<tr>
+<td>211</td>
+<td>Yes</td>
+<td>Per day pricing</td>
+<td>Expedia Collect and flex products. Rate plan linkage defined for 1 product.</td>
+<td>Net rate</td>
+<td>2 room types and 2-3 rate plans per room type</td>
+</tr>
+<tr>
+<td>311</td>
+<td>Yes</td>
+<td>Per day pricing</td>
+<td>Hotel Collect and flex products</td>
+<td>Sell rate</td>
+<td>2 room types and 2-3 rate plans per room type</td>
+</tr>
+<tr>
+<td>411</td>
+<td>Yes</td>
+<td>Occupancy-based pricing</td>
+<td>Expedia Collect  and flex products</td>
+<td>Net rate</td>
+<td>2 room types and 2-3 rate plans per room type</td>
+</tr>
+<tr>
+<td>511</td>
+<td>Yes</td>
+<td>Occupancy-based pricing</td>
+<td>Hotel Collect  and flex products. Rate plan linkage defined for 1 product.</td>
+<td>Sell rate</td>
+<td>2 room types and 2-3 rate plans per room type</td>
+</tr>
+<tr>
+<td>611</td>
+<td>No</td>
+<td>Per day pricing based on day of arrival and LOS</td>
+<td>Flex products</td>
+<td>Sell Rate</td>
+<td>2 room types and 2 rate plans with 1 flex standalone and 1 package rate per room type</td>
+</tr>
+</tbody>
+</table>
+</div><ul>
+<li>Only the latest versions of AR and PARR are supported on the EQC Simulator:</li>
+<li>For AR, latest namespace is: <a href="http://www.expediaconnect.com/EQC/AR/2011/06">http://www.expediaconnect.com/EQC/AR/2011/06</a></li>
+<li>For PARR, latest namespace is: <a href="http://www.expediaconnect.com/EQC/PAR/2013/07">http://www.expediaconnect.com/EQC/PAR/2013/07</a></li>
+<li>Currency is in USD.</li>
+<li>Base allocation is always=2 starting from today+2 days. Base allocation is always=0 for today and tomorrow.</li>
+<li>Total Allocation is a random number between 2 and 20</li>
+<li>Total Inventory Sold in PARR responses is a random number between 0 and 10</li>
+<li>Flexible allocation is equal to total-base.</li>
+<li>Flex and total allocations are always returned</li>
+<li>Base is only returned for base-allocation enabled properties</li>
+<li>Rate is random between 50.00 and 150.00 (including random decimals)</li>
+<li>For occupancy-based rates, we always return occupancy 1 to 4, and only the occ=1 is randomized. To obtain 2, do occ=1 rate x 1.5. To obtain 3, do occ=1 x 2. To obtain 4, do occ1x2.2.</li>
+<li>Min LOS is random between 1 and 5</li>
+<li>Max LOS is random between 5 and 28</li>
+<li>All Boolean values (RoomType/@closed, RatePlan/@closed, Rate/@rateChangeIndicator, Restrictions/@closedToArrival, Restrictions/@closedToDeparture) are randomly returned as either true or false when applicable.</li>
+<li>rateChangeIndicator is only returned for the hotel ID 111, as it is enabled for day of arrival pricing.</li>
+<li>PARR will honor the returnRateLink, returnRoomAttributes returnRatePlanAttributes, returnCompensation and returnCancelPolicies in requests. If they are specified, the data will be returned. If they are not specified, or specified as false, we will not return these additional attributes.</li>
+<li>Username can be anything</li>
+<li>Password should work the same as other messages supported by simulator (can take one of 3 values, else return error: ECLPASS, ECL.DELAY, ECL.TIMEOUT)</li>
+</ul>
+<p>Hotel ID 111 product configuration: Per Person Pricing, Day-of-Arrival pricing enabled (rateChangeIndicator flag returned), 1 Room Type, 2 rate plans, Expedia Collect-only property. </p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotelname=&quot;Test Hotel 111&quot;city=&quot;New York&quot;id=&quot;111&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;222&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.23&quot;name=&quot;Two Queen Beds&quot;/&gt;
+        &lt;BedTypeid=&quot;1.67&quot;name=&quot;One King Bed and One Sofa Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;3&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;7.61&quot;maxAmount=&quot;380.74&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;LowestAvailableRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;333&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricingByDayOfArrival&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T12:01:05Z&quot;updateDateTime=&quot;2012-10-03T17:01:01Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;20.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Package&quot;rateAcquisitionType=&quot;LowestAvailableRate&quot;type=&quot;Package&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;444&quot;status=&quot;Active&quot;code=&quot;PKG&quot;pricingModel=&quot;PerDayPricingByDayOfArrival&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T12:05:15Z&quot;updateDateTime=&quot;2012-10-03T17:06:14Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;35.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<p>Hotel 211 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plans per room type, Expedia Collect and flex products. Rate plan linkage on rate + restrictions, fix amount, no exceptions.</p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotel name=&quot;Test Hotel 211&quot; city=&quot;Montreal&quot; id=&quot;211&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;20000&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;3&quot;&gt;
+        &lt;BedTypeid=&quot;1.14&quot;name=&quot;One King Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;0&quot;maxOccupants=&quot;2&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;15.12&quot;maxAmount=&quot;715.87&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;25.21&quot;maxAmount=&quot;919.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;21000&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;21000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;21000&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Breakfast included&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;22000&quot;status=&quot;Active&quot;code=&quot;BRKFST&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;bookDateStart=&quot;[today-30 days]&quot;bookDateEnd=&quot;[today+180days]&quot;travelDateStart=&quot;[today-15days]&quot;travelDateEnd=&quot;[today+210 days]&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2013-12-23T12:51:54Z&quot;&gt;
+            &lt;DayOfWeekBookingRestrictiontype=&quot;StartOn&quot;thu=&quot;true&quot;fri=&quot;true&quot;sat=&quot;true&quot;/&gt;
+            &lt;DayOfWeekBookingRestrictiontype=&quot;EndOn&quot;sun=&quot;true&quot;thu=&quot;true&quot;fri=&quot;true&quot;sat=&quot;true&quot;/&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;Compensationdefault=&quot;false&quot;percent=&quot;22.00&quot;from=&quot;[today]&quot;to=&quot;[today+180]&quot;mon=&quot;true&quot;tue=&quot;true&quot;wed=&quot;true&quot;thu=&quot;true&quot;fri=&quot;false&quot;sat=&quot;false&quot;sun=&quot;false&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+    &lt;RoomTypename=&quot;Deluxe&quot;id=&quot;23000&quot;status=&quot;Active&quot;code=&quot;Deluxe&quot;smokingPref=&quot;NonSmoking&quot;maxOccupants=&quot;2&quot;&gt;
+        &lt;BedTypeid=&quot;1.15&quot;name=&quot;One Queen Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;2&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;15.12&quot;maxAmount=&quot;715.87&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;25.21&quot;maxAmount=&quot;919.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;24000&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;24000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;24000&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Breakfast included&quot;rateAcquisitionType=&quot;Linked&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;25000&quot;status=&quot;Active&quot;code=&quot;BRKFST&quot;parentId=&quot;22000&quot;rateLinkStart=&quot;[today]&quot;rateLinkEnd=&quot;[today+180days]&quot;isAvailStatusLinked=&quot;true&quot;areMinMaxLOSLinked=&quot;true&quot;isCTALinked=&quot;true&quot;isCTDLinked=&quot;false&quot;rateLinkExceptions=&quot;false&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;RatePlanLinkDefinitionlinkType=&quot;Amount&quot;linkValue=&quot;20.0&quot;/&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;/&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<p>Hotel 311 product configuration: Per Day Pricing, 2 Room Types, 2 to 3 rate plans per room type, Hotel Collect and flex products.</p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotelname=&quot;Test Hotel 311&quot;city=&quot;London&quot;id=&quot;311&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;30000&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;NonSmoking&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.21&quot;name=&quot;Two Double Beds&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;9.29&quot;maxAmount=&quot;531.98&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;14.22&quot;maxAmount=&quot;701.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;31000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2010-03-21T09:30:45Z&quot;updateDateTime=&quot;2011-01-01T12:15:55Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;31000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;31000A&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Breakfast included&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;32000A&quot;status=&quot;Active&quot;code=&quot;BRKFST&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;depositRequired=&quot;true&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;2&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+    &lt;RoomTypename=&quot;Deluxe&quot;id=&quot;33000&quot;status=&quot;Active&quot;code=&quot;Deluxe&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;3&quot;&gt;
+        &lt;BedTypeid=&quot;1.15&quot;name=&quot;One Queen Bed&quot;/&gt;
+        &lt;BedTypeid=&quot;1.25&quot;name=&quot;Two Twin Beds&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;2&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;19.29&quot;maxAmount=&quot;811.98&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;29.29&quot;maxAmount=&quot;911.98&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;34000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;depositRequired=&quot;true&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;2&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;34000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;34000A&quot;pricingModel=&quot;PerDayPricing&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;DayOfWeekBookingRestrictiontype=&quot;IncludeOneOf&quot;thu=&quot;true&quot;fri=&quot;true&quot;sat=&quot;true&quot;/&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<p>Hotel 411 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate plans per room type, Expedia Collect and flex products.</p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotelname=&quot;Test Hotel 411&quot;city=&quot;Delhi&quot;id=&quot;411&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;40000&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.41&quot;name=&quot;Two Beds&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;4.22&quot;maxAmount=&quot;521.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;14.22&quot;maxAmount=&quot;701.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;41000&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;OccupancyBasedPricing&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+            &lt;CancelPolicydefault=&quot;false&quot;startDate=&quot;2014-12-20&quot;endDate=&quot;2015-01-10&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;41000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;41000&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+            &lt;CancelPolicydefault=&quot;false&quot;startDate=&quot;2014-12-20&quot;endDate=&quot;2015-01-10&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Package&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Package&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;42000&quot;status=&quot;Active&quot;code=&quot;PKG&quot;pricingModel=&quot;OccupancyBasedPricing&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;35.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;100.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+            &lt;CancelPolicydefault=&quot;false&quot;startDate=&quot;2014-12-20&quot;endDate=&quot;2015-01-10&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;/&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+    &lt;RoomTypename=&quot;Deluxe&quot;id=&quot;43000&quot;status=&quot;Active&quot;code=&quot;Deluxe&quot;smokingPref=&quot;NonSmoking&quot;maxOccupants=&quot;2&quot;&gt;
+        &lt;BedTypeid=&quot;1.40&quot;name=&quot;One Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;2&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;24.22&quot;maxAmount=&quot;821.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;34.32&quot;maxAmount=&quot;921.27&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;NetRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;44000&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;OccupancyBasedPricing&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;75.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+            &lt;CancelPolicydefault=&quot;false&quot;startDate=&quot;2014-12-20&quot;endDate=&quot;2015-01-10&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;/&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;44000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;44000&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;75.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+            &lt;CancelPolicydefault=&quot;false&quot;startDate=&quot;2014-12-20&quot;endDate=&quot;2015-01-10&quot;nonRefundable=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z &quot;/&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<p>Hotel 511 product configuration: Occupancy Pricing, 2 Room Types, 2 to 3 rate plans per room type, Hotel Collect and flex products. Rate plan linkage only on rate, 10.5%+, with exceptions, no end date.</p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotelname=&quot;Test Hotel 511&quot;city=&quot;Beijing&quot;id=&quot;511&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;50000&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.23&quot;name=&quot;Two Queen Beds&quot;/&gt;
+        &lt;BedTypeid=&quot;1.67&quot;name=&quot;One King Bed and One Sofa Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;4.22&quot;maxAmount=&quot;521.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;14.22&quot;maxAmount=&quot;701.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;51000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;51000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;51000A&quot;pricingModel=&quot;OccupancyBasedPricing&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Breakfast included&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;52000A&quot;status=&quot;Active&quot;code=&quot;BRKFST&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;bookDateStart=&quot;[today-30 days]&quot;bookDateEnd=&quot;[today+180days]&quot;travelDateStart=&quot;[today-15days]&quot;travelDateEnd=&quot;[today+210 days]&quot;mobileOnly=&quot;true&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2014-02-03T15:56:44Z&quot;&gt;
+            &lt;DayOfWeekBookingRestrictiontype=&quot;IncludeOneOf&quot;sun=&quot;true&quot;/&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+    &lt;RoomTypename=&quot;Deluxe&quot;id=&quot;53000&quot;status=&quot;Active&quot;code=&quot;Deluxe&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.88&quot;name=&quot;Two Queen and One Sofa Bed&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;24.22&quot;maxAmount=&quot;821.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;34.32&quot;maxAmount=&quot;921.27&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;54000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;Compensationdefault=&quot;false&quot;percent=&quot;22.00&quot;from=&quot;[today]&quot;to=&quot;[today+180]&quot;mon=&quot;true&quot;tue=&quot;true&quot;wed=&quot;true&quot;thu=&quot;true&quot;fri=&quot;false&quot;sat=&quot;false&quot;sun=&quot;false&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;54000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;54000A&quot;pricingModel=&quot;OccupancyBasedPricing&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;Compensationdefault=&quot;false&quot;percent=&quot;22.00&quot;from=&quot;[today]&quot;to=&quot;[today+180]&quot;mon=&quot;true&quot;tue=&quot;true&quot;wed=&quot;true&quot;thu=&quot;true&quot;fri=&quot;false&quot;sat=&quot;false&quot;sun=&quot;false&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Breakfast included&quot;rateAcquisitionType=&quot;Linked&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;55000&quot;status=&quot;Active&quot;code=&quot;BRKFST&quot;parentId=&quot;54000A&quot;rateLinkStart=&quot;[today]&quot;isAvailStatusLinked=&quot;false&quot;areMinMaxLOSLinked=&quot;false&quot;isCTALinked=&quot;false&quot;isCTDLinked=&quot;false&quot;rateLinkExceptions=&quot;true&quot;pricingModel=&quot;OccupancyBasedPricing&quot;depositRequired=&quot;false&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;RatePlanLinkDefinitionlinkType=&quot;Percent&quot;linkValue=&quot;10.5&quot;/&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;Compensationdefault=&quot;false&quot;percent=&quot;22.00&quot;from=&quot;[today]&quot;to=&quot;[today+180]&quot;mon=&quot;true&quot;tue=&quot;true&quot;wed=&quot;true&quot;thu=&quot;true&quot;fri=&quot;false&quot;sat=&quot;false&quot;sun=&quot;false&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<p>Hotel 611 product configuration: Per day pricing based on day of arrival and LOS, Flex products, Sell Rate, 2 room types and 2 rate plans with 1 flex standalone and 1 package rate per room type.</p>
+<pre><code class="lang-xml">&lt;ProductList&gt;
+    &lt;Hotelname=&quot;Test Hotel 611&quot;city=&quot;London&quot;id=&quot;611&quot;/&gt;
+    &lt;RoomTypename=&quot;Standard&quot;id=&quot;60000&quot;status=&quot;Active&quot;code=&quot;Standard&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.14&quot;name=&quot;One King Bed&quot;/&gt;
+        &lt;BedTypeid=&quot;1.23&quot;name=&quot;Two Queen Beds&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;14.22&quot;maxAmount=&quot;721.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;24.22&quot;maxAmount=&quot;821.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;61000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;depositRequired=&quot;false&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;75.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;61000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;61000A&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;75.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;RackP&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Package&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;62000&quot;status=&quot;Active&quot;code=&quot;PKG&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;35.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;50.00&quot; perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+    &lt;RoomTypename=&quot;Deluxe&quot;id=&quot;63000&quot;status=&quot;Active&quot;code=&quot;Deluxe&quot;smokingPref=&quot;Either&quot;maxOccupants=&quot;5&quot;&gt;
+        &lt;BedTypeid=&quot;1.23&quot;name=&quot;Two Queen Beds&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Adult&quot;minAge=&quot;18&quot;maxOccupants=&quot;4&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;ChildAgeA&quot;minAge=&quot;2&quot;maxOccupants=&quot;3&quot;/&gt;
+        &lt;OccupancyByAgeageCategory=&quot;Infant&quot;minAge=&quot;0&quot;maxOccupants=&quot;1&quot;/&gt;
+        &lt;RateThresholdtype=&quot;NetRate&quot;minAmount=&quot;19.22&quot;maxAmount=&quot;729.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RateThresholdtype=&quot;SellRate&quot;minAmount=&quot;29.22&quot;maxAmount=&quot;829.17&quot;source=&quot;RecentReservations&quot;/&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Standalone&quot;distributionModel=&quot;HotelCollect&quot;id=&quot;64000A&quot;status=&quot;Active&quot;code=&quot;STD&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;depositRequired=&quot;false&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;flatFee=&quot;50.00&quot;perStayFee=&quot;None&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;Rack&quot;rateAcquisitionType=&quot;Derived&quot;type=&quot;Standalone&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;64000&quot;status=&quot;Active&quot;code=&quot;STD&quot;parentId=&quot;64000A&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;25.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;FullCostOfStay&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+        &lt;RatePlanname=&quot;RackP&quot;rateAcquisitionType=&quot;SellRate&quot;type=&quot;Package&quot;distributionModel=&quot;ExpediaCollect&quot;id=&quot;65000&quot;status=&quot;Active&quot;code=&quot;PKG&quot;pricingModel=&quot;PerDayPricingByLengthOfStay&quot;occupantsForBaseRate=&quot;2&quot;minLOSDefault=&quot;1&quot;maxLOSDefault=&quot;28&quot;minAdvBookDays=&quot;0&quot;maxAdvBookDays=&quot;500&quot;mobileOnly=&quot;false&quot;createDateTime=&quot;2004-07-29T09:12:42Z&quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+            &lt;Compensationdefault=&quot;true&quot;percent=&quot;35.00&quot;minAmount=&quot;15.00&quot;/&gt;
+            &lt;CancelPolicydefault=&quot;true&quot;cancelWindow=&quot;24&quot;createDateTime=&quot;2004-07-29T09:12:42Z &quot;updateDateTime=&quot;2012-10-03T15:56:44Z&quot;&gt;
+                &lt;PenaltyinsideWindow=&quot;true&quot;perStayFee=&quot;1stNightRoomAndTax&quot;/&gt;
+                &lt;PenaltyinsideWindow=&quot;false&quot;perStayFee=&quot;None&quot;/&gt;
+            &lt;/CancelPolicy&gt;
+        &lt;/RatePlan&gt;
+    &lt;/RoomType&gt;
+&lt;/ProductList&gt;
+</code></pre>
+<h3 id="successful-update-scenarios-ar" data-magellan-destination="successful-update-scenarios-ar">Successful Update Scenarios - AR</h3>
+<pre><code class="lang-xml">&lt;AvailRateUpdateRQ xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
+    &lt;Authentication username=&quot;testuser&quot; password=&quot;ECLPASS&quot;/&gt;
+    &lt;Hotelid=&quot;311&quot;/&gt;
+    &lt;AvailRateUpdate&gt;
+        &lt;DateRangefrom=&quot;2014-10-15&quot;to=&quot;2014-10-20&quot;/&gt;
+        &lt;RoomTypeid=&quot;30000&quot;&gt;
+            &lt;InventoryflexibleAllocation=&quot;10&quot;/&gt;
+        &lt;/RoomType&gt;
+    &lt;/AvailRateUpdate&gt;
+&lt;/AvailRateUpdateRQ&gt;
+</code></pre>
+<p>EQC partners can use the simulator to test different scenarios for availability and rate updates. In order to get a successful response from the simulator, the request message must be well formed as defined by the API and contain the appropriate attribute values enumerated in the supported data set. Also, the date range specified in the request must be within the next 365 days.
+When a rate plan is managed through rate plan linkage, child products can still receive rate updates. For stay dates where rate plan linkage applies, Expedia accepts updates but does not apply them to the child rate plan.</p>
+<p>Expedia does not recommend updating child rate plans for linked periods.</p>
+<h3 id="successful-update-with-warning-scenario-ar" data-magellan-destination="successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</h3>
+<p>Sample request for a successful AR update that will result in warnings:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;AvailRateUpdateRQxmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
+    &lt;Authenticationusername=&quot;testuser&quot;password=&quot;ECLPASS&quot;/&gt;
+    &lt;Hotelid=&quot;511&quot;/&gt;
+    &lt;AvailRateUpdate&gt;
+        &lt;DateRangefrom=&quot;2014-10-15&quot;to=&quot;2014-10-20&quot;/&gt;
+        &lt;RoomTypeid=&quot;53000&quot;&gt;
+            &lt;InventoryflexibleAllocation=&quot;10&quot;/&gt;
+            &lt;RatePlanid=&quot;54000A&quot;closed=&quot;false&quot;&gt;
+                &lt;Ratecurrency=&quot;USD&quot;&gt;
+                    &lt;PerOccupancyrate=&quot;1100.00&quot;occupancy=&quot;1&quot;/&gt;
+                &lt;/Rate&gt;
+            &lt;/RatePlan&gt;
+        &lt;/RoomType&gt;
+    &lt;/AvailRateUpdate&gt;
+&lt;/AvailRateUpdateRQ&gt;
+</code></pre>
+<p>The simulator will return a warning in the response for the following scenarios. Please note that we should suffix a RefId to all warnings and errors returned, like the real application does.</p>
+<div><table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Including one or more rates with a value greater than 1,000.00 $, or rate value is smaller or equal to 1$:</td>
+<td>Warning code 7019 to indicate rate is too high or too low, as many warnings should be returned as there are rates outside of this threshold, up to 20.</td>
+</tr>
+<tr>
+<td>Asking for a room type close on any room type for any day after tomorrow</td>
+<td>7010 to indicate that all base allocation must be sold before the room type can be closed.</td>
+</tr>
+<tr>
+<td>Asking for a rate plan close for all rate plan IDs of a room type, for any day after tomorrow</td>
+<td>7014 to indicate that at least one Standalone rate plan must remain active unless all base allocation is closed.</td>
+</tr>
+<tr>
+<td>Trying to set total allocation below 2 for any date after tomorrow</td>
+<td>7013 to indicate that we overrode the number of rooms available to reflect the remaining base allocation.</td>
+</tr>
+</tbody>
+</table>
+</div><p>Remember that those are just a subset of possible warning scenarios. The full list is documented in EQC specification but simulator cannot be used to simulate all of them, only the 4 above.</p>
+<h3 id="erroneous-update-scenarios-ar" data-magellan-destination="erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</h3>
+<p>Sample request to get an error back:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;AvailRateUpdateRQxmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
+    &lt;Authenticationusername=&quot;testuser&quot;password=&quot;testpass&quot;/&gt;
+    &lt;Hotelid=&quot;511&quot;/&gt;
+    &lt;AvailRateUpdate&gt;
+        &lt;DateRangefrom=&quot;2014-10-15&quot;to=&quot;2014-10-20&quot;/&gt;
+        &lt;RoomTypeid=&quot;53000&quot;&gt;
+            &lt;InventoryflexibleAllocation=&quot;10&quot;/&gt;
+        &lt;/RoomType&gt;
+    &lt;/AvailRateUpdate&gt;
+&lt;/AvailRateUpdateRQ&gt;
+</code></pre>
+<p>EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request.</p>
+<p>All error descriptions are the same as the one from the real application. For the case of scenarios where the error description is generated by LIS, please try this in integration mode and capture the actual error description generated as a template for the EQC Simulator implementation.</p>
+<div><table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Invalid password</td>
+<td>Response with error code 1001</td>
+</tr>
+<tr>
+<td>Using EQC Simulator with a  previous namespace version</td>
+<td>Response with error code 2010, specific to EQC Simulator. Previous versions are still supported in production but partners are strongly encouraged to upgrade to latest versions.</td>
+</tr>
+<tr>
+<td>XML that doesn’t conform to schema</td>
+<td>Response with error code 3010</td>
+</tr>
+<tr>
+<td>Request for start date before yesterday</td>
+<td>Response with error code 3020</td>
+</tr>
+<tr>
+<td>Request for start date &gt; end date</td>
+<td>Response with error code 3021</td>
+</tr>
+<tr>
+<td>Pricing model used in AR RQ doesn’t correspond to the property configuration</td>
+<td>Response with error code 3090.</td>
+</tr>
+<tr>
+<td>Missing currency code in rate update request</td>
+<td>Response with error code 3102</td>
+</tr>
+<tr>
+<td>Invalid currency code</td>
+<td>Response with error code 3103</td>
+</tr>
+<tr>
+<td>Invalid hotel ID</td>
+<td>Response with error code 3202</td>
+</tr>
+<tr>
+<td>Invalid room type ID</td>
+<td>Response with error code 3203</td>
+</tr>
+<tr>
+<td>Invalid rate plan ID</td>
+<td>Response with error code 3204</td>
+</tr>
+<tr>
+<td>Exceed max size of message in kb</td>
+<td>Response with error code 3405</td>
+</tr>
+<tr>
+<td>Attempt to send MinLOS &gt; 14</td>
+<td>Response with error code 3135</td>
+</tr>
+<tr>
+<td>Specify Rate/@lengthOfStay attribute on hotels 111 to 511</td>
+<td>Response with error code 3124</td>
+</tr>
+<tr>
+<td>Omit Rate/@lengthOfStay attribute on hotel 611</td>
+<td>Response with error code 3123</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="successful-retrieval-scenarios-parr" data-magellan-destination="successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</h3>
+<p>Sample successful request:</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ProductAvailRateRetrievalRQxmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+    &lt;Authenticationusername=&quot;eqcxnet&quot;password=&quot;ECLPASS&quot;/&gt;
+    &lt;Hotelid=&quot;511&quot;/&gt;
+    &lt;ParamSet&gt;
+        &lt;ProductRetrievalreturnRateLink=&quot;true&quot;returnRoomAttributes=&quot;true&quot;returnRatePlanAttributes=&quot;true&quot;returnCompensation=&quot;true&quot;/&gt;
+    &lt;/ParamSet&gt;
+&lt;/ProductAvailRateRetrievalRQ&gt;
+</code></pre>
+<p>The following successful scenarios are supported by the PARR simulator. The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR.</p>
+<p><strong>Request to retrieve Product information with no additional parameter</strong><br>Will return all products listed above for the hotel the request is for  </p>
+<p><strong>Request to retrieve Active Product information</strong><br>Will return all active products      </p>
+<p><strong>Request to retrieve Inactive Product information</strong><br>Will return an empty success response (no inactive products)                                                                   </p>
+<p><strong>Request for a room type ID only</strong><br>Will return all its rate plans as per the definitions above                                                        </p>
+<p><strong>Request to retrieve any range of date in the next 365 days, in conjunction with one or more room types/rate plans</strong><br>Returns random rates and availability for the rate plans that were requested for. If more than 1 product is specified, only 31 days will be returned. </p>
+<p><strong>Request can also attempt to filter data set for response</strong><br>Using any combination of the AvailStatus/Rates/Inventory/Restrictions filter will produce the desired outcome. For example, if only RoomAvailStatus + Inventory filters are used, only Room-level information is returned (no rate plans).</p>
+<p><strong>Request to obtain rate linkage information</strong><br>Will return rate linkage info for hotels 211 and 511 if specified. If not specified or set to false in RQ, will not return rate linkage info. Note that ParentId for derived Unless explicitely asked, PARR will not return all rate plan data available. If asked in request, will return additional rate plan data as defined in section 12.1.1: pricing model, occupants for base rate, deposit required, min and max LOS defaults products will always be returned with new namespace, and Linked rateacquisitiontype as well if product is linked. min and max booking restrictions,book and travel start and end dates, mobile only indicator, day of week booking restrictions, create and update date and times.</p>
+<p><strong>Request to obtain additional room type data</strong><br>Unless explicitly asked, PARR will not return all room type data available. If specified in the request, it will return additional room type attributes as defined in section 12.1.1: max occupancy and age category settings, rate verification thresholds, smoking preferences, bed types</p>
+<p><strong>Request to obtain compensation data</strong><br>Unless explicitey asked, PARR will not return compensation data. If specified in the request, it will return compensation data for each rate plan.</p>
+<p><strong>Request to obtain cancellation policy data</strong><br>Unless explicitely asked, PARR will not return cancellation policy data. If specified in the request, it will return cancellation policy data for each rate plan.             </p>
+<p><strong>Request to obtain all PARR data available</strong><br>All of the above attributes to get room type, rate plan and compensation data and rate linkage data can be specified in request, in order to get everything Expedia exposes for product configuration in one RQ/RS.</p>
+<p><strong>Please note:</strong>
+The data provided back in the response being randomized, systems cannot attempt to compare data pushed through AR VS read from PARR</p>
+<h3 id="erroneous-update-scenarios-parr" data-magellan-destination="erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</h3>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ProductAvailRateRetrievalRQxmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+    &lt;Authenticationusername=&quot;eqcxnet&quot;password=&quot;testpass&quot;/&gt;
+    &lt;Hotelid=&quot;511&quot;/&gt;
+    &lt;ParamSet&gt;
+        &lt;ProductRetrieval/&gt;
+    &lt;/ParamSet&gt;
+&lt;/ProductAvailRateRetrievalRQ&gt;
+</code></pre>
+<p>EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request. Only one error should be returned in case multiple are bundled.</p>
+<p><strong>Invalid password</strong><br>Response with error code 1001</p>
+<p><strong>Using EQC Simulator with a  previous namespace version</strong><br>Response with error code 2010, specific to EQC Simulator. Previous versions are still supported in production but partners are strongly encouraged to upgrade to latest versions.</p>
+<p><strong>XML that doesn’t conform to schema</strong><br>Response with error code 3010</p>
+<p><strong>Request for start date before yesterday</strong><br>Response with error code 3020</p>
+<p><strong>Request for start date &gt; end date</strong><br>Response with error code 3021</p>
+<p><strong>Invalid hotel ID</strong><br>Response with error code 3202</p>
+<p><strong>Invalid room type ID</strong><br>Response with error code 3203</p>
+<p><strong>Invalid rate plan ID</strong><br>Response with error code 3204</p>
+<p><strong>Rate plan ID given doesn’t match with Room Type ID described in data set</strong><br>Response with error code 3205</p>
+<h2 id="br" data-magellan-destination="br">BR</h2>
+<p>This section describes how the BR simulator is configured and what kind of scenario can be tested using it.</p>
+<p>The simulator only supports the latest version of BR namespace:
+<a href="http://www.expediaconnect.com/EQC/BR/2014/01">http://www.expediaconnect.com/EQC/BR/2014/01</a></p>
+<p>If another version is used, a message indicating that only the latest version is supported is returned, along with error code 2010.</p>
+<p>Bookings returned by the BR simulator are one of the following:</p>
+<ul>
+<li>Expedia Collect bookings, Non-EVC.</li>
+<li>Expedia Collect bookings, EVC, either with payment card info or special request code &quot;5&quot;.</li>
+<li>Expedia Collect bookings, mix of EVC and Non-EVC.</li>
+<li>Hotel Collect bookings, where the POS ID will be prefixed by &quot;A-&quot; and the rate plan ID will be suffixed by &quot;A&quot;. There is no prefix/suffix for room type ID.</li>
+<li>Mix of Expedia Collect and Hotel Collect bookings.</li>
+<li>Bookings containing child age</li>
+</ul>
+<p>The simulator takes three Hotel IDs &quot;111&quot;, &quot;211&quot; and &quot;311&quot;.</p>
+<div><table>
+<thead>
+<tr>
+<th>Hotel ID</th>
+<th>Product Type</th>
+<th>POS ID Value</th>
+<th>Room Type ID</th>
+<th>Rate Plan ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>111</td>
+<td>Expedia Collect only hotel</td>
+<td>Random &quot;Expedia&quot; or &quot;Hotels.com&quot;</td>
+<td>222</td>
+<td>333 for Expedia Collect bookings</td>
+</tr>
+<tr>
+<td>211</td>
+<td>ETP hotel with flex products</td>
+<td>Random &quot;Expedia&quot; or &quot;Hotels.com&quot; for Expedia Collect booking</td>
+<td>Random &quot;A-Expedia&quot; or &quot;A-Hotels.com&quot; for Hotel Collect booking</td>
+<td>20000</td>
+<td>21000 for Expedia Collect booking 21000A for Hotel Collect booking</td>
+</tr>
+<tr>
+<td>311</td>
+<td>Hotel Collect only hotel</td>
+<td>Random &quot;A-Expedia&quot; or &quot;A-Hotels.com&quot; for Hotel Collect booking</td>
+<td>30000</td>
+<td>31000A for Hotel Collect booking</td>
+</tr>
+</tbody>
+</table>
+</div><p>Username can be any, but password must be in one of three fixed values &quot;ECLPASS&quot;, &quot;ECL.DELAY&quot; or &quot;ECL.TIMEOUT&quot;.</p>
+<p>The simulator will generate variable attribute values for the booking content based on the last digit of the booking ID value.</p>
+<p>For instance, if the last digit of booking ID is in the range of 1 to 6, the simulator will return child count equal to that value and the child ages enumerated from 1 and up, otherwise the simulator will return child count of 2 but with no age information.</p>
+<p>For Hotel Collect bookings, the simulator will return the following customer payment card information.</p>
+<p>Master Card
+Card number: 5100210000224020
+Expiration date: 1020
+CVV: 123
+Cardholder name: same as guest name
+Cardholder address:<br>Address Line: Any street1 Any  street2
+City: Any city
+Postal Code: 77094
+State: DC
+Country: US</p>
+<h3 id="successful-retrieval-scenarios" data-magellan-destination="successful-retrieval-scenarios">Successful Retrieval Scenarios</h3>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;BookingRetrievalRQxmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+    &lt;Authenticationusername=&quot;anyuser&quot;password=&quot;ECLPASS&quot;/&gt;
+    &lt;Hotelid=&quot;211&quot;/&gt;
+&lt;/BookingRetrievalRQ&gt;
+</code></pre>
+<p>Below are the sample scenarios for hotel ID &quot;111&quot; Expedia Collect hotel.</p>
+<p><strong>1 Retrieve pending bookings</strong><br>Username/password only, no other parameters.
+1 or more statuses can optionally be specified.
+The BR simulator will return 3 bookings.</p>
+<ul>
+<li>A cancellation.</li>
+<li>A modification, non-EVC.</li>
+<li>A new reservation, non-EVC.</li>
+</ul>
+<p>These are the basic Expedia Collect bookings.</p>
+<p>If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.</p>
+<p>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>2 Retrieve single booking by booking ID</strong><br>Username/password, and a booking ID in the range of 1 to 103<br>The BR simulator may or may not return payment card information for EVC depending on the booking ID value.<br>It may also return child ages depending on the booking ID value. See table above.<br>Booking status will be confirmed.<br>Booking confirmation number will be a random number between 1000000 and 10000000.</p>
+<p><strong>3 Retrieve bookings by hotel ID for the last 1 day</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=1<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 10 bookings, all of them contain payment card information for EVC.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>4 Retrieve bookings by hotel ID for the last 2 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=2<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 10 bookings, some of them with payment card information for EVC and others not.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>5 Retrieve bookings by hotel ID for the last 3 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=3<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 3 bookings.  </p>
+<ul>
+<li>A cancellation.</li>
+<li>A modification contains a special request code &quot;5&quot; indicating booking is paid by EVC.</li>
+<li>A reservation contains payment card information for EVC.</li>
+</ul>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>6 Retrieve bookings by hotel ID for the last 4 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=4<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 1 booking.  </p>
+<ul>
+<li>A cancellation.</li>
+</ul>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>7 Retrieve bookings by hotel ID for the last 5 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=5<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 2 bookings.  </p>
+<ul>
+<li>A modification.</li>
+<li>A cancellation.</li>
+</ul>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>8 Retrieve bookings by hotel ID for the last 6 days</strong><br>Username/password, and a hotel ID=&quot;111&quot;  and number of days=6<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 3 bookings.  </p>
+<ul>
+<li>A cancellation.</li>
+<li>A modification, non-EVC.</li>
+<li>A reservation, non-EVC.</li>
+</ul>
+<p>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.</p>
+<p><strong>9 Retrieve bookings without a hotel ID for the last 30 days</strong><br>Username/password, and number of days=30<br>1 or more statuses can optionally be specified.<br>The BR simulator will return 103 bookings.  </p>
+<ul>
+<li>A cancellation.</li>
+<li>A modification, non-EVC.</li>
+<li>A reservation, non-EVC.</li>
+<li>The rest of 100 bookings will contain either payment card information or special request code &quot;5&quot; or none of the two.  </li>
+</ul>
+<p>For these 100 bookings, the simulator should insert the payment card information randomly, and for booking without payment card, insert the special request with code 5&quot; randomly.<br>Booking ID will be numbered from &quot;1&quot; to &quot;103&quot;, and the child count and child age will be populated based on the last digit of booking ID value.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </p>
+<p><strong>10-19 Detailed scenarios for retrieval by booking ID with value ending with 0 to 9</strong>
+Username/password, and a booking ID ending with 0 to 9<br>The BR simulator will return a single booking with variable attribute values. See table below.</p>
+<p><strong>20 Adding hotel ID as input parameter to any of the scenarios above will produce the same result.</strong><br>And below are the sample scenarios for hotel ID &quot;211&quot; ETP hotel and hotel ID &quot;311&quot; Hotel Collect only hotel.</p>
+<p><strong>23 Retrieve bookings by hotel ID – ETP hotel</strong><br>Username/password, and hotel ID=&quot;211&quot;<br>1 or more statuses can optionally be specified.<br>BR simulator to return 3 Expedia Collect EVC bookings and 3 Hotel Collect bookings.  </p>
+<ul>
+<li>A reservation associated with EVC</li>
+<li>A modification associated with EVC</li>
+<li>A cancellation</li>
+<li>A reservation associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=21000A, as well as customer CC.</li>
+<li>A modification associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=21000A, as well as customer CC.</li>
+<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.
+Each booking will have unique booking ID.<br>If specified in request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
+</ul>
+<p><strong>24 Retrieve bookings by hotel ID –Hotel Collect only hotel</strong><br>Username/password, and hotel ID=&quot;311&quot;<br>1 or more statuses can optionally be specified.<br>BR simulator to return 3 Hotel Collect bookings.  </p>
+<ul>
+<li>A reservation associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=31000A, as well as customer CC.</li>
+<li>A modification associated with POS ID prefixed by &quot;A-&quot;, Rate Plan ID=31000A, as well as customer CC.</li>
+<li>A cancellation associated with POS ID prefixed by &quot;A-&quot;.
+Each booking should have a unique booking ID.<br>If specified in the request, booking status in RS will randomly be one of the specified values. If no values were specified, it will be pending.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
+</ul>
+<p><strong>25 Retrieve bookings by number of days in the past – mix of Expedia Collect and Hotel Collect bookings</strong><br>Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and number of days=30<br>1 or more statuses can optionally be specified.<br>BR simulator should return Expedia Collect or Hotel Collect bookings based on the hotel ID value.  </p>
+<ul>
+<li>Hotel ID=&quot;111&quot;, same as scenario #9 above. Return 103 Expedia Collect bookings.</li>
+<li>Hotel ID=&quot;211&quot;, similar to scenario #9, but include some Hotel Collect bookings randomly.</li>
+<li>Hotel ID=&quot;311&quot;, similar to scenario #9, but return 103 Hotel Collect bookings.
+All 103 bookings will be for reservations and not modification or cancel. And each booking should have unique booking ID.<br>If specified in request, booking status will randomly be any of the specified values. If no values were specified, it will be randomly distributed between all 3 possible statuses.<br>Booking confirmation number will be a random number between 1000000 and 10000000 for bookings in confirmed status.  </li>
+</ul>
+<p><strong>26 Retrieve single booking by booking ID and hotel ID – Hotel Collect booking</strong><br>Username/password, and hotel ID=&quot;211&quot; or &quot;311&quot;, and booking ID in the range of 1 to 103<br>BR simulator to return one of the three Hotel Collect bookings.  </p>
+<ul>
+<li>Hotel ID=&quot;111&quot;, same as no ID is passed.</li>
+<li>Hotel ID=&quot;211&quot;, return a single Expedia Collect or Hotel Collect booking randomly.</li>
+<li>Hotel ID=&quot;311&quot;, return a single Hotel Collect booking.
+The simulator will generate booking content based on hotel ID and booking ID as described above.<br>Booking status will be confirmed.<br>Booking confirmation number will be a random number between 1000000 and 10000000.</li>
+</ul>
+<h4 id="erroneous-scenarios" data-magellan-destination="erroneous-scenarios">Erroneous scenarios</h4>
+<p><strong>21 Retrieve pending bookings with invalid password</strong><br>Username and any password other than the provided values.<br>The BR simulator will return error code 1001: invalid username/password.</p>
+<p><strong>22 Retrieve pending bookings with invalid hotel ID</strong><br>Username/password and any hotel ID other than &quot;111&quot;, &quot;211&quot; or &quot;311&quot;.<br>The BR simulator will return error code 3202: invalid hotel ID.</p>
+<h2 id="bc" data-magellan-destination="bc">BC</h2>
+<p>This section describes how the BC simulator is configured and what kind of scenario can be tested using it.</p>
+<p>Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:</p>
+<ul>
+<li>One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.</li>
+<li>One booking was modified 5 days prior to the date/time of the BC RQ. The bookingID is 000002.</li>
+<li>One new booking was made 6 days prior to the date/time of the BC RQ. The bookingID is 000003.</li>
+<li>One hundred new bookings were made 30 days prior to the date/time of the BC RQ. The bookingIDs are 000004 to 000103.</li>
+<li>BookingID 104 generates a response that includes &quot;HotelId and BookingId Mismatch&quot; warning with code 10081.</li>
+<li>BookingID 105 generates and Invalid Departure Date warning with code 10101.</li>
+<li>All bookings were made for a hotel with Expedia hotel ID 111.</li>
+</ul>
+<h3 id="successful-update-scenarios" data-magellan-destination="successful-update-scenarios">Successful Update Scenarios</h3>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;BookingConfirmRQxmlns=&quot;http://www.expediaconnect.com/EQC/BC/2007/09&quot;&gt;
+    &lt;Authenticationusername=&quot;eqcxnet&quot;password=&quot;ECLPASS&quot;/&gt;
+    &lt;Hotelid=&quot;111&quot;/&gt;
+    &lt;BookingConfirmNumbers&gt;
+        &lt;BookingConfirmNumberbookingType=&quot;Book&quot;bookingID=&quot;000003&quot;confirmNumber=&quot;3322334455&quot;confirmTime=&quot;2014-03-20T10:48:25Z&quot;/&gt;
+    &lt;/BookingConfirmNumbers&gt;
+&lt;/BookingConfirmRQ&gt;
+</code></pre>
+<p>EQC partners can use the simulator to test different scenarios for booking confirmation updates. In order to get a successful response from the simulator, the request message must be well formed as defined by the API and contain the appropriate attribute values enumerated above.</p>
+<h3 id="successful-update-with-warning-scenario" data-magellan-destination="successful-update-with-warning-scenario">Successful Update with Warning Scenario</h3>
+<p>The simulator will return warning 10080 in the response if there is an invalid bookingID (not between 000001 and 000103) in the request. It will return warning 10100 if the bookingType and bookingID do not match in the request.</p>
+<h3 id="erroneous-update-scenarios" data-magellan-destination="erroneous-update-scenarios">Erroneous Update Scenarios</h3>
+<p>EQC partners can use the simulator to test out each error case listed below individually or combine multiple error cases into one request.</p>
+<p><strong>Invalid password</strong><br>Response with error code 1001</p>
+<p><strong>Invalid XML</strong><br>Response with error code 2002</p>
+<p><strong>Old or invalid namespace</strong><br>Response with error code 2010</p>
+<p><strong>Invalid XML with invalid structure (XSD validation)</strong><br>Response with error code 3010</p>
+<p><strong>More than 10 ConfirmationNumber elements</strong><br>Response with error code 3301</p>
+<p><strong>Invalid hotel ID</strong><br>Response with error code 3202</p>
+<h3 id="troubleshooting" data-magellan-destination="troubleshooting">TROUBLESHOOTING</h3>
+<p>If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:</p>
+<p> BR: <a href="https://simulator.expediaquickconnect.com/connect/br">https://simulator.expediaquickconnect.com/connect/br</a>
+ BC: <a href="https://simulator.expediaquickconnect.com/connect/bc">https://simulator.expediaquickconnect.com/connect/bc</a>
+ AR: <a href="https://simulator.expediaquickconnect.com/connect/ar">https://simulator.expediaquickconnect.com/connect/ar</a>
+ PARR: <a href="https://simulator.expediaquickconnect.com/connect/parr">https://simulator.expediaquickconnect.com/connect/parr</a></p>
+<p> If the simulator is up and running, the following message will be displayed: &quot;Expedia QuickConnect® simulator is ready and waiting for requests&quot;.</p>
+<p> If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please <a href="mailto:eqcss@expedia.com">contact us</a></p>
+<h4 id="disclaimer" data-magellan-destination="disclaimer">DISCLAIMER</h4>
+<p>The Expedia QuickConnect® Simulator is not a certification tool and therefore being able to execute all proposed test cases only ensures conformity to the message transport protocol and requisite message formatting. This tool will not validate that a supplier is either (a) using the proper codes as configured in our live system or (b) respecting all of Expedia-specific business validations.</p>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Simulator Tool - EQC API"/></body></html>
