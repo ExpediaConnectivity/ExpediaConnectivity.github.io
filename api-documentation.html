@@ -1,0 +1,81 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Expedia Connectivity API Documentation - </title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="body-grey-background"><div id="google_translate_element" style="display: none;"></div>
+<div class="row full-width">
+    <nav class="large-12 small-12 columns" id="sitenav">
+        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
+        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
+        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+    </nav>
+</div><div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns index-content"><h3 id="expedia-connectivity-api-documentation" data-magellan-destination="expedia-connectivity-api-documentation">Expedia Connectivity API Documentation</h3>
+<p>As an Expedia partner, or the general public, we would appreciate any and all changes you suggest to the repository (and by extension, the aforementioned website) and suggest they be proposed via pull requests.</p>
+<p>This is easiest done on github.com&#39;s web interface, though you may of course use the <code>git</code> command line tool to create the branch as well, if you prefer.  The steps below are for GitHub&#39;s web interface.</p>
+<hr>
+<h4 id="step-1-locate-file-to-edit" data-magellan-destination="step-1-locate-file-to-edit">Step 1. Locate file to edit</h4>
+<p>To find the file(s) you wish to change, either navigate to them from <a href="https://github.com/ExpediaInc/ConnectivityContent">the repository</a> or visit the page you wish to edit on <a href="https://developer.expediapartnercentral.com">developer.expediapartnercentral.com</a> and click on the <code>Edit on GitHub</code> link on the top right (non-mobile) to be navigated to the correct page on the repository.</p>
+<hr>
+<h4 id="step-1-making-changes" data-magellan-destination="step-1-making-changes">Step 1. Making changes</h4>
+<p>Once you have found the page, and clicked on it, there will be a series of icons to edit the page in question, namely the <code>Edit this file</code> pencil-icon, and <code>Delete this file</code> bin-icon.  Click the <code>Edit this file</code> button and you will be dropped into Github&#39;s editor.  From here, you may make changes to the markdown files.  To see what sort of things you can do with markdown, visit this <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown cheatsheet</a>.</p>
+<p>To view what your changes will look like, click the <code>preview</code> button - all changes will be kept, there is no need to save your work.</p>
+<hr>
+<h4 id="step-2-committing-saving-changes" data-magellan-destination="step-2-committing-saving-changes">Step 2. Committing/saving changes</h4>
+<p>To commit (a.k.a. save) your work, scroll to the bottom of the currently edited page, in the form, add a title and description of the changes you&#39;re making.  Then, select the option <code>Create a new branch</code> and add a branch name.  Finally, click <code>Propose File Change</code>.</p>
+<p>At this point, you have two options:</p>
+<ul>
+<li>Return to the <a href="https://github.com/ExpediaInc/ConnectivityContent">main repository</a>, select your branch (if currently <code>master</code>), and navigate/change more pages, committing changes to the same branch each time, until all your changes are complete.</li>
+<li>Create a pull request - once all your changes are complete, see &quot;Suggesting changes&quot; below</li>
+</ul>
+<hr>
+<h4 id="step-3-suggesting-changes" data-magellan-destination="step-3-suggesting-changes">Step 3. Suggesting changes</h4>
+<p>Open a pull request - there may be a form on the current web page if you did not make more changes.  If not, go to the main repository and click <a href="https://github.com/ExpediaInc/ConnectivityContent/pulls">pull requests</a> (or visit the link).</p>
+<ul>
+<li>Enter a title and description for the changes in the pull request.</li>
+<li>Click <code>Create pull request</code></li>
+</ul>
+<p>Your pull request will now need to be reviewed by Expedia and subsequently merged (or feedback provided) into the master branch.  Thanks for your work!</p>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /></body></html>
