@@ -1,0 +1,361 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Hackathon - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/styles.css">
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><div id="google_translate_element" style="display: none;"></div>
+<div class="row full-width">
+    <nav class="large-12 small-12 columns" id="sitenav">
+        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
+        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
+        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+    </nav>
+</div><div class="full-width"><style>
+    .faq .collapsed{display:block !important}
+    body .navbar-inverse .navbar-toggle{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#ffcb00;color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:active{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
+    .navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form,.navbar-inverse .navbar-toggle,.navbar-default .navbar-collapse,.navbar-default .navbar-form,.navbar-default .navbar-toggle,header.navbar.navbar-collapse,header.navbar.navbar-form,header.navbar.navbar-toggle{border-color:#ffcb00}
+    .navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:hover,.navbar-inverse .navbar-toggle:focus,.navbar-inverse .navbar-nav > .open > a,.navbar-inverse .navbar-nav > .open > a:hover,.navbar-inverse .navbar-nav > .open > a:focus,.navbar-default .navbar-toggle:hover,.navbar-default .navbar-toggle:active,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-nav > .open > a,.navbar-default .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus,header.navbar.navbar-nav > .open > a,header.navbar.navbar-nav > .open > a:hover,header.navbar.navbar-nav > .open > a:focus{background-color:#ffcb00}
+
+    body a{color:#137AAA}
+    body a:hover{color:#0B4965}
+    body .btn{background-color:#ffbe00;}
+    body .btn{color:#3d3100;}
+    body .btn:hover{background-color:;}
+    body .btn:hover{color:;}
+    body .btn:focus{background-color:;}
+    body .btn:focus{color:;}
+    body .btn:active{background-color:;}
+    body .btn:active{color:;}
+    body .btn.active{background-color:;}
+    body .btn.active{color:;}
+    body .open .dropdown-toggle.btn{background-color:;}
+    body .open .dropdown-toggle.btn{color:;}
+    .navbar-nav > li > span{color:#FFFFFF}
+    .navbar-nav > li > span:hover{color:#00355f}
+    .navbar-nav > li.expanded span:hover{background-color:#ffcb00}
+    .navbar-nav > li.expanded.active{background-color:#ffcb00}
+    .navbar-nav > li > span > span.caret{border-bottom-color:#FFFFFF;border-top-color:#FFFFFF;color:#FFFFFF;}
+    body #push{height:100px;}
+</style>
+<style>
+    @import url("http://www.hackathon.expedia.com/sites/default/files/css_injector/css_injector_11.css?o34m5k");
+</style>
+<style>
+    #hck-cover {
+        background-position-y: 52%;
+    }
+    table {
+        border: none;
+        background: none;
+    }
+    table tr {
+        background: none !important;
+    }
+</style>
+<div id="hck-page"><!-- COVER -->
+    <section id="hck-cover">
+        <div class="hck-title"><img alt="Expedia Hackathon" src="http://www.hackathon.expedia.com/sites/default/files/ico-exphack.svg">
+
+            <div class="hck-title-info">
+                <h1>Expedia Partner Hackathon</h1>
+
+                <h5>7-8 December&nbsp;&nbsp;|&nbsp;&nbsp;Expedia Office, Las Vegas</h5>
+
+                <p>10190 Covington Cross Dr #300, Las Vegas, NV 89144</p>
+            </div>
+
+            <div class="hck-clear">&nbsp;</div>
+        </div>
+    </section>
+    <!--/ COVER --><!-- INTRO -->
+
+    <section class="hck-container hck-introduction">
+        <h4>Come join Expedia engineers to learn and build on our suite of APIs for a chance to WIN great prizes!</h4>
+
+        <p>Travelers today have lots of options when it comes to booking, and we know our minds together can build unique
+            scenarios that could positively influence our business. This two-day event will be a unique opportunity to discuss
+            cool travel &amp; tech ideas and hack these concepts into reality!</p>
+    </section>
+    <!--/ INTRO --><!-- SCHEDULE -->
+
+    <section class="hck-container hck-schedule">
+        <h3>Event Schedule</h3>
+
+        <div class="hck-schedule-day1">
+            <table cellpadding="6" class="hck-schedule-times">
+                <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h4><span>Day 1</span> 7th December</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>8:30am</strong></td>
+                    <td valign="top" width="100%">Registration, setup &amp; breakfast</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>10:00am</strong></td>
+                    <td valign="top" width="100%">Coding begins!</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>11:00am</strong></td>
+                    <td valign="top" width="100%">Kickoff talk</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>Noon</strong></td>
+                    <td valign="top" width="100%">LUNCH</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>Afternoon</strong></td>
+                    <td valign="top" width="100%">Coding continues</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>6:00pm</strong></td>
+                    <td valign="top" width="100%">Dinner</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>8:00pm</strong></td>
+                    <td valign="top" width="100%">Day 1 Coding pauses</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="hck-schedule-day2">
+            <table cellpadding="6" class="hck-schedule-times">
+                <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h4><span>Day 2</span> 8th December</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>8:00am</strong></td>
+                    <td valign="top" width="100%">Coding resumes</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>Noon</strong></td>
+                    <td valign="top" width="100%">LUNCH</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>3:00pm</strong></td>
+                    <td valign="top" width="100%">Coding ends</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>3:15pm</strong></td>
+                    <td valign="top" width="100%">Demos &amp; judging rounds</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>5:30pm</strong></td>
+                    <td valign="top" width="100%">Commute to Happy Hour venue</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>7:00pm</strong></td>
+                    <td valign="top" width="100%">Announcement &amp; celebration</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="hck-clear">&nbsp;</div>
+    </section>
+    <!--/ SCHEDULE --><!-- JUDGING -->
+
+    <section class="hck-container hck-2col-content">
+        <div class="hck-judging">
+            <h3>Judging Criteria</h3>
+
+            <p><strong>30% Creativity &amp; Innovation</strong><br>
+                How new and innovative is the chosen use case</p>
+
+            <p><strong>30% Implementation completeness</strong><br>
+                Working code trumps over fancy PowerPoint!</p>
+
+            <p><strong>20% Business Potential</strong></p>
+
+            <p><strong>20% Innovative usage of Expedia APIs</strong></p>
+        </div>
+
+        <div class="hck-prizes">
+            <h3>Prizes <em>per team</em></h3>
+
+            <p><strong>1st:</strong>&nbsp;&nbsp;&nbsp;200,000 Expedia+ Rewards Points</p>
+
+            <p><strong>2nd:</strong>&nbsp;&nbsp;100,000 Expedia+ Rewards Points</p>
+
+            <p><strong>3rd:</strong>&nbsp;&nbsp;&nbsp;50,000 Expedia+ Rewards Points</p>
+        </div>
+
+        <div class="hck-clear">&nbsp;</div>
+    </section>
+
+    <section class="hck-container">
+        <div class="hck-details">
+            <h3>Hackathon Themes &amp; User Stories</h3>
+
+            <p>Feel free to pick and hack any problem, which represents relevant, creative, high business value scenarios and
+                challenges your organization is handling or would like to tackle in the future.</p>
+
+            <p>For guidance and seed ideas, below are a few use cases we are proposing. Most of these scenarios can be
+                accomplished using the powerful set of APIs Expedia will be exposing for this event.</p>
+
+            <p>In addition to these, we would also encourage using other public, open-source tools, platforms to accomplish your
+                goal.</p>
+
+            <ol>
+                <li>As a Hotel Partner, reduce time to load and update products on Expedia, eliminate manual errors, save cost by
+                    automatically creating new Room Types and Rate Plans.
+                </li>
+                <li>As a Hotel Partner, identify any differentials and verify product mapping for hotel room types and rate plans
+                    loaded on Expedia.
+                </li>
+                <li>Fast and effective Promotion creations!</li>
+                <li>Get promotions score to better create, update promotions on Expedia.</li>
+                <li>Improve content quality for the hotels with minimal manual intervention.</li>
+                <li>Effectively manage hotel images.</li>
+                <li>Fully automate end-to-end onboarding of new hotels and save time and effort to get my hotels live on
+                    Expedia!
+                </li>
+                <li>Automate and optimize Value-Add Promotions management.</li>
+                <li>Search for Value-Add promotions available.</li>
+                <li>Discover newly added properties to my account, so I can start mapping process.</li>
+                <li>Get all RoomTypes and Rateplans for properties in Expedia system, to create structure in ChannelManager tools
+                    and do mapping (replacing PARR).
+                </li>
+                <li>Take actions to make your availability and rates competitive, by getting supplier scores for the inventory you
+                    manage.
+                </li>
+                <li>Get scoring for hotel content so you can improve content quality, build trends, make recommendations.</li>
+                <li>Get demand data for hotels for better inventory management.</li>
+                <li>Get insights into lost opportunities (for example: customer viewed the hotel but did not book) to take
+                    remedial actions.
+                </li>
+            </ol>
+        </div>
+
+        <div class="hck-details">
+            <h3>Event Guidelines</h3>
+
+            <ul>
+                <li>Come with ideas not completed code. We want you to brainstorm within your company about how you would use our
+                    APIs in your solution, which means you may need to write some code to understand our APIs to take full
+                    advantage of working with our engineers. But don't go beyond tinkering with our APIs. This is meant to be a
+                    fun event and we want all teams to hack on site.
+                </li>
+                <li>Team must demo a functional application to be eligible for prizes.</li>
+                <li>All applications will be judged against the criteria published here.</li>
+                <li>Teams will have access to Expedia engineering and API experts for guidance and help.</li>
+                <li>Teams will have access to Expedia mentors for guidance on areas like business use cases, Value add, Impact,
+                    Demo presentations.
+                </li>
+                <li>Hack. Meet new people. Revolutionize Travel. Have fun while doing it!</li>
+            </ul>
+        </div>
+    </section>
+    <!--/ EVENT DETAILS --><!-- SUPPORT -->
+
+    <section class="hck-container hck-2col-content">
+        <div class="hck-support">
+            <h3>Live Support Chat</h3>
+
+            <p><a href="https://www.hipchat.com/ghTDi47UN" title="Live support chat on Hipchat">hipchat.com/ghTDi47UN </a></p>
+        </div>
+
+        <div class="hck-support">
+            <h3>Contact Us</h3>
+
+            <p><a href="mailto:partnerhackathonsupport@expedia.com?subject=Expedia%20Partner%20Hackathon" title="Contact Us">partnerhackathonsupport@expedia.com </a>
+            </p>
+        </div>
+
+        <div class="hck-clear">&nbsp;</div>
+    </section>
+
+    <section class="hck-container hck-2col-content">
+        <div class="hck-support">
+            <h3>Expedia APIs</h3>
+
+            <p><a href="http://www.hackathon.expedia.com/directory" title="Expedia APIs">http://www.hackathon.expedia.com/directory</a>
+            </p>
+        </div>
+
+        <div class="hck-support">
+            <h3>Terms and Conditions</h3>
+
+            <p><a href="http://www.hackathon.expedia.com/partner-hackathon-terms-and-conditions" title="Terms and Conditions">http://www.hackathon.expedia.com/partner-hackathon-terms-and-conditions</a>
+            </p>
+        </div>
+
+        <div class="hck-clear">&nbsp;</div>
+
+        <div class="hck-details">
+            <h3>Date and Venue</h3>
+
+            <h4>December 7 2015 &amp; December 8 2015</h4>
+            <a href="https://www.google.com/maps/place/Expedia+Inc/@36.1890712,-115.316254,15z/data=!4m2!3m1!1s0x0:0xfee85b1dc4cf5b39">Expedia
+                Office Las Vegas, 10190 Covington Cross Dr #300, Las Vegas, NV 89144</a>
+
+            <p>&nbsp;</p>
+            <iframe allowfullscreen="" frameborder="0" height="400"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12880.297793880947!2d-115.316254!3d36.1890712!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfee85b1dc4cf5b39!2sExpedia+Inc!5e0!3m2!1sen!2sus!4v1448405557307"
+                    style="border:0" width="100%" scrolling="no"></iframe>
+        </div>
+    </section>
+</div></div><div class="row full-width footer">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</div>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Hackathon"/></html>
