@@ -415,6 +415,10 @@ code.hljs {
   font-size: 1.3em;
   margin-bottom: 0;
 }
+.simple-content {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
 .center {
   text-align: center;
 }
