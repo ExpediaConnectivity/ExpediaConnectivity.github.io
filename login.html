@@ -58,7 +58,7 @@
 
         $.ajax({
             method: "POST",
-            url: "http://localhost:8080/properties/login",
+            url: "http://localhost:8080/v1/properties/login",
             xhrFields: {
                 withCredentials: true,
                 XDomainRequest: true
@@ -72,8 +72,8 @@
                 }
             }
         }).done(function(data, textStatus, jqxhr) {
-            $("#result").removeClass("error").html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + request.getResponseHeader('X-Auth-Token'));
-            localStorage.setItem("AuthToken", request.getResponseHeader('X-Auth-Token'));
+            $("#result").removeClass("error").html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + jqxhr.getResponseHeader('X-Auth-Token'));
+            localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             window.location.href = "/hotels.html"
         }).fail(function(jqxhr) {
             $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);

@@ -47,9 +47,6 @@
     <div id="result" class="formline center"></div>
     <div class="formline"><input class="submit" type="button" value="Request Hotel" onclick="autoAssignHotel();"/></div>
 </form>
-<!--[if lte IE 9]>
-<script src="/js/base64.js"></script>
-<!--<![endif]-->
 <script>
     var datatable = false;
 
@@ -105,19 +102,16 @@
         getHotelsByJwt();
     });
 
-    function jwtRequest(url, done, error) {
+    function jwtRequest(method, url, done, error) {
         $.ajax({
-            method: "POST",
+            method: method,
             url: url,
             xhrFields: {
                 withCredentials: true,
                 XDomainRequest: true
             },
             beforeSend: function(xhr) {
-                if (typeof(btoa) !== "function") {
-                    btoa = Base64.encode
-                }
-                xhr.setRequestHeader("Authorization", "Bearer " + btoa(localStorage.getItem("AuthToken")));
+                xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
             }
         }).done(done).fail(error);
     }
@@ -127,8 +121,8 @@
         for (tuid of data) {
             for (hotel of tuid.hotels) {
                 for (date of hotel.dates) {
-                    table.push([tuid.tuid, hotel.hotelId, date.start, date.end]);
-                    console.log("Start: " + date.start);
+                    table.push([tuid.tuid, hotel.hotelId, date.startDate, date.endDate]);
+                    console.log("Start: " + date.startDate);
                 }
             }
         }
@@ -147,10 +141,11 @@
     }
 
     function getHotelsByJwt() {
-        jwtRequest("http://localhost:8080/v1/schedule", function(data, textStatus, jqxhr) {
+        jwtRequest("GET", "http://localhost:8080/v1/schedule", function(data, textStatus, jqxhr) {
             console.log("Ajax Success: " + jqxhr.url);
             console.log("Response: " + jqxhr.responseText);
             $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+            displayTable(JSON.parse(jqxhr.responseText));
         }, function(jqxhr) {
             ajaxError(jqxhr);
             displayTable(testAssignment);
@@ -158,10 +153,11 @@
     }
 
     function autoAssignHotel() {
-        jwtRequest("http://localhost:8080/v1/schedule/assign", function(data, textStatus, jqxhr) {
+        jwtRequest("POST", "http://localhost:8080/v1/schedule/assign", function(data, textStatus, jqxhr) {
             console.log("Ajax Success: " + jqxhr.url);
             console.log("Response: " + jqxhr.responseText);
             $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+            getHotelsByJwt();
         }, function(jqxhr) {
             ajaxError(jqxhr);
         });
