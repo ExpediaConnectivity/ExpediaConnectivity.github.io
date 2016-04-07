@@ -38,9 +38,9 @@
         <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
         <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
     </nav>
-</div><div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns index-content"><h1>EPC Login</h1>
+</div><div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns index-content"><h1>EQC Login</h1>
 <p class="announce">
-    Please enter your Expedia Partner Central (EPC) login details below.
+    Please enter your Expedia Quick Connect (EQC) login details below.
 </p>
 <form class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
     <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
@@ -72,7 +72,7 @@
                 }
             }
         }).done(function(data, textStatus, jqxhr) {
-            $("#result").removeClass("error").html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + jqxhr.getResponseHeader('X-Auth-Token'));
+            $("#result").removeClass("error");//.html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + jqxhr.getResponseHeader('X-Auth-Token'));
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             window.location.href = "/hotels.html"
         }).fail(function(jqxhr) {

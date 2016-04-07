@@ -144,7 +144,7 @@
         jwtRequest("GET", "http://localhost:8080/v1/schedule", function(data, textStatus, jqxhr) {
             console.log("Ajax Success: " + jqxhr.url);
             console.log("Response: " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully retrieved hotels");
             displayTable(JSON.parse(jqxhr.responseText));
         }, function(jqxhr) {
             ajaxError(jqxhr);
@@ -156,7 +156,7 @@
         jwtRequest("POST", "http://localhost:8080/v1/schedule/assign", function(data, textStatus, jqxhr) {
             console.log("Ajax Success: " + jqxhr.url);
             console.log("Response: " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Success: " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully assigned hotel");
             getHotelsByJwt();
         }, function(jqxhr) {
             ajaxError(jqxhr);
