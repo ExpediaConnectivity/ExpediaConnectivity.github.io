@@ -38,16 +38,19 @@
         <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
         <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
     </nav>
-</div><div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content"><h1>EQC Login</h1>
-<p class="announce">
-    Please enter your Expedia Quick Connect (EQC) login details below.
-</p>
-<form class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
-    <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
-    <div class="formline"><span class="right-align">Password: </span><input id="password" type="password" placeholder=""/></div>
-    <div id="result" class="formline center"></div>
-    <div class="formline"><input class="submit" type="submit" value="Login"/></div>
-</form>
+</div><div class="full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <h1>EQC Login</h1>
+    <p class="announce">
+        Please enter your Expedia Quick Connect (EQC) login details below.
+    </p>
+    <form class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
+        <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
+        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password"
+                                                                                placeholder=""/></div>
+        <div id="result" class="formline center"></div>
+        <div class="formline"><input class="submit" type="submit" value="Login"/></div>
+    </form>
+</div>
 <!--[if lte IE 9]>
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
@@ -79,7 +82,8 @@
             $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
         });
     }
-</script></div></div><div class="row full-width footer">
+
+</script></div><div class="row full-width footer">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
