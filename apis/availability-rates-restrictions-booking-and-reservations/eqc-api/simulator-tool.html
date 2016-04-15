@@ -858,10 +858,13 @@ The simulator will generate booking content based on hotel ID and booking ID as 
 <td><a href="http://www.expediaquickconnect.com/system/assets/attachments/313/BookingConfirmRQ.xsd">BookingConfirmation request</a></td>
 <td><a href="http://www.expediaconnect.com/EQC/BR/2007/09">http://www.expediaconnect.com/EQC/BR/2007/09</a></td>
 </tr>
+<tr>
+<td><a href="http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd">BookingConfirmation response</a></td>
+<td><a href="http://www.expediaconnect.com/EQC/BC/2007/08">http://www.expediaconnect.com/EQC/BC/2007/08</a></td>
+</tr>
 </tbody>
 </table>
-</div><p><a href="http://www.expediaquickconnect.com/system/assets/attachments/314/BookingConfirmRS.xsd">BookingConfirmation response</a>|<a href="http://www.expediaconnect.com/EQC/BC/2007/08|">http://www.expediaconnect.com/EQC/BC/2007/08|</a></p>
-<p>Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:</p>
+</div><p>Like all simulators, the BC simulator returns predictable results. It also operates with a set of assumptions, namely:</p>
 <ul>
 <li>One booking was cancelled 4 days prior to the date/time of the BC RQ (ex: if a BR RQ is received on 2008/02/05, the EQC Simulator will assume that it has a cancelled booking dated from 2008/02/01).  The bookingID is 000001.</li>
 <li>One booking was modified 5 days prior to the date/time of the BC RQ. The bookingID is 000002.</li>
@@ -894,12 +897,12 @@ The simulator will generate booking content based on hotel ID and booking ID as 
 <p><strong>Invalid hotel ID</strong><br>Response with error code 3202</p>
 <h3 id="troubleshooting" data-magellan-destination="troubleshooting">TROUBLESHOOTING</h3>
 <p>If you are unable to connect to the simulator, do a simple connectivity test using a standard web browser. Navigate to the Expedia simulator addresses:</p>
-<p> BR: <a href="https://simulator.expediaquickconnect.com/connect/br">https://simulator.expediaquickconnect.com/connect/br</a>
- BC: <a href="https://simulator.expediaquickconnect.com/connect/bc">https://simulator.expediaquickconnect.com/connect/bc</a>
- AR: <a href="https://simulator.expediaquickconnect.com/connect/ar">https://simulator.expediaquickconnect.com/connect/ar</a>
- PARR: <a href="https://simulator.expediaquickconnect.com/connect/parr">https://simulator.expediaquickconnect.com/connect/parr</a></p>
-<p> If the simulator is up and running, the following message will be displayed: &quot;Expedia QuickConnect® simulator is ready and waiting for requests&quot;.</p>
-<p> If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please <a href="mailto:eqcss@expedia.com">contact us</a></p>
+<p>BR: <a href="https://simulator.expediaquickconnect.com/connect/br">https://simulator.expediaquickconnect.com/connect/br</a></p>
+<p>BC: <a href="https://simulator.expediaquickconnect.com/connect/bc">https://simulator.expediaquickconnect.com/connect/bc</a></p>
+<p>AR: <a href="https://simulator.expediaquickconnect.com/connect/ar">https://simulator.expediaquickconnect.com/connect/ar</a></p>
+<p>PARR: <a href="https://simulator.expediaquickconnect.com/connect/parr">https://simulator.expediaquickconnect.com/connect/parr</a></p>
+<p>If the simulator is up and running, the following message will be displayed: &quot;Expedia QuickConnect® simulator is ready and waiting for requests&quot;.</p>
+<p>If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please <a href="mailto:eqcss@expedia.com">contact us</a></p>
 <h4 id="disclaimer" data-magellan-destination="disclaimer">DISCLAIMER</h4>
 <p>The Expedia QuickConnect® Simulator is not a certification tool and therefore being able to execute all proposed test cases only ensures conformity to the message transport protocol and requisite message formatting. This tool will not validate that a supplier is either (a) using the proper codes as configured in our live system or (b) respecting all of Expedia-specific business validations.</p>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
