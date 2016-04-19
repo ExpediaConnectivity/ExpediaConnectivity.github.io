@@ -82,7 +82,7 @@ var Core = Core || {
     },
 
     moveFooter: function() {
-        var footer = $(".footer");
+        var footer = $("footer");
         if ($(document).height() <= $(window).height()) {
             footer.prev().css('margin-bottom', footer.height());
             footer.css('bottom', 0);
@@ -105,8 +105,9 @@ var Core = Core || {
     },
 
     setMenuFocus: function() {
-        var top = 80 - $(document).scrollTop();
-        if ($(document).scrollTop() >= 80) {
+        var headerHeight = $("header").eq(0).height();
+        var top = headerHeight - $(document).scrollTop();
+        if ($(document).scrollTop() >= headerHeight) {
             top = 0;
         }
         $('.menu').css('margin-top', top);
@@ -118,7 +119,7 @@ var Core = Core || {
             return;
         }
         var size = $(window).height();
-        var footerSize = $(window).scrollTop() + $(window).height() - $(".footer").offset().top;
+        var footerSize = $(window).scrollTop() + $(window).height() - $("footer").offset().top;
         if (footerSize > 0) {
             size -= footerSize;
         }

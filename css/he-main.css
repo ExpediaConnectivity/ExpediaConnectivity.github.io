@@ -1,0 +1,869 @@
+/*! HTML5 Boilerplate v5.2.0 | MIT License | https://html5boilerplate.com/ */
+
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+}
+
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+
+
+
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+
+
+
+/* ==========================================================================
+   Author's basic styles
+   ========================================================================== */
+
+html {
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 1.3em;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1.1rem;
+}
+
+p {
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.5em;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-position: inside;
+}
+
+li {
+    padding-bottom: 0.5rem;
+}
+
+a {
+    color: #09f;
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.inner {
+    display: block;
+    margin: 0 auto;
+    max-width: 1300px;
+    width: 90%;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    margin: 1rem 0;
+    text-align: center;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+section > * {
+    margin: 1rem auto;
+}
+
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+    color: #6b6b6b;
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    line-height: 1em;
+    margin-bottom: 0.8rem;
+    color: #ffffff;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+    color: #00355f;
+    font-weight: 400;
+}
+h3 {
+    font-size: 1.9rem;
+    margin-bottom: 0.7em;
+    color: #6b6b6b;
+}
+h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.7em;
+    color: #3f3f3e;
+}
+#section-hero h4 {
+    color: #fff;
+    font-size: 1.3rem;
+}
+h6 {
+    margin: 0 auto;
+    font-size: 1.15rem;
+    line-height: 1.5em;
+    font-weight: 300;
+}
+p, a {
+    font-size: 1.1rem;
+    line-height: 1.5em;
+}
+a {
+    color: #0065b8;
+}
+
+a:hover {
+    color: #0065b8;
+}
+
+
+/* BOTTOM SHADOW - list all elements here */ 
+.primary-box {
+    box-shadow: 0 2px 0 0px rgba(0,0,0,0.2);
+}
+
+
+.section-spacer {
+    position: relative;
+    height: 3rem;
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+#section-hero {
+    display: table;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+#section-hero .inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#section-hero h1, #section-hero h4 {
+    text-shadow: 0 0.1em 1em rgba(0, 0, 0, 0.35);
+}
+
+
+
+/* HERO IMAGES */
+#page-index #section-hero {
+    background-image: url(../images/bg-hero-pool.jpg);
+    background-position: 60% 40%;
+}
+#page-partners #section-hero {
+    background-image: url(../images/bg-hero-meeting.jpg);
+    background-position: 62% 5%;
+}
+#page-properties #section-hero {
+    background-image: url(../images/bg-hero-bed.jpg);
+    background-position: 62% 5%;
+}
+
+
+
+.round-img {
+    margin-bottom: 1rem;
+    border-radius: 50%;
+}
+.icon {
+    height: auto;
+    width: 100%;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.primary-box {
+    background: #f5f5f5;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 1.5rem 2rem 6rem;
+    margin-bottom: -1rem;
+    text-align: left;
+    min-height: 330px;
+    -webkit-transition: 0.2s all 0s;
+    transition: 0.2s all 0s;
+    display: inline-block;
+}
+@media (max-width:1400px) {
+    .primary-box {
+        min-height: 340px;
+    }
+}
+@media (max-width:1300px) {
+    .primary-box {
+        min-height: 360px;
+    }
+}
+@media (max-width:1200px) {
+    .primary-box {
+        min-height: 400px;
+    }
+}
+@media (max-width:1150px) {
+    .primary-box {
+        min-height: 440px;
+    }
+}
+@media (max-width:950px) {
+    .primary-box {
+        display: block;
+        min-height: 0;
+        margin-bottom: 2rem;
+    }
+    #primary-box-wrap .columns {
+        display: block;
+        width: 100%;
+        margin: 0;
+    }
+}
+.primary-box:hover {
+    background: #eaeaea;
+}
+.primary-box .round-img {
+    width: 35%;
+    max-width: 140px;
+    height: auto;
+    position: relative;
+    float: right;
+    margin: 0 0 0.5rem 1.5rem;
+}
+.primary-box h2, .primary-box p {
+    color: #6b6b6b;
+}
+.primary-box p span {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin: 0 0 1.5rem 3rem;
+    color: #0065b0;
+}
+
+
+
+#index-lower-columns a {
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+/* PARTNERS PAGE */
+.pod-image {
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+.pod-text {
+    margin: 1rem auto 0;
+    max-width: 430px;
+}
+
+#section-lower_links .columns {
+    vertical-align: middle;
+}
+#section-lower_links .columns:nth-child(2n+1) {
+    text-align: right;
+}
+#section-lower_links .columns:nth-child(2n) {
+    text-align: left;
+}
+#section-lower_links .icon {
+    margin: 0.5rem auto;
+}
+@media (max-width:767px) {
+    #section-lower_links * {
+        text-align: center !important;
+    }
+    #section-lower_links .icon {
+        margin-bottom: -2.5rem;
+    }
+}
+
+
+
+
+
+
+/* PROPERTIES PAGE */
+#section-connectivity_diagram {
+    margin: 0 auto;
+    padding: 1rem 0;
+}
+#logo-connectivity_white {
+    width: 190px;
+    height: auto;
+    margin-left: 2rem;
+    margin-bottom: 1.3rem;
+}
+#diagram-spread_arrows {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    height: auto;
+}
+#section-connectivity_diagram .inner {
+    max-width: 1500px;
+}
+#diagram-graphics > * {
+    vertical-align: middle;
+    text-align: center;
+}
+.one-column {
+    display: table;
+}
+.one-column img {
+    display: table-cell;
+}
+
+.arrow-left_to_right {
+    width: 160%;
+    max-width: 160%;
+    margin-left: -27%;
+}
+
+@media (max-width:950px) {
+    
+    #diagram-spread_arrows {
+        display: none;
+    }
+    #diagram-graphics .columns, 
+    #diagram-graphics .column {
+        display: block;
+        margin: 2rem auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    #diagram-graphics *:nth-child(2),
+    #diagram-graphics *:nth-child(4) {
+        height: 100px;
+        width: auto;
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    .arrow-left_to_right {
+        height: 35px;
+        width: auto;
+        margin-bottom: -5rem;
+        margin-left: 0;
+    }
+}
+
+
+
+
+
+
+.bg-grey {
+    background: #ebebeb;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+}
+.bg-yellow {
+    background: #ffcb00;    
+}
+.bg-yellow p {
+    color: #3f3f3e;
+}
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Grid System
+   ========================================================================== */
+
+.row {
+    width: 100%;
+}
+
+.column,
+.columns {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    margin-left: 4%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    /*    background: rgba(0,0,0,0.2);  DELETE */
+}
+
+.column:first-child,
+.columns:first-child,
+.fifth.columns:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+.column .inner,
+.columns .inner {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 7%;
+}
+
+.one.column,
+.one.columns {
+    width: 4.66666666667%;
+}
+
+.two.columns {
+    width: 13.3333333333%;
+}
+
+.fifth.columns {
+    width: 16.8%;
+}
+
+.three.columns {
+    width: 22%;
+}
+
+.four.columns {
+    width: 30.6666666667%;
+}
+
+.five.columns {
+    width: 39.3333333333%;
+}
+
+.six.columns {
+    width: 48%;
+}
+
+.seven.columns {
+    width: 56.6666666667%;
+}
+
+.eight.columns {
+    width: 65.3333333333%;
+}
+
+.nine.columns {
+    width: 74.0%;
+}
+
+.ten.columns {
+    width: 82.6666666667%;
+}
+
+.eleven.columns {
+    width: 91.3333333333%;
+}
+
+.twelve.columns {
+    width: 100%;
+    margin-left: 0;
+}
+
+.one-third.column {
+    width: 30.6666666667%;
+}
+
+.two-thirds.column {
+    width: 65.3333333333%;
+}
+
+.one-half.column {
+    width: 48%;
+}
+
+
+/* Offsets */
+
+.offset-by-one.column,
+.offset-by-one.columns {
+    margin-left: 8.66666666667%;
+}
+
+.offset-by-two.column,
+.offset-by-two.columns {
+    margin-left: 17.3333333333%;
+}
+
+.offset-by-three.column,
+.offset-by-three.columns {
+    margin-left: 26%;
+}
+
+.offset-by-four.column,
+.offset-by-four.columns {
+    margin-left: 34.6666666667%;
+}
+
+.offset-by-five.column,
+.offset-by-five.columns {
+    margin-left: 43.3333333333%;
+}
+
+.offset-by-six.column,
+.offset-by-six.columns {
+    margin-left: 52%;
+}
+
+.offset-by-seven.column,
+.offset-by-seven.columns {
+    margin-left: 60.6666666667%;
+}
+
+.offset-by-eight.column,
+.offset-by-eight.columns {
+    margin-left: 69.3333333333%;
+}
+
+.offset-by-nine.column,
+.offset-by-nine.columns {
+    margin-left: 78.0%;
+}
+
+.offset-by-ten.column,
+.offset-by-ten.columns {
+    margin-left: 86.6666666667%;
+}
+
+.offset-by-eleven.column,
+.offset-by-eleven.columns {
+    margin-left: 95.3333333333%;
+}
+
+.offset-by-one-third.column,
+.offset-by-one-third.columns {
+    margin-left: 34.6666666667%;
+}
+
+.offset-by-two-thirds.column,
+.offset-by-two-thirds.columns {
+    margin-left: 69.3333333333%;
+}
+
+.offset-by-one-half.column,
+.offset-by-one-half.columns {
+    margin-left: 52%;
+}
+
+@media (max-width:767px) {
+    .container {
+        position: relative;
+        width: 100%;
+        margin: 0 auto !important;
+    }
+    .column,
+    .columns {
+        width: 100% !important;
+        box-sizing: border-box;
+        margin-left: 0;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.rtl * {
+    direction: ltr;
+}
+
+.rtl .column:first-child,
+.rtl .columns:first-child,
+.rtl .fifth.columns:nth-child(5n+1) {
+    margin-left: 4%;
+}
+
+.rtl .column:last-child,
+.rtl .columns:last-child,
+.rtl .fifth.columns:nth-child(5n+1) {
+    margin-left: 0;
+}
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.desktop_only {
+    display: block;
+    visibility: visible;
+}
+
+.mobile_only {
+    display: none;
+    visibility: collapse;
+}
+
+@media (max-width:767px) {
+    .desktop_only {
+        display: none;
+        visibility: collapse;
+    }
+    .mobile_only {
+        display: block;
+        visibility: visible;
+    }
+}
+
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+
+
+
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   http://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+        display: table-header-group;
+    }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+    img {
+        max-width: 100% !important;
+    }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}

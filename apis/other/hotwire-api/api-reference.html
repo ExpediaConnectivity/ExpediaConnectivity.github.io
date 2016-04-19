@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Reference - Hotwire API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Reference - Hotwire API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -32,13 +50,34 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Hotwire API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="api-reference"><a class="sidebar-nav-item" href="#api-reference">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/hotwire-faq.html">FAQ</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-reference" data-magellan-destination="api-reference">API Reference</h1>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Hotwire API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="api-reference"><a class="sidebar-nav-item" href="#api-reference">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/hotwire-faq.html">FAQ</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-reference" data-magellan-destination="api-reference">API Reference</h1>
 <p>Hotwire QuickConnect is a set of APIs that allow a client system to interact with the information
 available in the <a href="https://extranet.hotwire.com">Hotwire Hotel Extranet</a>. In turn, that information is used
 by Hotwire.com and its affiliates to display and sell hotel rooms to travelers.
@@ -49,7 +88,7 @@ charges, and several restrictions. Retrieved bookings contain guest and Hotwire 
 information.</p>
 <p>Currently this API is only available via PDF, available for download <a href="https://ewe-quickconnect.s3.amazonaws.com/system/assets/attachments/425/Hotwire_QuickConnect_API_Guide_Version_1_31.pdf?1395867409">here</a>.</p>
 <p>The WSDL is available to download <a href="https://api.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl=XnetHotelService.wsdl">here</a>.</p>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -58,9 +97,9 @@ information.</p>
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
 <input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="API Reference - Hotwire API"/></body></html>

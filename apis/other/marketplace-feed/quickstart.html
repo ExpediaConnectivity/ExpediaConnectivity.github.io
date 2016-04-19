@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Marketplace Feed</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Marketplace Feed</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -32,13 +50,34 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/marketplace-feed/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/marketplace-feed/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/marketplace-feed/swagger.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
 <p>The Marketplace Feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel&#39;s availability and rates are, as well as feedback provided by Expedia guests.</p>
 <p>Each request should include hotelier credentials in HTTP basic auth format, a <code>clientId</code> query parameter, and a <code>hotelId</code> query parameter.</p>
 <p>For more information, check out the <a href="reference.html">reference documentation</a>, or try it out live with <a href="swagger.html">swagger</a>.</p>
@@ -152,7 +191,7 @@
         }
     ]
 }
-</code></pre></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</code></pre></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -161,9 +200,9 @@
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
 <input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Marketplace Feed"/></body></html>

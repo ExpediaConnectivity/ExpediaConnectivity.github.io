@@ -1,0 +1,275 @@
+/* Animations transitions speed */
+
+.he-animate {
+    -webkit-transition: 0.7s transform 0s ease-out, 0.7s opacity 0s ease-out;
+    transition: 0.7s transform 0s ease-out, 0.7s opacity 0s ease-out;
+    font-size: 1rem;
+}
+
+
+/* Delays */
+
+.he-delay_100 {
+    -webkit-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.he-delay_200 {
+    -webkit-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+.he-delay_300 {
+    -webkit-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.he-delay_400 {
+    -webkit-transition-delay: 400ms;
+    transition-delay: 400ms;
+}
+.he-delay_500 {
+    -webkit-transition-delay: 500ms;
+    transition-delay: 500ms;
+}
+.he-delay_600 {
+    -webkit-transition-delay: 600ms;
+    transition-delay: 600ms;
+}
+.he-delay_700 {
+    -webkit-transition-delay: 700ms;
+    transition-delay: 700ms;
+}
+.he-delay_800 {
+    -webkit-transition-delay: 800ms;
+    transition-delay: 800ms;
+}
+.he-delay_900 {
+    -webkit-transition-delay: 900ms;
+    transition-delay: 900ms;
+}
+.he-delay_1000 {
+    -webkit-transition-delay: 1000ms;
+    transition-delay: 1000ms;
+}
+.he-delay_1500 {
+    -webkit-transition-delay: 1500ms;
+    transition-delay: 1500ms;
+}
+.he-delay_2000 {
+    -webkit-transition-delay: 2000ms;
+    transition-delay: 2000ms;
+}
+.he-delay_2500 {
+    -webkit-transition-delay: 2500ms;
+    transition-delay: 2500ms;
+}
+.he-delay_3000 {
+    -webkit-transition-delay: 3000ms;
+    transition-delay: 3000ms;
+}
+
+
+/* Move Up */
+
+.he-from_bottom {
+    -webkit-transform: translateY(3em);
+    transform: translateY(3em);
+}
+
+.he-from_bottom.active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+
+/* Move Right */
+
+.he-from_left {
+    -webkit-transform: translateX(-3em);
+    transform: translateX(-3em);
+}
+
+.he-from_left.active {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+
+/* Move Down */
+
+.he-from_top {
+    -webkit-transform: translateY(-3em);
+    transform: translateY(-3em);
+}
+
+.he-from_top.active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+
+/* Move Left */
+
+.he-from_right {
+    -webkit-transform: translateX(3em);
+    transform: translateX(3em);
+}
+
+.he-from_right.active {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+}
+
+
+/* Orthographic Movements */
+
+
+/* These values use 'ems' so you can utilize 'font-size' of the parent element to dictate the travel distance of the aniations */
+
+
+/* From Top Left */
+
+.he-from_top_left {
+    -webkit-transform: translate(-3em, -3em);
+    transform: translate(-3em, -3em);
+}
+
+.he-from_top_left.active {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+}
+
+
+/* From Top Right */
+
+.he-from_top_right {
+    -webkit-transform: translate(3em, -3em);
+    transform: translate(3em, -3em);
+}
+
+.he-from_top_right.active {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+}
+
+
+/* From Bottom Right */
+
+.he-from_bottom_right {
+    -webkit-transform: translate(3em, 3em);
+    transform: translate(3em, 3em);
+}
+
+.he-from_bottom_right.active {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+}
+
+
+/* From Bottom Left */
+
+.he-from_bottom_left {
+    -webkit-transform: translate(-3em, 3em);
+    transform: translate(-3em, 3em);
+}
+
+.he-from_bottom_left.active {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+}
+
+
+/* Fade In */
+
+.he-fade_in {
+    opacity: 0;
+}
+
+.he-fade_in.active {
+    opacity: 1;
+}
+
+
+/* Zoom In */
+
+.he-zoom_in {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+.he-zoom_in.active {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+
+/* Spin */
+
+.he-spin_right {
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+.he-spin_right.active {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+.he-spin_left {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.he-spin_left.active {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+
+
+@media (max-width:950px) {
+    #section-connectivity_diagram * {
+        -webkit-transition-delay: 100ms;
+        transition-delay: 100ms;
+    }
+}
+
+@media (max-width:767px) {
+    .he-delay_100,
+    .he-delay_200,
+    .he-delay_300,
+    .he-delay_400,
+    .he-delay_500,
+    .he-delay_600,
+    .he-delay_700,
+    .he-delay_800,
+    .he-delay_900,
+    .he-delay_1000,
+    .he-delay_1500,
+    .he-delay_2000,
+    .he-delay_2500,
+    .he-delay_3000 {
+        -webkit-transition-delay: 100ms;
+        transition-delay: 100ms;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

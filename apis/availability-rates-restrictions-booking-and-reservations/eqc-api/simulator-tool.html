@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Simulator Tool - EQC API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Simulator Tool - EQC API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -32,13 +50,34 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>EQC API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="parr-and-ar"><a class="sidebar-nav-item" href="#parr-and-ar">PARR and AR</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios-ar"><a class="sidebar-nav-item" href="#successful-update-scenarios-ar">Successful Update Scenarios - AR</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario-ar"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-ar"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios-parr"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-parr"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</a></li><li class="depth2" data-magellan-arrival="booking-retrieval"><a class="sidebar-nav-item" href="#booking-retrieval">Booking Retrieval</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios">Successful Retrieval Scenarios</a></li><li class="depth2" data-magellan-arrival="booking-confirmation"><a class="sidebar-nav-item" href="#booking-confirmation">Booking Confirmation</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios"><a class="sidebar-nav-item" href="#successful-update-scenarios">Successful Update Scenarios</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario">Successful Update with Warning Scenario</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios"><a class="sidebar-nav-item" href="#erroneous-update-scenarios">Erroneous Update Scenarios</a></li><li class="depth3" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">TROUBLESHOOTING</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>EQC API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="parr-and-ar"><a class="sidebar-nav-item" href="#parr-and-ar">PARR and AR</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios-ar"><a class="sidebar-nav-item" href="#successful-update-scenarios-ar">Successful Update Scenarios - AR</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario-ar"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-ar"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios-parr"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-parr"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</a></li><li class="depth2" data-magellan-arrival="booking-retrieval"><a class="sidebar-nav-item" href="#booking-retrieval">Booking Retrieval</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios">Successful Retrieval Scenarios</a></li><li class="depth2" data-magellan-arrival="booking-confirmation"><a class="sidebar-nav-item" href="#booking-confirmation">Booking Confirmation</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios"><a class="sidebar-nav-item" href="#successful-update-scenarios">Successful Update Scenarios</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario">Successful Update with Warning Scenario</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios"><a class="sidebar-nav-item" href="#erroneous-update-scenarios">Erroneous Update Scenarios</a></li><li class="depth3" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">TROUBLESHOOTING</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
 <p>The EQC Simulator is a tool provided by Expedia to help EQC partners develop and verify their EQC implementation of the AR, BR, BC and/or PARR APIs before going live on the production system. It exposes a reduced set of functionalities, mainly targeted at helping EQC partners validate XML syntax and a few basic error/warning handling scenarios.</p>
 <h2 id="parr-and-ar" data-magellan-destination="parr-and-ar">PARR and AR</h2>
 <p>This section describes how the PARR and AR simulators are configured and what kind of scenario can be tested using them.</p>
@@ -905,7 +944,7 @@ The simulator will generate booking content based on hotel ID and booking ID as 
 <p>If you do not see this message, or if you experience any other type of problems with the Expedia QuickConnect® simulator, please <a href="mailto:eqcss@expedia.com">contact us</a></p>
 <h4 id="disclaimer" data-magellan-destination="disclaimer">DISCLAIMER</h4>
 <p>The Expedia QuickConnect® Simulator is not a certification tool and therefore being able to execute all proposed test cases only ensures conformity to the message transport protocol and requisite message formatting. This tool will not validate that a supplier is either (a) using the proper codes as configured in our live system or (b) respecting all of Expedia-specific business validations.</p>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -914,9 +953,9 @@ The simulator will generate booking content based on hotel ID and booking ID as 
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
 <input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Simulator Tool - EQC API"/></body></html>

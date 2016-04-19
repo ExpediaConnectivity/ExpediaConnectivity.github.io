@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Login - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Login - APIs for Expedia Partners</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -31,14 +49,35 @@
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
     }
 </script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>EQC Login</h1>
     <p class="announce">
         Please enter your Expedia Quick Connect (EQC) login details below.
@@ -83,7 +122,7 @@
         });
     }
 
-</script></div><div class="row full-width footer">
+</script></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -92,9 +131,9 @@
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Login"/></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Login"/></body></html>

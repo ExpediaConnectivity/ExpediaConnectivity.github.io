@@ -102,6 +102,7 @@
 .sidebar-nav .sidebar-nav-items li {
   line-height: 20px;
   list-style-type: none;
+  display: block;
 }
 .sidebar-nav .sidebar-nav-items li.depth1 {
   padding-left: 10px;
@@ -219,6 +220,8 @@
 */
 .cards {
   margin-bottom: 50px;
+  text-align: left;
+  margin-top: 0;
 }
 .cards .category {
   margin-top: 20px;
@@ -235,6 +238,12 @@
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 0px 2px #c7c7c7;
+}
+.cards .card a {
+  text-decoration: none;
+}
+.cards .card a:hover {
+  text-decoration: underline;
 }
 .cards .card .card-logo {
   float: left;
@@ -266,11 +275,12 @@
   font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
 }
 .cards .card .links {
-  font-size: 0.9em;
+  font-size: 0.9em !important;
   margin-bottom: 15px;
   font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
 }
 .cards .card .links a {
+  font-size: 0.9rem;
   color: #0065B8;
 }
 .cards .card .links a:hover,
@@ -288,12 +298,25 @@
     Card Pallet
 */
 
+#section-intro_paragraph .inner {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+#section-intro_paragraph .inner p {
+  color: #6b6b6b;
+  font-size: 1.15rem;
+}
+
 /*
     Color Pallet
 */
 /*
     Card Pallet
 */
+html {
+  font-size: 15px;
+  color: #6b6b6b;
+}
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   background: #FFF;
@@ -301,67 +324,99 @@ body {
 .body-grey-background {
   background-color: #EFEFEF;
 }
-a {
+.simple-content {
+  margin-top: 60px;
+}
+.simple-content,
+.api-content {
+  margin-bottom: 100px;
+}
+.simple-content a,
+.api-content a {
   color: #0065B8;
 }
-a:hover {
+.simple-content a:hover,
+.api-content a:hover {
   color: #0065B8;
   text-decoration: underline;
 }
-h1 > a,
-h2 > a,
-h3 > a,
-h4 > a {
+.simple-content h1 > a,
+.api-content h1 > a,
+.simple-content h2 > a,
+.api-content h2 > a,
+.simple-content h3 > a,
+.api-content h3 > a,
+.simple-content h4 > a,
+.api-content h4 > a {
   color: inherit;
 }
-h1 > a:hover,
-h2 > a:hover,
-h3 > a:hover,
-h4 > a:hover {
+.simple-content h1 > a:hover,
+.api-content h1 > a:hover,
+.simple-content h2 > a:hover,
+.api-content h2 > a:hover,
+.simple-content h3 > a:hover,
+.api-content h3 > a:hover,
+.simple-content h4 > a:hover,
+.api-content h4 > a:hover {
   color: inherit;
 }
-h1 {
+.simple-content h1,
+.api-content h1 {
   font-size: 25px;
   line-height: 30px;
 }
-h2 {
+.simple-content h2,
+.api-content h2 {
   font-size: 20px;
   line-height: 24px;
 }
-h3 {
+.simple-content h3,
+.api-content h3 {
   font-size: 17px;
   line-height: 24px;
 }
-h4 {
+.simple-content h4,
+.api-content h4 {
   font-size: 15px;
   line-height: 18px;
 }
-h5 {
+.simple-content h5,
+.api-content h5 {
   font-size: 13px;
   line-height: 18px;
 }
-h6 {
+.simple-content h6,
+.api-content h6 {
   font-size: 13px;
   line-height: 18px;
 }
-#sitenav img {
+.simple-content #sitenav img,
+.api-content #sitenav img {
   vertical-align: middle;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+.simple-content h1,
+.api-content h1,
+.simple-content h2,
+.api-content h2,
+.simple-content h3,
+.api-content h3,
+.simple-content h4,
+.api-content h4,
+.simple-content h5,
+.api-content h5,
+.simple-content h6,
+.api-content h6 {
   margin-bottom: 0.8rem;
 }
-code {
+.simple-content code,
+.api-content code {
   border: none;
   background: none;
   font-family: "Consolas", "Menlo", "Courier", monospace !important;
   word-wrap: break-word;
 }
-code.hljs {
+.simple-content code.hljs,
+.api-content code.hljs {
   border-color: none;
   border-style: none;
   border-width: 0;
@@ -371,6 +426,15 @@ code.hljs {
   word-wrap: break-word;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#diagram-graphics > * {
+  float: none;
+  padding: 0;
+  position: static;
 }
 #sitenav {
   background-color: #5f5f5f;
@@ -410,14 +474,14 @@ code.hljs {
 .index-content {
   margin-top: 60px;
   margin-bottom: 40px;
+  color: #222;
 }
 .index-content p {
-  font-size: 1.3em;
-  margin-bottom: 0;
+  font-size: 1.1rem;
+  line-height: 1.5em;
 }
-.simple-content {
-  margin-top: 60px;
-  margin-bottom: 100px;
+.index-content h3 {
+  color: initial;
 }
 .center {
   text-align: center;
@@ -465,30 +529,33 @@ form .error {
   font-size: 0.7em;
   color: #D62D20;
 }
-.footer {
+footer {
   background: #3f3f3f;
   color: #FFF !important;
   min-height: 130px;
   text-align: center;
-  font-size: 0.8em;
+  font-size: 0.9rem;
   position: absolute;
   z-index: 200;
   padding-bottom: 20px;
 }
-.footer .links {
+footer .links {
   margin-top: 20px;
 }
-.footer .links a,
-.footer .links a:visited {
+footer .links a,
+footer .links a:visited,
+footer .links a:active {
+  font-size: 0.9rem;
   padding: 5px;
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none !important;
+  display: inline;
 }
-.footer .links a:hover,
-.footer .links a:active {
+footer .links a:hover,
+footer .links a:active {
   color: #FFF !important;
 }
-.footer-logo {
+footer .footer-logo {
   background: url(https://www.expediapartnercentral.com/Images/common-sprite.png?r=635811163229379650) no-repeat scroll 0 -46px;
   width: 450px;
   height: 51px;
@@ -505,3 +572,224 @@ form .error {
 }
 
 
+
+/*
+    Color Pallet
+*/
+/*
+    Card Pallet
+*/
+header + * {
+  margin-top: 0;
+}
+header .inner {
+  width: initial;
+}
+nav ul {
+  list-style: none;
+  margin: 0 !important;
+}
+nav li {
+  display: inline-block;
+  padding: 0 0 0 1.6rem;
+}
+nav a {
+  color: rgba(255, 255, 255, 0.7);
+  /*#6b6b6b;*/
+  cursor: pointer;
+}
+#nav-top a {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+#nav-main a {
+  font-size: 1rem;
+  font-weight: 600;
+}
+nav li:hover a {
+  color: #FFF;
+  /*#0065b8;*/
+}
+#nav-top {
+  box-sizing: border-box;
+  /*padding: 0.2rem 0 0.1rem;*/
+  text-align: center;
+  font-size: 0.8rem;
+  background: #EFEFEF;
+  /*#f5f5f5;*/
+}
+#nav-top .inner {
+  text-align: right;
+  max-width: 100%;
+  margin-right: 35px;
+}
+#nav-top .inner a {
+  color: #6b6b6b;
+}
+#nav-main {
+  position: relative;
+  background: #5f5f5f;
+  /*#ffffff;*/
+  height: 61px;
+  display: table;
+}
+#nav-main .inner {
+  text-align: left;
+  max-width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+}
+#nav-main ul {
+  margin: 0 0 0 auto;
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 1.6rem 0 0.4rem;
+  display: table;
+}
+#nav-main li {
+  vertical-align: middle;
+  text-align: center;
+}
+#logo {
+  width: 200px !important;
+  height: auto;
+  vertical-align: middle;
+  margin-left: 35px;
+}
+#logo img {
+  width: 200px !important;
+}
+#menu-wrap {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  text-align: right;
+}
+#menu-toggle {
+  display: none;
+  height: 1.2rem;
+  width: auto;
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  border: none;
+  background: url(../images/menu-hamburger.png) 50% 50% no-repeat;
+}
+#menu-toggle.open {
+  background: url(../images/menu-close.png) 50% 50% no-repeat;
+}
+@media (max-width: 1200px) {
+  #logo {
+    margin-top: 1.1rem;
+  }
+  #nav-main ul {
+    padding: 0.8rem 0;
+  }
+  #nav-main a {
+    line-height: 1.2em;
+  }
+  #nav-main li {
+    max-width: 120px;
+    padding: 0 0 0 1.5rem;
+  }
+}
+@media (max-width: 865px) {
+  #nav-main {
+    padding: 0.7rem 0 0;
+  }
+  #menu-toggle {
+    display: inline-block;
+    top: 1.4rem;
+    right: 1.5rem;
+    cursor: pointer;
+    height: 25px;
+    width: 32px;
+  }
+  #menu-wrap {
+    width: 100%;
+    display: none;
+    text-align: center;
+  }
+  #nav-main .inner {
+    text-align: center;
+  }
+  #logo {
+    margin: 0.3rem 0.5rem 1rem;
+  }
+  #nav-main ul,
+  #nav-main li,
+  #nav-main a {
+    clear: both;
+    display: inline-block;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  #nav-main ul {
+    margin: 0 auto;
+    padding: 1rem 0 1.5rem;
+    width: 50%;
+    min-width: 200px;
+  }
+  #nav-main li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+  #nav-main li:last-child {
+    border-bottom: none;
+  }
+}
+
+/*
+    Color Pallet
+*/
+/*
+    Card Pallet
+*/
+section.hero {
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  display: table;
+  margin: 1rem 0;
+  margin-top: 0;
+}
+section.hero .inner {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  text-shadow: 0 0.1em 0.5em rgba(0, 0, 0, 0.75);
+}
+section.hero .inner h1 {
+  font-size: 2.7rem;
+  margin-bottom: 1.3rem;
+  font-weight: 600;
+  color: #FFF;
+}
+section.hero .inner h2 {
+  color: #FFF;
+  max-width: 600px;
+  font-size: 1.5rem;
+  font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
+}
+.hero-pool {
+  background: url(/images/hero-pool.jpg);
+  background-position: 60% 40%;
+  background-position: center bottom;
+}
+.hero-cityscape {
+  background: url(/images/hero-cityscape.jpg);
+}
+.hero-hotelroom {
+  background: url(/images/hero-hotelroom.jpg);
+  background-position: 62% 5%;
+}
+.hero-oceanview {
+  background: url(/images/hero-oceanview.jpg);
+  background-position: center bottom;
+}
+.hero-meeting {
+  background: url(/images/bg-hero-meeting.jpg);
+  background-position: 62% 5%;
+}

@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>FAQ &amp; Guides - Product API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>FAQ &amp; Guides - Product API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -32,13 +50,34 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename" data-magellan-arrival="faq-guides"><a class="sidebar-nav-item" href="#faq-guides">FAQ &amp; Guides</a></li><li class="depth2" data-magellan-arrival="how-to-get-started-for-first-time-api-users"><a class="sidebar-nav-item" href="#how-to-get-started-for-first-time-api-users">How to Get Started for First Time API Users</a></li><li class="depth2" data-magellan-arrival="how-to-get-authorized-to-access-specific-properties"><a class="sidebar-nav-item" href="#how-to-get-authorized-to-access-specific-properties">How to Get Authorized to Access Specific Properties</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-lodging-data-model"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth2" data-magellan-arrival="simplified-mapping-process-with-product-api"><a class="sidebar-nav-item" href="#simplified-mapping-process-with-product-api">Simplified mapping process with Product API</a></li><li class="depth2" data-magellan-arrival="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-"><a class="sidebar-nav-item" href="#expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-properties"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="creating-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-"><a class="sidebar-nav-item" href="#what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-">What if a Partner System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerPreference Program?</a></li><li class="depth2" data-magellan-arrival="getting-active-or-all-resources-when-calling-a-list-endpoint"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth2" data-magellan-arrival="modify-as-a-full-overlay"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-s-logic-around-room-names"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</a></li><li class="depth3" data-magellan-arrival="using-predefined-names"><a class="sidebar-nav-item" href="#using-predefined-names">Using Predefined Names</a></li><li class="depth3" data-magellan-arrival="using-room-name-attributes"><a class="sidebar-nav-item" href="#using-room-name-attributes">Using Room Name Attributes</a></li><li class="depth2" data-magellan-arrival="understanding-cancellation-change-policy"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth2" data-magellan-arrival="optional-fields-in-a-rate-plan-create-request"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="faq-guides" data-magellan-destination="faq-guides">FAQ &amp; Guides</h1>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename" data-magellan-arrival="faq-guides"><a class="sidebar-nav-item" href="#faq-guides">FAQ &amp; Guides</a></li><li class="depth2" data-magellan-arrival="how-to-get-started-for-first-time-api-users"><a class="sidebar-nav-item" href="#how-to-get-started-for-first-time-api-users">How to Get Started for First Time API Users</a></li><li class="depth2" data-magellan-arrival="how-to-get-authorized-to-access-specific-properties"><a class="sidebar-nav-item" href="#how-to-get-authorized-to-access-specific-properties">How to Get Authorized to Access Specific Properties</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-lodging-data-model"><a class="sidebar-nav-item" href="#understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</a></li><li class="depth2" data-magellan-arrival="simplified-mapping-process-with-product-api"><a class="sidebar-nav-item" href="#simplified-mapping-process-with-product-api">Simplified mapping process with Product API</a></li><li class="depth2" data-magellan-arrival="expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-"><a class="sidebar-nav-item" href="#expedia-traveler-preference-program-what-is-it-and-how-is-it-reflected-in-the-property-and-rate-plan-resources-">Expedia Traveler Preference Program: What Is It, and How Is It Reflected in the Property and Rate Plan Resources?</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-properties"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-properties">Identifying ExpediaTravelerPreference Properties</a></li><li class="depth3" data-magellan-arrival="identifying-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#identifying-expediatravelerpreference-rate-plans">Identifying ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="creating-expediatravelerpreference-rate-plans"><a class="sidebar-nav-item" href="#creating-expediatravelerpreference-rate-plans">Creating ExpediaTravelerPreference Rate Plans</a></li><li class="depth3" data-magellan-arrival="what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-"><a class="sidebar-nav-item" href="#what-if-a-partner-system-requires-2-distinct-rate-plans-to-support-the-expediatravelerpreference-program-">What if a Partner System Requires 2 Distinct Rate Plans to Support the ExpediaTravelerPreference Program?</a></li><li class="depth2" data-magellan-arrival="getting-active-or-all-resources-when-calling-a-list-endpoint"><a class="sidebar-nav-item" href="#getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</a></li><li class="depth2" data-magellan-arrival="modify-as-a-full-overlay"><a class="sidebar-nav-item" href="#modify-as-a-full-overlay">Modify as a full overlay</a></li><li class="depth2" data-magellan-arrival="understanding-expedia-s-logic-around-room-names"><a class="sidebar-nav-item" href="#understanding-expedia-s-logic-around-room-names">Understanding Expedia&#39;s Logic Around Room Names</a></li><li class="depth3" data-magellan-arrival="using-predefined-names"><a class="sidebar-nav-item" href="#using-predefined-names">Using Predefined Names</a></li><li class="depth3" data-magellan-arrival="using-room-name-attributes"><a class="sidebar-nav-item" href="#using-room-name-attributes">Using Room Name Attributes</a></li><li class="depth2" data-magellan-arrival="understanding-cancellation-change-policy"><a class="sidebar-nav-item" href="#understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</a></li><li class="depth2" data-magellan-arrival="optional-fields-in-a-rate-plan-create-request"><a class="sidebar-nav-item" href="#optional-fields-in-a-rate-plan-create-request">Optional Fields in a Rate Plan Create Request</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="faq-guides" data-magellan-destination="faq-guides">FAQ &amp; Guides</h1>
 <p>This section contains various Frequently Asked Questions, as well as documentation that will help partners understand how Expedia works, and also how to use the product API to correctly reflect partner&#39;s intent when managing room types and rate plans.</p>
 <p><a name="/howtogetstarted"></a></p>
 <h2 id="how-to-get-started-for-first-time-api-users" data-magellan-destination="how-to-get-started-for-first-time-api-users">How to Get Started for First Time API Users</h2>
@@ -349,7 +388,7 @@ The Product API enables partners to first create a room type, and subsequently c
 <p>The create response will contain all the fields originally provided in the request. It also includes the default values of the fields that were not provided in the request. If an error occurred, the response contains one or more errors.</p>
 <p><em>About optional fields</em>: some optional fields may not have any values defined in the Expedia system. In this case the fields are omitted completely in the response.</p>
 <p><em>About fields documented as not accepted in request, but returned in response</em>: If such fields (e.g. Compensation) are provided in the request, the API validates that the data provided matches what Expedia defaults to. Otherwise, the API rejects the rate plan creation with an error message indicating why it was rejected. For example, a partner does not need to specify the Compensation in the product create request. If a partner was to include the compensation elements in a request, the API will check whether it matches the property contract, and reject the message if does not.</p>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -358,9 +397,9 @@ The Product API enables partners to first create a room type, and subsequently c
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
 <input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="FAQ & Guides - Product API"/></body></html>

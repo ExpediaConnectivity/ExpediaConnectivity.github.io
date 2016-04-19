@@ -1,7 +1,20 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Product API</title><link rel="stylesheet" href="/css/foundation.min.css">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Product API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
 <link rel="stylesheet" href="/css/code/styles/github-gist.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
 <link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
 <script src="/js/jquery.js"></script>
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/highlight.pack.js"></script>
@@ -9,6 +22,11 @@
 <script src="/js/Core.js"></script>
 <script src="/js/epsga.js"></script>
 <script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -32,13 +50,34 @@
     }
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
-<div class="row full-width">
-    <nav class="large-12 small-12 columns" id="sitenav">
-        <a class="logo" href="/"><img src="/images/DevLogo_40k.png"/></a>
-        <a class="feedback show-for-medium-up" href="mailto:eqcss@expedia.com">Contact Support</a>
-        <a class="feedback show-for-medium-up" href="http://expediaquickconnect.com">Legacy Quickconnect</a>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+            </ul>
+        </div>
     </nav>
-</div><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-property-room-type-or-rate-plan-information"><a class="sidebar-nav-item" href="#reading-property-room-type-or-rate-plan-information">Reading property, room type or rate plan information</a></li><li class="depth2" data-magellan-arrival="add-a-rate-plan"><a class="sidebar-nav-item" href="#add-a-rate-plan">Add a Rate Plan</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+            <!--
+            <div id="menu-toggle"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li><a href="#">Connectivity for Partners</a></li>
+                    <li><a href="#">Connectivity for Properties</a></li>
+                    <li><a href="#">Solutions</a></li>
+                    <li><a href="#">Providers</a></li>
+                    <li><a href="#">Developer APIs</a></li>
+                </ul>
+            </div>-->
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-property-room-type-or-rate-plan-information"><a class="sidebar-nav-item" href="#reading-property-room-type-or-rate-plan-information">Reading property, room type or rate plan information</a></li><li class="depth2" data-magellan-arrival="add-a-rate-plan"><a class="sidebar-nav-item" href="#add-a-rate-plan">Add a Rate Plan</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
 <p>The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.</p>
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
@@ -403,7 +442,7 @@ password: cc47an46
   }
 }
 </code></pre>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><div class="row full-width footer">
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Contact Expedia</a> |
@@ -412,9 +451,9 @@ password: cc47an46
         <div class="show-for-large-up">
             <div class="footer-logo">&nbsp;</div>
         </div>
-        <div>© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</div>
+</footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
 <input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Product API"/></body></html>
