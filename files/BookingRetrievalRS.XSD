@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/BR/2014/01" targetNamespace="http://www.expediaconnect.com/EQC/BR/2014/01" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0">
+    <xs:element name="BookingRetrievalRS">
+        <xs:complexType>
+            <xs:choice>
+                <xs:element name="Bookings">
+                    <xs:annotation>
+                        <xs:documentation>If this node appears alone, without any child, the request is successful but there are no bookings matching request.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Booking" minOccurs="0" maxOccurs="125">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="Hotel">
+                                            <xs:complexType>
+                                                <xs:attribute name="id" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:integer">
+                                                            <xs:minInclusive value="0"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="RoomStay">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="StayDate">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="arrival" type="xs:date" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Arrival date of the customer (check in date)</xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="departure" type="xs:date" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Departure date of the customer (check out date)</xs:documentation>
+                                                                </xs:annotation>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="GuestCount">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="Child" minOccurs="0" maxOccurs="6">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>This element will appear to hotels specifically enabled to see it. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="age" use="required">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>Age of each individual child sharing the room.</xs:documentation>
+                                                                            </xs:annotation>
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:int">
+                                                                                    <xs:minInclusive value="0"/>
+                                                                                    <xs:maxInclusive value="18"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="adult" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:int">
+                                                                        <xs:minInclusive value="0"/>
+                                                                        <xs:maxInclusive value="28"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="child" use="optional">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:int">
+                                                                        <xs:minInclusive value="0"/>
+                                                                        <xs:maxInclusive value="28"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="PerDayRates">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="PerDayRate" maxOccurs="28">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="stayDate" type="xs:date" use="required"/>
+                                                                        <xs:attribute name="baseRate" use="required">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>Base rate for one day of stay, including promotional discounts if any. Expedia always return net rate for merchant bookings, even when properties are managing LAR.</xs:documentation>
+                                                                            </xs:annotation>
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:decimal">
+                                                                                    <xs:fractionDigits value="2"/>
+                                                                                    <xs:minInclusive value="0.00"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="extraPersonFees" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:decimal">
+                                                                                    <xs:fractionDigits value="2"/>
+                                                                                    <xs:minInclusive value="0.00"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="hotelServiceFees" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:decimal">
+                                                                                    <xs:fractionDigits value="2"/>
+                                                                                    <xs:minInclusive value="0.00"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="promoName" use="optional">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>Name of promotion applied to base rate. Promotions and their notification codes are set up by the Expedia Market Manager for the property.
+If property uses Expedia Flexible Rate, the string will begin with “EFR*” when an Expedia Flexible Rate is applied to this stay date.
+Promotions may also be referred to as DRRs, or Dynamic Rate Rules.</xs:documentation>
+                                                                            </xs:annotation>
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:maxLength value="80"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="currency" use="optional">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:minLength value="3"/>
+                                                                        <xs:maxLength value="3"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Total">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="amountAfterTaxes" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Name of promotion applied to base rate. Promotions and their notification codes are set up by the Expedia Market Manager for the property.
+If property uses Expedia Flexible Rate, the string will begin with “EFR*” when an Expedia Flexible Rate is applied to this stay date.
+Promotions may also be referred to as DRRs, or Dynamic Rate Rules.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:decimal">
+                                                                        <xs:fractionDigits value="2"/>
+                                                                        <xs:minInclusive value="0.00"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="amountOfTaxes" use="optional">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Amount of taxes included in the @amountAfterTaxes.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:decimal">
+                                                                        <xs:fractionDigits value="2"/>
+                                                                        <xs:minInclusive value="0.00"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="currency" use="optional">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>3-letter currency code assigned to property in Expedia's hotel extranet (per ISO 4217 specification)</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:minLength value="3"/>
+                                                                        <xs:maxLength value="3"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="PaymentCard" minOccurs="0">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Applicable to booking paid by credit card. Contains details of the credit card, including card type, card number, expiration date and card holder name and address.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="CardHolder" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:attribute name="name" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:minLength value="1"/>
+                                                                                    <xs:maxLength value="64"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="address" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:minLength value="1"/>
+                                                                                    <xs:maxLength value="64"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="city" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:minLength value="1"/>
+                                                                                    <xs:maxLength value="64"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="stateProv" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:minLength value="2"/>
+                                                                                    <xs:maxLength value="8"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="country" use="optional">
+                                                                            <xs:annotation>
+                                                                                <xs:documentation>2 letter ISO country code</xs:documentation>
+                                                                            </xs:annotation>
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:pattern value="[a-zA-Z]{2}"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                        <xs:attribute name="postalCode" use="optional">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:minLength value="1"/>
+                                                                                    <xs:maxLength value="16"/>
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:attribute>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                            <xs:attribute name="cardCode" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>2 letter code of th ecard code issuer. Ex. VI for Visa, MC for Master Card.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:minLength value="2"/>
+                                                                        <xs:maxLength value="2"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="cardNumber" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>16 digit credit card number</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:minLength value="1"/>
+                                                                        <xs:maxLength value="19"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="seriesCode" use="optional">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>CVV/CSV code.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:minLength value="1"/>
+                                                                        <xs:maxLength value="8"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="expireDate" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Format MMYY</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:pattern value="(0[1-9]|1[0-2])[0-9][0-9]"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="roomTypeID" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>Room type ID defined by Expedia and mapped by hotel in its system.</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:minLength value="1"/>
+                                                            <xs:maxLength value="50"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                                <xs:attribute name="ratePlanID" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>Rate Plan ID defined by Expedia and mapped by the hotel in its system.</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:minLength value="1"/>
+                                                            <xs:maxLength value="50"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="PrimaryGuest">
+                                            <xs:annotation>
+                                                <xs:documentation>
+</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="Name">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="givenName" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>First Name of the main customer (guest) for this room booking.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:maxLength value="60"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="middleName" use="optional">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Middle Name of the main customer (guest) for this room booking, if any.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:maxLength value="60"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="surname" use="required">
+                                                                <xs:annotation>
+                                                                    <xs:documentation>Surname (last name) of the main customer (guest) for this room booking.</xs:documentation>
+                                                                </xs:annotation>
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:maxLength value="60"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Phone" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="countryCode" type="xs:int" use="optional"/>
+                                                            <xs:attribute name="cityAreaCode" type="xs:int" use="optional"/>
+                                                            <xs:attribute name="number" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:maxLength value="32"/>
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                            <xs:attribute name="extension" use="optional">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:integer"/>
+                                                                </xs:simpleType>
+                                                            </xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="Email" minOccurs="0">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="128"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="RewardProgram" minOccurs="0" maxOccurs="2">
+                                            <xs:annotation>
+                                                <xs:documentation>Contains reward program code and customer account ID for the program. Customer can specify up to two programs at reservation.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:attribute name="code" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>Reward program code, as defined by Expedia. Refer to online documentation for a complete list of the possible codes</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string"/>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                                <xs:attribute name="number" use="required">
+                                                    <xs:annotation>
+                                                        <xs:documentation>Customer's account no - unique ID from reward program card number</xs:documentation>
+                                                    </xs:annotation>
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:maxLength value="32"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="SpecialRequest" minOccurs="0" maxOccurs="5">
+                                            <xs:annotation>
+                                                <xs:documentation>Special Request made by the customer. Can have up to 5 different special requests, and each one can be one out of 5 types:
+•Bedding Type
+•Smoking or not
+•Multi room booking
+•Free text (guest comments entered at booking on Expedia)
+•Payment card info
+Types are identified by code attribute on this element.
+</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="code" use="required">
+                                                            <xs:annotation>
+                                                                <xs:documentation>Refer to online documentation for a complete list of the possible codes.</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string"/>
+                                                            </xs:simpleType>
+                                                        </xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Booking ID generated by Expedia. Uniquely identifies a booking. Should be used to link modifications and cancellations to initial bookings in hotel system and must be kept in hotel system.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:integer">
+                                                <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="type" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Type of booking record. Possible values are: "Book" for new reservations, "Modify" for modified bookings, and "Cancel" for cancelled bookings.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="Book"/>
+                                                <xs:enumeration value="Modify"/>
+                                                <xs:enumeration value="Cancel"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="createDateTime" type="xs:dateTime" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Date and time when this booking transaction was made on Expedia, including time zone information. 
+Timestamp as defined in ISO 8601 format. Will always be in the following format: YYYY-MM-DDThh:mm:ssZ  (time is UTC). </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:attribute>
+                                    <xs:attribute name="source" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Booking source (Expedia Inc brand on which the booking was made).</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string"/>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="status" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Status of booking at the time the BR request came. Possible values:
+- pending: booking was pending, never retrieved before, first time being returned.
+- retrieved: booking was already retrieved in the past, but not confirmed yet.
+- confirmed: retrieved and confirmed already.
+- expired: not supported yet</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:enumeration value="pending"/>
+                                                <xs:enumeration value="retrieved"/>
+                                                <xs:enumeration value="confirmed"/>
+                                                <xs:enumeration value="expired"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="confirmNumber">
+                                        <xs:annotation>
+                                            <xs:documentation>Hotel confirmation number for this specific booking instance. Will be returned if available.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:maxLength value="50"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Error" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="code" use="required">
+                                    <xs:annotation>
+                                        <xs:documentation>Refer to Expedia QuickConnect specification online for a complete list of the possible codes. This element cannot be present at the same time as the 'Bookings' element.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:positiveInteger">
+                                            <xs:minInclusive value="1000"/>
+                                            <xs:maxInclusive value="9999"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

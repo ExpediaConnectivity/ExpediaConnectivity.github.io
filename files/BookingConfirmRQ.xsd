@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns="http://www.expediaconnect.com/EQC/BC/2007/09" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.expediaconnect.com/EQC/BC/2007/09" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0.0">
+	<xs:element name="BookingConfirmRQ">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Authentication">
+					<xs:complexType>
+						<xs:attribute name="username" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="4"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="password" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="6"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Hotel">
+					<xs:annotation>
+						<xs:documentation>If not specified, Expedia will return all the bookings linked to the username specified. If the user has access to more than one hotel, bookings for all the hotels that the user has access to will be returned.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="id" use="required">
+							<xs:annotation>
+								<xs:documentation>Expedia ID - mapped by supplier</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:integer">
+									<xs:minInclusive value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="BookingConfirmNumbers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="BookingConfirmNumber" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="bookingType" use="required">
+										<xs:annotation>
+											<xs:documentation>Type of booking record. Possible values are: "Book" for new reservations, "Modify" for modified bookings and "Cancel" for cancelled bookings.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Book"/>
+												<xs:enumeration value="Modify"/>
+												<xs:enumeration value="Cancel"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="bookingID" type="xs:integer" use="required"/>
+									<xs:attribute name="confirmNumber" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:maxLength value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="confirmTime" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:dateTime"/>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

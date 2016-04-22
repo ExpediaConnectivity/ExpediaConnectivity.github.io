@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2011 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns="http://www.expediaconnect.com/EQC/BC/2007/08" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.expediaconnect.com/EQC/BC/2007/08" elementFormDefault="qualified" attributeFormDefault="unqualified" version="0.8.5">
+	<xs:element name="BookingConfirmRS">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="Success">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Warning" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:simpleContent>
+										<xs:extension base="xs:string">
+											<xs:attribute name="code" type="xs:int" use="required"/>
+											<xs:attribute name="bookingID" type="xs:integer" use="optional"/>
+											<xs:attribute name="bookingType" type="xs:string" use="optional"/>
+											<xs:attribute name="confirmNumber" type="xs:string" use="optional"/>
+										</xs:extension>
+									</xs:simpleContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Error" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:simpleContent>
+							<xs:extension base="xs:string">
+								<xs:attribute name="code" use="required">
+									<xs:annotation>
+										<xs:documentation>Refer to online documentation for a complete list of the possible codes.</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:int">
+											<xs:minInclusive value="1000"/>
+											<xs:maxInclusive value="9999"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:simpleContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
