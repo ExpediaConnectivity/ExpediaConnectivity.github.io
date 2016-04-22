@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07" targetNamespace="http://www.expediaconnect.com/EQC/PAR/2013/07" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.5.0">
+	<xs:element name="ProductAvailRateRetrievalRQ">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Authentication">
+					<xs:complexType>
+						<xs:attribute name="username" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="4"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="password" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="6"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Hotel">
+					<xs:complexType>
+						<xs:attribute name="id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ParamSet">
+					<xs:complexType>
+						<xs:choice>
+              <xs:element name="ProductRetrieval">
+								<xs:complexType>
+									<xs:attribute name="productStatus">
+										<xs:annotation>
+											<xs:documentation>Active, Inactive, All (default Active</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:NMTOKEN">
+												<xs:enumeration value="Active"/>
+												<xs:enumeration value="Inactive"/>
+												<xs:enumeration value="All"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="returnRateLink" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Default value if not specified is false.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="returnRoomAttributes" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Default value if not specified is false. Will return all room-level attributes such as smoking preferences, max occupancy by room, max occupancy by age categories, and rate thresholds.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="returnRatePlanAttributes" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Default value if not specified is false. Will return all rate plan level attributes such as people included in base rate, minimum and maximum Advance Booking Window Settings, etc.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="returnCompensation" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Default value if not specified is false. Will return compensation rule for each rate plan.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="returnCancelPolicy" type="xs:boolean">
+									  <xs:annotation>
+									    <xs:documentation>Default value if not specified is false. Will return cancel policy for each rate plan.</xs:documentation>
+									  </xs:annotation>
+									</xs:attribute>                  
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="AvailRateRetrieval">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="RoomType" minOccurs="0" maxOccurs="20">
+											<xs:annotation>
+												<xs:documentation>Optional list of room type and rate plan IDs. Default: all active products will be returned.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="RatePlan" minOccurs="0" maxOccurs="20">
+														<xs:complexType>
+															<xs:attribute name="id" use="required">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:minLength value="1"/>
+																		<xs:maxLength value="50"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="id" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:minLength value="1"/>
+															<xs:maxLength value="50"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="from" type="xs:date" use="required"/>
+									<xs:attribute name="to" type="xs:date" use="required"/>
+									<xs:attribute name="inventory" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>filter to receive base, flex and total allocation</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="roomAvailStatus" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>filter to receive closed at RoomType level</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="rateAvailStatus" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>filter to receive closed at ratePlan level</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="restrictions" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>filter to receive CTA, CTD, Min and Max LOS</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="rates" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>filter to receive Rate + rate change indicator if applicable</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+            </xs:choice>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

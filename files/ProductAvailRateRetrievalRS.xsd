@@ -1,0 +1,902 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/PAR/2013/07" targetNamespace="http://www.expediaconnect.com/EQC/PAR/2013/07" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.5.0">
+    <xs:element name="ProductAvailRateRetrievalRS">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:choice>
+                    <xs:element name="Error" maxOccurs="unbounded">
+                        <xs:complexType>
+                            <xs:simpleContent>
+                                <xs:extension base="xs:string">
+                                    <xs:attribute name="code" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Refer to Expedia QuickConnect specification online for a complete list of the possible codes.</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:positiveInteger">
+                                                <xs:minInclusive value="1000"/>
+                                                <xs:maxInclusive value="9999"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:extension>
+                            </xs:simpleContent>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="ProductList">
+                        <xs:annotation>
+                            <xs:documentation>Returned when parameter “ProductRetrieval” is specified in Request. Contains the list of active products for this hotel by default.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Hotel">
+                                    <xs:complexType>
+                                        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+                                        <xs:attribute name="name" use="required">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="0"/>
+                                                    <xs:maxLength value="255"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="city" use="required">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="0"/>
+                                                    <xs:maxLength value="255"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="RoomType" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="BedType" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                    <xs:documentation>List of bed types supported by this room. When more than 1 bed type is returned, the room is assumed to support one OR the other, and the customer is given a choice during the booking process. When 2 different beds are offered within a single room (ex: 1 queen + 1 sofa), this will be returned as a single ID and a single name saying: 1 queen and 1 sofa bed.</xs:documentation>
+                                                </xs:annotation>
+                                                <xs:complexType>
+                                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                                    <xs:attribute name="name">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="255"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="OccupancyByAge" minOccurs="0" maxOccurs="6">
+                                                <xs:complexType>
+                                                    <xs:attribute name="ageCategory" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Adult, ChildAgeA, ChildAgeB,  ChildAgeC, ChildAgeD or Infant</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="Adult"/>
+                                                                <xs:enumeration value="ChildAgeA"/>
+                                                                <xs:enumeration value="ChildAgeB"/>
+                                                                <xs:enumeration value="ChildAgeC"/>
+                                                                <xs:enumeration value="ChildAgeD"/>
+                                                                <xs:enumeration value="Infant"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="minAge" type="xs:nonNegativeInteger" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Minimum age to be considered in this category. 2 categories cannot have the same min age.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="maxOccupants" type="xs:nonNegativeInteger" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Maximum occupants of this age category that can be accomodated in this room.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="RateThreshold" minOccurs="0" maxOccurs="2">
+                                                <xs:complexType>
+                                                    <xs:attribute name="type">
+                                                        <xs:annotation>
+                                                            <xs:documentation>NetRate or SellRate.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="NetRate"/>
+                                                                <xs:enumeration value="SellRate"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="minAmount" type="xs:double"/>
+                                                    <xs:attribute name="maxAmount" type="xs:double"/>
+                                                    <xs:attribute name="source">
+                                                        <xs:annotation>
+                                                            <xs:documentation>RecentReservations: automatically computed from the last few new reservations made for that room. 
+											Manual: manually defined by Expedia.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="RecentReservations"/>
+                                                                <xs:enumeration value="Manual"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="RatePlan" minOccurs="0" maxOccurs="unbounded">
+                                                <xs:complexType>
+                                                    <xs:sequence>
+                                                        <xs:element name="DayOfWeekBookingRestriction" minOccurs="0" maxOccurs="4">
+                                                            <xs:annotation>
+                                                                <xs:documentation>Defines if people looking for this rate must meet certain DOW booking pattern restrictions. Type can be one of 4:
+- StartOn: People looking for this rate must checkin on these selected day(s) of week.
+-EndOn: People looking for this rate must checkout on these selected day(s) of week.
+-IncludeOneOf: People looking for this rate must include at least one of these selected day(s) of week.
+- IncludeAll: People looking for this rate must include all these selected day(s) of week.
+By default, for rates with none of these restrictions, this element is not returned at all. It will only be returned if there is a specific restriction set that would prevent people for specific checkin or checkout DOW.</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                                <xs:attribute name="type">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Type of restriction. </xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:enumeration value="StartOn"/>
+                                                                            <xs:enumeration value="EndOn"/>
+                                                                            <xs:enumeration value="IncludeOneOf"/>
+                                                                            <xs:enumeration value="IncludeAll"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="sun" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Sunday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="mon" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Monday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="tue" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Tuesday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="wed" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Wednesday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="thu" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Thursday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="fri" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Friday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="sat" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Saturday</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="RatePlanLinkDefinition" minOccurs="0">
+                                                            <xs:annotation>
+                                                                <xs:documentation>Definition of the current applicable rate linkage rule. If more than 1 rule exists, details can be found online in ExpediaPartnerCentral.</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                                <xs:attribute name="linkType" use="required">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Defines how link amount is interpreted: absolute value or percentage.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:NMTOKEN">
+                                                                            <xs:enumeration value="Percent"/>
+                                                                            <xs:enumeration value="Amount"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="linkValue" type="xs:double" use="required">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Value to apply to the parent rate value to obtain the linked value. It can be a positive or negative value.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Compensation" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:annotation>
+                                                                <xs:documentation>The current applicable compensation rule of rate plan.</xs:documentation>
+                                                            </xs:annotation>
+                                                            <xs:complexType>
+                                                                <xs:attribute name="default" type="xs:boolean" use="required">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>When set to true, only percent and optionally minAmount will be returned. When set to false, from/to will always be returned, along with other optional attributes.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="percent" type="xs:double" use="required">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>The compensation rate by default (percentage). Returns a number expressed between 0.00 and 100.00 inclusively (along with up to 2 decimals).</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="minAmount" type="xs:double" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>The minimum compensation amount by default (absolute value, up to 2 decimals.)</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="from" type="xs:date">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Always specified for non-default compensation rules. Effective date at which compensation applies, can be in the past.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="to" type="xs:date">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>Always specified for non-default compensation rules. The end date of this specific compensation setting.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="sun" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="mon" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="tue" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="wed" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="thu" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="fri" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                                <xs:attribute name="sat" type="xs:boolean" use="optional">
+                                                                    <xs:annotation>
+                                                                        <xs:documentation>True by default. Define if rules only apply to this day of week.</xs:documentation>
+                                                                    </xs:annotation>
+                                                                </xs:attribute>
+                                                            </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="CancelPolicy" type="CancelPolicyType" minOccurs="0" maxOccurs="unbounded">
+                                                            <xs:annotation>
+                                                                <xs:documentation>The current applicable cancellation policy for the rate plan. The same cancellation policy can be applied to multiple rate plans within Expedia, but PARR will return the applicable cancellation policy for each rate plan. Cancellation policies apply to both reservation cancellations and modifications made to the product initially booked or to stay dates.</xs:documentation>
+                                                            </xs:annotation>
+                                                        </xs:element>
+                                                    </xs:sequence>
+                                                    <xs:attribute name="id" use="required">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:minLength value="1"/>
+                                                                <xs:maxLength value="50"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="code" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Customizable identifier (can only be defined/modified by Expedia). Default value is rate plan type (RoomOnly, Corp, PKG).</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:minLength value="1"/>
+                                                                <xs:maxLength value="50"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="name" use="required">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:minLength value="0"/>
+                                                                <xs:maxLength value="255"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="status" type="statusType" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Active or Inactive</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="type" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Standalone, Package or Corporate</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="Standalone"/>
+                                                                <xs:enumeration value="Package"/>
+                                                                <xs:enumeration value="Corporate"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="distributionModel" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Possible values are: ExpediaCollect, HotelCollect.
+Rate plan with a “ExpediaCollect” distribution model will be used to book reservations under Expedia Collect.
+Rate plan with an “HotelCollect” distribution model will be used to book reservations under Hotel Colllect.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="HotelCollect"/>
+                                                                <xs:enumeration value="ExpediaCollect"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="rateAcquisitionType" use="required">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Possible values are:
+- NetRate: Remittance Rate. Under the Expedia Collect model the remittance rate provided to Expedia is equal to the Hotels lowest available rate for that product less the compensation.
+- LowestAvailableRate: The lowest publically available rate for a room. Providing Expedia with LAR removes the need for hotel or hotel system to calculate the remittance rate for Expedia Collect.
+- SellRate:Rate at which hotel sells room to the end customer in Hotel Collect.
+- Derived: When flex products are enabled only one rate needs to be updated, either remittance rate for Expedia Collect or sell rate for Hotel Collect. The corresponding rate will be derived for the other product, and cannot be managed.
+- Linked: for linked rate plans. When the rate code is linked, rateLink attributes and RatePlanLinkDefinition will have values defined.  
+EQC partner must send rate update using the correct rate acquizition type defined in the Expedia system. Any rate plan with a “Derived” or "Linked" rate acquisition type cannot be updated by the EQC partner.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:NMTOKEN">
+                                                                <xs:enumeration value="NetRate"/>
+                                                                <xs:enumeration value="LowestAvailableRate"/>
+                                                                <xs:enumeration value="SellRate"/>
+                                                                <xs:enumeration value="Derived"/>
+                                                                <xs:enumeration value="Linked"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="parentId">
+                                                        <xs:annotation>
+                                                            <xs:documentation>For derived or linked rates, rate plan id of the parent.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:minLength value="1"/>
+                                                                <xs:maxLength value="50"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="rateLinkStart" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Earliest start date of the rate link rule, if one exists.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="rateLinkEnd" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Latest end date of the rate link rule. If rate link rule has no end date, it will not be provided, only start date will appear.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="isAvailStatusLinked" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Is rate plan availability status (open/close) linked to parent or not.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="areMinMaxLOSLinked" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Are Min and Max LOS restrictions linked to parent or not.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="isCTALinked" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Is Closed to Arrival restriction linked to parent or not.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="isCTDLinked" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Is Closed to Departure restriction linked to parent or not.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="rateLinkExceptions" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Indicates if any exceptions were defined, where specific days would not be linked. This is a boolean value. To obtain details about exceptional dates, please log into ExpediaPartnerCentral.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="pricingModel">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Pricing model assigned to rate plan. Will be identical across all rate plans, unless property is undergoing pricing model conversion.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:enumeration value="PerDayPricing"/>
+                                                                <xs:enumeration value="PerPersonPricing"/>
+                                                                <xs:enumeration value="OccupancyBasedPricing"/>
+                                                                <xs:enumeration value="PerDayPricingByDayOfArrival"/>
+                                                                <xs:enumeration value="PerDayPricingByLengthOfStay"/>
+                                                                <xs:enumeration value="PerPersonPricingByDayOfArrival"/>
+                                                                <xs:enumeration value="OccupancyBasedPricingByDayOfArrival"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="occupantsForBaseRate" type="xs:int" use="optional">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The number of occupants that are included in the rate provided for this rate plan. Only provided for per-day pricing.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="depositRequired" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>For HotelCollect distribution model only. Indicates if a deposit is expected to be collected by hotel at time of booking.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="minLOSDefault">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Default minimum LenghtOfStay restriction. Set to 1 by default. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:int">
+                                                                <xs:minInclusive value="1"/>
+                                                                <xs:maxInclusive value="28"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="maxLOSDefault">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Default maximum LenghtOfStay restriction. Set to 28 by default. Will always be considered along the value defined for each stay date, and the most restrictive of this default and the daily restriction will prevail.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:int">
+                                                                <xs:minInclusive value="1"/>
+                                                                <xs:maxInclusive value="28"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="minAdvBookDays" type="xs:int" use="optional">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The minimum days before a stay date that the rate plan can be sold.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="maxAdvBookDays" type="xs:int" use="optional">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The maximum days before a stay date that the rate plan can be sold.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="bookDateStart" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="bookDateEnd" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Date at which this rate plan stops being available for searching on any Expedia POS. If in 2079, indicates this rate plan book end date date is unrestricted.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="travelDateStart" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Date at which customers can start checking in for a stay including this rate plan. If in the past, indicates rate plan travel start date is not restricted.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="travelDateEnd" type="xs:date">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Latest date at which customers can checkout for a stay including this rate plan. If in 2079, indicates rate plan travel end date is not restricted.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="mobileOnly" type="xs:boolean">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Indicates this rate plan is only available through shopping done on mobile devices.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="createDateTime" type="xs:dateTime">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The creation date of this rate plan.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                    <xs:attribute name="updateDateTime" type="xs:dateTime">
+                                                        <xs:annotation>
+                                                            <xs:documentation>The latest update date of this rate plan.</xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:attribute>
+                                                </xs:complexType>
+                                            </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="id" use="required">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="1"/>
+                                                    <xs:maxLength value="50"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="code" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>Customizable identifier (can only be defined/modified by Expedia). Default value is room type name.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="1"/>
+                                                    <xs:maxLength value="50"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="name" use="required">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="0"/>
+                                                    <xs:maxLength value="255"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="status" type="statusType" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>Active or Inactive</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:attribute>
+                                        <xs:attribute name="smokingPref" use="optional">
+                                            <xs:annotation>
+                                                <xs:documentation>Non-Smoking, Smoking, Either</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="NonSmoking"/>
+                                                    <xs:enumeration value="Smoking"/>
+                                                    <xs:enumeration value="Either"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                        <xs:attribute name="maxOccupants" type="xs:int">
+                                            <xs:annotation>
+                                                <xs:documentation>Maximum number of people the room can accomodate, across all age categories</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:attribute>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Warning" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:simpleContent>
+                                            <xs:extension base="xs:string">
+                                                <xs:attribute name="code" use="required">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:int">
+                                                            <xs:minInclusive value="12000"/>
+                                                            <xs:maxInclusive value="13000"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+                                            </xs:extension>
+                                        </xs:simpleContent>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                    <xs:element name="AvailRateList">
+                        <xs:annotation>
+                            <xs:documentation>Returned when “AvailRateRetrieval” is specified in the request. Contains avail and/or rate information for the products requested.</xs:documentation>
+                        </xs:annotation>
+                        <xs:complexType>
+                            <xs:sequence>
+                                <xs:element name="Hotel">
+                                    <xs:complexType>
+                                        <xs:attribute name="id" type="xs:unsignedInt" use="required"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="AvailRate" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:sequence>
+                                            <xs:element name="RoomType" type="RoomTypeType" maxOccurs="unbounded">
+                                                <xs:annotation>
+                                                    <xs:documentation>Room Types belonging to that hotel. By default, only active room types are returned. This element is repeated once per room type that exists per hotel.</xs:documentation>
+                                                </xs:annotation>
+                                            </xs:element>
+                                        </xs:sequence>
+                                        <xs:attribute name="date" type="xs:date" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>Date for which the avail, rate and restriction data provided for the product applies.
+When only one rate plan ID is requested, we will return a maximum of 365 days of data in a response. If more than 365 days were requested, we will return the first 365 days of the date range, without any other error or warning indicating we didn’t return everything requested.
+When requesting more than one rate plan ID, or not requesting a specific room or rate plan ID, we will return a maximum of 31 days in a response. If more than 31 days were requested, we will return the first 31 days of the date range, without any other error or warning indicating we didn’t return everything requested.
+</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:attribute>
+                                    </xs:complexType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:complexType>
+                    </xs:element>
+                </xs:choice>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="DateRangeType">
+        <xs:attribute name="from" type="xs:date" use="required"/>
+        <xs:attribute name="to" type="xs:date" use="required"/>
+        <xs:attribute name="sun" type="xs:boolean" use="optional"/>
+        <xs:attribute name="mon" type="xs:boolean" use="optional"/>
+        <xs:attribute name="tue" type="xs:boolean" use="optional"/>
+        <xs:attribute name="wed" type="xs:boolean" use="optional"/>
+        <xs:attribute name="thu" type="xs:boolean" use="optional"/>
+        <xs:attribute name="fri" type="xs:boolean" use="optional"/>
+        <xs:attribute name="sat" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+    <xs:complexType name="RoomTypeType">
+        <xs:sequence>
+            <xs:element name="Inventory" minOccurs="0">
+                <xs:complexType>
+                    <xs:attribute name="baseAllocation">
+                        <xs:annotation>
+                            <xs:documentation>Only returned for hotels configured for base allocation.</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="0"/>
+                                <xs:maxInclusive value="4999"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="flexibleAllocation" use="optional">
+                        <xs:annotation>
+                            <xs:documentation>Always returned. In the case of a hotel using base allocation: number of additional rooms available for this room type.
+In the case of a hotel not on base allocation, it will be equal to the totalInventoryAvailable attribute.
+</xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="0"/>
+                                <xs:maxInclusive value="4999"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="totalInventoryAvailable" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="0"/>
+                                <xs:maxInclusive value="4999"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="totalInventorySold" type="xs:nonNegativeInteger" use="required"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="RatePlan" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>Requested rate plans. Rate plan data could be missing if appropriate filters are disabled in RQ (rates, restriction and rate avail status), or if no rate plan data has been received from the supplier for the requested stay dates yet.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:extension base="RatePlanType"/>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="50"/>
+                    <xs:minLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="closed" type="xs:boolean"/>
+    </xs:complexType>
+    <xs:complexType name="RatePlanType">
+        <xs:sequence>
+            <xs:element name="Rate" minOccurs="0">
+                <xs:complexType>
+                    <xs:choice minOccurs="0">
+                        <xs:element name="PerDay" maxOccurs="28">
+                            <xs:complexType>
+                                <xs:attribute name="rate" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                            <xs:minInclusive value="0.00"/>
+                                            <xs:fractionDigits value="3"/>
+                                            <xs:totalDigits value="16"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="PerOccupancy" maxOccurs="20">
+                            <xs:complexType>
+                                <xs:attribute name="rate" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                            <xs:fractionDigits value="3"/>
+                                            <xs:minInclusive value="0.00"/>
+                                            <xs:totalDigits value="16"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="occupancy" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:positiveInteger">
+                                            <xs:maxInclusive value="20"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="PerPerson">
+                            <xs:complexType>
+                                <xs:attribute name="rate" use="required">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:decimal">
+                                            <xs:fractionDigits value="3"/>
+                                            <xs:totalDigits value="16"/>
+                                            <xs:minInclusive value="0.00"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:choice>
+                    <xs:attribute name="currency" use="required">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:minLength value="3"/>
+                                <xs:maxLength value="3"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="rateChangeIndicator" type="xs:boolean" use="optional">
+                        <xs:annotation>
+                            <xs:documentation>Only returned for products that are enabled for Day-Of-Arrival pricing.</xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="lengthOfStay">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="1"/>
+                                <xs:maxInclusive value="28"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Restrictions" minOccurs="0">
+                <xs:complexType>
+                    <xs:attribute name="minLOS" use="optional">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="1"/>
+                                <xs:maxInclusive value="28"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="maxLOS" use="optional">
+                        <xs:simpleType>
+                            <xs:restriction base="xs:int">
+                                <xs:minInclusive value="1"/>
+                                <xs:maxInclusive value="28"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="closedToArrival" type="xs:boolean" use="optional"/>
+                    <xs:attribute name="closedToDeparture" type="xs:boolean" use="optional"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="id" use="required">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:maxLength value="50"/>
+                    <xs:minLength value="1"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="closed" type="xs:boolean" use="optional">
+            <xs:annotation>
+                <xs:documentation>Rate plan availability status. Optional due to possibility that it would be missing for stay dates with partially loaded information.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:simpleType name="statusType">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Active"/>
+            <xs:enumeration value="Inactive"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="DayOfWeekType">
+        <xs:annotation>
+            <xs:documentation>Enumerated values for the seven days of the week: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, or Sunday - using three-letter abbreviations.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="Mon"/>
+            <xs:enumeration value="Tue"/>
+            <xs:enumeration value="Wed"/>
+            <xs:enumeration value="Thu"/>
+            <xs:enumeration value="Fri"/>
+            <xs:enumeration value="Sat"/>
+            <xs:enumeration value="Sun"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="PerStayFeeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="None"/>
+            <xs:enumeration value="1stNightRoomAndTax"/>
+            <xs:enumeration value="2NightsRoomAndTax"/>
+            <xs:enumeration value="10PercentCostOfStay"/>
+            <xs:enumeration value="20PercentCostOfStay"/>
+            <xs:enumeration value="30PercentCostOfStay"/>
+            <xs:enumeration value="40PercentCostOfStay"/>
+            <xs:enumeration value="50PercentCostOfStay"/>
+            <xs:enumeration value="60PercentCostOfStay"/>
+            <xs:enumeration value="70PercentCostOfStay"/>
+            <xs:enumeration value="80PercentCostOfStay"/>
+            <xs:enumeration value="90PercentCostOfStay"/>
+            <xs:enumeration value="FullCostOfStay"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="CancelPenaltyType">
+        <xs:attribute name="insideWindow" type="xs:boolean" use="required">
+            <xs:annotation>
+                <xs:documentation>True for penalties applied for cancellation or modification of a reservation inside of the cancellation window, false for cancellation or modification of a reservation outside of the cancellation window.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="flatFee" type="xs:double">
+            <xs:annotation>
+                <xs:documentation>The penalty fee collected for the cancellation or modification of a reservation. . Attribute is optional and will not be returned if 0. For products with a SellRate or LowestAvailableRate acquisition type, or are linked/derived from rate plans with a SellRate or LowestAvailableRate acquisition type, amount returned will be the fee charged to the customer including Expedia’s commission. For products with a NetRate acquisition type, or are linked/derived from rate plans with a NetRate acquisition type, amount returned will be fee collected from the customer net Expedia’s commission. When applicable, the fee is applied on top of the per stay penalty.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="perStayFee" type="PerStayFeeType" use="required">
+            <xs:annotation>
+                <xs:documentation>The penalty charged relative to the cost of the stay. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="CancelPolicyType">
+        <xs:sequence>
+            <xs:element name="Penalty" type="CancelPenaltyType" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation>The inside and outside window penalies.</xs:documentation>
+                </xs:annotation>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="default" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>Set to true if this is the default cancellation policy. Set to false if this is an exception to the default cancellation policy. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="startDate" type="xs:date">
+            <xs:annotation>
+                <xs:documentation>Start date for an exception policy. Default policies will not contain start dates. </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="endDate" type="xs:date">
+            <xs:annotation>
+                <xs:documentation>End date for an exception policy. Default policies will not contain end dates.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="cancelWindow">
+            <xs:annotation>
+                <xs:documentation>Cancellation window in hours. Returns between 1 and 999 hours. The window is relative to a configuration at the property level (not yet available via PARR). Expedia properties are by default configured to a 6pm cancel time but this value can be changed to any time value. The property cancellation time, along with the number of hours, allows us to establish at exactly what time we consider a cancellation to be inside or outside the cancellation window. This attribute is optional and will not be returned if the policy is non refundable.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:int">
+                    <xs:minInclusive value="1"/>
+                    <xs:maxInclusive value="999"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="nonRefundable" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>f true, the penalty will always be the full cost of stay for both inside and outside of the cancellation window (this is implicit, penalty nodes will not be returned when this attribute is set to true). Attribute is optional and will only be returned if true.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="createDateTime" type="xs:dateTime">
+            <xs:annotation>
+                <xs:documentation>The creation date of of this cancel policy.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="updateDateTime" type="xs:dateTime">
+            <xs:annotation>
+                <xs:documentation>The latest update date of this cancel policy.</xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+</xs:schema>
