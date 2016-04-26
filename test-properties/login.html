@@ -114,7 +114,7 @@
                 }
             }
         }).done(function(data, textStatus, jqxhr) {
-            $("#result").removeClass("error");//.html("Request successful: " + jqxhr.status + ": " + jqxhr.statusText + ", Data: " + JSON.stringify(data) + ", JWT Header: " + jqxhr.getResponseHeader('X-Auth-Token'));
+            $("#result").removeClass("error");
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             window.location.href = "./hotels"
         }).fail(function(jqxhr) {
