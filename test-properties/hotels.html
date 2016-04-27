@@ -93,57 +93,6 @@
 <script>
     var datatable = false;
 
-    function dateNow(h) {
-        var instant = new Date();
-        if (typeof h == 'undefined') return instant.toString();
-        instant.setTime(instant.getTime() + h * 60 * 60 * 1000)
-        return instant.toString();
-    }
-
-    var testAssignment = [
-        {
-            "tuid": "0123",
-            "hotels": [
-                {
-                    "hotelId": "H4321",
-                    "hotelName": "Test Hotel #1",
-                    "businessModel": "Dual",
-                    "currencyCode": "USD",
-                    "pricingType": "OBP",
-                    "ratType": "LAR",
-                    "dates": [
-                        {
-                            "startDate": dateNow(1),
-                            "endDate": dateNow(24)
-                        },
-                        {
-                            "startDate": dateNow(2),
-                            "endDate": dateNow(48)
-                        }
-                    ]
-                },
-                {
-                    "hotelId": "H1234",
-                    "hotelName": "Test Hotel #2",
-                    "businessModel": "Dual",
-                    "currencyCode": "USD",
-                    "pricingType": "OBP",
-                    "ratType": "LAR",
-                    "dates": [
-                        {
-                            "startDate": dateNow(1),
-                            "endDate": dateNow(16)
-                        },
-                        {
-                            "startDate": dateNow(3),
-                            "endDate": dateNow(72)
-                        }
-                    ]
-                }
-            ]
-        }
-    ];
-
     var columns = [
         { title: "TUID" },
         { title: "Hotel ID" },
@@ -181,7 +130,6 @@
                 for (date of hotel.dates) {
                     table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.startDate, date.endDate,
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
-                    console.log("Start: " + date.startDate);
                 }
             }
         }
@@ -193,32 +141,28 @@
         $("#hotels").show();
     }
 
-    function ajaxError(jqxhr) {
-        console.log("Ajax Error: " + jqxhr.url);
-        console.log("Error Response: " + jqxhr.responseText);
-        $("#result").addClass("error").text("Error: " + jqxhr.responseText);
+    function ajaxError(jqxhr, humanError) {
+        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        $("#result").addClass("error").text(humanError);
     }
 
     function getHotelsByJwt() {
         jwtRequest("GET", "http://test-property-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
-            console.log("Ajax Success: " + jqxhr.url);
-            console.log("Response: " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully retrieved hotels");
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            $("#result").removeClass("error").text("");
             displayTable(JSON.parse(jqxhr.responseText));
         }, function(jqxhr) {
-            ajaxError(jqxhr);
-            displayTable(testAssignment);
+            ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
         });
     }
 
     function autoAssignHotel() {
         jwtRequest("POST", "http://test-property-service.us-west-2.test.expedia.com/v1/schedule/assign", function(data, textStatus, jqxhr) {
-            console.log("Ajax Success: " + jqxhr.url);
-            console.log("Response: " + jqxhr.responseText);
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully assigned hotel");
             getHotelsByJwt();
         }, function(jqxhr) {
-            ajaxError(jqxhr);
+            ajaxError(jqxhr, "Could not schedule a test hotel.");
         });
     }
 
