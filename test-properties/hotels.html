@@ -106,27 +106,37 @@
             "hotels": [
                 {
                     "hotelId": "H4321",
+                    "hotelName": "Test Hotel #1",
+                    "businessModel": "Dual",
+                    "currencyCode": "USD",
+                    "pricingType": "OBP",
+                    "ratType": "LAR",
                     "dates": [
                         {
-                            "start": dateNow(1),
-                            "end": dateNow(24)
+                            "startDate": dateNow(1),
+                            "endDate": dateNow(24)
                         },
                         {
-                            "start": dateNow(2),
-                            "end": dateNow(48)
+                            "startDate": dateNow(2),
+                            "endDate": dateNow(48)
                         }
                     ]
                 },
                 {
                     "hotelId": "H1234",
+                    "hotelName": "Test Hotel #2",
+                    "businessModel": "Dual",
+                    "currencyCode": "USD",
+                    "pricingType": "OBP",
+                    "ratType": "LAR",
                     "dates": [
                         {
-                            "start": dateNow(1),
-                            "end": dateNow(16)
+                            "startDate": dateNow(1),
+                            "endDate": dateNow(16)
                         },
                         {
-                            "start": dateNow(3),
-                            "end": dateNow(72)
+                            "startDate": dateNow(3),
+                            "endDate": dateNow(72)
                         }
                     ]
                 }
@@ -137,8 +147,13 @@
     var columns = [
         { title: "TUID" },
         { title: "Hotel ID" },
+        { title: "Name" },
         { title: "Valid From", type: "date" },
-        { title: "Valid To", type: "date" }
+        { title: "Valid To", type: "date" },
+        { title: "Model" },
+        { title: "Currency" },
+        { title: "Pricing" },
+        { title: "RAT" }
     ];
 
     $(document).ready(function() {
@@ -164,7 +179,8 @@
         for (tuid of data) {
             for (hotel of tuid.hotels) {
                 for (date of hotel.dates) {
-                    table.push([tuid.tuid, hotel.hotelId, date.startDate, date.endDate]);
+                    table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.startDate, date.endDate,
+                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
                     console.log("Start: " + date.startDate);
                 }
             }
