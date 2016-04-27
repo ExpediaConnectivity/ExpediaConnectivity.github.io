@@ -88,4 +88,12 @@ Base64.decode = function(str, utf8decode) {
   return utf8decode ? Utf8.decode(plain) : plain;
 }
 
+if (typeof(btoa) !== "function") {
+    btoa = Base64.encode
+}
+
+if (typeof(atob) !== "function") {
+    atob = Base64.decode
+}
+
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  */
