@@ -665,6 +665,9 @@ nav li:hover a {
   height: auto;
   overflow: hidden;
   text-align: right;
+  position: absolute;
+  right: 35px;
+  top: -5px;
 }
 #menu-toggle {
   display: none;
@@ -783,7 +786,7 @@ section.hero .inner h2 {
 }
 .hero-hotelroom {
   background: url(/images/hero-hotelroom.jpg);
-  background-position: 62% 5%;
+  background-position: 62% 50%;
 }
 .hero-oceanview {
   background: url(/images/hero-oceanview.jpg);
