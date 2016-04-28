@@ -598,6 +598,52 @@
             }
           }
         }
+      },
+      "delete": {
+        "tags": [
+          "Rate Plan"
+        ],
+        "summary": "Delete an existing rate plan",
+        "description": "",
+        "operationId": "deleteRatePlan",
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "required": true,
+            "type": "Base64 encoded auth token",
+            "default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+          }, {
+            "name": "propertyId",
+            "in": "path",
+            "description": "Expedia Property ID",
+            "required": true,
+            "type": "integer",
+            "default": "12933873"
+          }, {
+            "name": "roomTypeId",
+            "in": "path",
+            "description": "Room type resource ID",
+            "required": true,
+            "type": "integer"
+          }, {
+            "name": "ratePlanId",
+            "in": "path",
+            "description": "Rate plan resource ID",
+            "required": true,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          }
+        },
+        "security": [
+          {
+            "eps-security": []
+          }
+        ]
       }
     }
   },
