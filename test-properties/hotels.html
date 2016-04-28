@@ -151,7 +151,7 @@
     }
 
     function getHotelsByJwt() {
-        jwtRequest("GET", "http://test-property-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
+        jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("");
             displayTable(JSON.parse(jqxhr.responseText));
@@ -161,7 +161,7 @@
     }
 
     function autoAssignHotel() {
-        jwtRequest("POST", "http://test-property-service.us-west-2.test.expedia.com/v1/schedule/assign", function(data, textStatus, jqxhr) {
+        jwtRequest("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully assigned hotel");
             getHotelsByJwt();
