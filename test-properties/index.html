@@ -117,7 +117,7 @@
         }).done(function(data, textStatus, jqxhr) {
             $("#result").removeClass("error");
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
-            window.location.href = "./hotels"
+            window.location.href = "./hotels";
         }).fail(function(jqxhr) {
             if (jqxhr.status == 403 || jqxhr.status == 401) {
                 $("#result").addClass("error").html("Incorrect username or password.");
@@ -125,6 +125,10 @@
                 $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
             }
         });
+    }
+
+    if (localStorage.getItem("AuthToken") !== null) {
+        window.location.href = "./hotels";
     }
 
 </script></div><footer id="site-footer" class="row full-width">
