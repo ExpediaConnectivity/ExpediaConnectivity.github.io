@@ -17,14 +17,17 @@ var getParams = getSearchParameters();
 
 function setSurveyFeature() {
     localStorage.setItem("survey", "true");
-    $("#nav-main #menu-toggle").show();
-    $("#nav-main #menu-wrap").show();
+    $("#nav-main #menu-toggle").removeClass("hidden");
+    $("#nav-main #menu-wrap").removeClass("hidden");
     $("#nav-main a#logo").attr("href", "/home");
     console.log("Survey feature set.");
 }
 
 function unsetSurveyFeature() {
     localStorage.removeItem('survey');
+    $("#nav-main #menu-toggle").addClass("hidden");
+    $("#nav-main #menu-wrap").addClass("hidden");
+    $("#nav-main a#logo").attr("href", "/");
     console.log("Survey feature unset.");
 }
 

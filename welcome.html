@@ -28,6 +28,7 @@
 <script src="/js/he-waypoints.js"></script>
 <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
 <script src="/js/featureSwitch.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
 <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
@@ -57,6 +58,7 @@
             <ul>
                 <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
                 <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+                <li id="logout" style="display:none"><a href="./" onclick="logout();">Logout</a></li>
             </ul>
         </div>
     </nav>
@@ -66,8 +68,8 @@
                 <img src="/images/DevLogo_40k.png" />
             </a>
 
-            <div id="menu-toggle" style="display:none;"></div>
-            <div id="menu-wrap" style="display:none;">
+            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-wrap" class="hidden">
                 <ul>
                     <li><a href="/partners">Connectivity for Partners</a></li>
                     <li><a href="/properties">Connectivity for Properties</a></li>

@@ -493,6 +493,9 @@ a {
   font-size: 1.3em;
   margin-top: 60px;
 }
+.hidden {
+  display: none !important;
+}
 form .formline {
   line-height: 1.5;
   margin-bottom: 10px;
