@@ -1,0 +1,1617 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Definition - Property API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
+<script src="/js/jquery.js"></script>
+<script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="/js/featureSwitch.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="mailto:eqcss@expedia.com">Contact Us</a></li>
+                <li id="logout" style="display:none"><a href="./" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink hidden"><a href="/partners">Connectivity for Partners</a></li>
+                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink hidden"><a href="/solutions">Solutions</a></li>
+                    <li class="mainlink hidden"><a href="/providers">Providers</a></li>
+                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Property API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="api-definition"><a class="sidebar-nav-item" href="#api-definition">API Definition</a></li><li class="depth1" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth1" data-magellan-arrival="endpoints"><a class="sidebar-nav-item" href="#endpoints">Endpoints</a></li><li class="depth1" data-magellan-arrival="api-errors"><a class="sidebar-nav-item" href="#api-errors">API Errors</a></li><li class="depth1" data-magellan-arrival="setpropertydetails"><a class="sidebar-nav-item" href="#setpropertydetails">SetPropertyDetails</a></li><li class="depth2" data-magellan-arrival="setpropertydetails-response"><a class="sidebar-nav-item" href="#setpropertydetails-response">SetPropertyDetails Response</a></li><li class="depth1" data-magellan-arrival="getpropertydetails"><a class="sidebar-nav-item" href="#getpropertydetails">GetPropertyDetails</a></li><li class="depth2" data-magellan-arrival="getpropertydetails-response"><a class="sidebar-nav-item" href="#getpropertydetails-response">GetPropertyDetails Response</a></li><li class="depth1" data-magellan-arrival="getpropertystatus"><a class="sidebar-nav-item" href="#getpropertystatus">GetPropertyStatus</a></li><li class="depth2" data-magellan-arrival="getpropertystatus-response"><a class="sidebar-nav-item" href="#getpropertystatus-response">GetPropertyStatus Response</a></li><li class="depth1" data-magellan-arrival="update-a-property"><a class="sidebar-nav-item" href="#update-a-property">Update a Property</a></li><li class="depth1" data-magellan-arrival="deactivate-delete-a-property"><a class="sidebar-nav-item" href="#deactivate-delete-a-property">Deactivate/Delete a Property</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/supported-features.html">Supported Features</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/code-list.html">Code Lists</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
+<p>The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the <a href="./supported-features.html">Supported Features</a> and review the API Definition.</p>
+<h1 id="authentication" data-magellan-destination="authentication">Authentication</h1>
+<p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
+<h1 id="endpoints" data-magellan-destination="endpoints">Endpoints</h1>
+<div><table>
+<thead>
+<tr>
+<th>Environment</th>
+<th>Host</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Test</td>
+<td><a href="https://int.services.expediapartnercentral.com">https://int.services.expediapartnercentral.com</a></td>
+</tr>
+<tr>
+<td>Production</td>
+<td><a href="https://services.expediapartnercentral.com">https://services.expediapartnercentral.com</a></td>
+</tr>
+</tbody>
+</table>
+</div><div><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>HTTP Verb</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set Property Details</td>
+<td>PUT</td>
+<td>/properties/v1/{EPC account id}</td>
+<td>PUT property information to initiate onboarding.</td>
+</tr>
+<tr>
+<td>Get Property Details</td>
+<td>GET</td>
+<td>/properties/v1/{EPC account id}/{provider property ID}</td>
+<td>GET property information</td>
+</tr>
+<tr>
+<td>Update a Property</td>
+<td>PUT</td>
+<td>/properties/v1/{EPC account id}</td>
+<td>Update an existing property by sending a full overlay. PATCH is not supported.</td>
+</tr>
+<tr>
+<td>Get Property Status</td>
+<td>GET</td>
+<td>/properties/v1/{EPC account id}/{provider property ID}/status</td>
+<td>GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.)</td>
+</tr>
+<tr>
+<td>Deactivate Property</td>
+<td>DELETE</td>
+<td>/properties/v1/{EPC account id}/{provider property ID}</td>
+<td>De-activates property in Expedia system</td>
+</tr>
+</tbody>
+</table>
+</div><h1 id="api-errors" data-magellan-destination="api-errors">API Errors</h1>
+<p>After submitting a request for any of the endpoints listed in the section above, acknowledgement or errors will be returned in the http headers.</p>
+<div><table>
+<thead>
+<tr>
+<th>HTTP Code</th>
+<th>Description</th>
+<th>Retry?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2xx</td>
+<td>Success Message</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>202</td>
+<td>Request successfully received and is processing.</td>
+<td>No</td>
+<td>To get processing status, see the status attribute contained in the response body</td>
+</tr>
+<tr>
+<td>4xx</td>
+<td>Error Message</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>400</td>
+<td>Validation Error</td>
+<td>No</td>
+<td>Must address errors listed in the Validation attribute contained within the response body and resubmit.</td>
+</tr>
+<tr>
+<td>5xx</td>
+<td>Internal Error</td>
+<td>Yes</td>
+<td>Internal system error when attempting to process message.</td>
+</tr>
+</tbody>
+</table>
+</div><p>A list of possible errors for each API can be found <a href="./code-list.html" title="Error Code List">here</a></p>
+<h1 id="setpropertydetails" data-magellan-destination="setpropertydetails">SetPropertyDetails</h1>
+<p>The below example is a request to onboard a new property using SetPropertyDetails.</p>
+<ul>
+<li>Information for more than one property is accepted in the request, max. batch size is 50 properties per request.</li>
+<li>Each property must have a unique providerPropertyId</li>
+</ul>
+<pre><code class="lang-javascript">[{
+    &quot;providerPropertyId&quot;: &quot;1289472&quot;,
+    &quot;name&quot;: &quot;Peach Inn&quot;,
+    &quot;latitude&quot;: &quot;23.3752&quot;,
+    &quot;longitude&quot;: &quot;-81.3261&quot;,
+    &quot;providerPropertyUrl&quot;: &quot;http://example.org&quot;,
+    &quot;structureType&quot;: &quot;Hotel&quot;,
+    &quot;currencyCode&quot;: &quot;USD&quot;,
+    &quot;billingCurrencyCode&quot;: &quot;USD&quot;,
+    &quot;timeZone&quot;: &quot;USA/Pacific&quot;,
+    &quot;addresses&quot;: [
+        {
+            &quot;line1&quot;: &quot;123 Main St.&quot;,
+            &quot;city&quot;: &quot;B. Hills&quot;,
+            &quot;state&quot;: &quot;CA&quot;,
+            &quot;postalCode&quot;: &quot;90210&quot;,
+            &quot;countryCode&quot;: &quot;USA&quot;
+        }
+    ],
+    &quot;ratings&quot;: [
+        {
+            &quot;score&quot;: 4,
+            &quot;maxScore&quot;: 5,
+            &quot;source&quot;: &quot;AAA&quot;,
+            &quot;description&quot;: &quot;STARS&quot;
+        }
+    ],
+    &quot;contacts&quot;: {
+        &quot;Property&quot;: {
+            &quot;phoneNumbers&quot;: [
+                {
+                    &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                    &quot;countryAccessCode&quot;: &quot;1&quot;,
+                    &quot;areaCode&quot;: &quot;123&quot;,
+                    &quot;number&quot;: &quot;1234567&quot;
+                }
+            ]
+        },
+        &quot;ReservationManager&quot;: {
+            &quot;firstName&quot;: &quot;First&quot;,
+            &quot;lastName&quot;: &quot;Last&quot;,
+            &quot;emails&quot;: [
+                &quot;abc@xyz.com&quot;
+            ],
+            &quot;phoneNumbers&quot;: [
+                {
+                    &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                    &quot;countryAccessCode&quot;: &quot;1&quot;,
+                    &quot;areaCode&quot;: &quot;123&quot;,
+                    &quot;number&quot;: &quot;4567890&quot;
+                },
+                {
+                    &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+                    &quot;countryAccessCode&quot;: &quot;1&quot;,
+                    &quot;areaCode&quot;: &quot;123&quot;,
+                    &quot;number&quot;: &quot;7890123&quot;
+                }
+            ]
+        },
+        &quot;AlternateReservationManager&quot;: {
+            &quot;phoneNumbers&quot;: [
+                {
+                    &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                    &quot;countryAccessCode&quot;: &quot;1&quot;,
+                    &quot;areaCode&quot;: &quot;123&quot;,
+                    &quot;number&quot;: &quot;1234567&quot;
+                }
+            ]
+        },
+        &quot;GeneralManager&quot;: {
+            &quot;firstName&quot;: &quot;General&quot;,
+            &quot;lastName&quot;: &quot;Manager&quot;,
+            &quot;emails&quot;: [
+                &quot;abc123@xyz.com&quot;
+            ]
+        }
+    },
+    &quot;contents&quot;: [
+        {
+            &quot;locale&quot;: &quot;en-US&quot;,
+            &quot;name&quot;: &quot;Localized Property Name&quot;,
+            &quot;providerPropertyUrl&quot;: null,
+            &quot;images&quot;: [
+                {
+                    &quot;url&quot;: &quot;http://images.xyz.com/mainImage.jpg&quot;,
+                    &quot;categoryCode&quot;: &quot;FEATURED_IMAGE&quot;,
+                    &quot;caption&quot;: &quot;Main Image&quot;
+                }
+            ],
+            &quot;amenities&quot;: [
+                  {
+                    &quot;code&quot;: &quot;WIFI_INTERNET&quot;,
+                    &quot;detailCode&quot;: &quot;SURCHARGE_PER_STAY&quot;,
+                    &quot;value&quot;: 10.99
+                }
+            ],
+            &quot;paragraphs&quot;: [
+                {
+                    &quot;code&quot;: &quot;DESCRIPTION&quot;,
+                    &quot;value&quot;: &quot;Property description.&quot;
+                },
+                {
+                    &quot;code&quot;: &quot;SPECIAL_CHECKIN_INSTRUCTIONS&quot;,
+                    &quot;value&quot;: &quot;Special check-in instructions.&quot;
+                }
+            ]
+        }
+    ],
+    &quot;propertyCollectedMandatoryFees&quot;: [
+        {
+            &quot;code&quot;: &quot;RESORT_FEE&quot;,
+            &quot;scope&quot;: &quot;PER_PERSON&quot;,
+            &quot;duration&quot;: &quot;PER_NIGHT&quot;,
+            &quot;value&quot;: 25.99,
+            &quot;startDate&quot;: null,
+            &quot;endDate&quot;: null
+        }
+    ],
+    &quot;taxes&quot;: [
+        {
+            &quot;code&quot;: &quot;VAT&quot;,
+            &quot;detailCode&quot;: &quot;PERCENT_PER_STAY&quot;,
+            &quot;value&quot;: 20
+        }
+    ],
+    &quot;policies&quot;: [
+        {
+            &quot;code&quot;: &quot;MINIMUM_CHECKIN_AGE&quot;,
+            &quot;value&quot;: &quot;18&quot;
+        }
+    ],
+    &quot;inventorySettings&quot;: {
+        &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;
+    },
+    &quot;attributes&quot;: [
+        {
+            &quot;code&quot;: &quot;TOTAL_ROOMS&quot;,
+            &quot;value&quot;: &quot;15&quot;
+        }
+    ]
+}]
+</code></pre>
+<p><strong>property</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required for Onboarding</th>
+<th>Updatable?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>providerPropertyId</td>
+<td>String</td>
+<td>Yes</td>
+<td>No</td>
+<td>Unique ID for the property from the Provider&#39;s system.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>Default Property Name, must be submitted in Western European Character set.</td>
+</tr>
+<tr>
+<td>latitude</td>
+<td>String</td>
+<td>Yes</td>
+<td>No</td>
+<td>Property Latitude, use ISO6709.  May be modified by Expedia and updates submitted after initial onboarding will not be processed.</td>
+</tr>
+<tr>
+<td>longitude</td>
+<td>String</td>
+<td>Yes</td>
+<td>No</td>
+<td>Property Longitude, use ISO6709.  May be modified by Expedia and updates submitted after onboarding will not be processed.</td>
+</tr>
+<tr>
+<td>providerPropertyUrl</td>
+<td>String</td>
+<td>No</td>
+<td>Yes</td>
+<td>URL for property&#39;s website, must be submitted in Western European Character set.</td>
+</tr>
+<tr>
+<td>structureType</td>
+<td>String</td>
+<td>No</td>
+<td>Yes</td>
+<td>Must use pre-defined structureType code.  See <a href="./Code-list.html#StructureType" title="Structure type codes">code list</a></td>
+</tr>
+<tr>
+<td>currencyCode</td>
+<td>String</td>
+<td>Yes</td>
+<td>No</td>
+<td>Currency code to be used for property&#39;s pricing. Cannot be updated after initial onboarding. Use ISO4217</td>
+</tr>
+<tr>
+<td>billingCurrencyCode</td>
+<td>String</td>
+<td>Yes</td>
+<td>No</td>
+<td>Currency code to be used for billing. Use ISO4217.</td>
+</tr>
+<tr>
+<td>timeZone</td>
+<td>String</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>TimeZone for the property, used to determine cancel policies. Use the IANA timezone database codes.</td>
+</tr>
+<tr>
+<td>addresses</td>
+<td>Array of Address objects</td>
+<td>Yes</td>
+<td>No</td>
+<td>See Address below.</td>
+</tr>
+<tr>
+<td>ratings</td>
+<td>Array of Rating objects</td>
+<td>No</td>
+<td>No</td>
+<td>See Rating below.</td>
+</tr>
+<tr>
+<td>contacts</td>
+<td>Dictionary of Contact objects</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>See Contact below.</td>
+</tr>
+<tr>
+<td>contents</td>
+<td>Array of Content</td>
+<td>Yes</td>
+<td>Yes</td>
+<td>See Content below.</td>
+</tr>
+<tr>
+<td>propertyCollectedMandatoryFees</td>
+<td>Array of SupplierCollectedMandatoryFee</td>
+<td>No</td>
+<td>Yes</td>
+<td>See SupplierCollectedMandatoryFee below.</td>
+</tr>
+<tr>
+<td>policies</td>
+<td>Array of Policy</td>
+<td>No</td>
+<td>Yes</td>
+<td>See Policy below.</td>
+</tr>
+<tr>
+<td>inventorySettings</td>
+<td>Array of InventorySetting</td>
+<td>No</td>
+<td>Yes</td>
+<td>See InventorySetting below.</td>
+</tr>
+<tr>
+<td>taxes</td>
+<td>Array of Tax</td>
+<td>No</td>
+<td>Yes</td>
+<td>See Tax below.</td>
+</tr>
+<tr>
+<td>attributes</td>
+<td>Array of Attribute</td>
+<td>No</td>
+<td>Yes</td>
+<td>See Attribute below</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>address</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>line 1</td>
+<td>String</td>
+<td>Yes</td>
+<td><ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li></td>
+</tr>
+<tr>
+<td>line 2</td>
+<td>String</td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>city</td>
+<td>String</td>
+<td>Yes</td>
+<td>Town/City</td>
+</tr>
+<tr>
+<td>postalCode</td>
+<td>String</td>
+<td>No</td>
+<td>ZIP/Postal Code</td>
+</tr>
+<tr>
+<td>countryCode</td>
+<td>String</td>
+<td>Yes</td>
+<td>Use ISO 3166-1 alpha-2 or alpha-3.  Stored in Expedia system as alpha-3.</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>rating</strong></p>
+<p>Only star rating is displayed for a property. Rating data submitted will be reviewed and subject to revision by Expedia.</p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>score</td>
+<td>Decimal</td>
+<td>Yes</td>
+<td>Normalized Score, e.g. 4.0</td>
+</tr>
+<tr>
+<td>maxScore</td>
+<td>Decimal</td>
+<td>Yes</td>
+<td>The maximum score possible for the rating scale, e.g. 5.0 if highest rating is 5 stars.</td>
+</tr>
+<tr>
+<td>description</td>
+<td>String</td>
+<td>Yes</td>
+<td>Only supported value is &quot;Stars&quot;</td>
+</tr>
+<tr>
+<td>source</td>
+<td>String</td>
+<td>No</td>
+<td>More descriptive information about the star rating. Indicate here if national or non-national rating and affiliation.</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>contact</strong></p>
+<p>Contact set data are represented as a dictionary, with the following dictionary keys.</p>
+<div><table>
+<thead>
+<tr>
+<th>Dictionary Key</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Property</td>
+<td>Yes</td>
+<td>Contact Info for the physical property</td>
+</tr>
+<tr>
+<td>ReservationManager</td>
+<td>Yes</td>
+<td>Email required for Electronic Booking Notification Failover.  Phone number required - used as primary contact for customer booking issues.</td>
+</tr>
+<tr>
+<td>AlternateReservationManager</td>
+<td>Yes</td>
+<td>Phone number required - used as emergency (24hour) contact for customer booking issues.</td>
+</tr>
+<tr>
+<td>GeneralManager</td>
+<td>No</td>
+<td>If phone number provided, telesales inquiries about property amenities directed to this number instead of contacting the property directly.</td>
+</tr>
+<tr>
+<td>PropertyExtranetUser</td>
+<td>No</td>
+<td>User account for access to read and respond to user reviews and reports for the property via the Expedia Partner Central (EPC) extranet.</td>
+</tr>
+</tbody>
+</table>
+</div><p><em>Description of Contact info accepted:</em></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>firstName</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>lastName</td>
+<td>String</td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td>phoneNumbers</td>
+<td>Array of PhoneNumbers</td>
+<td>See Notes</td>
+<td>Phone required for Property, ReservationManager, AlternateReservationManager, GeneralManager</td>
+</tr>
+<tr>
+<td>emails</td>
+<td>Array of Strings</td>
+<td>See Notes</td>
+<td>Email required for ReservationManager</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>phoneNumber</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>phoneNumberType</td>
+<td>String</td>
+<td>No</td>
+<td>See <a href="./code-list.html#phoneNumberType">code list</a>.  If no type submitted, then &#39;Undefined&#39; used.</td>
+</tr>
+<tr>
+<td>countryAccessCode</td>
+<td>String</td>
+<td>No</td>
+<td>Country Calling Code. Use ITU standard E.123 / E.164.</td>
+</tr>
+<tr>
+<td>areaCode</td>
+<td>String</td>
+<td>No</td>
+<td>Use Telephone numbering plan standards.</td>
+</tr>
+<tr>
+<td>number</td>
+<td>String</td>
+<td>Yes</td>
+<td>Include the country and area code within the submitted number.</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>content</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>locale</td>
+<td>String</td>
+<td>Yes</td>
+<td>Use IETF language tag standard, e.g. en-US</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>No</td>
+<td>Property name for specified locale, e.g. en-US.  If none provided, then default property name will be used.</td>
+</tr>
+<tr>
+<td>images</td>
+<td>Array of Image</td>
+<td>Yes</td>
+<td>See Image below.</td>
+</tr>
+<tr>
+<td>amenities</td>
+<td>Array of Amenity</td>
+<td>No</td>
+<td>See Amenity below.</td>
+</tr>
+<tr>
+<td>paragraphs</td>
+<td>Array of Paragraph</td>
+<td>No</td>
+<td>See Paragraph below.</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>image</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>String</td>
+<td>Yes</td>
+<td>image URL.  A property needs at least 1 image to complete onboarding.  Images below 350x350 pixels will be rejected.</td>
+</tr>
+<tr>
+<td>categoryCode</td>
+<td>String</td>
+<td>No</td>
+<td>See <a href="./code-list.html#categoryCode">code list</a>.  If none provided, Expedia will provide categorization.</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>No</td>
+<td>Image Caption</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>amenity</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+</tr>
+<tr>
+<td>detailCode</td>
+<td>String</td>
+<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+</tr>
+<tr>
+<td>value</td>
+<td>Numeric</td>
+<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>paragraph</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#paragraph">code list</a> Paragraph text may require review by Expedia prior to publishing.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>String</td>
+<td>Yes</td>
+<td>Paragraph Text</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>propertyCollectedMandatoryFee</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#mandatoryfees">code list</a></td>
+</tr>
+<tr>
+<td>scope</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#mandatoryfees">code list</a></td>
+</tr>
+<tr>
+<td>duration</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#mandatoryfees">code list</a></td>
+</tr>
+<tr>
+<td>value</td>
+<td>String</td>
+<td>Yes</td>
+<td>Fee amount in the property&#39;s currency. Example: 24.99</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>String</td>
+<td>No</td>
+<td>If fee is only offered on specific days during the year, provide a recurring start and end date.</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>String</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>policy</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#policy">code list</a></td>
+</tr>
+<tr>
+<td>value</td>
+<td>String</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>inventory setting</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rateAcquisitionType</td>
+<td>String</td>
+<td>No</td>
+<td>See <a href="./code-list.html#inventorySetting">code list</a></td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>tax</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>Yes</td>
+<td>See <a href="./code-list.html#tax">code list</a></td>
+</tr>
+<tr>
+<td>detailCode</td>
+<td>String</td>
+<td>See <a href="./code-list.html#tax">code list</a></td>
+<td>See <a href="./code-list.html#tax">code list</a></td>
+</tr>
+<tr>
+<td>value</td>
+<td>Number</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="setpropertydetails-response" data-magellan-destination="setpropertydetails-response">SetPropertyDetails Response</h2>
+<p>After submitting a Property API request, the response will acknowledge receipt of the message or return an error.  More information can be found here.</p>
+<p><strong>Response Body</strong></p>
+<p>The response body will echo back the values of <em>the request received</em> and will include the following additional attributes:</p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expediaId</td>
+<td>Int</td>
+<td>Expedia&#39;s unique ID for the property.</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>String</td>
+<td>Name of the provider associated with the property (this is your organization).</td>
+</tr>
+<tr>
+<td>createdUtc</td>
+<td>DateTime</td>
+<td>DateTime the property was created in Expedia&#39;s Lodging System.</td>
+</tr>
+<tr>
+<td>modifiedUtc</td>
+<td>DateTime</td>
+<td>Last Modified time in Expedia&#39;s Lodging System.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>callback URL to get property status.  See <a href="./api-definition.html#GetPropertyStatus">GetPropertyStatus</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Example SetPropertyDetails Response</strong></p>
+<pre><code class="lang-javascript">{
+    &quot;entity&quot;:
+    [
+        {
+            &quot;providerPropertyId&quot;: &quot;1&quot;,
+            &quot;provider&quot;: &quot;Provider-A&quot;,
+            &quot;expediaId&quot;: 1234567,
+            &quot;name&quot;: &quot;Property Name&quot;,
+            &quot;latitude&quot;: &quot;21.3752&quot;,
+            &quot;longitude&quot;: &quot;-88.3261&quot;,
+            &quot;createdUtc&quot;: &quot;2015-09-10T23:59:48.7349626Z&quot;,
+            &quot;modifiedUtc&quot;: &quot;2015-09-10T23:59:48.7349626Z&quot;,
+            &quot;providerPropertyUrl&quot;: &quot;http://example.org&quot;,
+            &quot;structureType&quot;: &quot;Hotel&quot;,
+            &quot;currencyCode&quot;: &quot;GBP&quot;,
+            &quot;billingCurrencyCode&quot;: &quot;GBP&quot;,
+            &quot;timeZone&quot;: &quot;Europe/Dublin&quot;,
+            &quot;addresses&quot;: [
+                {
+                    &quot;line1&quot;: &quot;Address Line 1&quot;,
+                    &quot;line2&quot;: null,
+                    &quot;city&quot;: &quot;City&quot;,
+                    &quot;state&quot;: &quot;State or Province&quot;,
+                    &quot;postalCode&quot;: &quot;77780&quot;,
+                    &quot;countryCode&quot;: &quot;MEX&quot;
+                }
+            ],
+            &quot;ratings&quot;: [
+                {
+                    &quot;score&quot;: 4,
+                    &quot;maxScore&quot;: 5,
+                    &quot;source&quot;: &quot;AAA&quot;,
+                    &quot;description&quot;: &quot;4 STARS&quot;
+                }
+            ],
+            &quot;contacts&quot;: {
+                &quot;Property&quot;: {
+                    &quot;phoneNumbers&quot;: [
+                        {
+                            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                            &quot;countryAccessCode&quot;: &quot;1&quot;,
+                            &quot;areaCode&quot;: &quot;123&quot;,
+                            &quot;number&quot;: &quot;1234567&quot;
+                        }
+                    ]
+                },
+                &quot;ReservationManager&quot;: {
+                    &quot;firstName&quot;: &quot;First&quot;,
+                    &quot;lastName&quot;: &quot;Last&quot;,
+                    &quot;emails&quot;: [
+                        &quot;abc@xyz.com&quot;
+                    ],
+                    &quot;phoneNumbers&quot;: [
+                        {
+                            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                            &quot;countryAccessCode&quot;: &quot;1&quot;,
+                            &quot;areaCode&quot;: &quot;123&quot;,
+                            &quot;number&quot;: &quot;4567890&quot;
+                        },
+                        {
+                            &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+                            &quot;countryAccessCode&quot;: &quot;1&quot;,
+                            &quot;areaCode&quot;: &quot;123&quot;,
+                            &quot;number&quot;: &quot;7890123&quot;
+                        }
+                    ]
+                },
+                &quot;AlternateReservationManager&quot;: {
+                    &quot;phoneNumbers&quot;: [
+                        {
+                            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+                            &quot;countryAccessCode&quot;: &quot;1&quot;,
+                            &quot;areaCode&quot;: &quot;123&quot;,
+                            &quot;number&quot;: &quot;1234567&quot;
+                        }
+                    ]
+                },
+                &quot;GeneralManager&quot;: {
+                    &quot;firstName&quot;: &quot;General&quot;,
+                    &quot;lastName&quot;: &quot;Manager&quot;,
+                    &quot;emails&quot;: [
+                        &quot;abc123@xyz.com&quot;
+                    ]
+                }
+            },
+            &quot;airports&quot;: [
+                {
+                    &quot;code&quot;: &quot;PCM&quot;,
+                    &quot;name&quot;: &quot;Playa del Carmen Airport&quot;
+                }
+            ],
+            &quot;contents&quot;: [
+                {
+                    &quot;locale&quot;: &quot;en-US&quot;,
+                    &quot;name&quot;: &quot;Localized Property Name&quot;,
+                    &quot;providerPropertyUrl&quot;: null,
+                    &quot;images&quot;: [
+                        {
+                            &quot;url&quot;: &quot;http://images.xyz.com/mainImage.jpg&quot;,
+                            &quot;categoryCode&quot;: &quot;FEATURED_IMAGE&quot;,
+                            &quot;caption&quot;: &quot;Main Image&quot;
+                        },
+                        {
+                            &quot;url&quot;: &quot;http://images.xyz.com/additionalImage.jpg&quot;,
+                            &quot;categoryCode&quot;: null,
+                            &quot;caption&quot;: &quot;Additional Image&quot;
+                        }
+                    ],
+                    &quot;amenities&quot;: [
+                        {
+                            &quot;code&quot;: &quot;BREAKFAST&quot;,
+                            &quot;detailCode&quot;: &quot;FREE&quot;,
+                            &quot;value&quot;: null
+                        },
+                        {
+                            &quot;code&quot;: &quot;WIFI_INTERNET&quot;,
+                            &quot;detailCode&quot;: &quot;SURCHARGE_PER_STAY&quot;,
+                            &quot;value&quot;: 10.99
+                        }
+                    ],
+                    &quot;paragraphs&quot;: [
+                        {
+                            &quot;code&quot;: &quot;DESCRIPTION&quot;,
+                            &quot;value&quot;: &quot;Property description.&quot;
+                        },
+                        {
+                            &quot;code&quot;: &quot;SPECIAL_CHECKIN_INSTRUCTIONS&quot;,
+                            &quot;value&quot;: &quot;Special check-in instructions.&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;propertyCollectedMandatoryFees&quot;: [
+                {
+                    &quot;code&quot;: &quot;RESORT_FEE&quot;,
+                    &quot;scope&quot;: &quot;PER_PERSON&quot;,
+                    &quot;duration&quot;: &quot;PER_NIGHT&quot;,
+                    &quot;value&quot;: 25.99,
+                    &quot;startDate&quot;: null,
+                    &quot;endDate&quot;: null
+                }
+            ],
+            &quot;taxes&quot;: [
+                {
+                    &quot;code&quot;: &quot;VAT&quot;,
+                    &quot;detailCode&quot;: &quot;PERCENT_PER_STAY&quot;,
+                    &quot;value&quot;: 20
+                }
+            ],
+            &quot;policies&quot;: [
+                {
+                    &quot;code&quot;: &quot;MINIMUM_CHECKIN_AGE&quot;,
+                    &quot;value&quot;: &quot;18&quot;
+                },
+                {
+                    &quot;code&quot;: &quot;CHECKIN_TIME&quot;,
+                    &quot;value&quot;: &quot;2:00 PM&quot;
+                },
+                {
+                    &quot;code&quot;: &quot;CHECKOUT_TIME&quot;,
+                    &quot;value&quot;: &quot;11:00 AM&quot;
+                },
+                {
+                    &quot;code&quot;: &quot;CANCELLATION_CUTOFF_TIME&quot;,
+                    &quot;value&quot;: &quot;6:00 PM&quot;
+                }
+            ],
+            &quot;inventorySettings&quot;: {
+                &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;
+            },
+            &quot;attributes&quot;: [
+                {
+                    &quot;code&quot;: &quot;TOTAL_ROOMS&quot;,
+                    &quot;value&quot;: &quot;15&quot;
+                }
+            ],
+            &quot;status&quot;: {
+                &quot;href&quot;: &quot;/properties/v1/provider-a/1/status&quot;
+            }
+        }
+    ]
+}
+</code></pre>
+<h1 id="getpropertydetails" data-magellan-destination="getpropertydetails">GetPropertyDetails</h1>
+<p>Provides the Provider&#39;s view of the property, which can be used by the Property API client to construct an update overlay message.  The GetPropertyDetails response does not necessarily show any fields that have been moderated (modified) by Expedia, such as star rating, freeform paragraph text, taxes, latitude/longitude coordinates, or address.</p>
+<p><strong>Example GetPropertyDetails Request</strong></p>
+<p>GET /properties/v1/mycompany/1234</p>
+<h2 id="getpropertydetails-response" data-magellan-destination="getpropertydetails-response">GetPropertyDetails Response</h2>
+<pre><code class="lang-javascript">
+{
+  &quot;entity&quot;: {
+    &quot;providerPropertyId&quot;: &quot;1234&quot;,
+    &quot;provider&quot;: &quot;mycompany&quot;,
+    &quot;expediaId&quot;: 11632,
+    &quot;name&quot;: &quot;The Grand Inn&quot;,
+    &quot;latitude&quot;: &quot;53.3322239619385&quot;,
+    &quot;longitude&quot;: &quot;-3.1883265505371&quot;,
+    &quot;createdUtc&quot;: &quot;2015-11-26T12:29:54.311Z&quot;,
+    &quot;modifiedUtc&quot;: &quot;2015-11-30T22:06:27.865Z&quot;,
+    &quot;providerPropertyUrl&quot;: &quot;www.thegrandinn.com&quot;,
+    &quot;structureType&quot;: &quot;HOTEL&quot;,
+    &quot;currencyCode&quot;: &quot;GBP&quot;,
+    &quot;billingCurrencyCode&quot;: null,
+    &quot;timeZone&quot;: &quot;Europe/London&quot;,
+    &quot;addresses&quot;: [
+      {
+        &quot;line1&quot;: &quot;12 Ires Road&quot;,
+        &quot;line2&quot;: &quot;&quot;,
+        &quot;city&quot;: &quot;Glasgow&quot;,
+        &quot;state&quot;: &quot;&quot;,
+        &quot;postalCode&quot;: &quot;G12 8NN&quot;,
+        &quot;countryCode&quot;: &quot;GBR&quot;
+      }
+    ],
+    &quot;ratings&quot;: [
+      {
+        &quot;score&quot;: 5,
+        &quot;maxScore&quot;: 5,
+        &quot;source&quot;: &quot;Visit Scotland&quot;,
+        &quot;description&quot;: &quot;5 STARS&quot;
+      }
+    ],
+    &quot;contacts&quot;: {
+      &quot;Property&quot;: {
+        &quot;phoneNumbers&quot;: [
+          {
+            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;1211234269&quot;
+          },
+          {
+            &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;121336311&quot;
+          }
+        ]
+      },
+      &quot;ReservationManager&quot;: {
+        &quot;firstName&quot;: &quot;John&quot;,
+        &quot;lastName&quot;: &quot;Doe&quot;,
+        &quot;phoneNumbers&quot;: [
+          {
+            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;1212231567&quot;
+          },
+          {
+            &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;1217634321&quot;
+          }
+        ]
+      },
+      &quot;AlternateReservationManager&quot;: {
+        &quot;firstName&quot;: &quot;John&quot;,
+        &quot;lastName&quot;: &quot;Doe&quot;,
+        &quot;phoneNumbers&quot;: [
+          {
+            &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;1911934967&quot;
+          },
+          {
+            &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+            &quot;countryAccessCode&quot;: &quot;44&quot;,
+            &quot;areaCode&quot;: &quot;&quot;,
+            &quot;number&quot;: &quot;1996534321&quot;
+          }
+        ]
+      }
+    },
+    &quot;airports&quot;: [
+      {
+        &quot;code&quot;: &quot;GLA&quot;,
+        &quot;name&quot;: &quot;Glasgow&quot;
+      }
+    ],
+    &quot;contents&quot;: [
+      {
+        &quot;locale&quot;: &quot;en_GB&quot;,
+        &quot;name&quot;: null,
+        &quot;providerPropertyUrl&quot;: null,
+        &quot;images&quot;: [
+          {
+            &quot;url&quot;: &quot;https://images.mycompany.com/1234/1234main.jpg&quot;,
+            &quot;categoryCode&quot;: &quot;FEATURED_IMAGE&quot;,
+            &quot;caption&quot;: &quot;Main Image&quot;
+          },
+          {
+            &quot;url&quot;: &quot;https://images.mycompany.com/1234/1234double.jpg&quot;,
+            &quot;categoryCode&quot;: &quot;GUESTROOM&quot;,
+            &quot;caption&quot;: &quot;Double Room Image&quot;
+          }
+        ],
+        &quot;amenities&quot;: [
+          {
+            &quot;code&quot;: &quot;WIFI&quot;,
+            &quot;detailCode&quot;: &quot;FREE&quot;,
+            &quot;value&quot;: 0
+          },
+          {
+            &quot;code&quot;: &quot;BREAKFAST&quot;,
+            &quot;detailCode&quot;: &quot;FREE&quot;,
+            &quot;value&quot;: null
+          },
+          {
+            &quot;code&quot;: &quot;SELF_PARKING&quot;,
+            &quot;detailCode&quot;: &quot;FREE&quot;,
+            &quot;value&quot;: 0
+          },
+          {
+            &quot;code&quot;: &quot;POOL_INDOOR&quot;,
+            &quot;detailCode&quot;: null,
+            &quot;value&quot;: null
+          },
+          {
+            &quot;code&quot;: &quot;PLAYGROUND&quot;,
+            &quot;detailCode&quot;: null,
+            &quot;value&quot;: null
+          },
+          {
+            &quot;code&quot;: &quot;GARDEN&quot;,
+            &quot;detailCode&quot;: null,
+            &quot;value&quot;: null
+          }
+        ],
+        &quot;paragraphs&quot;: [
+          {
+            &quot;code&quot;: &quot;DESCRIPTION&quot;,
+            &quot;value&quot;: &quot;This hotel is really really nice&quot;
+          },
+          {
+            &quot;code&quot;: &quot;CHECKIN_INSTRUCTIONS&quot;,
+            &quot;value&quot;: &quot;Government-issued photo identification and a credit card are required at check-in for incidental charges.&quot;
+          }
+        ]
+      }
+    ],
+    &quot;propertyCollectedMandatoryFees&quot;: [
+      {
+        &quot;code&quot;: &quot;RESORT_FEE&quot;,
+        &quot;scope&quot;: &quot;PER_PERSON&quot;,
+        &quot;duration&quot;: &quot;PER_NIGHT&quot;,
+        &quot;value&quot;: 25.99,
+        &quot;startDate&quot;: null,
+        &quot;endDate&quot;: null
+      }
+    ],
+    &quot;taxes&quot;: [
+      {
+        &quot;code&quot;: &quot;VAT&quot;,
+        &quot;detailCode&quot;: &quot;PERCENT_PER_STAY&quot;,
+        &quot;value&quot;: 20
+      }
+    ],
+    &quot;policies&quot;: [
+      {
+        &quot;code&quot;: &quot;ACCEPTS_VISA&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;5 GBP&quot;
+      },
+      {
+        &quot;code&quot;: &quot;ACCEPTS_MASTERCARD&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;5 GBP&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CHECKIN_START_TIME&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;11:00 AM&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CHECKIN_END_TIME&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;11:00 PM&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CHECKOUT_TIME&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;10:00 AM&quot;
+      },
+      {
+        &quot;code&quot;: &quot;BOOKING_CUTOFF_TIME&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;1:00 PM&quot;
+      },
+      {
+        &quot;code&quot;: &quot;BOOKING_CUTOFF_DAY&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;SAME_DAY&quot;
+      },
+      {
+        &quot;code&quot;: &quot;CANCELLATION_CUTOFF_TIME&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;2:00 PM&quot;
+      },
+      {
+        &quot;code&quot;: &quot;MINIMUM_CHECKIN_AGE&quot;,
+        &quot;detailCode&quot;: null,
+        &quot;value&quot;: &quot;18&quot;
+      },
+      {
+        &quot;code&quot;: &quot;SMOKING_POLICY&quot;,
+        &quot;detailCode&quot;: &quot;SMOKE_FREE_PROPERTY&quot;,
+        &quot;value&quot;: null,
+      },
+      {
+        &quot;code&quot;: &quot;CATERS_TO&quot;,
+        &quot;detailCode&quot;: &quot;NO_BACHELOR_PARTIES&quot;,
+        &quot;value&quot;: null,
+      }
+      {
+        &quot;code&quot;: &quot;CATERS_TO&quot;,
+        &quot;detailCode&quot;: &quot;NO_BACHELORETTE_PARTIES&quot;,
+        &quot;value&quot;: null,
+      }
+    ],
+    &quot;attributes&quot;: [
+      {
+        &quot;code&quot;: &quot;TOTAL_ROOMS&quot;,
+        &quot;value&quot;: &quot;2&quot;
+      }
+    ],
+    &quot;status&quot;: {
+      &quot;href&quot;: &quot;/properties/v1/mycompany/10/status&quot;
+    }
+  }
+}
+</code></pre>
+<h1 id="getpropertystatus" data-magellan-destination="getpropertystatus">GetPropertyStatus</h1>
+<p>The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached &#39;OnboardingSucceed&#39; status.</p>
+<p><strong>Example Request</strong></p>
+<p>GET /properties/v1/mycompany/1234/status</p>
+<h2 id="getpropertystatus-response" data-magellan-destination="getpropertystatus-response">GetPropertyStatus Response</h2>
+<pre><code class="lang-javascript">
+ {
+       entity: {
+              provider: &#39;mycompany&#39;,
+              providerPropertyId:  1234,
+              expediaId: null,
+              code:  &#39;OnboardingFailed&#39;,
+              reasonCodes: [ &#39;InvalidLatLong&#39;, &#39;MissingPhoneNumber&#39; ]
+              timestampUtc: &#39;2015-08-26T00:01:06.055Z&#39;,
+              messages: [
+                     &#39;Invalid latitude/longitude: 0.0/0.0.&#39;,
+                     &#39;No valid phone numbers found.&#39;
+              ]
+       }
+}
+</code></pre>
+<p>A complete list of reason codes can be found on the <a href="./code-list.html">code list page</a>.</p>
+<h1 id="update-a-property" data-magellan-destination="update-a-property">Update a Property</h1>
+<p>Updating a property that is already onboarded is the same operation as the original onboarding - a full overlay update is required using the SetPropertyDetails.  It is recommended that you GET the property details first, modify the fields that you&#39;d like to change (and/or add new), then send the entire json document as a PUT request to update the property.  Please note that PATCH is not supported at this time - a complete overlay is required for updates.</p>
+<h1 id="deactivate-delete-a-property" data-magellan-destination="deactivate-delete-a-property">Deactivate/Delete a Property</h1>
+<p>Sending a DELETE for an onboarded property will deactivate the property in Expedia&#39;s system.  Content will not be deleted, only the property&#39;s state will be changed to inactive.  The property can later be re-enabled using the SetPropertyDetails API call.</p>
+<p><strong>Example</strong></p>
+<p>DELETE /properties/v1/mycompany/1234</p>
+<p>The response to the delete request will be a 200/OK and the response will echo back the details of the property which was just deleted.</p>
+<pre><code class="lang-javascript">
+{
+  &quot;entity&quot;: [
+    {
+      &quot;providerPropertyId&quot;: &quot;1234&quot;,
+      &quot;provider&quot;: &quot;mycompany&quot;,
+      &quot;expediaId&quot;: null,
+      &quot;name&quot;: &quot;Property Name&quot;,
+      &quot;latitude&quot;: &quot;21.3752&quot;,
+      &quot;longitude&quot;: &quot;-88.3261&quot;,
+      &quot;createdUtc&quot;: &quot;2015-11-20T00:16:16.819Z&quot;,
+      &quot;modifiedUtc&quot;: &quot;2015-11-20T15:42:28.605Z&quot;,
+      &quot;providerPropertyUrl&quot;: &quot;http://example.org&quot;,
+      &quot;structureType&quot;: &quot;Hotel&quot;,
+      &quot;currencyCode&quot;: &quot;GBP&quot;,
+      &quot;billingCurrencyCode&quot;: &quot;GBP&quot;,
+      &quot;timeZone&quot;: &quot;Europe/Dublin&quot;,
+      &quot;addresses&quot;: [
+        {
+          &quot;line1&quot;: &quot;Address Line 1&quot;,
+          &quot;line2&quot;: null,
+          &quot;city&quot;: &quot;City&quot;,
+          &quot;state&quot;: &quot;State or Province&quot;,
+          &quot;postalCode&quot;: &quot;77780&quot;,
+          &quot;countryCode&quot;: &quot;IRL&quot;
+        }
+      ],
+      &quot;ratings&quot;: [
+        {
+          &quot;score&quot;: 4,
+          &quot;maxScore&quot;: 5,
+          &quot;source&quot;: &quot;AAA&quot;,
+          &quot;description&quot;: &quot;4 STARS&quot;
+        }
+      ],
+      &quot;contacts&quot;: {
+        &quot;Property&quot;: {
+          &quot;phoneNumbers&quot;: [
+            {
+              &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+              &quot;countryAccessCode&quot;: &quot;1&quot;,
+              &quot;areaCode&quot;: &quot;123&quot;,
+              &quot;number&quot;: &quot;1234567&quot;
+            }
+          ]
+        },
+        &quot;ReservationManager&quot;: {
+          &quot;firstName&quot;: &quot;First&quot;,
+          &quot;lastName&quot;: &quot;Last&quot;,
+          &quot;emails&quot;: [
+            &quot;abc@xyz.com&quot;
+          ],
+          &quot;phoneNumbers&quot;: [
+            {
+              &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+              &quot;countryAccessCode&quot;: &quot;1&quot;,
+              &quot;areaCode&quot;: &quot;123&quot;,
+              &quot;number&quot;: &quot;4567890&quot;
+            },
+            {
+              &quot;phoneNumberType&quot;: &quot;Fax&quot;,
+              &quot;countryAccessCode&quot;: &quot;1&quot;,
+              &quot;areaCode&quot;: &quot;123&quot;,
+              &quot;number&quot;: &quot;7890123&quot;
+            }
+          ]
+        },
+        &quot;AlternateReservationManager&quot;: {
+          &quot;phoneNumbers&quot;: [
+            {
+              &quot;phoneNumberType&quot;: &quot;Phone&quot;,
+              &quot;countryAccessCode&quot;: &quot;1&quot;,
+              &quot;areaCode&quot;: &quot;123&quot;,
+              &quot;number&quot;: &quot;1234567&quot;
+            }
+          ]
+        },
+        &quot;GeneralManager&quot;: {
+          &quot;firstName&quot;: &quot;General&quot;,
+          &quot;lastName&quot;: &quot;Manager&quot;,
+          &quot;emails&quot;: [
+            &quot;abc123@xyz.com&quot;
+          ]
+        }
+      },
+      &quot;contents&quot;: [
+        {
+          &quot;locale&quot;: &quot;en-US&quot;,
+          &quot;name&quot;: &quot;Localized Property Name&quot;,
+          &quot;providerPropertyUrl&quot;: null,
+          &quot;images&quot;: [
+            {
+              &quot;url&quot;: &quot;images.xyz.com/mainImage.jpg&quot;,
+              &quot;categoryCode&quot;: &quot;FEATURED_IMAGE&quot;,
+              &quot;caption&quot;: &quot;Main Image&quot;
+            },
+          ],
+          &quot;amenities&quot;: [
+            {
+              &quot;code&quot;: &quot;BREAKFAST&quot;,
+              &quot;detailCode&quot;: &quot;FREE&quot;,
+              &quot;value&quot;: null
+            },
+            {
+              &quot;code&quot;: &quot;WIFI&quot;,
+              &quot;detailCode&quot;: &quot;SURCHARGE_PER_STAY&quot;,
+              &quot;value&quot;: 10.99
+            }
+          ],
+          &quot;paragraphs&quot;: [
+            {
+              &quot;code&quot;: &quot;DESCRIPTION&quot;,
+              &quot;value&quot;: &quot;Property description.&quot;
+            },
+            {
+              &quot;code&quot;: &quot;CHECKIN_INSTRUCTIONS&quot;,
+              &quot;value&quot;: &quot;Special check-in instructions.&quot;
+            }
+          ]
+        }
+      ],
+      &quot;propertyCollectedMandatoryFees&quot;: [
+        {
+          &quot;code&quot;: &quot;RESORT_FEE&quot;,
+          &quot;scope&quot;: &quot;PER_PERSON&quot;,
+          &quot;duration&quot;: &quot;PER_NIGHT&quot;,
+          &quot;value&quot;: 25.99,
+          &quot;startDate&quot;: null,
+          &quot;endDate&quot;: null
+        }
+      ],
+      &quot;taxes&quot;: [
+        {
+          &quot;code&quot;: &quot;VAT&quot;,
+          &quot;detailCode&quot;: &quot;PERCENT_PER_STAY&quot;,
+          &quot;value&quot;: 20
+        }
+      ],
+      &quot;policies&quot;: [
+        {
+          &quot;code&quot;: &quot;MINIMUM_CHECKIN_AGE&quot;,
+          &quot;detailCode&quot;: null,
+          &quot;value&quot;: &quot;18&quot;
+        },
+        {
+          &quot;code&quot;: &quot;CHECKIN_TIME&quot;,
+          &quot;detailCode&quot;: null,
+          &quot;value&quot;: &quot;2:00 PM&quot;
+        },
+        {
+          &quot;code&quot;: &quot;CHECKOUT_TIME&quot;,
+          &quot;detailCode&quot;: null,
+          &quot;value&quot;: &quot;11:00 AM&quot;
+        },
+        {
+          &quot;code&quot;: &quot;CANCELLATION_CUTOFF_TIME&quot;,
+          &quot;detailCode&quot;: null,
+          &quot;value&quot;: &quot;6:00 PM&quot;
+        }
+      ],
+      &quot;inventorySettings&quot;: {
+        &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;
+      },
+      &quot;attributes&quot;: [
+        {
+          &quot;code&quot;: &quot;TOTAL_ROOMS&quot;,
+          &quot;value&quot;: &quot;15&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms.html">Terms and Conditions</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2015 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="API Definition - Property API"/></body></html>
