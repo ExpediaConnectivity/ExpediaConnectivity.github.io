@@ -22,4 +22,18 @@ function logout() {
     window.location.href = "/test-properties/"
 }
 
+function jwtRequest(method, url, done, error) {
+    $.ajax({
+        method: method,
+        url: url,
+        xhrFields: {
+            withCredentials: true,
+            XDomainRequest: true
+        },
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
+        }
+    }).done(done).fail(error);
+}
+
 $(document).ready(checkTokenExpiration);
