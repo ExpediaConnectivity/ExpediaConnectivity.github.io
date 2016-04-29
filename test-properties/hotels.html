@@ -80,16 +80,26 @@
             </div>
         </div>
     </nav>
-</header><div class="full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+</header><div class="full-width"><style>
+    .dataTables_length, .dataTables_filter {
+        display: none;
+    }
+
+    .simple-content form {
+        margin-top: 50px;
+        margin-bottom: 200px;
+    }
+</style>
+<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>EPC Hotels</h1>
     <p class="announce">
         Below is a list of hotels associated with your account.
     </p>
-    <table id="hotels" style="display: none;" class="display" cellspacing="0" width="100%"></table>
-    <form style="margin-bottom: 200px;" onsubmit="return false;">
+    <table id="hotels" class="display" cellspacing="0" width="100%"></table>
+    <form onsubmit="autoAssignHotel(); return false;">
         <div id="result" class="formline center"></div>
         <div class="formline">
-            <input class="submit" type="button" value="Request Hotel" onclick="autoAssignHotel();"/>
+            <input class="submit" type="submit" value="Request Hotel"/>
         </div>
     </form>
 </div>
@@ -110,24 +120,23 @@
     ];
 
     $(document).ready(function() {
-        getHotelsByJwt();
+        datatable = $("#hotels").DataTable({
+            columns: columns,
+            pageLength: 100,
+            ajax: function (data, callback, settings) {
+                jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
+                    console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+                    $("#result").removeClass("error").text("");
+                    callback({data: parseData(JSON.parse(jqxhr.responseText))});
+                    datatable.order([ 3, "asc" ]).draw();
+                }, function(jqxhr) {
+                    ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
+                });
+            }
+        });
     });
 
-    function jwtRequest(method, url, done, error) {
-        $.ajax({
-            method: method,
-            url: url,
-            xhrFields: {
-                withCredentials: true,
-                XDomainRequest: true
-            },
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
-            }
-        }).done(done).fail(error);
-    }
-
-    function displayTable(data) {
+    function parseData(data) {
         var table = [];
         for (tuid of data) {
             for (hotel of tuid.hotels) {
@@ -137,12 +146,7 @@
                 }
             }
         }
-        if (datatable) {
-            datatable.destroy();
-        }
-        datatable = $("#hotels").DataTable({ data: table, columns: columns });
-        datatable.order([ 2, "asc" ]).draw();
-        $("#hotels").show();
+        return table;
     }
 
     function ajaxError(jqxhr, humanError) {
@@ -150,21 +154,11 @@
         $("#result").addClass("error").text(humanError);
     }
 
-    function getHotelsByJwt() {
-        jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("");
-            displayTable(JSON.parse(jqxhr.responseText));
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
-        });
-    }
-
     function autoAssignHotel() {
         jwtRequest("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully assigned hotel");
-            getHotelsByJwt();
+            datatable.ajax.reload();
         }, function(jqxhr) {
             ajaxError(jqxhr, "Could not schedule a test hotel.");
         });
