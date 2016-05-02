@@ -1661,6 +1661,24 @@ Simple entity response:</p>
                 &quot;perStayFee&quot;: &quot;None&quot;,
                 &quot;amount&quot;: 0
             }
+        ],
+        &quot;exceptions&quot;: [
+            {
+                &quot;endDate&quot;: &quot;2019-04-01&quot;,
+                &quot;startDate&quot;: &quot;2019-03-01&quot;,
+                &quot;penalties&quot;: [
+                    {
+                        &quot;amount&quot;: 1.0,
+                        &quot;deadline&quot;: 0,
+                        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;
+                    },
+                    {
+                        &quot;amount&quot;: 1.0,
+                        &quot;deadline&quot;: 24,
+                        &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;
+                    }
+                ]
+            }
         ]
     },
     &quot;additionalGuestAmounts&quot;: [
@@ -1864,6 +1882,24 @@ Simple entity response:</p>
                 &quot;deadline&quot;: 24,
                 &quot;perStayFee&quot;: &quot;None&quot;,
                 &quot;amount&quot;: 0
+            }
+        ],
+        &quot;exceptions&quot;: [
+            {
+                &quot;endDate&quot;: &quot;2019-04-01&quot;,
+                &quot;startDate&quot;: &quot;2019-03-01&quot;,
+                &quot;penalties&quot;: [
+                    {
+                        &quot;amount&quot;: 1.0,
+                        &quot;deadline&quot;: 0,
+                        &quot;perStayFee&quot;: &quot;1stNightRoomAndTax&quot;
+                    },
+                    {
+                        &quot;amount&quot;: 1.0,
+                        &quot;deadline&quot;: 24,
+                        &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;
+                    }
+                ]
             }
         ]
     },
@@ -2139,7 +2175,44 @@ Simple entity response:</p>
 <tr>
 <td>defaultPenalties</td>
 <td>Array[<a href="#/definitions/PenaltyDTO">Penalty</a>]</td>
-<td>Default penalties&#39; definition. Min 1, Max 2 penalties defined</td>
+<td>Array of penalties. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided.</td>
+</tr>
+<tr>
+<td>exceptions</td>
+<td>Array[<a href="#/definitions/CancelPolicyExceptionDTO">CancelPolicyException</a>]</td>
+<td>Array of exceptions. Exceptions can be provided for specific date ranges. An exception will contain a startDate, endDate, and an array of penalties that follow the same structure and rules as the penalties provided as default. Max 500 exceptions.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/CancelPolicyExceptionDTO"></a></p>
+<h4 id="cancel-policy-exception" data-magellan-destination="cancel-policy-exception">Cancel Policy Exception</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startDate</td>
+<td>date</td>
+<td>Yes</td>
+<td>Start date of an exception. Has to be in format: YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>date</td>
+<td>Yes</td>
+<td>End date of an exception. Cannot be in the past. Has to be in format: YYYY-MM-DD.</td>
+</tr>
+<tr>
+<td>penalties</td>
+<td>Array[<a href="#/definitions/PenaltyDTO">Penalty</a>]</td>
+<td>Yes</td>
+<td>Array of penalties applicable to the start and end dates provided. There can be one or 2 penalties provided. A penalty with a deadline of 0 is always required. A second deadline can optionally be provided.</td>
 </tr>
 </tbody>
 </table>
@@ -2157,7 +2230,7 @@ Simple entity response:</p>
 <tr>
 <td>deadline</td>
 <td>integer</td>
-<td>Number of hours prior to the arrival of the guest. When set to 0, it means up until end of the day of arrival. Min 0, Max 999</td>
+<td>Penalty window defined in hours. Hours are relative to checkin date and the property&#39;s cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours.</td>
 </tr>
 <tr>
 <td>perStayFee</td>

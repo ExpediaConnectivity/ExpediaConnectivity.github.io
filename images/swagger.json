@@ -705,8 +705,33 @@
           "type": "array",
           "description": "List os exceptional cancel penalties defined for the Rate Plan",
           "items": {
-            "$ref": "#/definitions/CancelPenaltyExceptionRuleDTO"
+            "$ref": "#/definitions/CancelPolicyExceptionDTO"
           }
+        }
+      }
+    },
+    "CancelPolicyExceptionDTO": {
+      "type": "object",
+      "required": [
+        "penalties", "startDate", "endDate"
+      ],
+      "properties": {
+        "penalties": {
+          "type": "array",
+          "description": "Penalties' definition. Min 1, Max 2 penalties defined",
+          "items": {
+            "$ref": "#/definitions/PenaltyDTO"
+          }
+        },
+        "startDate": {
+          "type": "date",
+          "format": "YYYY-MM-DD",
+          "description": "Exception's start date"
+        },
+        "endDate": {
+          "type": "date",
+          "format": "YYYY-MM-DD",
+          "description": "Exception's end date"
         }
       }
     },

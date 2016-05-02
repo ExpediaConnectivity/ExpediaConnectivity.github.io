@@ -298,32 +298,10 @@ The Product API enables partners to first create a room type, and subsequently c
 </table>
 </div><p>For more information about the various possible values and constraints on each of these attributes, please refer to the <a href="reference.html#/definitions/RnsAttributesDTO">API Definition section</a>.</p>
 <h2 id="understanding-cancellation-change-policy" data-magellan-destination="understanding-cancellation-change-policy">Understanding Cancellation &amp; Change Policy</h2>
-<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. The Cancellation &amp; Change Policy is defined with the following attributes in the Expedia system:</p>
-<div><table>
-<thead>
-<tr>
-<th>Attribute Name</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Deadline</td>
-<td>Penalty window defined in hours. Hours are relative to checkin date and the property&#39;s cancellation time (property level configuration that is available in read-only mode under the property resource). Min 0, max 999 hours.</td>
-</tr>
-<tr>
-<td>Penalty</td>
-<td>Value should match one of the <a href="reference.html#/definitions/perStayFeeEnum">predefined values</a>.</td>
-</tr>
-<tr>
-<td>Amount</td>
-<td>Flat amount that can be charged if customer cancels.</td>
-</tr>
-</tbody>
-</table>
-</div><p>Cancellation and change policy is optional when creating a new rate plan.</p>
+<p>The Cancellation &amp; Change Policy is applicable when a customer either wants to cancel a reservation or when he makes a change to a reservation that would cause the total amount of the initial reservation to be different. Changes impacting the reservation rate include: a change of room type, rate plan, occupancy or dates. For more detailed information on Cancellation &amp; Change Policy please see the <a href="reference.html#/definitions/CancelPolicyDTO">reference</a>.</p>
+<p>Cancellation and change policy is optional when creating a new rate plan.</p>
 <ul>
-<li>If provided, partners are required to provide at least one deadline in hours, and a cancellation penalty.</li>
+<li>If provided, partners are required to provide at least one defaultPenalty with one deadline in hours, and a penalty.</li>
 <li>If no cancellation policy is provided in a create rate plan request, Expedia will try to select one which already exists, is refundable, and was most recently used by an active rate plan of the same type (standalone, package or corporate)</li>
 <li>If no cancellation policy can be found due to not having any active rate plan of the required type, we will default to a standard cancellation policy where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline. </li>
 </ul>
@@ -335,7 +313,56 @@ The Product API enables partners to first create a room type, and subsequently c
 <li>If a second penalty is provided, its deadline must be greater than 0, and less than 1000.</li>
 <li>It is currently not possible to provide more than 2 defaultPenalties. Expedia can only manage 2 different penalties per cancellation &amp; change policy.</li>
 </ul>
-<p><strong>Example 1</strong> : Considering the following policy: </p>
+<p>Partners can optionally add exceptions objects.</p>
+<ul>
+<li>startDate and endDate are both required</li>
+<li>It is not allowed to provide exceptions with end dates in the past in a create or update message. Exceptions with end dates in the past will not be returned in GET responses.</li>
+<li>Exception date ranges cannot overlap: if more than 1 exception is provided, Expedia will make sure that there are no date overlaps between 2 exception objects.</li>
+<li>The rules and validations around the penalties included in an exception are the same as with the defaultPenalties object (min 1, max 1 deadlines, deadline 0 required, etc.)</li>
+</ul>
+<p>When exceptions are defined, Expedia will apply a cancel policy to a booking based on the booking start/arrival date. See example 1 below for a concrete example of what this means.</p>
+<p><strong>Example 1</strong> : Assume a cancel policy with only one exception defined:</p>
+<ul>
+<li>By default, if a customer cancels 72h or less before a property&#39;s cancellation time, the customer pays the full amount of the reservation. If he cancels more than 72h before the property&#39;s cancellation time, the customer pays no penalty.</li>
+<li>For dates from June 2nd to July 15th inclusively, the rate plan is not refundable.</li>
+</ul>
+<p>To reflect such terms, a partner should send:</p>
+<pre><code class="lang-JSON">{
+  &quot;cancelPolicy&quot;: {
+    &quot;defaultPenalties&quot;: [
+      {
+        &quot;deadline&quot;: 0,
+        &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;,
+        &quot;amount&quot;: 0
+      }, {
+        &quot;deadline&quot;: 72,
+        &quot;perStayFee&quot;: &quot;None&quot;,
+        &quot;amount&quot;: 0
+      }
+    ],
+    &quot;exceptions&quot;: [
+      {
+        &quot;startDate&quot;: &quot;2016-06-02&quot;,
+        &quot;endDate&quot;: &quot;2016-07-15&quot;,
+        &quot;penalties&quot;: [
+          {
+            &quot;deadline&quot;: 0,
+            &quot;perStayFee&quot;: &quot;FullCostOfStay&quot;,
+            &quot;amount&quot;: 0
+          }
+        ]
+      }
+    ]
+  }
+}
+</code></pre>
+<p><strong>How will Expedia decide which penalty to apply to a booking based on example 1&#39;s policy?</strong> 
+Expedia picks a cancel policy to apply based on arrival date. For example:</p>
+<ul>
+<li>Assume a booking is made for arrival on June 1st, for 3 nights:  because the arrival date is outside of the range of dates covered by the exception, the default policy applies. </li>
+<li>Assume a booking is made for arrival on July 15th, for 3 nights: because the arrival date falls on the last date of the exception, the exception policy applies.</li>
+</ul>
+<p><strong>Example 2</strong> : Considering the following policy: </p>
 <ul>
 <li>If a customer cancels between 24h or less before property&#39;s cancellation time, the customer pays for one night.</li>
 <li>If a customer cancels more than 24h before property&#39;s cancellation time, the customer pays no penalty.</li>
@@ -355,7 +382,7 @@ The Product API enables partners to first create a room type, and subsequently c
     ]
   }
 </code></pre>
-<p><strong>Example 2</strong> : variation of the above example, where </p>
+<p><strong>Example 3</strong> : variation of the above example, where </p>
 <ul>
 <li>cancellations within 24h of property cancellation time deadline should be charged 1 night room and tax</li>
 <li>cancellations further out should incur a 5 unit of currency penalty (for example 5 GBP for a London, UK property, assuming property rate acquisition type is SellLAR)</li>
@@ -375,7 +402,7 @@ The Product API enables partners to first create a room type, and subsequently c
     ]
   }
 </code></pre>
-<p><strong>Example 3</strong> : if a policy is non-refundable, partner should send:</p>
+<p><strong>Example 4</strong> : if a policy is non-refundable, partner should send:</p>
 <pre><code class="lang-JSON">  &quot;cancelPolicy&quot;: {
     &quot;defaultPenalties&quot;: [
       {
