@@ -99,6 +99,7 @@
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form onsubmit="autoAssignHotel(); return false;">
         <div id="result" class="formline center"></div>
+        <div id="factors"></div>
         <div class="formline">
             <input class="submit" type="submit" value="Request Hotel"/>
         </div>
@@ -135,6 +136,8 @@
                 });
             }
         });
+
+        $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
     });
 
     function parseData(data) {
@@ -148,6 +151,22 @@
             }
         }
         return table;
+    }
+
+    function parseFactors(factors) {
+        var factorsLoc = $('#factors');
+        for (var factor of factors) {
+            var label = $('<label>').text(factor.displayName);
+            var sel = $('<select>');
+            sel.attr('name', factor.factorName);
+            sel.append($('<option selected>').attr('value', '').text('No preference'));
+            for (var value of factor.validValues) {
+                sel.append($('<option>').attr('value', value).text(value));
+            }
+            factorsLoc.append(label);
+            factorsLoc.append(sel);
+            factorsLoc.append($('<br/><br/>'));
+        }
     }
 
     function ajaxError(jqxhr, humanError) {
