@@ -81,7 +81,9 @@
             </div>
         </div>
     </nav>
-</header><div class="full-width"><style>
+</header><div class="full-width"><script src="/js/jquery.DataTables.min.js"></script>
+<script src="/js/dataTables.buttons.min.js"></script>
+<style>
     .dataTables_length, .dataTables_filter {
         display: none;
     }
@@ -121,9 +123,15 @@
         { title: "RAT" }
     ];
 
+    var buttons = [
+        { text: "Unassign", action: unassign }
+    ];
+
     $(document).ready(function() {
         datatable = $("#hotels").DataTable({
+            dom: 'Bfrtip',
             columns: columns,
+            buttons: buttons,
             pageLength: 100,
             ajax: function (data, callback, settings) {
                 jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
@@ -135,9 +143,21 @@
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
                 });
             }
+        }).on('click', 'tr', function() {
+            if ($(this).hasClass("selected")) {
+                $(this).removeClass("selected");
+                $(".dt-button").prop("disabled", true).addClass("disabled");
+                console.log("disabled");
+            } else {
+                $("#hotels tr").removeClass("selected");
+                $(this).addClass("selected");
+                $(".dt-button").prop("disabled", false).removeClass("disabled");
+                console.log("enabled");
+            }
         });
 
         $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
+        $(".dt-button").prop("disabled", true).addClass("disabled");
     });
 
     function parseData(data) {
@@ -181,6 +201,18 @@
             datatable.ajax.reload();
         }, function(jqxhr) {
             ajaxError(jqxhr, "Could not schedule a test hotel.");
+        });
+    }
+
+    function unassign(e, dt, node, config) {
+        console.log("unassign");
+        var hotelid = dt.cell(".selected", 1).data();
+        jwtRequest("DELETE", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/hotelId/" + hotelid, function(data, textStatus, jqxhr) {
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully unassigned hotel");
+            datatable.ajax.reload();
+        }, function(jqxhr) {
+            ajaxError(jqxhr, "Could not unassign a test hotel.");
         });
     }
 
