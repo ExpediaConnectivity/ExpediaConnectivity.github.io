@@ -770,6 +770,9 @@ section.hero .inner h2 {
 /*
     Card Pallet
 */
+form {
+  margin-bottom: 400px;
+}
 form .formline {
   line-height: 1.5;
   margin-bottom: 10px;
@@ -784,7 +787,7 @@ form .formline > span {
 }
 form .formline > input {
   display: inline-block;
-  width: 49%;
+  width: 100%;
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   padding: 0.5rem;
@@ -793,21 +796,20 @@ form .formline > input {
   margin: 0;
 }
 form .formline > .submit {
-  display: inline-block;
-  width: 49%;
-  margin-left: 50%;
-  vertical-align: middle;
-  font-size: 0.8em;
-  color: #5f5f5f;
   background: #FECB2F;
   cursor: pointer;
 }
-form .error {
+form #result {
   font-size: 0.7em;
+}
+form .error {
   color: #D62D20;
 }
+form .request-hotel {
+  margin-top: 1.7em;
+}
 #hotels_wrapper > .dt-buttons {
-  margin-bottom: 10px;
+  margin-bottom: 0.7em;
 }
 #hotels_wrapper > .dt-buttons > .dt-button {
   border: 1px solid #EFEFEF;
@@ -826,4 +828,12 @@ form .error {
 #hotels_wrapper > .dt-buttons .disabled {
   background: #EFEFEF;
   cursor: default;
+}
+#factors .factor {
+  margin-top: 0.7em;
+}
+#factors .factor select {
+  line-height: normal;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
