@@ -187,6 +187,7 @@
             var label = $('<label>').text(factor.displayName);
             assignmentRequestFields.push(factor.factorName);
             var sel = $('<select>').attr("name", factor.factorName);
+            sel.attr("id", "val_" + factor.factorName);
             sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
             for (var value of factor.validValues) {
                 sel.append($('<option>').attr('value', value).text(value));
