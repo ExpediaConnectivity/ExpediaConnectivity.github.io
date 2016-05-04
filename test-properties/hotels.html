@@ -210,15 +210,14 @@
 
     function getAssignmentRequest() {
         var request = {};
-        for (fieldName of assignmentRequestFields) {
+        for (var fieldName of assignmentRequestFields) {
             addAssignmentField(request, fieldName);
         }
-        return request;
+        return JSON.stringify(request);
     }
 
     function autoAssignHotel() {
-        var req = getAssignmentRequest();
-        jwtRequestWithData("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", req, function(data, textStatus, jqxhr) {
+        jwtRequestWithData("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", getAssignmentRequest(), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully assigned hotel");
             datatable.ajax.reload();
