@@ -168,11 +168,6 @@
         autoAssignHotel();
     });
 
-    $('#requestHotelForm').submit(function (event) {
-        event.preventDefault();
-        autoAssignHotel();
-    });
-
     function parseData(data) {
         var table = [];
         for (tuid of data) {
