@@ -36,4 +36,19 @@ function jwtRequest(method, url, done, error) {
     }).done(done).fail(error);
 }
 
+function jwtRequestWithData(method, url, data, done, error) {
+    $.ajax({
+        method: method,
+        url: url,
+        data: data,
+        xhrFields: {
+            withCredentials: true,
+            XDomainRequest: true
+        },
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
+        }
+    }).done(done).fail(error);
+}
+
 $(document).ready(checkTokenExpiration);
