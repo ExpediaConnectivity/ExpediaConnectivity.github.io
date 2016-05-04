@@ -41,6 +41,10 @@ function jwtRequestWithData(method, url, data, done, error) {
         method: method,
         url: url,
         data: data,
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
         xhrFields: {
             withCredentials: true,
             XDomainRequest: true
