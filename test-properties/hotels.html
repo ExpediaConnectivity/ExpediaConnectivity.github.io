@@ -125,7 +125,8 @@
     ];
 
     var buttons = [
-        { text: "Unassign", action: unassign }
+        { text: "Unassign", action: unassign },
+        { text: "Extend", action: extend }
     ];
 
     $(document).ready(function() {
@@ -241,6 +242,18 @@
             datatable.ajax.reload();
         }, function(jqxhr) {
             ajaxError(jqxhr, "Could not unassign a test hotel.");
+        });
+    }
+
+    function extend(e, dt, node, config) {
+        console.log("extend");
+        var hotelid = dt.cell(".selected", 1).data();
+        jwtRequest("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/hotelId/" + hotelid + "/extend", function(data, textStatus, jqxhr) {
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            $("#result").removeClass("error").text("Successfully extended hotel");
+            datatable.ajax.reload();
+        }, function(jqxhr) {
+            ajaxError(jqxhr, "Could not extend a test hotel.");
         });
     }
 
