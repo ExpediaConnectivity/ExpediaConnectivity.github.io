@@ -170,9 +170,12 @@
 
     function parseData(data) {
         var table = [];
-        for (tuid of data) {
-            for (hotel of tuid.hotels) {
-                for (date of hotel.dates) {
+        for (var i in data) {
+            var tuid = data[i];
+            for (var j in tuid.hotels) {
+                var hotel = tuid.hotels[j];
+                for (var k in hotel.dates) {
+                    var date = hotel.dates[k];
                     table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.startDate, date.endDate,
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
                 }
@@ -183,17 +186,19 @@
 
     function parseFactors(factors) {
         var factorsLoc = $('#factors');
-        for (var factor of factors) {
+        for (var i in factors) {
+            var factor = factors[i];
             var label = $('<label>').text(factor.displayName);
             assignmentRequestFields.push(factor.factorName);
             var sel = $('<select>').attr("name", factor.factorName);
             sel.attr("id", "val_" + factor.factorName);
             sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
-            for (var value of factor.validValues) {
+            for (var j in factor.validValues) {
+                var value = factor.validValues[j];
                 sel.append($('<option>').attr('value', value).text(value));
             }
-            var factor = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
-            factorsLoc.append(factor);
+            var elem = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
+            factorsLoc.append(elem);
         }
     }
 
@@ -211,8 +216,8 @@
 
     function getAssignmentRequest() {
         var request = {};
-        for (var fieldName of assignmentRequestFields) {
-            addAssignmentField(request, fieldName);
+        for (var i in assignmentRequestFields) {
+            addAssignmentField(request, assignmentRequestFields[i]);
         }
         return JSON.stringify(request);
     }
