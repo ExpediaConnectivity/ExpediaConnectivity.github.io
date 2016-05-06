@@ -4,7 +4,9 @@ function checkTokenExpiration() {
         return;
     }
 
-    $("#logout").show();
+    $("#logoutnav").show();
+    $("#hotelnav").show();
+    $("#apikeynav").show();
     var payload = token.split(".")[1];
     payload = JSON.parse(atob(payload));
     console.log(payload);

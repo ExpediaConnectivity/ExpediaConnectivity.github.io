@@ -808,6 +808,13 @@ form .error {
 form .request-hotel {
   margin-top: 1.7em;
 }
+#loginform input {
+  width: 49%;
+}
+#loginform .submit {
+  float: right;
+  margin-right: 0.8em;
+}
 #hotels_wrapper > .dt-buttons {
   margin-bottom: 0.7em;
 }
@@ -821,6 +828,7 @@ form .request-hotel {
   color: #5f5f5f;
   background: #FECB2F;
   cursor: pointer;
+  margin-right: 0.3em;
 }
 #hotels_wrapper > .dt-buttons > .dt-button:hover {
   text-decoration: none;
