@@ -85,7 +85,7 @@
     <p class="announce">
         Please enter your Expedia Quick Connect (EQC) login details below.
     </p>
-    <form class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
+    <form id="loginform" class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
         <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
         <div class="formline"><span class="right-align">Password: </span><input id="password" type="password"
                                                                                 placeholder=""/></div>
@@ -93,7 +93,7 @@
         <div class="formline"><input class="submit" type="submit" value="Login"/></div>
     </form>
 </div>
-<script src="/js/checkJwt.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
 <!--[if lte IE 9]>
 <script src="/js/base64.js"></script>
 <!--<![endif]-->

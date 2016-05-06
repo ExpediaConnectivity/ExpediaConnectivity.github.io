@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Hotels - APIs for Expedia Partners</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Apikeys - APIs for Expedia Partners</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,111 +97,47 @@
     }
 </style>
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>EPC Hotels</h1>
+    <h1>API Keys</h1>
     <p class="announce">
-        Below is a list of hotels associated with your account.
+        Below are API keys assigned to your account.
     </p>
-    <table id="hotels" class="display" cellspacing="0" width="100%"></table>
-    <form id="requestHotelForm">
-        <div id="result" class="formline center"></div>
-        <hr/>
-        <div id="factors" class="row full-width"></div>
-        <div class="formline large-6 small-12 large-offset-6 columns request-hotel">
-            <input class="submit" type="submit" value="Request Hotel"/>
-        </div>
-    </form>
+    <table id="apikeys" class="display" cellspacing="0" width="100%"></table>
+    <div id="result" class="formline center"></div>
 </div>
 
 <script>
     var datatable = false;
-    var assignmentRequestFields = [];
 
     var columns = [
-        { title: "Hotel ID" },
-        { title: "Name" },
-        { title: "Valid To", type: "date" },
-        { title: "Model" },
-        { title: "Currency" },
-        { title: "Pricing" },
-        { title: "RAT" }
-    ];
-
-    var buttons = [
-        { text: "Unassign", action: unassign },
-        { text: "Extend", action: extend }
+        { title: "API" },
+        { title: "API Key" }
     ];
 
     $(document).ready(function() {
-        datatable = $("#hotels").DataTable({
-            dom: 'Bfrtip',
+        datatable = $("#apikeys").DataTable({
             columns: columns,
-            buttons: buttons,
             pageLength: 100,
             ajax: function (data, callback, settings) {
-                jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule", function(data, textStatus, jqxhr) {
+                jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/apikey", function(data, textStatus, jqxhr) {
                     console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
                     }
-                    $(".dt-button").prop("disabled", true).addClass("disabled");
                     callback({data: parseData(JSON.parse(jqxhr.responseText))});
-                    datatable.order([ 2, "asc" ]).draw();
+                    datatable.order([ 0, "asc" ]).draw();
                 }, function(jqxhr) {
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
                 });
             }
-        }).on('click', 'tr', function() {
-            if ($(this).hasClass("selected")) {
-                $(this).removeClass("selected");
-                $(".dt-button").prop("disabled", true).addClass("disabled");
-                console.log("disabled");
-            } else {
-                $("#hotels tr").removeClass("selected");
-                $(this).addClass("selected");
-                $(".dt-button").prop("disabled", false).removeClass("disabled");
-                console.log("enabled");
-            }
         });
-
-        $.getJSON("http://hotel-assignment-service.us-west-2.test.expedia.com/v1/hotels/factors", parseFactors);
-    });
-
-    $('#requestHotelForm').submit(function (event) {
-        event.preventDefault();
-        autoAssignHotel();
     });
 
     function parseData(data) {
-        var table = [];
-        for (var i in data) {
-            var tuid = data[i];
-            for (var j in tuid.hotels) {
-                var hotel = tuid.hotels[j];
-                for (var k in hotel.dates) {
-                    var date = hotel.dates[k];
-                    table.push([hotel.hotelId, hotel.hotelName, date.endDate,
-                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
-                }
-            }
-        }
-        return table;
-    }
-
-    function parseFactors(factors) {
-        var factorsLoc = $('#factors');
-        for (var i in factors) {
-            var factor = factors[i];
-            var label = $('<label>').text(factor.displayName);
-            assignmentRequestFields.push(factor.factorName);
-            var sel = $('<select>').attr("name", factor.factorName);
-            sel.attr("id", "val_" + factor.factorName);
-            sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
-            for (var j in factor.validValues) {
-                var value = factor.validValues[j];
-                sel.append($('<option>').attr('value', value).text(value));
-            }
-            var elem = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
-            factorsLoc.append(elem);
+        console.log(data);
+        if (typeof data.key == 'undefined') {
+            datatable.clear().draw();
+        } else {
+            return [["Production", data.key]];
         }
     }
 
@@ -209,56 +145,6 @@
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
         $("#result").addClass("error").text(humanError);
     }
-
-    function addAssignmentField(request, fieldName) {
-        var val = $('#val_' + fieldName).val();
-        if (val != '') {
-            request[fieldName] = val;
-        }
-    }
-
-    function getAssignmentRequest() {
-        var request = {};
-        for (var i in assignmentRequestFields) {
-            addAssignmentField(request, assignmentRequestFields[i]);
-        }
-        return JSON.stringify(request);
-    }
-
-    function autoAssignHotel() {
-        jwtRequestWithData("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/assign", getAssignmentRequest(), function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully assigned hotel");
-            datatable.ajax.reload();
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not schedule a test hotel.");
-        });
-    }
-
-    function unassign(e, dt, node, config) {
-        console.log("unassign");
-        var hotelid = dt.cell(".selected", 1).data();
-        jwtRequest("DELETE", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/hotelId/" + hotelid, function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully unassigned hotel");
-            datatable.ajax.reload();
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not unassign a test hotel.");
-        });
-    }
-
-    function extend(e, dt, node, config) {
-        console.log("extend");
-        var hotelid = dt.cell(".selected", 1).data();
-        jwtRequest("POST", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/schedule/hotelId/" + hotelid + "/extend", function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully extended hotel");
-            datatable.ajax.reload();
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not extend a test hotel.");
-        });
-    }
-
 
 </script></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
@@ -274,4 +160,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Hotels"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Apikeys"/></body></html>
