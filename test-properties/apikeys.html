@@ -120,7 +120,7 @@
             columns: columns,
             pageLength: 100,
             ajax: function (data, callback, settings) {
-                jwtRequest("GET", "http://hotel-assignment-service.us-west-2.test.expedia.com/v1/apikey", function(data, textStatus, jqxhr) {
+                jwtRequest("GET", "https://hotel-assignment-service.test.expedia.com/v1/apikey", function(data, textStatus, jqxhr) {
                     console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");

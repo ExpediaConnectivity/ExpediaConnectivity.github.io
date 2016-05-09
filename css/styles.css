@@ -799,9 +799,6 @@ form .formline > .submit {
   background: #FECB2F;
   cursor: pointer;
 }
-form #result {
-  font-size: 0.7em;
-}
 form .error {
   color: #D62D20;
 }
