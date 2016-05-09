@@ -82,7 +82,8 @@
             </div>
         </div>
     </nav>
-</header><div class="full-width"><script src="/js/jquery.DataTables.min.js"></script>
+</header><div class="full-width"><link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/dataTables.buttons.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <style>
@@ -147,7 +148,8 @@
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
                     }
-                    $(".dt-button").prop("disabled", true).addClass("disabled");
+                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
+                    $(document).tooltip();
                     if (jqxhr.responseText == "") {
                         datatable.clear().draw();
                     } else {
@@ -161,12 +163,12 @@
         }).on('click', 'tr', function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass("selected");
-                $(".dt-button").prop("disabled", true).addClass("disabled");
+                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
                 console.log("disabled");
             } else {
                 $("#hotels tr").removeClass("selected");
                 $(this).addClass("selected");
-                $(".dt-button").prop("disabled", false).removeClass("disabled");
+                $(".dt-button").prop("disabled", false).removeClass("disabled").removeAttr("title");
                 console.log("enabled");
             }
         });
