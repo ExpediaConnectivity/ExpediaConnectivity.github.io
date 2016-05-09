@@ -146,8 +146,12 @@
                         $("#result").removeClass("error").text("");
                     }
                     $(".dt-button").prop("disabled", true).addClass("disabled");
-                    callback({data: parseData(JSON.parse(jqxhr.responseText))});
-                    datatable.order([ 2, "asc" ]).draw();
+                    if (jqxhr.responseText == "") {
+                        datatable.clear().draw();
+                    } else {
+                        callback({data: parseData(JSON.parse(jqxhr.responseText))});
+                        datatable.order([ 2, "asc" ]).draw();
+                    }
                 }, function(jqxhr) {
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
                 });
@@ -185,6 +189,9 @@
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType]);
                 }
             }
+        }
+        if (table.length == 0) {
+            datatable.clear().draw();
         }
         return table;
     }
