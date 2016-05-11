@@ -34,6 +34,7 @@ function jwtRequest(method, url, done, error) {
         },
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
+            xhr.setRequestHeader("Content-Type", "application/json");
         }
     }).done(done).fail(error);
 }
@@ -53,6 +54,7 @@ function jwtRequestWithData(method, url, data, done, error) {
         },
         beforeSend: function(xhr) {
             xhr.setRequestHeader("Authorization", "Bearer " + localStorage.getItem("AuthToken"));
+            xhr.setRequestHeader("Content-Type", "application/json");
         }
     }).done(done).fail(error);
 }

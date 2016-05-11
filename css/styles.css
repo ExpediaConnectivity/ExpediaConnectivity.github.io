@@ -632,9 +632,11 @@ nav li:hover a {
   height: auto;
   overflow: hidden;
   text-align: right;
-  position: absolute;
   right: 35px;
   top: -5px;
+}
+#menu-wrap ul {
+  display: inline-block;
 }
 #menu-toggle {
   display: none;
