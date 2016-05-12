@@ -141,6 +141,7 @@
             contentType: 'application/json; charset=UTF-8'
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
+            $("form#contactus").html("Thank you for contacting Expedia");
         }).fail(function(jqxhr){
             ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
         });
