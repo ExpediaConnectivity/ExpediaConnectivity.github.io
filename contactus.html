@@ -118,6 +118,7 @@
         <div class="formline">
             <input type="submit" value="Send" class="submit"/>
         </div>
+        <div id="result" class="formline center"></div>
     </form>
 </section>
 <script>
@@ -143,7 +144,7 @@
             console.log(response);
             $("form#contactus").html("Thank you for contacting Expedia");
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead.");
         });
     }
 
