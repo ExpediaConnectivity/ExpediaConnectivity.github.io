@@ -84,7 +84,7 @@
     </nav>
 </header><div class="full-width"><link rel="stylesheet" href="/css/he-main.css">
 <script src='https://www.google.com/recaptcha/api.js'></script>
-<section class='hero hero-oceanview'>
+<section class='hero hero-pineapple'>
     <div class='inner'>
         <h1>Contact Us</h1>
         <h2>Send us feedback or ask a question.</h2>
@@ -107,10 +107,16 @@
             <div class="g-recaptcha" data-sitekey="6LfpsB8TAAAAALLACfO9hn25EKmfE1YEq9QamDop" data-callback="captcha"></div>
         </div>
         <div class="formline">
-            <select id="category">
-                <option>Feedback</option>
-                <option>Question</option>
-            </select>
+            <input id="name" placeholder="Name" type="text" required/>
+        </div>
+        <div class="formline">
+            <input id="email" placeholder="Email" type="email" required/>
+        </div>
+        <div class="formline">
+            <input id="phone" placeholder="Phone Number" type="tel"/>
+        </div>
+        <div class="formline">
+            <input id="company" placeholder="Company" type="text"/>
         </div>
         <div class="formline">
             <textarea id="message" placeholder="Type your message here"></textarea>
@@ -131,7 +137,10 @@
 
     function sendmail(form) {
         var data = {};
-        data.category = $(form).find("#category").val();
+        data.name = $(form).find("#name").val();
+        data.email = $(form).find("#email").val();
+        data.phone = $(form).find("#phone").val();
+        data.company = $(form).find("#company").val();
         data.message = $(form).find("#message").val();
         data.captchaResponse = captchaResponse;
         $.ajax({
