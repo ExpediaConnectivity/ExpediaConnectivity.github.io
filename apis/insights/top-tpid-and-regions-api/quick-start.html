@@ -90,7 +90,7 @@
 <hr>
 <h2 id="reading-top-tpid-and-region-data" data-magellan-destination="reading-top-tpid-and-region-data">Reading Top TPID and Region Data</h2>
 <p>To retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  </p>
-<pre><code>http://hops-top-tpids-and-regions-service.us-east-1.prod.expedia.com/lodgingSort/v1/hops/HopsTopTpidsAndRegions?cid=prague-hackathon&amp;hotelId=1
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
 </code></pre><p>The response will contain a sorted list of top regions for each of the top tpids for the specified hotel. </p>
 <pre><code class="lang-JSON">{
     &quot;hopsTpidsList&quot;: [

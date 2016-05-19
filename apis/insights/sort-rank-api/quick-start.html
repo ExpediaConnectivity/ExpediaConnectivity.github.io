@@ -90,11 +90,11 @@
 <hr>
 <h2 id="reading-sort-rank-data" data-magellan-destination="reading-sort-rank-data">Reading Sort Rank Data</h2>
 <p>The most basic call to retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsAverageRanks> endpoint via a query parameter.  </p>
-<pre><code>http://sort-ranks-api-service.us-east-1.prod.expedia.com/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1&amp;cid=prague-hackathon
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/sort-ranks/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1
 </code></pre><p>The response will contain the hotel&#39;s average sort position for check in dates starting from today for the next 90 days in that hotel&#39;s top TPIDs and regions.</p>
 <hr>
 <p>To retreive a smaller range of checkin data, the search date, check-in date and number of days can be specified.</p>
-<pre><code>http://sort-ranks-api-service.us-east-1.prod.expedia.com/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1&amp;cid=prague-hackathon&amp;searchDate=2016-05-15&amp;checkin=2016-05-16&amp;numDays=1
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/sort-ranks/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1&amp;searchDate=2016-05-15&amp;checkin=2016-05-16&amp;numDays=1
 </code></pre><p>The response will contain only the specified checkin dates: </p>
 <pre><code class="lang-JSON">{
     &quot;hotelId&quot;: 1,

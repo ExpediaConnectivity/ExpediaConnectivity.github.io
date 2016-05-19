@@ -92,7 +92,7 @@ The equation for actual share is my bookings /(my bookings + my competitors’ t
 <hr>
 <h2 id="reading-fair-share-data" data-magellan-destination="reading-fair-share-data">Reading Fair Share Data</h2>
 <p>To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the <code>public/v1/fairShare</code> endpoint via query parameters.  </p>
-<pre><code>https://insights.expediapartnercentral.com.lisqa7.sb.karmalab.net/public/v1/fairShare?hotelId=759&amp;dayNum=2&amp;clientId=insights-test&amp;apiToken=dfc276f9-6e17-4d89-ac66-e2cdf7f77c2e&amp;api_key=insights
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2&amp;clientId=insights-test
 </code></pre><p>The response will contain the fair share data in the following format: </p>
 <pre><code class="lang-JSON">{
     &quot;data&quot;: {
