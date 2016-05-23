@@ -30,7 +30,7 @@ var Core = Core || {
         $("a.card-header").each(function(i, el) {
             if ($(el).html().includes("(Experimental)")) {
                 $(el).html($(el).html().replace("(Experimental)", ""));
-                $(el).after("<span class='experimental-api' title='Experimental APIs may break or be removed without notice.'>&nbsp;</span>");
+                $(el).after("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
             }
         });
         $(document).tooltip();

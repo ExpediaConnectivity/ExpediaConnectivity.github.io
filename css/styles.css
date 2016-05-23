@@ -275,14 +275,9 @@
   font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
 }
 .cards .card .experimental-api {
-  background: url(/images/warning-icon.png);
-  height: 1.5em;
-  width: 2em;
   vertical-align: text-bottom;
-  display: inline-block;
-  background-size: contain;
-  background-repeat: no-repeat;
   margin-left: 5px;
+  background-color: #008CBA;
 }
 .cards .card .links {
   font-size: 0.9em !important;
