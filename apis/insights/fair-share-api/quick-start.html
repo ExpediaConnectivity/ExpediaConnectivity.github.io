@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Top Tpid And Regions API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Fair Share API (Experimental)</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,40 +84,39 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Tpid And Regions API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-top-tpid-and-region-data"><a class="sidebar-nav-item" href="#reading-top-tpid-and-region-data">Reading Top TPID and Region Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api-experimental-/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api-experimental-/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
-<p>Rank Optimizer is a tool in Expedia Partner Central (EPC) that shows hoteliers their average placement position (aka sort rank) in hotel search result, with the goal of helping them understand the main factors that influence placement and how to optimize for visibility and booking. In order to provide the most relevant information, average sort rank is shown for the Point of Sales (POSa) and regions (aka, top TPIDs and Regions) where the hotel is most popular. This API provides the top TPIDs and region data.</p>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-fair-share-data"><a class="sidebar-nav-item" href="#reading-fair-share-data">Reading Fair Share Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+<p>The FairShare API returns a hotel’s expected fair share and actual market share per stay dates. 
+The equation for fair share is my room count /(my room count + my competitors&#39; total room count). 
+The equation for actual share is my bookings /(my bookings + my competitors’ total bookings)</p>
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
+<p>Each request should include hotelier credentials in HTTP basic auth format, a clientId query parameter, a dayNum query parameter, and a hotelId query parameter.</p>
 <hr>
-<h2 id="reading-top-tpid-and-region-data" data-magellan-destination="reading-top-tpid-and-region-data">Reading Top TPID and Region Data</h2>
-<p>To retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  </p>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
-</code></pre><p>The response will contain a sorted list of top regions for each of the top tpids for the specified hotel. </p>
+<h2 id="reading-fair-share-data" data-magellan-destination="reading-fair-share-data">Reading Fair Share Data</h2>
+<p>To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the <code>public/v1/fairShare</code> endpoint via query parameters.  </p>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2&amp;clientId=insights-test
+</code></pre><p>The response will contain the fair share data in the following format: </p>
 <pre><code class="lang-JSON">{
-    &quot;hopsTpidsList&quot;: [
-        {
-            &quot;sortedRegionList&quot;: [
-                2114,
-                800053,
-                6144914
-            ],
-            &quot;tpid&quot;: 3101
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3109
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3107
-        }
-    ],
-    &quot;hotelId&quot;: 1
+    &quot;data&quot;: {
+        &quot;compSetRoomCount&quot;: 3322,
+        &quot;daily&quot;: [
+            {
+                &quot;bookedRooms&quot;: 0,
+                &quot;compSetBookedRooms&quot;: 0,
+                &quot;date&quot;: &quot;2016-05-18&quot;
+            },
+            {
+                &quot;bookedRooms&quot;: 0,
+                &quot;compSetBookedRooms&quot;: 0,
+                &quot;date&quot;: &quot;2016-05-19&quot;
+            }
+        ],
+        &quot;fairshare&quot;: 0.024,
+        &quot;roomCount&quot;: 83
+    },
+    &quot;errorCode&quot;: null,
+    &quot;errorMsg&quot;: null,
+    &quot;status&quot;: &quot;Success&quot;
 }
 </code></pre>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
@@ -136,4 +135,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Top Tpid And Regions API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Fair Share API (Experimental)"/></body></html>

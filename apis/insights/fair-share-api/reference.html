@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Fair Share API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Fair Share API (Experimental)</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,42 +84,51 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-fair-share-data"><a class="sidebar-nav-item" href="#reading-fair-share-data">Reading Fair Share Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api-experimental-/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api-experimental-/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
-<p>The FairShare API returns a hotel’s expected fair share and actual market share per stay dates. 
-The equation for fair share is my room count /(my room count + my competitors&#39; total room count). 
-The equation for actual share is my bookings /(my bookings + my competitors’ total bookings)</p>
-<hr>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair Share Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>Each request should include hotelier credentials in HTTP basic auth format, a clientId query parameter, a dayNum query parameter, and a hotelId query parameter.</p>
-<hr>
-<h2 id="reading-fair-share-data" data-magellan-destination="reading-fair-share-data">Reading Fair Share Data</h2>
-<p>To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the <code>public/v1/fairShare</code> endpoint via query parameters.  </p>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2&amp;clientId=insights-test
-</code></pre><p>The response will contain the fair share data in the following format: </p>
-<pre><code class="lang-JSON">{
-    &quot;data&quot;: {
-        &quot;compSetRoomCount&quot;: 3322,
-        &quot;daily&quot;: [
-            {
-                &quot;bookedRooms&quot;: 0,
-                &quot;compSetBookedRooms&quot;: 0,
-                &quot;date&quot;: &quot;2016-05-18&quot;
-            },
-            {
-                &quot;bookedRooms&quot;: 0,
-                &quot;compSetBookedRooms&quot;: 0,
-                &quot;date&quot;: &quot;2016-05-19&quot;
-            }
-        ],
-        &quot;fairshare&quot;: 0.024,
-        &quot;roomCount&quot;: 83
-    },
-    &quot;errorCode&quot;: null,
-    &quot;errorMsg&quot;: null,
-    &quot;status&quot;: &quot;Success&quot;
-}
-</code></pre>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+<p>TBD - Apigee Integration</p>
+<h2 id="fair-share-endpoint" data-magellan-destination="fair-share-endpoint">Fair Share Endpoint</h2>
+<p>TBD - Apigee Integration</p>
+<h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
+<p>TBD - Apigee Integration</p>
+<h2 id="response" data-magellan-destination="response">Response</h2>
+<p>TBD - Apigee Integration</p>
+<h2 id="errors" data-magellan-destination="errors">Errors</h2>
+<div><table>
+<thead>
+<tr>
+<th>HTTP Status Code</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3000, errorMsg: &#39;clientId is necessary.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3010, errorMsg: &#39;HotelId is necessary.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3011, errorMsg: &#39;The hotelId was not an integer.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3012, errorMsg: &#39;The hotelId should be positive integer.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 2000, errorMsg: &#39;Hotel is not exist&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 2002, errorMsg: &#39;This hotel has no competitors&#39;</td>
+</tr>
+</tbody>
+</table>
+</div></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
@@ -135,4 +144,4 @@ The equation for actual share is my bookings /(my bookings + my competitors’ t
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Fair Share API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Fair Share API (Experimental)"/></body></html>
