@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Reference - Conversation Count Service API</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Top Tpid And Regions API (Experimental)</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -82,11 +82,13 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Conversation Count Service API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="api-reference"><a class="sidebar-nav-item" href="#api-reference">API Reference</a></li><li class="depth2" data-magellan-arrival="get-unread-count-for-hotel-endpoint"><a class="sidebar-nav-item" href="#get-unread-count-for-hotel-endpoint">Get Unread Count for Hotel Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth3" data-magellan-arrival="response-content"><a class="sidebar-nav-item" href="#response-content">Response Content</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/conversation-count-service-api/tryit.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-reference" data-magellan-destination="api-reference">API Reference</h1>
-<p>The Expedia Conversation Count Service (CCS) is a simple service that retrieves the unread message count by hotel. </p>
-<h2 id="get-unread-count-for-hotel-endpoint" data-magellan-destination="get-unread-count-for-hotel-endpoint">Get Unread Count for Hotel Endpoint</h2>
-<pre><code>GET https://www.expedia.com/conversations/hotels/{hotelid}/unreadmessages/count
-</code></pre><p>This endpoint returns the number of unread messages for a given hotel.</p>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Tpid And Regions API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api-experimental-/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="top-tpid-and-regions-endpoint"><a class="sidebar-nav-item" href="#top-tpid-and-regions-endpoint">Top TPID and Regions Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api-experimental-/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>The Top TPID and Regions API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<h2 id="top-tpid-and-regions-endpoint" data-magellan-destination="top-tpid-and-regions-endpoint">Top TPID and Regions Endpoint</h2>
+<pre><code>GET lodgingSort/v1/hops/HopsTopTpidsAndRegions
+</code></pre><p>The Top TPID and Regions endpoint will return a sorted list of top regions for each of the top tpids for a specified hotel. </p>
 <h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
 <div><table>
 <thead>
@@ -94,103 +96,104 @@
 <th>Name</th>
 <th>Parameter Type</th>
 <th>Data Type</th>
-<th>Values</th>
+<th>Example</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>&#39;Client-Id&#39;</td>
+<td><code>Authorization</code></td>
 <td>Header</td>
 <td>String</td>
-<td><code>hackathon</code></td>
+<td><code>Basic dGVzdDp0ZXN0</code></td>
+<td>Unique identifier for a property/hotel.</td>
 </tr>
 <tr>
-<td>&#39;hotelId&#39;</td>
+<td><code>hotelId</code></td>
 <td>Query</td>
-<td>int</td>
-<td>&#39;759&#39;</td>
+<td>Integer</td>
+<td><code>123</code></td>
+<td>Hotel identifier</td>
 </tr>
 <tr>
-<td>&#39;origin&#39;</td>
-<td>Header</td>
+<td><code>cid</code></td>
+<td>Query</td>
 <td>String</td>
-<td><code>&quot;&quot;</code></td>
+<td><code>prague-hackathon</code></td>
+<td>Client identifier</td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="response" data-magellan-destination="response">Response</h3>
-<h4 id="http-status-codes" data-magellan-destination="http-status-codes">HTTP Status Codes</h4>
-<div><table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200 OK</td>
-<td>Request was successful.</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response-content" data-magellan-destination="response-content">Response Content</h3>
-<p>When Successful, this endpoint responds with a JSON object with &#39;Content-Type: application/json&#39;.</p>
-<h4 id="properties" data-magellan-destination="properties">Properties</h4>
+</div><h5 id="sample-request-with-all-parameters-specified" data-magellan-destination="sample-request-with-all-parameters-specified">Sample Request with all parameters specified</h5>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
+</code></pre><h3 id="response-format" data-magellan-destination="response-format">Response Format</h3>
 <div><table>
 <thead>
 <tr>
 <th>Name</th>
-<th>Data Type</th>
+<th>Type</th>
 <th>Description</th>
-<th>Example</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>unreadCount</code></td>
-<td>int</td>
-<td>Count of unread messages.</td>
-<td><code>3</code></td>
+<td>hotelId</td>
+<td>Integer</td>
+<td>Unique identifier for a property/hotel.</td>
+</tr>
+<tr>
+<td>tpid</td>
+<td>Integer</td>
+<td>Point of Sale (POSa)</td>
+</tr>
+<tr>
+<td>regionId</td>
+<td>Long</td>
+<td>GAIA region ID</td>
 </tr>
 </tbody>
 </table>
-</div><h6 id="example-response" data-magellan-destination="example-response">Example Response</h6>
+</div><h5 id="sample-response" data-magellan-destination="sample-response">Sample Response</h5>
 <pre><code>{
-  &quot;unreadCount&quot;: 3
+    &quot;hopsTpidsList&quot;: [
+        {
+            &quot;sortedRegionList&quot;: [
+                2114,
+                800053,
+                6144914
+            ],
+            &quot;tpid&quot;: 3101
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3109
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3107
+        }
+    ],
+    &quot;hotelId&quot;: 1
 }
-</code></pre><h4 id="http-status-codes-2" data-magellan-destination="http-status-codes-2">HTTP Status Codes</h4>
-<div><table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 Bad Request</td>
-<td><code>clientId</code> query parameter and/or request body is invalid.</td>
-</tr>
-<tr>
-<td>404 Not Found</td>
-<td>&quot;Not Found&quot;</td>
-</tr>
-<tr>
-<td>401 Unauthorized</td>
-<td>&#39;Client-Id&#39; is invalid / Incorrect ApiKey</td>
-</tr>
-</tbody>
-</table>
-</div><p>Specific reasons for a <code>400 Bad Request</code> response status include:</p>
-<ul>
-<li>&quot;Missing request header &#39;Client-Id&#39; for method parameter of type String&quot;</li>
-<li>&quot;Request value &quot;hotelId&quot; of &quot;-1&quot; is invalid&quot;</li>
-</ul>
-<p>Specific reasons for a <code>404 Not Found</code> response status include:</p>
-<ul>
-<li>&quot;Incorrect endpoint&quot;</li>
-</ul>
+</code></pre><h4 id="error-messages" data-magellan-destination="error-messages">Error Messages</h4>
+<p>When there are errors, the Top TPID and Regions API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:</p>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No hotelId specified&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No clientId specified or unknown clientId&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No data found&quot;,
+    &quot;hotelId&quot;:1234567890
+}
+</code></pre>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
@@ -207,4 +210,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="API Reference - Conversation Count Service API"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Top Tpid And Regions API (Experimental)"/></body></html>
