@@ -28,7 +28,7 @@ var Core = Core || {
         this.onScroll();
         this.checkChanges();
         $("a.card-header").each(function(i, el) {
-            if ($(el).html().includes("(Experimental)")) {
+            if ($(el).html().indexOf("(Experimental)") >= 0) {
                 $(el).html($(el).html().replace("(Experimental)", ""));
                 $(el).after("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
             }
