@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2012 rel. 2 (http://www.altova.com) by EXPEDIA (EXPEDIA) -->
+<!-- dc_version=@version@ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="Fault">
+    <xs:annotation>
+      <xs:documentation xml:lang="en-us">The SOAP Fault element is used to carry error and/or status information within a SOAP message.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="faultcode" type="xs:QName">
+          <xs:annotation>
+            <xs:documentation xml:lang="en-us">The faultcode will use Soap syntax of either soap_env:Client or soap_env:Server. Client will be used when an error is within the message received, like a missing header or a bad syntax. Server will be used for all other errors. The syntax will be extended to specify the exact error Code, like soap_env:Client.2000</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="faultstring" type="xs:string">
+          <xs:annotation>
+            <xs:documentation xml:lang="en-us">A short human readable explanation of the fault.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="faultactor" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en-us">Name of the component where the fault occured. Exemples are: MessageReceiver and MessageSender.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="detail" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation xml:lang="en-us">A technical description of the error, formatted as a String.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

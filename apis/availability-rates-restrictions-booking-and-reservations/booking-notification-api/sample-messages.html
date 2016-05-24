@@ -1,0 +1,928 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Sample Messages - Booking Notification API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
+<script src="/js/jquery.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="/js/featureSwitch.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="/contactus" onclick="ga('send','event','ContactUs','clicked','developer.expediapartnercentral.com');">Contact Us</a></li>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/hotels">Hotels</a></li>
+                <li id="apikeynav" style="display:none"><a href="/test-properties/apikeys">API Keys</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
+                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
+                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Booking Notification API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a></li><li class="depth2" data-magellan-arrival="expediacollect-with-expedia-virtualcard"><a class="sidebar-nav-item" href="#expediacollect-with-expedia-virtualcard">ExpediaCollect with Expedia VirtualCard</a></li><li class="depth3" data-magellan-arrival="new-reservation"><a class="sidebar-nav-item" href="#new-reservation">New reservation</a></li><li class="depth3" data-magellan-arrival="modification-request-removing-1-night-"><a class="sidebar-nav-item" href="#modification-request-removing-1-night-">Modification Request (removing 1 night)</a></li><li class="depth3" data-magellan-arrival="cancelling-the-reservation"><a class="sidebar-nav-item" href="#cancelling-the-reservation">Cancelling the reservation</a></li><li class="depth2" data-magellan-arrival="hotelcollect-booking-with-children-and-extra-charges"><a class="sidebar-nav-item" href="#hotelcollect-booking-with-children-and-extra-charges">HotelCollect booking, with children and extra charges</a></li><li class="depth3" data-magellan-arrival="new-reservation-2"><a class="sidebar-nav-item" href="#new-reservation-2">New Reservation</a></li><li class="depth3" data-magellan-arrival="cancelling-the-reservation-2"><a class="sidebar-nav-item" href="#cancelling-the-reservation-2">Cancelling the Reservation</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/schemas.html">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
+<p>This section contains sample messages illustrating how to interact with the Booking Notification API.</p>
+<h2 id="expediacollect-with-expedia-virtualcard" data-magellan-destination="expediacollect-with-expedia-virtualcard">ExpediaCollect with Expedia VirtualCard</h2>
+<h3 id="new-reservation" data-magellan-destination="new-reservation">New reservation</h3>
+<h4 id="request" data-magellan-destination="request">Request</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922909&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T21:51:00+00:00&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;ExpediaDC&quot; DestinationId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;&gt;
+          &lt;Authentication Username=&quot;Expedia&quot; Password=&quot;Password&quot;/&gt;
+        &lt;/CommDescriptor&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResNotifRQ&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot; DistributorHotelId=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResNotifRQ xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; EchoToken=&quot;22922909&quot; TimeStamp=&quot;2016-05-17T12:21:00-07:00&quot; Target=&quot;Production&quot; Version=&quot;1.000&quot; PrimaryLangID=&quot;en-us&quot; ResStatus=&quot;Commit&quot;&gt;
+      &lt;POS&gt;
+        &lt;Source&gt;
+          &lt;RequestorID Type=&quot;18&quot; ID=&quot;Expedia&quot;/&gt;
+          &lt;BookingChannel Type=&quot;2&quot; Primary=&quot;true&quot;&gt;
+            &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+          &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+      &lt;/POS&gt;
+      &lt;HotelReservations&gt;
+        &lt;HotelReservation RoomStayReservation=&quot;true&quot; CreateDateTime=&quot;2016-05-17T12:21:00-07:00&quot; CreatorID=&quot;Expedia&quot;&gt;
+          &lt;UniqueID Type=&quot;14&quot; ID=&quot;13357395&quot;/&gt;
+          &lt;RoomStays&gt;
+            &lt;RoomStay&gt;
+              &lt;RoomTypes&gt;
+                &lt;RoomType RoomTypeCode=&quot;50292&quot; IsRoom=&quot;true&quot;/&gt;
+              &lt;/RoomTypes&gt;
+              &lt;RatePlans&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot;/&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot;/&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot;/&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot;/&gt;
+              &lt;/RatePlans&gt;
+              &lt;RoomRates&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;178.64&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;178.64&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;178.64&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;187.60&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+              &lt;/RoomRates&gt;
+              &lt;GuestCounts IsPerRoom=&quot;true&quot;&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;10&quot; Count=&quot;2&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;4&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;9&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;17&quot;/&gt;
+              &lt;/GuestCounts&gt;
+              &lt;TimeSpan Start=&quot;2016-05-31&quot; End=&quot;2016-06-04&quot;/&gt;
+              &lt;Guarantee&gt;
+                &lt;GuaranteesAccepted&gt;
+                  &lt;GuaranteeAccepted&gt;
+                    &lt;PaymentCard CardType=&quot;1&quot; CardCode=&quot;MC&quot; CardNumber=&quot;5191111111111111&quot; ExpireDate=&quot;0619&quot;&gt;
+                      &lt;CardHolderName&gt;Expedia VirtualCard&lt;/CardHolderName&gt;
+                      &lt;Address FormattedInd=&quot;false&quot;&gt;
+                        &lt;AddressLine&gt;333 108th Avenue NE&lt;/AddressLine&gt;
+                        &lt;CityName&gt;Bellevue&lt;/CityName&gt;
+                        &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+                        &lt;StateProv StateCode=&quot;WA&quot;/&gt;
+                        &lt;CountryName Code=&quot;US&quot;/&gt;
+                      &lt;/Address&gt;
+                    &lt;/PaymentCard&gt;
+                  &lt;/GuaranteeAccepted&gt;
+                &lt;/GuaranteesAccepted&gt;
+              &lt;/Guarantee&gt;
+              &lt;Total AmountAfterTax=&quot;951.61&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                &lt;Taxes Amount=&quot;148.09&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                  &lt;Tax Type=&quot;Exclusive&quot; Code=&quot;27&quot; Amount=&quot;148.09&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                &lt;/Taxes&gt;
+              &lt;/Total&gt;
+              &lt;BasicPropertyInfo HotelCode=&quot;1154286&quot;/&gt;
+              &lt;ResGuestRPHs&gt;
+                &lt;ResGuestRPH RPH=&quot;1&quot;/&gt;
+              &lt;/ResGuestRPHs&gt;
+              &lt;SpecialRequests&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;1.14&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;1 king bed&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;2.1&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;Non-Smoking&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;5&quot;&gt;
+                  &lt;Text Formatted=&quot;true&quot; Language=&quot;en-us&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+              &lt;/SpecialRequests&gt;
+            &lt;/RoomStay&gt;
+          &lt;/RoomStays&gt;
+          &lt;ResGuests&gt;
+            &lt;ResGuest ResGuestRPH=&quot;1&quot; AgeQualifyingCode=&quot;10&quot;&gt;
+              &lt;Profiles&gt;
+                &lt;ProfileInfo&gt;
+                  &lt;Profile ProfileType=&quot;1&quot;&gt;
+                    &lt;Customer&gt;
+                      &lt;PersonName&gt;
+                        &lt;GivenName&gt;Etienne&lt;/GivenName&gt;
+                        &lt;Surname&gt;Beaulne-Dury&lt;/Surname&gt;
+                      &lt;/PersonName&gt;
+                      &lt;Telephone CountryAccessCode=&quot;1&quot; AreaCityCode=&quot;321&quot; PhoneNumber=&quot;3331112&quot;/&gt;
+                    &lt;/Customer&gt;
+                  &lt;/Profile&gt;
+                &lt;/ProfileInfo&gt;
+              &lt;/Profiles&gt;
+            &lt;/ResGuest&gt;
+          &lt;/ResGuests&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Type=&quot;8&quot; ResID_Value=&quot;13357395&quot; ResID_Source=&quot;Expedia&quot; ResID_Date=&quot;2016-05-17T12:21:00-07:00&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelReservation&gt;
+      &lt;/HotelReservations&gt;
+    &lt;/OTA_HotelResNotifRQ&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h4 id="response" data-magellan-destination="response">Response</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922909&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;EQCSpecTest&quot; DestinationId=&quot;ExpediaDC&quot; RetryIndicator=&quot;false&quot;/&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResNotifRS&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResNotifRS xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; Version=&quot;1&quot; ResResponseType=&quot;Committed&quot; TimeStamp=&quot;2016-05-17T12:56:52.597-07:00&quot; Target=&quot;Production&quot; PrimaryLangID=&quot;en-us&quot;&gt;
+      &lt;Success/&gt;
+      &lt;HotelReservations&gt;
+        &lt;HotelReservation&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Type=&quot;3&quot; ResID_Value=&quot;ConfNumber123&quot; ResID_Date=&quot;2016-05-17T12:56:52.597-07:00&quot; ResID_Source=&quot;EQCSpecTest&quot;/&gt;
+              &lt;HotelReservationID ResID_Type=&quot;8&quot; ResID_Value=&quot;13357395&quot; ResID_Source=&quot;Expedia&quot; ResID_Date=&quot;2016-05-17T12:57:00-07:00&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelReservation&gt;
+      &lt;/HotelReservations&gt;
+    &lt;/OTA_HotelResNotifRS&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h3 id="modification-request-removing-1-night-" data-magellan-destination="modification-request-removing-1-night-">Modification Request (removing 1 night)</h3>
+<h4 id="request-2" data-magellan-destination="request-2">Request</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922936&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T21:57:00+00:00&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;ExpediaDC&quot; DestinationId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;&gt;
+          &lt;Authentication Username=&quot;Expedia&quot; Password=&quot;Password&quot;/&gt;
+        &lt;/CommDescriptor&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResModifyNotifRQ&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot; DistributorHotelId=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResModifyNotifRQ xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; EchoToken=&quot;22922936&quot; TimeStamp=&quot;2016-05-17T12:27:00-07:00&quot; Target=&quot;Production&quot; Version=&quot;1.000&quot; PrimaryLangID=&quot;en-us&quot; ResStatus=&quot;Commit&quot;&gt;
+      &lt;POS&gt;
+        &lt;Source&gt;
+          &lt;RequestorID Type=&quot;18&quot; ID=&quot;Expedia&quot;/&gt;
+          &lt;BookingChannel Type=&quot;2&quot; Primary=&quot;true&quot;&gt;
+            &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+          &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+      &lt;/POS&gt;
+      &lt;HotelResModifies&gt;
+        &lt;HotelResModify RoomStayReservation=&quot;true&quot; CreateDateTime=&quot;2016-05-17T12:27:00-07:00&quot; CreatorID=&quot;Expedia&quot;&gt;
+          &lt;UniqueID Type=&quot;14&quot; ID=&quot;13357395&quot;/&gt;
+          &lt;RoomStays&gt;
+            &lt;RoomStay&gt;
+              &lt;RoomTypes&gt;
+                &lt;RoomType RoomTypeCode=&quot;50292&quot; IsRoom=&quot;true&quot;/&gt;
+              &lt;/RoomTypes&gt;
+              &lt;RatePlans&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot;/&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot;/&gt;
+                &lt;RatePlan RatePlanCode=&quot;113712&quot; EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot;/&gt;
+              &lt;/RatePlans&gt;
+              &lt;RoomRates&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 25  3 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;191.40&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 25  3 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;191.40&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot; RoomTypeCode=&quot;50292&quot; NumberOfUnits=&quot;1&quot; RatePlanCode=&quot;113712&quot; PromotionCode=&quot;Early Bird Summer 25  3 nights a&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-03&quot; ExpireDate=&quot;2016-06-04&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;201.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;5.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot; Code=&quot;1&quot; Amount=&quot;0.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+              &lt;/RoomRates&gt;
+              &lt;GuestCounts IsPerRoom=&quot;true&quot;&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;10&quot; Count=&quot;2&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;4&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;9&quot;/&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot; Age=&quot;17&quot;/&gt;
+              &lt;/GuestCounts&gt;
+              &lt;TimeSpan Start=&quot;2016-06-01&quot; End=&quot;2016-06-04&quot;/&gt;
+              &lt;Guarantee&gt;
+                &lt;GuaranteesAccepted&gt;
+                  &lt;GuaranteeAccepted&gt;
+                    &lt;PaymentCard CardType=&quot;1&quot; CardCode=&quot;MC&quot; CardNumber=&quot;5191111111111111&quot; ExpireDate=&quot;0619&quot;&gt;
+                      &lt;CardHolderName&gt;Expedia VirtualCard&lt;/CardHolderName&gt;
+                      &lt;Address FormattedInd=&quot;false&quot;&gt;
+                        &lt;AddressLine&gt;333 108th Avenue NE&lt;/AddressLine&gt;
+                        &lt;CityName&gt;Bellevue&lt;/CityName&gt;
+                        &lt;PostalCode&gt;98004&lt;/PostalCode&gt;
+                        &lt;StateProv StateCode=&quot;WA&quot;/&gt;
+                        &lt;CountryName Code=&quot;US&quot;/&gt;
+                      &lt;/Address&gt;
+                    &lt;/PaymentCard&gt;
+                  &lt;/GuaranteeAccepted&gt;
+                &lt;/GuaranteesAccepted&gt;
+              &lt;/Guarantee&gt;
+              &lt;Total AmountAfterTax=&quot;762.45&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                &lt;Taxes Amount=&quot;118.65&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                  &lt;Tax Type=&quot;Exclusive&quot; Code=&quot;27&quot; Amount=&quot;118.65&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                &lt;/Taxes&gt;
+              &lt;/Total&gt;
+              &lt;BasicPropertyInfo HotelCode=&quot;1154286&quot;/&gt;
+              &lt;ResGuestRPHs&gt;
+                &lt;ResGuestRPH RPH=&quot;1&quot;/&gt;
+              &lt;/ResGuestRPHs&gt;
+              &lt;SpecialRequests&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;1.14&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;1 king bed&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;2.1&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;Non-Smoking&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;5&quot;&gt;
+                  &lt;Text Formatted=&quot;true&quot; Language=&quot;en-us&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+              &lt;/SpecialRequests&gt;
+            &lt;/RoomStay&gt;
+          &lt;/RoomStays&gt;
+          &lt;ResGuests&gt;
+            &lt;ResGuest ResGuestRPH=&quot;1&quot; AgeQualifyingCode=&quot;10&quot;&gt;
+              &lt;Profiles&gt;
+                &lt;ProfileInfo&gt;
+                  &lt;Profile ProfileType=&quot;1&quot;&gt;
+                    &lt;Customer&gt;
+                      &lt;PersonName&gt;
+                        &lt;GivenName&gt;Etienne&lt;/GivenName&gt;
+                        &lt;Surname&gt;Beaulne-Dury&lt;/Surname&gt;
+                      &lt;/PersonName&gt;
+                      &lt;Telephone CountryAccessCode=&quot;1&quot; AreaCityCode=&quot;321&quot; PhoneNumber=&quot;3331112&quot;/&gt;
+                    &lt;/Customer&gt;
+                  &lt;/Profile&gt;
+                &lt;/ProfileInfo&gt;
+              &lt;/Profiles&gt;
+            &lt;/ResGuest&gt;
+          &lt;/ResGuests&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Type=&quot;8&quot; ResID_Value=&quot;13357395&quot; ResID_Source=&quot;Expedia&quot; ResID_Date=&quot;2016-05-17T12:27:00-07:00&quot;/&gt;
+              &lt;HotelReservationID ResID_Type=&quot;3&quot; ResID_Value=&quot;ConfNumber123&quot; ResID_Source=&quot;EQCSpecTest&quot; ResID_Date=&quot;2016-05-17T12:23:00-07:00&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelResModify&gt;
+      &lt;/HotelResModifies&gt;
+    &lt;/OTA_HotelResModifyNotifRQ&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h4 id="response-2" data-magellan-destination="response-2">Response</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo Location=&quot;Body&quot; RequestId=&quot;22922936&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot;&gt;
+        &lt;CommDescriptor DestinationId=&quot;ExpediaDC&quot; SourceId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;/&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResModifyNotifRS&quot; Version=&quot;2003A&quot;/&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResModifyNotifRS xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; PrimaryLangID=&quot;en-us&quot; ResResponseType=&quot;Modified&quot; Target=&quot;Production&quot; TimeStamp=&quot;2016-05-17T12:56:52.597-07:00&quot; Version=&quot;1.000&quot;&gt;
+      &lt;Success/&gt;
+      &lt;HotelResModifies&gt;
+        &lt;HotelResModify&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Date=&quot;2016-05-17T12:56:52.597-07:00&quot; ResID_Source=&quot;Expedia&quot; ResID_Type=&quot;8&quot; ResID_Value=&quot;13357395&quot;/&gt;
+              &lt;HotelReservationID ResID_Date=&quot;2016-05-17T12:56:52.597-07:00&quot; ResID_Source=&quot;EQCSpecTest&quot; ResID_Type=&quot;3&quot; ResID_Value=&quot;ModifyConf123&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelResModify&gt;
+      &lt;/HotelResModifies&gt;
+    &lt;/OTA_HotelResModifyNotifRS&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h3 id="cancelling-the-reservation" data-magellan-destination="cancelling-the-reservation">Cancelling the reservation</h3>
+<h4 id="request-3" data-magellan-destination="request-3">Request</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922954&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T22:02:00+00:00&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;ExpediaDC&quot; DestinationId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;&gt;
+          &lt;Authentication Username=&quot;Expedia&quot; Password=&quot;Password&quot;/&gt;
+        &lt;/CommDescriptor&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_CancelRQ&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot; DistributorHotelId=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_CancelRQ xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; EchoToken=&quot;22922954&quot; TimeStamp=&quot;2016-05-17T12:32:00-07:00&quot; Target=&quot;Production&quot; Version=&quot;1.000&quot; PrimaryLangID=&quot;en-us&quot; CancelType=&quot;Commit&quot;&gt;
+      &lt;POS&gt;
+        &lt;Source&gt;
+          &lt;RequestorID Type=&quot;18&quot; ID=&quot;Expedia&quot;/&gt;
+          &lt;BookingChannel Type=&quot;2&quot; Primary=&quot;true&quot;&gt;
+            &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+          &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+      &lt;/POS&gt;
+      &lt;UniqueID Type=&quot;14&quot; ID=&quot;13357395&quot;&gt;
+        &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;UniqueID Type=&quot;10&quot; ID=&quot;ModifyConf123&quot;&gt;
+        &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;Verification&gt;
+        &lt;PersonName&gt;
+          &lt;GivenName&gt;Etienne&lt;/GivenName&gt;
+          &lt;Surname&gt;Beaulne-Dury&lt;/Surname&gt;
+        &lt;/PersonName&gt;
+        &lt;Vendor Code=&quot;1&quot; CodeContext=&quot;ChainCode&quot;/&gt;
+        &lt;Vendor Code=&quot;2&quot; CodeContext=&quot;BrandCode&quot;/&gt;
+        &lt;Vendor Code=&quot;3&quot; CodeContext=&quot;HotelCode&quot;&gt;1154286&lt;/Vendor&gt;
+        &lt;ReservationTimeSpan Start=&quot;2016-06-01&quot; End=&quot;2016-06-04&quot;/&gt;
+        &lt;AssociatedQuantity Code=&quot;1&quot; CodeContext=&quot;Number of rooms&quot; Quantity=&quot;1&quot;/&gt;
+        &lt;AssociatedQuantity Code=&quot;2&quot; CodeContext=&quot;Number of guests&quot; Quantity=&quot;5&quot;/&gt;
+      &lt;/Verification&gt;
+    &lt;/OTA_CancelRQ&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h4 id="response-3" data-magellan-destination="response-3">Response</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo Location=&quot;Body&quot; RequestId=&quot;22922954&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T21:28:00+00:00&quot;&gt;
+        &lt;CommDescriptor DestinationId=&quot;ExpediaDC&quot; SourceId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;/&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_CancelRS&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_CancelRS xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; Target=&quot;Production&quot; TimeStamp=&quot;2016-05-17T02:57:35.247-04:00&quot; Version=&quot;1.000&quot; PrimaryLangID=&quot;en-us&quot; Status=&quot;Cancelled&quot;&gt;
+      &lt;Success/&gt;
+      &lt;UniqueID ID=&quot;13357395&quot; Type=&quot;14&quot;&gt;
+        &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;UniqueID ID=&quot;TestModifyConf&quot; Type=&quot;10&quot;&gt;
+        &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;CancelInfoRS&gt;
+        &lt;UniqueID ID=&quot;TestCancel2&quot; Type=&quot;10&quot;&gt;
+          &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+        &lt;/UniqueID&gt;
+      &lt;/CancelInfoRS&gt;
+    &lt;/OTA_CancelRS&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h2 id="hotelcollect-booking-with-children-and-extra-charges" data-magellan-destination="hotelcollect-booking-with-children-and-extra-charges">HotelCollect booking, with children and extra charges</h2>
+<h3 id="new-reservation-2" data-magellan-destination="new-reservation-2">New Reservation</h3>
+<h4 id="request-4" data-magellan-destination="request-4">Request</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922694&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T20:55:00+00:00&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;ExpediaDC&quot; DestinationId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;&gt;
+          &lt;Authentication Username=&quot;Expedia&quot; Password=&quot;Password&quot;/&gt;
+        &lt;/CommDescriptor&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResNotifRQ&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot; DistributorHotelId=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResNotifRQ xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; EchoToken=&quot;22922694&quot; PrimaryLangID=&quot;en-us&quot; ResStatus=&quot;Commit&quot; Target=&quot;Production&quot; TimeStamp=&quot;2016-05-17T11:25:00-07:00&quot; Version=&quot;1.000&quot;&gt;
+      &lt;POS&gt;
+        &lt;Source&gt;
+          &lt;RequestorID ID=&quot;A-Expedia&quot; Type=&quot;18&quot;/&gt;
+          &lt;BookingChannel Primary=&quot;true&quot; Type=&quot;2&quot;&gt;
+            &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+          &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+      &lt;/POS&gt;
+      &lt;HotelReservations&gt;
+        &lt;HotelReservation CreateDateTime=&quot;2016-05-17T11:25:00-07:00&quot; CreatorID=&quot;Expedia&quot; RoomStayReservation=&quot;true&quot;&gt;
+          &lt;UniqueID ID=&quot;13357309&quot; Type=&quot;14&quot;/&gt;
+          &lt;RoomStays&gt;
+            &lt;RoomStay&gt;
+              &lt;RoomTypes&gt;
+                &lt;RoomType IsRoom=&quot;true&quot; RoomTypeCode=&quot;50287&quot;/&gt;
+              &lt;/RoomTypes&gt;
+              &lt;RatePlans&gt;
+                &lt;RatePlan EffectiveDate=&quot;2016-05-29&quot; ExpireDate=&quot;2016-05-30&quot; RatePlanCode=&quot;113702A&quot;&gt;
+                  &lt;Commission Percent=&quot;0.2000&quot;/&gt;
+                &lt;/RatePlan&gt;
+                &lt;RatePlan EffectiveDate=&quot;2016-05-30&quot; ExpireDate=&quot;2016-05-31&quot; RatePlanCode=&quot;113702A&quot;&gt;
+                  &lt;Commission Percent=&quot;0.2000&quot;/&gt;
+                &lt;/RatePlan&gt;
+                &lt;RatePlan EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot; RatePlanCode=&quot;113702A&quot;&gt;
+                  &lt;Commission Percent=&quot;0.2000&quot;/&gt;
+                &lt;/RatePlan&gt;
+                &lt;RatePlan EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RatePlanCode=&quot;113702A&quot;&gt;
+                  &lt;Commission Percent=&quot;0.2000&quot;/&gt;
+                &lt;/RatePlan&gt;
+                &lt;RatePlan EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RatePlanCode=&quot;113702A&quot;&gt;
+                  &lt;Commission Percent=&quot;0.2000&quot;/&gt;
+                &lt;/RatePlan&gt;
+              &lt;/RatePlans&gt;
+              &lt;RoomRates&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-05-29&quot; ExpireDate=&quot;2016-05-30&quot; NumberOfUnits=&quot;1&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot; RatePlanCode=&quot;113702A&quot; RoomTypeCode=&quot;50287&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-05-29&quot; ExpireDate=&quot;2016-05-30&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;139.30&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;8.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee Amount=&quot;0.00&quot; Code=&quot;1&quot; CurrencyCode=&quot;CAD&quot; TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-05-30&quot; ExpireDate=&quot;2016-05-31&quot; NumberOfUnits=&quot;1&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot; RatePlanCode=&quot;113702A&quot; RoomTypeCode=&quot;50287&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-05-30&quot; ExpireDate=&quot;2016-05-31&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;131.25&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;8.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee Amount=&quot;0.00&quot; Code=&quot;1&quot; CurrencyCode=&quot;CAD&quot; TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot; NumberOfUnits=&quot;1&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot; RatePlanCode=&quot;113702A&quot; RoomTypeCode=&quot;50287&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-05-31&quot; ExpireDate=&quot;2016-06-01&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;140.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;8.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee Amount=&quot;0.00&quot; Code=&quot;1&quot; CurrencyCode=&quot;CAD&quot; TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; NumberOfUnits=&quot;1&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot; RatePlanCode=&quot;113702A&quot; RoomTypeCode=&quot;50287&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-01&quot; ExpireDate=&quot;2016-06-02&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;148.75&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;8.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee Amount=&quot;0.00&quot; Code=&quot;1&quot; CurrencyCode=&quot;CAD&quot; TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+                &lt;RoomRate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; NumberOfUnits=&quot;1&quot; PromotionCode=&quot;Early Bird Summer 30  4 nights a&quot; RatePlanCode=&quot;113702A&quot; RoomTypeCode=&quot;50287&quot;&gt;
+                  &lt;Rates&gt;
+                    &lt;Rate EffectiveDate=&quot;2016-06-02&quot; ExpireDate=&quot;2016-06-03&quot; RateTimeUnit=&quot;Day&quot; UnitMultiplier=&quot;1&quot;&gt;
+                      &lt;Base AmountBeforeTax=&quot;157.50&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                      &lt;AdditionalGuestAmounts&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;8&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;10.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                        &lt;AdditionalGuestAmount AgeQualifyingCode=&quot;7&quot;&gt;
+                          &lt;Amount AmountBeforeTax=&quot;8.00&quot; CurrencyCode=&quot;CAD&quot;/&gt;
+                        &lt;/AdditionalGuestAmount&gt;
+                      &lt;/AdditionalGuestAmounts&gt;
+                      &lt;Fees&gt;
+                        &lt;Fee Amount=&quot;0.00&quot; Code=&quot;1&quot; CurrencyCode=&quot;CAD&quot; TaxInclusive=&quot;false&quot; Type=&quot;Exclusive&quot;/&gt;
+                      &lt;/Fees&gt;
+                    &lt;/Rate&gt;
+                  &lt;/Rates&gt;
+                &lt;/RoomRate&gt;
+              &lt;/RoomRates&gt;
+              &lt;GuestCounts IsPerRoom=&quot;true&quot;&gt;
+                &lt;GuestCount AgeQualifyingCode=&quot;10&quot; Count=&quot;2&quot;/&gt;
+                &lt;GuestCount Age=&quot;9&quot; AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot;/&gt;
+                &lt;GuestCount Age=&quot;17&quot; AgeQualifyingCode=&quot;8&quot; Count=&quot;1&quot;/&gt;
+              &lt;/GuestCounts&gt;
+              &lt;TimeSpan End=&quot;2016-06-03&quot; Start=&quot;2016-05-29&quot;/&gt;
+              &lt;Guarantee&gt;
+                &lt;GuaranteesAccepted&gt;
+                  &lt;GuaranteeAccepted&gt;
+                    &lt;PaymentCard CardCode=&quot;VI&quot; CardNumber=&quot;4111111111111111&quot; CardType=&quot;1&quot; ExpireDate=&quot;0420&quot; SeriesCode=&quot;123&quot;&gt;
+                      &lt;CardHolderName&gt;Etienne Tester&lt;/CardHolderName&gt;
+                    &lt;/PaymentCard&gt;
+                  &lt;/GuaranteeAccepted&gt;
+                &lt;/GuaranteesAccepted&gt;
+              &lt;/Guarantee&gt;
+              &lt;Total AmountAfterTax=&quot;955.49&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                &lt;Taxes Amount=&quot;148.69&quot; CurrencyCode=&quot;CAD&quot;&gt;
+                  &lt;Tax Amount=&quot;148.69&quot; Code=&quot;27&quot; CurrencyCode=&quot;CAD&quot; Type=&quot;Exclusive&quot;/&gt;
+                &lt;/Taxes&gt;
+              &lt;/Total&gt;
+              &lt;BasicPropertyInfo HotelCode=&quot;1154286&quot;/&gt;
+              &lt;ResGuestRPHs&gt;
+                &lt;ResGuestRPH RPH=&quot;1&quot;/&gt;
+              &lt;/ResGuestRPHs&gt;
+              &lt;SpecialRequests&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;1.14&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;1 king bed&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;2.1&quot;&gt;
+                  &lt;Text Formatted=&quot;false&quot; Language=&quot;en-us&quot;&gt;Non-Smoking&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+                &lt;SpecialRequest Language=&quot;en-us&quot; RequestCode=&quot;5&quot;&gt;
+                  &lt;Text Formatted=&quot;true&quot; Language=&quot;en-us&quot;&gt;Hotel Collect Booking  Collect Payment From Guest&lt;/Text&gt;
+                &lt;/SpecialRequest&gt;
+              &lt;/SpecialRequests&gt;
+            &lt;/RoomStay&gt;
+          &lt;/RoomStays&gt;
+          &lt;ResGuests&gt;
+            &lt;ResGuest AgeQualifyingCode=&quot;10&quot; ResGuestRPH=&quot;1&quot;&gt;
+              &lt;Profiles&gt;
+                &lt;ProfileInfo&gt;
+                  &lt;Profile ProfileType=&quot;1&quot;&gt;
+                    &lt;Customer&gt;
+                      &lt;PersonName&gt;
+                        &lt;GivenName&gt;Etienne&lt;/GivenName&gt;
+                        &lt;Surname&gt;Tester&lt;/Surname&gt;
+                      &lt;/PersonName&gt;
+                      &lt;Telephone AreaCityCode=&quot;321&quot; CountryAccessCode=&quot;1&quot; PhoneNumber=&quot;3331111&quot;/&gt;
+                    &lt;/Customer&gt;
+                  &lt;/Profile&gt;
+                &lt;/ProfileInfo&gt;
+              &lt;/Profiles&gt;
+            &lt;/ResGuest&gt;
+          &lt;/ResGuests&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Date=&quot;2016-05-17T11:25:00-07:00&quot; ResID_Source=&quot;Expedia&quot; ResID_Type=&quot;8&quot; ResID_Value=&quot;13357309&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelReservation&gt;
+      &lt;/HotelReservations&gt;
+    &lt;/OTA_HotelResNotifRQ&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h4 id="response-4" data-magellan-destination="response-4">Response</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922694&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;EQCSpecTest&quot; DestinationId=&quot;ExpediaDC&quot; RetryIndicator=&quot;false&quot;/&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_HotelResNotifRS&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_HotelResNotifRS xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; Version=&quot;1&quot; ResResponseType=&quot;Committed&quot; EchoToken=&quot;22922694&quot; TimeStamp=&quot;2016-05-17T12:56:52.597-07:00&quot; Target=&quot;Production&quot; PrimaryLangID=&quot;en-us&quot;&gt;
+      &lt;Success/&gt;
+      &lt;HotelReservations&gt;
+        &lt;HotelReservation&gt;
+          &lt;ResGlobalInfo&gt;
+            &lt;HotelReservationIDs&gt;
+              &lt;HotelReservationID ResID_Type=&quot;3&quot; ResID_Value=&quot;TESTCONF&quot; ResID_Date=&quot;2016-05-17T12:56:52.597-07:00&quot; ResID_Source=&quot;EQCSpecTest&quot;/&gt;
+              &lt;HotelReservationID ResID_Type=&quot;8&quot; ResID_Value=&quot;13357309&quot; ResID_Source=&quot;Expedia&quot; ResID_Date=&quot;2016-05-17T12:57:00-07:00&quot;/&gt;
+            &lt;/HotelReservationIDs&gt;
+          &lt;/ResGlobalInfo&gt;
+        &lt;/HotelReservation&gt;
+      &lt;/HotelReservations&gt;
+    &lt;/OTA_HotelResNotifRS&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h3 id="cancelling-the-reservation-2" data-magellan-destination="cancelling-the-reservation-2">Cancelling the Reservation</h3>
+<h4 id="request-5" data-magellan-destination="request-5">Request</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo RequestId=&quot;22922850&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T21:33:00+00:00&quot; Location=&quot;Body&quot;&gt;
+        &lt;CommDescriptor SourceId=&quot;ExpediaDC&quot; DestinationId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;&gt;
+          &lt;Authentication Username=&quot;Expedia&quot; Password=&quot;Password&quot;/&gt;
+        &lt;/CommDescriptor&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_CancelRQ&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot; DistributorHotelId=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_CancelRQ xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; CancelType=&quot;Commit&quot; EchoToken=&quot;22922850&quot; PrimaryLangID=&quot;en-us&quot; Target=&quot;Production&quot; TimeStamp=&quot;2016-05-17T12:03:00-07:00&quot; Version=&quot;1.000&quot;&gt;
+      &lt;POS&gt;
+        &lt;Source&gt;
+          &lt;RequestorID ID=&quot;A-Expedia&quot; Type=&quot;18&quot;/&gt;
+          &lt;BookingChannel Primary=&quot;true&quot; Type=&quot;2&quot;&gt;
+            &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+          &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+      &lt;/POS&gt;
+      &lt;UniqueID ID=&quot;13357309&quot; Type=&quot;14&quot;&gt;
+        &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;UniqueID ID=&quot;TESTCONF&quot; Type=&quot;10&quot;&gt;
+        &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;Verification&gt;
+        &lt;PersonName&gt;
+          &lt;GivenName&gt;Etienne&lt;/GivenName&gt;
+          &lt;Surname&gt;Tester&lt;/Surname&gt;
+        &lt;/PersonName&gt;
+        &lt;Vendor Code=&quot;1&quot; CodeContext=&quot;ChainCode&quot;/&gt;
+        &lt;Vendor Code=&quot;2&quot; CodeContext=&quot;BrandCode&quot;/&gt;
+        &lt;Vendor Code=&quot;3&quot; CodeContext=&quot;HotelCode&quot;&gt;1154286&lt;/Vendor&gt;
+        &lt;ReservationTimeSpan End=&quot;2016-06-03&quot; Start=&quot;2016-05-29&quot;/&gt;
+        &lt;AssociatedQuantity Code=&quot;1&quot; CodeContext=&quot;Number of rooms&quot; Quantity=&quot;1&quot;/&gt;
+        &lt;AssociatedQuantity Code=&quot;2&quot; CodeContext=&quot;Number of guests&quot; Quantity=&quot;4&quot;/&gt;
+      &lt;/Verification&gt;
+    &lt;/OTA_CancelRQ&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+<h4 id="response-5" data-magellan-destination="response-5">Response</h4>
+<pre><code class="lang-xml">&lt;soap-env:Envelope xmlns:soap-env=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+  &lt;soap-env:Header&gt;
+    &lt;Interface xmlns=&quot;http://www.newtrade.com/expedia/R14/header&quot; Name=&quot;ExpediaDirectConnect&quot; Version=&quot;4.0&quot;&gt;
+      &lt;PayloadInfo Location=&quot;Body&quot; RequestId=&quot;22922850&quot; RequestorId=&quot;Expedia.com&quot; ResponderId=&quot;EQCSpecTest&quot; ExpirationDateTime=&quot;2016-05-17T21:28:00+00:00&quot;&gt;
+        &lt;CommDescriptor DestinationId=&quot;ExpediaDC&quot; SourceId=&quot;EQCSpecTest&quot; RetryIndicator=&quot;false&quot;/&gt;
+        &lt;PayloadDescriptor Name=&quot;OTA_CancelRS&quot; Version=&quot;2003A&quot;&gt;
+          &lt;PayloadReference SupplierHotelCode=&quot;1154286&quot;/&gt;
+        &lt;/PayloadDescriptor&gt;
+      &lt;/PayloadInfo&gt;
+    &lt;/Interface&gt;
+  &lt;/soap-env:Header&gt;
+  &lt;soap-env:Body&gt;
+    &lt;OTA_CancelRS xmlns=&quot;http://www.opentravel.org/OTA/2003/05&quot; Target=&quot;Production&quot; TimeStamp=&quot;2016-05-17T02:57:35-04:00+00:00&quot; Version=&quot;1.000&quot; status=&quot;Cancelled&quot;&gt;
+      &lt;Success/&gt;
+      &lt;UniqueID ID=&quot;13357309&quot; Type=&quot;14&quot;&gt;
+        &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;UniqueID ID=&quot;TESTCONF&quot; Type=&quot;10&quot;&gt;
+        &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+      &lt;/UniqueID&gt;
+      &lt;CancelInfoRS&gt;
+        &lt;UniqueID ID=&quot;TESTCANCEL&quot; Type=&quot;10&quot;&gt;
+          &lt;CompanyName&gt;EQCSpecTest&lt;/CompanyName&gt;
+        &lt;/UniqueID&gt;
+      &lt;/CancelInfoRS&gt;
+    &lt;/OTA_CancelRS&gt;
+  &lt;/soap-env:Body&gt;
+&lt;/soap-env:Envelope&gt;
+</code></pre>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Sample Messages - Booking Notification API"/></body></html>
