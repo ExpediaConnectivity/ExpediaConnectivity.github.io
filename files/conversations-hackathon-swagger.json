@@ -10,7 +10,7 @@
     "schemes": [
         "https"
     ],
-    "basePath": "/conversations",
+    "basePath": "/",
     "tags": [
         {
             "name": "message-count-controller",
