@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Competitor Set Events API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Fair Share API</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,14 +84,16 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Competitor Set Events API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="competitor-set-events-endpoint"><a class="sidebar-nav-item" href="#competitor-set-events-endpoint">Competitor Set Events Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair share endpoint</a></li><li class="depth2" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>The Competitor Set Events API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>The Fair Share API requires HTTP basic auth credentials to be supplied with every request.</p>
 <p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
-<h2 id="competitor-set-events-endpoint" data-magellan-destination="competitor-set-events-endpoint">Competitor Set Events Endpoint</h2>
-<pre><code>GET public/v1/addCompSet
-</code></pre><p>The Competitor Set Events endpoint provides a list of competitors to a given hotel along with when that competitor registered as such.  The endpoint requires a hotel id and start and end dates to find the event when the competitor registered.</p>
-<h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
+<h2 id="fair-share-endpoint" data-magellan-destination="fair-share-endpoint">Fair share endpoint</h2>
+<pre><code>GET public/v1/fairShare
+</code></pre><p>The fair share endpoint will generate fair share data for a given hotel id.  Fair share is a comparison of how many hotel rooms a given hotel supplies vs how many are supplied by all the hotels listed in it&#39;s competitor set.  The ratio of supplied hotels vs total of competitor&#39;s supplied hotels is called the fair share.  Along with fair share, the endpoint will return the current number of booked rooms for the given id along with the total of all competitor&#39;s booked rooms for checkin dates from today up to 30 days.  </p>
+<p>The equation for fair share is my room count /(my room count + my competitors&#39; total room count). </p>
+<p>The equation for actual share is my booked rooms /(my booked rooms + my competitors’ total booked rooms)</p>
+<h2 id="request" data-magellan-destination="request">Request</h2>
 <div><table>
 <thead>
 <tr>
@@ -118,23 +120,16 @@
 <td>Hotel identifier</td>
 </tr>
 <tr>
-<td><code>startDate</code></td>
+<td><code>daynum</code></td>
 <td>Query</td>
 <td>String</td>
-<td><code>2015-01-01</code></td>
-<td>Start date to search for event when new competitors were added</td>
-</tr>
-<tr>
-<td><code>endDate</code></td>
-<td>Query</td>
-<td>String</td>
-<td><code>2016-01-01</code></td>
-<td>End date to search for event when new competitors were added</td>
+<td><code>3</code></td>
+<td>(Optional) the number of days from today to the future, default value is 1</td>
 </tr>
 </tbody>
 </table>
-</div><h5 id="sample-request-with-all-parameters" data-magellan-destination="sample-request-with-all-parameters">Sample Request with all Parameters</h5>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&amp;startDate=2014-01-01&amp;endDate=2016-05-10
+</div><h5 id="sample-request-with-all-parameters-populated" data-magellan-destination="sample-request-with-all-parameters-populated">Sample request with all parameters populated</h5>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2
 </code></pre><h2 id="response" data-magellan-destination="response">Response</h2>
 <div><table>
 <thead>
@@ -161,58 +156,55 @@
 <td>Response status</td>
 </tr>
 <tr>
-<td>HotelId</td>
+<td>compSetRoomCount</td>
 <td>Integer</td>
-<td>Hotel Identifier</td>
+<td>Total number of rooms available in competitor set</td>
 </tr>
 <tr>
-<td>HotelName</td>
-<td>String</td>
-<td>Name of Hotel</td>
+<td>fairshare</td>
+<td>Double</td>
+<td>Fair share for the current market</td>
 </tr>
 <tr>
-<td>endDate</td>
-<td>String</td>
-<td>End date of competitor event search</td>
-</tr>
-<tr>
-<td>startDate</td>
-<td>String</td>
-<td>Start date of competitor event search</td>
-</tr>
-<tr>
-<td>eventDate</td>
-<td>String</td>
-<td>Date when competitor added hotel as competitor</td>
-</tr>
-<tr>
-<td>hotelId</td>
+<td>roomCount</td>
 <td>Integer</td>
-<td>Competitor&#39;s hotel identifier</td>
+<td>Total room count for current hotel</td>
 </tr>
 <tr>
-<td>hotelName</td>
+<td>bookedRooms</td>
+<td>Integer</td>
+<td>Number of booked rooms for given date</td>
+</tr>
+<tr>
+<td>compSetBookedRooms</td>
+<td>Integer</td>
+<td>Total of all competitor&#39;s booked rooms</td>
+</tr>
+<tr>
+<td>date</td>
 <td>String</td>
-<td>Competitor&#39;s hotel name</td>
+<td>Check in date for booked rooms</td>
 </tr>
 </tbody>
 </table>
-</div><h5 id="sample-response" data-magellan-destination="sample-response">Sample Response</h5>
-<pre><code class="lang-JSON">{
+</div><pre><code class="lang-JSON">{    
     &quot;errorCode&quot;: null,
     &quot;errorMsg&quot;: null,
     &quot;status&quot;: &quot;Success&quot;,
     &quot;data&quot;: {
-        &quot;HotelId&quot;: 3513358,
-        &quot;HotelName&quot;: &quot;Best Western Plus Kamloops Hotel&quot;,
-        &quot;endDate&quot;: &quot;2016-06-01T23:59:59.999Z&quot;,
-        &quot;limit&quot;: 50,
-        &quot;startDate&quot;: &quot;2016-05-01T00:00:00.000Z&quot;,
-        &quot;compSet&quot;: [
+        &quot;compSetRoomCount&quot;: 514,
+        &quot;fairshare&quot;: 0.085,
+        &quot;roomCount&quot;: 48,
+        &quot;daily&quot;: [
             {
-                &quot;eventDate&quot;: &quot;2016-05-18T08:46:45.956Z&quot;,
-                &quot;hotelId&quot;: 759,
-                &quot;hotelName&quot;: &quot;Accent Inns Kamloops&quot;
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 236,
+                &quot;date&quot;: &quot;2016-05-23&quot;
+            },
+            {
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 207,
+                &quot;date&quot;: &quot;2016-05-24&quot;
             }
         ]
     }
@@ -227,6 +219,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3000, errorMsg: &#39;clientId is necessary.&#39;</td>
+</tr>
 <tr>
 <td>400</td>
 <td>status: &#39;Error&#39;, errorCode: 3010, errorMsg: &#39;HotelId is necessary.&#39;</td>
@@ -265,4 +261,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Competitor Set Events API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Fair Share API"/></body></html>

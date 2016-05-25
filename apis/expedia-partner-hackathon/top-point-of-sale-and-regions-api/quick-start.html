@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Reference - Conversation Count Service API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Top Point Of Sale And Regions API</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,115 +84,42 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Conversation Count Service API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="api-reference"><a class="sidebar-nav-item" href="#api-reference">API Reference</a></li><li class="depth2" data-magellan-arrival="get-unread-count-for-hotel-endpoint"><a class="sidebar-nav-item" href="#get-unread-count-for-hotel-endpoint">Get Unread Count for Hotel Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth3" data-magellan-arrival="response-content"><a class="sidebar-nav-item" href="#response-content">Response Content</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/conversation-count-service-api/tryit.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-reference" data-magellan-destination="api-reference">API Reference</h1>
-<p>The Expedia Conversation Count Service (CCS) is a simple service that retrieves the unread message count by hotel. </p>
-<h2 id="get-unread-count-for-hotel-endpoint" data-magellan-destination="get-unread-count-for-hotel-endpoint">Get Unread Count for Hotel Endpoint</h2>
-<pre><code>GET https://www.expedia.com/conversations/hotels/{hotelid}/unreadmessages/count
-</code></pre><p>This endpoint returns the number of unread messages for a given hotel.</p>
-<h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
-<div><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Parameter Type</th>
-<th>Data Type</th>
-<th>Values</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>&#39;Client-Id&#39;</td>
-<td>Header</td>
-<td>String</td>
-<td><code>hackathon</code></td>
-</tr>
-<tr>
-<td>&#39;hotelId&#39;</td>
-<td>Query</td>
-<td>int</td>
-<td>&#39;759&#39;</td>
-</tr>
-<tr>
-<td>&#39;origin&#39;</td>
-<td>Header</td>
-<td>String</td>
-<td><code>&quot;&quot;</code></td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response" data-magellan-destination="response">Response</h3>
-<h4 id="http-status-codes" data-magellan-destination="http-status-codes">HTTP Status Codes</h4>
-<div><table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200 OK</td>
-<td>Request was successful.</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response-content" data-magellan-destination="response-content">Response Content</h3>
-<p>When Successful, this endpoint responds with a JSON object with &#39;Content-Type: application/json&#39;.</p>
-<h4 id="properties" data-magellan-destination="properties">Properties</h4>
-<div><table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Data Type</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>unreadCount</code></td>
-<td>int</td>
-<td>Count of unread messages.</td>
-<td><code>3</code></td>
-</tr>
-</tbody>
-</table>
-</div><h6 id="example-response" data-magellan-destination="example-response">Example Response</h6>
-<pre><code>{
-  &quot;unreadCount&quot;: 3
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Point Of Sale And Regions API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-top-point-of-sale-and-region-data"><a class="sidebar-nav-item" href="#reading-top-point-of-sale-and-region-data">Reading Top Point of Sale and Region Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/top-point-of-sale-and-regions-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/top-point-of-sale-and-regions-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+<p>The Top Point of Sale and Regions API provides the highest booking points of sale and regions for a given hotel.  Hoteliers can use this information to determine for what point of sale and region their hotel is most popular.</p>
+<hr>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
+<hr>
+<h2 id="reading-top-point-of-sale-and-region-data" data-magellan-destination="reading-top-point-of-sale-and-region-data">Reading Top Point of Sale and Region Data</h2>
+<p>To retreive top point of sale and regions data simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  </p>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
+</code></pre><p>The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel.</p>
+<pre><code class="lang-JSON">{
+    &quot;hopsTpidsList&quot;: [
+        {
+            &quot;sortedRegionList&quot;: [
+                2114,
+                800053,
+                6144914
+            ],
+            &quot;tpid&quot;: 3101
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3109
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3107
+        }
+    ],
+    &quot;hotelId&quot;: 1
 }
-</code></pre><h4 id="http-status-codes-2" data-magellan-destination="http-status-codes-2">HTTP Status Codes</h4>
-<div><table>
-<thead>
-<tr>
-<th>Code</th>
-<th>Reason</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400 Bad Request</td>
-<td><code>clientId</code> query parameter and/or request body is invalid.</td>
-</tr>
-<tr>
-<td>404 Not Found</td>
-<td>&quot;Not Found&quot;</td>
-</tr>
-<tr>
-<td>401 Unauthorized</td>
-<td>&#39;Client-Id&#39; is invalid / Incorrect ApiKey</td>
-</tr>
-</tbody>
-</table>
-</div><p>Specific reasons for a <code>400 Bad Request</code> response status include:</p>
-<ul>
-<li>&quot;Missing request header &#39;Client-Id&#39; for method parameter of type String&quot;</li>
-<li>&quot;Request value &quot;hotelId&quot; of &quot;-1&quot; is invalid&quot;</li>
-</ul>
-<p>Specific reasons for a <code>404 Not Found</code> response status include:</p>
-<ul>
-<li>&quot;Incorrect endpoint&quot;</li>
-</ul>
+</code></pre>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
@@ -209,4 +136,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="API Reference - Conversation Count Service API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Top Point Of Sale And Regions API"/></body></html>
