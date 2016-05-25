@@ -85,38 +85,38 @@
         </div>
     </nav>
 </header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-fair-share-data"><a class="sidebar-nav-item" href="#reading-fair-share-data">Reading Fair Share Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
-<p>The FairShare API returns a hotel’s expected fair share and actual market share per stay dates. 
-The equation for fair share is my room count /(my room count + my competitors&#39; total room count). 
-The equation for actual share is my bookings /(my bookings + my competitors’ total bookings)</p>
+<p>The Fair Share API returns a hotel’s expected fair share and actual market share per stay dates.  Fair share is a ratio of a hotel&#39;s provided rooms vs the total number of rooms provided by all competitors.</p>
+<p>The equation for fair share is my room count /(my room count + my competitors&#39; total room count). 
+The equation for actual share is my booked rooms /(my booked rooms + my competitors’ total booked rooms)</p>
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>Each request should include hotelier credentials in HTTP basic auth format, a clientId query parameter, a dayNum query parameter, and a hotelId query parameter.</p>
+<p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
 <hr>
 <h2 id="reading-fair-share-data" data-magellan-destination="reading-fair-share-data">Reading Fair Share Data</h2>
 <p>To retreive fair share data pass a hotel id and number of days along with the required authentication parameters to the <code>public/v1/fairShare</code> endpoint via query parameters.  </p>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2&amp;clientId=insights-test
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2
 </code></pre><p>The response will contain the fair share data in the following format: </p>
-<pre><code class="lang-JSON">{
-    &quot;data&quot;: {
-        &quot;compSetRoomCount&quot;: 3322,
-        &quot;daily&quot;: [
-            {
-                &quot;bookedRooms&quot;: 0,
-                &quot;compSetBookedRooms&quot;: 0,
-                &quot;date&quot;: &quot;2016-05-18&quot;
-            },
-            {
-                &quot;bookedRooms&quot;: 0,
-                &quot;compSetBookedRooms&quot;: 0,
-                &quot;date&quot;: &quot;2016-05-19&quot;
-            }
-        ],
-        &quot;fairshare&quot;: 0.024,
-        &quot;roomCount&quot;: 83
-    },
+<pre><code class="lang-JSON">{    
     &quot;errorCode&quot;: null,
     &quot;errorMsg&quot;: null,
-    &quot;status&quot;: &quot;Success&quot;
+    &quot;status&quot;: &quot;Success&quot;,
+    &quot;data&quot;: {
+        &quot;compSetRoomCount&quot;: 514,
+        &quot;fairshare&quot;: 0.085,
+        &quot;roomCount&quot;: 48,
+        &quot;daily&quot;: [
+            {
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 236,
+                &quot;date&quot;: &quot;2016-05-23&quot;
+            },
+            {
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 207,
+                &quot;date&quot;: &quot;2016-05-24&quot;
+            }
+        ]
+    }
 }
 </code></pre>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">

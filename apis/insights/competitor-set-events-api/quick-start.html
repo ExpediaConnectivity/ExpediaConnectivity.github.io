@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Top Tpid And Regions API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Quick Start - Competitor Set Events API (Experimental)</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,40 +84,34 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Tpid And Regions API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-top-tpid-and-region-data"><a class="sidebar-nav-item" href="#reading-top-tpid-and-region-data">Reading Top TPID and Region Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
-<p>Rank Optimizer is a tool in Expedia Partner Central (EPC) that shows hoteliers their average placement position (aka sort rank) in hotel search result, with the goal of helping them understand the main factors that influence placement and how to optimize for visibility and booking. In order to provide the most relevant information, average sort rank is shown for the Point of Sales (POSa) and regions (aka, top TPIDs and Regions) where the hotel is most popular. This API provides the top TPIDs and region data.</p>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Competitor Set Events API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-competitor-set-data"><a class="sidebar-nav-item" href="#reading-competitor-set-data">Reading Competitor Set Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+<p>The Competitor Set Events API allows hoteliers to know when a new competitor has entered the market.  By providing a start and end date you can find a list of hotels with have added your hotel as a competitor in that time period.</p>
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
 <hr>
-<h2 id="reading-top-tpid-and-region-data" data-magellan-destination="reading-top-tpid-and-region-data">Reading Top TPID and Region Data</h2>
-<p>To retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.  </p>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
-</code></pre><p>The response will contain a sorted list of top regions for each of the top tpids for the specified hotel. </p>
+<h2 id="reading-competitor-set-data" data-magellan-destination="reading-competitor-set-data">Reading Competitor Set Data</h2>
+<p>To retreive competitor set data pass a hotel id and number of days along with the required authentication parameters to the <code>public/v1/addCompSet</code> endpoint via query parameters.</p>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&amp;startDate=2014-01-01&amp;endDate=2016-05-10
+</code></pre><p>The response will contain the competitor set data in the following format:</p>
 <pre><code class="lang-JSON">{
-    &quot;hopsTpidsList&quot;: [
-        {
-            &quot;sortedRegionList&quot;: [
-                2114,
-                800053,
-                6144914
-            ],
-            &quot;tpid&quot;: 3101
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3109
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3107
-        }
-    ],
-    &quot;hotelId&quot;: 1
+    &quot;errorCode&quot;: null,
+    &quot;errorMsg&quot;: null,
+    &quot;status&quot;: &quot;Success&quot;,
+    &quot;data&quot;: {
+        &quot;HotelId&quot;: 3513358,
+        &quot;HotelName&quot;: &quot;Best Western Plus Kamloops Hotel&quot;,
+        &quot;endDate&quot;: &quot;2016-06-01T23:59:59.999Z&quot;,
+        &quot;limit&quot;: 50,
+        &quot;startDate&quot;: &quot;2016-05-01T00:00:00.000Z&quot;,
+        &quot;compSet&quot;: [
+            {
+                &quot;eventDate&quot;: &quot;2016-05-18T08:46:45.956Z&quot;,
+                &quot;hotelId&quot;: 759,
+                &quot;hotelName&quot;: &quot;Accent Inns Kamloops&quot;
+            }
+        ]
+    }
 }
 </code></pre>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
@@ -136,4 +130,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Top Tpid And Regions API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Quick Start - Competitor Set Events API (Experimental)"/></body></html>

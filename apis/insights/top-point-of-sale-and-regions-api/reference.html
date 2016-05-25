@@ -1,0 +1,612 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Top Point Of Sale And Regions API (Experimental)</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
+<script src="/js/jquery.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="/js/featureSwitch.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="/contactus" onclick="ga('send','event','ContactUs','clicked','developer.expediapartnercentral.com');">Contact Us</a></li>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/hotels">Hotels</a></li>
+                <li id="apikeynav" style="display:none"><a href="/test-properties/apikeys">API Keys</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
+                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
+                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Point Of Sale And Regions API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-point-of-sale-and-regions-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="top-points-of-sale-and-regions-endpoint"><a class="sidebar-nav-item" href="#top-points-of-sale-and-regions-endpoint">Top Points of Sale and Regions Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="depth2" data-magellan-arrival="tpid-to-point-of-sale-mapping"><a class="sidebar-nav-item" href="#tpid-to-point-of-sale-mapping">TPID to Point of Sale Mapping</a></li><li class="depth2" data-magellan-arrival="error-messages"><a class="sidebar-nav-item" href="#error-messages">Error Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-point-of-sale-and-regions-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>The top points of sale and regions API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<h2 id="top-points-of-sale-and-regions-endpoint" data-magellan-destination="top-points-of-sale-and-regions-endpoint">Top Points of Sale and Regions Endpoint</h2>
+<pre><code>GET lodgingSort/v1/hops/HopsTopTpidsAndRegions
+</code></pre><p>The top points of sale and regions endpoint will return a sorted list of top regions for each of the top points of sale by bookings for a specified hotel. </p>
+<h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Parameter Type</th>
+<th>Data Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>Header</td>
+<td>String</td>
+<td><code>Basic dGVzdDp0ZXN0</code></td>
+<td>Unique identifier for a property/hotel.</td>
+</tr>
+<tr>
+<td><code>hotelId</code></td>
+<td>Query</td>
+<td>Integer</td>
+<td><code>123</code></td>
+<td>Hotel identifier</td>
+</tr>
+</tbody>
+</table>
+</div><h5 id="sample-request-with-all-parameters-specified" data-magellan-destination="sample-request-with-all-parameters-specified">Sample Request with all parameters specified</h5>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
+</code></pre><h2 id="response-format" data-magellan-destination="response-format">Response Format</h2>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hotelId</td>
+<td>Integer</td>
+<td>Unique identifier for a property/hotel.</td>
+</tr>
+<tr>
+<td>tpid</td>
+<td>Integer</td>
+<td>Point of Sale ID</td>
+</tr>
+<tr>
+<td>regionId</td>
+<td>Long</td>
+<td>GAIA region ID</td>
+</tr>
+</tbody>
+</table>
+</div><h5 id="sample-response" data-magellan-destination="sample-response">Sample Response</h5>
+<pre><code>{
+    &quot;hopsTpidsList&quot;: [
+        {
+            &quot;sortedRegionList&quot;: [
+                2114,
+                800053,
+                6144914
+            ],
+            &quot;tpid&quot;: 3101
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3109
+        },
+        {
+            &quot;sortedRegionList&quot;: [
+                2114
+            ],
+            &quot;tpid&quot;: 3107
+        }
+    ],
+    &quot;hotelId&quot;: 1
+}
+</code></pre><h2 id="tpid-to-point-of-sale-mapping" data-magellan-destination="tpid-to-point-of-sale-mapping">TPID to Point of Sale Mapping</h2>
+<p>The point of sale is encoded into an ID called a tpid.  All possible values for point of sale are listed below:</p>
+<div><table>
+<thead>
+<tr>
+<th>Point of Sale</th>
+<th>TPID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expedia.com</td>
+<td>1</td>
+</tr>
+<tr>
+<td>expedia.com.br</td>
+<td>69</td>
+</tr>
+<tr>
+<td>expedia.ca</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Expedia.com.ar</td>
+<td>70</td>
+</tr>
+<tr>
+<td>Expedia.com.mx</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Expedia.com.au</td>
+<td>25</td>
+</tr>
+<tr>
+<td>Expedia.com.hk</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Expedia.in</td>
+<td>27</td>
+</tr>
+<tr>
+<td>Expedia.co.jp</td>
+<td>28</td>
+</tr>
+<tr>
+<td>Expedia.co.kr</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Expedia.com.my</td>
+<td>15</td>
+</tr>
+<tr>
+<td>Expedia.nz</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Expedia.com.ph</td>
+<td>68</td>
+</tr>
+<tr>
+<td>Expedia.com.sg</td>
+<td>14</td>
+</tr>
+<tr>
+<td>Expedia.com.tw</td>
+<td>62</td>
+</tr>
+<tr>
+<td>Expedia.co.th</td>
+<td>17</td>
+</tr>
+<tr>
+<td>Expedia.com.vn</td>
+<td>71</td>
+</tr>
+<tr>
+<td>Expedia.co.id</td>
+<td>61</td>
+</tr>
+<tr>
+<td>expedia.co.uk</td>
+<td>3</td>
+</tr>
+<tr>
+<td>expedia.de</td>
+<td>6</td>
+</tr>
+<tr>
+<td>expedia.it</td>
+<td>8</td>
+</tr>
+<tr>
+<td>expedia.es</td>
+<td>9</td>
+</tr>
+<tr>
+<td>expedia.fr</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Expedia.co.at</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Expedia.be</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Expedia.dk</td>
+<td>67</td>
+</tr>
+<tr>
+<td>Expedia.ie</td>
+<td>63</td>
+</tr>
+<tr>
+<td>Expedia.nl</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Expedia.no</td>
+<td>66</td>
+</tr>
+<tr>
+<td>Expedia.se</td>
+<td>65</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>251463</td>
+</tr>
+<tr>
+<td>hoteis.com</td>
+<td>86175</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>97815</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208646</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208691</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>133480</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>97814</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>125191</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208666</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208650</td>
+</tr>
+<tr>
+<td>fr.hotels.com</td>
+<td>208711</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>140093</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208703</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208642</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>70583</td>
+</tr>
+<tr>
+<td>de.hotels.com</td>
+<td>71004</td>
+</tr>
+<tr>
+<td>cn.hotels.com</td>
+<td>86159</td>
+</tr>
+<tr>
+<td>hotels.co.uk</td>
+<td>207191</td>
+</tr>
+<tr>
+<td>de.hotels.com</td>
+<td>70994</td>
+</tr>
+<tr>
+<td>it.hotels.com</td>
+<td>70996</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>70995</td>
+</tr>
+<tr>
+<td>hotels.ca</td>
+<td>70991</td>
+</tr>
+<tr>
+<td>fr.hotels.com</td>
+<td>70993</td>
+</tr>
+<tr>
+<td>fr.hotels.com</td>
+<td>71002</td>
+</tr>
+<tr>
+<td>hr.hotels.com</td>
+<td>213609</td>
+</tr>
+<tr>
+<td>cs.hotels.com</td>
+<td>213610</td>
+</tr>
+<tr>
+<td>da.hotels.com</td>
+<td>70998</td>
+</tr>
+<tr>
+<td>et.hotels.com</td>
+<td>213612</td>
+</tr>
+<tr>
+<td>fi.hotels.com</td>
+<td>83481</td>
+</tr>
+<tr>
+<td>gr.hotels.com</td>
+<td>213613</td>
+</tr>
+<tr>
+<td>zh.hotels.com</td>
+<td>83786</td>
+</tr>
+<tr>
+<td>hu.hotels.com</td>
+<td>213615</td>
+</tr>
+<tr>
+<td>is.hotels.com</td>
+<td>213616</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>252364</td>
+</tr>
+<tr>
+<td>id.hotels.com</td>
+<td>236979</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>207181</td>
+</tr>
+<tr>
+<td>jp.hotels.com</td>
+<td>84882</td>
+</tr>
+<tr>
+<td>kr.hotels.com</td>
+<td>91256</td>
+</tr>
+<tr>
+<td>lv.hotels.com</td>
+<td>213617</td>
+</tr>
+<tr>
+<td>lt.hotels.com</td>
+<td>213618</td>
+</tr>
+<tr>
+<td>ms.hotels.com</td>
+<td>248814</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>91871</td>
+</tr>
+<tr>
+<td>nl.hotels.com</td>
+<td>71001</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>87703</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208654</td>
+</tr>
+<tr>
+<td>no.hotels.com</td>
+<td>71000</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>140094</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208699</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>140095</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>95327</td>
+</tr>
+<tr>
+<td>pl.hotels.com</td>
+<td>126760</td>
+</tr>
+<tr>
+<td>hoteis.com</td>
+<td>207189</td>
+</tr>
+<tr>
+<td>ru.hotels.com</td>
+<td>126796</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>84478</td>
+</tr>
+<tr>
+<td>sk.hotels.com</td>
+<td>213639</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>354116</td>
+</tr>
+<tr>
+<td>nl.hotels.com</td>
+<td>208707</td>
+</tr>
+<tr>
+<td>sv.hotels.com</td>
+<td>70999</td>
+</tr>
+<tr>
+<td>Fr.hotels.com</td>
+<td>71003</td>
+</tr>
+<tr>
+<td>tw.hotels.com</td>
+<td>91257</td>
+</tr>
+<tr>
+<td>th.hotels.com</td>
+<td>248811</td>
+</tr>
+<tr>
+<td>tr.hotels.com</td>
+<td>213635</td>
+</tr>
+<tr>
+<td>uk.hotels.com</td>
+<td>213636</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>208695</td>
+</tr>
+<tr>
+<td>hoteles.com</td>
+<td>133479</td>
+</tr>
+<tr>
+<td>vi.hotels.com</td>
+<td>144555</td>
+</tr>
+<tr>
+<td>hotels.com</td>
+<td>373527</td>
+</tr>
+<tr>
+<td>voyages-sncf.com</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="error-messages" data-magellan-destination="error-messages">Error Messages</h2>
+<p>When there are errors, the top points of sale and regions API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:</p>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No hotelId specified&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No clientId specified or unknown clientId&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+    &quot;error&quot;:&quot;No data found&quot;,
+    &quot;hotelId&quot;:1234567890
+}
+</code></pre>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Top Point Of Sale And Regions API (Experimental)"/></body></html>

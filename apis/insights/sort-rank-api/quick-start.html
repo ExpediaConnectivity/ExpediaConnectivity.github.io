@@ -85,7 +85,7 @@
         </div>
     </nav>
 </header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Sort Rank API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="reading-sort-rank-data"><a class="sidebar-nav-item" href="#reading-sort-rank-data">Reading Sort Rank Data</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/sort-rank-api/reference.html">Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/sort-rank-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
-<p>The Sort Rank API displays a hotel&#39;s average sort position on Expedia top TPIDs and Regions for the next 90 days. Hoteliers can use this information to make informed decisions to increase visibility and/or to view/analyze the effect of an Accelerator on sort.</p>
+<p>The Sort Rank API displays a hotel&#39;s average sort position for the next 90 days. Hoteliers can use this information to make informed decisions to increase visibility and/or to view/analyze the effect of an Accelerator on sort.</p>
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>Basic Authentication in HTTP header, using your Expedia Partner Central (EPC) credentials.  Please work with your account manager to activate your credentials for test and production API access.</p>
@@ -93,7 +93,7 @@
 <h2 id="reading-sort-rank-data" data-magellan-destination="reading-sort-rank-data">Reading Sort Rank Data</h2>
 <p>The most basic call to retreive sort rank data is to simply pass a hotel id and client id to the <lodgingSort/v1/hops/HopsAverageRanks> endpoint via a query parameter.  </p>
 <pre><code>http://apis.integration.karmalab.net/june-hackathon/sort-ranks/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1
-</code></pre><p>The response will contain the hotel&#39;s average sort position for check in dates starting from today for the next 90 days in that hotel&#39;s top TPIDs and regions.</p>
+</code></pre><p>The response will contain the hotel&#39;s average sort position for check in dates starting from today for the next 90 days.  The data is separately provided for each of the hotel&#39;s top points of sale and regions.</p>
 <hr>
 <p>To retreive a smaller range of checkin data, the search date, check-in date and number of days can be specified.</p>
 <pre><code>http://apis.integration.karmalab.net/june-hackathon/sort-ranks/lodgingSort/v1/hops/HopsAverageRanks?hotelId=1&amp;searchDate=2016-05-15&amp;checkin=2016-05-16&amp;numDays=1

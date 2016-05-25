@@ -84,15 +84,132 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair Share Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair share endpoint</a></li><li class="depth2" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/fair-share-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>TBD - Apigee Integration</p>
-<h2 id="fair-share-endpoint" data-magellan-destination="fair-share-endpoint">Fair Share Endpoint</h2>
-<p>TBD - Apigee Integration</p>
-<h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
-<p>TBD - Apigee Integration</p>
-<h2 id="response" data-magellan-destination="response">Response</h2>
-<p>TBD - Apigee Integration</p>
+<p>The Fair Share API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<h2 id="fair-share-endpoint" data-magellan-destination="fair-share-endpoint">Fair share endpoint</h2>
+<pre><code>GET public/v1/fairShare
+</code></pre><p>The fair share endpoint will generate fair share data for a given hotel id.  Fair share is a comparison of how many hotel rooms a given hotel supplies vs how many are supplied by all the hotels listed in it&#39;s competitor set.  The ratio of supplied hotels vs total of competitor&#39;s supplied hotels is called the fair share.  Along with fair share, the endpoint will return the current number of booked rooms for the given id along with the total of all competitor&#39;s booked rooms for checkin dates from today up to 30 days.  </p>
+<p>The equation for fair share is my room count /(my room count + my competitors&#39; total room count). </p>
+<p>The equation for actual share is my booked rooms /(my booked rooms + my competitors’ total booked rooms)</p>
+<h2 id="request" data-magellan-destination="request">Request</h2>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Parameter Type</th>
+<th>Data Type</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>Header</td>
+<td>String</td>
+<td><code>Basic dGVzdDp0ZXN0</code></td>
+<td>Unique identifier for a property/hotel.</td>
+</tr>
+<tr>
+<td><code>hotelId</code></td>
+<td>Query</td>
+<td>Integer</td>
+<td><code>123</code></td>
+<td>Hotel identifier</td>
+</tr>
+<tr>
+<td><code>daynum</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>3</code></td>
+<td>(Optional) the number of days from today to the future, default value is 1</td>
+</tr>
+</tbody>
+</table>
+</div><h5 id="sample-request-with-all-parameters-populated" data-magellan-destination="sample-request-with-all-parameters-populated">Sample request with all parameters populated</h5>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/fairShare?hotelId=759&amp;dayNum=2
+</code></pre><h2 id="response" data-magellan-destination="response">Response</h2>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errorCode</td>
+<td>Integer</td>
+<td>Error code, null when no error</td>
+</tr>
+<tr>
+<td>errorMsg</td>
+<td>String</td>
+<td>Error message, null when no error</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Response status</td>
+</tr>
+<tr>
+<td>compSetRoomCount</td>
+<td>Integer</td>
+<td>Total number of rooms available in competitor set</td>
+</tr>
+<tr>
+<td>fairshare</td>
+<td>Double</td>
+<td>Fair share for the current market</td>
+</tr>
+<tr>
+<td>roomCount</td>
+<td>Integer</td>
+<td>Total room count for current hotel</td>
+</tr>
+<tr>
+<td>bookedRooms</td>
+<td>Integer</td>
+<td>Number of booked rooms for given date</td>
+</tr>
+<tr>
+<td>compSetBookedRooms</td>
+<td>Integer</td>
+<td>Total of all competitor&#39;s booked rooms</td>
+</tr>
+<tr>
+<td>date</td>
+<td>String</td>
+<td>Check in date for booked rooms</td>
+</tr>
+</tbody>
+</table>
+</div><pre><code class="lang-JSON">{    
+    &quot;errorCode&quot;: null,
+    &quot;errorMsg&quot;: null,
+    &quot;status&quot;: &quot;Success&quot;,
+    &quot;data&quot;: {
+        &quot;compSetRoomCount&quot;: 514,
+        &quot;fairshare&quot;: 0.085,
+        &quot;roomCount&quot;: 48,
+        &quot;daily&quot;: [
+            {
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 236,
+                &quot;date&quot;: &quot;2016-05-23&quot;
+            },
+            {
+                &quot;bookedRooms&quot;: 13,
+                &quot;compSetBookedRooms&quot;: 207,
+                &quot;date&quot;: &quot;2016-05-24&quot;
+            }
+        ]
+    }
+}
+</code></pre>
 <h2 id="errors" data-magellan-destination="errors">Errors</h2>
 <div><table>
 <thead>

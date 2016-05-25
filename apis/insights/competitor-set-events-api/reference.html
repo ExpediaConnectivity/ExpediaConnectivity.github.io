@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Top Tpid And Regions API (Experimental)</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Reference - Competitor Set Events API (Experimental)</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -84,14 +84,14 @@
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top Tpid And Regions API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="top-tpid-and-regions-endpoint"><a class="sidebar-nav-item" href="#top-tpid-and-regions-endpoint">Top TPID and Regions Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/top-tpid-and-regions-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Competitor Set Events API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="competitor-set-events-endpoint"><a class="sidebar-nav-item" href="#competitor-set-events-endpoint">Competitor Set Events Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/competitor-set-events-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>The Top TPID and Regions API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>The Competitor Set Events API requires HTTP basic auth credentials to be supplied with every request.</p>
 <p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
-<h2 id="top-tpid-and-regions-endpoint" data-magellan-destination="top-tpid-and-regions-endpoint">Top TPID and Regions Endpoint</h2>
-<pre><code>GET lodgingSort/v1/hops/HopsTopTpidsAndRegions
-</code></pre><p>The Top TPID and Regions endpoint will return a sorted list of top regions for each of the top tpids for a specified hotel. </p>
-<h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
+<h2 id="competitor-set-events-endpoint" data-magellan-destination="competitor-set-events-endpoint">Competitor Set Events Endpoint</h2>
+<pre><code>GET public/v1/addCompSet
+</code></pre><p>The Competitor Set Events endpoint provides a list of competitors to a given hotel along with when that competitor registered as such.  The endpoint requires a hotel id and start and end dates to find the event when the competitor registered.</p>
+<h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
 <div><table>
 <thead>
 <tr>
@@ -118,17 +118,24 @@
 <td>Hotel identifier</td>
 </tr>
 <tr>
-<td><code>cid</code></td>
+<td><code>startDate</code></td>
 <td>Query</td>
 <td>String</td>
-<td><code>prague-hackathon</code></td>
-<td>Client identifier</td>
+<td><code>2015-01-01</code></td>
+<td>Start date to search for event when new competitors were added</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>2016-01-01</code></td>
+<td>End date to search for event when new competitors were added</td>
 </tr>
 </tbody>
 </table>
-</div><h5 id="sample-request-with-all-parameters-specified" data-magellan-destination="sample-request-with-all-parameters-specified">Sample Request with all parameters specified</h5>
-<pre><code>http://apis.integration.karmalab.net/june-hackathon/top-tpids/lodgingSort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
-</code></pre><h3 id="response-format" data-magellan-destination="response-format">Response Format</h3>
+</div><h5 id="sample-request-with-all-parameters" data-magellan-destination="sample-request-with-all-parameters">Sample Request with all Parameters</h5>
+<pre><code>http://apis.integration.karmalab.net/june-hackathon/insights/public/v1/addCompSet?hotelId=1234567&amp;startDate=2014-01-01&amp;endDate=2016-05-10
+</code></pre><h2 id="response" data-magellan-destination="response">Response</h2>
 <div><table>
 <thead>
 <tr>
@@ -139,64 +146,110 @@
 </thead>
 <tbody>
 <tr>
+<td>errorCode</td>
+<td>Integer</td>
+<td>Error code, null when no error</td>
+</tr>
+<tr>
+<td>errorMsg</td>
+<td>String</td>
+<td>Error message, null when no error</td>
+</tr>
+<tr>
+<td>status</td>
+<td>String</td>
+<td>Response status</td>
+</tr>
+<tr>
+<td>HotelId</td>
+<td>Integer</td>
+<td>Hotel Identifier</td>
+</tr>
+<tr>
+<td>HotelName</td>
+<td>String</td>
+<td>Name of Hotel</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>String</td>
+<td>End date of competitor event search</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>String</td>
+<td>Start date of competitor event search</td>
+</tr>
+<tr>
+<td>eventDate</td>
+<td>String</td>
+<td>Date when competitor added hotel as competitor</td>
+</tr>
+<tr>
 <td>hotelId</td>
 <td>Integer</td>
-<td>Unique identifier for a property/hotel.</td>
+<td>Competitor&#39;s hotel identifier</td>
 </tr>
 <tr>
-<td>tpid</td>
-<td>Integer</td>
-<td>Point of Sale (POSa)</td>
-</tr>
-<tr>
-<td>regionId</td>
-<td>Long</td>
-<td>GAIA region ID</td>
+<td>hotelName</td>
+<td>String</td>
+<td>Competitor&#39;s hotel name</td>
 </tr>
 </tbody>
 </table>
 </div><h5 id="sample-response" data-magellan-destination="sample-response">Sample Response</h5>
-<pre><code>{
-    &quot;hopsTpidsList&quot;: [
-        {
-            &quot;sortedRegionList&quot;: [
-                2114,
-                800053,
-                6144914
-            ],
-            &quot;tpid&quot;: 3101
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3109
-        },
-        {
-            &quot;sortedRegionList&quot;: [
-                2114
-            ],
-            &quot;tpid&quot;: 3107
-        }
-    ],
-    &quot;hotelId&quot;: 1
-}
-</code></pre><h4 id="error-messages" data-magellan-destination="error-messages">Error Messages</h4>
-<p>When there are errors, the Top TPID and Regions API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:</p>
 <pre><code class="lang-JSON">{
-    &quot;error&quot;:&quot;No hotelId specified&quot;
+    &quot;errorCode&quot;: null,
+    &quot;errorMsg&quot;: null,
+    &quot;status&quot;: &quot;Success&quot;,
+    &quot;data&quot;: {
+        &quot;HotelId&quot;: 3513358,
+        &quot;HotelName&quot;: &quot;Best Western Plus Kamloops Hotel&quot;,
+        &quot;endDate&quot;: &quot;2016-06-01T23:59:59.999Z&quot;,
+        &quot;limit&quot;: 50,
+        &quot;startDate&quot;: &quot;2016-05-01T00:00:00.000Z&quot;,
+        &quot;compSet&quot;: [
+            {
+                &quot;eventDate&quot;: &quot;2016-05-18T08:46:45.956Z&quot;,
+                &quot;hotelId&quot;: 759,
+                &quot;hotelName&quot;: &quot;Accent Inns Kamloops&quot;
+            }
+        ]
+    }
 }
 </code></pre>
-<pre><code class="lang-JSON">{
-    &quot;error&quot;:&quot;No clientId specified or unknown clientId&quot;
-}
-</code></pre>
-<pre><code class="lang-JSON">{
-    &quot;error&quot;:&quot;No data found&quot;,
-    &quot;hotelId&quot;:1234567890
-}
-</code></pre>
-</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+<h2 id="errors" data-magellan-destination="errors">Errors</h2>
+<div><table>
+<thead>
+<tr>
+<th>HTTP Status Code</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3010, errorMsg: &#39;HotelId is necessary.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3011, errorMsg: &#39;The hotelId was not an integer.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 3012, errorMsg: &#39;The hotelId should be positive integer.&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 2000, errorMsg: &#39;Hotel is not exist&#39;</td>
+</tr>
+<tr>
+<td>400</td>
+<td>status: &#39;Error&#39;, errorCode: 2002, errorMsg: &#39;This hotel has no competitors&#39;</td>
+</tr>
+</tbody>
+</table>
+</div></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
@@ -212,4 +265,4 @@
 </footer>
 <input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
 <input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
-<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Top Tpid And Regions API (Experimental)"/></body></html>
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Reference - Competitor Set Events API (Experimental)"/></body></html>
