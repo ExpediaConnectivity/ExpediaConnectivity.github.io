@@ -33,6 +33,12 @@ var Core = Core || {
                 $(el).after("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
             }
         });
+        $(".cards>.category").each(function(i, el) {
+            if ($(el).html().indexOf("(Experimental)") >= 0) {
+                $(el).html($(el).html().replace("(Experimental)", ""));
+                $(el).append("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
+            }
+        });
         $(document).tooltip();
     },
 

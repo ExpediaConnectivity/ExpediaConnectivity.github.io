@@ -231,6 +231,11 @@
 .cards .category:first-of-type {
   margin-top: 0;
 }
+.cards .experimental-api {
+  vertical-align: text-bottom;
+  margin-left: 5px;
+  background-color: #008CBA;
+}
 .cards .card {
   margin-top: 20px;
   background: #f8f8f8;
@@ -273,11 +278,6 @@
   color: #4F4F4F;
   font-size: 1.3em;
   font-family: "Helvetica Neue", Helvetica, "HelveticaNeue-Light", "Helvetica Neue Light", Arial, "Lucida Grande", sans-serif;
-}
-.cards .card .experimental-api {
-  vertical-align: text-bottom;
-  margin-left: 5px;
-  background-color: #008CBA;
 }
 .cards .card .links {
   font-size: 0.9em !important;
