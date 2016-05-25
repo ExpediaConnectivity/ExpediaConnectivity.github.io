@@ -1,0 +1,1090 @@
+{
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "https://services.expediapartnercentral.com/insights/public",
+    "resourcePath": "/v1",
+    "apis": [
+        {
+            "path": "/v1/fairShare",
+            "operations": [
+                {
+                    "description": "Get the fair share data for the given stayDates",
+                    "method": "GET",
+                    "summary": "Get the fair share data for the given stayDates",
+                    "notes": "The fairShare API projects a competitive metric that compares a given hotel's expected market share vs. their competitor's market share based on a given stayDate.  The equation is: myRoomCount / (myRoomCount + compSetRoomCount) to compute FairShare for a given hotel for a given staydate.",
+                    "nickname": "fairShare",
+                    "produces": [
+                        "application/json"
+                    ],
+                    "type": "FairShareJSONResponse",
+                    "parameters": [
+                        {
+                            "name": "hotelId",
+                            "paramType": "query",
+                            "description": "hotel ID",
+                            "type": "integer"
+                        },
+                        {
+                            "name": "dayNum",
+                            "paramType": "query",
+                            "description": "(Optional)the number of days from today to the future, default value is 1",
+                            "type": "integer"
+                        }
+                    ],
+                    "responseMessages": [
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 3000, errorMsg: 'clientId is necessary.'"
+                        },
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 3010, errorMsg: 'HotelId is necessary.'"
+                        },
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 3011, errorMsg: 'The hotelId was not an integer.'"
+                        },
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 3012, errorMsg: 'The hotelId should be positive integer.'"
+                        },
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 2000, errorMsg: 'Hotel is not exist'"
+                        },
+                        {
+                            "code": 400,
+                            "message": "status: 'Error', errorCode: 2002, errorMsg: 'This hotel has no competitors'"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "models": {
+        "MissedOpportunitiesV3JSONResponse": {
+            "id": "MissedOpportunitiesV3JSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "MissedOpportunitiesV3Data"
+                }
+            }
+        },
+        "FairShareJSONResponse": {
+            "id": "FairShareJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "FairShareData"
+                }
+            }
+        },
+        "FairShareInfositeViewsJSONResponse": {
+            "id": "FairShareInfositeViewsJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "type": "float",
+                    "description": "the comparison of today's fair share with last 7, 14, 21 and 28 days' fair share"
+                }
+            }
+        },
+        "GainedOpportunitiesJSONResponse": {
+            "id": "GainedOpportunitiesJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "type": "array",
+                    "description": "gained opportunities by dates",
+                    "items": {
+                        "$ref": "GainedOpportunitiesData"
+                    }
+                }
+            }
+        },
+        "MissedOpposLeaderBoardJSONResponse": {
+            "id": "MissedOpposLeaderBoardJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "MissedOpposLeaderBoardData"
+                }
+            }
+        },
+        "NewsfeedADRJSONResponse": {
+            "id": "NewsfeedADRJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "type": "array",
+                    "description": "Average Daily Rate (ADR) for per day",
+                    "items": {
+                        "$ref": "NewsfeedADRData"
+                    }
+                }
+            }
+        },
+        "SameDaySortHistoryJSONResponse": {
+            "id": "SameDaySortHistoryJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "SameDaySortHistoryData"
+                }
+            }
+        },
+        "SoldOutRoomTypeJSONResponse": {
+            "id": "SoldOutRoomTypeJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "type": "array",
+                    "description": "Sold out room types by hotel",
+                    "items": {
+                        "$ref": "SoldOutRoomTypeData"
+                    }
+                }
+            }
+        },
+        "GeoDemandJSONResponse": {
+            "id": "GeoDemandJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "GeoDemandData"
+                }
+            }
+        },
+        "MissedOppJSONResponse": {
+            "id": "MissedOppJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "MissedOpportunitiesData"
+                }
+            }
+        },
+        "addCompSetJSONResponse": {
+            "id": "addCompSetJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "addCompSetData"
+                }
+            }
+        },
+        "InterestPriceRangeJSONResponse": {
+            "id": "InterestPriceRangeJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "type": "array",
+                    "description": "Interest price range at a specified time",
+                    "items": {
+                        "$ref": "interestPriceRangeData"
+                    }
+                }
+            }
+        },
+        "compressionOutlookJSONResponse": {
+            "id": "compressionOutlookJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "compressionOutlookData"
+                }
+            }
+        },
+        "priceDistributionJSONResponse": {
+            "id": "priceDistributionJSONResponse",
+            "required": [
+                "status",
+                "errorCode",
+                "errorMsg",
+                "data"
+            ],
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "status of the request"
+                },
+                "errorCode": {
+                    "type": "string",
+                    "description": "error code"
+                },
+                "errorMsg": {
+                    "type": "string",
+                    "description": "error message"
+                },
+                "data": {
+                    "$ref": "priceDistributionJSONData"
+                }
+            }
+        },
+        "MissedOpportunitiesV3Data": {
+            "id": "MissedOpportunitiesV3Data",
+            "required": [
+                "viewedHotelId",
+                "viewedHotelName",
+                "bookDate",
+                "totalLostBookings",
+                "totalLostUSD",
+                "missedOpportunities"
+            ],
+            "properties": {
+                "viewedHotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "viewed hotel id"
+                },
+                "viewedHotelName": {
+                    "type": "string",
+                    "description": "viewed hotel name"
+                },
+                "bookDate": {
+                    "type": "string",
+                    "description": "booked date"
+                },
+                "totalLostBookings": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "total lost bookings count"
+                },
+                "totalLostUSD": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "total lost US Dollar"
+                },
+                "missedOpportunities": {
+                    "type": "array",
+                    "description": "missed opportunities by hotel",
+                    "items": {
+                        "$ref": "MissedOpportunitiesV3Item"
+                    }
+                }
+            }
+        },
+        "MissedOpportunitiesV3Item": {
+            "id": "MissedOpportunitiesV3Item",
+            "required": [
+                "hotelId",
+                "hotelName",
+                "lostBookings",
+                "lostUSD",
+                "details"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "booked hotel id"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "booked hotel name"
+                },
+                "lostBookings": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "total lost bookings to this hotel"
+                },
+                "lostUSD": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "total lost US Dollar to this hotel"
+                },
+                "details": {
+                    "type": "array",
+                    "description": "details for the lost bookings information",
+                    "items": {
+                        "$ref": "MissedOpportunitiesV3Details"
+                    }
+                }
+            }
+        },
+        "MissedOpportunitiesV3Details": {
+            "id": "MissedOpportunitiesV3Details",
+            "required": [
+                "viewedPrice",
+                "bookedPrice",
+                "checkInDate"
+            ],
+            "properties": {
+                "viewedPrice": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "your price viewed by hotel shopper"
+                },
+                "bookedPrice": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "competitor's price which is booked by hotel shopper"
+                },
+                "checkInDate": {
+                    "type": "string",
+                    "description": "checkinDate of this booking"
+                }
+            }
+        },
+        "FairShareData": {
+            "id": "FairShareData",
+            "required": [
+                "roomCount",
+                "compSetRoomCount",
+                "fairShare",
+                "daily"
+            ],
+            "properties": {
+                "roomCount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "your hotel's room count"
+                },
+                "compSetRoomCount": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "competitors' room count"
+                },
+                "fairShare": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "fair share metrics. it's roomCount/(roomCount + compSetRoomCount)"
+                },
+                "daily": {
+                    "type": "array",
+                    "description": "fair share data by daily",
+                    "items": {
+                        "$ref": "DailyFairShareItem"
+                    }
+                }
+            }
+        },
+        "DailyFairShareItem": {
+            "id": "DailyFairShareItem",
+            "required": [
+                "date",
+                "bookedRooms",
+                "compSetBookedRooms"
+            ],
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "date"
+                },
+                "bookedRooms": {
+                    "type": "string",
+                    "description": "your hotel's booked room number"
+                },
+                "compSetBookedRooms": {
+                    "type": "string",
+                    "description": "competitors' booked room number"
+                }
+            }
+        },
+        "GainedOpportunitiesData": {
+            "id": "GainedOpportunitiesData",
+            "required": [
+                "bookedHotelId",
+                "bookedHotelName",
+                "date",
+                "totalViewerCounter",
+                "gainedOpportunities"
+            ],
+            "properties": {
+                "bookedHotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "booked hotel id"
+                },
+                "bookedHotelName": {
+                    "type": "string",
+                    "description": "booked hotel name"
+                },
+                "date": {
+                    "type": "string",
+                    "description": "booked date"
+                },
+                "totalViewerCounter": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "the total view number"
+                },
+                "gainedOpportunities": {
+                    "type": "array",
+                    "description": "gained opportunities from these hotels",
+                    "items": {
+                        "$ref": "GainedOpportunitiesItem"
+                    }
+                },
+                "timeStamp": {
+                    "type": "string",
+                    "description": "timeStamp of the data creation"
+                }
+            }
+        },
+        "GainedOpportunitiesItem": {
+            "id": "GainedOpportunitiesItem",
+            "required": [
+                "hotelId",
+                "hotelName",
+                "views"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "viewed hotel id"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "viewed hotel name"
+                },
+                "views": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "view number"
+                }
+            }
+        },
+        "MissedOpposLeaderBoardData": {
+            "id": "MissedOpposLeaderBoardData",
+            "required": [
+                "viewedHotelId",
+                "viewedHotelName",
+                "totalViewerCounter",
+                "missedOpportunities",
+                "timeStamp"
+            ],
+            "properties": {
+                "viewedHotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "viewed hotel id"
+                },
+                "viewedHotelName": {
+                    "type": "string",
+                    "description": "viewed hotel name"
+                },
+                "missedOpportunities": {
+                    "type": "array",
+                    "description": "missed opportunities by hotel",
+                    "items": {
+                        "$ref": "MissedOpportunitiesItem"
+                    }
+                }
+            }
+        },
+        "MissedOpportunitiesItem": {
+            "id": "MissedOpportunitiesItem",
+            "required": [
+                "hotelId",
+                "hotelName",
+                "bookings"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "booked hotel id"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "booked hotel name"
+                },
+                "roomNights": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "room neights count"
+                },
+                "bookings": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "total booking count"
+                }
+            }
+        },
+        "NewsfeedADRData": {
+            "id": "NewsfeedADRData",
+            "required": [
+                "date",
+                "avg",
+                "min",
+                "max"
+            ],
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "date"
+                },
+                "avg": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Average daily rate of hotel"
+                },
+                "min": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Minimal average daily rate of competitor hotel"
+                },
+                "max": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Maximal average daily rate of competitor hotel"
+                }
+            }
+        },
+        "SameDaySortHistoryData": {
+            "id": "SameDaySortHistoryData",
+            "required": [
+                "searchDate",
+                "avgRank",
+                "avgPriceAmount"
+            ],
+            "properties": {
+                "searchDate": {
+                    "type": "string",
+                    "description": "The date when we search this hotel"
+                },
+                "avgRank": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Average sort rank in the related search date"
+                },
+                "avgPriceAmount": {
+                    "type": "number",
+                    "format": "float",
+                    "description": "Average price amount in the related search date"
+                }
+            }
+        },
+        "SoldOutRoomTypeData": {
+            "id": "SoldOutRoomTypeData",
+            "required": [
+                "hotelId",
+                "hotelName",
+                "roomTypes"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "hotel id"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "hotel name"
+                },
+                "roomTypes": {
+                    "type": "array",
+                    "description": "Sold out by r",
+                    "items": {
+                        "$ref": "SoldOutRoomTypeItem"
+                    }
+                }
+            }
+        },
+        "SoldOutRoomTypeItem": {
+            "id": "SoldOutRoomTypeItem",
+            "required": [
+                "roomTypeId"
+            ],
+            "properties": {
+                "roomTypeId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "room type id"
+                }
+            }
+        },
+        "GeoDemandData": {
+            "id": "GeoDemandData",
+            "required": [
+                "totalTravelers",
+                "travelersDetails"
+            ],
+            "properties": {
+                "totalTravelers": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Total travelers today"
+                },
+                "travelersDetails": {
+                    "type": "array",
+                    "description": "missed opportunities by hotel",
+                    "items": {
+                        "$ref": "GeoDemandItem"
+                    }
+                }
+            }
+        },
+        "GeoDemandItem": {
+            "id": "GeoDemandItem",
+            "required": [
+                "region",
+                "regionId",
+                "num"
+            ],
+            "properties": {
+                "region": {
+                    "type": "string",
+                    "description": "region name"
+                },
+                "regionId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "region id"
+                },
+                "num": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "the number of travelers visited this hotel's infosite page"
+                }
+            }
+        },
+        "MissedOpportunitiesData": {
+            "id": "MissedOpportunitiesData",
+            "required": [
+                "viewedHotelId",
+                "viewedHotelName",
+                "totalViewerCounter",
+                "missedOpportunities",
+                "timeStamp"
+            ],
+            "properties": {
+                "viewedHotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "viewed hotel id"
+                },
+                "viewedHotelName": {
+                    "type": "string",
+                    "description": "viewed hotel name"
+                },
+                "totalViewerCounter": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "total viewer count"
+                },
+                "missedOpportunities": {
+                    "type": "array",
+                    "description": "missed opportunities by hotel",
+                    "items": {
+                        "$ref": "MissedOpportunitiesItem"
+                    }
+                },
+                "timeStamp": {
+                    "type": "string",
+                    "description": "timeStamp of the data creation"
+                }
+            }
+        },
+        "addCompSetData": {
+            "id": "addCompSetData",
+            "required": [
+                "HotelId",
+                "HotelName",
+                "startDate",
+                "endDate",
+                "compSet"
+            ],
+            "properties": {
+                "HotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "owner hotel id"
+                },
+                "HotelName": {
+                    "type": "string",
+                    "description": "owner hotel name"
+                },
+                "startDate": {
+                    "type": "string",
+                    "description": "start date"
+                },
+                "endDate": {
+                    "type": "string",
+                    "description": "end date"
+                },
+                "compSet": {
+                    "type": "array",
+                    "description": "competitors set",
+                    "items": {
+                        "$ref": "addCompSetItem"
+                    }
+                }
+            }
+        },
+        "addCompSetItem": {
+            "id": "addCompSetItem",
+            "required": [
+                "hotelId",
+                "hotelName",
+                "eventDate"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "hotel id"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "hotel name"
+                },
+                "eventDate": {
+                    "type": "string",
+                    "description": "event date"
+                }
+            }
+        },
+        "interestPriceRangeData": {
+            "id": "interestPriceRangeData",
+            "required": [
+                "priceRange",
+                "count"
+            ],
+            "properties": {
+                "priceRange": {
+                    "type": "string",
+                    "description": "price range"
+                },
+                "count": {
+                    "type": "integer",
+                    "description": "the number of booking in this price range"
+                }
+            }
+        },
+        "compressionOutlookData": {
+            "id": "compressionOutlookData",
+            "required": [
+                "regionName",
+                "compression"
+            ],
+            "properties": {
+                "regionName": {
+                    "type": "string",
+                    "description": "region name"
+                },
+                "compression": {
+                    "type": "array",
+                    "description": "compression set",
+                    "items": {
+                        "$ref": "compressionOutlookItem"
+                    }
+                }
+            }
+        },
+        "compressionOutlookItem": {
+            "id": "compressionOutlookItem",
+            "required": [
+                "date",
+                "compressionPercent"
+            ],
+            "properties": {
+                "date": {
+                    "type": "string",
+                    "description": "date"
+                },
+                "compressionPercent": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "compression percent"
+                }
+            }
+        },
+        "priceDistributionJSONData": {
+            "id": "priceDistributionJSONData",
+            "required": [
+                "priceDistributionArr",
+                "lowestPriceArr"
+            ],
+            "properties": {
+                "priceDistributionArr": {
+                    "type": "array",
+                    "description": "price distribution in one market at a specified time",
+                    "items": {
+                        "$ref": "priceDistributionData"
+                    }
+                },
+                "lowestPriceArr": {
+                    "type": "array",
+                    "description": "the list of hotel with lowest price at a specified time",
+                    "items": {
+                        "$ref": "lowestPriceData"
+                    }
+                }
+            }
+        },
+        "priceDistributionData": {
+            "id": "priceDistributionData",
+            "required": [
+                "rooms",
+                "yourHotelflag",
+                "priceRange",
+                "percentage"
+            ],
+            "properties": {
+                "rooms": {
+                    "type": "integer",
+                    "description": "the number of rooms in this price range"
+                },
+                "yourHotelflag": {
+                    "type": "boolean",
+                    "description": "the price distribution of your hotel"
+                },
+                "priceRange": {
+                    "type": "string",
+                    "description": "price range"
+                },
+                "percentage": {
+                    "type": "integer",
+                    "description": "percentage of total rooms booked"
+                }
+            }
+        },
+        "lowestPriceData": {
+            "id": "lowestPriceData",
+            "required": [
+                "hotelId",
+                "lowestPrice",
+                "hotelName"
+            ],
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "description": "hotel id"
+                },
+                "lowestPrice": {
+                    "type": "number",
+                    "description": "the lowest ADR price of hotel"
+                },
+                "hotelName": {
+                    "type": "string",
+                    "description": "hotel name"
+                }
+            }
+        }
+    }
+}
