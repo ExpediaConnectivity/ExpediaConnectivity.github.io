@@ -20,7 +20,7 @@ function setSurveyFeature() {
     $("#nav-main #menu-toggle").removeClass("hidden");
     $("#nav-main #menu-wrap li.mainlink").removeClass("hidden");
     $("#nav-main a#logo").attr("href", "/home");
-    console.log("Survey feature set.");
+    // console.log("Survey feature set.");
 }
 
 function unsetSurveyFeature() {
@@ -28,7 +28,7 @@ function unsetSurveyFeature() {
     $("#nav-main #menu-toggle").addClass("hidden");
     $("#nav-main #menu-wrap li.mainlink").addClass("hidden");
     $("#nav-main a#logo").attr("href", "/");
-    console.log("Survey feature unset.");
+    // console.log("Survey feature unset.");
 }
 
 

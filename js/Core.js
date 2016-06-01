@@ -143,21 +143,25 @@ var Core = Core || {
     },
 
     resizeIframes: function() {
-        $('.api-content iframe').each(function() {
-            var $this = $(this);
-            var height = $this.contents().find('html').height();
-            if (!height) {
-                height = $this.contents().height();
+        try {
+            $('.api-content iframe').each(function() {
+                var $this = $(this);
+                var height = $this.contents().find('html').height();
                 if (!height) {
-                    height = 600;
+                    height = $this.contents().height();
+                    if (!height) {
+                        height = 600;
+                    }
                 }
-            }
-            // Still need some more space to eliminate scroll bar for swagger page
-            height += 10;
-            if (height != $this.height()) {
-                $this.height(height);
-            }
-        });
+                // Still need some more space to eliminate scroll bar for swagger page
+                height += 10;
+                if (height != $this.height()) {
+                    $this.height(height);
+                }
+            });
+        } catch (e) {
+            // oh well - probably a same-origin issue
+        }
     },
 
     cloneSideMenuToOffCanvas: function() {
