@@ -1,0 +1,214 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Blog - APIs for Expedia Partners</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+<!--<link rel="stylesheet" href="/css/he-main.css">-->
+
+<script src="/js/jquery.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/epsga.js"></script>
+<script src="/js/gaEventTracking.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+<script src="/js/featureSwitch.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+</script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-33281064-1', 'auto');
+    ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-33281064-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
+                <li><a href="/contactus" onclick="ga('send','event','ContactUs','clicked','developer.expediapartnercentral.com');">Contact Us</a></li>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/hotels">Hotels</a></li>
+                <li id="apikeynav" style="display:none"><a href="/test-properties/apikeys">API Keys</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
+                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
+                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header><div class="full-width"><style>
+.blog-author {
+    padding: 0px 5px 5px 5px;
+    text-align: right;
+    color: #B1B1B1;
+}
+.blog-content {
+    padding: 5px 5px 10px 5px;
+    text-align: justify;
+}
+.blog-content a {
+        text-decoration: underline;
+}
+.blog-date {
+    padding: 0px 3px 3px 10px;
+    text-align: left;
+    color: #B1B1B1;
+}
+.blog-post {
+    border-color: #C5C5C5;
+    border-style: solid;
+    border-width: 1px;
+}
+.blog-spacer {
+    height: 100px;
+}
+.blog-tags {
+    font-size: 12px;
+    padding: 3px;
+    text-align: right;
+}
+.blog-tag {
+    background-color: #E8F5FF;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    display: inline-block;
+    padding: 0px 4px;
+}
+.blog-title {
+    padding: 0px 0px 0px 5px;
+    text-align: justify;
+    background-color: #FECB2F;
+    border-width: 0px 0px 1px 0px;
+    border-style: dotted;
+    border-color: #A5A5A5;
+}
+
+h1 {
+    color: #B1B1B1;
+    font-size: 2em;
+    margin: 0 0;
+    text-align: center;
+}
+@media only screen and (min-width: 705px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media only screen and (min-width: 840px) {
+    h1 {
+        font-size: 3em;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    h1 {
+        font-size: 3.5em;
+    }
+}
+h2 {
+    font-size: 1.4em;
+    margin: 0 0;
+    padding: 0px;
+}
+@media only screen and (min-width: 805px) {
+    h2 {
+        font-size: 2em;
+    }
+}
+</style>
+<br/>
+<div class="row">
+    <div class="small-8 small-centered large-10 large-centered columns"><h1>Expedia Connectivity Blog</h1></div>
+</div>
+<br/><br/>
+<div class="row">
+    <div class="small-8 small-centered large-10 large-centered columns">
+        <div class="blog-post">
+            <div class="blog-title"><h2>Delete those old rate plans</h2></div>
+            <div class="row">
+                <div class="small-4 large-5 columns">
+                    <div class="blog-date"><span title="3rd of June, 2016">2016-06-03</span></div>
+                </div>
+                <div class="small-4 large-5 columns">
+                    <div class="blog-tags">
+                        <div class="blog-tag"><a href="/blog?tags=product">product</a></div>
+                    </div>
+                </div>
+            </div>
+                <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.
+                <br/><br/>
+                Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.
+                <br/><br/>
+                As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
+            </div>
+            <div class="blog-author">Product API Team</div>
+        </div>
+    </div>
+    <div class="small-8 small-centered large-10 large-centered columns">
+        <div class="blog-spacer">&nbsp;</div>
+    </div>
+</div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingTeamName" value="EPSConnectivityBNE" />
+<input type="hidden" id="eventTrackingGAAccount" value="UA-33281064-1" />
+<input type="hidden" id="eventTrackingIsOnboarding" value="" /><input type="hidden" id="eventTrackingPageName" value="Blog"/></body></html>
