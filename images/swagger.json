@@ -75,7 +75,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/PropertyDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«List«PropertyDTO»»"
             }
           }
         }
@@ -112,7 +112,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/PropertyDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«PropertyDTO»"
             }
           }
         }
@@ -155,7 +155,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RoomTypeDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«List«RoomTypeDTO»»"
             }
           }
         }
@@ -201,7 +201,7 @@
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/RoomTypeDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RoomTypeDTO»"
             }
           }
         }
@@ -245,7 +245,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RoomTypeDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RoomTypeDTO»"
             }
           }
         }
@@ -298,7 +298,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RoomTypeDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RoomTypeDTO»"
             }
           }
         }
@@ -336,7 +336,7 @@
           "200" : {
             "description" : "OK",
             "schema" : {
-              "$ref" : "#/definitions/RoomTypeAmenityDTO"
+              "$ref" : "#/definitions/ResponseWrapperDTO«List«RoomTypeAmenityDTO»»"
             }
           }
         }
@@ -383,7 +383,7 @@
           "200" : {
             "description" : "OK",
             "schema" : {
-              "$ref" : "#/definitions/RoomTypeAmenityDTO"
+              "$ref" : "#/definitions/ResponseWrapperDTO«List«RoomTypeAmenityDTO»»"
             }
           }
         }
@@ -433,7 +433,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RatePlanDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«List«RatePlanDTO»»"
             }
           }
         }
@@ -485,7 +485,7 @@
           "201": {
             "description": "Created",
             "schema": {
-              "$ref": "#/definitions/RatePlanDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RatePlanDTO»"
             }
           }
         }
@@ -536,7 +536,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RatePlanDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RatePlanDTO»"
             }
           }
         }
@@ -594,7 +594,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/RatePlanDTO"
+              "$ref": "#/definitions/ResponseWrapperDTO«RatePlanDTO»"
             }
           }
         }
@@ -854,7 +854,7 @@
           "type": "string",
           "description": "Distribution model adopted by the rate plan, matching property configuration.",
           "enum": [
-            "HotelCollect", "ExpediaCollect. ExpediaCollect: indicates that when customers book this rate plan", "they will pay Expedia. HotelCollect: indicates that when customers book this rate plan", "they will pay the property. Note: if a product can be sold as both ExpediaCollect and HotelCollect", "there will be 2 distribution rules under the rate plan to indicate this"
+            "HotelCollect", "ExpediaCollect"
           ]
         },
         "manageable": {
@@ -935,7 +935,22 @@
         },
         "perStayFee": {
           "type": "string",
-          "description": "Fee that will be charged if the customer cancels within the specified deadline."
+          "description": "Fee that will be charged if the customer cancels within the specified deadline.",
+          "enum": [
+            "None",
+            "1stNightRoomAndTax",
+            "2NightsRoomAndTax",
+            "10PercentCostOfStay",
+            "20PercentCostOfStay",
+            "30PercentCostOfStay",
+            "40PercentCostOfStay",
+            "50PercentCostOfStay",
+            "60PercentCostOfStay",
+            "70PercentCostOfStay",
+            "80PercentCostOfStay",
+            "90PercentCostOfStay",
+            "FullCostOfStay"
+          ]
         },
         "amount": {
           "type": "number",
@@ -1012,7 +1027,7 @@
           "type": "string",
           "description": "Describes which type of rate will be provided via this API, but also which type of rate should be used when managing availability and rates in  ExpediaPartnerCentral or using EC or EQC APIs.",
           "enum": [
-            "NetRate", "SellLAR."
+            "NetRate", "SellLAR"
           ]
         },
         "taxInclusive": {
@@ -1024,7 +1039,7 @@
           "type": "string",
           "description": "Configuration of the property when it comes to pricing rooms and rates.",
           "enum": [
-            "PerDayPricing or OccupancyBasedPricing"
+            "PerDayPricing", "OccupancyBasedPricing"
           ]
         },
         "baseAllocationEnabled": {
@@ -1069,7 +1084,11 @@
         "rateAcquisitionType": {
           "type": "string",
           "description": "Rate acquisition type, inherited from the Property",
-          "readOnly": true
+          "readOnly": true,
+          "enum": [
+            "NetRate",
+            "SellLAR"
+          ]
         },
         "distributionRules": {
           "type": "array",
@@ -1148,16 +1167,19 @@
           "description": "The maximum days before a stay date that the rate plan can be sold. Min 1, Max 500"
         },
         "bookDateStart": {
-          "description": "Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01",
-          "$ref": "#/definitions/LocalDate"
+          "type": "string",
+          "description": "Date at which this rate plan starts being available for searching on any Expedia POS. If in the past, indicates rate plan book date start is not restricted. Accepted format: YYYY-MM-DD. If not restricted, will be returned as 1900-01-01"
         },
         "bookDateEnd": {
+          "type": "string",
           "description": "Date at which this rate plan stops being available for searching on any Expedia POS. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates this rate plan book end date is unrestricted"
         },
         "travelDateStart": {
+          "type": "string",
           "description": "Date at which customers can start checking in for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned at 1900-01-01.If in the past, indicates rate plan travel start date is not restricted"
         },
         "travelDateEnd": {
+          "type": "string",
           "description": "Latest date at which customers can checkout for a stay including this rate plan. Format YYYY-MM-DD. If not restricted, will be returned as 2079-06-06. If in 2079, indicates rate plan travel end date is not restricted"
         },
         "mobileOnly": {
@@ -1167,11 +1189,107 @@
         }
       }
     },
-    "ResponseWrapperDTO": {
+    "ResponseWrapperDTO«List«RoomTypeDTO»»": {
       "type": "object",
       "properties": {
         "entity": {
-          "type": "object"
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoomTypeDTO"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«List«RatePlanDTO»»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RatePlanDTO"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«List«PropertyDTO»»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PropertyDTO"
+          }
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«RoomTypeDTO»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/RoomTypeDTO"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«RatePlanDTO»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/RatePlanDTO"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«PropertyDTO»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "$ref": "#/definitions/PropertyDTO"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ErrorDTO"
+          }
+        }
+      }
+    },
+    "ResponseWrapperDTO«List«RoomTypeAmenityDTO»»": {
+      "type": "object",
+      "properties": {
+        "entity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoomTypeAmenityDTO"
+          }
         },
         "errors": {
           "type": "array",
@@ -1340,7 +1458,7 @@
           "type": "string",
           "description": "Id identifying the smoking preference.",
           "enum": [
-            "2.1 (Non-Smoking) and 2.2 (Smoking)"
+            "2.1", "2.2"
           ]
         },
         "name": {

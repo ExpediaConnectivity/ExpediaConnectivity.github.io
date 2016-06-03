@@ -53,15 +53,15 @@
 						"in": "query",
 						"description": "If specified, will add a score element to the promo payload, indicating strenght of the promotion. Optional, false by default.",
 						"required": false,
-						"type": "string",
-						"default": "true"
+						"type": "boolean",
+						"default": false
 					}, {
 						"name": "activeOnly",
 						"in": "query",
 						"description": "If specified to true, will only return active promotions. Optional, false by default.",
 						"required": false,
-						"type": "string",
-						"default": "true"
+						"type": "boolean",
+						"default": false
 					}
 				],
 				"responses": {
@@ -110,7 +110,7 @@
 						"name": "body",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/PromoRQ"
+							"$ref": "#/definitions/PromoType"
 						}
 					}, {
 						"in": "path",
@@ -179,15 +179,15 @@
 						"in": "query",
 						"description": "If specified, will add a score element to the promo payload, indicating strenght of the promotion. Optional, false by default.",
 						"required": false,
-						"type": "string",
-						"default": "true"
+						"type": "boolean",
+						"default": false
 					}, {
 						"name": "activeOnly",
 						"in": "query",
 						"description": "If specified to true, will only return active promotions. Optional, false by default.",
 						"required": false,
-						"type": "string",
-						"default": "true"
+						"type": "boolean",
+						"default": false
 					}
 				],
 				"responses": {
@@ -307,19 +307,24 @@
 			"properties": {
 				"start": {
 					"type": "string",
-					"format": "date-time",
 					"description": "Data format: xs:date"
 				},
 				"end": {
 					"type": "string",
-					"format": "date-time",
 					"description": "Data format: xs:date"
 				}
 			}
 		},
 		"PromoType": {
 			"required": [
-				"Hotel"
+				"RatePlan",
+				"name",
+				"travelDateStart",
+				"travelDateEnd",
+				"bookDateTimeStart",
+				"bookDateTimeEnd",
+				"percent",
+				"minLOS"
 			],
 			"properties": {
 				"RatePlan": {
@@ -353,22 +358,18 @@
 				},
 				"travelDateStart": {
 					"type": "string",
-					"format": "date-time",
 					"description": "The travel start date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-09-16)."
 				},
 				"travelDateEnd": {
 					"type": "string",
-					"format": "date-time",
 					"description": "The travel end date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-12-31)."
 				},
 				"bookDateTimeStart": {
 					"type": "string",
-					"format": "date-time",
 					"description": "The start date and time when this promotion becomes available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00). No timezone information can be provided, it will always be relative to the property's configured timezone in Expedia system."
 				},
 				"bookDateTimeEnd": {
 					"type": "string",
-					"format": "date-time",
 					"description": "The end date and time when this promotion is no longer available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00). No timezone information can be provided, it will always be relative to the property's configured timezone in Expedia system."
 				},
 				"percent": {
@@ -379,7 +380,7 @@
 					"description": "The discount(percentage) applies to all nights of the guest's stay. The range must be between 10 and 75 inclusively, in increments of 1. Either percent or amount discount is returned not both at the same time."
 				},
 				"amount": {
-					"type": "double",
+					"type": "number",
 					"format": "double",
 					"minimum": 1,
 					"maximum": 12000000,
@@ -402,21 +403,11 @@
 					"description": "Boolean. Should this promotion only be displayed through mobile applications (available through smart phones and tablets)."
 				},
 				"score": {
-					"type": "double",
+					"type": "number",
 					"format": "double",
 					"minimum": 0,
 					"maximum": 10,
 					"description": "A promo score calculated by the promo service. Range between 0.0 and 10.0 inclusive. Only returned if appropriate parameter is passed in request. Cannot be specified in create or update requests."
-				}
-			}
-		},
-		"PromoRQ": {
-			"required": [
-				"Promo"
-			],
-			"properties": {
-				"Promo": {
-					"$ref": "#/definitions/PromoType"
 				}
 			}
 		},
@@ -470,19 +461,19 @@
 		},
 		"PromoRS": {
 			"properties": {
-				"Promo": {
+				"Entity": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/PromoType"
 					}
 				},
-				"Warning": {
+				"Warnings": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/WarningType"
 					}
 				},
-				"Error": {
+				"Errors": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/ErrorType"
