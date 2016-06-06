@@ -764,6 +764,10 @@ section.hero .inner h2 {
   background-position: 60% 40%;
   background-position: center bottom;
 }
+.hero-circuit {
+  background: url(/images/hero-circuit.jpg);
+  background-repeat: repeat;
+}
 .hero-cityscape {
   background: url(/images/hero-cityscape.jpg);
 }
