@@ -94,7 +94,7 @@
 <hr>
 <h2 id="reading-property-room-type-or-rate-plan-information" data-magellan-destination="reading-property-room-type-or-rate-plan-information">Reading property, room type or rate plan information</h2>
 <p>The simplest way to start interacting with the Product API is to access the 
-<a href="https://services.expediapartnercentral.com/products/v1/properties">https://services.expediapartnercentral.com/products/v1/properties</a> endpoint in a browser, and input EQC API username and password when prompted for it.</p>
+<a href="https://services.expediapartnercentral.com/products/properties">https://services.expediapartnercentral.com/products/properties</a> endpoint in a browser, and input EQC API username and password when prompted for it.</p>
 <p>Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:</p>
 <pre><code>username: EQCtest12933873
 password: cc47an46
@@ -135,115 +135,113 @@ password: cc47an46
 }
 </code></pre>
 <p>Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-<a href="https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes">https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes</a></p>
+<a href="https://services.expediapartnercentral.com/products/properties/12933873/roomTypes">https://services.expediapartnercentral.com/products/properties/12933873/roomTypes</a></p>
 <p>The result will be an array of active room types under this property. For example:</p>
 <pre><code class="lang-JSON">{
   &quot;entity&quot;: [
     {
       &quot;resourceId&quot;: 201357991,
-      &quot;partnerCode&quot;: &quot;DLXRM&quot;,
+      &quot;partnerCode&quot;: &quot;PC122&quot;,
       &quot;name&quot;: {
         &quot;attributes&quot;: {
-          &quot;typeOfRoom&quot;: &quot;Room&quot;,
-          &quot;roomClass&quot;: &quot;Deluxe&quot;,
-          &quot;view&quot;: &quot;Mountain View&quot;,
+          &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
+          &quot;roomClass&quot;: &quot;Executive&quot;,
+          &quot;view&quot;: &quot;City View&quot;,
           &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
         },
-        &quot;value&quot;: &quot;Deluxe Room, Jetted Tub, Mountain View&quot;
+        &quot;value&quot;: &quot;Executive Penthouse, Jetted Tub, City View&quot;
       },
       &quot;status&quot;: &quot;Active&quot;,
-      &quot;maxOccupants&quot;: 4,
-      &quot;occupancyByAge&quot;: [
+      &quot;ageCategories&quot;: [
         {
-          &quot;ageCategory&quot;: &quot;Adult&quot;,
-          &quot;minAge&quot;: 18,
-          &quot;maxOccupants&quot;: 4
-        },
+          &quot;category&quot;: &quot;Adult&quot;, 
+          &quot;minAge&quot;: 18
+        }, 
         {
-          &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
-          &quot;minAge&quot;: 2,
-          &quot;maxOccupants&quot;: 3
-        },
-        {
-          &quot;ageCategory&quot;: &quot;Infant&quot;,
-          &quot;minAge&quot;: 0,
-          &quot;maxOccupants&quot;: 3
+          &quot;category&quot;: &quot;ChildAgeA&quot;, 
+          &quot;minAge&quot;: 1
         }
       ],
-      &quot;bedTypes&quot;: [
+      &quot;maxOccupancy&quot;: {
+        &quot;total&quot;: 4, 
+        &quot;adults&quot;: 4, 
+        &quot;children&quot;: 2
+      }, 
+      &quot;standardBedding&quot;: [
         {
-          &quot;id&quot;: &quot;1.66&quot;,
-          &quot;name&quot;: &quot;1 double and 2 single beds&quot;
+          &quot;option&quot;: [
+            {
+              &quot;quantity&quot;: 1, 
+              &quot;type&quot;: &quot;King Bed&quot;, 
+              &quot;size&quot;: &quot;King&quot;
+            }, 
+            {
+              &quot;quantity&quot;: 2, 
+              &quot;type&quot;: &quot;Sofa Bed&quot;, 
+              &quot;size&quot;: &quot;Full&quot;
+            }
+          ]
         }
       ],
+      &quot;extraBedding&quot;: [
+        {
+          &quot;quantity&quot;: 1, 
+          &quot;type&quot;: &quot;Day Bed&quot;, 
+          &quot;size&quot;: &quot;Twin&quot;
+        }
+      ],      
       &quot;smokingPreferences&quot;: [
-        {
-          &quot;id&quot;: &quot;2.1&quot;,
-          &quot;name&quot;: &quot;Non-Smoking&quot;
-        },
-        {
-          &quot;id&quot;: &quot;2.2&quot;,
-          &quot;name&quot;: &quot;Smoking&quot;
-        }
-      ],
-      &quot;roomSize&quot;: {
-        &quot;squareFeet&quot;: 915,
-        &quot;squareMeters&quot;: 85
-      },
-      &quot;views&quot;: [
-        &quot;Mountain View&quot;
-      ]
+        &quot;Non-Smoking&quot;
+      ], 
     },
     {
-      &quot;resourceId&quot;: 201357992,
-      &quot;partnerCode&quot;: &quot;Executive Room&quot;,
+      &quot;resourceId&quot;: 201357992, 
+      &quot;partnerCode&quot;: &quot;Executive RoomX3&quot;, 
       &quot;name&quot;: {
         &quot;value&quot;: &quot;Executive Suite&quot;
       },
       &quot;status&quot;: &quot;Active&quot;,
-      &quot;maxOccupants&quot;: 6,
-      &quot;occupancyByAge&quot;: [
+      &quot;ageCategories&quot;: [
         {
-          &quot;ageCategory&quot;: &quot;Adult&quot;,
-          &quot;minAge&quot;: 18,
-          &quot;maxOccupants&quot;: 6
-        },
+          &quot;category&quot;: &quot;Adult&quot;, 
+          &quot;minAge&quot;: 18
+        }, 
         {
-          &quot;ageCategory&quot;: &quot;Infant&quot;,
-          &quot;minAge&quot;: 0,
-          &quot;maxOccupants&quot;: 5
+          &quot;category&quot;: &quot;Infant&quot;, 
+          &quot;minAge&quot;: 0
         }
-      ],
-      &quot;bedTypes&quot;: [
+      ], 
+      &quot;maxOccupancy&quot;: {
+        &quot;total&quot;: 6,
+        &quot;adults&quot;: 6, 
+        &quot;children&quot;: 5
+      }, 
+      &quot;standardBedding&quot;: [
         {
-          &quot;id&quot;: &quot;1.100&quot;,
-          &quot;name&quot;: &quot;1 double and 2 bunk beds&quot;
+          &quot;option&quot;: [
+            {
+              &quot;quantity&quot;: 1, 
+              &quot;type&quot;: &quot;Full Bed&quot;,
+              &quot;size&quot;: &quot;Full&quot;
+            }, 
+            {
+              &quot;quantity&quot;: 2, 
+              &quot;type&quot;: &quot;Bunk Bed&quot;,
+              &quot;size&quot;: &quot;Twin&quot;
+            }
+          ]
         }
-      ],
+      ], 
       &quot;smokingPreferences&quot;: [
-        {
-          &quot;id&quot;: &quot;2.1&quot;,
-          &quot;name&quot;: &quot;Non-Smoking&quot;
-        },
-        {
-          &quot;id&quot;: &quot;2.2&quot;,
-          &quot;name&quot;: &quot;Smoking&quot;
-        }
-      ],
-      &quot;roomSize&quot;: {
-        &quot;squareFeet&quot;: 1023,
-        &quot;squareMeters&quot;: 95
-      },
-      &quot;views&quot;: [
-        &quot;Ocean View&quot;,
-        &quot;Beach View&quot;
-      ]
+        &quot;Smoking&quot;, 
+        &quot;Non-Smoking&quot;
+      ] 
     }
   ]
 }
 </code></pre>
 <p>Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-<a href="https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans</a></p>
+<a href="https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans</a></p>
 <p>The result will be an array of active rate plans under this property and room type. For example:</p>
 <pre><code class="lang-JSON">{
     &quot;entity&quot;: [
@@ -306,7 +304,7 @@ password: cc47an46
             &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
             &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
             &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
-            &quot;mobileOnly&quot;: false
+            &quot;mobileOnly&quot;: true
         },
         {
             &quot;resourceId&quot;: 206651853,
@@ -315,7 +313,7 @@ password: cc47an46
             &quot;distributionRules&quot;: [
                 {
                     &quot;expediaId&quot;: &quot;206651853&quot;,
-                    &quot;partnerCode&quot;: &quot;BRKEC&quot;,
+                    &quot;partnerCode&quot;: &quot;xxBRKHC&quot;,
                     &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
                     &quot;manageable&quot;: false,
                     &quot;compensation&quot;: {
@@ -325,7 +323,7 @@ password: cc47an46
                 },
                 {
                     &quot;expediaId&quot;: &quot;206651853A&quot;,
-                    &quot;partnerCode&quot;: &quot;BRKHC&quot;,
+                    &quot;partnerCode&quot;: &quot;xxBRKHC&quot;,
                     &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
                     &quot;manageable&quot;: true,
                     &quot;compensation&quot;: {
@@ -372,7 +370,7 @@ password: cc47an46
 </code></pre>
 <hr>
 <h2 id="add-a-rate-plan" data-magellan-destination="add-a-rate-plan">Add a Rate Plan</h2>
-<p>To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <a href="https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/products/v1/properties/12933873/roomTypes/201357991/ratePlans</a> with this payload to create an ExpediaTravelerPreference-enabled rate plan:</p>
+<p>To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <a href="https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans</a> with this payload to create an ExpediaTravelerPreference-enabled rate plan:</p>
 <pre><code class="lang-JSON">{
   &quot;distributionRules&quot;: [
     {
