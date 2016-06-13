@@ -84,30 +84,32 @@
             </div>
         </div>
     </nav>
-</header><div class="full-width"><style>
+</header><div class="full-width">  <style>
 .blog-author {
     padding: 0px 5px 5px 5px;
     text-align: right;
     color: #B1B1B1;
 }
 .blog-content {
-    padding: 5px 5px 10px 5px;
+    padding: 20px;
     text-align: justify;
 }
 .blog-content a {
         text-decoration: underline;
 }
 .blog-date {
-    padding: 0px 3px 3px 10px;
+    padding: 10px 20px 10px 20px;
     text-align: left;
     color: #B1B1B1;
 }
 .blog-post {
     background: #F8F8F8;
-    border-color: #C5C5C5;
-    border-radius: 4px;
-    border-style: solid;
-    border-width: 1px;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px none #000000;
+    /*border-style: solid;
+    border-width: 1px;*/
     box-shadow: 1px 2px #c7c7c7;
 }
 .blog-spacer {
@@ -118,7 +120,7 @@
 }
 .blog-tags {
     font-size: 12px;
-    padding: 3px;
+    padding: 10px 20px 10px 20px;
     text-align: right;
 }
 .blog-tag {
@@ -130,7 +132,7 @@
     padding: 0px 4px;
 }
 .blog-title {
-    padding: 0px 0px 0px 5px;
+    padding: 10px;
     text-align: justify;
     background-color: #E5E5E5;
 }
@@ -181,10 +183,14 @@ h2 {
 <div class="row">
     <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title"><h2>Are you ready for Value Add Promotions?</h2></div>
+            <div class="blog-title">
+                <h2>Are you ready for Value Add Promotions?</h2>
+            </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
-                    <div class="blog-date"><span title="9th of June, 2016">2016-06-09</span></div>
+                    <div class="blog-date">
+                        <span title="9th of June, 2016">2016-06-09</span>
+                    </div>
                 </div>
                 <div class="small-4 large-5 columns">
                     <div class="blog-tags">
@@ -192,22 +198,43 @@ h2 {
                     </div>
                 </div>
             </div>
-            <div class="blog-content"><strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.
-                <br><br>
-                <strong>When is Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Accounts in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.
-                <br><br>
+            <div class="blog-content">
+                <strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.
+
+                <br/>
+                <br/>
+                <strong>When are Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Partners in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.
+
+                <br/>
+                <br/>
                 <strong>What Does this Mean?</strong> Your customers will be invited to create Value Add Promotions for Expedia Brand Websites. To be successful, your systems must consume and pass the relevant information down to the PMS so that your customers can view Value Add information in the reservation details when checking in their guests.
-                <br><br>
-                <strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Special Requests are OTA compliant messages, and we are simply adding a 6th Special Request field for Value Adds. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required. Specifics on Value Adds and the new Special Request 6 field can be found on page 51 of the EQC Spec under the EQC BR schema definition section, which can be viewed here: <a href="https://developer.expediapartnercentral.com/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">EQC Specification</a>
-                <br><br>
+
+                <br/>
+                <br/>
+                <strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.
+                For Partners on EQC – Specifics on Value Adds and the new Special Request 6 field can be found on page 51 of the EQC Spec under the “EQC BR RS Schema Definition” section, which can be viewed here: <a href="https://developer.expediapartnercentral.com/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">EQC Specification</a>
+
+                <br/>
+                For Partners on BN – Specifics on Value Adds and the new Special Request 6 field can be found in the “Hotel Reservation Notification RQ/RS” section of the BN Spec which you can view here: <a href="https://developer.expediapartnercentral.com/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/reference.html#ota_hotelresnotifrq">BN Specification.</a>
+
+                <br/>
+                <br/>
                 <strong>What To Do Today</strong> Review the EQC Booking Retrieval specification to make sure that you can support the new Special Request field to support this critical feature in Expedia Bookings. If you cannot support it yet please designate time for your teams to work on making any mapping changes or updates required to support it by July 15th.
-                <br><br>
+
+                <br/>
+                <br/>
                 <strong>PMS is the Key!</strong> Consuming the Special Request field is not enough on its own. It is critical that the Value Add information is also passed to all of the PMS providers you connect with.
-                <br><br>
-                <strong>Don’t wait to Take Action</strong> Supporting Value Add Promotions is a requirement for certification. If you cannot support Value Add Promotions at this time, please contact your Account Manager. We will work with you to ensure you are prepared by July.
-                <br><br>
-                We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="mailto:eqcss@expedia.com?subject=Value%20Add%20Promotions%20Inquiry">EQCSS or your account manager.</a>
-                <br><br>
+
+                <br/>
+                <br/>
+                <strong>Don’t wait</strong> to Take Action Supporting Value Add Promotions is a requirement for certification. Please take a minute to let us know where you are in the process of adopting Value Adds <a href="http://goo.gl/forms/S2cvhQHwiYxjixA42">here</a>. If you cannot support Value Add Promotions at this time, please contact your Account Manager or <a href="eqcss@expedia.com">EQC Self Service</a>. We will work with you to ensure you are prepared by July.
+
+                <br/>
+                <br/>
+                We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="eqcss@expedia.com">EQC Self Service</a> or your Account Manager.
+
+                <br/>
+                <br/>
                 <strong>Thank you</strong>
             </div>
             <div class="blog-author">Value Add Team</div>
@@ -223,10 +250,14 @@ h2 {
 <div class="row">
     <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title"><h2>Delete those old rate plans</h2></div>
+            <div class="blog-title">
+                <h2>Delete those old rate plans</h2>
+            </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
-                    <div class="blog-date"><span title="3rd of June, 2016">2016-06-03</span></div>
+                    <div class="blog-date">
+                        <span title="3rd of June, 2016">2016-06-03</span>
+                    </div>
                 </div>
                 <div class="small-4 large-5 columns">
                     <div class="blog-tags">
@@ -234,11 +265,17 @@ h2 {
                     </div>
                 </div>
             </div>
-                <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.
-                <br/><br/>
+            <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.
+
+                <br/>
+                <br/>
                 Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.
-                <br/><br/>
-                As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
+
+                <br/>
+                <br/>
+                As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for
+                <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
+
             </div>
             <div class="blog-author">Product API Team</div>
         </div>
