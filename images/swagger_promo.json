@@ -40,14 +40,14 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
 					}, {
 						"in": "path",
 						"description": "The Id of the hotel to retrieve promotions for.",
 						"name": "hotelID",
 						"required": true,
 						"type": "integer",
-						"default": "12933873"
+						"default": "12933870"
 					}, {
 						"name": "returnScore",
 						"in": "query",
@@ -103,7 +103,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
 					}, {
 						"in": "body",
 						"description": "Promo object that is to be created. It support status update with promo id in this version. Required fields: promo id, status.",
@@ -118,7 +118,7 @@
 						"name": "hotelID",
 						"required": true,
 						"type": "integer",
-						"default": "12933873"
+						"default": "12933870"
 					}
 				],
 				"responses": {
@@ -159,21 +159,21 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
 					}, {
 						"in": "path",
 						"description": "The Id of the hotel to retrieve promotions for.",
 						"name": "hotelID",
 						"required": true,
 						"type": "integer",
-						"default": "12933873"
+						"default": "12933870"
 					}, {
 						"in": "path",
 						"description": "The Id of the promo to retrieve",
 						"name": "promoID",
 						"required": true,
 						"type": "integer",
-						"default": "215717520"
+						"default": "218624869"
 					}, {
 						"name": "returnScore",
 						"in": "query",
@@ -226,7 +226,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODczOmNjNDdhbjQ2"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
 					}, {
 						"in": "body",
 						"description": "Promo object that needs to be updated. It support status update with promo id in this version. Required fields: promo id, status.",
@@ -241,14 +241,14 @@
 						"name": "hotelID",
 						"required": true,
 						"type": "integer",
-						"default": "12933873"
+						"default": "12933870"
 					}, {
 						"in": "path",
 						"description": "The Id of the promo to retrieve",
 						"name": "promoID",
 						"required": true,
 						"type": "integer",
-						"default": "215717520"
+						"default": "218624869"
 					}
 				],
 				"responses": {
