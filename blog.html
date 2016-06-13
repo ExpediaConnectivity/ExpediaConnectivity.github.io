@@ -110,7 +110,7 @@
     border: 0px none #000000;
     /*border-style: solid;
     border-width: 1px;*/
-    box-shadow: 1px 2px #c7c7c7;
+    box-shadow: 0px 2px #c7c7c7;
 }
 .blog-spacer {
     height: 100px;
@@ -124,17 +124,16 @@
     text-align: right;
 }
 .blog-tag {
-    background-color: #F8F8F8;
-    border-radius: 5px;
-    border-width: 1px;
-    border-style: solid;
-    display: inline-block;
-    padding: 0px 4px;
+    background-color: #008CBA;
 }
 .blog-title {
-    padding: 10px;
+    padding: 10px 20px 10px;
     text-align: justify;
     background-color: #E5E5E5;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border: 0px none #000000;
 }
 
 h1 {
@@ -194,7 +193,7 @@ h2 {
                 </div>
                 <div class="small-4 large-5 columns">
                     <div class="blog-tags">
-                        <div class="blog-tag">value add</div>
+                        <span class="blog-tag label">value add</span>
                     </div>
                 </div>
             </div>
@@ -261,7 +260,7 @@ h2 {
                 </div>
                 <div class="small-4 large-5 columns">
                     <div class="blog-tags">
-                        <div class="blog-tag">product</div>
+                        <span class="blog-tag label">product</span>
                     </div>
                 </div>
             </div>
