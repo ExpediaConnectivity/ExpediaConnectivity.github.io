@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2012 rel. 2 (http://www.altova.com) by EXPEDIA (EXPEDIA) -->
-<!-- dc_version=@version@ -->
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:element name="Fault">
     <xs:annotation>

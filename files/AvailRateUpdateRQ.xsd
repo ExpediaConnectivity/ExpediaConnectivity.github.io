@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2012 rel. 2 (http://www.altova.com) by EXPEDIA (EXPEDIA) -->
-<!-- Copyright 2012 Expedia, Inc. All Rights Reserved -->
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/AR/2011/06" targetNamespace="http://www.expediaconnect.com/EQC/AR/2011/06" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
 	<xs:element name="AvailRateUpdateRQ">
 		<xs:complexType>
