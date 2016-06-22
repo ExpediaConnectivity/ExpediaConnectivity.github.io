@@ -35,6 +35,14 @@
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
+        if (document.cookie.indexOf('NOTE_SHOWN') == -1) {
+            $('#note').show()
+        }
+        $('#close').on('click', function() {
+            document.cookie = 'NOTE_SHOWN=true';
+            $('#note').hide()
+            Core.init();
+        });
         Core.init();
     });
 </script>
@@ -54,7 +62,12 @@
 </script>
 <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="body-grey-background"><div id="google_translate_element" style="display: none;"></div>
 <header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
+    <div id="note" style="display:none" />
+        <a id="close"><img src="/images/fi-x.svg" /></a>
+        <span class="line">Welcome to the new Expedia Connectivity site. </span>
+        <span class="line"><a href="http://www.expediaquickconnect.com/?noredirect=true">Go back to Expedia Quick Connect</a> or <a href="http://goo.gl/forms/FYq9R3ympLvot89v2" target="_new">Give feedback</a>. </span>
+    </div>
+        <nav id="nav-top" class="row full-width">
         <div class="inner">
             <ul>
                 <li><a href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a></li>
