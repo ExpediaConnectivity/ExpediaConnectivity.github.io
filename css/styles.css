@@ -665,22 +665,18 @@ nav li:hover a {
 #menu-toggle.open {
   background: url(../images/menu-close.png) 50% 50% no-repeat;
 }
-@media (max-width: 1200px) {
+@media (max-width: 90em) {
   #logo {
     margin-top: 1.1rem;
-  }
-  #nav-main ul {
-    padding: 0.8rem 0;
   }
   #nav-main a {
     line-height: 1.2em;
   }
   #nav-main li {
-    max-width: 120px;
     padding: 0 0 0 1.5rem;
   }
 }
-@media (max-width: 865px) {
+@media (max-width: 64em) {
   #nav-main {
     padding: 0.7rem 0 0;
   }
