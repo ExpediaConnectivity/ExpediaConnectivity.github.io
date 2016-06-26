@@ -28,7 +28,6 @@
 <script src="/js/he-smoothscroll.js"></script>
 <script src="/js/he-waypoints.js"></script>
 <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="/js/featureSwitch.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script>
     $(document).ready(function() {
@@ -45,8 +44,7 @@
         });
         Core.init();
     });
-</script>
-<script>
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -54,8 +52,6 @@
 
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
-</script>
-<script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
@@ -85,20 +81,21 @@
                 <img src="/images/DevLogo_40k.png" />
             </a>
 
-            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-toggle" class="hide-for-large-up"></div>
             <div id="menu-wrap">
                 <ul>
-                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
                     <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
-                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
-                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
                     <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Property API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/api-definition.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/supported-features.html">Supported Features</a></li><li class="pagename" data-magellan-arrival="code-lists"><a class="sidebar-nav-item" href="#code-lists">Code Lists</a></li><li class="depth2" data-magellan-arrival="setpropertydetails-codes"><a class="sidebar-nav-item" href="#setpropertydetails-codes">SetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="property-structuretype"><a class="sidebar-nav-item" href="#property-structuretype">property.structureType</a></li><li class="depth3" data-magellan-arrival="property-contact-phonenumber-phonenumbertype"><a class="sidebar-nav-item" href="#property-contact-phonenumber-phonenumbertype">property.contact.phoneNumber.phoneNumberType</a></li><li class="depth3" data-magellan-arrival="property-inventorysetting-rateacquisitiontype"><a class="sidebar-nav-item" href="#property-inventorysetting-rateacquisitiontype">property.inventorySetting.rateAcquisitionType</a></li><li class="depth3" data-magellan-arrival="content-attribute-detail-codes"><a class="sidebar-nav-item" href="#content-attribute-detail-codes">Content Attribute &amp; Detail Codes</a></li><li class="depth3" data-magellan-arrival="setpropertydetails-error-codes"><a class="sidebar-nav-item" href="#setpropertydetails-error-codes">SetPropertyDetails Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertystatus-codes"><a class="sidebar-nav-item" href="#getpropertystatus-codes">GetPropertyStatus Codes</a></li><li class="depth3" data-magellan-arrival="getpropertystatus-error-codes"><a class="sidebar-nav-item" href="#getpropertystatus-error-codes">GetPropertyStatus Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertydetails-codes"><a class="sidebar-nav-item" href="#getpropertydetails-codes">GetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="getpropertydetails-error-codes"><a class="sidebar-nav-item" href="#getpropertydetails-error-codes">GetPropertyDetails Error Codes</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="code-lists" data-magellan-destination="code-lists">Code Lists</h1>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Property API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/api-definition.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/supported-features.html">Supported Features</a></li><li class="pagename" data-magellan-arrival="code-lists"><a class="sidebar-nav-item" href="#code-lists">Code Lists</a></li><li class="depth2" data-magellan-arrival="setpropertydetails-codes"><a class="sidebar-nav-item" href="#setpropertydetails-codes">SetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="property-structuretype"><a class="sidebar-nav-item" href="#property-structuretype">property.structureType</a></li><li class="depth3" data-magellan-arrival="property-contact-phonenumber-phonenumbertype"><a class="sidebar-nav-item" href="#property-contact-phonenumber-phonenumbertype">property.contact.phoneNumber.phoneNumberType</a></li><li class="depth3" data-magellan-arrival="property-inventorysetting-rateacquisitiontype"><a class="sidebar-nav-item" href="#property-inventorysetting-rateacquisitiontype">property.inventorySetting.rateAcquisitionType</a></li><li class="depth3" data-magellan-arrival="content-attribute-detail-codes"><a class="sidebar-nav-item" href="#content-attribute-detail-codes">Content Attribute &amp; Detail Codes</a></li><li class="depth3" data-magellan-arrival="setpropertydetails-error-codes"><a class="sidebar-nav-item" href="#setpropertydetails-error-codes">SetPropertyDetails Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertystatus-codes"><a class="sidebar-nav-item" href="#getpropertystatus-codes">GetPropertyStatus Codes</a></li><li class="depth3" data-magellan-arrival="getpropertystatus-error-codes"><a class="sidebar-nav-item" href="#getpropertystatus-error-codes">GetPropertyStatus Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertydetails-codes"><a class="sidebar-nav-item" href="#getpropertydetails-codes">GetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="getpropertydetails-error-codes"><a class="sidebar-nav-item" href="#getpropertydetails-error-codes">GetPropertyDetails Error Codes</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="code-lists" data-magellan-destination="code-lists">Code Lists</h1>
 <h2 id="setpropertydetails-codes" data-magellan-destination="setpropertydetails-codes">SetPropertyDetails Codes</h2>
 <h3 id="property-structuretype" data-magellan-destination="property-structuretype">property.structureType</h3>
 <div><table>

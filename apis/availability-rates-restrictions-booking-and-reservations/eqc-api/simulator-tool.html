@@ -28,7 +28,6 @@
 <script src="/js/he-smoothscroll.js"></script>
 <script src="/js/he-waypoints.js"></script>
 <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="/js/featureSwitch.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script>
     $(document).ready(function() {
@@ -45,8 +44,7 @@
         });
         Core.init();
     });
-</script>
-<script>
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -54,8 +52,6 @@
 
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
-</script>
-<script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
@@ -85,20 +81,21 @@
                 <img src="/images/DevLogo_40k.png" />
             </a>
 
-            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-toggle" class="hide-for-large-up"></div>
             <div id="menu-wrap">
                 <ul>
-                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
                     <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
-                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
-                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
                     <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>EQC API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/schemas.html">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="parr-and-ar"><a class="sidebar-nav-item" href="#parr-and-ar">PARR and AR</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios-ar"><a class="sidebar-nav-item" href="#successful-update-scenarios-ar">Successful Update Scenarios - AR</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario-ar"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-ar"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios-parr"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-parr"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</a></li><li class="depth2" data-magellan-arrival="booking-retrieval"><a class="sidebar-nav-item" href="#booking-retrieval">Booking Retrieval</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios">Successful Retrieval Scenarios</a></li><li class="depth2" data-magellan-arrival="booking-confirmation"><a class="sidebar-nav-item" href="#booking-confirmation">Booking Confirmation</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios"><a class="sidebar-nav-item" href="#successful-update-scenarios">Successful Update Scenarios</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario">Successful Update with Warning Scenario</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios"><a class="sidebar-nav-item" href="#erroneous-update-scenarios">Erroneous Update Scenarios</a></li><li class="depth3" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">TROUBLESHOOTING</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>EQC API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/schemas.html">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/eqc-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="parr-and-ar"><a class="sidebar-nav-item" href="#parr-and-ar">PARR and AR</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios-ar"><a class="sidebar-nav-item" href="#successful-update-scenarios-ar">Successful Update Scenarios - AR</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario-ar"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario-ar">Successful Update with Warning Scenario – AR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-ar"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-ar">Erroneous Update Scenarios – AR</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios-parr"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios-parr">Successful Retrieval Scenarios- PARR</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios-parr"><a class="sidebar-nav-item" href="#erroneous-update-scenarios-parr">Erroneous Update Scenarios – PARR</a></li><li class="depth2" data-magellan-arrival="booking-retrieval"><a class="sidebar-nav-item" href="#booking-retrieval">Booking Retrieval</a></li><li class="depth3" data-magellan-arrival="successful-retrieval-scenarios"><a class="sidebar-nav-item" href="#successful-retrieval-scenarios">Successful Retrieval Scenarios</a></li><li class="depth2" data-magellan-arrival="booking-confirmation"><a class="sidebar-nav-item" href="#booking-confirmation">Booking Confirmation</a></li><li class="depth3" data-magellan-arrival="successful-update-scenarios"><a class="sidebar-nav-item" href="#successful-update-scenarios">Successful Update Scenarios</a></li><li class="depth3" data-magellan-arrival="successful-update-with-warning-scenario"><a class="sidebar-nav-item" href="#successful-update-with-warning-scenario">Successful Update with Warning Scenario</a></li><li class="depth3" data-magellan-arrival="erroneous-update-scenarios"><a class="sidebar-nav-item" href="#erroneous-update-scenarios">Erroneous Update Scenarios</a></li><li class="depth3" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">TROUBLESHOOTING</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
 <p>The EQC Simulator is a tool provided by Expedia to help EQC partners develop and verify their EQC implementation of the AR, BR, BC and/or PARR APIs before going live on the production system. It exposes a reduced set of functionalities, mainly targeted at helping EQC partners validate XML syntax and a few basic error/warning handling scenarios.</p>
 <h2 id="parr-and-ar" data-magellan-destination="parr-and-ar">PARR and AR</h2>
 <p>This section describes how the PARR and AR simulators are configured and what kind of scenario can be tested using them.</p>

@@ -1,8 +1,19 @@
 $(document).ready(function(){
+    var toggle = $('#menu-toggle');
+    var wrap = $('#menu-wrap');
     
-    $('#menu-toggle').on('click', function(){
-        $('#menu-wrap').slideToggle(500);
+    toggle.on('click', function() {
+        wrap.slideToggle(500);
         $(this).hide().toggleClass('open').fadeIn();
-    })
-   
+    });
+
+    var checkMenuVisibility = function() {
+        if (!toggle.hasClass('open') && toggle.is(':visible')) {
+            wrap.hide();
+        } else {
+            wrap.show();
+	}
+    };
+    $(window).resize(checkMenuVisibility);
+    checkMenuVisibility();
 });

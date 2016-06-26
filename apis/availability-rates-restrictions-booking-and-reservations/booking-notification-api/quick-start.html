@@ -28,7 +28,6 @@
 <script src="/js/he-smoothscroll.js"></script>
 <script src="/js/he-waypoints.js"></script>
 <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="/js/featureSwitch.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script>
     $(document).ready(function() {
@@ -45,8 +44,7 @@
         });
         Core.init();
     });
-</script>
-<script>
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -54,8 +52,6 @@
 
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
-</script>
-<script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
@@ -85,20 +81,21 @@
                 <img src="/images/DevLogo_40k.png" />
             </a>
 
-            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-toggle" class="hide-for-large-up"></div>
             <div id="menu-wrap">
                 <ul>
-                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
                     <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
-                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
-                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
                     <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Booking Notification API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/schemas.html">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Booking Notification API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="quick-start"><a class="sidebar-nav-item" href="#quick-start">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/schemas.html">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="quick-start" data-magellan-destination="quick-start">Quick Start</h1>
 <p>The Booking Notification API allows partners to receive new, modified or cancelled reservations in near real time, as Expedia customers make these bookings.</p>
 <p>As this is a notification-based API, where Expedia initiates the notifications, partners interested in implementing this API need to contact Expedia to get started. It is possible to gain access to a test system that will generate booking notifications to the address of your choice. In order to get started with this, please contact eqcss@expedia.com .</p>
 </div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">

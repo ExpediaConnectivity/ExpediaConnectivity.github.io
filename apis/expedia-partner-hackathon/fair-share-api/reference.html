@@ -28,7 +28,6 @@
 <script src="/js/he-smoothscroll.js"></script>
 <script src="/js/he-waypoints.js"></script>
 <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
-<script src="/js/featureSwitch.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script>
     $(document).ready(function() {
@@ -45,8 +44,7 @@
         });
         Core.init();
     });
-</script>
-<script>
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -54,8 +52,6 @@
 
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
-</script>
-<script type="text/javascript">
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
@@ -85,20 +81,21 @@
                 <img src="/images/DevLogo_40k.png" />
             </a>
 
-            <div id="menu-toggle" class="hidden"></div>
+            <div id="menu-toggle" class="hide-for-large-up"></div>
             <div id="menu-wrap">
                 <ul>
-                    <li class="mainlink hidden"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink hidden"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
                     <!--<li class="mainlink hidden"><a href="/solutions">Solutions</a></li>-->
-                    <li class="mainlink hidden"><a href="/systems">Systems</a></li>
-                    <li class="mainlink hidden"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
                     <!--<li><a href="/hackathon">Expedia Hackathon</a></li>-->
                 </ul>
             </div>
         </div>
     </nav>
-</header><div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair share endpoint</a></li><li class="depth2" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Fair Share API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="fair-share-endpoint"><a class="sidebar-nav-item" href="#fair-share-endpoint">Fair share endpoint</a></li><li class="depth2" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth2" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="errors"><a class="sidebar-nav-item" href="#errors">Errors</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/expedia-partner-hackathon/fair-share-api/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>The Fair Share API requires HTTP basic auth credentials to be supplied with every request.</p>
 <p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
