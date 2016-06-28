@@ -880,6 +880,7 @@ form .request-hotel {
   font-size: 20px;
   color: #3F3F3F;
   line-height: 21px;
+  font-weight: bold;
 }
 .contactus-info h5 {
   margin-top: 10px;
@@ -887,6 +888,7 @@ form .request-hotel {
   font-size: 15px;
   color: #3F3F3F;
   line-height: 21px;
+  font-weight: bold;
 }
 .contactus-info a {
   font-size: 15px;
