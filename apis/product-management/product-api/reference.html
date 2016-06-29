@@ -2154,7 +2154,7 @@ Simple entity response:</p>
 <tr>
 <td>cancelPolicy</td>
 <td><a href="#/definitions/CancelPolicyDTO">CancelPolicy</a></td>
-<td>Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property.</td>
+<td>Default cancel policy. If not provided in a create request, the product API will select a refundable cancellation policy that is currently used by the most recently created standalone rate plan under the same property. If Expedia cannot identify a recently created rate plan, the policy will be defaulted to a standard cancellation policy, where the cancellation deadline is set to 24h from guest arrival, the penalty for cancelling inside this deadline is one night room and tax, and there is no penalty for cancelling outside of this deadline.</td>
 </tr>
 <tr>
 <td>additionalGuestAmounts</td>
