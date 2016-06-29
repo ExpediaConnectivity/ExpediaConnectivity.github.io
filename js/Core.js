@@ -9,6 +9,9 @@ var Core = Core || {
         // Dom manipulating and handling
         this.cloneSideMenuToOffCanvas();
         this.handleEvents();
+        this.addExperimentalTag('a.card-header, .cards>.category');
+
+        // Foundation
         $(document).foundation({
             "magellan-expedition": {
                 active_class : 'active',
@@ -27,19 +30,6 @@ var Core = Core || {
         this.onResize();
         this.onScroll();
         this.checkChanges();
-        $("a.card-header").each(function(i, el) {
-            if ($(el).html().indexOf("(Experimental)") >= 0) {
-                $(el).html($(el).html().replace("(Experimental)", ""));
-                $(el).after("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
-            }
-        });
-        $(".cards>.category").each(function(i, el) {
-            if ($(el).html().indexOf("(Experimental)") >= 0) {
-                $(el).html($(el).html().replace("(Experimental)", ""));
-                $(el).append("<span class='experimental-api label' title='Experimental APIs may break or be removed without notice.'>Experimental</span>");
-            }
-        });
-        $(document).tooltip();
     },
 
     handleEvents: function() {
@@ -212,6 +202,22 @@ var Core = Core || {
         this.setMenuFocus();
         this.checkOffCanvasMenuPosition();
         this.resizeMenuNav();
+    },
+
+    addExperimentalTag: function(e) {
+        var tag = '<span class="experimental-api label" aria-haspopup="true" data-tooltip title="Experimental APIs may break or be removed without notice.">Experimental</span>';
+        $(e).each(function(i, el) {
+            var $el = $(el);
+            var content = $el.html();
+            if (content.indexOf("(Experimental)") >= 0) {
+                $el.html(content.replace("(Experimental)", ""));
+                if ($el.prop('tagName') == 'A') {
+                    $el.after(tag);
+                } else {
+                    $el.append(tag);
+                }
+            }
+        });
     },
 
     demoForm: function() {
