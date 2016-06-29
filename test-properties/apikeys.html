@@ -93,8 +93,10 @@
         </div>
     </nav>
 </header>
-<div class="full-width"><script src="/js/jquery.DataTables.min.js"></script>
+<div class="full-width"><link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+<script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/dataTables.buttons.min.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
 <style>
     .dataTables_length, .dataTables_filter {
         display: none;
@@ -159,7 +161,8 @@
         $("#result").addClass("error").text(humanError);
     }
 
-</script></div><footer id="site-footer" class="row full-width">
+</script>
+</div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
         <div class="links text-center">
             <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
