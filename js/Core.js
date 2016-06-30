@@ -10,6 +10,7 @@ var Core = Core || {
         this.cloneSideMenuToOffCanvas();
         this.handleEvents();
         this.addExperimentalTag('a.card-header, .cards>.category');
+        this.highlightActiveNav('#nav-main li.mainlink');
 
         // Foundation
         $(document).foundation({
@@ -216,6 +217,16 @@ var Core = Core || {
                 } else {
                     $el.append(tag);
                 }
+            }
+        });
+    },
+
+    highlightActiveNav: function(links) {
+        var path = window.location.pathname;
+        $(links).each(function(i, e) {
+            var $e = $(e);
+            if ($e.find('a').attr('href') == path) {
+                 $e.addClass('active');
             }
         });
     },

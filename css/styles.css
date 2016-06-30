@@ -630,6 +630,9 @@ nav li:hover a {
   vertical-align: middle;
   text-align: center;
 }
+#nav-main li.active a {
+  color: white;
+}
 #logo {
   width: 200px !important;
   height: auto;
