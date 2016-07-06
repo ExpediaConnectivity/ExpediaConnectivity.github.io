@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>XML Schemas - Booking Notification API</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>XML Schemas &amp; Production Enpoints - Expedia QuickConnect Booking Retrieval &amp; Confirmation API</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -85,47 +85,30 @@
         </div>
     </nav>
 </header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Booking Notification API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/sample-messages.html">Sample Messages</a></li><li class="pagename" data-magellan-arrival="xml-schemas"><a class="sidebar-nav-item" href="#xml-schemas">XML Schemas</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-and-reservations/booking-notification-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="xml-schemas" data-magellan-destination="xml-schemas">XML Schemas</h1>
-<p>Here are the schemas for messages supported by the BN API. Please note that the base SOAP structure is not documented here. It is assumed our partners understand SOAP envelopes.</p>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Booking Retrieval & Confirmation API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-bc.html">Booking Confirmation API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html">Sample Messages</a></li><li class="pagename" data-magellan-arrival="xml-schemas-production-enpoints"><a class="sidebar-nav-item" href="#xml-schemas-production-enpoints">XML Schemas &amp; Production Enpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="xml-schemas-production-enpoints" data-magellan-destination="xml-schemas-production-enpoints">XML Schemas &amp; Production Enpoints</h1>
 <div><table>
 <thead>
 <tr>
-<th>Schema File</th>
-<th>Description</th>
+<th>Schema</th>
+<th>Production Endpoint</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="/files/SOAP_header.xsd">SOAP_header.xsd</a></td>
-<td>SOAP Header Structure</td>
+<td><a href="/files/BookingRetrievalRQ.xsd">BookingRetrieval Request</a></td>
+<td><a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></td>
 </tr>
 <tr>
-<td><a href="/files/SOAP_fault.xsd">SOAP_fault.xsd</a></td>
-<td>SOAP Fault Structure</td>
+<td><a href="/files/BookingRetrievalRS.xsd">BookingRetrieval Response</a></td>
+<td></td>
 </tr>
 <tr>
-<td><a href="/files/OTA_HotelResNotifRQ.xsd">OTA_HotelResNotifRQ.xsd</a></td>
-<td>Schema for new reservations request. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
+<td><a href="/files/BookingConfirmRQ.xsd">BookingConfirmation Request</a></td>
+<td><a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></td>
 </tr>
 <tr>
-<td><a href="/files/OTA_HotelResNotifRS.xsd">OTA_HotelResNotifRS.xsd</a></td>
-<td>Schema for new reservations response. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
-</tr>
-<tr>
-<td><a href="/files/OTA_HotelResModifyNotifRQ.xsd">OTA_HotelResModifyNotifRQ.xsd</a></td>
-<td>Schema for modified reservation request. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
-</tr>
-<tr>
-<td><a href="/files/OTA_HotelResModifyNotifRS.xsd">OTA_HotelResModifyNotifRS.xsd</a></td>
-<td>Schema for modified reservation response. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
-</tr>
-<tr>
-<td><a href="/files/OTA_CancelRQ.xsd">OTA_CancelRQ.xsd</a></td>
-<td>Schema for cancel reservation request. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
-</tr>
-<tr>
-<td><a href="/files/OTA_CancelRS.xsd">OTA_CancelRS.xsd</a></td>
-<td>Schema for cancel reservation response. OTA 2003B schema, edited to remove what Expedia doesn&#39;t make use of.</td>
+<td><a href="/files/BookingConfirmRS.xsd">BookingConfirmation Response</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -144,4 +127,4 @@
         <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
 </footer>
-<input type="hidden" id="eventTrackingPageName" value="XML Schemas - Booking Notification API"/></body></html>
+<input type="hidden" id="eventTrackingPageName" value="XML Schemas & Production Enpoints - Expedia QuickConnect Booking Retrieval & Confirmation API"/></body></html>

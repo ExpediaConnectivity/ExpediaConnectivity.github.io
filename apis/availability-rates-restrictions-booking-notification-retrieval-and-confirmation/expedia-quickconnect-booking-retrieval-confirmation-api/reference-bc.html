@@ -1,0 +1,437 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Booking Confirmation API Definition - Expedia QuickConnect Booking Retrieval &amp; Confirmation API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/vendor/modernizr.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        if (document.cookie.indexOf('NOTE_SHOWN') == -1) {
+            $('#note').show()
+        }
+        $('#close').on('click', function() {
+            document.cookie = 'NOTE_SHOWN=true';
+            $('#note').hide();
+            Core.onScroll();
+        });
+        Core.init();
+    });
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79394707-1', 'auto');
+    ga('send', 'pageview');
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head><body><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <div id="note" style="display:none">
+        <a id="close"><img src="/images/fi-x.svg" /></a>
+        <span class="line">Welcome to the new Expedia Connectivity site. </span>
+        <span class="line"><a href="http://www.expediaquickconnect.com/?noredirect=true">Go back to Expedia Quick Connect</a> or <a href="http://goo.gl/forms/FYq9R3ympLvot89v2" target="_new">Give feedback</a>. </span>
+    </div>
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/hotels">Hotels</a></li>
+                <li id="apikeynav" style="display:none"><a href="/test-properties/apikeys">API Keys</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hide-for-large-up"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Booking Retrieval & Confirmation API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API Definition</a></li><li class="pagename" data-magellan-arrival="booking-confirmation-api-definition"><a class="sidebar-nav-item" href="#booking-confirmation-api-definition">Booking Confirmation API Definition</a></li><li class="depth2" data-magellan-arrival="introduction"><a class="sidebar-nav-item" href="#introduction">Introduction</a></li><li class="depth3" data-magellan-arrival="supported-features-for-booking-confirmaion"><a class="sidebar-nav-item" href="#supported-features-for-booking-confirmaion">Supported Features for Booking Confirmaion</a></li><li class="depth2" data-magellan-arrival="booking-confirmation-request"><a class="sidebar-nav-item" href="#booking-confirmation-request">Booking Confirmation Request</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-request-schema-overview"><a class="sidebar-nav-item" href="#booking-confirmation-request-schema-overview">Booking Confirmation Request Schema Overview</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-request-schema-complete-definition"><a class="sidebar-nav-item" href="#booking-confirmation-request-schema-complete-definition">Booking Confirmation Request Schema Complete Definition</a></li><li class="depth2" data-magellan-arrival="booking-confirmation-response"><a class="sidebar-nav-item" href="#booking-confirmation-response">Booking Confirmation Response</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-response-schema-overview"><a class="sidebar-nav-item" href="#booking-confirmation-response-schema-overview">Booking Confirmation Response Schema Overview</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-response-schema-complete-definition"><a class="sidebar-nav-item" href="#booking-confirmation-response-schema-complete-definition">Booking Confirmation Response Schema Complete Definition</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-validation-process"><a class="sidebar-nav-item" href="#booking-confirmation-validation-process">Booking Confirmation Validation Process</a></li><li class="depth2" data-magellan-arrival="error-handling"><a class="sidebar-nav-item" href="#error-handling">Error Handling</a></li><li class="depth3" data-magellan-arrival="error-warning-codes-and-descriptions-for-bc"><a class="sidebar-nav-item" href="#error-warning-codes-and-descriptions-for-bc">Error &amp; Warning Codes and Descriptions for BC</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/xml-schemas.html">XML Schemas &amp; Production Enpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="booking-confirmation-api-definition" data-magellan-destination="booking-confirmation-api-definition">Booking Confirmation API Definition</h1>
+<h2 id="introduction" data-magellan-destination="introduction">Introduction</h2>
+<p>When a customer returns to Expedia to review their reservation, or when they receive confirmations or updates for their reservation via e-mail, Expedia shall include the hotel’s confirmation number. The presence of the hotel confirmation number guarantees that the booking was properly received and confirmed by the hotel system and thereby raises customer confidence at check-in. The confirmation number also makes consolidation between Expedia and the hotel easier for accounting and tracking purposes.
+The Booking Confirmation (BC) API is the mechanism EQC partners are required to implement to provide Expedia with the hotel’s confirmation number for all bookings retrieved via the BR interface. Unconfirmed bookings will revert to fax or email once the booking expiration time is reached.</p>
+<h3 id="supported-features-for-booking-confirmaion" data-magellan-destination="supported-features-for-booking-confirmaion">Supported Features for Booking Confirmaion</h3>
+<p>EQC partner must use the booking confirmation API to confirm bookings retrieved electronically (reservations, modifications, and cancellations).</p>
+<p>Confirmation numbers have to be received before bookings expire. Else, bookings will fall back to fax or email. Expedia’s booking expiration strategy is based on booking window:</p>
+<ul>
+<li>For same-day arrival (based on midnight in hotel’s local timezone): bookings will expire 30 minutes after their creation by customer.</li>
+<li>For next-day arrival (any bookings created between midnight and 23:59:59 the day before arrival, based on hotel’s local timezone): bookings will expire 60 minutes after their creation by customer.</li>
+<li>For any longer booking window, bookings will expire 24 hours after their creation by customer.</li>
+</ul>
+<p>Booking confirmation numbers can be updated for already confirmed bookings up to 8 days after guest’s departure date.</p>
+<hr>
+<h2 id="booking-confirmation-request" data-magellan-destination="booking-confirmation-request">Booking Confirmation Request</h2>
+<p>The booking confirmation request message (BC RQ) allows EQC partners to send hotel confirmation numbers for new, modified and/or cancelled bookings on Expedia Inc. points of sale.</p>
+<h3 id="booking-confirmation-request-schema-overview" data-magellan-destination="booking-confirmation-request-schema-overview">Booking Confirmation Request Schema Overview</h3>
+<p><img src="/images/BC-RQ-Schema.png" alt="BC RQ XML MESSAGE"></p>
+<h3 id="booking-confirmation-request-schema-complete-definition" data-magellan-destination="booking-confirmation-request-schema-complete-definition">Booking Confirmation Request Schema Complete Definition</h3>
+<div><table>
+<thead>
+<tr>
+<th>L</th>
+<th>Data element</th>
+<th>Data type</th>
+<th>O</th>
+<th>Description</th>
+<th>EQC validations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>BookingConfirmRQ</td>
+<td>-</td>
+<td></td>
+<td>Root element</td>
+<td></td>
+</tr>
+<tr>
+<td>0</td>
+<td>@xmlns</td>
+<td>URL</td>
+<td></td>
+<td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for BC RQ messages: <a href="http://www.expediaconnect.com/EQC/BC/2007/09">http://www.expediaconnect.com/EQC/BC/2007/09</a></td>
+<td>Valid namespace, defined by at least one version of BC schema.</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Authentication</td>
+<td>-</td>
+<td></td>
+<td>Required information to grant access to Expedia QuickConnect interface – stored in next two attributes.</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>@username</td>
+<td>String</td>
+<td></td>
+<td>Username for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
+<td><ul><li>Minimum length: 4</li><li>Maximum length: 30</li><li>Username exists</li><li>User is allowed to access Expedia QuickConnect</li></ul></td>
+</tr>
+<tr>
+<td>1</td>
+<td>@password</td>
+<td>String</td>
+<td></td>
+<td>Password for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
+<td><ul><li>Minimum length: 6</li><li>Maximum length: 30</li><li>Password fits with the username</li></ul></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Hotel</td>
+<td>-</td>
+<td></td>
+<td>Information about Hotel</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>@id</td>
+<td>Integer</td>
+<td></td>
+<td>Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.</td>
+<td><ul><li>Positive integer of 14 digits or less</li><li>Hotel ID is valid</li><li>Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.</li></ul></td>
+</tr>
+<tr>
+<td>1</td>
+<td>BookingConfirmNumbers</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>BookingConfirmNumber</td>
+<td>-</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@bookingID</td>
+<td>Integer</td>
+<td></td>
+<td>Booking ID generated by Expedia. Uniquely identifies a booking. Should be used to link modifications and cancellations to initial bookings in hotel system - must be kept in hotel system.</td>
+<td>- Positive integer of 14 digits or less</td>
+</tr>
+<tr>
+<td>2</td>
+<td>@bookingType</td>
+<td>Enum</td>
+<td></td>
+<td>Type of booking record. Possible values are: &quot;Book&quot; for new reservations, &quot;Modify&quot; for modified bookings and &quot;Cancel&quot; for cancelled bookings.</td>
+<td>- Value in the list specified in the enumeration given by the schema.<p>The specified booking must  have the same new, modified or cancelled status as described by this booking type.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@confirmNumber</td>
+<td>String</td>
+<td></td>
+<td>Hotel confirmation number for this booking.</td>
+<td>Maximum length: 50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>@confirmTime</td>
+<td>String</td>
+<td></td>
+<td>Time at which the confirmation number was generated by the hotel</td>
+<td><p>Valid date/time occurring between booking time and the present.</p><p>Timestamp as defined in ISO 8601 format. Should be:</p> <p>YYYY-MM-DDThh:mm:ssZ for time in UTC.</p> <p>To indicate a different time zone, the local time shall be immediately followed by a sign, + or -, then by the difference from UTC represented as hh:mm; for example, local Pacific Standard Time would look like &quot;2008-02-28T11:55:00-08:00”.</p></td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="booking-confirmation-response" data-magellan-destination="booking-confirmation-response">Booking Confirmation Response</h2>
+<p>The booking confirmation response message (BC RS) contains a success or error message for the confirmation of a new, modified or cancelled booking. Note that a success message may include a warning that should require action by the EQC partner. There is one response per booking update, so if a booking confirmation request sends a confirmation update for 5 bookings, then there will be 1 response message sent back with additional nodes for each warning or error. </p>
+<h3 id="booking-confirmation-response-schema-overview" data-magellan-destination="booking-confirmation-response-schema-overview">Booking Confirmation Response Schema Overview</h3>
+<p><img src="/images/BC-RS-Schema.png" alt="BC RS XML MESSAGE"></p>
+<h3 id="booking-confirmation-response-schema-complete-definition" data-magellan-destination="booking-confirmation-response-schema-complete-definition">Booking Confirmation Response Schema Complete Definition</h3>
+<div><table>
+<thead>
+<tr>
+<th>L</th>
+<th>Data element</th>
+<th>Data type</th>
+<th>O</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>BookingConfirmRS</td>
+<td>NA</td>
+<td></td>
+<td>Root element</td>
+</tr>
+<tr>
+<td>0</td>
+<td>@xmlns</td>
+<td>URL</td>
+<td></td>
+<td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for BC RS messages <a href="http://www.expediaconnect.com/EQC/BC/2007/08">http://www.expediaconnect.com/EQC/BC/2007/08</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Success</td>
+<td>NA</td>
+<td></td>
+<td><p>Element appears if the request to update availability and rates was successful. The node will be empty.</p><p>If this element is present, Error node(s) does not appear.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Warning</td>
+<td>String</td>
+<td>*</td>
+<td><p>Detailed description of a warning.</p><p>Occurrence of this element means the update request was successfully received by Expedia, but the update could not be made. For example, if the requested booking does not match the specified hotel, a warning is sent that the update was refused.</p><p>Maximum length: 1024 characters.</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@code</td>
+<td>Int</td>
+<td></td>
+<td>Code for the warning, between 10,000 and 11,000.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>@bookingID</td>
+<td>Integer</td>
+<td></td>
+<td><p>Booking ID generated by Expedia. Uniquely identifies a booking. Should be used to link modifications and cancellations to initial bookings in hotel system - must be kept in hotel system.</p><p>Positive integer of 14 digits or less</p></td>
+</tr>
+<tr>
+<td>2</td>
+<td>@bookingType</td>
+<td>Enum</td>
+<td></td>
+<td>Type of booking record. Possible values are: &quot;Book&quot; for new reservations, &quot;Modify&quot; for modified bookings and &quot;Cancel&quot; for cancelled bookings.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>@confirmNumber</td>
+<td>String</td>
+<td></td>
+<td><p>Hotel Confirmation Number for this booking.</p><p>Maximum length: 50</p></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Error</td>
+<td>String</td>
+<td></td>
+<td><p>Detailed description of an error message.</p><p>One or more of this element appears if the request failed.</p><p>If this element is present, Success node does not appear. </p><p>Maximum length: 1024 characters.</p></td>
+</tr>
+<tr>
+<td>1</td>
+<td>@code</td>
+<td>Int</td>
+<td></td>
+<td><p>Code for this error, for example: authentication, xml structure, business validation.</p><p>Code will be between 1000 and 10,000.</p></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="booking-confirmation-validation-process" data-magellan-destination="booking-confirmation-validation-process">Booking Confirmation Validation Process</h3>
+<p>To update a booking with a confirmation number successfully, the following validations are applied through EQC for each confirmation sent in the BC RQ message:</p>
+<ul>
+<li>The username and password are valid</li>
+<li>The bookingID belongs to the specified hotel</li>
+<li>The check-out date has not passed</li>
+<li>The confirmation number is more recent than any existing confirmation number for the booking. For instance, if the EQC partner sends two BC requests for the same booking, EQC will look at the timestamp included in the message and ensure the most recent is applied.</li>
+<li>The booking type specified in the confirmation matches the new, modified, or cancelled state of the booking. Note that if a customer modifies a booking before Expedia sends the booking details to the EQC partner in a booking retrieval message, the confirmation booking type should still be set to “Book” because the first delivery of a booking to the EQC partner is always considered a new booking. 
+An additional validation makes sure that no more than 10 confirmation numbers are sent in the BC RQ message.</li>
+</ul>
+<h2 id="error-handling" data-magellan-destination="error-handling">Error Handling</h2>
+<p>Recommendations for system and technical problems will be the same across all EQC interfaces. For more information about recommendations, please review the <a href="reference-br.html#errorhanlding">corresponding EQC BR section</a>.</p>
+<h3 id="error-warning-codes-and-descriptions-for-bc" data-magellan-destination="error-warning-codes-and-descriptions-for-bc">Error &amp; Warning Codes and Descriptions for BC</h3>
+<div><table>
+<thead>
+<tr>
+<th>Error/Warning code</th>
+<th>Error/Warning description</th>
+<th>Explanation and EQC partner Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1000</td>
+<td>Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access.</td>
+<td>This message should not be retried. For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>Authentication error: invalid username or password.</td>
+<td>This message should not be retried. Verify username and password configured in your EQC interface.  For assistance, please contact rollout@expedia.com for new activations, or hothelp@expedia.com for existing connections.</td>
+</tr>
+<tr>
+<td>2002</td>
+<td>Parsing error: <parsing_error_description>.</td>
+<td>Correct XML format to comply with Expedia QuickConnect&#39;s specification. Developers of the EQC partner system should be involved to find the problem.</td>
+</tr>
+<tr>
+<td>2010</td>
+<td>The namespace specified is invalid.</td>
+<td>Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.</td>
+</tr>
+<tr>
+<td>3010</td>
+<td>Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema.</td>
+<td>Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.</td>
+</tr>
+<tr>
+<td>3301</td>
+<td>Update refused. No more than 10 confirmation numbers can be sent in a single message.</td>
+<td>Please include fewer confirmation numbers in a single BC RQ message. Please resend the numbers by splitting them across multiple requests and make sure that none of the requests contain more than 10 bookings.</td>
+</tr>
+<tr>
+<td>10080</td>
+<td>Update refused. Booking ID cannot be found.</td>
+<td>The EQC partner requested a booking ID that cannot be accessed by Expedia QuickConnect. Verify the booking ID and log on to Expedia Partner Central to get more information about the booking. Note that a booking will be removed from Expedia QuickConnect 8 days after the guest’s departure and won’t be available for electronic retrieval nor electronic confirmation anymore.</td>
+</tr>
+<tr>
+<td>10081</td>
+<td>Update refused. Hotel ID and Booking ID mismatch: the Hotel ID specified in the BC RQ doesn&#39;t match up with the hotel to which this booking belongs.</td>
+<td>The EQC partner sent a confirmation number for a booking that does not belong to the hotel specified in the BC RQ. Please validate the behavior of your system or verify your Booking ID/Hotel ID mapping information.</td>
+</tr>
+<tr>
+<td>10100</td>
+<td>Update refused. The specified booking type does not match the one we have stored for this booking ID in our system (<current_booking_type_for_booking_ID>).</td>
+<td>Please verify your implementation of QuickConnect and make sure the booking ID you specified in the message is really the one you wanted to confirm. The booking type that should be sent along with the booking ID can be found in the BR RS message.</td>
+</tr>
+<tr>
+<td>10101</td>
+<td>Update refused. Confirmation for bookings must be sent no more than 8 days after guest departure, which for this booking was on <guest’s departure date>.</td>
+<td>Please verify your implementation of QuickConnect and make sure that the booking ID specified in the BC RQ message is appropriate.</td>
+</tr>
+<tr>
+<td>10102</td>
+<td>Booking confirmation <BC number provided in RQ> refused for booking <booking ID> because a newer version of this booking is awaiting retrieval.</td>
+<td>Please issue a booking retrieval request to retrieve the latest version of the booking, then send the latest confirmation number for the booking. This confirmation should either be discarded if irrelevant due to the change awaiting retrieval, or resent after booking retrieval has been performed.</td>
+</tr>
+<tr>
+<td>10103</td>
+<td>Booking confirmation [confirmation number] refused for booking [booking ID] because you already confirmed this booking 3 times. Any subsequent confirmation will be refused.</td>
+<td>You attempted to re-confirm the same booking instance more than 3 times. You can only send 3 different confirmation numbers for one booking instance (where booking instance is defined as one version of the booking, every modification or cancellation is considered a different instance). You should only send us confirmation numbers once per booking instance, or any time the actualt hotel confirmation number changes. Please contact EQCHelp if you have a need to modify the confirmation number more than 3 times for 1 booking instance.</td>
+</tr>
+<tr>
+<td>4000, 4004, 4007</td>
+<td>Internal system error, please try again in a few minutes.</td>
+<td>Please retry.</td>
+</tr>
+<tr>
+<td>4001</td>
+<td>Internal timeout error, please try again in a few minutes.</td>
+<td>Please retry.</td>
+</tr>
+<tr>
+<td>4100, 4101</td>
+<td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
+<td>Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. </td>
+</tr>
+<tr>
+<td>4206</td>
+<td>Expedia QuickConnect interface is temporarily closed. Please try again shortly.</td>
+<td></td>
+</tr>
+<tr>
+<td>5000</td>
+<td>Internal database error, please try again in a few minutes.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div></div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingPageName" value="Booking Confirmation API Definition - Expedia QuickConnect Booking Retrieval & Confirmation API"/></body></html>

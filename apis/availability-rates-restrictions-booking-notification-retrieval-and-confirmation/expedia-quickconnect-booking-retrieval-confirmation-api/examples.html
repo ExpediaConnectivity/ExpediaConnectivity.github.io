@@ -1,0 +1,394 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Sample Messages - Expedia QuickConnect Booking Retrieval &amp; Confirmation API</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/vendor/modernizr.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        if (document.cookie.indexOf('NOTE_SHOWN') == -1) {
+            $('#note').show()
+        }
+        $('#close').on('click', function() {
+            document.cookie = 'NOTE_SHOWN=true';
+            $('#note').hide();
+            Core.onScroll();
+        });
+        Core.init();
+    });
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79394707-1', 'auto');
+    ga('send', 'pageview');
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head><body><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <div id="note" style="display:none">
+        <a id="close"><img src="/images/fi-x.svg" /></a>
+        <span class="line">Welcome to the new Expedia Connectivity site. </span>
+        <span class="line"><a href="http://www.expediaquickconnect.com/?noredirect=true">Go back to Expedia Quick Connect</a> or <a href="http://goo.gl/forms/FYq9R3ympLvot89v2" target="_new">Give feedback</a>. </span>
+    </div>
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/hotels">Hotels</a></li>
+                <li id="apikeynav" style="display:none"><a href="/test-properties/apikeys">API Keys</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hide-for-large-up"></div>
+            <div id="menu-wrap">
+                <ul>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium-up" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Booking Retrieval & Confirmation API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-bc.html">Booking Confirmation API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a></li><li class="depth2" data-magellan-arrival="booking-retrieval-api-examples"><a class="sidebar-nav-item" href="#booking-retrieval-api-examples">Booking Retrieval API Examples</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-request-pending-bookings"><a class="sidebar-nav-item" href="#booking-retrieval-request-pending-bookings">Booking Retrieval Request: pending bookings</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-request-retrieving-a-specific-booking-id"><a class="sidebar-nav-item" href="#booking-retrieval-request-retrieving-a-specific-booking-id">Booking Retrieval Request: retrieving a specific booking ID</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-request-all-the-bookings-of-the-past-5-days"><a class="sidebar-nav-item" href="#booking-retrieval-request-all-the-bookings-of-the-past-5-days">Booking Retrieval Request: all the bookings of the past 5 days</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-response-2-new-bookings-returned"><a class="sidebar-nav-item" href="#booking-retrieval-response-2-new-bookings-returned">Booking Retrieval Response: 2 new bookings returned</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-response-1-modified-booking-returned"><a class="sidebar-nav-item" href="#booking-retrieval-response-1-modified-booking-returned">Booking Retrieval Response: 1 modified booking returned</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-response-2-cancelled-bookings-returned"><a class="sidebar-nav-item" href="#booking-retrieval-response-2-cancelled-bookings-returned">Booking Retrieval Response: 2 cancelled bookings returned</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-response-new-booking-with-expedia-virtualcard-details"><a class="sidebar-nav-item" href="#booking-retrieval-response-new-booking-with-expedia-virtualcard-details">Booking Retrieval Response: new booking with Expedia VirtualCard details</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-request-and-response-for-pending-and-already-retrieved-bookings"><a class="sidebar-nav-item" href="#booking-retrieval-request-and-response-for-pending-and-already-retrieved-bookings">Booking Retrieval Request and Response for pending and already retrieved bookings</a></li><li class="depth2" data-magellan-arrival="booking-confirmation-api-examples"><a class="sidebar-nav-item" href="#booking-confirmation-api-examples">Booking Confirmation API Examples</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-request-new-modified-cancelled-booking-confirmation"><a class="sidebar-nav-item" href="#booking-confirmation-request-new-modified-cancelled-booking-confirmation">Booking Confirmation Request: New/modified/cancelled booking confirmation</a></li><li class="depth3" data-magellan-arrival="booking-confirmation-response-successful-update-with-warning"><a class="sidebar-nav-item" href="#booking-confirmation-response-successful-update-with-warning">Booking Confirmation Response: Successful update with warning</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/xml-schemas.html">XML Schemas &amp; Production Enpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium-up"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
+<h2 id="booking-retrieval-api-examples" data-magellan-destination="booking-retrieval-api-examples">Booking Retrieval API Examples</h2>
+<h3 id="booking-retrieval-request-pending-bookings" data-magellan-destination="booking-retrieval-request-pending-bookings">Booking Retrieval Request: pending bookings</h3>
+<p>The following is a sample booking retrieval request for all pending bookings for a user (with one or more hotels). If no hotel ID is specified, all pending bookings for all hotels associated to this user will be returned.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!--Sample booking retrieval request where partner requests all pending bookings for all his properties--&gt;
+&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
+&lt;/BookingRetrievalRQ&gt;
+</code></pre>
+<h3 id="booking-retrieval-request-retrieving-a-specific-booking-id" data-magellan-destination="booking-retrieval-request-retrieving-a-specific-booking-id">Booking Retrieval Request: retrieving a specific booking ID</h3>
+<p>The following is a sample booking retrieval request for one booking that was already sent to the hotel electronically through Expedia QuickConnect and for which the hotel wants to receive the latest details.</p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!--Sample booking retrieval request where partner requests one booking he was already aware of for one of his hotels--&gt;
+&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
+    &lt;Hotel id=&quot;3546&quot;/&gt;
+    &lt;ParamSet&gt;
+        &lt;Booking id=&quot;849123&quot;/&gt;
+    &lt;/ParamSet&gt;
+&lt;/BookingRetrievalRQ&gt;
+</code></pre>
+<p>Note that if a specific booking expired and reverted to alternate delivery method (fax or email), it will not be possible to retrieve it, even when using the booking ID.</p>
+<h3 id="booking-retrieval-request-all-the-bookings-of-the-past-5-days" data-magellan-destination="booking-retrieval-request-all-the-bookings-of-the-past-5-days">Booking Retrieval Request: all the bookings of the past 5 days</h3>
+<p>The following is a sample booking retrieval request where the hotel requests all the bookings that were generated in the past 5 days, including already retrieved and pending bookings. </p>
+<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!--Sample booking retrieval request where partner requests all the bookings that were generated in the past 5 days (note that bookings that expired and reverted to fax won&#39;t be returned by this call)--&gt;
+&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
+    &lt;ParamSet&gt;
+        &lt;NbDaysInPast&gt;5&lt;/NbDaysInPast&gt;
+    &lt;/ParamSet&gt;
+&lt;/BookingRetrievalRQ&gt;
+</code></pre>
+<p>Notes:</p>
+<ul>
+<li>Bookings that reverted to fax will not be returned by this call.</li>
+<li>A hotel parameter (e.g. <Hotel id="3546"/>) may also be added in this request.</li>
+<li>Expedia VirtualCard payment information is not included in the response after 48 hours of the initial booking or modification (the information can only be retrieved afterward by contacting Expedia).</li>
+</ul>
+<h3 id="booking-retrieval-response-2-new-bookings-returned" data-magellan-destination="booking-retrieval-response-2-new-bookings-returned">Booking Retrieval Response: 2 new bookings returned</h3>
+<p>The following is a sample booking retrieval response for a pending booking request. 2 new bookings are returned: (1) a booking for a family of 4 for a week, and (2) another booking for 1 person for 2 days.</p>
+<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Bookings&gt;
+    &lt;Booking id=&quot;2543453245546&quot; type=&quot;Book&quot; createDateTime=&quot;2009-10-25T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;965645&quot; ratePlanID=&quot;956589&quot;&gt;
+        &lt;StayDate arrival=&quot;2009-12-24&quot; departure=&quot;2009-12-31&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
+          &lt;Child age=&quot;1&quot;/&gt;
+          &lt;Child age=&quot;17&quot;/&gt;
+        &lt;/GuestCount&gt;
+        &lt;PerDayRates currency=&quot;EUR&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-24&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-25&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-26&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-27&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-28&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-29&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-30&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot; hotelServiceFees=&quot;10.00&quot; promoName=&quot;1 week 10pct off&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;1529.50&quot; amountOfTaxes=&quot;199.50&quot; currency=&quot;EUR&quot;/&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
+        &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;RewardProgram code=&quot;AJ&quot; number=&quot;49876&quot;/&gt;
+      &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;4&quot;&gt;Late check-in (after 6pm)&lt;/SpecialRequest&gt;
+       &lt;SpecialRequest code=&quot;6&quot;&gt;10% off Spa Package&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+    &lt;Booking id=&quot;35645&quot; type=&quot;Book&quot; createDateTime=&quot;2006-10-25T10:19:47Z&quot; source=&quot;Hotels.com&quot; status=&quot;pending&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;965640&quot; ratePlanID=&quot;925569&quot;&gt;
+        &lt;StayDate arrival=&quot;2009-10-13&quot; departure=&quot;2009-10-15&quot;/&gt;
+        &lt;GuestCount adult=&quot;1&quot;/&gt;
+        &lt;PerDayRates currency=&quot;EUR&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2009-10-13&quot; baseRate=&quot;125.00&quot; hotelServiceFees=&quot;10.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-10-14&quot; baseRate=&quot;125.00&quot; hotelServiceFees=&quot;10.00&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;285.00&quot; amountOfTaxes=&quot;15.00&quot; currency=&quot;EUR&quot;/&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;Bob&quot; surname=&quot;Doe&quot;/&gt;
+        &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;450&quot; number=&quot;5526596&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;RewardProgram code=&quot;AJ&quot; number=&quot;25613&quot;/&gt;
+      &lt;SpecialRequest code=&quot;1.14&quot;&gt;1 king&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;2.2&quot;&gt;Smoking&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+  &lt;/Bookings&gt;
+&lt;/BookingRetrievalRS&gt;
+</code></pre>
+<h3 id="booking-retrieval-response-1-modified-booking-returned" data-magellan-destination="booking-retrieval-response-1-modified-booking-returned">Booking Retrieval Response: 1 modified booking returned</h3>
+<p>The following is a sample booking retrieval response for a pending booking request. It returns one modified booking.</p>
+<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Bookings&gt;
+    &lt;Booking id=&quot;3465456&quot; type=&quot;Modify&quot; createDateTime=&quot;2006-10-25T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot; confirmNumber=&quot;EXP4433&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;965645&quot; ratePlanID=&quot;956589&quot;&gt;
+        &lt;StayDate arrival=&quot;2007-02-24&quot; departure=&quot;2007-02-28&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot;/&gt;
+        &lt;PerDayRates currency=&quot;EUR&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2007-02-24&quot; baseRate=&quot;115.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2007-02-25&quot; baseRate=&quot;115.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2007-02-26&quot; baseRate=&quot;115.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2007-02-27&quot; baseRate=&quot;115.00&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;500.00&quot; amountOfTaxes=&quot;40.00&quot; currency=&quot;EUR&quot;/&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;Jerry&quot; middleName=&quot;W.&quot; surname=&quot;Lay&quot;/&gt;
+        &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558512&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;RewardProgram code=&quot;QI&quot; number=&quot;2456&quot;/&gt;
+      &lt;SpecialRequest code=&quot;1.14&quot;&gt;1 King&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+  &lt;/Bookings&gt;
+&lt;/BookingRetrievalRS&gt;
+</code></pre>
+<h3 id="booking-retrieval-response-2-cancelled-bookings-returned" data-magellan-destination="booking-retrieval-response-2-cancelled-bookings-returned">Booking Retrieval Response: 2 cancelled bookings returned</h3>
+<p>The following is a sample booking retrieval response for a pending booking request. It returns two cancelled bookings.</p>
+<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Bookings&gt;
+    &lt;Booking id=&quot;5634564&quot; type=&quot;Cancel&quot; createDateTime=&quot;2009-10-26T11:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot; confirmNumber=&quot;EXP1234&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;0&quot; ratePlanID=&quot;0&quot;&gt;
+        &lt;StayDate arrival=&quot;2010-02-24&quot; departure=&quot;2018-02-28&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot; child=&quot;3&quot;&gt;
+          &lt;Child age=&quot;3&quot;/&gt;
+          &lt;Child age=&quot;6&quot;/&gt;
+          &lt;Child age=&quot;17&quot;/&gt;
+        &lt;/GuestCount&gt;
+        &lt;PerDayRates&gt;
+          &lt;PerDayRate stayDate=&quot;2010-02-24&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-02-25&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-02-26&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-02-27&quot; baseRate=&quot;0.00&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;0.00&quot; amountOfTaxes=&quot;0.00&quot;/&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;Jerry&quot; middleName=&quot;W.&quot; surname=&quot;Lay&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+    &lt;/Booking&gt;
+    &lt;Booking id=&quot;5465498&quot; type=&quot;Cancel&quot; createDateTime=&quot;2006-10-26T11:44:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot; confirmNumber=&quot;EXP4321&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;0&quot; ratePlanID=&quot;0&quot;&gt;
+        &lt;StayDate arrival=&quot;2010-01-15&quot; departure=&quot;2010-01-19&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
+          &lt;Child age=&quot;3&quot;/&gt;
+          &lt;Child age=&quot;11&quot;/&gt;
+        &lt;/GuestCount&gt;
+        &lt;PerDayRates&gt;
+          &lt;PerDayRate stayDate=&quot;2010-01-15&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-01-16&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-01-17&quot; baseRate=&quot;0.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2010-01-18&quot; baseRate=&quot;0.00&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;0.00&quot; amountOfTaxes=&quot;0.00&quot;/&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;John&quot; surname=&quot;Smith&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+    &lt;/Booking&gt;
+  &lt;/Bookings&gt;
+&lt;/BookingRetrievalRS&gt;
+</code></pre>
+<h3 id="booking-retrieval-response-new-booking-with-expedia-virtualcard-details" data-magellan-destination="booking-retrieval-response-new-booking-with-expedia-virtualcard-details">Booking Retrieval Response: new booking with Expedia VirtualCard details</h3>
+<p>The following is a sample booking retrieval response for a pending booking request. 1 new booking is returned for a family of 4 for a three-day stay, payable to the hotel via Expedia VirtualCard.</p>
+<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Bookings&gt;
+    &lt;Booking id=&quot;477346&quot; type=&quot;Book&quot; createDateTime=&quot;2006-10-25T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
+      &lt;Hotel id=&quot;3546&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;965645&quot; ratePlanID=&quot;956589&quot;&gt;
+        &lt;StayDate arrival=&quot;2009-12-27&quot; departure=&quot;2009-12-30&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
+          &lt;Child age=&quot;1&quot;/&gt;
+          &lt;Child age=&quot;17&quot;/&gt;
+        &lt;/GuestCount&gt;
+        &lt;PerDayRates currency=&quot;EUR&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-27&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-28&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2009-12-29&quot; baseRate=&quot;155.00&quot; extraPersonFees=&quot;25.00&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;829.50&quot; amountOfTaxes=&quot;199.50&quot; currency=&quot;EUR&quot;/&gt;
+        &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****23456&quot; expireDate=&quot;1206&quot;&gt;
+          &lt;CardHolder name=&quot;ExpediaVirtualCard&quot; address=&quot;333 108th Avenue NE&quot; city=&quot;Bellevue&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98004&quot;/&gt;
+        &lt;/PaymentCard&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
+        &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;SpecialRequest code=&quot;5&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+  &lt;/Bookings&gt;
+&lt;/BookingRetrievalRS&gt;
+</code></pre>
+<h3 id="booking-retrieval-request-and-response-for-pending-and-already-retrieved-bookings" data-magellan-destination="booking-retrieval-request-and-response-for-pending-and-already-retrieved-bookings">Booking Retrieval Request and Response for pending and already retrieved bookings</h3>
+<p>The following is a sample RQ/RS pair showing a request to retrieve bookings that were previously retrieved but not confirmed yet, as well as pending bookings. The response contains a booking that was already retrieved along with a booking that was in pending state (never retrieved yet) at the time of the BR request.</p>
+<pre><code class="lang-xml">&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
+  &lt;Hotel id=&quot;1234&quot;/&gt;
+  &lt;ParamSet&gt;
+    &lt;Status value=&quot;pending&quot;/&gt;
+    &lt;Status value=&quot;retrieved&quot;/&gt;
+  &lt;/ParamSet&gt;
+&lt;/BookingRetrievalRQ&gt;
+</code></pre>
+<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
+  &lt;Bookings&gt;
+    &lt;Booking id=&quot;6619&quot; type=&quot;Book&quot; createDateTime=&quot;2013-12-12T00:01:00Z&quot; source=&quot;A-Hotels.com&quot; status=&quot;pending&quot;&gt;
+      &lt;Hotel id=&quot;123456&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;200263232&quot; ratePlanID=&quot;201547528A&quot;&gt;
+        &lt;StayDate arrival=&quot;2014-01-01&quot; departure=&quot;2014-01-02&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot;/&gt;
+        &lt;PerDayRates currency=&quot;USD&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-01&quot; baseRate=&quot;109.99&quot; promoName=&quot;ASAP DEAL 50pct&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;124.29&quot; amountOfTaxes=&quot;14.30&quot; currency=&quot;USD&quot;/&gt;
+        &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****4327&quot; expireDate=&quot;1216&quot; seriesCode=&quot;123&quot;&gt;
+          &lt;CardHolder name=&quot;John Smith&quot; address=&quot;500 Park Avenue&quot; city=&quot;New York&quot; stateProv=&quot;NY&quot; country=&quot;US&quot; postalCode=&quot;10022&quot;/&gt;
+        &lt;/PaymentCard&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;John&quot; surname=&quot;Smith&quot;/&gt;
+        &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;425&quot; number=&quot;5555555&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;SpecialRequest code=&quot;1.14&quot;&gt;One King Bed&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-Smoking&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;3&quot;&gt;Multi-room booking. Primary traveler:Smith, John. 1 of 2 rooms.&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;4&quot;&gt;Adjoining rooms please&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;5&quot;&gt;Hotel Collect Booking  Collect Payment From Guest&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+    &lt;Booking id=&quot;9301&quot; type=&quot;Book&quot; createDateTime=&quot;2013-12-12T12:03:00Z&quot; source=&quot;Expedia&quot; status=&quot;retrieved&quot;&gt;
+      &lt;Hotel id=&quot;654321&quot;/&gt;
+      &lt;RoomStay roomTypeID=&quot;200225905&quot; ratePlanID=&quot;201297424&quot;&gt;
+        &lt;StayDate arrival=&quot;2014-01-26&quot; departure=&quot;2014-02-02&quot;/&gt;
+        &lt;GuestCount adult=&quot;2&quot;/&gt;
+        &lt;PerDayRates currency=&quot;ZAR&quot;&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-26&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-27&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-28&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-29&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-30&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-01-31&quot; baseRate=&quot;756.58&quot;/&gt;
+          &lt;PerDayRate stayDate=&quot;2014-02-01&quot; baseRate=&quot;1085.53&quot;/&gt;
+        &lt;/PerDayRates&gt;
+        &lt;Total amountAfterTaxes=&quot;6412.50&quot; amountOfTaxes=&quot;787.49&quot; currency=&quot;ZAR&quot;/&gt;
+        &lt;PaymentCard cardCode=&quot;MC&quot; cardNumber=&quot;****41234&quot; expireDate=&quot;1116&quot;&gt;
+          &lt;CardHolder name=&quot;Expedia VirtualCard&quot; address=&quot;333 108th Avenue NE&quot; city=&quot;Bellevue&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98004&quot;/&gt;
+        &lt;/PaymentCard&gt;
+      &lt;/RoomStay&gt;
+      &lt;PrimaryGuest&gt;
+        &lt;Name givenName=&quot;Jeff&quot; surname=&quot;Pirelli&quot;/&gt;
+        &lt;Phone countryCode=&quot;44&quot; cityAreaCode=&quot;071&quot; number=&quot;0123876&quot;/&gt;
+      &lt;/PrimaryGuest&gt;
+      &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-Smoking&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;1.13&quot;&gt;One Double Bed&lt;/SpecialRequest&gt;
+      &lt;SpecialRequest code=&quot;5&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid&lt;/SpecialRequest&gt;
+    &lt;/Booking&gt;
+  &lt;/Bookings&gt;
+&lt;/BookingRetrievalRS&gt;
+</code></pre>
+<h2 id="booking-confirmation-api-examples" data-magellan-destination="booking-confirmation-api-examples">Booking Confirmation API Examples</h2>
+<h3 id="booking-confirmation-request-new-modified-cancelled-booking-confirmation" data-magellan-destination="booking-confirmation-request-new-modified-cancelled-booking-confirmation">Booking Confirmation Request: New/modified/cancelled booking confirmation</h3>
+<p>The following is a sample booking confirmation request for one new booking, one modified booking and one cancelled booking at a hotel.</p>
+<pre><code class="lang-xml">&lt;BookingConfirmRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BC/2007/09&quot;&gt;
+  &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
+  &lt;Hotel id=&quot;3546&quot;/&gt;
+  &lt;BookingConfirmNumbers&gt;
+    &lt;BookingConfirmNumber bookingID=&quot;848483849123&quot; bookingType=&quot;Book&quot; confirmNumber=&quot;8675309&quot; confirmTime=&quot;2008-04-25T09:30:47Z&quot;/&gt;
+    &lt;BookingConfirmNumber bookingID=&quot;848485436753&quot; bookingType=&quot;Modify&quot; confirmNumber=&quot;8675310&quot; confirmTime=&quot;2008-04-25T09:30:48Z&quot;/&gt;
+    &lt;BookingConfirmNumber bookingID=&quot;848485410078&quot; bookingType=&quot;Cancel&quot; confirmNumber=&quot;8675311&quot; confirmTime=&quot;2008-04-25T09:30:50Z&quot;/&gt;
+  &lt;/BookingConfirmNumbers&gt;
+&lt;/BookingConfirmRQ&gt;
+</code></pre>
+<h3 id="booking-confirmation-response-successful-update-with-warning" data-magellan-destination="booking-confirmation-response-successful-update-with-warning">Booking Confirmation Response: Successful update with warning</h3>
+<p>The following is a sample booking confirmation response for a new booking. The message states that it was received successfully by EQC, but a warning states that the update could not be made because of an inconsistency in the content of the request.</p>
+<pre><code class="lang-xml">&lt;BookingConfirmRS xmlns=&quot;http://www.expediaconnect.com/EQC/BC/2007/08&quot;&gt;
+    &lt;Success&gt;
+        &lt;Warning code=&quot;10081&quot; bookingID=&quot;9123&quot; bookingType=&quot;Book&quot; confirmNumber=&quot;7605309&quot;&gt; Update refused. Hotel ID and Booking ID mismatch: the Hotel ID specified in the BC RQ doesn&#39;t match up with the hotel to which this booking belongs.
+        &lt;/Warning&gt;
+    &lt;/Success&gt;
+&lt;/BookingConfirmRS&gt;
+</code></pre>
+</div><a class="exit-off-canvas hide-for-medium-up"></a></div></div></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingPageName" value="Sample Messages - Expedia QuickConnect Booking Retrieval & Confirmation API"/></body></html>
