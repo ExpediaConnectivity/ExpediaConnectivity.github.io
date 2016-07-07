@@ -90,7 +90,7 @@
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called &quot;Authentication&quot; is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.</p>
-<pre><code class="lang-xml">&lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;kh92nd29&quot;/&gt;
+<pre><code class="lang-xml">&lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
 </code></pre>
 <p>Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.</p>
 <p>Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials necessary for authentication will be provided. For more details on how to obtain credentials, please contact your Connectivity Account Manager or email EQCSS@expedia.com.</p>
@@ -98,7 +98,7 @@
 <h2 id="product-availability-and-rate-retrieval-request-and-response" data-magellan-destination="product-availability-and-rate-retrieval-request-and-response">Product, Availability and Rate Retrieval Request and Response</h2>
 <p>Doing a POST of the following document (with a Content-Type: text/xml) will allow partners to retrieve the current list of room types and rate plans configured for an Expedia test property in production.</p>
 <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
-    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;kh92nd29&quot;/&gt;
+    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
     &lt;Hotel id=&quot;12933870&quot;/&gt;
     &lt;ParamSet&gt;
         &lt;ProductRetrieval returnRateLink=&quot;true&quot; returnRoomAttributes=&quot;true&quot; returnRatePlanAttributes=&quot;true&quot; returnCompensation=&quot;true&quot; returnCancelPolicy=&quot;true&quot; /&gt;
@@ -107,7 +107,7 @@
 </code></pre>
 <p>Doing a POST of the following document (with a Content-Type: text/xml) will allow partners to retrieve the availability and rates currently configured for an Expedia test property in production.</p>
 <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
-    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;kh92nd29&quot;/&gt;
+    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
     &lt;Hotel id=&quot;12933870&quot;/&gt;
     &lt;ParamSet&gt;
         &lt;AvailRateRetrieval from=&quot;2017-01-11&quot; to=&quot;2017-02-01&quot; /&gt;
