@@ -85,7 +85,9 @@
         </div>
     </nav>
 </header>
-<div class="full-width"><link rel="stylesheet" href="/css/he-main.css">
+<div class="full-width"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="/css/he-main.css">
 <style>
     .card {
         margin-bottom: 30px;
@@ -125,6 +127,14 @@
         padding: 0 0.2rem 0 0 !important;
     }
 </style>
+<script>
+    $(document).ready(function() {
+        $(".card-header span").click(function(el) {
+            $(el.target).toggleClass("ui-icon-carat-1-s").toggleClass("ui-icon-carat-1-n");
+            $(el.target).closest(".card").find(".card-content .description").slideToggle();
+        });
+    });
+</script>
 <section class='hero hero-cityscape'>
     <div class='inner'>
         <h1>Systems</h1>
@@ -143,9 +153,9 @@
         </div>
     </div>
 </section>
-<div class="small-12 small-centered medium-10 large-8 columns cards" style="margin-top: 0rem;">
+<div id="systems" class="small-12 small-centered medium-10 large-8 columns cards" style="margin-top: 0rem;">
     <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
-        <div class="card-content"><a class="card-header">Central Reservations Systems</a>
+        <div class="card-content"><a class="card-header">Central Reservations Systems<span class="ui-icon ui-icon-carat-1-s"></span></a>
             <div class="description full-width">
 <ul class="full-width small-block-grid-1 medium-block-grid-2 large-block-grid-3">
 <li><a href="http://www.1hotelrez.com">1HotelSolution.com Co., Ltd.</a></li>
@@ -229,7 +239,7 @@
         </div>
     </div>
     <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
-        <div class="card-content"><a class="card-header">Property Management Systems</a>
+        <div class="card-content"><a class="card-header">Property Management Systems<span class="ui-icon ui-icon-carat-1-s"></span></a>
             <div class="description full-width">
 <ul class="full-width small-block-grid-1 medium-block-grid-2 large-block-grid-3">
 <li><a href="http://www.acigrup.com">AciGrup S.L</a></li>
@@ -317,7 +327,8 @@
         </div>
     </div>
     <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
-        <div class="card-content"><a class="card-header">Channel Managers/Rate Allocators</a>
+        <div class="card-content">
+            <a class="card-header">Channel Managers/Rate Allocators<span class="ui-icon ui-icon-carat-1-s"></span></a>
             <div class="description full-width">
 <ul class="full-width small-block-grid-1 medium-block-grid-2 large-block-grid-3">
 <li>Accubook</li>
