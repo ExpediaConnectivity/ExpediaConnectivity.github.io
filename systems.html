@@ -129,7 +129,7 @@
 </style>
 <script>
     $(document).ready(function() {
-        $(".card-header span").click(function(el) {
+        $(".card-header").click(function(el) {
             $(el.target).toggleClass("ui-icon-carat-1-s").toggleClass("ui-icon-carat-1-n");
             $(el.target).closest(".card").find(".card-content .description").slideToggle();
         });
