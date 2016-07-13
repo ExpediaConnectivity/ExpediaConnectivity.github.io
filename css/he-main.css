@@ -415,6 +415,7 @@ a:hover {
 .pod-image {
     border-radius: 4px;
     margin-bottom: 1rem;
+    margin-top: 2em;
 }
 .pod-text {
     margin: 1rem auto 0;
