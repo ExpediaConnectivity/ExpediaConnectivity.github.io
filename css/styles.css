@@ -303,6 +303,12 @@
 /* Header Styling */
 /* Hero Styling */
 
+/* Color Pallet */
+/* Api Styling */
+/* Card Styling */
+/* Core Styling */
+/* Header Styling */
+/* Hero Styling */
 #section-intro_paragraph .inner {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -310,6 +316,18 @@
 #section-intro_paragraph .inner p {
   color: #6b6b6b;
   font-size: 1.15rem;
+}
+#section-large_image_pods .yellow-seperator {
+  border-bottom: solid 2px #FECB2F;
+  margin-left: 40%;
+  margin-right: 40%;
+}
+#section-large_image_pods .row > div {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+#section-large_image_pods p > span {
+  color: #0065B8;
 }
 
 #contactus {
