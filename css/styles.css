@@ -739,14 +739,20 @@ nav li:hover a {
   }
   #menu-wrap {
     width: 100%;
-    text-align: center;
+    text-align: left;
     position: static;
+    margin-left: 58px;
+  }
+  #menu-wrap div {
+    width: 15%;
+    padding: 0;
+    border-top: 2px solid #FECB2F;
   }
   #nav-main .inner {
-    text-align: center;
+    text-align: left;
   }
   #logo {
-    margin: 0.3rem 0.5rem 1rem;
+    margin: 0.3rem 13px 1rem;
   }
   #nav-main ul,
   #nav-main li,
@@ -755,17 +761,26 @@ nav li:hover a {
     display: inline-block;
     width: 100%;
     max-width: 100%;
-    text-align: center;
+    text-align: left;
   }
   #nav-main ul {
     margin: 0 auto;
-    padding: 1rem 0 1.5rem;
-    width: 50%;
+    padding-top: 0px;
+    padding-bottom: 1rem;
     min-width: 200px;
   }
   #nav-main li {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #ddd;
+    padding: 0 0;
+    padding-top: 0.8rem;
+  }
+  #nav-main li a {
+    font-weight: normal;
+  }
+  #nav-main li.active a {
+    color: #FECB2F;
+  }
+  #nav-main li:hover a {
+    color: #FECB2F;
   }
   #nav-main li:last-child {
     border-bottom: none;
