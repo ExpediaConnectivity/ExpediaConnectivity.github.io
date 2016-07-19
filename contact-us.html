@@ -178,9 +178,9 @@
             contentType: 'application/json; charset=UTF-8'
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
-            $("form#contactus").html("Thank you for contacting Expedia! <a href='eqcss@expedia.com'>eqcss@expedia.com</a>");
+            $("form#contactus").html("Thank you for contacting Expedia!");
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='eqcss@expedia.com'>eqcss@expedia.com</a>.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
         });
     }
 
