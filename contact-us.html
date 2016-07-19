@@ -124,7 +124,7 @@
         <br>
         In a lot of cases, your first step is to contact your connectivity provider and see if they can resolve the issue. You can also explore our <a href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US&c=CaseCategories%3AConnectivity">Knowledge Base</a> for more troubleshooting steps. If you're still experiencing issues, please reach out to us.
         <div class="exp-divider"></div>
-        Couldn't find what you were looking for? Have an idea on how we can make this site even better? We're always open to feedback, so drop us a line: <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>
+        Couldn't find what you were looking for? Have an idea on how we can make this site even better? We're always open to feedback, send us a message by using the form.
     </div>
     <div class="six columns">
         <form id="contactus" onsubmit="sendmail(this); return false;">
@@ -178,15 +178,15 @@
             contentType: 'application/json; charset=UTF-8'
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
-            $("form#contactus").html("Thank you for contacting Expedia!");
+            $("form#contactus").html("Thank you for contacting Expedia! <a href='eqcss@expedia.com'>eqcss@expedia.com</a>");
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='eqcss@expedia.com'>eqcss@expedia.com</a>.");
         });
     }
 
     function ajaxError(jqxhr, humanError) {
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
-        $("#result").addClass("error").text(humanError);
+        $("#result").addClass("error").html(humanError);
     }
 </script>
 </div><footer id="site-footer" class="row full-width">
