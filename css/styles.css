@@ -824,9 +824,6 @@ section.hero .inner h2 {
   background-position: 60% 40%;
   background-position: center bottom;
 }
-.hero-circuit {
-  background: url(/images/hero-circuit.jpg);
-}
 .hero-cityscape {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/hero-cityscape.jpg);
 }
