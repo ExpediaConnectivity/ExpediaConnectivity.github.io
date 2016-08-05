@@ -406,7 +406,7 @@ Promotions may also be referred to as DRRs, or Dynamic Rate Rules.</xs:documenta
                                                 </xs:attribute>
                                             </xs:complexType>
                                         </xs:element>
-                                        <xs:element name="SpecialRequest" minOccurs="0" maxOccurs="5">
+                                        <xs:element name="SpecialRequest" minOccurs="0" maxOccurs="99">
                                             <xs:annotation>
                                                 <xs:documentation>Special Request made by the customer. Can have up to 5 different special requests, and each one can be one out of 5 types:
 •Bedding Type

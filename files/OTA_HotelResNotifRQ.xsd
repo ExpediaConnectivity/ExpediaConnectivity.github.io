@@ -1198,7 +1198,7 @@ to be added to the OTA specification per trading partner agreement.</xs:document
 A collection of SpecialRequest objects. The collection of all special requests associated with any part of the reservation (the reservation in its entirety, one or more guests, or one or more room stays).  Which special requests belong to which part is determined by each object's SpecialRequestRPHs collection.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element name="SpecialRequest" maxOccurs="5">
+      <xs:element name="SpecialRequest" maxOccurs="99">
         <xs:annotation>
           <xs:documentation xml:lang="en">The SpecialRequest object indicates special requests for a particular guest, service or reservation.  Each of these may be independent of any that are tied to the profile (see Profile Synchronization standard).</xs:documentation>
         </xs:annotation>
