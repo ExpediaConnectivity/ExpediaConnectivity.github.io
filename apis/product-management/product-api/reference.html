@@ -108,6 +108,7 @@
 </ul>
 <h2 id="resources-endpoints-overview" data-magellan-destination="resources-endpoints-overview">Resources &amp; Endpoints Overview</h2>
 <ul>
+<li>All of Expedia APIs now live under the <a href="https://services.expediapartnercentral.com/">https://services.expediapartnercentral.com/</a> domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.</li>
 <li>In order to access property information: <code>/product/properties/{propertyResourceId}</code>. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.</li>
 <li>Room types can be accessed in the context of a property: <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</code>. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
 <li>Rate plans can be accessed as part of a room type (they belong to a room type): <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</code>. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
