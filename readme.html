@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Content Readme - </title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>ConnectivityContent - </title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -86,13 +86,58 @@
         </div>
     </nav>
 </header>
-<div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content"><h1 id="content-readme" data-magellan-destination="content-readme">Content Readme</h1>
-<h2 id="check-for-broken-links" data-magellan-destination="check-for-broken-links">Check for broken links</h2>
-<p>Use this link to run a report to find any broken links.</p>
+<div class="row full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content"><h1 id="connectivitycontent" data-magellan-destination="connectivitycontent">ConnectivityContent</h1>
+<p>Markdown content for <strong><a href="https://ExpediaConnectivity.com">https://ExpediaConnectivity.com</a></strong></p>
+<p>Add or edit content on a branch here and once merged to master changes will be reflected on the site within minutes.</p>
+<h1 id="to-create-new-api-documentation" data-magellan-destination="to-create-new-api-documentation">To create new API Documentation</h1>
+<p>There are 3 ways to get started adding your API content.</p>
 <ol>
-<li>lct.teamcity.sb.karmalab.net/project.html?projectId=partner_api_web</li>
+<li>Manually add a directory for your API and add or copy markdown files as required.  This can be done by cloning this git repo locally and editing locally or via the browser in ewegithub.</li>
+<li>Use the TeamCity build to generate an initial version of the API documentation based on a swagger endpoint then edit as for method 1.</li>
+<li>Clone the partner-api-web repo locally and then use node commands to generate the initial API documentation from swagger.</li>
+</ol>
+<h2 id="method-1-online-editor" data-magellan-destination="method-1-online-editor">Method 1. Online editor</h2>
+<ul>
+<li>Visit the <a href="https://github.com/ExpediaInc/ConnectivityContent">ConnectivityContent repo</a></li>
+<li>Ensure you are logged in</li>
+<li>Navigate to the file you wish to edit</li>
+<li>At the top right is an &#39;edit&#39; and &#39;delete&#39; button.</li>
+<li>Save changes as a new branch and create a pull request (for production)</li>
+<li>To create a file, click the &#39;+&#39; icon beside the folder name.  Use &#39;/&#39; to indicate a sub directory (which are auto-created).</li>
+</ul>
+<h4 id="previewing-changes" data-magellan-destination="previewing-changes">Previewing changes</h4>
+<p>A preview version is generated for each branch in this repo</p>
+<ul>
+<li>Push your work to your branch</li>
+<li>Wait a few minutes (or frantically mash the refresh button)</li>
+<li>Navigate to <a href="http://your-branch.partner-api-preview.test.expedia.com/">http://your-branch.partner-api-preview.test.expedia.com/</a></li>
+<li>Bask in the glory of your changes</li>
+</ul>
+<p>Note that your branch name may require some transformation before it can be used as a valid preview hostname.  Any non-alphanumeric characters will be replaced with <code>-</code>.  For example, a branch called <code>lindsay/my-great-api</code> will be available at <code>http://my-great-api.partner-api-preview.test.expedia.com/</code>.</p>
+<p>=======</p>
+<h2 id="method-2-use-teamcity-build-to-generate-documentation-from-swagger-url" data-magellan-destination="method-2-use-teamcity-build-to-generate-documentation-from-swagger-url">Method 2. Use TeamCity build to generate documentation from swagger URL</h2>
+<p>A teamcity build can be used to generate the reference documentation file from a Swagger JSON URL <a href="https://eps-teamcity.tools.expedia.com/viewType.html?buildTypeId=partner_api_web_InternalApi_SwaggerScript">here</a>.
+Then you can edit as described in Method 1.</p>
+<p><img src="images/build-from-swagger-json.png" alt="Use TeamCity to build from swagger.json"></p>
+<h2 id="method-3-on-a-personal-build-setup" data-magellan-destination="method-3-on-a-personal-build-setup">Method 3. On a personal build setup</h2>
+<p>Clone the <a href="https://github.com/ExpediaInc/ConnectivityContent">ConnectivityContent</a>
+Clone the <a href="https://github.com/ExpediaInc/partner-api-web">partner-api-web</a> repo and follow its README.md.
+The steps are essentially:</p>
+<ul>
+<li>Run <code>./install.sh</code> from within the partner-api-web directory.</li>
+<li>Create a new directory with the name of your new API under internal-api-web/apis. The generater will try and make a sensible name from your directory name. <em>e.g. my-great-app will be given the name My Great App</em></li>
+<li>Create a new <strong>.md</strong> file in the newly-created API directory. <em>e.g internal-api-web/apis/my-great-app/quick-start.md</em></li>
+<li><p>Return to the partner-api-web directory and run:</p>
+<pre><code> ./build.sh --content ../ConnectivityContent/;node server.js
+</code></pre></li>
+<li>Open <a href="http://localhost:8080">http://localhost:8080</a> in your browser.</li>
+</ul>
+<h2 id="check-for-broken-links" data-magellan-destination="check-for-broken-links">Check for broken links</h2>
+<p>Use the TeamCity link to run a report to find any broken links</p>
+<ol>
+<li>Partner API Web <a href="https://eps-teamcity.tools.expedia.com/project.html?projectId=partner_api_web&amp;branch_partner_api_web1CommitPhase=__all_branches__">TeamCity</a></li>
 <li>run Check Links. </li>
-<li>view the site-link-results reports under the artifacts link in teamcity</li>
+<li>view the site-link-results reports under the artifacts link in TeamCity</li>
 <li>fix any broken links in your files or notify the relevant team(s) of broken links in their files</li>
 </ol>
 <h2 id="swagger-cross-domain-support" data-magellan-destination="swagger-cross-domain-support">Swagger Cross-Domain Support</h2>
