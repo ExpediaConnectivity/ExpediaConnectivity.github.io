@@ -27,14 +27,6 @@
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
-        if (document.cookie.indexOf('NOTE_SHOWN') == -1) {
-            $('#note').show()
-        }
-        $('#close').on('click', function() {
-            document.cookie = 'NOTE_SHOWN=true';
-            $('#note').hide();
-            Core.onScroll();
-        });
         Core.init();
     });
 
