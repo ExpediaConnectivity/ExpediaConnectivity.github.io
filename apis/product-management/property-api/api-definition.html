@@ -572,12 +572,12 @@
 <tr>
 <td>ReservationManager</td>
 <td>Yes</td>
-<td>Email required for Electronic Booking Notification Failover.  Phone number required - used as primary contact for customer booking issues.</td>
+<td>firstName, lastName, email or fax required.  Property will fail onboarding if this information is not submitted.</td>
 </tr>
 <tr>
 <td>AlternateReservationManager</td>
 <td>Yes</td>
-<td>Phone number required - used as emergency (24hour) contact for customer booking issues.</td>
+<td>Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted.</td>
 </tr>
 <tr>
 <td>GeneralManager</td>
@@ -606,7 +606,7 @@
 <td>firstName</td>
 <td>String</td>
 <td>Yes</td>
-<td></td>
+<td>Required for ReservationManager, optional for others</td>
 </tr>
 <tr>
 <td>lastName</td>
