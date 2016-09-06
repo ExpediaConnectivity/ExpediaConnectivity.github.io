@@ -80,11 +80,8 @@
         Please enter your Expedia Quick Connect (EQC) login details below.
     </p>
     <form id="loginform" class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
-        <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
-        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password"
-                                                                                placeholder=""/></div>
         <div id="result" class="formline center"></div>
-        <div class="formline"><input class="submit" type="submit" value="Login"/></div>
+        <div class="formline"><input class="submit" type="button" value="Check Login" onclick="checklogin()"/></div>
     </form>
 </div>
 <script src="/js/jwtAuthentication.js"></script>
@@ -92,37 +89,26 @@
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
 <script>
-    function login(form) {
-        var username = $(form).find("#username").val();
-        var password = $(form).find("#password").val();
+    //window.location.href = "https://turnstile-web.us-west-2.test.expedia.com/hotel-assignment-service-auth/v1/homepage";
+    
+    function checklogin() {
 
         $.ajax({
-            method: "POST",
-            url: "https://hotel-assignment-service.prod-p.expedia.com/v1/properties/login",
+            method: "GET",
+            url: "http://turnstile-web.us-west-2.test.expedia.com/hotel-assignment-service-noauth/v1/checklogin",
             xhrFields: {
                 withCredentials: false,
                 XDomainRequest: true
             },
             beforeSend: function(xhr) {
-                if (username) {
-                    xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
-                }
+                xhr.setRequestHeader("Authorization", "JWT xxx");
             }
         }).done(function(data, textStatus, jqxhr) {
-            $("#result").removeClass("error");
-            localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
-            window.location.href = "./hotels";
+            console.log("Authenticated with turnstile.");
         }).fail(function(jqxhr) {
-            if (jqxhr.status == 403 || jqxhr.status == 401) {
-                $("#result").addClass("error").html("Incorrect username or password.");
-            } else {
-                $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
-            }
+            alert("Not authenticated with turnstile.");
+            window.location.href = "https://turnstile-web.us-west-2.test.expedia.com/hotel-assignment-service-auth/v1/homepage";
         });
-    }
-
-    if (localStorage.getItem("AuthToken") !== null) {
-        window.location.href = "./hotels";
     }
 
 </script></div><footer id="site-footer" class="row full-width">
