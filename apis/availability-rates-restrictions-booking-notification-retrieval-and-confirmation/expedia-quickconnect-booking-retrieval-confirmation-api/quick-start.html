@@ -79,7 +79,7 @@
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for BR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.</p>
-<pre><code class="lang-xml">&lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
+<pre><code class="lang-xml">&lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;ew67nk33&quot;/&gt;
 </code></pre>
 <p>Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.</p>
 <p>Upon submitting an EQC enrollment form to the EQCHelp team, the EQC credentials necessary for authentication will be provided. For partners that never worked with Expedia before, and don&#39;t know how to get started, please refer to the <a href="/apis/availability-rates-restrictions-booking-and-reservations/expedia-quickconnect-avail-rates-api/guides.html#gettingconnected">Getting Connected section of the Avail and Rates API</a></p>
@@ -90,7 +90,7 @@ If an EQC partner does not retrieve the booking information electronically, Expe
 <p>Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API at <a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a>, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-xml">&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
-    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
+    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;ew67nk33&quot;/&gt;
 &lt;/BookingRetrievalRQ&gt;
 </code></pre>
 <p><strong>Response</strong></p>
@@ -178,7 +178,7 @@ If an EQC partner does not retrieve the booking information electronically, Expe
 <p>Below is a pair of sample request/response messages for booking confirmation. It could be sent to production at <a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a> if a partner has a valid test booking to confirm and changes the IDs in the sample below.</p>
 <p><strong>RQ</strong></p>
 <pre><code class="lang-xml">&lt;BookingConfirmRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BC/2007/09&quot;&gt;
-    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;wm47ah92&quot;/&gt;
+    &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;ew67nk33&quot;/&gt;
     &lt;Hotel id=&quot;734658&quot;/&gt;    
     &lt;BookingConfirmNumbers&gt;
         &lt;BookingConfirmNumber bookingID=&quot;252743459&quot; bookingType=&quot;Book&quot; confirmNumber=&quot;E2340589B&quot; confirmTime=&quot;2013-12-30T23:45:00Z&quot;/&gt;
