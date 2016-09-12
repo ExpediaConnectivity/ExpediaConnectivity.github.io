@@ -169,7 +169,14 @@
         data.phone = $(form).find("#phone").val();
         data.company = $(form).find("#company").val();
         data.message = $(form).find("#message").val();
+        data.subject = $(form).find("#subject").val();
         data.captchaResponse = captchaResponse;
+        
+        if (data.subject == "unknown") {
+            alert("Please select an appropriate subject.");
+            return;
+        }
+
         $.ajax({
             method: "POST",
             url: "https://hotel-assignment-service.prod-p.expedia.com/hotel-assignment-service-noauth/v1/sendmail",
