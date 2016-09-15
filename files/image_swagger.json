@@ -107,13 +107,13 @@
 				]
 			}
 		},
-		"/properties/{propertyId}/images/{guid}": {
+		"/properties/{propertyId}/images/{resourceId}": {
 			"get": {
 				"tags": [
 					"Image"
 				],
 				"summary": "Read a single image",
-				"operationId": "getImageByGuid",
+				"operationId": "getImageByResourceId",
 				"consumes": [
 					"application/json"
 				],
@@ -128,9 +128,9 @@
 						"required": true,
 						"type": "string"
 					}, {
-						"name": "guid",
+						"name": "resourceId",
 						"in": "path",
-						"description": "Image GUID",
+						"description": "Image Resource ID",
 						"required": true,
 						"type": "string"
 					}
@@ -152,7 +152,7 @@
 					"Image"
 				],
 				"summary": "Delete an existing image",
-				"operationId": "deleteImageByGuid",
+				"operationId": "deleteImageByResourceId",
 				"consumes": [
 					"application/json"
 				],
@@ -167,9 +167,9 @@
 						"required": true,
 						"type": "string"
 					}, {
-						"name": "guid",
+						"name": "resourceId",
 						"in": "path",
-						"description": "Image GUID",
+						"description": "Image Resource ID",
 						"required": true,
 						"type": "string"
 					}

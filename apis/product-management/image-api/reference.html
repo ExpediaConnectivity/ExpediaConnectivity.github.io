@@ -497,7 +497,7 @@ Simple entity response:</p>
 <p>It is important for partners to know images can only be deleted before they reach the Published state.</p>
 <ul>
 <li>Method: <code>DELETE</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}">https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}">https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>*/*</code></li>
 </ul>
@@ -523,9 +523,9 @@ Simple entity response:</p>
 <td></td>
 </tr>
 <tr>
-<td>guid</td>
+<td>resourceId</td>
 <td>path</td>
-<td>Image ResourceId. The DELETE only works on images that haven&#39;t reached the &quot;Published&quot; state. Once it reached &quot;Published&quot;, it can&#39;t be deleted anymore, only inactivated.</td>
+<td>Image Resource ID. The DELETE only works on images that haven&#39;t reached the &quot;Published&quot; state. Once it reached &quot;Published&quot;, it can&#39;t be deleted anymore, only inactivated.</td>
 <td>true</td>
 <td>string</td>
 <td></td>
@@ -535,7 +535,7 @@ Simple entity response:</p>
 </div><h3 id="read-a-single-image" data-magellan-destination="read-a-single-image">Read a single image</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}">https://services.expediapartnercentral.com/properties/{propertyId}/images/{guid}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}">https://services.expediapartnercentral.com/properties/{propertyId}/images/{resourceId}</a></li>
 <li>Consumes: <code>application/json</code></li>
 <li>Produces: <code>application/json</code></li>
 </ul>
@@ -574,9 +574,9 @@ Simple entity response:</p>
 <td></td>
 </tr>
 <tr>
-<td>guid</td>
+<td>resourceId</td>
 <td>path</td>
-<td>Image GUID</td>
+<td>Image Resource ID</td>
 <td>true</td>
 <td>string</td>
 <td></td>
