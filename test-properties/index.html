@@ -115,7 +115,7 @@
             window.location.href = "./hotels";
         }).fail(function(jqxhr) {
             if (jqxhr.status == 403 || jqxhr.status == 401) {
-                if (username.match(/^eqc/i) == null) {
+                if (username.match(/^eqc/i) != null) {
                     $("#result").addClass("error").html("API/EQC credentials can not be used to access this feature.  Please use your EPC (e.g. SYS_) credentials.");
                 } else {
                     $("#result").addClass("error").html("Incorrect username or password.");
