@@ -12,5 +12,9 @@ var hotelAssignmentServiceUrls = {
 
     scheduleExtend: function(hotelId) {
         return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/extend";
+    },
+
+    setPassword: function(hotelId) {
+        return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/change";
     }
 }

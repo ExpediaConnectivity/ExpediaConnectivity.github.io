@@ -108,8 +108,15 @@
         <br/>
         <h2>Assign a test property to your account</h2>
         <div id="factors" class="row full-width"></div>
-        <div class="formline large-6 small-12 large-offset-6 columns request-hotel">
-            <input class="submit" type="submit" value="Request Property"/>
+        <div class="row full-width request-hotel">
+            <div class="large-6 columns">
+                <label>Password for API Calls</label>
+                <input type="password" id="password" name="password"/>
+            </div>
+            <div class="large-6 columns formline">
+                <label>&nbsp;</label>
+                <input class="submit" type="submit" value="Request Property"/>
+            </div>
         </div>
     </form>
 </div>
@@ -236,12 +243,22 @@
     }
 
     function autoAssignHotel() {
+        var password = $("#requestHotelForm #password").val();
+        if (!password || password.length < 8) {
+            $("#result").addClass("error").text("You must specify a password (8+ characters) to use for API calls.");
+            return;
+        }
         jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign, getAssignmentRequest(), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             var hotelId = JSON.parse(jqxhr.responseText).hotelId;
-            $("#result").removeClass("error").text("Successfully assigned hotel: " + hotelId);
             datatable.ajax.reload(function() {
                 $("#hotels>tbody>tr>td:first-child:contains(" + hotelId + ")").last().parent().children().effect( "highlight", {color:"#FECB2F"}, 700 );
+            });
+
+            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
+                $("#result").removeClass("error").text("Successfully assigned hotel: " + hotelId);
+            }, function(jqxhr) {
+                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
             });
         }, function(jqxhr) {
             ajaxError(jqxhr, "Could not schedule a test hotel.");
@@ -250,7 +267,7 @@
 
     function unassign(e, dt, node, config) {
         console.log("unassign");
-        var hotelid = dt.cell(".selected", 1).data();
+        var hotelid = dt.cell(".selected", 0).data();
         jwtRequest("DELETE", hotelAssignmentServiceUrls.scheduleHotel(hotelid), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully unassigned hotel");
@@ -262,7 +279,7 @@
 
     function extend(e, dt, node, config) {
         console.log("extend");
-        var hotelid = dt.cell(".selected", 1).data();
+        var hotelid = dt.cell(".selected", 0).data();
         jwtRequest("POST", hotelAssignmentServiceUrls.scheduleExtend(hotelid), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             $("#result").removeClass("error").text("Successfully extended hotel");
