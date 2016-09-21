@@ -862,14 +862,14 @@ form .formline {
   margin-bottom: 10px;
   vertical-align: middle;
 }
-form .formline > span {
+form .formline span {
   display: inline-block;
   width: 40%;
   margin-right: 10%;
   font-size: inherit;
   vertical-align: middle;
 }
-form .formline > textarea {
+form .formline textarea {
   display: inline-block;
   width: 100%;
   min-width: 100%;
@@ -881,7 +881,7 @@ form .formline > textarea {
   margin: 0;
   height: 10em;
 }
-form .formline > input {
+form .formline input {
   display: inline-block;
   width: 100%;
   border: 1px solid #EFEFEF;
@@ -891,15 +891,17 @@ form .formline > input {
   font-size: 0.8em;
   margin: 0;
 }
-form .formline > .submit {
+form .formline .submit {
   background: #FECB2F;
   cursor: pointer;
+  border-radius: 0px;
+  font-size: 1em;
 }
 form .error {
   color: #D62D20;
 }
 form .request-hotel {
-  margin-top: 1.7em;
+  margin-top: 0.7em;
 }
 #loginform input {
   width: 49%;
