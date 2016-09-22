@@ -101,6 +101,7 @@
     <br/>
     <h2>Properties assigned to your account</h2>
     <br/>
+    <div id="dialogue" title="Account Details" style="display:none;"></div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form id="requestHotelForm">
         <div id="result" class="formline center"></div>
@@ -110,8 +111,8 @@
         <div id="factors" class="row full-width"></div>
         <div class="row full-width request-hotel">
             <div class="large-6 columns">
-                <label>Password for API Calls</label>
-                <input type="password" id="password" name="password"/>
+                <label>Choose a password for your test API credentials</label>
+                <input type="password" id="password" name="password" placeholder="8+ characters"/>
             </div>
             <div class="large-6 columns formline">
                 <label>&nbsp;</label>
@@ -257,6 +258,12 @@
 
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 $("#result").removeClass("error").text("Successfully assigned hotel: " + hotelId).effect( "highlight", {color:"#FECB2F"}, 700 );
+                console.log(data);
+                $("#dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
+                              .dialog({
+                                minWidth: 500,
+                                minHeight: 300
+                              });
             }, function(jqxhr) {
                 ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
             });
