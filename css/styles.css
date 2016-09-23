@@ -911,7 +911,8 @@ form .request-hotel {
   margin-right: 0.8em;
 }
 #hotels_wrapper > .dt-buttons {
-  margin-bottom: 0.7em;
+  margin-top: 0.7em;
+  text-align: right;
 }
 #hotels_wrapper > .dt-buttons > .dt-button {
   border: 1px solid #EFEFEF;
