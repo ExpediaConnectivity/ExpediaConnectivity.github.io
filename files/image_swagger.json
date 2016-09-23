@@ -42,7 +42,8 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					}, {
+					},
+					{
 						"name": "status",
 						"in": "query",
 						"description": "Status filter. String. Only supported value is \"all\".",
@@ -57,12 +58,16 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapper«List«Image»»"
+							"$ref": "#/definitions/ResponseWrapperDTO«List«Image»»"
 						}
 					}
 				},
 				"security": [
-					""
+					{
+						"Basic": [
+
+						]
+					}
 				]
 			},
 			"post": {
@@ -84,7 +89,8 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					}, {
+					},
+					{
 						"in": "body",
 						"name": "image",
 						"description": "JSON message describing the new image",
@@ -98,12 +104,16 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapper«Image»"
+							"$ref": "#/definitions/ResponseWrapperDTO«Image»"
 						}
 					}
 				},
 				"security": [
-					""
+					{
+						"Basic": [
+
+						]
+					}
 				]
 			}
 		},
@@ -127,7 +137,8 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					}, {
+					},
+					{
 						"name": "resourceId",
 						"in": "path",
 						"description": "Image Resource ID",
@@ -139,12 +150,16 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/ResponseWrapper«Image»"
+							"$ref": "#/definitions/ResponseWrapperDTO«Image»"
 						}
 					}
 				},
 				"security": [
-					""
+					{
+						"Basic": [
+
+						]
+					}
 				]
 			},
 			"delete": {
@@ -166,7 +181,8 @@
 						"description": "Expedia Property ID",
 						"required": true,
 						"type": "string"
-					}, {
+					},
+					{
 						"name": "resourceId",
 						"in": "path",
 						"description": "Image Resource ID",
@@ -180,7 +196,65 @@
 					}
 				},
 				"security": [
-					""
+					{
+						"Basic": [
+
+						]
+					}
+				]
+			},
+			"patch": {
+				"tags": [
+					"Image"
+				],
+				"summary": "Patch an existing image",
+				"operationId": "updateImageByResourceId",
+				"consumes": [
+					"application/json"
+				],
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "propertyId",
+						"in": "path",
+						"description": "Expedia Property ID",
+						"required": true,
+						"type": "integer",
+						"format": "int32"
+					},
+					{
+						"name": "resourceId",
+						"in": "path",
+						"description": "Image Resource ID",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "image",
+						"description": "JSON message of partially updated image",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"schema": {
+							"$ref": "#/definitions/ResponseWrapperDTO«Image»"
+						}
+					}
+				},
+				"security": [
+					{
+						"Basic": [
+
+						]
+					}
 				]
 			}
 		}
@@ -191,20 +265,6 @@
 		}
 	},
 	"definitions": {
-		"ResponseWrapper«Image»": {
-			"type": "object",
-			"properties": {
-				"entity": {
-					"$ref": "#/definitions/Image"
-				},
-				"errors": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/ApiError"
-					}
-				}
-			}
-		},
 		"Comment": {
 			"type": "object",
 			"properties": {
@@ -215,6 +275,23 @@
 				"timestamp": {
 					"type": "string",
 					"description": "Moment when the comment was created"
+				}
+			}
+		},
+		"ResponseWrapperDTO«List«Image»»": {
+			"type": "object",
+			"properties": {
+				"entity": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Image"
+					}
+				},
+				"errors": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ErrorDTO"
+					}
 				}
 			}
 		},
@@ -236,24 +313,21 @@
 				}
 			}
 		},
-		"ResponseWrapper«List«Image»»": {
+		"ResponseWrapperDTO«Image»": {
 			"type": "object",
 			"properties": {
 				"entity": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Image"
-					}
+					"$ref": "#/definitions/Image"
 				},
 				"errors": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/ApiError"
+						"$ref": "#/definitions/ErrorDTO"
 					}
 				}
 			}
 		},
-		"ApiError": {
+		"ErrorDTO": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -316,14 +390,20 @@
 					"description": "Current processing state of the image",
 					"readOnly": true,
 					"enum": [
-						"NotFound", "Received", "DerivativesCreated", "Rejected", "Duplicate", "Published"
+						"NotFound",
+						"Received",
+						"DerivativesCreated",
+						"Rejected",
+						"Duplicate",
+						"Published"
 					]
 				},
 				"status": {
 					"type": "string",
 					"description": "Status of the image; Allowed values are: 'Active' (image displayed), 'Inactive' (image not displayed)",
 					"enum": [
-						"Active", "Inactive"
+						"Active",
+						"Inactive"
 					]
 				}
 			}
