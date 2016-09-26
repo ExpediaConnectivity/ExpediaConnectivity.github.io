@@ -4,20 +4,20 @@ function hotelAssignmentServiceBaseUrl() {
 
 var hotelAssignmentServiceUrls = {
     login: function() {
-        return hotelAssignmentServiceBaseUrl() + "/v1/properties/login",
+        return hotelAssignmentServiceBaseUrl() + "/v1/properties/login";
     },
 
     schedule: function() {
-        return hotelAssignmentServiceBaseUrl() + "/v1/schedule",
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule";
     },
 
     factors: function() {
-        return hotelAssignmentServiceBaseUrl() + "/v1/hotels/factors",
-    }
+        return hotelAssignmentServiceBaseUrl() + "/v1/hotels/factors";
+    },
 
     assign: function() {
-        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/assign",
-    }
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/assign";
+    },
 
     scheduleHotel: function(hotelId) {
         return hotelAssignmentServiceUrls.schedule() + "/hotelId/" + hotelId;
