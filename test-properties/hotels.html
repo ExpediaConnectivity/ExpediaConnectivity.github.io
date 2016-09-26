@@ -144,12 +144,12 @@
 
     $(document).ready(function() {
         datatable = $("#hotels").DataTable({
-            dom: 'Bfrtip',
+            dom: 'frtiB',
             columns: columns,
             buttons: buttons,
             pageLength: 100,
             ajax: function (data, callback, settings) {
-                jwtRequest("GET", hotelAssignmentServiceUrls.schedule, function(data, textStatus, jqxhr) {
+                jwtRequest("GET", hotelAssignmentServiceUrls.schedule(), function(data, textStatus, jqxhr) {
                     console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
@@ -179,7 +179,7 @@
             }
         });
 
-        $.getJSON(hotelAssignmentServiceUrls.factors, parseFactors);
+        $.getJSON(hotelAssignmentServiceUrls.factors(), parseFactors);
     });
 
     $('#requestHotelForm').submit(function (event) {
@@ -250,7 +250,7 @@
             $("#result").addClass("error").text("You must specify a password (8+ characters) to use for API calls.");
             return;
         }
-        jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign, getAssignmentRequest(), function(data, textStatus, jqxhr) {
+        jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), getAssignmentRequest(), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             var hotelId = JSON.parse(jqxhr.responseText).hotelId;
             datatable.ajax.reload(function() {
