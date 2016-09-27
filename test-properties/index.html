@@ -75,7 +75,7 @@
     </nav>
 </header>
 <div class="full-width"><div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>EQC Login</h1>
+    <h1>EPC Login</h1>
     <p class="announce">
         Please enter your Expedia Partner Central (EPC) login details below.
     </p>
@@ -114,12 +114,12 @@
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             try {
                 if (JSON.parse(data).admin) {
-                    window.location.href = "/test-properties/hotels-admin"
+                    window.location.href = "/test-properties/schedules-admin"
                 } else {
-                    window.location.href = "/test-properties/hotels";
+                    window.location.href = "/test-properties/schedules";
                 }
             } catch (e) {
-                window.location.href = "/test-properties/hotels";
+                window.location.href = "/test-properties/schedules";
             }
         }).fail(function(jqxhr) {
             if (jqxhr.status == 403 || jqxhr.status == 401) {
@@ -135,7 +135,7 @@
     }
 
     if (localStorage.getItem("AuthToken") !== null) {
-        window.location.href = "/test-properties/hotels";
+        window.location.href = "/test-properties/schedules";
     }
 
 </script></div><footer id="site-footer" class="row full-width">
