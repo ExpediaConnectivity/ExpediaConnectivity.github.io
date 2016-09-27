@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Hotels - APIs for Expedia Partners</title><meta charset="utf-8">
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Hotels Admin - APIs for Expedia Partners</title><meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -97,29 +97,14 @@
     }
 </style>
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>Test Property Assignment</h1>
+    <h1>Test Property Assignment - Administration View</h1>
     <hr/>
     <br/>
-    <h2>Properties assigned to your account</h2>
+    <h2>Properties assigned to all accounts</h2>
     <br/>
-    <div id="dialogue" title="Account Details" style="display:none;"></div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
-    <form id="requestHotelForm">
+    <form>
         <div id="result" class="formline center"></div>
-        <hr/>
-        <br/>
-        <h2>Assign a test property to your account</h2>
-        <div id="factors" class="row full-width"></div>
-        <div class="row full-width request-hotel">
-            <div class="large-6 columns">
-                <label>Choose a password for your test API credentials</label>
-                <input type="password" id="password" name="password" placeholder="8+ characters"/>
-            </div>
-            <div class="large-6 columns formline">
-                <label>&nbsp;</label>
-                <input class="submit" type="submit" value="Request Property"/>
-            </div>
-        </div>
     </form>
 </div>
 
@@ -128,6 +113,7 @@
     var assignmentRequestFields = [];
 
     var columns = [
+        { title: "TUID" },
         { title: "Property ID" },
         { title: "Name" },
         { title: "Valid To", type: "date" },
@@ -138,16 +124,10 @@
         { title: "API Username" }
     ];
 
-    var buttons = [
-        { text: "Unassign", action: unassign },
-        { text: "Extend", action: extend }
-    ];
-
     $(document).ready(function() {
         datatable = $("#hotels").DataTable({
-            dom: 'frtiB',
+            dom: 'frti',
             columns: columns,
-            buttons: buttons,
             pageLength: 100,
             ajax: function (data, callback, settings) {
                 jwtRequest("GET", hotelAssignmentServiceUrls.schedule(), function(data, textStatus, jqxhr) {
@@ -179,8 +159,6 @@
                 console.log("enabled");
             }
         });
-
-        $.getJSON(hotelAssignmentServiceUrls.factors(), parseFactors);
     });
 
     $('#requestHotelForm').submit(function (event) {
@@ -196,7 +174,7 @@
                 var hotel = tuid.hotels[j];
                 for (var k in hotel.dates) {
                     var date = hotel.dates[k];
-                    table.push([hotel.hotelId, hotel.hotelName, date.endDate,
+                    table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.endDate,
                                 hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType, hotel.eqcAccountUsername]);
                 }
             }
@@ -205,24 +183,6 @@
             datatable.clear().draw();
         }
         return table;
-    }
-
-    function parseFactors(factors) {
-        var factorsLoc = $('#factors');
-        for (var i in factors) {
-            var factor = factors[i];
-            var label = $('<label>').text(factor.displayName);
-            assignmentRequestFields.push(factor.factorName);
-            var sel = $('<select>').attr("name", factor.factorName);
-            sel.attr("id", "val_" + factor.factorName);
-            sel.append($('<option>').prop("selected", true).attr('value', '').text('No preference'));
-            for (var j in factor.validValues) {
-                var value = factor.validValues[j];
-                sel.append($('<option>').attr('value', value).text(value));
-            }
-            var elem = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
-            factorsLoc.append(elem);
-        }
     }
 
     function getNiceErrorText(jqxhr) {
@@ -248,78 +208,6 @@
         $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
     }
 
-    function addAssignmentField(request, fieldName) {
-        var val = $('#val_' + fieldName).val();
-        if (val != '') {
-            request[fieldName] = val;
-        }
-    }
-
-    function getAssignmentRequest() {
-        var request = {};
-        for (var i in assignmentRequestFields) {
-            addAssignmentField(request, assignmentRequestFields[i]);
-        }
-        return JSON.stringify(request);
-    }
-
-    function autoAssignHotel() {
-        var password = $("#requestHotelForm #password").val();
-        if (!password || password.length < 8) {
-            $("#result").addClass("error").text("You must specify a password (8+ characters) to use for API calls.");
-            return;
-        }
-        jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), getAssignmentRequest(), function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            var hotelId = JSON.parse(jqxhr.responseText).hotelId;
-            datatable.ajax.reload(function() {
-                $("#hotels>tbody>tr>td:first-child:contains(" + hotelId + ")").last().parent().children().effect( "highlight", {color:"#FECB2F"}, 700 );
-            });
-
-            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
-                $("#result").removeClass("error").text("Successfully assigned hotel: " + hotelId).effect( "highlight", {color:"#FECB2F"}, 700 );
-                console.log(data);
-                $("#dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
-                              .dialog({
-                                minWidth: 500,
-                                minHeight: 300
-                              });
-            }, function(jqxhr) {
-                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
-            });
-        }, function(jqxhr) {
-            if (jqxhr.status == 409) {
-                ajaxError(null, "No hotels to assign which match your preferences, please email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>");;
-            } else {
-                ajaxError(jqxhr, "Could not schedule a test hotel.");
-            }
-        });
-    }
-
-    function unassign(e, dt, node, config) {
-        console.log("unassign");
-        var hotelid = dt.cell(".selected", 0).data();
-        jwtRequest("DELETE", hotelAssignmentServiceUrls.scheduleHotel(hotelid), function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully unassigned hotel").effect( "highlight", {color:"#FECB2F"}, 700 );
-            datatable.ajax.reload();
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not unassign a test hotel.");
-        });
-    }
-
-    function extend(e, dt, node, config) {
-        console.log("extend");
-        var hotelid = dt.cell(".selected", 0).data();
-        jwtRequest("POST", hotelAssignmentServiceUrls.scheduleExtend(hotelid), function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            $("#result").removeClass("error").text("Successfully extended hotel").effect( "highlight", {color:"#FECB2F"}, 700 );
-            datatable.ajax.reload();
-        }, function(jqxhr) {
-            ajaxError(jqxhr, "Could not extend a test hotel.");
-        });
-    }
-
 
 </script>
 </div><footer id="site-footer" class="row full-width">
@@ -337,4 +225,4 @@
         <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
 </footer>
-<input type="hidden" id="eventTrackingPageName" value="Hotels"/></body></html>
+<input type="hidden" id="eventTrackingPageName" value="Hotels Admin"/></body></html>

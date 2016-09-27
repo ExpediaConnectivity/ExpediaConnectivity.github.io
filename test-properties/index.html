@@ -113,7 +113,15 @@
         }).done(function(data, textStatus, jqxhr) {
             $("#result").removeClass("error");
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
-            window.location.href = "./hotels";
+            try {
+                if (JSON.parse(data).admin) {
+                    window.location.href = "/test-properties/hotels-admin"
+                } else {
+                    window.location.href = "/test-properties/hotels";
+                }
+            } catch (e) {
+                window.location.href = "/test-properties/hotels";
+            }
         }).fail(function(jqxhr) {
             if (jqxhr.status == 403 || jqxhr.status == 401) {
                 if (username.match(/^eqc/i) != null) {
