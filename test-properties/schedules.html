@@ -101,7 +101,8 @@
     <br/>
     <h2>Properties assigned to your account</h2>
     <br/>
-    <div id="dialogue" title="Account Details" style="display:none;"></div>
+    <div id="account-dialogue" title="Account Details" style="display:none;"></div>
+    <div id="reset-dialogue" title="Reset Password" style="display:none;"></div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form id="requestHotelForm">
         <div id="result" class="formline center"></div>
@@ -139,7 +140,8 @@
 
     var buttons = [
         { text: "Unassign", action: unassign },
-        { text: "Extend", action: extend }
+        { text: "Extend", action: extend },
+        { text: "Reset Password", action: resetPassword }
     ];
 
     $(document).ready(function() {
@@ -154,7 +156,7 @@
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
                     }
-                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
+                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule from the table first");
                     $(document).tooltip();
                     if (jqxhr.responseText == "") {
                         datatable.clear().draw();
@@ -169,7 +171,7 @@
         }).on('click', 'tr', function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass("selected");
-                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
+                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule from the table first");
                 console.log("disabled");
             } else {
                 $("#hotels tr").removeClass("selected");
@@ -282,11 +284,10 @@
             datatable.ajax.reload(function() {
                 $("#hotels>tbody>tr>td:first-child:contains(" + hotelId + ")").last().parent().children().effect( "highlight", {color:"#FECB2F"}, 700 );
             });
-
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 $("#result").removeClass("error").text("Successfully assigned hotel: " + hotelId).effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
-                $("#dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
+                $("#account-dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
                               .dialog({
                                 minWidth: 500,
                                 minHeight: 300
@@ -324,6 +325,31 @@
             datatable.ajax.reload();
         }, function(jqxhr) {
             ajaxError(jqxhr, "Could not extend a test hotel.");
+        });
+    }
+
+    function resetPassword(e, dt, node, config) {
+        var hotelid = dt.cell(".selected", 0).data();
+        $("#reset-dialogue").html("<p>Reset the password of Test Hotel ID " + hotelid + ".</p> <form id='reset'><p>New Password:</p><div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div><div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div></form>")
+              .dialog({
+                minWidth: 500,
+                minHeight: 300
+              });
+        $("#reset").submit(function() {
+            console.log("reset");
+            var password = $("#reset-dialogue #password").val();
+            if (password.length < 8) {
+                $("#reset-dialogue .error").text("8 character minimum");
+                return false;
+            }
+            $("#reset-dialogue").dialog("close");
+            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
+                $("#result").removeClass("error").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
+                console.log(data);
+            }, function(jqxhr) {
+                ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
+            });
+            return false;
         });
     }
 
