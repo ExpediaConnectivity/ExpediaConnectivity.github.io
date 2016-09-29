@@ -40,7 +40,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"in": "path",
 						"description": "The Id of the hotel to retrieve promotions for.",
@@ -103,7 +103,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"in": "body",
 						"description": "Promo object that is to be created. It support status update with promo id in this version. Required fields: promo id, status.",
@@ -159,7 +159,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"in": "path",
 						"description": "The Id of the hotel to retrieve promotions for.",
@@ -226,7 +226,7 @@
 						"in": "header",
 						"required": true,
 						"type": "string",
-						"default": "Basic RVFDdGVzdDEyOTMzODcwOmtoOTJuZDI5"
+						"default": "Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz"
 					}, {
 						"in": "body",
 						"description": "Promo object that needs to be updated. It support status update with promo id in this version. Required fields: promo id, status.",
