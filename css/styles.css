@@ -329,6 +329,9 @@
 #section-large_image_pods p > span {
   color: #0065B8;
 }
+input.disabled {
+  background-color: #EFEFEF !important;
+}
 
 #contactus {
   margin-top: 24px;
@@ -947,6 +950,77 @@ form .request-hotel {
   height: 2px;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+/* Color Pallet */
+/* Api Styling */
+/* Card Styling */
+/* Core Styling */
+/* Header Styling */
+/* Hero Styling */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -25px;
+  width: 50px;
+}
+.loader .background {
+  position: absolute;
+  width: 100px;
+  background-color: rgba(230, 230, 230, 0.7);
+  height: 100px;
+  margin-top: -75px;
+  margin-left: -25px;
+  border-radius: 5px;
+}
+.loader .circular {
+  animation: rotate 2s linear infinite;
+  height: 100%;
+  transform-origin: center center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.loader:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+.path {
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+  stroke-linecap: round;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -35px;
+  }
+  100% {
+    stroke-dasharray: 89, 200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes color {
+  100%,
+  0% {
+    stroke: #0057e7;
+  }
 }
 
 #systems .card-content {
