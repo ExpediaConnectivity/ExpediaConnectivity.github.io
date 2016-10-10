@@ -86,6 +86,12 @@
         <div id="result" class="formline center"></div>
         <div class="formline"><input class="submit" type="submit" value="Login"/></div>
     </form>
+    <div class="loader" style="display: none;">
+        <div class="background">&nbsp;</div>
+        <svg class="circular">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
 </div>
 <script src="/test-properties/urls.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
@@ -93,6 +99,17 @@
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
 <script>
+    function loadStart() {
+        $(".loader").show();
+        $("#loginform input").attr("disabled", true).addClass("disabled");
+    }
+
+    function loadEnd() {
+        $(".loader").hide();
+        $("#result").removeClass("error");
+        $("#loginform input").removeAttr("disabled").removeClass("disabled");
+    }
+
     function login(form) {
         var username = $(form).find("#username").val();
         var password = $(form).find("#password").val();
@@ -108,9 +125,10 @@
                 if (username) {
                     xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
                 }
+                loadStart();
             }
         }).done(function(data, textStatus, jqxhr) {
-            $("#result").removeClass("error");
+            loadEnd();
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             try {
                 if (JSON.parse(data).admin) {
@@ -122,6 +140,7 @@
                 window.location.href = "/test-properties/schedules";
             }
         }).fail(function(jqxhr) {
+            loadEnd();
             if (jqxhr.status == 403 || jqxhr.status == 401) {
                 if (username.match(/^eqc/i) != null) {
                     $("#result").addClass("error").html("API/EQC credentials can not be used to access this feature.  Please use your EPC (e.g. SYS_) credentials.");
