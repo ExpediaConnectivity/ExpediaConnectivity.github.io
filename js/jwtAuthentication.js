@@ -25,6 +25,7 @@ function checkTokenExpiration() {
 function logout() {
     localStorage.removeItem("AuthToken");
     window.location.href = "/test-properties/";
+    ga('send', 'event', 'logout', 'success');
 }
 
 function jwtRequest(method, url, done, error) {
