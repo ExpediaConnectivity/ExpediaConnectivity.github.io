@@ -114,6 +114,7 @@
         var username = $(form).find("#username").val();
         var password = $(form).find("#password").val();
 
+        ga('send', 'event', 'login', 'request');
         $.ajax({
             method: "POST",
             url: hotelAssignmentServiceUrls.login(),
@@ -129,6 +130,8 @@
             }
         }).done(function(data, textStatus, jqxhr) {
             loadEnd();
+            _gaq.push(['_setCustomVar', 1, 'username', username, 1]);
+            ga('send', 'event', 'login', 'success', username);
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             try {
                 if (JSON.parse(data).admin) {
@@ -141,6 +144,7 @@
             }
         }).fail(function(jqxhr) {
             loadEnd();
+            ga('send', 'event', 'login', 'failure', jqxhr.statusText);
             if (jqxhr.status == 403 || jqxhr.status == 401) {
                 if (username.match(/^eqc/i) != null) {
                     $("#result").addClass("error").html("API/EQC credentials can not be used to access this feature.  Please use your EPC (e.g. SYS_) credentials.");
@@ -156,6 +160,10 @@
     if (localStorage.getItem("AuthToken") !== null) {
         window.location.href = "/test-properties/schedules";
     }
+
+    $(document).ready(function() {
+        ga('send', 'event', 'login', 'access');
+    });
 
 </script></div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">
