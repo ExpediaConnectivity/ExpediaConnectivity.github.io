@@ -130,7 +130,7 @@
             }
         }).done(function(data, textStatus, jqxhr) {
             loadEnd();
-            _gaq.push(['_setCustomVar', 1, 'username', username, 1]);
+            ga('set', 'dimension0', username);
             ga('send', 'event', 'login', 'success', username);
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
             try {
