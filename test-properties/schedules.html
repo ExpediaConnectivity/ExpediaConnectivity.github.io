@@ -104,6 +104,7 @@
     <br/>
     <div id="account-dialogue" title="Account Details" style="display:none;"></div>
     <div id="reset-dialogue" title="Reset Password" style="display:none;"></div>
+    <div id="extend-dialogue" title="Cannot Extend" style="display:none;">You may only extend a property schedule up to 2 weeks in the future. This is already the case for this property, please come back closer to the expiry date to extend it further.</div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form id="requestHotelForm">
         <div id="result" class="formline center"></div>
@@ -381,8 +382,18 @@
 
     function extend(e, dt, node, config) {
         console.log("extend");
-        loadStartButtons();
         var hotelid = dt.cell(".selected", 0).data();
+        var currentExpiryDate = new Date(dt.cell(".selected", 2).data()).getTime();
+        var today = new Date();
+        var newExpiryDate = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()) + 14 * 24*60*60*1000;
+        if (currentExpiryDate >= newExpiryDate) {
+            $("#extend-dialogue").dialog({
+                minWidth: 500,
+                minHeight: 300
+            });
+            return;
+        }
+        loadStartButtons();
         ga('send', 'event', 'extend', 'request', localStorage.getItem('username') + "|" + hotelid);
         jwtRequest("POST", hotelAssignmentServiceUrls.scheduleExtend(hotelid), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
