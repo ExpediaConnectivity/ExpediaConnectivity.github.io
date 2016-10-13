@@ -114,7 +114,7 @@
         var username = $(form).find("#username").val();
         var password = $(form).find("#password").val();
 
-        ga('send', 'event', 'login', 'request');
+        ga('send', 'event', 'login', 'request', username);
         $.ajax({
             method: "POST",
             url: hotelAssignmentServiceUrls.login(),
@@ -130,9 +130,9 @@
             }
         }).done(function(data, textStatus, jqxhr) {
             loadEnd();
-            ga('set', 'dimension0', username);
             ga('send', 'event', 'login', 'success', username);
             localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
+            localStorage.setItem("username", username);
             try {
                 if (JSON.parse(data).admin) {
                     window.location.href = "/test-properties/schedules-admin"
@@ -144,7 +144,7 @@
             }
         }).fail(function(jqxhr) {
             loadEnd();
-            ga('send', 'event', 'login', 'failure', jqxhr.statusText);
+            ga('send', 'event', 'login', 'failure', username + "|" + jqxhr.statusText);
             if (jqxhr.status == 403 || jqxhr.status == 401) {
                 if (username.match(/^eqc/i) != null) {
                     $("#result").addClass("error").html("API/EQC credentials can not be used to access this feature.  Please use your EPC (e.g. SYS_) credentials.");

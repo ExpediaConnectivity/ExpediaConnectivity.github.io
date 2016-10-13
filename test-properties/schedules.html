@@ -100,7 +100,7 @@
     <hr/>
     <br/>
     <h2>Properties assigned to your account</h2>
-    <p>Once you've scheduled a hotel, you can use it with our <a href="/developer">API's</a>, or view it in Expedia Partner Central to <a href="./info">find, view or cancel bookings.</a></p>
+    <p>Once you've scheduled a hotel, you can use it with our <a href="/developer" target="_blank">API's</a>, or view it in Expedia Partner Central to <a href="./info" target="_blank">find, view or cancel bookings.</a></p>
     <br/>
     <div id="account-dialogue" title="Account Details" style="display:none;"></div>
     <div id="reset-dialogue" title="Reset Password" style="display:none;"></div>
@@ -326,7 +326,7 @@
         }
         loadStart();
         var assignmentData = getAssignmentRequest();
-        ga('send', 'event', 'assign', 'request', jsonToUriVariables(assignmentData));
+        ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
         jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), assignmentData, function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             var hotelId = JSON.parse(jqxhr.responseText).hotelId;
@@ -335,7 +335,7 @@
             });
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelId), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 loadEnd();
-                $("#result").html("Successfully assigned hotel: " + hotelId + ". <a href='./info'>What's Next?</a>").effect( "highlight", {color:"#FECB2F"}, 700 );
+                $("#result").html("Successfully assigned hotel: " + hotelId + ". <a href='./info' target='_blank'>What's Next?</a>").effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
                 $("#account-dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
                               .dialog({
@@ -343,11 +343,11 @@
                                 minHeight: 300
                               });
 
-                ga('send', 'event', 'assign', 'success', jsonToUriVariables(assignmentData));
+                ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
             }, function(jqxhr) {
                 loadEnd();
                 ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
-                ga('send', 'event', 'assign', 'password.failure', jqxhr.responseText);
+                ga('send', 'event', 'assign', 'password.failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
             });
         }, function(jqxhr) {
             loadEnd();
@@ -357,7 +357,7 @@
                 ajaxError(jqxhr, "Could not schedule a test hotel.");
             }
 
-            ga('send', 'event', 'assign', 'failure', jqxhr.responseText, jqxhr.status);
+            ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, jqxhr.status);
         });
     }
 
@@ -365,17 +365,17 @@
         console.log("unassign");
         loadStartButtons();
         var hotelid = dt.cell(".selected", 0).data();
-        ga('send', 'event', 'unassign', 'request', hotelid);
+        ga('send', 'event', 'unassign', 'request', localStorage.getItem('username') + "|" + hotelid);
         jwtRequest("DELETE", hotelAssignmentServiceUrls.scheduleHotel(hotelid), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             loadEndButtons();
             $("#result").text("Successfully unassigned hotel").effect( "highlight", {color:"#FECB2F"}, 700 );
             datatable.ajax.reload();
-            ga('send', 'event', 'unassign', 'success', hotelid);
+            ga('send', 'event', 'unassign', 'success', localStorage.getItem('username') + "|" + hotelid);
         }, function(jqxhr) {
             loadEndButtons();
             ajaxError(jqxhr, "Could not unassign a test hotel.");
-            ga('send', 'event', 'unassign', 'failure', jqxhr.responseText, hotelid);
+            ga('send', 'event', 'unassign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
         });
     }
 
@@ -383,17 +383,17 @@
         console.log("extend");
         loadStartButtons();
         var hotelid = dt.cell(".selected", 0).data();
-        ga('send', 'event', 'extend', 'request', hotelid);
+        ga('send', 'event', 'extend', 'request', localStorage.getItem('username') + "|" + hotelid);
         jwtRequest("POST", hotelAssignmentServiceUrls.scheduleExtend(hotelid), function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             loadEndButtons();
             $("#result").text("Successfully extended hotel").effect( "highlight", {color:"#FECB2F"}, 700 );
             datatable.ajax.reload();
-            ga('send', 'event', 'extend', 'success', hotelid);
+            ga('send', 'event', 'extend', 'success', localStorage.getItem('username') + "|" + hotelid);
         }, function(jqxhr) {
             loadEndButtons();
             ajaxError(jqxhr, "Could not extend a test hotel.");
-            ga('send', 'event', 'extend', 'failure', jqxhr.responseText, hotelid);
+            ga('send', 'event', 'extend', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
         });
     }
 
@@ -413,16 +413,16 @@
             }
             $("#reset-dialogue").dialog("close");
             loadStartButtons();
-            ga('send', 'event', 'pwreset', 'request', hotelid);
+            ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username') + "|" + hotelid);
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 loadEndButtons();
                 $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
-                ga('send', 'event', 'pwreset', 'success', hotelid);
+                ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username') + "|" + hotelid);
             }, function(jqxhr) {
                 loadEndButtons();
                 ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
-                ga('send', 'event', 'pwreset', 'failure', jqxhr.responseText, hotelid);
+                ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
             });
             return false;
         });
