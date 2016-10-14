@@ -327,7 +327,7 @@
         }
         loadStart();
         var assignmentData = getAssignmentRequest();
-        ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
+        ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
         jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), assignmentData, function(data, textStatus, jqxhr) {
             console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
             var hotelId = JSON.parse(jqxhr.responseText).hotelId;
@@ -344,10 +344,10 @@
                                 minHeight: 300
                               });
 
-                ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(assignmentData));
+                ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
             }, function(jqxhr) {
                 loadEnd();
-                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password");
+                ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password - please reset the password for the hotel manually.");
                 ga('send', 'event', 'assign', 'password.failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
             });
         }, function(jqxhr) {
@@ -358,7 +358,7 @@
                 ajaxError(jqxhr, "Could not schedule a test hotel.");
             }
 
-            ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, jqxhr.status);
+            ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
         });
     }
 
@@ -424,16 +424,16 @@
             }
             $("#reset-dialogue").dialog("close");
             loadStartButtons();
-            ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username') + "|" + hotelid);
+            ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
                 loadEndButtons();
                 $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
-                ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username') + "|" + hotelid);
+                ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
             }, function(jqxhr) {
                 loadEndButtons();
                 ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
-                ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
+                ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
             });
             return false;
         });
