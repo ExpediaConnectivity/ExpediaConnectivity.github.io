@@ -225,63 +225,9 @@
 </table>
 </div><h4 id="message-categories" data-magellan-destination="message-categories">Message Categories</h4>
 <p>Each message may belong to one of the following categories (as indicated by its <code>category</code> property).</p>
-<h5 id="missing-inventory" data-magellan-destination="missing-inventory">Missing Inventory</h5>
-<p>Our sales forecast indicates that we can sell more inventory for the requested hotel on a certain night.</p>
-<h6 id="-values-properties" data-magellan-destination="-values-properties"><code>values</code> Properties</h6>
-<div><table>
-<thead>
-<tr>
-<th>Property</th>
-<th>Data Type</th>
-<th>Description</th>
-<th>Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>date</code></td>
-<td>String</td>
-<td>The stay date the forecast applies to (YYYY-MM-DD).</td>
-<td><code>&quot;2016-07-10&quot;</code></td>
-</tr>
-<tr>
-<td><code>currentRooms</code></td>
-<td>Integer</td>
-<td>The current number of rooms available when the forecast was generated.</td>
-<td><code>3</code></td>
-</tr>
-<tr>
-<td><code>roomsToAdd</code></td>
-<td>Integer</td>
-<td>The number of extra rooms the forecast suggests we could sell.</td>
-<td><code>5</code></td>
-</tr>
-<tr>
-<td><code>roomTypeId</code></td>
-<td>String</td>
-<td>The Expedia room type ID we suggest adding rooms to.</td>
-<td><code>&quot;12345&quot;</code></td>
-</tr>
-</tbody>
-</table>
-</div><h6 id="example-missing-inventory-message" data-magellan-destination="example-missing-inventory-message">Example Missing Inventory Message</h6>
-<pre><code>{
-    &quot;id&quot;: &quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;,
-    &quot;hotelId&quot;: &quot;test&quot;,
-    &quot;category&quot;: &quot;Missing Inventory&quot;,
-    &quot;shortMessage&quot;: &quot;On Jan 29, 2016 you can sell 5 more rooms with Expedia. Add inventory now.&quot;,
-    &quot;longMessage&quot;: &quot;On Jan 29, 2016 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;,
-    &quot;values&quot;: {
-        &quot;date&quot;: &quot;2016-01-29&quot;,
-        &quot;currentRooms&quot;: 10,
-        &quot;roomsToAdd&quot;: 5,
-        &quot;roomTypeId&quot;: &quot;12345&quot;
-    },
-    &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
-}
-</code></pre><h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
+<h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
 <p>Travelers viewed the requested hotel today, but booked elsewhere.</p>
-<h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
+<h6 id="-values-properties" data-magellan-destination="-values-properties"><code>values</code> Properties</h6>
 <div><table>
 <thead>
 <tr>
@@ -419,7 +365,7 @@
 }
 </code></pre><h5 id="real-time-feedback" data-magellan-destination="real-time-feedback">Real-Time Feedback</h5>
 <p>A guest currently staying at the requested hotel has provided real-time feedback that management has not yet responded to.</p>
-<h6 id="-values-properties-3" data-magellan-destination="-values-properties-3"><code>values</code> Properties</h6>
+<h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
 <div><table>
 <thead>
 <tr>
@@ -494,7 +440,7 @@
 }
 </code></pre><h5 id="hotel-review" data-magellan-destination="hotel-review">Hotel Review</h5>
 <p>A guest has provided a review for the requested hotel that management has not yet responded to.</p>
-<h6 id="-values-properties-4" data-magellan-destination="-values-properties-4"><code>values</code> Properties</h6>
+<h6 id="-values-properties-3" data-magellan-destination="-values-properties-3"><code>values</code> Properties</h6>
 <div><table>
 <thead>
 <tr>
