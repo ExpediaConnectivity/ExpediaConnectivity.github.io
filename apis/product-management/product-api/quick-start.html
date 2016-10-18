@@ -179,64 +179,142 @@ password: ew67nk33
 <a href="https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans">https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans</a></p>
 <p>The result will be an array of active rate plans under this property and room type. For example:</p>
 <pre><code class="lang-JSON">{
-    &quot;entity&quot;: [
+  &quot;entity&quot;: [
+    {
+      &quot;resourceId&quot;: 208502996,
+      &quot;name&quot;: &quot;Non-Refundable&quot;,
+      &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+      &quot;distributionRules&quot;: [
         {
-            &quot;resourceId&quot;: 206651831,
-            &quot;name&quot;: &quot;RoomOnly1&quot;,
-            &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
-            &quot;distributionRules&quot;: [
-                {
-                    &quot;expediaId&quot;: &quot;206651831&quot;,
-                    &quot;partnerCode&quot;: &quot;RoomOnly1&quot;,
-                    &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
-                    &quot;manageable&quot;: false,
-                    &quot;compensation&quot;: {
-                        &quot;percent&quot;: 0.1,
-                        &quot;minAmount&quot;: 0
-                    }
-                },
-                {
-                    &quot;expediaId&quot;: &quot;206651831A&quot;,
-                    &quot;partnerCode&quot;: &quot;RoomOnly1&quot;,
-                    &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
-                    &quot;manageable&quot;: true,
-                    &quot;compensation&quot;: {
-                        &quot;percent&quot;: 0.1
-                    }
-                }
-            ],
-            &quot;status&quot;: &quot;Active&quot;,
-            &quot;type&quot;: &quot;Standalone&quot;,
-            &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
-            &quot;taxInclusive&quot;: false,
-            &quot;cancelPolicy&quot;: {
-                &quot;defaultPenalties&quot;: [
-                    {
-                        &quot;deadline&quot;: 0,
-                        &quot;perStayFee&quot;: &quot;None&quot;,
-                        &quot;amount&quot;: 0
-                    }
-                ]
-            },
-            &quot;additionalGuestAmounts&quot;: [
-                {
-                    &quot;dateStart&quot;: &quot;2015-11-16&quot;,
-                    &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
-                    &quot;ageCategory&quot;: &quot;Adult&quot;,
-                    &quot;amount&quot;: 10
-                }
-            ],
-            &quot;minLOSDefault&quot;: 1,
-            &quot;maxLOSDefault&quot;: 28,
-            &quot;minAdvBookDays&quot;: 0,
-            &quot;maxAdvBookDays&quot;: 500,
-            &quot;bookDateStart&quot;: &quot;1900-01-01&quot;,
-            &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
-            &quot;travelDateStart&quot;: &quot;1901-01-01&quot;,
-            &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
-            &quot;mobileOnly&quot;: false
+          &quot;expediaId&quot;: &quot;208502996&quot;,
+          &quot;partnerCode&quot;: &quot;EQF&quot;,
+          &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+          &quot;manageable&quot;: false,
+          &quot;compensation&quot;: {
+            &quot;percent&quot;: 0.1,
+            &quot;minAmount&quot;: 0
+          }
+        },
+        {
+          &quot;expediaId&quot;: &quot;208502996A&quot;,
+          &quot;partnerCode&quot;: &quot;EQFHC&quot;,
+          &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+          &quot;manageable&quot;: true,
+          &quot;compensation&quot;: {
+            &quot;percent&quot;: 0.1
+          }
         }
-    ]
+      ],
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;type&quot;: &quot;Standalone&quot;,
+      &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+      &quot;taxInclusive&quot;: false,
+      &quot;cancelPolicy&quot;: {
+        &quot;defaultPenalties&quot;: [
+          {
+            &quot;deadline&quot;: 0,
+            &quot;perStayFee&quot;: &quot;None&quot;,
+            &quot;amount&quot;: 0
+          }
+        ]
+      },
+      &quot;additionalGuestAmounts&quot;: [
+        {
+          &quot;dateStart&quot;: &quot;2016-07-08&quot;,
+          &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+          &quot;ageCategory&quot;: &quot;Adult&quot;,
+          &quot;amount&quot;: 40
+        },
+        {
+          &quot;dateStart&quot;: &quot;2016-07-08&quot;,
+          &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+          &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+          &quot;amount&quot;: 20
+        }
+      ],
+      &quot;minLOSDefault&quot;: 1,
+      &quot;maxLOSDefault&quot;: 28,
+      &quot;minAdvBookDays&quot;: 0,
+      &quot;maxAdvBookDays&quot;: 0,
+      &quot;bookDateStart&quot;: &quot;2000-01-01&quot;,
+      &quot;bookDateEnd&quot;: &quot;2022-09-18&quot;,
+      &quot;travelDateStart&quot;: &quot;2012-09-18&quot;,
+      &quot;travelDateEnd&quot;: &quot;2022-09-18&quot;,
+      &quot;mobileOnly&quot;: false,
+      &quot;_links&quot;: {
+        &quot;self&quot;: {
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208502996&quot;
+        }
+      }
+    },
+    {
+      &quot;resourceId&quot;: 208503003,
+      &quot;name&quot;: &quot;Expedia Package Rate&quot;,
+      &quot;rateAcquisitionType&quot;: &quot;SellLAR&quot;,
+      &quot;distributionRules&quot;: [
+        {
+          &quot;expediaId&quot;: &quot;208503003&quot;,
+          &quot;partnerCode&quot;: &quot;EQP&quot;,
+          &quot;distributionModel&quot;: &quot;ExpediaCollect&quot;,
+          &quot;manageable&quot;: false,
+          &quot;compensation&quot;: {
+            &quot;percent&quot;: 0.1,
+            &quot;minAmount&quot;: 0
+          }
+        },
+        {
+          &quot;expediaId&quot;: &quot;208503003A&quot;,
+          &quot;partnerCode&quot;: &quot;EQPHC&quot;,
+          &quot;distributionModel&quot;: &quot;HotelCollect&quot;,
+          &quot;manageable&quot;: true,
+          &quot;compensation&quot;: {
+            &quot;percent&quot;: 0.1
+          }
+        }
+      ],
+      &quot;status&quot;: &quot;Active&quot;,
+      &quot;type&quot;: &quot;Standalone&quot;,
+      &quot;pricingModel&quot;: &quot;OccupancyBasedPricing&quot;,
+      &quot;taxInclusive&quot;: false,
+      &quot;cancelPolicy&quot;: {
+        &quot;defaultPenalties&quot;: [
+          {
+            &quot;deadline&quot;: 0,
+            &quot;perStayFee&quot;: &quot;None&quot;,
+            &quot;amount&quot;: 0
+          }
+        ]
+      },
+      &quot;additionalGuestAmounts&quot;: [
+        {
+          &quot;dateStart&quot;: &quot;2016-07-08&quot;,
+          &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+          &quot;ageCategory&quot;: &quot;Adult&quot;,
+          &quot;amount&quot;: 40
+        },
+        {
+          &quot;dateStart&quot;: &quot;2016-07-08&quot;,
+          &quot;dateEnd&quot;: &quot;2079-06-06&quot;,
+          &quot;ageCategory&quot;: &quot;ChildAgeA&quot;,
+          &quot;amount&quot;: 20
+        }
+      ],
+      &quot;minLOSDefault&quot;: 1,
+      &quot;maxLOSDefault&quot;: 28,
+      &quot;minAdvBookDays&quot;: 0,
+      &quot;maxAdvBookDays&quot;: 0,
+      &quot;bookDateStart&quot;: &quot;2000-01-01&quot;,
+      &quot;bookDateEnd&quot;: &quot;2022-09-18&quot;,
+      &quot;travelDateStart&quot;: &quot;2012-09-18&quot;,
+      &quot;travelDateEnd&quot;: &quot;2022-09-18&quot;,
+      &quot;mobileOnly&quot;: false,
+      &quot;_links&quot;: {
+        &quot;self&quot;: {
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208503003&quot;
+        }
+      }
+    }
+  ]
 }
 </code></pre>
 <hr>
@@ -312,7 +390,12 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         &quot;bookDateEnd&quot;: &quot;2079-06-06&quot;,
         &quot;travelDateStart&quot;: &quot;1900-01-01&quot;,
         &quot;travelDateEnd&quot;: &quot;2079-06-06&quot;,
-        &quot;mobileOnly&quot;: false
+        &quot;mobileOnly&quot;: false,
+        &quot;_links&quot;: {
+            &quot;self&quot;: {
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/207994977&quot;
+            }
+        }
     }
 }
 </code></pre>
