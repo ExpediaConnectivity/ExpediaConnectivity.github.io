@@ -207,11 +207,11 @@
                 });
             }
         }).on('click', 'tr', function() {
-            if ($(this).hasClass("selected") && datatable.length != 0) {
+            if ($(this).hasClass("selected")) {
                 $(this).removeClass("selected");
                 $(".dt-button").addClass("disabled").attr("title", "Select a schedule from the table first");
                 console.log("disabled");
-            } else {
+            } else if (datatable && datatable.data().length != 0) {
                 $("#hotels tr").removeClass("selected");
                 $(this).addClass("selected");
                 $(".dt-button").removeClass("disabled").removeAttr("title");
