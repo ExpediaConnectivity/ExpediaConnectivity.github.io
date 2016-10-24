@@ -1,7 +1,9 @@
 function checkTokenExpiration() {
     var token = localStorage.getItem("AuthToken");
     if (token === null) {
-        if (window.location.pathname.indexOf("/test-properties") == 0 && window.location.pathname != "/test-properties/") {
+        if (window.location.pathname.indexOf("/test-properties") == 0
+                && window.location.pathname != "/test-properties/"
+                && window.location.pathname.indexOf("/test-properties/noauth") != 0) {
             window.location.href = "/test-properties/";
         }
         return;
