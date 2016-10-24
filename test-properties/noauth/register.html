@@ -1,0 +1,233 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Register - APIs for Expedia Partners</title><meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Expedia Connectivity</title>
+
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/foundation.min.css">
+<link rel="stylesheet" href="/css/code/styles/github-gist.css">
+<link rel="stylesheet" href="/css/styles.css">
+
+<link rel="icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/he-animate.css">
+
+<script src="/js/jquery.js"></script>
+<script src="/js/vendor/modernizr.js"></script>
+<script src="/js/highlight.pack.js"></script>
+<script src="/js/foundation.min.js"></script>
+<script src="/js/Core.js"></script>
+<script src="/js/he-main.js"></script>
+<script src="/js/he-plugins.js"></script>
+<script src="/js/he-smoothscroll.js"></script>
+<script src="/js/he-waypoints.js"></script>
+<script src="/js/environment.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.api-content pre>code').each(function(i, block) {
+            hljs.highlightBlock(block);
+        });
+        Core.init();
+    });
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-79394707-1', 'auto');
+    ga('send', 'pageview');
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
+<header id="site-navigation">
+    <nav id="nav-top" class="row full-width">
+        <div class="inner">
+            <ul>
+                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
+                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="nav-main" class="row full-width">
+        <div class="inner">
+            <a id="logo" href="/">
+                <img src="/images/DevLogo_40k.png" />
+            </a>
+
+            <div id="menu-toggle" class="hide-for-large-up"></div>
+            <div id="menu-wrap">
+                <div class="hide-for-large-up"></div>
+                <ul>
+                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
+                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
+                    <li class="mainlink"><a href="/systems">Systems</a></li>
+                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
+                    <li class="mainlink"><a href="/blog">Blog</a></li>
+                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<div class="full-width"><style>
+    #tnc {
+        width: auto !important;
+        margin-right: 20px;
+        margin-bottom: 0.2rem;
+    }
+</style>
+<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+    <h1>Registration</h1>
+    <p class="announce">
+        Please enter your information below; all fields are required.
+    </p>
+    <form id="registerform" class="announce" style="margin-bottom: 200px;" onsubmit="register(this); return false;">
+        <div class="formline"><span class="right-align">Username: </span><label for="username">SYS</label><input id="username" style="padding-left: 35px" placeholder="Your username includes the 'SYS' prefix" required/></div>
+        <div class="formline"><span class="right-align">Email: </span><input id="email" required type="email"/></div>
+        <div class="formline"><span class="right-align">Firstname: </span><input id="firstname" required/></div>
+        <div class="formline"><span class="right-align">Lastname: </span><input id="lastname" required/></div>
+        <div class="formline"><span class="right-align">Company: </span><input id="company" required/></div>
+        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password" required/></div>
+        <div class="formline"><span class="right-align">Confirm Password: </span><input id="confirmpassword" type="password" required/></div>
+        <div class="formline"><div style="padding: 0.5rem; margin-left: 50%;"><input type="checkbox" id="tnc">I have read and agree to the Licence Agreement</div></div>
+        <div class="formline">
+            <div class="g-recaptcha" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
+        </div>
+        <div id="result" class="formline center"></div>
+        <div class="formline"><input class="submit" type="submit" value="Register"/></div>
+    </form>
+    <div class="loader" style="display: none;">
+        <div class="background">&nbsp;</div>
+        <svg class="circular">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
+</div>
+<script src="/test-properties/urls.js"></script>
+<script src="/js/jwtAuthentication.js"></script>
+<!--[if lte IE 9]>
+<script src="/js/base64.js"></script>
+<!--<![endif]-->
+<script>
+    var captchaResponse = null;
+
+    function captcha(response) {
+        captchaResponse = response;
+        console.log("Captcha Response: " + response);
+    }
+
+    function loadStart() {
+        $(".loader").show();
+        $("#registerform input").attr("disabled", true).addClass("disabled");
+    }
+
+    function loadEnd() {
+        $(".loader").hide();
+        $("#result").removeClass("error");
+        $("#registerform input").removeAttr("disabled").removeClass("disabled");
+    }
+
+    function register(form) {
+        var username = $(form).find("#username").val();
+        var email = $(form).find("#email").val();
+        var firstname = $(form).find("#firstname").val();
+        var lastname = $(form).find("#lastname").val();
+        var company = $(form).find("#company").val();
+        var password = $(form).find("#password").val();
+        var confirm = $(form).find("#confirmpassword").val();
+        var tnc = $(form).find("#tnc").is(':checked');
+
+        if (password != confirm) {
+            $("#result").addClass("error").html("Passwords do not match - please make sure the password and confirmation password are the same.");
+            return;
+        }
+
+        if (tnc != true) {
+            $("#result").addClass("error").html("You must accept the licence agreement to create an account.");
+            return;
+        }
+
+        if (!captchaResponse) {
+            $("#result").addClass("error").html("Please verify the Captcha");
+            return;
+        }
+
+        ga('send', 'event', 'register', 'request', username);
+        $.ajax({
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({
+                "username": username,
+                "email": email,
+                "firstname": firstname,
+                "lastname": lastname,
+                "company": company,
+                "password": password,
+                "captchaResponse": captchaResponse
+            }),
+            url: hotelAssignmentServiceUrls.register(),
+            beforeSend: loadStart
+        }).done(function(data, textStatus, jqxhr) {
+            loadEnd();
+            ga('send', 'event', 'register', 'success', username);
+            //window.location.href = "/test-properties/";
+        }).fail(function(jqxhr) {
+            loadEnd();
+            if (jqxhr.status == 400) {
+                var json = getNiceErrorText(jqxhr);
+                if (json && !json.success && json.description) {
+                    $("#result").addClass("error").html(json.description);
+                    ga('send', 'event', 'register', 'failure', username + "|" + jqxhr.status + "|" + json.description);
+                } else {
+                    $("#result").addClass("error").html("Registration failed: " + getNiceErrorText(jqxhr));
+                    ga('send', 'event', 'register', 'failure', username + "|" + jqxhr.status + "|" + jqxhr.responseText);
+                }
+            } else {
+                $("#result").addClass("error").html("Registration failed: " + jqxhr.status + ": " + jqxhr.statusText);
+                ga('send', 'event', 'register', 'failure', username + "|" + jqxhr.status + "|" + jqxhr.responseText);
+            }
+        });
+    }
+
+    function getNiceErrorText(jqxhr) {
+        var content = jqxhr.getResponseHeader("Content-type");
+        if (content.indexOf("json") >= 0) {
+            var json;
+            try {
+                json = JSON.parse(jqxhr.responseText);
+            } catch (e) {
+                return jqxhr.responseText;
+            }
+            return json.details || json.message || json.description;
+        } else if (content.indexOf("text/text") ) {
+            return jqxhr.responseText;
+        }
+
+        return false;
+    }
+
+    $(document).ready(function() {
+        ga('send', 'event', 'register', 'access');
+    });
+
+</script></div><footer id="site-footer" class="row full-width">
+    <div class="large-8 large-centered columns">
+        <div class="links text-center">
+            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
+            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
+            <a class="link-item" href="/terms">Terms and Conditions</a> |
+            <a class="link-item" href="/privacy">Privacy Policy</a> |
+            <a class="link-item" href="/license">License Agreement</a>
+        </div>
+        <div class="show-for-large-up">
+            <div class="footer-logo">&nbsp;</div>
+        </div>
+        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+</footer>
+<input type="hidden" id="eventTrackingPageName" value="Register"/></body></html>

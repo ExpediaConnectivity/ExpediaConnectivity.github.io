@@ -3,8 +3,16 @@ function hotelAssignmentServiceBaseUrl() {
 }
 
 var hotelAssignmentServiceUrls = {
+    users: function() {
+        return hotelAssignmentServiceBaseUrl() + "/v1/users";
+    },
+
     login: function() {
-        return hotelAssignmentServiceBaseUrl() + "/v1/properties/login";
+        return hotelAssignmentServiceUrls.users() + "/login";
+    },
+
+    register: function() {
+        return hotelAssignmentServiceUrls.users() + "/register";
     },
 
     schedule: function() {
