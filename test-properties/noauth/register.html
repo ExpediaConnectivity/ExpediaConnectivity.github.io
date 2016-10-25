@@ -176,7 +176,8 @@
         }).done(function(data, textStatus, jqxhr) {
             loadEnd();
             ga('send', 'event', 'register', 'success', username);
-            //window.location.href = "/test-properties/";
+            localStorage.setItem("username", JSON.parse(jqxhr.responseText).eqcUsername);
+            window.location.href = "/test-properties/#registered";
         }).fail(function(jqxhr) {
             loadEnd();
             if (jqxhr.status == 400) {

@@ -163,6 +163,10 @@
 
     $(document).ready(function() {
         ga('send', 'event', 'login', 'access');
+        if (window.location.hash == "#registered") {
+            $("#result").text("You've successfully registered as '" + localStorage.getItem("username") + "'");
+            $("#username").val(localStorage.getItem("username"));
+        }
     });
 
 </script></div><footer id="site-footer" class="row full-width">
