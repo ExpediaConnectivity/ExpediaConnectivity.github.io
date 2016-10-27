@@ -900,12 +900,6 @@ form .formline .submit {
   border-radius: 0px;
   font-size: 1em;
 }
-form .formline label {
-  display: inline;
-  position: absolute;
-  margin-top: 0.6rem;
-  margin-left: 10px;
-}
 form .error {
   color: #D62D20;
 }
@@ -920,6 +914,12 @@ form .request-hotel {
 #registerform .submit {
   float: right;
   margin-right: 0.8em;
+}
+#registerform .formline label {
+  display: inline;
+  position: absolute;
+  margin-top: 0.6rem;
+  margin-left: 10px;
 }
 #hotels_wrapper > .dt-buttons {
   margin-top: 0.7em;
