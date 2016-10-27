@@ -79,6 +79,7 @@
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/dataTables.buttons.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="/js/foundation/foundation.reveal.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script src="/test-properties/urls.js"></script>
 <style>
@@ -102,9 +103,26 @@
     <h2>Properties assigned to your account</h2>
     <p>Once you've scheduled a hotel, you can use it with our <a href="/developer" target="_blank">API's</a>, or view it in Expedia Partner Central to <a href="./info" target="_blank">find, view or cancel bookings.</a></p>
     <br/>
-    <div id="account-dialogue" title="Account Details" style="display:none;"></div>
-    <div id="reset-dialogue" title="Reset Password" style="display:none;"></div>
-    <div id="extend-dialogue" title="Cannot Extend" style="display:none;">You may only extend a property schedule up to 2 weeks in the future. This is already the case for this property, please come back closer to the expiry date to extend it further.</div>
+    <div id="account-dialogue" data-reveal class="tiny reveal-modal">
+        <h1>Account Details</h1>
+        <div></div>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    <div id="reset-dialogue" data-reveal class="tiny reveal-modal">
+        <h1>Reset Password</h1>
+        <div></div>
+        <form id='reset'>
+            <p>New Password:</p>
+            <div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div>
+            <div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div>
+        </form>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
+    <div id="extend-dialogue" data-reveal class="tiny reveal-modal">
+        <h1>Cannot Extend</h1>
+        <p>You may only extend a property schedule up to 2 weeks in the future. This is already the case for this property, please come back closer to the expiry date to extend it further.</p>
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+    </div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form id="requestHotelForm">
         <div id="result" class="formline center"></div>
@@ -338,11 +356,13 @@
                 loadEnd();
                 $("#result").html("Successfully assigned hotel: " + hotelId + ". <a href='./info' target='_blank'>What's Next?</a>").effect( "highlight", {color:"#FECB2F"}, 700 );
                 console.log(data);
-                $("#account-dialogue").html("<p>Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:</p><p>Username: " + data.eqcUsername + "</p><p>Password: [The one you set in the request.]</p>")
-                              .dialog({
-                                minWidth: 500,
-                                minHeight: 300
-                              });
+                $("#account-dialogue>div")
+                        .empty()
+                        .append($("<p/>").text("Test Hotel ID " + hotelId + " has been assigned to you.  To use it, please use these credentials in API calls:"))
+                        .append($("<p/>").text("Username: " + data.eqcUsername))
+                        .append($("<p/>").text("Password: [The one you set in the request.]"))
+                        .parent()
+                        .foundation('reveal', 'open');
 
                 ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
             }, function(jqxhr) {
@@ -387,10 +407,7 @@
         var today = new Date();
         var newExpiryDate = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()) + 14 * 24*60*60*1000;
         if (currentExpiryDate >= newExpiryDate) {
-            $("#extend-dialogue").dialog({
-                minWidth: 500,
-                minHeight: 300
-            });
+            $("#extend-dialogue").foundation('reveal', 'open');
             return;
         }
         loadStartButtons();
@@ -410,11 +427,11 @@
 
     function resetPassword(e, dt, node, config) {
         var hotelid = dt.cell(".selected", 0).data();
-        $("#reset-dialogue").html("<p>Reset the password of Test Hotel ID " + hotelid + ".</p> <form id='reset'><p>New Password:</p><div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div><div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div></form>")
-              .dialog({
-                minWidth: 500,
-                minHeight: 300
-              });
+        $("#reset-dialogue>div")
+                .empty()
+                .append($("<p/>").text("Reset the password of Test Hotel ID " + hotelid + "."))
+                .parent()
+                .foundation('reveal', 'open');
         $("#reset").submit(function() {
             console.log("reset");
             var password = $("#reset-dialogue #password").val();
@@ -422,7 +439,7 @@
                 $("#reset-dialogue .error").text("8 character minimum");
                 return false;
             }
-            $("#reset-dialogue").dialog("close");
+            $("#reset-dialogue").foundation('reveal', 'close');
             loadStartButtons();
             ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
             jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
