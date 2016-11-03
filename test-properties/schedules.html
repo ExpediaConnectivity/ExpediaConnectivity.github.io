@@ -208,7 +208,7 @@
                     if ($("#result").hasClass("error")) {
                         $("#result").removeClass("error").text("");
                     }
-                    $(".dt-button").addClass("disabled").attr("title", "Select a schedule from the table first");
+                    $(".dt-button").addClass("disabled").attr("title", "Select a property from the table first");
                     $(document).tooltip();
                     if (jqxhr.responseText == "") {
                         datatable.clear().draw();
@@ -218,7 +218,7 @@
                     }
                 }, function(jqxhr) {
                     ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
-                    $(".dt-button").addClass("disabled").attr("title", "Select a schedule from the table first");
+                    $(".dt-button").addClass("disabled").attr("title", "Select a property from the table first");
                     if (datatable && datatable.length == 0) {
                         datatable.clear().draw();
                     }
@@ -227,7 +227,7 @@
         }).on('click', 'tr', function() {
             if ($(this).hasClass("selected")) {
                 $(this).removeClass("selected");
-                $(".dt-button").addClass("disabled").attr("title", "Select a schedule from the table first");
+                $(".dt-button").addClass("disabled").attr("title", "Select a property from the table first");
                 console.log("disabled");
             } else if (datatable && datatable.data().length != 0) {
                 $("#hotels tr").removeClass("selected");
@@ -259,7 +259,7 @@
             }
         }
         if (datatable.length == 0) {
-            $(".dt-button").addClass("disabled").attr("title", "Select a schedule from the table first");
+            $(".dt-button").addClass("disabled").attr("title", "Select a property from the table first");
         }
         if (table.length == 0) {
             datatable.clear().draw();
