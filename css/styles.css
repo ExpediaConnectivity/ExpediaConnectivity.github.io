@@ -972,6 +972,7 @@ form .request-hotel {
   left: 50%;
   margin-left: -25px;
   width: 50px;
+  z-index: 5;
 }
 .loader .background {
   position: absolute;
