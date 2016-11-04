@@ -101,6 +101,12 @@
     <br/>
     <h2>Properties assigned to all accounts</h2>
     <br/>
+    <div class="loader" style="display: none;">
+        <div class="background">&nbsp;</div>
+        <svg class="circular">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+    </div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form>
         <div id="result" class="formline center"></div>
@@ -123,10 +129,15 @@
         { title: "API Username" }
     ];
 
+    var buttons = [
+        { text: "Toggle Indefinite", action: toggleIndefinite }
+    ];
+
     $(document).ready(function() {
         datatable = $("#hotels").DataTable({
-            dom: 'frti',
+            dom: 'frtiB',
             columns: columns,
+            buttons: buttons,
             pageLength: 100,
             ajax: function (data, callback, settings) {
                 jwtRequest("GET", hotelAssignmentServiceUrls.schedule(), function(data, textStatus, jqxhr) {
@@ -205,6 +216,38 @@
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
         var details = getNiceErrorText(jqxhr);
         $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
+    }
+
+    function loadStartButtons() {
+        $(".loader").show();
+        $("a.dt-button").each(function(i, el) {
+            $(el).attr("data-href", $(el).attr("href")).removeAttr("href").addClass("disabled");
+        });
+    }
+
+    function loadEndButtons() {
+        $(".loader").hide();
+        $("#result").removeClass("error");
+        $("a.dt-button").each(function(i, el) {
+            $(el).attr("href", $(el).attr("data-href")).removeAttr("data-href").removeClass("disabled");
+        });
+    }
+
+    function toggleIndefinite(e, dt, node, config) {
+        loadStartButtons();
+        var hotelid = dt.cell(".selected", 1).data();
+        ga('send', 'event', 'toggleIndefinite', 'request', localStorage.getItem('username') + "|" + hotelid);
+        jwtRequest("POST", hotelAssignmentServiceUrls.scheduleToggleIndefinite(hotelid), function(data, textStatus, jqxhr) {
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            loadEndButtons();
+            $("#result").text("Successfully toggled schedule expiry").effect( "highlight", {color:"#FECB2F"}, 700 );
+            datatable.ajax.reload();
+            ga('send', 'event', 'toggleIndefinite', 'success', localStorage.getItem('username') + "|" + hotelid);
+        }, function(jqxhr) {
+            loadEndButtons();
+            ajaxError(jqxhr, "Could not toggle schedule expiry");
+            ga('send', 'event', 'toggleIndefinite', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
+        });
     }
 
 

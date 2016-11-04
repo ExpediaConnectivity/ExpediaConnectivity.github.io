@@ -37,5 +37,9 @@ var hotelAssignmentServiceUrls = {
 
     setPassword: function(hotelId) {
         return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/change";
+    },
+
+    scheduleToggleIndefinite: function(hotelId) {
+        return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/toggleRestricted";
     }
 }
