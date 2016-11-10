@@ -339,8 +339,9 @@
 
     function autoAssignHotel() {
         var password = $("#requestHotelForm #password").val();
-        if (!password || password.length < 8) {
-            $("#result").addClass("error").text("You must specify a password (8+ characters) to use for API calls.");
+        var passwordError = validatePassword(password)
+        if (passwordError !== true) {
+            $("#result").addClass("error").text(passwordError);
             return;
         }
         loadStart();
@@ -432,31 +433,55 @@
                 .append($("<p/>").text("Reset the password of Test Hotel ID " + hotelid + "."))
                 .parent()
                 .foundation('reveal', 'open');
-        $("#reset").submit(function() {
-            console.log("reset");
-            var password = $("#reset-dialogue #password").val();
-            if (password.length < 8) {
-                $("#reset-dialogue .error").text("8 character minimum");
-                return false;
-            }
-            $("#reset-dialogue").foundation('reveal', 'close');
-            loadStartButtons();
-            ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
-            jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
-                loadEndButtons();
-                $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
-                console.log(data);
-                ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
-            }, function(jqxhr) {
-                loadEndButtons();
-                ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
-                ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
-            });
-            return false;
-        });
     }
 
+    function validatePassword(password) {
+        if (!password) {
+            return "You must specify a password to use for API calls.";
+        }
+        
+        if (password.length < 8) {
+            return "Password must be 8 characters or longer";
+        }
 
+        if (!password.match(/[A-Z]/) || !password.match(/[a-z]/)) {
+            return "Password must contain uppercase (A-Z) and lowercase (a-z) characters"
+        }
+
+        if (!password.match(/[0-9]/)) {
+            return "Password must contain a number"
+        }
+
+        if (!password.match(/[^0-9a-zA-Z]/)) {
+            return "Password must contain a symbol"
+        }
+
+        return true;
+    }
+
+    $("#reset").submit(function() {
+        console.log("reset");
+        var password = $("#reset-dialogue #password").val();
+        var passwordError = validatePassword(password)
+        if (passwordError !== true) {
+            $("#reset-dialogue .error").text(passwordError);
+            return false;
+        }
+        $("#reset-dialogue").foundation('reveal', 'close');
+        loadStartButtons();
+        ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
+        jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
+            loadEndButtons();
+            $("#result").text("Successfully reset password of hotel ID " + hotelid).effect( "highlight", {color:"#FECB2F"}, 700 );
+            console.log(data);
+            ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
+        }, function(jqxhr) {
+            loadEndButtons();
+            ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
+            ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
+        });
+        return false;
+    });
 </script>
 </div><footer id="site-footer" class="row full-width">
     <div class="large-8 large-centered columns">

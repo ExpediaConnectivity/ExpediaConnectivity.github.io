@@ -92,7 +92,7 @@
         <div class="formline"><span class="right-align">First Name: </span><input id="firstname" required/></div>
         <div class="formline"><span class="right-align">Last Name: </span><input id="lastname" required/></div>
         <div class="formline"><span class="right-align">Company: </span><input id="company" required/></div>
-        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password" required/></div>
+        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password" placeholder="8+ characters, requires numbers, symbols, mixed case" required/></div>
         <div class="formline"><span class="right-align">Confirm Password: </span><input id="confirmpassword" type="password" required/></div>
         <div class="formline"><div style="padding: 0.5rem; margin-left: 50%;"><input type="checkbox" id="tnc">I have read and agree to the <a href="/license">Licence Agreement</a></div></div>
         <div class="formline">
@@ -133,6 +133,30 @@
         $("#registerform input").removeAttr("disabled").removeClass("disabled");
     }
 
+    function validatePassword(password, confirm) {
+        if (password.length < 8) {
+            return "Password must be 8 characters or longer";
+        }
+
+        if (!password.match(/[A-Z]/) || !password.match(/[a-z]/)) {
+            return "Password must contain uppercase (A-Z) and lowercase (a-z) characters"
+        }
+
+        if (!password.match(/[0-9]/)) {
+            return "Password must contain a number"
+        }
+
+        if (!password.match(/[^0-9a-zA-Z]/)) {
+            return "Password must contain a symbol"
+        }
+
+        if (password != confirm) {
+            return "Passwords do not match - please make sure the password and confirmation password are the same.";
+        }
+
+        return true;
+    }
+
     function register(form) {
         var username = $(form).find("#username").val();
         var email = $(form).find("#email").val();
@@ -143,8 +167,9 @@
         var confirm = $(form).find("#confirmpassword").val();
         var tnc = $(form).find("#tnc").is(':checked');
 
-        if (password != confirm) {
-            $("#result").addClass("error").html("Passwords do not match - please make sure the password and confirmation password are the same.");
+        var validPassword = validatePassword(password, confirm);
+        if (validPassword !== true) {
+            $("#result").addClass("error").html(validPassword);
             return;
         }
 
