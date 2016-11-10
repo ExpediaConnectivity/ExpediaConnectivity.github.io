@@ -133,7 +133,7 @@
         <div class="row full-width request-hotel">
             <div class="large-6 columns">
                 <label>Choose a password for your test API credentials</label>
-                <input type="password" id="password" name="password" placeholder="8+ characters"/>
+                <input type="password" id="password" name="password" placeholder="8+ characters, requires numbers, symbols, mixed case"/>
             </div>
             <div class="large-6 columns formline">
                 <label>&nbsp;</label>
@@ -439,7 +439,7 @@
         if (!password) {
             return "You must specify a password to use for API calls.";
         }
-        
+
         if (password.length < 8) {
             return "Password must be 8 characters or longer";
         }
