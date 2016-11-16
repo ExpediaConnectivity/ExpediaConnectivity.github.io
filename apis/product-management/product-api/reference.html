@@ -2263,6 +2263,9 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
   &quot;pricingModel&quot;: &quot;PerDayPricing&quot;,
   &quot;occupantsForBaseRate&quot;: 2,
   &quot;taxInclusive&quot;: false,
+  &quot;depositRequired&quot;: false,
+  &quot;creationDateTime&quot;: &quot;2016-10-20T21:05:12Z&quot;,
+  &quot;lastUpdateDateTime&quot;: &quot;2016-10-21T18:37:27Z&quot;,
   &quot;cancelPolicy&quot;: {
     &quot;defaultPenalties&quot;: [
       {
@@ -2583,6 +2586,21 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 <td>taxInclusive</td>
 <td>boolean</td>
 <td>Returned to indicate whether the rate being exchanged over other APIs (availability/rates or booking) is inclusive of taxes or not. During creation, for properties managing net rates, the default value is false. For sell rates, it is based on the property&#39;s configuration.</td>
+</tr>
+<tr>
+<td>depositRequired</td>
+<td>boolean</td>
+<td>Indicates if a deposit is required upon booking. This flag is only available for Rate Plan with business models HotelCollect or ExpediaTravelerPreference. Read-only. Cannot currently be set at time of create, or changed in update call. Will be defaulted to False at time of create. Partners who need to collect deposits should contact their Expedia Market Manager.</td>
+</tr>
+<tr>
+<td>creationDateTime</td>
+<td>date</td>
+<td>Date at which the rate plan has been created. The date is formatted in the ISO 8601 format. Example: 2016-10-20T21:05:12Z. Set by Expedia at time of create, cannot be provided in create request. Cannot be changed.</td>
+</tr>
+<tr>
+<td>lastUpdateDateTime</td>
+<td>date</td>
+<td>Date of the last modifications to this rate plan. The date is formatted in the ISO 8601 format. Example: 2016-10-21T18:37:27Z. Read-only. Set by Expedia at time of Create or Update. Cannot be provided in create or changed by partner in update messages.</td>
 </tr>
 <tr>
 <td>cancelPolicy</td>
