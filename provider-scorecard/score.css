@@ -1,0 +1,81 @@
+.scorecard-row .scorecard-category {
+  color: #0087F5;
+  font-weight: bold;
+  text-align: center;
+}
+.scorecard-row .scorecard-category-score {
+  color: inherit;
+  margin-bottom: 3em;
+}
+.scorecard-row .scorecard-category-score .score-total {
+  background: ghostwhite;
+  padding: 2px;
+  border: 1px solid #dddddd;
+}
+.scorecard-row .scorecard-category-score .score-total .score-value {
+  background: #0087F5;
+}
+.scorecard-row .scorecard-provider {
+  font-size: 3em;
+}
+.scorecard-row .scorecard-rank {
+  text-align: center;
+  font-size: 3em;
+}
+.scorecard-row .scorecard-column .check {
+  height: 8em !important;
+}
+.scorecard-row .scorecard-column .border {
+  border: 1px solid ghostwhite;
+  height: 6em;
+  padding-top: 1em;
+  margin-bottom: 50px;
+}
+.scorecard-row .scorecard-column * {
+  line-height: 1em;
+  margin-bottom: 10px;
+}
+.scorecard-row .scorecard-column .scorecard-title {
+  color: lightslategrey;
+}
+.scorecard-row .scorecard-column .value {
+  font-size: 2em;
+}
+.scorecard-row .scorecard-column .rate-change {
+  line-height: 2em;
+}
+.scorecard-row .scorecard-column .rate-change .green {
+  color: darkgreen;
+}
+.scorecard-row .scorecard-column .rate-change .red {
+  color: darkred;
+}
+.scorecard-row .scorecard-column .state {
+  font-size: 2em;
+  line-height: 2em;
+  text-align: center;
+}
+.scorecard-row .scorecard-column .feature {
+  text-align: center;
+}
+.scorecard-row .scorecard-column > .green {
+  background: #cbe9cd;
+}
+.scorecard-row .scorecard-column > .green .value {
+  color: darkgreen;
+}
+.scorecard-row .scorecard-column > .green .state {
+  color: darkgreen;
+}
+.scorecard-row .scorecard-column > .red {
+  background: #F8E5D8;
+}
+.scorecard-row .scorecard-column > .red .value {
+  color: #de8344;
+}
+.scorecard-row .scorecard-column > .red .state {
+  color: darkred;
+}
+hr {
+  margin-bottom: 3em;
+}
