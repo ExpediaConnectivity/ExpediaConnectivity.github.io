@@ -76,6 +76,9 @@
 .scorecard-row .scorecard-column > .red .state {
   color: darkred;
 }
+.scorecard-row .padding-fix {
+  padding: 0 0 !important;
+}
 hr {
   margin-bottom: 3em;
 }
