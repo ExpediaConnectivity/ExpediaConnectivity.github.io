@@ -34,6 +34,7 @@
 }
 .scorecard-row .scorecard-column .border:hover {
   cursor: pointer;
+  border-color: #444;
 }
 .scorecard-row .scorecard-column .has-tip {
   font-weight: normal;

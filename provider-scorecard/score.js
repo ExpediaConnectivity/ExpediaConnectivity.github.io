@@ -2,6 +2,8 @@ function providerPortalServiceBaseUrl() {
     return environment.isProd() ? "https://provider-portal-service.prod-p.expedia.com" : "https://provider-portal-service.us-west-2.test.expedia.com";
 }
 
+var provider = false;
+
 var demo = {
     "provider": {
         "name": "ExpediaProvider",
@@ -102,10 +104,22 @@ $(document).ready(function() {
     $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash, function(data) {
         generateScorecard(data);
     });
+
+    $(".scorecard-column .border").click(function(event) {
+        if (provider) {
+            var id = $(event.target).parents(".border").attr("id");
+            if ($(event.target).hasClass("border")) {
+                id = $(event.target).attr("id")
+            }
+            ga('send', 'event', 'scorecard', 'click.' + id, provider);
+        }
+    })
 });
 
 
 function generateScorecard(scorecard) {
+    provider = scorecard.provider.name;
+    ga('send', 'event', 'scorecard', 'view', provider);
     $(".scorecard-provider").text(scorecard.provider.name);
     $(".scorecard-rank .rank").text(scorecard.provider.rank);
     $(".scorecard-rank .total").text(scorecard.provider.total);
