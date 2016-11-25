@@ -1,5 +1,5 @@
 function providerPortalServiceBaseUrl() {
-    return environment.isProd() ? "https://provider-portal-service.prod-p.expedia.com" : "http://localhost:8082";//https://provider-portal-service.us-west-2.test.expedia.com";
+    return environment.isProd() ? "https://provider-portal-service.us-west-2.test.expedia.com" : "https://provider-portal-service.us-west-2.test.expedia.com";
 }
 
 var demo = {
