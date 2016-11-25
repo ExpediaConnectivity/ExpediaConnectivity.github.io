@@ -1,5 +1,5 @@
 function providerPortalServiceBaseUrl() {
-    return environment.isProd() ? "http://provider-portal-service.us-west-2.test.expedia.com" : "http://provider-portal-service.us-west-2.test.expedia.com";
+    return environment.isProd() ? "https://provider-portal-service.us-west-2.test.expedia.com" : "https://provider-portal-service.us-west-2.test.expedia.com";
 }
 
 var demo = {
@@ -94,7 +94,7 @@ function getParameterByName(name) {
 }
 
 $(document).ready(function() {
-    var hash = getParameterByName("hash");
+    var hash = getParameterByName("id");
     if (hash == null || hash == "") {
         generateScorecard(demo);
         return;
