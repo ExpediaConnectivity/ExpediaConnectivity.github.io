@@ -2,6 +2,7 @@
   color: #0087F5;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 3em;
 }
 .scorecard-row .scorecard-category-score {
   color: inherit;
@@ -30,6 +31,13 @@
   height: 6em;
   padding-top: 1em;
   margin-bottom: 50px;
+}
+.scorecard-row .scorecard-column .border:hover {
+  cursor: pointer;
+}
+.scorecard-row .scorecard-column .has-tip {
+  font-weight: normal;
+  color: inherit;
 }
 .scorecard-row .scorecard-column * {
   line-height: 1em;
