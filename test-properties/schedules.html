@@ -79,7 +79,6 @@
 <script src="/js/jquery.DataTables.min.js"></script>
 <script src="/js/dataTables.buttons.min.js"></script>
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="/js/foundation/foundation.reveal.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script src="/test-properties/urls.js"></script>
 <style>
@@ -103,12 +102,14 @@
     <h2>Properties assigned to your account</h2>
     <p>Once you've scheduled a hotel, you can use it with our <a href="/developer" target="_blank">API's</a>, or view it in Expedia Partner Central to <a href="./info" target="_blank">find, view or cancel bookings.</a></p>
     <br/>
-    <div id="account-dialogue" data-reveal class="tiny reveal-modal">
+    <div id="account-dialogue" data-reveal class="tiny reveal">
         <h1>Account Details</h1>
         <div></div>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <div id="reset-dialogue" data-reveal class="tiny reveal-modal">
+    <div id="reset-dialogue" data-reveal class="tiny reveal">
         <h1>Reset Password</h1>
         <div></div>
         <form id='reset'>
@@ -116,12 +117,16 @@
             <div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div>
             <div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div>
         </form>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-    <div id="extend-dialogue" data-reveal class="tiny reveal-modal">
+    <div class="tiny reveal" id="extend-dialogue" data-reveal>
         <h1>Cannot Extend</h1>
         <p>You may only extend a property schedule up to 2 weeks in the future. This is already the case for this property, please come back closer to the expiry date to extend it further.</p>
-        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
     <table id="hotels" class="display" cellspacing="0" width="100%"></table>
     <form id="requestHotelForm">
@@ -238,6 +243,8 @@
         });
 
         $.getJSON(hotelAssignmentServiceUrls.factors(), parseFactors);
+
+        $(document).foundation();
     });
 
     $('#requestHotelForm').submit(function (event) {
@@ -363,7 +370,7 @@
                         .append($("<p/>").text("Username: " + data.eqcUsername))
                         .append($("<p/>").text("Password: [The one you set in the request.]"))
                         .parent()
-                        .foundation('reveal', 'open');
+                        .foundation('open');
 
                 ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
             }, function(jqxhr) {
@@ -408,7 +415,7 @@
         var today = new Date();
         var newExpiryDate = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()) + 14 * 24*60*60*1000;
         if (currentExpiryDate >= newExpiryDate) {
-            $("#extend-dialogue").foundation('reveal', 'open');
+            $("#extend-dialogue").foundation('open');
             return;
         }
         loadStartButtons();
@@ -432,7 +439,7 @@
                 .empty()
                 .append($("<p/>").text("Reset the password of Test Hotel ID " + hotelid + "."))
                 .parent()
-                .foundation('reveal', 'open');
+                .foundation('open');
     }
 
     function validatePassword(password) {
@@ -467,7 +474,7 @@
             $("#reset-dialogue .error").text(passwordError);
             return false;
         }
-        $("#reset-dialogue").foundation('reveal', 'close');
+        $("#reset-dialogue").foundation('close');
         loadStartButtons();
         ga('send', 'event', 'pwreset', 'request', localStorage.getItem('username'));
         jwtRequestWithData("POST", hotelAssignmentServiceUrls.setPassword(hotelid), JSON.stringify({ "password": password }), function(data, textStatus, jqxhr) {
