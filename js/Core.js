@@ -13,7 +13,12 @@ var Core = Core || {
         this.highlightActiveNav('#nav-main li.mainlink');
 
         // Foundation
-        $(document).foundation({
+        var magellan = new Foundation.Magellan($(document), {
+            'data-options': {
+                'data-animation-duration': 150
+            }
+        });
+            /*.foundation({
             "magellan-expedition": {
                 active_class : 'active',
                 threshold : 0,
@@ -24,7 +29,7 @@ var Core = Core || {
                 duration : 150,
                 easing : 'swing'
             }
-        });
+        });*/
 
         // Set size
         this.demoForm();
@@ -176,7 +181,7 @@ var Core = Core || {
 
     checkOffCanvasVisibility: function() {
         // Reset off canvas section if medium-up
-        if (Foundation.utils.is_medium_up()) {
+        if (Foundation.MediaQuery.atLeast('medium')) {
             $('.exit-off-canvas').trigger('click');
         }
     },
