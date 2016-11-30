@@ -1,198 +1,105 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Expedia Partner APIs for developers">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>APIs for Expedia Partners</title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/foundation.min.css">
-  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/he-animate.css">
-  <script src="/js/jquery.js"></script>
-  <script src="/js/vendor/modernizr.js"></script>
-  <script src="/js/highlight.pack.js"></script>
-  <script src="/js/foundation.min.js"></script>
-  <script src="/js/Core.js"></script>
-  <script src="/js/he-main.js"></script>
-  <script src="/js/he-plugins.js"></script>
-  <script src="/js/he-smoothscroll.js"></script>
-  <script src="/js/he-waypoints.js"></script>
-  <script src="/js/environment.js"></script>
-  <script>
-    $(document).ready(function() {
-        $('.api-content pre>code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
-        Core.init();
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
     });
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-79394707-1', 'auto');
-    ga('send', 'pageview');
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head>
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width">
+<link rel="stylesheet" href="/css/he-main.css">
 
-<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
-  <div id="google_translate_element" style="display: none"></div>
-  <header id="site-navigation">
-    <nav class="row full-width" id="nav-top">
-      <div class="inner">
-        <ul>
-          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
-          </li>
-          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nav class="row full-width" id="nav-main">
-      <div class="inner">
-        <a id="logo" href="/">
-          <img src="/images/DevLogo_40k.png">
-        </a>
-        <div class="hide-for-large" id="menu-toggle"></div>
-        <div id="menu-wrap">
-          <div class="hide-for-large"></div>
-          <ul>
-            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
-            </li>
-            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
-            </li>
-            <li class="mainlink"><a href="/systems">Systems</a>
-            </li>
-            <li class="mainlink"><a href="/developer">Developer APIs</a>
-            </li>
-            <li class="mainlink"><a href="/blog">Blog</a>
-            </li>
-            <li class="mainlink"><a href="/contact-us">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="full-width">
-    <link rel="stylesheet" href="/css/he-main.css">
-
-    <section class='hero hero-hotelroom'>
-      <div class='inner'>
+<section class='hero hero-hotelroom'>
+    <div class='inner'>
         <h1>Expedia Connectivity</h1>
         <h2>Eliminate time intensive processes across rates and reservations, marketing, promotions, and analytics.</h2>
-      </div>
-    </section>
-    <div id="page-index" class="he-active_now he-animate he-fade_in">
-      <!--[if lt IE 8]>
+    </div>
+</section>
+<div id="page-index" class="he-active_now he-animate he-fade_in">
+        <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
-      <section id="section-intro_paragraph">
-        <div class="inner">
-          <div class="row">
-            <div class="twelve columns">
-              <p>
-                Take control of end-to-end processes – from centralized reservations to targeted promotions. Expedia Connectivity automates the way properties reach, promote, and compete across Expedia’s entire marketplace of over 200 world-class booking sites. It transforms
-                time-intensive processes while helping connected properties drive revenue. Expedia Connectivity is the real-time Expedia marketplace, automated.
-              </p>
+        
+        <section id="section-intro_paragraph">
+            <div class="inner">
+                <div class="row">
+                    <div class="twelve columns">
+                        <p>
+                            Take control of end-to-end processes – from centralized reservations to targeted promotions. Expedia Connectivity automates the way properties reach, promote, and compete across Expedia’s entire marketplace of over 200 world-class booking sites. It transforms time-intensive processes while helping connected properties drive revenue. Expedia Connectivity is the real-time Expedia marketplace, automated.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="section-primary_boxes">
-        <div class="inner">
-          <div class="row full-width" id="primary-box-wrap">
-            <div class="six columns he-waypoint he-animate he-fade_in">
-              <a href="/providers" class="primary-box">
-                <h3>
+        </section>
+        
+        <section id="section-primary_boxes">
+            <div class="inner">
+                <div class="row full-width" id="primary-box-wrap">
+                    <div class="six columns he-waypoint he-animate he-fade_in">
+                        <a href="/providers" class="primary-box">
+                            <h3>
                                 Expedia Connectivity for Providers
                             </h3>
-                <img class="round-img" src="/images/image-scooter.png" />
-                <p>
-                  Make it easy for your customers to optimize their experience in the Expedia Global marketplace. Our connectivity APIs make it simple to adopt new features that provide additional value to your customers and increase opportunities for growth.
-                  <span>
+                            <img class="round-img" src="/images/image-scooter.png" />
+                            <p>
+                                Make it easy for your customers to optimize their experience in the Expedia Global marketplace. Our connectivity APIs make it simple to adopt new features that provide additional value to your customers and increase opportunities for growth.
+                                <span>
                                     Explore the Value of Expedia Connectivity
                                 </span>
-                </p>
-              </a>
-            </div>
-            <!--
-                 -->
-            <div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
-              <a href="/properties" class="primary-box">
-                <h3>
+                            </p>
+                        </a>
+                    </div><!--
+                 --><div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
+                        <a href="/properties" class="primary-box">
+                            <h3>
                                 Expedia Connectivity for Properties
                             </h3>
-                <img class="round-img" src="/images/image-bed.png" />
-                <p>
-                  Simplify the management of room inventory, availability, and rates; promote time-sensitive offers; and take advantage of new opportunities across the Expedia Global marketplace. Connectivity automates time-intensive processes, giving you time to focus
-                  on other areas of your business.
-                  <span>
+                            <img class="round-img" src="/images/image-bed.png" />
+                            <p>
+                                Simplify the management of room inventory, availability, and rates; promote time-sensitive offers; and take advantage of new opportunities across the Expedia Global marketplace. Connectivity automates time-intensive processes, giving you time to focus on other areas of your business.
+                                <span>
                                     Explore the Benefits of Expedia Connectivity
                                 </span>
-                </p>
-              </a>
+                            </p>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      <section id="section-three_icons">
-        <div class="inner">
-          <div class="row full-width" id="index-lower-columns">
-            <!--
-                 -->
-            <div class="six columns he-waypoint he-animate he-delay_100 he-fade_in">
-              <img class="icon round-img" src="/images/icon-browser.png" />
-              <h4>Discover Connectivity Systems</h4>
-              <p>
-                Thinking of using a third-party technology partner to manage your property on Expedia? Connect with one of our dedicated systems to gain instant, always-on exposure across the Expedia marketplace.
-              </p>
-              <a href="/systems">
+        </section>
+        
+        
+        
+        <section id="section-three_icons">
+            <div class="inner">
+                <div class="row full-width" id="index-lower-columns"><!--
+                 --><div class="six columns he-waypoint he-animate he-delay_100 he-fade_in">
+                        <img class="icon round-img" src="/images/icon-browser.png" />
+                        <h4>Discover Connectivity Systems</h4>
+                        <p>
+                            Thinking of using a third-party technology partner to manage your property on Expedia? Connect with one of our dedicated systems to gain instant, always-on exposure across the Expedia marketplace.
+                        </p>
+                        <a href="/systems">
                             Learn more about Expedia Connectivity Systems
                         </a>
-            </div>
-            <!--
-                 -->
-            <div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
-              <img class="icon round-img" src="/images/icon-code_tag.png" />
-              <h4>Deploy Connectivity APIs</h4>
-              <p>
-                Rapidly access the largest set of hospitality APIs designed to ease the management of everything from rate and reservations to real-time marketing analytics.
-              </p>
-              <a href="/developer">
+                    </div><!--
+                 --><div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
+                        <img class="icon round-img" src="/images/icon-code_tag.png" />
+                        <h4>Deploy Connectivity APIs</h4>
+                        <p>
+                            Rapidly access the largest set of hospitality APIs designed to ease the management of everything from rate and reservations to real-time marketing analytics. 
+                        </p>
+                        <a href="/developer">
                             Learn more about Expedia Connectivity APIs
                         </a>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
-  </div>
-  <footer class="row full-width" id="site-footer">
-    <div class="large-8 large-centered columns">
-      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
-        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
-      </div>
-      <div class="show-for-large">
-        <div class="footer-logo">&nbsp;</div>
-      </div>
-      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
-    </div>
-  </footer>
-  <input type="hidden" id="eventTrackingPageName" value="Index">
-</body>
-
-</html>
+</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"></body></html>

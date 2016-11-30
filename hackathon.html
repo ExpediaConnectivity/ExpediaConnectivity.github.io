@@ -1,980 +1,891 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description" content="Expedia Partner APIs for developers">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hackathon - APIs for Expedia Partners</title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/foundation.min.css">
-  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/he-animate.css">
-  <script src="/js/jquery.js"></script>
-  <script src="/js/vendor/modernizr.js"></script>
-  <script src="/js/highlight.pack.js"></script>
-  <script src="/js/foundation.min.js"></script>
-  <script src="/js/Core.js"></script>
-  <script src="/js/he-main.js"></script>
-  <script src="/js/he-plugins.js"></script>
-  <script src="/js/he-smoothscroll.js"></script>
-  <script src="/js/he-waypoints.js"></script>
-  <script src="/js/environment.js"></script>
-  <script>
-    $(document).ready(function() {
-        $('.api-content pre>code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
-        Core.init();
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Hackathon - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
     });
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-79394707-1', 'auto');
-    ga('send', 'pageview');
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><style>
+    .faq .collapsed{display:block !important}
+    body .navbar-inverse .navbar-toggle{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#ffcb00;color:#00355f}
+    body .navbar-inverse .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:active{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#00355f}
+    body .navbar-default .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
+    .navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form,.navbar-inverse .navbar-toggle,.navbar-default
+    .navbar-collapse,.navbar-default .navbar-form,.navbar-default
+    .navbar-toggle,header.navbar.navbar-collapse,header.navbar.navbar-form,header.navbar.navbar-toggle{border-color:#ffcb00}
+    .navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:hover,.navbar-inverse
+    .navbar-toggle:focus,.navbar-inverse .navbar-nav > .open > a,.navbar-inverse .navbar-nav > .open >
+    a:hover,.navbar-inverse .navbar-nav > .open > a:focus,.navbar-default .navbar-toggle:hover,.navbar-default
+    .navbar-toggle:active,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-nav > .open > a,.navbar-default
+    .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus,header.navbar.navbar-nav > .open >
+    a,header.navbar.navbar-nav > .open > a:hover,header.navbar.navbar-nav > .open > a:focus{background-color:#ffcb00}
+
+    #hck-page a{color:#137AAA}
+    #hck-page a:hover{color:#0B4965}
+    body .btn{background-color:#ffbe00;}
+    body .btn{color:#3d3100;}
+    body .btn:hover{background-color:;}
+    body .btn:hover{color:;}
+    body .btn:focus{background-color:;}
+    body .btn:focus{color:;}
+    body .btn:active{background-color:;}
+    body .btn:active{color:;}
+    body .btn.active{background-color:;}
+    body .btn.active{color:;}
+    body .open .dropdown-toggle.btn{background-color:;}
+    body .open .dropdown-toggle.btn{color:;}
+    .navbar-nav > li > span{color:#FFFFFF}
+    .navbar-nav > li > span:hover{color:#00355f}
+    .navbar-nav > li.expanded span:hover{background-color:#ffcb00}
+    .navbar-nav > li.expanded.active{background-color:#ffcb00}
+    .navbar-nav > li > span > span.caret{border-bottom-color:#FFFFFF;border-top-color:#FFFFFF;color:#FFFFFF;}
+    body #push{height:100px;}
+</style>
+<style>
+    body.navbar-is-fixed-top,
+body.admin-menu.navbar-is-fixed-top,
+body.admin-menu{
+    padding-top: 30px!important;
+}
+
+.col-sm-12 {
+    width: 100%!important;
+    margin :0!important;
+}
+
+.col-sm-12 .tabs--primary {
+    display: none;
+}
+.page-header {
+    display: none;
+}
+
+.page-content {
+    padding: 0;
+}
+
+.search-container {
+    display: none !important;
+}
+hr {
+    display: none;
+}
+.container {
+    width: 100% !important;
+    margin: 0;
+    padding: 0;
+}
+#breadcrumb-navbar {
+    display: none;
+}
+
+#hck-page {
+    font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 21px;
+    color: #4F4F4F;
+    letter-spacing: 0.5px;
+}
+#hck-cover {
+    position: relative;
+    background-color: #000000;
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+.hck-title {
+    position: absolute;
+    width: 300px;
+    left: 50%;
+    margin-left: -150px;
+    /* Half of the width */
+
+    top: 20px;
+    background: rgba(26, 27, 45, 0.6);
+    border-radius: 6px;
+    padding: 18px 0;
+}
+.hck-title h1 {
+    font-size: 32px;
+    line-height: 38px;
+    font-weight: 300;
+    margin: 12px 0 18px;
+    color: #FFF;
+}
+.hck-title h5 {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 500;
+    margin: 0 0 6px;
+    color: #FFF;
+}
+.hck-title p {
+    display: none;
+}
+.hck-title img {
+    width: 64px;
+    margin: 0 auto;
+    display: block;
+}
+.hck-title-info {
+    width: 280px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    text-align: center;
+}
+.hck-clear {
+    clear: both;
+}
+.hck-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.hck-introduction {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hck-introduction h4 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+}
+.hck-schedule {
+    background: #F7F7F7;
+    border-top: 1px solid #C7C7C7;
+    border-bottom: 1px solid #C7C7C7;
+    margin-bottom: 36px;
+}
+.hck-schedule-day1 {
+    padding-bottom: 24px;
+    border-bottom: 1px solid #C7C7C7;
+}
+.hck-schedule-day1,
+.hck-schedule-day2 {
+    width: 100%;
+    margin-bottom: 24px;
+}
+.hck-schedule-times {
+    text-align: left;
+}
+.hck-schedule-times strong,
+.hck-judging strong,
+.hck-prizes strong {
+    font-weight: 500 !important;
+}
+.hck-schedule h3,
+.hck-judging h3,
+.hck-prizes h3,
+.hck-details h3,
+.hck-support h3 {
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin: 0;
+    padding: 24px 0;
+}
+.hck-schedule-times h4 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 22px;
+    margin: 0 0 12px;
+}
+.hck-schedule-times h4 span {
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 12px;
+}
+.hck-judging,
+.hck-prizes,
+.hck-details,
+.hck-support {
+    float: none;
+    width: 100%;
+    margin-bottom: 48px;
+}
+.hck-judging {
+    background-image: url('/images/ico-pie.svg');
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+}
+.hck-prizes {
+    background-image: url('/images/ico-ribbon.svg');
+    background-repeat: no-repeat;
+    background-position: 0 18px;
+}
+.hck-judging h3,
+.hck-judging p,
+.hck-prizes h3,
+.hck-prizes p {
+    padding-left: 64px;
+}
+.hck-details ol li {
+    padding: 18px 0 !important;
+    border-bottom: 1px dotted #C7C7C7;
+}
+.hck-details ul li {
+    padding: 12px 0 !important;
+}
+.hck-support a:link,
+.hck-support a:visited {
+    text-decoration: none;
+    color: #0065B8;
+    font-size: 16px;
+    font-weight: 400;
+}
+.hck-support a:hover {
+    text-decoration: underline;
+    color: #0087F5;
+}
+.hck-support a:active {
+    text-decoration: underline;
+    color: #00355F;
+}
+@media only screen and (min-width: 768px) {
+    #hck-cover {
+        height: 400px;
+        margin-bottom: 30px;
     }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head>
+    .hck-title {
+        width: 640px;
+        margin-left: -320px;
+        padding: 24px 0;
+        top: 70px;
+    }
+    .hck-title-info {
+        width: 440px;
+        margin: 0 24px 0 0;
+        color: #FFFFFF;
+        float: right;
+        text-align: left;
+    }
+    .hck-title img {
+        float: left;
+        width: 128px;
+        margin-left: 24px;
+    }
+    .hck-title h1 {
+        font-size: 34px;
+        line-height: 40px;
+        font-weight: 300;
+        margin: 12px 0 18px;
+    }
+    .hck-title h5 {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 6px;
+    }
+    .hck-title p {
+        display: block;
+    }
+    .hck-container {
+        width: 750px;
+    }
+    .hck-schedule-day1 {
+        float: left;
+        width: 50%;
+        margin-bottom: 36px;
+        border-right: 1px solid #C7C7C7;
+        border-bottom: none;
+        padding-bottom: none;
+    }
+    .hck-schedule-day2 {
+        float: right;
+        width: 48%;
+        margin-bottom: 36px;
+    }
+    .hck-schedule-times {
+        padding-left: 18px;
+        width: 100%;
+    }
+    .hck-schedule h3 {
+        padding-left: 24px;
+    }
+    .hck-judging,
+    .hck-support {
+        float: left;
+        width: 49%;
+    }
+    .hck-prizes {
+        float: right;
+        width: 49%;
+    }
+    .hck-support a:link,
+    .hck-support a:visited {
+        font-size: 18px;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #hck-cover {
+        height: 500px;
+        margin-bottom: 60px;
+    }
+    .hck-container {
+        width: 970px;
+    }
+    .hck-introduction,
+    .hck-schedule,
+    .hck-details {
+        margin-bottom: 60px;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .hck-introduction h4 {
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 28px;
+    }
+    .hck-schedule h3,
+    .hck-judging h3,
+    .hck-prizes h3,
+    .hck-details h3,
+    .hck-support h3 {
+        font-weight: 300;
+        font-size: 28px;
+        line-height: 34px;
+        color: #000000;
+    }
+    .hck-schedule h3 {
+        padding-left: 24px;
+    }
+    .hck-schedule-times h4 {
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0 0 12px;
+    }
+    .hck-schedule-times h4 span {
+        font-weight: 500;
+        text-transform: uppercase;
+        padding-right: 12px;
+    }
+    .hck-judging,
+    .hck-prizes {
+        margin-bottom: 48px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    #hck-cover {
+        height: 500px;
+    }
+    .hck-title {
+        width: 1024px;
+        left: 50%;
+        margin-left: -512px;
+        /* Half of the width */
+    }
+    .hck-title img {
+        width: 192px;
+    }
+    .hck-title-info {
+        width: 754px;
+    }
+    .hck-title h1 {
+        font-size: 60px;
+        line-height: 72px;
+        margin: 0 0 18px;
+    }
+    .hck-title h5 {
+        font-size: 32px;
+        line-height: 60px;
+        margin: 0 0 12px;
+    }
+    .hck-title p {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .hck-container {
+        width: 1170px;
+    }
+    .hck-judging,
+    .hck-prizes {
+        margin-bottom: 60px;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    #hck-cover {
+        height: 600px;
+    }
+    .hck-title {
+        background: none;
+    }
+}
+@media only screen and (min-width: 2000px) {
+    #hck-cover {
+        background-position: center center;
+    }
 
-<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
-  <div id="google_translate_element" style="display: none"></div>
-  <header id="site-navigation">
-    <nav class="row full-width" id="nav-top">
-      <div class="inner">
-        <ul>
-          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
-          </li>
-          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nav class="row full-width" id="nav-main">
-      <div class="inner">
-        <a id="logo" href="/">
-          <img src="/images/DevLogo_40k.png">
-        </a>
-        <div class="hide-for-large" id="menu-toggle"></div>
-        <div id="menu-wrap">
-          <div class="hide-for-large"></div>
-          <ul>
-            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
-            </li>
-            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
-            </li>
-            <li class="mainlink"><a href="/systems">Systems</a>
-            </li>
-            <li class="mainlink"><a href="/developer">Developer APIs</a>
-            </li>
-            <li class="mainlink"><a href="/blog">Blog</a>
-            </li>
-            <li class="mainlink"><a href="/contact-us">Contact Us</a>
-            </li>
-          </ul>
+    .hck-title {
+        background: rgba(26, 27, 45, 0.6);
+    }
+}
+.tracer {
+    outline: red 1px dotted;
+}
+</style>
+<style>
+    #nav-main li:nth-of-type(6) a {
+        color: white;
+    }
+    .hck-title {
+        background: rgba(26, 27, 45, 0.6);
+    }
+    #hck-cover {
+        background-image: url(https://images.trvl-media.com/media/content/shared/images/travelguides/Prague-and-vicinity-180014-desktopRetina.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    table {
+        border: none;
+        background: none;
+    }
+    table tr {
+        background: none !important;
+    }
+</style>
+<div id="hck-page"><!-- COVER -->
+    <section id="hck-cover">
+        <div class="hck-title"><img alt="Expedia Hackathon"
+                                    src="/images/ico-exphack.svg">
+
+            <div class="hck-title-info">
+                <h1>Expedia Partner Hackathon</h1>
+
+                <h5>14-16 June&nbsp;&nbsp;|&nbsp;&nbsp;Expedia Office, Prague</h5>
+
+                <p>Křižíkova 682/34a Prague, Czech Republic, 186 00</p>
+            </div>
+
+            <div class="hck-clear">&nbsp;</div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <div class="full-width">
-    <style>
-      .faq .collapsed{display:block !important}
-      body .navbar-inverse .navbar-toggle{border-color:#00355f;background-color:#00355f}
-      body .navbar-inverse .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
-      body .navbar-inverse .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
-      body .navbar-inverse .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
-      body .navbar-inverse .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
-      body .navbar-inverse .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#ffcb00;color:#00355f}
-      body .navbar-inverse .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-toggle:hover{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-toggle:active{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-toggle:focus{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-collapse{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-collapse:hover{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-collapse:focus{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-nav > .open > a{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-nav > .open > a:hover{border-color:#00355f;background-color:#00355f}
-      body .navbar-default .navbar-nav > .open > a:focus{border-color:#00355f;background-color:#00355f}
-      .navbar-inverse .navbar-collapse,.navbar-inverse .navbar-form,.navbar-inverse .navbar-toggle,.navbar-default
-      .navbar-collapse,.navbar-default .navbar-form,.navbar-default
-      .navbar-toggle,header.navbar.navbar-collapse,header.navbar.navbar-form,header.navbar.navbar-toggle{border-color:#ffcb00}
-      .navbar-inverse .navbar-toggle,.navbar-inverse .navbar-toggle:hover,.navbar-inverse
-      .navbar-toggle:focus,.navbar-inverse .navbar-nav > .open > a,.navbar-inverse .navbar-nav > .open >
-      a:hover,.navbar-inverse .navbar-nav > .open > a:focus,.navbar-default .navbar-toggle:hover,.navbar-default
-      .navbar-toggle:active,.navbar-default .navbar-toggle:focus,.navbar-default .navbar-nav > .open > a,.navbar-default
-      .navbar-nav > .open > a:hover,.navbar-default .navbar-nav > .open > a:focus,header.navbar.navbar-nav > .open >
-      a,header.navbar.navbar-nav > .open > a:hover,header.navbar.navbar-nav > .open > a:focus{background-color:#ffcb00}
-  
-      #hck-page a{color:#137AAA}
-      #hck-page a:hover{color:#0B4965}
-      body .btn{background-color:#ffbe00;}
-      body .btn{color:#3d3100;}
-      body .btn:hover{background-color:;}
-      body .btn:hover{color:;}
-      body .btn:focus{background-color:;}
-      body .btn:focus{color:;}
-      body .btn:active{background-color:;}
-      body .btn:active{color:;}
-      body .btn.active{background-color:;}
-      body .btn.active{color:;}
-      body .open .dropdown-toggle.btn{background-color:;}
-      body .open .dropdown-toggle.btn{color:;}
-      .navbar-nav > li > span{color:#FFFFFF}
-      .navbar-nav > li > span:hover{color:#00355f}
-      .navbar-nav > li.expanded span:hover{background-color:#ffcb00}
-      .navbar-nav > li.expanded.active{background-color:#ffcb00}
-      .navbar-nav > li > span > span.caret{border-bottom-color:#FFFFFF;border-top-color:#FFFFFF;color:#FFFFFF;}
-      body #push{height:100px;}
-    </style>
-    <style>
-      body.navbar-is-fixed-top,
-  body.admin-menu.navbar-is-fixed-top,
-  body.admin-menu{
-      padding-top: 30px!important;
-  }
-  
-  .col-sm-12 {
-      width: 100%!important;
-      margin :0!important;
-  }
-  
-  .col-sm-12 .tabs--primary {
-      display: none;
-  }
-  .page-header {
-      display: none;
-  }
-  
-  .page-content {
-      padding: 0;
-  }
-  
-  .search-container {
-      display: none !important;
-  }
-  hr {
-      display: none;
-  }
-  .container {
-      width: 100% !important;
-      margin: 0;
-      padding: 0;
-  }
-  #breadcrumb-navbar {
-      display: none;
-  }
-  
-  #hck-page {
-      font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
-      font-weight: 300;
-      font-size: 15px;
-      line-height: 21px;
-      color: #4F4F4F;
-      letter-spacing: 0.5px;
-  }
-  #hck-cover {
-      position: relative;
-      background-color: #000000;
-      background-position: center top;
-      background-size: cover;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-      margin-bottom: 18px;
-  }
-  .hck-title {
-      position: absolute;
-      width: 300px;
-      left: 50%;
-      margin-left: -150px;
-      /* Half of the width */
-  
-      top: 20px;
-      background: rgba(26, 27, 45, 0.6);
-      border-radius: 6px;
-      padding: 18px 0;
-  }
-  .hck-title h1 {
-      font-size: 32px;
-      line-height: 38px;
-      font-weight: 300;
-      margin: 12px 0 18px;
-      color: #FFF;
-  }
-  .hck-title h5 {
-      font-size: 18px;
-      line-height: 24px;
-      font-weight: 500;
-      margin: 0 0 6px;
-      color: #FFF;
-  }
-  .hck-title p {
-      display: none;
-  }
-  .hck-title img {
-      width: 64px;
-      margin: 0 auto;
-      display: block;
-  }
-  .hck-title-info {
-      width: 280px;
-      margin: 0 auto;
-      color: #FFFFFF;
-      text-align: center;
-  }
-  .hck-clear {
-      clear: both;
-  }
-  .hck-container {
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto;
-  }
-  .hck-introduction {
-      text-align: center;
-      margin-bottom: 30px;
-  }
-  .hck-introduction h4 {
-      font-weight: 400;
-      font-size: 18px;
-      line-height: 24px;
-      color: #000000;
-  }
-  .hck-schedule {
-      background: #F7F7F7;
-      border-top: 1px solid #C7C7C7;
-      border-bottom: 1px solid #C7C7C7;
-      margin-bottom: 36px;
-  }
-  .hck-schedule-day1 {
-      padding-bottom: 24px;
-      border-bottom: 1px solid #C7C7C7;
-  }
-  .hck-schedule-day1,
-  .hck-schedule-day2 {
-      width: 100%;
-      margin-bottom: 24px;
-  }
-  .hck-schedule-times {
-      text-align: left;
-  }
-  .hck-schedule-times strong,
-  .hck-judging strong,
-  .hck-prizes strong {
-      font-weight: 500 !important;
-  }
-  .hck-schedule h3,
-  .hck-judging h3,
-  .hck-prizes h3,
-  .hck-details h3,
-  .hck-support h3 {
-      font-weight: 300;
-      font-size: 24px;
-      line-height: 30px;
-      color: #000000;
-      margin: 0;
-      padding: 24px 0;
-  }
-  .hck-schedule-times h4 {
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 22px;
-      margin: 0 0 12px;
-  }
-  .hck-schedule-times h4 span {
-      font-weight: 500;
-      text-transform: uppercase;
-      padding-right: 12px;
-  }
-  .hck-judging,
-  .hck-prizes,
-  .hck-details,
-  .hck-support {
-      float: none;
-      width: 100%;
-      margin-bottom: 48px;
-  }
-  .hck-judging {
-      background-image: url('/images/ico-pie.svg');
-      background-repeat: no-repeat;
-      background-position: 0 18px;
-  }
-  .hck-prizes {
-      background-image: url('/images/ico-ribbon.svg');
-      background-repeat: no-repeat;
-      background-position: 0 18px;
-  }
-  .hck-judging h3,
-  .hck-judging p,
-  .hck-prizes h3,
-  .hck-prizes p {
-      padding-left: 64px;
-  }
-  .hck-details ol li {
-      padding: 18px 0 !important;
-      border-bottom: 1px dotted #C7C7C7;
-  }
-  .hck-details ul li {
-      padding: 12px 0 !important;
-  }
-  .hck-support a:link,
-  .hck-support a:visited {
-      text-decoration: none;
-      color: #0065B8;
-      font-size: 16px;
-      font-weight: 400;
-  }
-  .hck-support a:hover {
-      text-decoration: underline;
-      color: #0087F5;
-  }
-  .hck-support a:active {
-      text-decoration: underline;
-      color: #00355F;
-  }
-  @media only screen and (min-width: 768px) {
-      #hck-cover {
-          height: 400px;
-          margin-bottom: 30px;
-      }
-      .hck-title {
-          width: 640px;
-          margin-left: -320px;
-          padding: 24px 0;
-          top: 70px;
-      }
-      .hck-title-info {
-          width: 440px;
-          margin: 0 24px 0 0;
-          color: #FFFFFF;
-          float: right;
-          text-align: left;
-      }
-      .hck-title img {
-          float: left;
-          width: 128px;
-          margin-left: 24px;
-      }
-      .hck-title h1 {
-          font-size: 34px;
-          line-height: 40px;
-          font-weight: 300;
-          margin: 12px 0 18px;
-      }
-      .hck-title h5 {
-          font-size: 18px;
-          line-height: 24px;
-          margin: 0 0 6px;
-      }
-      .hck-title p {
-          display: block;
-      }
-      .hck-container {
-          width: 750px;
-      }
-      .hck-schedule-day1 {
-          float: left;
-          width: 50%;
-          margin-bottom: 36px;
-          border-right: 1px solid #C7C7C7;
-          border-bottom: none;
-          padding-bottom: none;
-      }
-      .hck-schedule-day2 {
-          float: right;
-          width: 48%;
-          margin-bottom: 36px;
-      }
-      .hck-schedule-times {
-          padding-left: 18px;
-          width: 100%;
-      }
-      .hck-schedule h3 {
-          padding-left: 24px;
-      }
-      .hck-judging,
-      .hck-support {
-          float: left;
-          width: 49%;
-      }
-      .hck-prizes {
-          float: right;
-          width: 49%;
-      }
-      .hck-support a:link,
-      .hck-support a:visited {
-          font-size: 18px;
-      }
-  }
-  @media only screen and (min-width: 992px) {
-      #hck-cover {
-          height: 500px;
-          margin-bottom: 60px;
-      }
-      .hck-container {
-          width: 970px;
-      }
-      .hck-introduction,
-      .hck-schedule,
-      .hck-details {
-          margin-bottom: 60px;
-      }
-  }
-  @media only screen and (min-width: 1024px) {
-      .hck-introduction h4 {
-          font-weight: 400;
-          font-size: 22px;
-          line-height: 28px;
-      }
-      .hck-schedule h3,
-      .hck-judging h3,
-      .hck-prizes h3,
-      .hck-details h3,
-      .hck-support h3 {
-          font-weight: 300;
-          font-size: 28px;
-          line-height: 34px;
-          color: #000000;
-      }
-      .hck-schedule h3 {
-          padding-left: 24px;
-      }
-      .hck-schedule-times h4 {
-          font-weight: 300;
-          font-size: 18px;
-          line-height: 24px;
-          margin: 0 0 12px;
-      }
-      .hck-schedule-times h4 span {
-          font-weight: 500;
-          text-transform: uppercase;
-          padding-right: 12px;
-      }
-      .hck-judging,
-      .hck-prizes {
-          margin-bottom: 48px;
-      }
-  }
-  @media only screen and (min-width: 1200px) {
-      #hck-cover {
-          height: 500px;
-      }
-      .hck-title {
-          width: 1024px;
-          left: 50%;
-          margin-left: -512px;
-          /* Half of the width */
-      }
-      .hck-title img {
-          width: 192px;
-      }
-      .hck-title-info {
-          width: 754px;
-      }
-      .hck-title h1 {
-          font-size: 60px;
-          line-height: 72px;
-          margin: 0 0 18px;
-      }
-      .hck-title h5 {
-          font-size: 32px;
-          line-height: 60px;
-          margin: 0 0 12px;
-      }
-      .hck-title p {
-          font-size: 24px;
-          line-height: 30px;
-      }
-      .hck-container {
-          width: 1170px;
-      }
-      .hck-judging,
-      .hck-prizes {
-          margin-bottom: 60px;
-      }
-  }
-  @media only screen and (min-width: 1600px) {
-      #hck-cover {
-          height: 600px;
-      }
-      .hck-title {
-          background: none;
-      }
-  }
-  @media only screen and (min-width: 2000px) {
-      #hck-cover {
-          background-position: center center;
-      }
-  
-      .hck-title {
-          background: rgba(26, 27, 45, 0.6);
-      }
-  }
-  .tracer {
-      outline: red 1px dotted;
-  }
-    </style>
-    <style>
-      #nav-main li:nth-of-type(6) a {
-          color: white;
-      }
-      .hck-title {
-          background: rgba(26, 27, 45, 0.6);
-      }
-      #hck-cover {
-          background-image: url(https://images.trvl-media.com/media/content/shared/images/travelguides/Prague-and-vicinity-180014-desktopRetina.jpg);
-          background-size: cover;
-          background-position: center center;
-      }
-      table {
-          border: none;
-          background: none;
-      }
-      table tr {
-          background: none !important;
-      }
-    </style>
-    <div id="hck-page">
-      <!-- COVER -->
-      <section id="hck-cover">
-        <div class="hck-title">
-          <img alt="Expedia Hackathon" src="/images/ico-exphack.svg">
+    </section>
+    <!--/ COVER --><!-- INTRO -->
 
-          <div class="hck-title-info">
-            <h1>Expedia Partner Hackathon</h1>
-
-            <h5>14-16 June&nbsp;&nbsp;|&nbsp;&nbsp;Expedia Office, Prague</h5>
-
-            <p>Křižíkova 682/34a Prague, Czech Republic, 186 00</p>
-          </div>
-
-          <div class="hck-clear">&nbsp;</div>
-        </div>
-      </section>
-      <!--/ COVER -->
-      <!-- INTRO -->
-
-      <section class="hck-container hck-introduction">
+    <section class="hck-container hck-introduction">
         <h4>Come join Expedia engineers to learn
             and build on our suite of APIs for a
             chance to win great prizes!</h4>
 
-        <p>Travelers today have lots of options when it comes to booking, and we know our minds together can build unique scenarios that could positively influence our business together. This event will be a unique opportunity to discuss cool travel & tech
-          ideas and hack these concepts into reality!</p>
+        <p>Travelers
+            today have lots of options when it comes
+            to booking, and we know our minds
+            together can build unique scenarios
+            that could positively influence our
+            business together. This event will be
+            a unique opportunity to discuss cool
+            travel & tech ideas and hack these
+            concepts into reality!</p>
         <h4>Join us for Hackathon Orientation!</h4>
-        <p>Tuesday, May 31, 3:30pm GMT, 4:30pm CET
-          <br>
-          <a href="https://bluejeans.com/326600706">Click here to join the Webinar</a>
+<p>Tuesday, May 31, 3:30pm GMT, 4:30pm CET<br>
+            <a href="https://bluejeans.com/326600706">Click here to join the Webinar</a>
         </p>
-      </section>
-      <!--/ INTRO -->
-      <!-- SCHEDULE -->
+    </section>
+    <!--/ INTRO --><!-- SCHEDULE -->
 
-      <section class="hck-container hck-schedule">
+    <section class="hck-container hck-schedule">
         <h3>Event Schedule</h3>
 
         <div class="hck-schedule-day0">
-          <table cellpadding="6" class="hck-schedule-times">
-            <tbody>
-              <tr>
-                <th colspan="2">
-                  <h4><span>Day 1</span> 14th June</h4>
-                </th>
-              </tr>
-              <tr>
-                <td valign="top"><strong>6:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Registration, Networking, Happy hour</td>
-              </tr>
-            </tbody>
-          </table>
+            <table cellpadding="6" class="hck-schedule-times">
+                <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h4><span>Day 1</span> 14th June</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>6:00pm</strong></td>
+                    <td valign="top" width="100%">Registration, Networking, Happy hour</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="hck-schedule-day1">
-          <table cellpadding="6" class="hck-schedule-times">
-            <tbody>
-              <tr>
-                <th colspan="2">
-                  <h4><span>Day 2</span> 15th June</h4>
-                </th>
-              </tr>
-              <tr>
-                <td valign="top"><strong>8:45am</strong>
-                </td>
-                <td valign="top" width="100%">Registration, Setup, Breakfast</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>9:45am</strong>
-                </td>
-                <td valign="top" width="100%">Introduction and Hackathon Announcements</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>10:00am</strong>
-                </td>
-                <td valign="top" width="100%">Coding starts</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>12:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Lunch</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>3:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Afternoon snacks</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>6:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Dinner</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>8:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Return to Hotel</td>
-              </tr>
-            </tbody>
-          </table>
+            <table cellpadding="6" class="hck-schedule-times">
+                <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h4><span>Day 2</span> 15th June</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>8:45am</strong></td>
+                    <td valign="top" width="100%">Registration, Setup, Breakfast</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>9:45am</strong></td>
+                    <td valign="top" width="100%">Introduction and Hackathon Announcements</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>10:00am</strong></td>
+                    <td valign="top" width="100%">Coding starts</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>12:00pm</strong></td>
+                    <td valign="top" width="100%">Lunch</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>3:00pm</strong></td>
+                    <td valign="top" width="100%">Afternoon snacks</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>6:00pm</strong></td>
+                    <td valign="top" width="100%">Dinner</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>8:00pm</strong></td>
+                    <td valign="top" width="100%">Return to Hotel</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="hck-schedule-day2">
-          <table cellpadding="6" class="hck-schedule-times">
-            <tbody>
-              <tr>
-                <th colspan="2">
-                  <h4><span>Day 3</span> 16th June</h4>
-                </th>
-              </tr>
-              <tr>
-                <td valign="top"><strong>7:30am</strong>
-                </td>
-                <td valign="top" width="100%">Breakfast, Coding continues</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>12:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Lunch</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>1:30pm</strong>
-                </td>
-                <td valign="top" width="100%">Judges briefing starts</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>2:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Announcements</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>2:15pm</strong>
-                </td>
-                <td valign="top" width="100%">Hackathon judging starts</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>5:30pm</strong>
-                </td>
-                <td valign="top" width="100%">Hackathon complete. Return to hotel</td>
-              </tr>
-              <tr>
-                <td valign="top"><strong>7:00pm</strong>
-                </td>
-                <td valign="top" width="100%">Happy hour, food, awards ceremony</td>
-              </tr>
-            </tbody>
-          </table>
+            <table cellpadding="6" class="hck-schedule-times">
+                <tbody>
+                <tr>
+                    <th colspan="2">
+                        <h4><span>Day 3</span> 16th June</h4>
+                    </th>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>7:30am</strong></td>
+                    <td valign="top" width="100%">Breakfast, Coding continues</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>12:00pm</strong></td>
+                    <td valign="top" width="100%">Lunch</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>1:30pm</strong></td>
+                    <td valign="top" width="100%">Judges briefing starts</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>2:00pm</strong></td>
+                    <td valign="top" width="100%">Announcements</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>2:15pm</strong></td>
+                    <td valign="top" width="100%">Hackathon judging starts</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>5:30pm</strong></td>
+                    <td valign="top" width="100%">Hackathon complete. Return to hotel</td>
+                </tr>
+                <tr>
+                    <td valign="top"><strong>7:00pm</strong></td>
+                    <td valign="top" width="100%">Happy hour, food, awards ceremony</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="hck-clear">&nbsp;</div>
-      </section>
-      <!--/ SCHEDULE -->
-      <!-- JUDGING -->
+    </section>
+    <!--/ SCHEDULE --><!-- JUDGING -->
 
-      <section class="hck-container hck-2col-content">
+    <section class="hck-container hck-2col-content">
         <div class="hck-judging">
-          <h3>Judging Criteria</h3>
+            <h3>Judging Criteria</h3>
 
-          <p><strong>30% Creativity &amp; Innovation</strong>
-            <br>How new and innovative is the chosen use case</p>
+            <p><strong>30% Creativity &amp; Innovation</strong><br>
+                How new and innovative is the chosen use case</p>
 
-          <p><strong>30% Implementation completeness</strong>
-            <br>Working code trumps over fancy PowerPoint!</p>
+            <p><strong>30% Implementation completeness</strong><br>
+                Working code trumps over fancy PowerPoint!</p>
 
-          <p><strong>20% Business Potential</strong>
-          </p>
+            <p><strong>20% Business Potential</strong></p>
 
-          <p><strong>20% Innovative usage of Expedia APIs</strong>
-          </p>
+            <p><strong>20% Innovative usage of Expedia APIs</strong></p>
 
-          <p><strong>Must utilize a <a href="https://developer.expediapartnercentral.com/">supply-partner API</a> to be considered for a prize.</strong>
-          </p>
+            <p><strong>Must utilize a <a href="https://developer.expediapartnercentral.com/">supply-partner API</a> to be considered for a prize.</strong></p>
         </div>
 
         <div class="hck-prizes">
-          <h3>Prizes <em>per team</em></h3>
+            <h3>Prizes <em>per team</em></h3>
 
-          <p><strong>1st:</strong>&nbsp;&nbsp;&nbsp;200,000 Expedia+ Points</p>
+            <p><strong>1st:</strong>&nbsp;&nbsp;&nbsp;200,000 Expedia+ Points</p>
 
-          <p><strong>2nd:</strong>&nbsp;&nbsp;100,000 Expedia+ Points</p>
+            <p><strong>2nd:</strong>&nbsp;&nbsp;100,000 Expedia+ Points</p>
 
-          <p><strong>3rd:</strong>&nbsp;&nbsp;&nbsp;50,000 Expedia+ Points</p>
+            <p><strong>3rd:</strong>&nbsp;&nbsp;&nbsp;50,000 Expedia+ Points</p>
 
-          <p><strong>Additional theme-based prizes:</strong>
-          </p>
+            <p><strong>Additional theme-based prizes:</strong></p>
 
-          <p>All-Inclusive - Project with the most comprehensive supply API integration</p>
-          <p>Prêt-à-porter - Project that is the most production-ready</p>
-          <p>Happy Traveler - Project that best reduces a significant customer pain point</p>
+            <p>All-Inclusive - Project with the most comprehensive supply API integration </p>
+            <p>Prêt-à-porter - Project that is the most production-ready</p>
+            <p>Happy Traveler - Project that best reduces a significant customer pain point</p>
 
         </div>
 
         <div class="hck-clear">&nbsp;</div>
-      </section>
+    </section>
 
-      <section class="hck-container">
+    <section class="hck-container">
         <div class="hck-details" style="margin: 0 auto;">
-          <h3>Live</h3>
-          <a class="twitter-timeline" href="https://twitter.com/hashtag/ExpediaHackathon" data-widget-id="743083826985897984">#ExpediaHackathon Tweets</a>
-          <script>
-            !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-          </script>
+            <h3>Live</h3>
+            <a class="twitter-timeline"  href="https://twitter.com/hashtag/ExpediaHackathon" data-widget-id="743083826985897984">#ExpediaHackathon Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
-      </section>
+    </section>
 
-      <section class="hck-container">
+    <section class="hck-container">
         <div class="hck-details">
-          <h3>Hackathon Themes &amp; User Stories</h3>
+            <h3>Hackathon Themes &amp; User Stories</h3>
 
-          <p>Feel free to pick and hack any problem that represents a relevant, challenging, high value scenario or a current/future challenge your organization is facing.</p>
+            <p>Feel free to pick and hack any problem that represents a relevant, challenging, high value scenario or a current/future challenge your organization is facing.</p>
 
-          <p>For guidance and seed ideas, below are a few use cases we are proposing. Most of these scenarios can be accomplished using the supply partner APIs Expedia will be exposing for this event.</p>
+            <p>For guidance and seed ideas, below are a few use cases we are proposing. Most of these scenarios can be accomplished using the supply partner APIs Expedia will be exposing for this event.</p>
 
-          <p>In addition to these, we would also encourage using other open-source tools, APIs, and platforms to accomplish your goal.</p>
+            <p>In addition to these, we would also encourage using other open-source tools, APIs, and platforms to accomplish your goal.</p>
         </div>
-      </section>
-      <section class="hck-container">
+    </section>
+    <section class="hck-container">
         <div class="hck-details">
-          <h3>Lodging</h3>
-          <ol>
-            <li>As a Hotel Partner, reduce time to load and update products on Expedia, eliminate manual errors, save cost by automatically creating new Room Types and Rate Plans.
-            </li>
-            <li>As a Hotel Partner, identify any differentials and verify product mapping for hotel room types and rate plans loaded on Expedia.
-            </li>
-            <li>Fast and effective Promotion creations!</li>
-            <li>Get promotions score to better create, update promotions on Expedia.</li>
-            <li>Improve content quality for the hotels with minimal manual intervention.</li>
-            <li>Effectively manage hotel images.</li>
-            <li>Fully automate end-to-end onboarding of new hotels and save time and effort to get my hotels live on Expedia!
-            </li>
-            <li>Automate and optimize Value-Add Promotions management.</li>
-            <li>Search for Value-Add promotions available.</li>
-            <li>Discover newly added properties to my account, so I can start mapping process.</li>
-            <li>Get all RoomTypes and Rateplans for properties in Expedia system, to create structure in ChannelManager tools and do mapping (replacing PARR).
-            </li>
-            <li>Take actions to make your availability and rates competitive, by getting supplier scores for the inventory you manage.
-            </li>
-            <li>Get scoring for hotel content so you can improve content quality, build trends, make recommendations.
-            </li>
-            <li>Get demand data for hotels for better inventory management.</li>
-            <li>Get insights into lost opportunities (for example: customer viewed the hotel but did not book) to take remedial actions.
-            </li>
-          </ol>
+            <h3>Lodging</h3>
+            <ol>
+                <li>As a Hotel Partner, reduce time to load and update products on Expedia, eliminate manual errors,
+                    save cost by
+                    automatically creating new Room Types and Rate Plans.
+                </li>
+                <li>As a Hotel Partner, identify any differentials and verify product mapping for hotel room types and
+                    rate plans
+                    loaded on Expedia.
+                </li>
+                <li>Fast and effective Promotion creations!</li>
+                <li>Get promotions score to better create, update promotions on Expedia.</li>
+                <li>Improve content quality for the hotels with minimal manual intervention.</li>
+                <li>Effectively manage hotel images.</li>
+                <li>Fully automate end-to-end onboarding of new hotels and save time and effort to get my hotels live on
+                    Expedia!
+                </li>
+                <li>Automate and optimize Value-Add Promotions management.</li>
+                <li>Search for Value-Add promotions available.</li>
+                <li>Discover newly added properties to my account, so I can start mapping process.</li>
+                <li>Get all RoomTypes and Rateplans for properties in Expedia system, to create structure in
+                    ChannelManager tools
+                    and do mapping (replacing PARR).
+                </li>
+                <li>Take actions to make your availability and rates competitive, by getting supplier scores for the
+                    inventory you
+                    manage.
+                </li>
+                <li>Get scoring for hotel content so you can improve content quality, build trends, make
+                    recommendations.
+                </li>
+                <li>Get demand data for hotels for better inventory management.</li>
+                <li>Get insights into lost opportunities (for example: customer viewed the hotel but did not book) to
+                    take
+                    remedial actions.
+                </li>
+            </ol>
         </div>
 
         <div class="hck-details">
-          <h3>Event Guidelines</h3>
+            <h3>Event Guidelines</h3>
 
-          <ul>
-            <li>Come with ideas not completed code. We want you to brainstorm within your company about how you would use our APIs in your solution, which means you may need to write some code to understand our APIs to take full advantage of working with
-              our engineers. But don't go beyond tinkering with our APIs. This is meant to be a fun event and we want all teams to hack on site.
-            </li>
-            <li>Team must demo a functional application to be eligible for prizes.</li>
-            <li>All applications will be judged against the criteria published here.</li>
-            <li>Teams will have access to Expedia engineering and API experts for guidance and help.</li>
-            <li>Teams will have access to Expedia mentors for guidance on areas like business use cases, Value add, Impact, Demo presentations.
-            </li>
-            <li>Hack. Meet new people. Revolutionize Travel. Have fun while doing it!</li>
-          </ul>
+            <ul>
+                <li>Come with ideas not completed code. We want you to brainstorm within your company about how you
+                    would use our
+                    APIs in your solution, which means you may need to write some code to understand our APIs to take
+                    full
+                    advantage of working with our engineers. But don't go beyond tinkering with our APIs. This is meant
+                    to be a
+                    fun event and we want all teams to hack on site.
+                </li>
+                <li>Team must demo a functional application to be eligible for prizes.</li>
+                <li>All applications will be judged against the criteria published here.</li>
+                <li>Teams will have access to Expedia engineering and API experts for guidance and help.</li>
+                <li>Teams will have access to Expedia mentors for guidance on areas like business use cases, Value add,
+                    Impact,
+                    Demo presentations.
+                </li>
+                <li>Hack. Meet new people. Revolutionize Travel. Have fun while doing it!</li>
+            </ul>
         </div>
-      </section>
-      <!--/ EVENT DETAILS -->
-      <!-- SUPPORT -->
+    </section>
+    <!--/ EVENT DETAILS --><!-- SUPPORT -->
 
-      <section class="hck-container hck-2col-content">
+    <section class="hck-container hck-2col-content">
         <div class="hck-support">
-          <h3>Live Support Chat</h3>
+            <h3>Live Support Chat</h3>
 
-          <p><a href="https://www.hipchat.com/gDjTeWBDj" title="Live support chat on Hipchat">https://www.hipchat.com/gDjTeWBDj</a>
-          </p>
+            <p><a href="https://www.hipchat.com/gDjTeWBDj"
+                  title="Live support chat on Hipchat">https://www.hipchat.com/gDjTeWBDj</a></p>
         </div>
 
         <div class="hck-support">
-          <h3>Contact Us</h3>
+            <h3>Contact Us</h3>
 
-          <p><a href="mailto:partnerhackathonsupport@expedia.com?subject=Expedia%20Partner%20Hackathon" title="Contact Us">partnerhackathonsupport@expedia.com </a>
-          </p>
+            <p><a href="mailto:partnerhackathonsupport@expedia.com?subject=Expedia%20Partner%20Hackathon"
+                  title="Contact Us">partnerhackathonsupport@expedia.com </a>
+            </p>
         </div>
 
         <div class="hck-clear">&nbsp;</div>
-      </section>
+    </section>
 
-      <section class="hck-container hck-2col-content">
+    <section class="hck-container hck-2col-content">
         <div class="hck-support">
-          <h3>Expedia APIs</h3>
+            <h3>Expedia APIs</h3>
 
-          <p><a href="http://developer.expediapartnercentral.com" title="Expedia APIs">http://developer.expediapartnercentral.com</a>
-          </p>
+            <p><a href="http://developer.expediapartnercentral.com" title="Expedia APIs">http://developer.expediapartnercentral.com</a>
+            </p>
         </div>
 
         <div class="hck-support">
-          <h3>Terms and Conditions</h3>
+            <h3>Terms and Conditions</h3>
 
-          <p><a href="hackathon/tnc.html" title="Terms and Conditions">View the Terms and Conditions</a>.
-          </p>
+            <p><a href="hackathon/tnc.html" title="Terms and Conditions">View the Terms and Conditions</a>.
+            </p>
         </div>
 
         <div class="hck-clear">&nbsp;</div>
 
         <div class="hck-support">
-          <h3>Date and Venue</h3>
+            <h3>Date and Venue</h3>
 
-          <h4>14 - 16 June 2016</h4>
-          <a href="https://www.google.com/maps/place/K%C5%99i%C5%BE%C3%ADkova+148%2F34,+Karl%C3%ADn,+186+00+Praha-Praha+8,+Czech+Republic/@50.0920533,14.4484261,17z/data=!3m1!4b1!4m2!3m1!1s0x470b94a371342eb3:0x8c8dc1ceb19c832">Expedia
+            <h4>14 - 16 June 2016</h4>
+            <a href="https://www.google.com/maps/place/K%C5%99i%C5%BE%C3%ADkova+148%2F34,+Karl%C3%ADn,+186+00+Praha-Praha+8,+Czech+Republic/@50.0920533,14.4484261,17z/data=!3m1!4b1!4m2!3m1!1s0x470b94a371342eb3:0x8c8dc1ceb19c832">Expedia
                 Office Prague, Křižíkova 682/34a Prague, Czech Republic, 186 00</a>
         </div>
 
         <div class="hck-support">
-          <h3>Registration</h3>
+            <h3>Registration</h3>
 
-          <p><a href="https://docs.google.com/forms/d/1krr4bps0kgMd4c-tiZcPu_ByoOdkPMVM4FdRtBoTCe0/viewform" title="Registration">Register now</a>
-          </p>
+            <p><a href="https://docs.google.com/forms/d/1krr4bps0kgMd4c-tiZcPu_ByoOdkPMVM4FdRtBoTCe0/viewform"
+                  title="Registration">Register now</a>
+            </p>
         </div>
 
         <p>&nbsp;</p>
-        <iframe allowfullscreen="" frameborder="0" height="400" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.6919937096936!2d14.448426115913945!3d50.09205332100457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94a371342eb3%3A0x8c8dc1ceb19c832!2zS8WZacW-w61rb3ZhIDE0OC8zNCwgS2FybMOtbiwgMTg2IDAwIFByYWhhLVByYWhhIDgsIEN6ZWNoIFJlcHVibGlj!5e0!3m2!1sen!2sus!4v1460096959597"
-        style="border:0" width="100%" scrolling="no"></iframe>
-      </section>
+        <iframe allowfullscreen="" frameborder="0" height="400"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.6919937096936!2d14.448426115913945!3d50.09205332100457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94a371342eb3%3A0x8c8dc1ceb19c832!2zS8WZacW-w61rb3ZhIDE0OC8zNCwgS2FybMOtbiwgMTg2IDAwIFByYWhhLVByYWhhIDgsIEN6ZWNoIFJlcHVibGlj!5e0!3m2!1sen!2sus!4v1460096959597"
+                style="border:0" width="100%" scrolling="no"></iframe>
+    </section>
 
-      <section class="hck-container">
+    <section class="hck-container">
         <div class="hck-details">
-          <a name="partners"></a>
-          <h3>Partners</h3>
-          <table style="margin: 0 auto;">
-            <tr>
-              <td>
-                <img src="http://www.jumbotours.com/img/logo-jumbotours.gif" style="width:267px;"></img>
-                <!-- JumboTours Group -->
-              </td>
-              <td>
-                <img src="http://www.sabretravelnetwork.com/images/sabre-logo.png" style="width:224px;"></img>
-                <!-- Sabre -->
-              </td>
-              <td>
-                <img src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg" style="width:224px;"></img>
-                <!-- HotelBeds -->
-              </td>
-              <td>
-                <img src="https://eviivo.com/wp-content/themes/eviivo/lib/img/shared/header/eviivo_logo.svg" style="width:224px;"></img>
-                <!-- eviivo -->
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="http://site.availpro.com/wp-content/uploads/2012/05/Availpro-Logo-home.png" style="height:116px;"></img>
-                <!-- 224x116 -->
-                <!-- Availpro -->
-              </td>
-              <td>
-                <img src="http://www.edwardian.com/templates/main/images/logo.png?576152b199c05" style="height:116px;"></img>
-                <!-- Edwardian Hotels London -->
-              </td>
-              <td>
-                <img src="http://www.gestionealbergo.it/wp-content/uploads/2015/09/logo1.png" style="width:224px;"></img>
-                <!-- GestioneAlbergo -->
-              </td>
-              <td>
-                <img src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png" style="width:224px;"></img>
-                <!-- GuestCentric -->
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="http://www.hospitalitynet.org/picture/153024685/hbsi.jpg" style="width:213px;"></img>
-                <!-- HBSI -->
-              </td>
-              <td>
-                <img src="http://www.hostaway.com/images/Hostaway2-04_without_text.png" style="width:209px;"></img>
-                <!-- Hostaway -->
-              </td>
-              <td>
-                <img src="https://hoteloga.com/img/hoteloga-logo-blue@2x.png" style="width:224px;"></img>
-                <!-- HotelOGA -->
-              </td>
-              <td>
-                <img src="https://www.mybookingpal.com/img/logo.png" style="width:224px;"></img>
-                <!-- MyBookingPal -->
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="http://rategain.com/wp-content/uploads/2015/08/logo.png" style="width:224px;"></img>
-                <!-- RateGain -->
-              </td>
-              <td>
-                <img src="https://www.slimtrader.com/img/logo.png" style="width:224px;"></img>
-                <!-- SlimTrader -->
-              </td>
-              <td>
-                <span style="font-family: Roboto,sans-serif; font-size: 42px;">SWITCH.CM</span>
-                <!-- switch.cm -->
-              </td>
-              <td>
-                <img src="http://www.hotel-spider.com/template/img/Hotel-Spider_transparent.png" style="width:224px;"></img>
-                <!-- Tourisoft -->
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="http://www.hotel-online.com/News/PR2008_2nd/TrustIntlLogoNov2007.jpg" style="width:224px;"></img>
-                <!-- Trust Intl -->
-              </td>
-              <td>
-                <img src="http://www.verticalbooking.com/images/logo-vertical-booking1.png" style="width:224px;"></img>
-                <!-- VerticalBooking -->
-              </td>
-              <td>
-                <img src="http://en.wubook.net/siimgs/logo.jpg" style="width:224px;"></img>
-                <!-- WuBook -->
-              </td>
-              <td>
-                <img src="https://www.yieldplanet.com/wp-content/themes/yieldplanet/images/yieldplanet_logo.jpg" style="width:224px;"></img>
-                <!-- YieldPlanet S. A. -->
-              </td>
-            </tr>
-          </table>
+            <a name="partners"></a>
+            <h3>Partners</h3>
+            <table style="margin: 0 auto;">
+              <tr>
+            <td>
+              <img src="http://www.jumbotours.com/img/logo-jumbotours.gif" style="width:267px;"></img>
+              <!-- JumboTours Group -->
+            </td>
+            <td>
+              <img src="http://www.sabretravelnetwork.com/images/sabre-logo.png" style="width:224px;"></img>
+              <!-- Sabre -->
+            </td>
+            <td>
+              <img src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg" style="width:224px;"></img>
+              <!-- HotelBeds -->
+            </td>
+            <td>
+              <img src="https://eviivo.com/wp-content/themes/eviivo/lib/img/shared/header/eviivo_logo.svg" style="width:224px;"></img>
+              <!-- eviivo -->
+            </td>
+              </tr><tr>
+            <td>
+              <img src="http://site.availpro.com/wp-content/uploads/2012/05/Availpro-Logo-home.png" style="height:116px;"></img><!-- 224x116 -->
+              <!-- Availpro -->
+            </td>
+            <td>
+              <img src="http://www.edwardian.com/templates/main/images/logo.png?576152b199c05" style="height:116px;"></img>
+              <!-- Edwardian Hotels London -->
+            </td>
+            <td>
+              <img src="http://www.gestionealbergo.it/wp-content/uploads/2015/09/logo1.png" style="width:224px;"></img>
+              <!-- GestioneAlbergo -->
+            </td>
+            <td>
+              <img src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png" style="width:224px;"></img>
+              <!-- GuestCentric -->
+            </td>
+              </tr><tr>
+            <td>
+              <img src="http://www.hospitalitynet.org/picture/153024685/hbsi.jpg" style="width:213px;"></img>
+              <!-- HBSI -->
+            </td>
+            <td>
+              <img src="http://www.hostaway.com/images/Hostaway2-04_without_text.png" style="width:209px;"></img>
+              <!-- Hostaway -->
+            </td>
+            <td>
+              <img src="https://hoteloga.com/img/hoteloga-logo-blue@2x.png" style="width:224px;"></img>
+              <!-- HotelOGA -->
+            </td>
+            <td>
+              <img src="https://www.mybookingpal.com/img/logo.png" style="width:224px;"></img>
+              <!-- MyBookingPal -->
+            </td>
+              </tr><tr>
+            <td>
+              <img src="http://rategain.com/wp-content/uploads/2015/08/logo.png" style="width:224px;"></img>
+              <!-- RateGain -->
+            </td>
+            <td>
+              <img src="https://www.slimtrader.com/img/logo.png" style="width:224px;"></img>
+              <!-- SlimTrader -->
+            </td>
+            <td>
+              <span style="font-family: Roboto,sans-serif; font-size: 42px;">SWITCH.CM</span>
+              <!-- switch.cm -->
+            </td>
+            <td>
+              <img src="http://www.hotel-spider.com/template/img/Hotel-Spider_transparent.png" style="width:224px;"></img>
+              <!-- Tourisoft -->
+            </td>
+              </tr><tr>
+            <td>
+              <img src="http://www.hotel-online.com/News/PR2008_2nd/TrustIntlLogoNov2007.jpg" style="width:224px;"></img>
+              <!-- Trust Intl -->
+            </td>
+            <td>
+              <img src="http://www.verticalbooking.com/images/logo-vertical-booking1.png" style="width:224px;"></img>
+              <!-- VerticalBooking -->
+            </td>
+            <td>
+              <img src="http://en.wubook.net/siimgs/logo.jpg" style="width:224px;"></img>
+              <!-- WuBook -->
+            </td>
+            <td>
+              <img src="https://www.yieldplanet.com/wp-content/themes/yieldplanet/images/yieldplanet_logo.jpg" style="width:224px;"></img>
+              <!-- YieldPlanet S. A. -->
+            </td>
+              </tr>
+            </table>
         </div>
-      </section>
+    </section>
 
-    </div>
-  </div>
-  <footer class="row full-width" id="site-footer">
-    <div class="large-8 large-centered columns">
-      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
-        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
-      </div>
-      <div class="show-for-large">
-        <div class="footer-logo">&nbsp;</div>
-      </div>
-      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
-    </div>
-  </footer>
-  <input type="hidden" id="eventTrackingPageName" value="Hackathon">
-</body>
-
-</html>
+</div>
+</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Hackathon"></body></html>

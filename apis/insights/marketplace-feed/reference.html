@@ -1,432 +1,265 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reference - Marketplace Feed (Experimental)</title>
-  <link rel="stylesheet" href="/css/normalize.css">
-  <link rel="stylesheet" href="/css/foundation.min.css">
-  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="stylesheet" href="/css/he-animate.css">
-  <script src="/js/jquery.js"></script>
-  <script src="/js/vendor/modernizr.js"></script>
-  <script src="/js/highlight.pack.js"></script>
-  <script src="/js/foundation.min.js"></script>
-  <script src="/js/Core.js"></script>
-  <script src="/js/he-main.js"></script>
-  <script src="/js/he-plugins.js"></script>
-  <script src="/js/he-smoothscroll.js"></script>
-  <script src="/js/he-waypoints.js"></script>
-  <script src="/js/environment.js"></script>
-  <script>
-    $(document).ready(function() {
-        $('.api-content pre>code').each(function(i, block) {
-            hljs.highlightBlock(block);
-        });
-        Core.init();
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reference - Marketplace Feed (Experimental)</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
     });
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-79394707-1', 'auto');
-    ga('send', 'pageview');
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head>
-
-<body>
-  <div id="google_translate_element" style="display: none"></div>
-  <header id="site-navigation">
-    <nav class="row full-width" id="nav-top">
-      <div class="inner">
-        <ul>
-          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
-          </li>
-          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <nav class="row full-width" id="nav-main">
-      <div class="inner">
-        <a id="logo" href="/">
-          <img src="/images/DevLogo_40k.png">
-        </a>
-        <div class="hide-for-large" id="menu-toggle"></div>
-        <div id="menu-wrap">
-          <div class="hide-for-large"></div>
-          <ul>
-            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
-            </li>
-            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
-            </li>
-            <li class="mainlink"><a href="/systems">Systems</a>
-            </li>
-            <li class="mainlink"><a href="/developer">Developer APIs</a>
-            </li>
-            <li class="mainlink"><a href="/blog">Blog</a>
-            </li>
-            <li class="mainlink"><a href="/contact-us">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div class="row full-width">
-    <div class="off-canvas-nav-bar sticky">
-      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
-        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
-        </section>
-        <section class="middle tab-bar-section"><span class="title"></span>
-        </section>
-      </nav>
-    </div>
-  </div>
-  <div class="row full-width">
-    <div class="hide-for-small-only medium-3 large-2 columns menu">
-      <nav role="navigation" class="sidebar-nav">
-        <header>Marketplace Feed (Experimental)</header>
-        <ul class="sidebar-nav-items columns" data-magellan-expedition>
-          <li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/quickstart.html">Quick Start</a>
-          </li>
-          <li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a>
-          </li>
-          <li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a>
-          </li>
-          <li class="depth2" data-magellan-arrival="messages-endpoint"><a class="sidebar-nav-item" href="#messages-endpoint">Messages Endpoint</a>
-          </li>
-          <li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a>
-          </li>
-          <li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a>
-          </li>
-          <li class="depth2" data-magellan-arrival="events-endpoint"><a class="sidebar-nav-item" href="#events-endpoint">Events Endpoint</a>
-          </li>
-          <li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a>
-          </li>
-          <li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a>
-          </li>
-          <li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/swagger.html">Try It</a>
-          </li>
-          <li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/video.html">Video Tutorial</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-    <div class="off-canvas-wrap" data-offcanvas="">
-      <div class="inner-wrap">
-        <aside class="left-off-canvas-menu hide-for-medium"></aside>
-        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
-          <h1 id="reference" data-magellan-destination="reference">Reference</h1>
-          <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-          <p>The Marketplace Feed API requires HTTP basic auth credentials to be supplied with every request.</p>
-          <p>Credentials must match a valid hotelier username/password. If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
-          <h2 id="messages-endpoint" data-magellan-destination="messages-endpoint">Messages Endpoint</h2>
-          <pre><code>GET https://marketplace-feed.prod-p.expedia.com/v1/messages
-</code></pre>
-          <p>The <code>/v1/messages</code> endpoint returns a list of messages for a given hotel.</p>
-          <p>Every message has a set of <a href="#standard-message-properties">standard properties</a>, and may also have different <code>values</code> sub-properties specific to the message&#39;s <a href="#message-categories">category</a>.</p>
-          <p>Addition of new properties is not considered a breaking API change, and will not necessarily result in a new API version - you should build your clients with this assumption in mind.</p>
-          <p>Addition of new message categories (and their corresponding new <code>values</code> properties) is also not considered a breaking change - your client should ignore any messages belonging to a category it doesn&#39;t understand.</p>
-          <h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Parameter Type</th>
-                  <th>Data Type</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>Authorization</code>
-                  </td>
-                  <td>Header</td>
-                  <td>String</td>
-                  <td><code>Basic dGVzdDp0ZXN0</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>hotelId</code>
-                  </td>
-                  <td>Query</td>
-                  <td>String</td>
-                  <td><code>123</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>clientId</code>
-                  </td>
-                  <td>Query</td>
-                  <td>String</td>
-                  <td><code>YourOrganization</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h3 id="response" data-magellan-destination="response">Response</h3>
-          <h4 id="http-status-codes" data-magellan-destination="http-status-codes">HTTP Status Codes</h4>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Code</th>
-                  <th>Reason</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>200 OK</td>
-                  <td>Request was successful.</td>
-                </tr>
-                <tr>
-                  <td>401 Unauthorized</td>
-                  <td>Invalid username or password.</td>
-                </tr>
-                <tr>
-                  <td>403 Forbidden</td>
-                  <td>Auth credentials are valid, but user is not authorized for the requested hotel.</td>
-                </tr>
-                <tr>
-                  <td>406 Not Acceptable</td>
-                  <td>Request does not indicate acceptance of an <code>application/json</code> response.</td>
-                </tr>
-                <tr>
-                  <td>412 Precondition Failed</td>
-                  <td><code>clientId</code> and/or <code>hotelId</code> query parameters are invalid/missing.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h4 id="response-content" data-magellan-destination="response-content">Response Content</h4>
-          <p>When successful, the <code>/v1/messages</code> endpoint responds with a JSON object with <code>Content-Type: application/json</code>.</p>
-          <h5 id="top-level-properties" data-magellan-destination="top-level-properties">Top-Level Properties</h5>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>messages</code>
-                  </td>
-                  <td>Array</td>
-                  <td>A collection of <code>Message</code> objects.</td>
-                  <td><code>[]</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h5 id="standard-message-properties" data-magellan-destination="standard-message-properties">Standard Message Properties</h5>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>id</code>
-                  </td>
-                  <td>String</td>
-                  <td>A unique identifier for the message.</td>
-                  <td><code>&quot;95fbaf423d3d6c5cb32a247aedc97d64b9ae1aff&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>category</code>
-                  </td>
-                  <td>String</td>
-                  <td>The message type.</td>
-                  <td><code>&quot;Missing Inventory&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>hotelId</code>
-                  </td>
-                  <td>String</td>
-                  <td>The Expedia ID of the hotel the message is for.</td>
-                  <td><code>&quot;123&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>shortMessage</code>
-                  </td>
-                  <td>String</td>
-                  <td>A shorter version of longMessage.</td>
-                  <td><code>&quot;On 2015-10-20 you can sell 5 more rooms with Expedia. Add inventory now.&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>longMessage</code>
-                  </td>
-                  <td>String</td>
-                  <td>The text message intended for the hotelier.</td>
-                  <td><code>&quot;On 2015-10-20 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>actionURL</code>
-                  </td>
-                  <td>String</td>
-                  <td>A URL that can be used to perform actions related to the message. The value of this property may be <code>null</code>.</td>
-                  <td><code>&quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=123&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>values</code>
-                  </td>
-                  <td>Object</td>
-                  <td>An object representing attributes for this message. Properties vary according to the message <code>category</code>.</td>
-                  <td><code>{ &quot;currentRooms&quot;: 10 }</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h4 id="message-categories" data-magellan-destination="message-categories">Message Categories</h4>
-          <p>Each message may belong to one of the following categories (as indicated by its <code>category</code> property).</p>
-          <h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
-          <p>Travelers viewed the requested hotel today, but booked elsewhere.</p>
-          <h6 id="-values-properties" data-magellan-destination="-values-properties"><code>values</code> Properties</h6>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>count</code>
-                  </td>
-                  <td>Integer</td>
-                  <td>The total number of lost bookings.</td>
-                  <td><code>3</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>missedOpportunities</code>
-                  </td>
-                  <td>Array</td>
-                  <td>A collection of <code>Missed Opportunities</code> objects.</td>
-                  <td>[]</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p><code>Missed Opportunities</code> objects have the following properties:</p>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>hotelId</code>
-                  </td>
-                  <td>String</td>
-                  <td>The ID of the hotel the guest booked with.</td>
-                  <td><code>&quot;25280&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>hotelName</code>
-                  </td>
-                  <td>String</td>
-                  <td>The name of the hotel the guest booked with.</td>
-                  <td><code>&quot;The Verb Hotel&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>lostBookings</code>
-                  </td>
-                  <td>Integer</td>
-                  <td>The number of travelers who booked with this hotel after viewing the requested hotel today.</td>
-                  <td><code>2</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>details</code>
-                  </td>
-                  <td>Array</td>
-                  <td>A collection of <code>Missed Opportunity Details</code> objects.</td>
-                  <td>[]</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p><code>Missed Opportunity Details</code> objects have the following properties:</p>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>viewedPrice</code>
-                  </td>
-                  <td>Float</td>
-                  <td>The price of the requested hotel the customer viewed.</td>
-                  <td><code>123.45</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>bookedPrice</code>
-                  </td>
-                  <td>Float</td>
-                  <td>The price of the hotel the customer ended up booking.</td>
-                  <td><code>100.0</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>checkInDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The check-in date of the customer&#39;s booking (YYYY-MM-DD).</td>
-                  <td><code>&quot;2016-10-03&quot;</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h6 id="example-missed-opportunities-message" data-magellan-destination="example-missed-opportunities-message">Example Missed Opportunities Message</h6>
-          <pre><code>{
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 xxlarge-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Marketplace Feed (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/quickstart.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="messages-endpoint"><a class="sidebar-nav-item" href="#messages-endpoint">Messages Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="events-endpoint"><a class="sidebar-nav-item" href="#events-endpoint">Events Endpoint</a></li><li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/swagger.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/insights/marketplace-feed/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><aside class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas=""></aside><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>The Marketplace Feed API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<h2 id="messages-endpoint" data-magellan-destination="messages-endpoint">Messages Endpoint</h2>
+<pre><code>GET https://marketplace-feed.prod-p.expedia.com/v1/messages
+</code></pre><p>The <code>/v1/messages</code> endpoint returns a list of messages for a given hotel.</p>
+<p>Every message has a set of <a href="#standard-message-properties">standard properties</a>, and may also have different <code>values</code> sub-properties specific to the message&#39;s <a href="#message-categories">category</a>.</p>
+<p>Addition of new properties is not considered a breaking API change, and will not necessarily result in a new API version - you should build your clients with this assumption in mind.</p>
+<p>Addition of new message categories (and their corresponding new <code>values</code> properties) is also not considered a breaking change - your client should ignore any messages belonging to a category it doesn&#39;t understand.</p>
+<h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Parameter Type</th>
+<th>Data Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>Header</td>
+<td>String</td>
+<td><code>Basic dGVzdDp0ZXN0</code></td>
+</tr>
+<tr>
+<td><code>hotelId</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>123</code></td>
+</tr>
+<tr>
+<td><code>clientId</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>YourOrganization</code></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="response" data-magellan-destination="response">Response</h3>
+<h4 id="http-status-codes" data-magellan-destination="http-status-codes">HTTP Status Codes</h4>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OK</td>
+<td>Request was successful.</td>
+</tr>
+<tr>
+<td>401 Unauthorized</td>
+<td>Invalid username or password.</td>
+</tr>
+<tr>
+<td>403 Forbidden</td>
+<td>Auth credentials are valid, but user is not authorized for the requested hotel.</td>
+</tr>
+<tr>
+<td>406 Not Acceptable</td>
+<td>Request does not indicate acceptance of an <code>application/json</code> response.</td>
+</tr>
+<tr>
+<td>412 Precondition Failed</td>
+<td><code>clientId</code> and/or <code>hotelId</code> query parameters are invalid/missing.</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="response-content" data-magellan-destination="response-content">Response Content</h4>
+<p>When successful, the <code>/v1/messages</code> endpoint responds with a JSON object with <code>Content-Type: application/json</code>.</p>
+<h5 id="top-level-properties" data-magellan-destination="top-level-properties">Top-Level Properties</h5>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messages</code></td>
+<td>Array</td>
+<td>A collection of <code>Message</code> objects.</td>
+<td><code>[]</code></td>
+</tr>
+</tbody>
+</table>
+</div><h5 id="standard-message-properties" data-magellan-destination="standard-message-properties">Standard Message Properties</h5>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>String</td>
+<td>A unique identifier for the message.</td>
+<td><code>&quot;95fbaf423d3d6c5cb32a247aedc97d64b9ae1aff&quot;</code></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>String</td>
+<td>The message type.</td>
+<td><code>&quot;Missing Inventory&quot;</code></td>
+</tr>
+<tr>
+<td><code>hotelId</code></td>
+<td>String</td>
+<td>The Expedia ID of the hotel the message is for.</td>
+<td><code>&quot;123&quot;</code></td>
+</tr>
+<tr>
+<td><code>shortMessage</code></td>
+<td>String</td>
+<td>A shorter version of longMessage.</td>
+<td><code>&quot;On 2015-10-20 you can sell 5 more rooms with Expedia. Add inventory now.&quot;</code></td>
+</tr>
+<tr>
+<td><code>longMessage</code></td>
+<td>String</td>
+<td>The text message intended for the hotelier.</td>
+<td><code>&quot;On 2015-10-20 you have only 10 rooms left. Our sales forecast shows that we can sell 5 more rooms.&quot;</code></td>
+</tr>
+<tr>
+<td><code>actionURL</code></td>
+<td>String</td>
+<td>A URL that can be used to perform actions related to the message.  The value of this property may be <code>null</code>.</td>
+<td><code>&quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=123&quot;</code></td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td>Object</td>
+<td>An object representing attributes for this message.  Properties vary according to the message <code>category</code>.</td>
+<td><code>{ &quot;currentRooms&quot;: 10 }</code></td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="message-categories" data-magellan-destination="message-categories">Message Categories</h4>
+<p>Each message may belong to one of the following categories (as indicated by its <code>category</code> property).</p>
+<h5 id="missed-opportunities" data-magellan-destination="missed-opportunities">Missed Opportunities</h5>
+<p>Travelers viewed the requested hotel today, but booked elsewhere.</p>
+<h6 id="-values-properties" data-magellan-destination="-values-properties"><code>values</code> Properties</h6>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>count</code></td>
+<td>Integer</td>
+<td>The total number of lost bookings.</td>
+<td><code>3</code></td>
+</tr>
+<tr>
+<td><code>missedOpportunities</code></td>
+<td>Array</td>
+<td>A collection of <code>Missed Opportunities</code> objects.</td>
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+</div><p><code>Missed Opportunities</code> objects have the following properties:</p>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hotelId</code></td>
+<td>String</td>
+<td>The ID of the hotel the guest booked with.</td>
+<td><code>&quot;25280&quot;</code></td>
+</tr>
+<tr>
+<td><code>hotelName</code></td>
+<td>String</td>
+<td>The name of the hotel the guest booked with.</td>
+<td><code>&quot;The Verb Hotel&quot;</code></td>
+</tr>
+<tr>
+<td><code>lostBookings</code></td>
+<td>Integer</td>
+<td>The number of travelers who booked with this hotel after viewing the requested hotel today.</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>details</code></td>
+<td>Array</td>
+<td>A collection of <code>Missed Opportunity Details</code> objects.</td>
+<td>[]</td>
+</tr>
+</tbody>
+</table>
+</div><p><code>Missed Opportunity Details</code> objects have the following properties:</p>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>viewedPrice</code></td>
+<td>Float</td>
+<td>The price of the requested hotel the customer viewed.</td>
+<td><code>123.45</code></td>
+</tr>
+<tr>
+<td><code>bookedPrice</code></td>
+<td>Float</td>
+<td>The price of the hotel the customer ended up booking.</td>
+<td><code>100.0</code></td>
+</tr>
+<tr>
+<td><code>checkInDate</code></td>
+<td>String</td>
+<td>The check-in date of the customer&#39;s booking (YYYY-MM-DD).</td>
+<td><code>&quot;2016-10-03&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="example-missed-opportunities-message" data-magellan-destination="example-missed-opportunities-message">Example Missed Opportunities Message</h6>
+<pre><code>{
     &quot;id&quot;: &quot;1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Missed Opportunities&quot;,
@@ -468,82 +301,65 @@
     },
     &quot;actionURL&quot;: &quot;https://he.expediapartnercentral.com/HotelExtranet/InventoryGrid.htm?helpCtx=InventoryGrid&amp;htid=test&quot;
 }
-</code></pre>
-          <h5 id="real-time-feedback" data-magellan-destination="real-time-feedback">Real-Time Feedback</h5>
-          <p>A guest currently staying at the requested hotel has provided real-time feedback that management has not yet responded to.</p>
-          <h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>itineraryId</code>
-                  </td>
-                  <td>String</td>
-                  <td>The Expedia itineraty ID of the guest&#39;s booking.</td>
-                  <td><code>&quot;12345&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>name</code>
-                  </td>
-                  <td>String</td>
-                  <td>The name the guest used when booking.</td>
-                  <td><code>&quot;Joe Bloggs&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>startDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The guest&#39;s checkin date/time, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>endDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The guest&#39;s checkout date/time, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-13T05:00:00.000Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>createDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The date/time the feedback was created, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-11T02:16:13.456Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>updateDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The most recent date/time the feedback was updated by the guest, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-11T03:12:13.456Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>isHappy</code>
-                  </td>
-                  <td>Boolean</td>
-                  <td>When asked whether they were happy with particular details, the guest answered affirmatively in all cases.</td>
-                  <td><code>true</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h6 id="example-real-time-feedback-message" data-magellan-destination="example-real-time-feedback-message">Example Real-Time Feedback Message</h6>
-          <pre><code>{
+</code></pre><h5 id="real-time-feedback" data-magellan-destination="real-time-feedback">Real-Time Feedback</h5>
+<p>A guest currently staying at the requested hotel has provided real-time feedback that management has not yet responded to.</p>
+<h6 id="-values-properties-2" data-magellan-destination="-values-properties-2"><code>values</code> Properties</h6>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>itineraryId</code></td>
+<td>String</td>
+<td>The Expedia itineraty ID of the guest&#39;s booking.</td>
+<td><code>&quot;12345&quot;</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The name the guest used when booking.</td>
+<td><code>&quot;Joe Bloggs&quot;</code></td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td>String</td>
+<td>The guest&#39;s checkin date/time, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td>String</td>
+<td>The guest&#39;s checkout date/time, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-13T05:00:00.000Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>createDate</code></td>
+<td>String</td>
+<td>The date/time the feedback was created, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-11T02:16:13.456Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>updateDate</code></td>
+<td>String</td>
+<td>The most recent date/time the feedback was updated by the guest, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-11T03:12:13.456Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>isHappy</code></td>
+<td>Boolean</td>
+<td>When asked whether they were happy with particular details, the guest answered affirmatively in all cases.</td>
+<td><code>true</code></td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="example-real-time-feedback-message" data-magellan-destination="example-real-time-feedback-message">Example Real-Time Feedback Message</h6>
+<pre><code>{
     &quot;id&quot;: &quot;1.RiZ0ZXN0JjQwNmQwZmY4JmExYjJjM2Q0.FrIsoe4PMpoJJZx3md-ah_049CY&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Real-Time Feedback&quot;,
@@ -560,74 +376,59 @@
     },
     &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/realtime_feedback.html?htid=test&quot;
 }
-</code></pre>
-          <h5 id="hotel-review" data-magellan-destination="hotel-review">Hotel Review</h5>
-          <p>A guest has provided a review for the requested hotel that management has not yet responded to.</p>
-          <h6 id="-values-properties-3" data-magellan-destination="-values-properties-3"><code>values</code> Properties</h6>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Property</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>reviewId</code>
-                  </td>
-                  <td>String</td>
-                  <td>The Expedia review ID.</td>
-                  <td><code>&quot;123abc&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>itineraryId</code>
-                  </td>
-                  <td>String</td>
-                  <td>The Expedia itineraty ID of the guest&#39;s booking.</td>
-                  <td><code>&quot;12345&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>name</code>
-                  </td>
-                  <td>String</td>
-                  <td>The nickname the guest used when submitting the review, or <code>&quot;Anonymous&quot;</code>.</td>
-                  <td><code>&quot;Joe Bloggs&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>rating</code>
-                  </td>
-                  <td>Integer</td>
-                  <td>The rating out of five.</td>
-                  <td><code>4</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>comment</code>
-                  </td>
-                  <td>String</td>
-                  <td>The review comment.</td>
-                  <td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>createDate</code>
-                  </td>
-                  <td>String</td>
-                  <td>The date/time the review was created, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-11T02:16:13.456Z&quot;</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h6 id="example-hotel-review-message" data-magellan-destination="example-hotel-review-message">Example Hotel Review Message</h6>
-          <pre><code>{
+</code></pre><h5 id="hotel-review" data-magellan-destination="hotel-review">Hotel Review</h5>
+<p>A guest has provided a review for the requested hotel that management has not yet responded to.</p>
+<h6 id="-values-properties-3" data-magellan-destination="-values-properties-3"><code>values</code> Properties</h6>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reviewId</code></td>
+<td>String</td>
+<td>The Expedia review ID.</td>
+<td><code>&quot;123abc&quot;</code></td>
+</tr>
+<tr>
+<td><code>itineraryId</code></td>
+<td>String</td>
+<td>The Expedia itineraty ID of the guest&#39;s booking.</td>
+<td><code>&quot;12345&quot;</code></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>String</td>
+<td>The nickname the guest used when submitting the review, or <code>&quot;Anonymous&quot;</code>.</td>
+<td><code>&quot;Joe Bloggs&quot;</code></td>
+</tr>
+<tr>
+<td><code>rating</code></td>
+<td>Integer</td>
+<td>The rating out of five.</td>
+<td><code>4</code></td>
+</tr>
+<tr>
+<td><code>comment</code></td>
+<td>String</td>
+<td>The review comment.</td>
+<td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>createDate</code></td>
+<td>String</td>
+<td>The date/time the review was created, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-11T02:16:13.456Z&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="example-hotel-review-message" data-magellan-destination="example-hotel-review-message">Example Hotel Review Message</h6>
+<pre><code>{
     &quot;id&quot;: &quot;1.UiZ0ZXN0JmIzNmY4ZTM3JjEyMw.5OsCyCg5xL_3Dco5seJCbEMinRQ&quot;,
     &quot;hotelId&quot;: &quot;test&quot;,
     &quot;category&quot;: &quot;Hotel Review&quot;,
@@ -643,117 +444,97 @@
     },
     &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123&quot;
 }
-</code></pre>
-          <h2 id="events-endpoint" data-magellan-destination="events-endpoint">Events Endpoint</h2>
-          <pre><code>POST https://marketplace-feed.prod-p.expedia.com/v1/events
-</code></pre>
-          <p>The <code>/v1/events</code> endpoint provides a mechanism for partners to report analytics events back to Expedia.</p>
-          <h3 id="request" data-magellan-destination="request">Request</h3>
-          <h4 id="request-parameters-2" data-magellan-destination="request-parameters-2">Request Parameters</h4>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Parameter Type</th>
-                  <th>Data Type</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>clientId</code>
-                  </td>
-                  <td>Query</td>
-                  <td>String</td>
-                  <td><code>YourOrganization</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h4 id="request-body" data-magellan-destination="request-body">Request Body</h4>
-          <p>The <code>/v1/events</code> endpoint requires a JSON request body with <code>Content-Type: application/json</code>.</p>
-          <p>The top-level request object has the following properties:</p>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>events</code>
-                  </td>
-                  <td>Array</td>
-                  <td>A list of between 1 and 1000 <code>Event</code> objects.</td>
-                  <td><code>[{ &quot;messageId&quot;: &quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;, &quot;action&quot;: &quot;viewed&quot; }]</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p><code>Event</code> objects have the following properties:</p>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Data Type</th>
-                  <th>Description</th>
-                  <th>Example</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>messageId</code>
-                  </td>
-                  <td>String</td>
-                  <td>A valid message ID.</td>
-                  <td><code>&quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>action</code>
-                  </td>
-                  <td>String</td>
-                  <td>The user action being reported.</td>
-                  <td><code>&quot;viewed&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>timestamp</code>
-                  </td>
-                  <td>String</td>
-                  <td>An optional event timestanp, in ISO-8601 format.</td>
-                  <td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code>
-                  </td>
-                </tr>
-                <tr>
-                  <td><code>userId</code>
-                  </td>
-                  <td>String</td>
-                  <td>An optional identifier for the user who performed the action.</td>
-                  <td><code>&quot;a1b2c3d4&quot;</code>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <h6 id="valid-user-actions" data-magellan-destination="valid-user-actions">Valid User Actions</h6>
-          <p>The <code>action</code> property can have one of the following values:</p>
-          <ul>
-            <li><code>viewed</code> - A user viewed the message.</li>
-            <li><code>dismissed</code> - A user dismissed the message.</li>
-            <li><code>actioned</code> - A user performed an action associated with the message, on on your platform.</li>
-            <li><code>clickthrough</code> - A user followed a link from your platform to the <code>actionURL</code> associated with the message.</li>
-          </ul>
-          <h6 id="example-request-body" data-magellan-destination="example-request-body">Example Request Body</h6>
-          <pre><code>{
+</code></pre><h2 id="events-endpoint" data-magellan-destination="events-endpoint">Events Endpoint</h2>
+<pre><code>POST https://marketplace-feed.prod-p.expedia.com/v1/events
+</code></pre><p>The <code>/v1/events</code> endpoint provides a mechanism for partners to report analytics events back to Expedia.</p>
+<h3 id="request" data-magellan-destination="request">Request</h3>
+<h4 id="request-parameters-2" data-magellan-destination="request-parameters-2">Request Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Parameter Type</th>
+<th>Data Type</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clientId</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>YourOrganization</code></td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="request-body" data-magellan-destination="request-body">Request Body</h4>
+<p>The <code>/v1/events</code> endpoint requires a JSON request body with <code>Content-Type: application/json</code>.</p>
+<p>The top-level request object has the following properties:</p>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>events</code></td>
+<td>Array</td>
+<td>A list of between 1 and 1000 <code>Event</code> objects.</td>
+<td><code>[{ &quot;messageId&quot;: &quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;, &quot;action&quot;: &quot;viewed&quot; }]</code></td>
+</tr>
+</tbody>
+</table>
+</div><p><code>Event</code> objects have the following properties:</p>
+<div><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messageId</code></td>
+<td>String</td>
+<td>A valid message ID.</td>
+<td><code>&quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;</code></td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>String</td>
+<td>The user action being reported.</td>
+<td><code>&quot;viewed&quot;</code></td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>String</td>
+<td>An optional event timestanp, in ISO-8601 format.</td>
+<td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code></td>
+</tr>
+<tr>
+<td><code>userId</code></td>
+<td>String</td>
+<td>An optional identifier for the user who performed the action.</td>
+<td><code>&quot;a1b2c3d4&quot;</code></td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="valid-user-actions" data-magellan-destination="valid-user-actions">Valid User Actions</h6>
+<p>The <code>action</code> property can have one of the following values:</p>
+<ul>
+<li><code>viewed</code> - A user viewed the message.</li>
+<li><code>dismissed</code> - A user dismissed the message.</li>
+<li><code>actioned</code> - A user performed an action associated with the message, on on your platform.</li>
+<li><code>clickthrough</code> - A user followed a link from your platform to the <code>actionURL</code> associated with the message.</li>
+</ul>
+<h6 id="example-request-body" data-magellan-destination="example-request-body">Example Request Body</h6>
+<pre><code>{
   &quot;events&quot;: [
     { &quot;messageId&quot;: &quot;1.TSZ0ZXN0JjNjNzI2NWU1JjIwMTYtMDEtMjk.P1lEB5NXX9auwJ0n3gmGP_Vk4Bw&quot;, &quot;action&quot;: &quot;viewed&quot; },
     { &quot;messageId&quot;: &quot;1.TSZ0ZXN0Jjg5ZWJjYWNjJjIwMTYtMDItMDI.2AemHSXvRPRAy31UdJ_VpS2Fr94&quot;, &quot;action&quot;: &quot;clickthrough&quot;, &quot;timestamp&quot;: &quot;2015-11-11T01:00:00.000Z&quot; },
@@ -761,53 +542,32 @@
     { &quot;messageId&quot;: &quot;1.TyZ0ZXN0JmIwMmNjMTM0JjIwMTYtMDEtMjgmMw.jyNGmzZJN9McnS41iLL3946V0VE&quot;, &quot;action&quot;: &quot;dismissed&quot; }
   ]
 }
-</code></pre>
-          <h3 id="response-2" data-magellan-destination="response-2">Response</h3>
-          <h4 id="http-status-codes-2" data-magellan-destination="http-status-codes-2">HTTP Status Codes</h4>
-          <div>
-            <table>
-              <thead>
-                <tr>
-                  <th>Code</th>
-                  <th>Reason</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>202 Accepted</td>
-                  <td>Request was successfully validated and has been queued for processing.</td>
-                </tr>
-                <tr>
-                  <td>412 Precondition Failed</td>
-                  <td><code>clientId</code> query parameter and/or request body is invalid.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>If a HTTP 4XX response status (such as <code>412 Precondition Failed</code>) is returned, the entire request is ignored and none of the events are queued for processing.</p>
-          <p>Specific reasons for a <code>412 Precondition Failed</code> response status include:</p>
-          <ul>
-            <li>The <code>clientId</code> query parameter is missing or invalid.</li>
-            <li>The <code>events</code> array is missing or does not have between 1 and 1000 events.</li>
-            <li>A <code>messageId</code> for one of the events is invalid.</li>
-            <li>An <code>action</code> for one of the events is missing or invalid.</li>
-          </ul>
-        </div>
-        <a class="exit-off-canvas hide-for-medium"></a>
-      </div>
-    </div>
-  </div>
-  <footer class="row full-width" id="site-footer">
-    <div class="large-8 large-centered columns">
-      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
-        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
-      </div>
-      <div class="show-for-large">
-        <div class="footer-logo">&nbsp;</div>
-      </div>
-      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
-    </div>
-  </footer>
-</body>
-
-</html>
+</code></pre><h3 id="response-2" data-magellan-destination="response-2">Response</h3>
+<h4 id="http-status-codes-2" data-magellan-destination="http-status-codes-2">HTTP Status Codes</h4>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>202 Accepted</td>
+<td>Request was successfully validated and has been queued for processing.</td>
+</tr>
+<tr>
+<td>412 Precondition Failed</td>
+<td><code>clientId</code> query parameter and/or request body is invalid.</td>
+</tr>
+</tbody>
+</table>
+</div><p>If a HTTP 4XX response status (such as <code>412 Precondition Failed</code>) is returned, the entire request is ignored and none of the events are queued for processing.</p>
+<p>Specific reasons for a <code>412 Precondition Failed</code> response status include:</p>
+<ul>
+<li>The <code>clientId</code> query parameter is missing or invalid.</li>
+<li>The <code>events</code> array is missing or does not have between 1 and 1000 events.</li>
+<li>A <code>messageId</code> for one of the events is invalid.</li>
+<li>An <code>action</code> for one of the events is missing or invalid.</li>
+</ul>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
