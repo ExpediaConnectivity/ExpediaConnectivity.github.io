@@ -1,355 +1,380 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Blog - APIs for Expedia Partners</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Expedia Partner APIs for developers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - APIs for Expedia Partners</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="full-width">  <style>
-.blog-author {
-    padding: 0px 5px 5px 5px;
-    text-align: right;
-    color: #B1B1B1;
-}
-.blog-content {
-    padding: 20px;
-    text-align: justify;
-}
-.blog-content a {
-        text-decoration: underline;
-}
-.blog-date {
-    padding: 10px 20px 10px 20px;
-    text-align: left;
-    color: #B1B1B1;
-}
-.blog-post {
-    background: #F8F8F8;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border: 0px none #000000;
-    /*border-style: solid;
-    border-width: 1px;*/
-    box-shadow: 0px 2px #c7c7c7;
-}
-.blog-spacer {
-    height: 100px;
-}
-.blog-spacer-head {
-    height: 50px;
-}
-.blog-tags {
-    font-size: 12px;
-    padding: 10px 20px 10px 20px;
-    text-align: right;
-}
-.blog-tag {
-    background-color: #008CBA;
-}
-.blog-title {
-    padding: 10px 20px 10px;
-    text-align: justify;
-    background-color: #E5E5E5;
-    border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
-    -webkit-border-radius: 5px 5px 0px 0px;
-    border: 0px none #000000;
-}
-
-h1 {
-    color: #B1B1B1;
-    font-size: 2em;
-    margin: 0 0;
-    text-align: center;
-}
-@media only screen and (min-width: 705px) {
-    h1 {
-        font-size: 2.5em;
-    }
-}
-@media only screen and (min-width: 840px) {
-    h1 {
-        font-size: 3em;
-    }
-}
-@media only screen and (min-width: 1025px) {
-    h1 {
-        font-size: 3.5em;
-    }
-}
-h2 {
-    font-size: 1.4em;
-    margin: 0 0;
-    padding: 0px;
-}
-@media only screen and (min-width: 805px) {
-    h2 {
-        font-size: 2em;
-    }
-}
-</style>
-<section class='hero hero-pool'>
-    <div class='inner'>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="full-width">
+    <style>
+      .blog-author {
+          padding: 0px 5px 5px 5px;
+          text-align: right;
+          color: #B1B1B1;
+      }
+      .blog-content {
+          padding: 20px;
+          text-align: justify;
+      }
+      .blog-content a {
+              text-decoration: underline;
+      }
+      .blog-date {
+          padding: 10px 20px 10px 20px;
+          text-align: left;
+          color: #B1B1B1;
+      }
+      .blog-post {
+          background: #F8F8F8;
+          border-radius: 5px 5px 5px 5px;
+          -moz-border-radius: 5px 5px 5px 5px;
+          -webkit-border-radius: 5px 5px 5px 5px;
+          border: 0px none #000000;
+          /*border-style: solid;
+          border-width: 1px;*/
+          box-shadow: 0px 2px #c7c7c7;
+      }
+      .blog-spacer {
+          height: 100px;
+      }
+      .blog-spacer-head {
+          height: 50px;
+      }
+      .blog-tags {
+          font-size: 12px;
+          padding: 10px 20px 10px 20px;
+          text-align: right;
+      }
+      .blog-tag {
+          background-color: #008CBA;
+      }
+      .blog-title {
+          padding: 10px 20px 10px;
+          text-align: justify;
+          background-color: #E5E5E5;
+          border-radius: 5px 5px 0px 0px;
+          -moz-border-radius: 5px 5px 0px 0px;
+          -webkit-border-radius: 5px 5px 0px 0px;
+          border: 0px none #000000;
+      }
+      
+      h1 {
+          color: #B1B1B1;
+          font-size: 2em;
+          margin: 0 0;
+          text-align: center;
+      }
+      @media only screen and (min-width: 705px) {
+          h1 {
+              font-size: 2.5em;
+          }
+      }
+      @media only screen and (min-width: 840px) {
+          h1 {
+              font-size: 3em;
+          }
+      }
+      @media only screen and (min-width: 1025px) {
+          h1 {
+              font-size: 3.5em;
+          }
+      }
+      h2 {
+          font-size: 1.4em;
+          margin: 0 0;
+          padding: 0px;
+      }
+      @media only screen and (min-width: 805px) {
+          h2 {
+              font-size: 2em;
+          }
+      }
+    </style>
+    <section class='hero hero-pool'>
+      <div class='inner'>
         <h1>Expedia Connectivity Blog</h1>
-    </div>
-</section>
-<a name="post-hackathon"></a>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+      </div>
+    </section>
+    <a name="post-hackathon"></a>
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-spacer-head">&nbsp;</div>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title">
-                <h2>Expedia Connectivity Partner Hackathon</h2>
+          <div class="blog-title">
+            <h2>Expedia Connectivity Partner Hackathon</h2>
+          </div>
+          <div class="row">
+            <div class="small-4 large-5 columns">
+              <div class="blog-date">
+                <span title="11th of August, 2016">2016-08-11</span>
+              </div>
             </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="11th of August, 2016">2016-08-11</span>
-                    </div>
-                </div>
-                <div class="small-4 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">hackathon</span>
-                    </div>
-                </div>
+            <div class="small-4 large-5 columns">
+              <div class="blog-tags">
+                <span class="blog-tag label">hackathon</span>
+              </div>
             </div>
-            <div class="blog-content">
-                40+ futurists gathered in Prague to brainstorm, create and present their solutions to drive more bookings and revenue for hotels, using current and experimental APIs.<br/><br/>
+          </div>
+          <div class="blog-content">
+            40+ futurists gathered in Prague to brainstorm, create and present their solutions to drive more bookings and revenue for hotels, using current and experimental APIs.
+            <br/>
+            <br/>The hackathon provided us direct feedback: nearly 50 actionable improvements. Our teams are busy converting these into working solutions to drive increased benefits to hoteliers and simplify adoption of our API's.
+            <br/>
+            <br/>We invite you to watch this video that captures the vibe, energy and productivity of this event.
+            <br/>
+            <br/>
 
-                The hackathon provided us direct feedback: nearly 50 actionable improvements. Our teams are busy converting these into working solutions to drive increased benefits to hoteliers and simplify adoption of our API's.<br/><br/>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/9yWe6IoxuG0" frameborder="0" allowfullscreen></iframe>
+            <br/>
+            <br/>
 
-                We invite you to watch this video that captures the vibe, energy and productivity of this event.<br/><br/>
+            <strong>1st Place: <img style="height:2em;" src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg"/></strong>
+            creating an image management tools for hotels to bulk upload, identify and categorize images.
+            <br/>
+            <br/>
 
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/9yWe6IoxuG0" frameborder="0" allowfullscreen></iframe><br/><br/>
+            <strong>2nd Place: <img style="height:2em;" src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png"/></strong>
+            creating a mobile application for hotels to optimize their visibility and room production in Expedia's market place.
+            <br/>
+            <br/>
 
-                <strong>1st Place: <img style="height:2em;" src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg"/></strong>
-                creating an image management tools for hotels to bulk upload, identify and categorize images.<br/><br/>
+            <strong>3rd Place: SWITCH.CM</strong>
+            creating a rapid onboarding application based on externally available information about hotels.
+            <br/>
+            <br/>
 
-                <strong>2nd Place: <img style="height:2em;" src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png"/></strong>
-                creating a mobile application for hotels to optimize their visibility and room production in Expedia's market place.<br/><br/>
+            <strong>All-Inclusive Award:</strong> integrated most number of APIs into their project Tourisoft
+            <br/>
+            <br/>
 
-                <strong>3rd Place: SWITCH.CM</strong>
-                creating a rapid onboarding application based on externally available information about hotels.<br/><br/>
+            <strong>Prêt-a-Porter Award x 2:</strong> developed the most production-ready application Edwardian Hotels JumboTours
+            <br/>
+            <br/>
 
-                <strong>All-Inclusive Award:</strong> integrated most number of APIs into their project
-                Tourisoft<br/><br/>
+            <strong>Happy Traveller Award:</strong> solved the biggest customer pain B2B/C Hostaway
+            <br/>
+            <br/>
 
-                <strong>Prêt-a-Porter Award x 2:</strong> developed the most production-ready application
-                Edwardian Hotels
-                JumboTours<br/><br/>
-
-                <strong>Happy Traveller Award:</strong> solved the biggest customer pain B2B/C
-                Hostaway<br/><br/>
-
-                <strong>Coolest Gizmo Award:</strong> a beautiful example of the Internet of Things (IoT)
-                HotelOGA
-            </div>
+            <strong>Coolest Gizmo Award:</strong> a beautiful example of the Internet of Things (IoT) HotelOGA
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<a name="value-add-promo"></a>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <a name="value-add-promo"></a>
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-spacer">&nbsp;</div>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title">
-                <h2>Are you ready for Value Add Promotions?</h2>
+          <div class="blog-title">
+            <h2>Are you ready for Value Add Promotions?</h2>
+          </div>
+          <div class="row">
+            <div class="small-4 large-5 columns">
+              <div class="blog-date">
+                <span title="9th of June, 2016">2016-06-09</span>
+              </div>
             </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="9th of June, 2016">2016-06-09</span>
-                    </div>
-                </div>
-                <div class="small-4 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">value add</span>
-                    </div>
-                </div>
+            <div class="small-4 large-5 columns">
+              <div class="blog-tags">
+                <span class="blog-tag label">value add</span>
+              </div>
             </div>
-            <div class="blog-content">
-                <strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.
+          </div>
+          <div class="blog-content">
+            <strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.
 
-                <br/>
-                <br/>
-                <strong>When are Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Partners in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.
+            <br/>
+            <br/>
+            <strong>When are Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Partners in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.
 
-                <br/>
-                <br/>
-                <strong>What Does this Mean?</strong> Your customers will be invited to create Value Add Promotions for Expedia Brand Websites. To be successful, your systems must consume and pass the relevant information down to the PMS so that your customers can view Value Add information in the reservation details when checking in their guests.
+            <br/>
+            <br/>
+            <strong>What Does this Mean?</strong> Your customers will be invited to create Value Add Promotions for Expedia Brand Websites. To be successful, your systems must consume and pass the relevant information down to the PMS so that your customers
+            can view Value Add information in the reservation details when checking in their guests.
 
-                <br/>
-                <br/>
-                <strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.
+            <br/>
+            <br/>
+            <strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request
+            field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.
 
-                <br/>
-                <br/>
-                For Partners on Expedia QuickConnect (EQC) – Specifics on Value Adds and the new Special Request 6 field can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>. A specific examples of Special Request 6 in the XML can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html#booking-retrieval-response-2-new-bookings-returned-with-value-add-promotion">Sample Messages</a> sections.
+            <br/>
+            <br/>For Partners on Expedia QuickConnect (EQC) – Specifics on Value Adds and the new Special Request 6 field can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>.
+            A specific examples of Special Request 6 in the XML can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html#booking-retrieval-response-2-new-bookings-returned-with-value-add-promotion">Sample Messages</a> sections.
 
-                <br/>
-                <br/>
-                For Partners on Booking Notification – Specifics on Value Adds and the new Special Request 6 field can be found in the "Hotel Reservation Notification RQ/RS" section of the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq">Booking Notification API Definition</a>.
+            <br/>
+            <br/>For Partners on Booking Notification – Specifics on Value Adds and the new Special Request 6 field can be found in the "Hotel Reservation Notification RQ/RS" section of the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq">Booking Notification API Definition</a>.
 
-                <br/>
-                <br/>
-                <strong>What To Do Today?</strong> Review the EQC Booking Retrieval specification to make sure that you can support the new Special Request field to support this critical feature in Expedia Bookings. If you cannot support it yet please designate time for your teams to work on making any mapping changes or updates required to support it by <strong>July 15th, 2016</strong>.
+            <br/>
+            <br/>
+            <strong>What To Do Today?</strong> Review the EQC Booking Retrieval specification to make sure that you can support the new Special Request field to support this critical feature in Expedia Bookings. If you cannot support it yet please designate
+            time for your teams to work on making any mapping changes or updates required to support it by <strong>July 15th, 2016</strong>.
 
-                <br/>
-                <br/>
-                <strong>PMS is the Key!</strong> Consuming the Special Request field is not enough on its own. It is critical that the Value Add information is also passed to all of the PMS providers you connect with.
+            <br/>
+            <br/>
+            <strong>PMS is the Key!</strong> Consuming the Special Request field is not enough on its own. It is critical that the Value Add information is also passed to all of the PMS providers you connect with.
 
-                <br/>
-                <br/>
-                <strong>Don’t Wait to Take Action!</strong> Supporting Value Add Promotions is a requirement for certification. Please take a minute to let us know where you are in the process of adopting Value Adds <a href="http://goo.gl/forms/S2cvhQHwiYxjixA42">here</a>. If you cannot support Value Add Promotions at this time, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a>. We will work with you to ensure you are prepared by July.
+            <br/>
+            <br/>
+            <strong>Don’t Wait to Take Action!</strong> Supporting Value Add Promotions is a requirement for certification. Please take a minute to let us know where you are in the process of adopting Value Adds <a href="http://goo.gl/forms/S2cvhQHwiYxjixA42">here</a>.
+            If you cannot support Value Add Promotions at this time, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a>. We will work with you
+            to ensure you are prepared by July.
 
-                <br/>
-                <br/>
-                We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a> or your Account Manager.
+            <br/>
+            <br/>We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a> or
+            your Account Manager.
 
-                <br/>
-                <br/>
-                <strong>Thank you</strong>
-            </div>
-            <div class="blog-author">Value Add Team</div>
+            <br/>
+            <br/>
+            <strong>Thank you</strong>
+          </div>
+          <div class="blog-author">Value Add Team</div>
         </div>
+      </div>
     </div>
-</div>
-<a name="delete-old-rate-plans"></a>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <a name="delete-old-rate-plans"></a>
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-spacer">&nbsp;</div>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-post">
-            <div class="blog-title">
-                <h2>Delete those old rate plans</h2>
+          <div class="blog-title">
+            <h2>Delete those old rate plans</h2>
+          </div>
+          <div class="row">
+            <div class="small-4 large-5 columns">
+              <div class="blog-date">
+                <span title="3rd of June, 2016">2016-06-03</span>
+              </div>
             </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="3rd of June, 2016">2016-06-03</span>
-                    </div>
-                </div>
-                <div class="small-4 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">product</span>
-                    </div>
-                </div>
+            <div class="small-4 large-5 columns">
+              <div class="blog-tags">
+                <span class="blog-tag label">product</span>
+              </div>
             </div>
-            <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.
+          </div>
+          <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second
+            is that we will deliver new functionality incrementally.
 
-                <br/>
-                <br/>
-                Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.
+            <br/>
+            <br/>Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact
+            on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.
 
-                <br/>
-                <br/>
-                As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for
-                <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
+            <br/>
+            <br/>As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API
+            documentation for
+            <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
 
-            </div>
-            <div class="blog-author">Product API Team</div>
+          </div>
+          <div class="blog-author">Product API Team</div>
         </div>
+      </div>
     </div>
-</div>
-<div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="row">
+      <div class="small-8 small-centered large-10 large-centered columns">
         <div class="blog-spacer">&nbsp;</div>
+      </div>
     </div>
-</div>
-</div><footer id="site-footer" class="row full-width">
+  </div>
+  <footer class="row full-width" id="site-footer">
     <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
-        </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Blog"/></body></html>
+  </footer>
+  <input type="hidden" id="eventTrackingPageName" value="Blog">
+</body>
+
+</html>

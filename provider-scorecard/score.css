@@ -27,7 +27,7 @@
   height: 8em !important;
 }
 .scorecard-row .scorecard-column .border {
-  border: 1px solid ghostwhite;
+  border: 1px solid lightgrey;
   height: 6em;
   padding-top: 1em;
   margin-bottom: 50px;
@@ -39,6 +39,7 @@
 .scorecard-row .scorecard-column .has-tip {
   font-weight: normal;
   color: inherit;
+  display: inherit;
 }
 .scorecard-row .scorecard-column * {
   line-height: 1em;
@@ -69,25 +70,38 @@
 }
 .scorecard-row .scorecard-column > .green {
   background: #cbe9cd;
+  background: linear-gradient(to right, #cbe9cd 0%, #cbe9cd 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
 }
 .scorecard-row .scorecard-column > .green .value {
   color: darkgreen;
 }
-.scorecard-row .scorecard-column > .green .state {
+.scorecard-row .scorecard-column > .feature-green,
+.scorecard-row .scorecard-column .solid-background.green {
+  background: #cbe9cd;
+}
+.scorecard-row .scorecard-column > .feature-green .state,
+.scorecard-row .scorecard-column .solid-background.green .state {
   color: darkgreen;
 }
 .scorecard-row .scorecard-column > .red {
   background: #F8E5D8;
+  background: linear-gradient(to right, #f8e5d8 0%, #f8e5d8 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
 }
 .scorecard-row .scorecard-column > .red .value {
   color: #de8344;
 }
-.scorecard-row .scorecard-column > .red .state {
-  color: darkred;
+.scorecard-row .scorecard-column > .feature-red,
+.scorecard-row .scorecard-column .solid-background.red {
+  background: #F8E5D8;
 }
-.scorecard-row .padding-fix {
-  padding: 0 0 !important;
+.scorecard-row .scorecard-column > .feature-red .state,
+.scorecard-row .scorecard-column .solid-background.red .state {
+  color: darkred;
 }
 hr {
   margin-bottom: 3em;
+  max-width: 100%;
+}
+.tooltip {
+  min-width: 200px;
 }

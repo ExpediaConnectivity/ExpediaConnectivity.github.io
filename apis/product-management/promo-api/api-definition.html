@@ -1,852 +1,980 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Definition - Promo API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Definition - Promo API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Promo API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="api-definition"><a class="sidebar-nav-item" href="#api-definition">API Definition</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="http-headers"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a></li><li class="depth2" data-magellan-arrival="https-status-codes"><a class="sidebar-nav-item" href="#https-status-codes">HTTPS Status Codes</a></li><li class="depth2" data-magellan-arrival="promo-create-operation"><a class="sidebar-nav-item" href="#promo-create-operation">Promo Create Operation</a></li><li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="promo-score-preview"><a class="sidebar-nav-item" href="#promo-score-preview">Promo Score Preview</a></li><li class="depth3" data-magellan-arrival="request-2"><a class="sidebar-nav-item" href="#request-2">Request</a></li><li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a></li><li class="depth2" data-magellan-arrival="promo-read-operation"><a class="sidebar-nav-item" href="#promo-read-operation">Promo Read Operation</a></li><li class="depth3" data-magellan-arrival="request-3"><a class="sidebar-nav-item" href="#request-3">Request</a></li><li class="depth3" data-magellan-arrival="response-3"><a class="sidebar-nav-item" href="#response-3">Response</a></li><li class="depth2" data-magellan-arrival="promo-modify-operation"><a class="sidebar-nav-item" href="#promo-modify-operation">Promo Modify Operation</a></li><li class="depth3" data-magellan-arrival="request-4"><a class="sidebar-nav-item" href="#request-4">Request</a></li><li class="depth3" data-magellan-arrival="response-4"><a class="sidebar-nav-item" href="#response-4">Response</a></li><li class="depth2" data-magellan-arrival="error-codes"><a class="sidebar-nav-item" href="#error-codes">Error Codes</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/faq-guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/examples.html">Examples</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
-<p>The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering on the Expedia marketplace.</p>
-<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>Partner must include a valid username/password in the HTTP header of the request using the below format: </p>
-<pre><code>Authorization: Basic {username and password encoded by Base64}
-</code></pre><p>Example: </p>
-<pre><code>Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
-</code></pre><p>Where &quot;RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&quot; is the string &quot;EQCtest12933870:ew67nk33&quot; (username:password) Base64-encoded.</p>
-<p>For more information about getting started for the first time, and authorization, please refer to the FAQ &amp; Guides section.</p>
-<h2 id="http-headers" data-magellan-destination="http-headers">HTTP Headers</h2>
-<div><table>
-<thead>
-<tr>
-<th>Header</th>
-<th>Type</th>
-<th>Required</th>
-<th>Input Format</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Authorization</td>
-<td>String</td>
-<td>Yes</td>
-<td>Authorization: Basic {username: password encoded by Base64}</td>
-</tr>
-<tr>
-<td>Content-Type</td>
-<td>String</td>
-<td>Yes for Promo Create and Modify. No for Promo Read</td>
-<td>Content-Type: application/json</td>
-</tr>
-<tr>
-<td>Accept</td>
-<td>String</td>
-<td>Yes</td>
-<td>Accept: application/json</td>
-</tr>
-<tr>
-<td>Request-ID</td>
-<td>UUID</td>
-<td>No</td>
-<td>Tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response.</td>
-</tr>
-</tbody>
-</table>
-</div><h2 id="https-status-codes" data-magellan-destination="https-status-codes">HTTPS Status Codes</h2>
-<p>The following HTTP status code may be returned by the Promo API.</p>
-<div><table>
-<thead>
-<tr>
-<th>HTTP Status Code</th>
-<th>Text</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td>Success. This code is returned after a promo score is successfully retrieved or after a promo is successfully modified.</td>
-</tr>
-<tr>
-<td>201</td>
-<td>Created</td>
-<td>Created. This code is returned after a promo is successfully created.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>Bad Request</td>
-<td>Parsing error. The request was invalid or other client side error. Error code range (2001, 3999).</td>
-</tr>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-<td>Authentication error. Username/password was missing or invalid. Error code range (1001, 1099).</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-<td>Authorization error. Username/password was not authorized to create promotion or username/password not associated with the hotel. Error code range (1100, 1999).</td>
-</tr>
-<tr>
-<td>409</td>
-<td>Conflict</td>
-<td>Duplicate error. The same promo create request is sent more than once. Error code 3729 or 3730.</td>
-</tr>
-<tr>
-<td>500</td>
-<td>Internal Server Error</td>
-<td>System error. Error code range (4000, 9999).</td>
-</tr>
-</tbody>
-</table>
-</div><hr>
-<h2 id="promo-create-operation" data-magellan-destination="promo-create-operation">Promo Create Operation</h2>
-<p>The Promo Create Operation supports two types of promotions.</p>
-<ul>
-<li>Promotion with percent (%) discount: applicable to any type of hotel/product.</li>
-<li>Promotion with amount ($) discount: only applicable to HotelCollect-only properties.</li>
-</ul>
-<p>Each create request is for a single promotion. The API performs duplicate check based on all fields in the request. In other words if the same request is sent twice by the partner, the second request is considered a duplicate.</p>
-<p>In case of a duplicate, the service returns an HTTP 409 (Conflict error) indicating a duplicate promotion already exists and the duplicate request is ignored. The service returns error code 3729 or 3730 in the response payload for duplicate request error. </p>
-<h3 id="request" data-magellan-destination="request">Request</h3>
-<p>The request is sent to the below endpoint:
-<a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotelid}/promos">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotelid}/promos</a></p>
-<p>The request consists of the full URL including the header and the payload. </p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>Yes</td>
-<td>The promotion name can only include numbers and Latin letters. It has 80 characters limit including non-leading and trailing spaces. The promotion will be created in the Expedia system with the name provided by the partner, and this name will be returned in the booking message when the promotion is applied to the booking.</td>
-</tr>
-<tr>
-<td>travelDateStart</td>
-<td>Date</td>
-<td>Yes</td>
-<td>The travel start date during which the Promotion is in effect. It must be current or in the future. Accept date in ISO 8601 format: YYYY-MM-DD (e.g. 2014-09-16).</td>
-</tr>
-<tr>
-<td>travelDateEnd</td>
-<td>Date</td>
-<td>Yes</td>
-<td>The travel end date during which the Promotion is in effect. It must be later than the travel start date. Accept date in ISO 8601 format: YYYY-MM-DD (e.g. 2014-12-31).</td>
-</tr>
-<tr>
-<td>bookDateTimeStart</td>
-<td>DateTime</td>
-<td>Yes</td>
-<td>The start date and time when this promotion becomes available for booking. It must be current or in the future and cannot be later than the travel start date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00). Time portion is required. Promo API will return error code 3010 if the time portion is missing. The date time is in the hotel local time zone. Time zone offset is not accepted. Promo API will return error code 3010 (schema validation error) if the request contains time zone offset (e.g. 2014-09-16T18:00:00+02:00).</td>
-</tr>
-<tr>
-<td>bookDateTimeEnd</td>
-<td>DateTime</td>
-<td>Yes</td>
-<td>The end date and time when this promotion is no longer available for booking. It must be later than the effective start date and cannot be later than the travel end date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00). Same as for the bookDateTimeStart field: - Time portion is required. - Time zone offset is not allowed.</td>
-</tr>
-<tr>
-<td>percent</td>
-<td>positiveInteger</td>
-<td>Yes</td>
-<td>Used for percent (%) discount. The percentage discount applies to all nights of stay. The range must be between 10 and 75 inclusively, in increments of 1%. Request should contain either the percent field or the amount field, but not both at the same time.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td>Decimal</td>
-<td>No</td>
-<td>Used for amount ($) discount. The amount discount applies to all nights of stay. The range must be between 1 and 12,000,000 inclusive. Limitation: amount discount can be used only by HotelCollect-only properties. Request should contain either the percent field or the amount field, but not both at the same time.</td>
-</tr>
-<tr>
-<td>minLOS</td>
-<td>positiveInteger</td>
-<td>Yes</td>
-<td>The minimum night(s) that guest must stay. The range must be between 1 and 4 inclusively.</td>
-</tr>
-<tr>
-<td>minAdvBookDays</td>
-<td>Int</td>
-<td>No</td>
-<td>The minimum days before a travel date that the booking can be made. Optional, if not provided, means bookings can be made up until check-in day, assuming other constraints are met. Value between 0 and 500.</td>
-</tr>
-<tr>
-<td>mobileOnly</td>
-<td>Boolean</td>
-<td>Yes</td>
-<td>Should this promotion only be displayed on mobile devices (available through smart phones and tablets)</td>
-</tr>
-<tr>
-<td>RatePlan/id</td>
-<td>String</td>
-<td>Yes</td>
-<td>The unique identifier for the rate plan. It must be numeric or numeric + &#39;A&#39;. At least one rate plan ID for an active Expedia rate plan is required. Derived rate plan IDs should never be provided, as the promotion will always be attached to the parent. If a derived rate plan is provided, the promo will be created on the parent. If the same promo already exists on the parent, it will return an error.</td>
-</tr>
-<tr>
-<td>TravelDateBlackout/start &amp; end</td>
-<td>Date Accept 0 or more blackout start &amp; end dates</td>
-<td>Yes</td>
-<td>Blackout period is defined by start and end dates. The blackout period must overlap with travel start and end dates. The blackout end date must be later than the blackout start date. In JSON format, use TravelDateBlackout: [] to indicate no blackout date for this promo.</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response" data-magellan-destination="response">Response</h3>
-<p>After the request is processed by the Promo API, a response is returned back synchronously to the partner. The response will contain an HTTP status code in the header and a response payload.</p>
-<p>In case of a success, the service generates a unique identifier for the newly created promotion, which is returned in the response payload along with all other promotion parameters from the original request. The promotion status is set to Active by default. </p>
-<p>A promo score maybe returned in the response for the promotion with percent (%) discount. If the promotion is created successfully but the service is not able to obtain a score for the new promotion, the service will return a successful response without the score. For the moment no score is returned for the promotion with amount discount.</p>
-<p>The service also returns a Request-ID in the response header for tracking and troubleshooting purposes. If a Request-ID is provided in the header of the original request, the same ID will be returned in the response header. Otherwise a new ID will be generated by the Promo API.</p>
-<p>The response payload is described by the table below.</p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Entity</td>
-<td></td>
-<td>A Promo object array in JSON format. In the XML format, All promo objects are a flat list under the root element “Response”.</td>
-</tr>
-<tr>
-<td>id</td>
-<td>Integer</td>
-<td>Unique identifier for the promotion generated by the promo service.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>StatusType</td>
-<td>Promotion status. Always set to Active by the service for newly created promo.</td>
-</tr>
-<tr>
-<td>name, ...</td>
-<td></td>
-<td>Echo back all other promo parameters from the original request.</td>
-</tr>
-<tr>
-<td>score</td>
-<td>Decimal</td>
-<td>A score calculated by the promo service for the new promotion. The range is between 0.0 and 10.0 inclusively. This field is returned in the response only when the score is available.</td>
-</tr>
-</tbody>
-</table>
-</div><p>In case of a duplicate, the service generates an HTTP 409 (conflict error) and an error message that provides the duplicate promotion ID.</p>
-<p>In case of error, the service generates an HTTP 4xx or 5xx in the response header and an error code and a detailed error message in the response payload. </p>
-<p>In case of a successful response, the service generates an HTTP 2xx in the response header and a payload containing the resource data being processed by the promo API. </p>
-<hr>
-<h2 id="promo-score-preview" data-magellan-destination="promo-score-preview">Promo Score Preview</h2>
-<p>The Promo service allows partner to get a promo score prior to actually creating the promotion.</p>
-<p>The request to get a promo score should be in the same format as the promo create request, plus the “preview” field set to true.</p>
-<p>The service will perform the same validations on the preview request including duplicate check. But when the “preview” field is set to true, the service will return the promo score without creating the promotion. </p>
-<p>The range of the score returned by the service is between 0.0 and 10.0. The score represents how your promotion may perform based on our analysis of key attributes like discount level, booking window and length of stay restriction. A higher score means better promotion strength.</p>
-<h3 id="request-2" data-magellan-destination="request-2">Request</h3>
-<p>The request is sent to the same endpoint as the promo create request. </p>
-<p>POST <a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos</a></p>
-<p>The request contains the same header and same payload information plus one additional field.</p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>promo  payload</td>
-<td>See Promo create request above</td>
-<td>yes</td>
-<td>A full payload with the promotion information needs to be provided for a score preview request. The only difference is that an additional field, called preview, also needs to be provided.</td>
-</tr>
-<tr>
-<td>preview</td>
-<td>Boolean</td>
-<td>No</td>
-<td>When the value is set to true in the request, the service will try to retrieve a promo score without creating the promotion. Optional field. Default to false when it is not provided in the request. In this case the promotion will be created and a promo score, when available, will be returned as part of the response.</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response-2" data-magellan-destination="response-2">Response</h3>
-<p>When the promo score is available, it will be returned in the response along with other promo fields from the original request. For the moment promo score is only returned for promotions with percent (%) discount, not for promotions with amount discount.</p>
-<p>In the preview mode, there is no promo ID returned in the response. If the request is successful, the service will return HTTP status code 200 in the response header. If the request does not pass validation, the service will return HTTP status code 4xx or 5xx in the response plus the relevant error codes and error messages.</p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>score</td>
-<td>Decimal</td>
-<td>No</td>
-<td>The promo score represents how your promotion may perform based on our analysis of the promo strength. The range is between 0.0 and 10.0 inclusively. This is a computed field that can be returned in the response to validate your promotion before it gets created. This field can also be returned after a promotion is created.</td>
-</tr>
-</tbody>
-</table>
-</div><hr>
-<h2 id="promo-read-operation" data-magellan-destination="promo-read-operation">Promo Read Operation</h2>
-<p>The Promo Read operation allows partner to retrieve promotions created previously via the Promo API.</p>
-<p>Partner can retrieve promotions by hotel ID to get all promotions for a given hotel, or by hotel ID and promo ID to get a specific promotion. </p>
-<p>Partner can add filter on promo status to get only active promotions. Partner can also indicate in the request if a promo score should be returned for each promotion retrieved. By default the promo score is not returned as part of the response. </p>
-<h3 id="request-3" data-magellan-destination="request-3">Request</h3>
-<p>The promo GET request is sent to one of the following endpoints.</p>
-<p>Retrieve list of promos by Hotel ID:</p>
-<pre><code class="lang-HTML">GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Promo API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/quick-start.html">Quick Start</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="api-definition"><a class="sidebar-nav-item" href="#api-definition">API Definition</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="http-headers"><a class="sidebar-nav-item" href="#http-headers">HTTP Headers</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="https-status-codes"><a class="sidebar-nav-item" href="#https-status-codes">HTTPS Status Codes</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="promo-create-operation"><a class="sidebar-nav-item" href="#promo-create-operation">Promo Create Operation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="promo-score-preview"><a class="sidebar-nav-item" href="#promo-score-preview">Promo Score Preview</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-2"><a class="sidebar-nav-item" href="#request-2">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="promo-read-operation"><a class="sidebar-nav-item" href="#promo-read-operation">Promo Read Operation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-3"><a class="sidebar-nav-item" href="#request-3">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-3"><a class="sidebar-nav-item" href="#response-3">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="promo-modify-operation"><a class="sidebar-nav-item" href="#promo-modify-operation">Promo Modify Operation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-4"><a class="sidebar-nav-item" href="#request-4">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-4"><a class="sidebar-nav-item" href="#response-4">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="error-codes"><a class="sidebar-nav-item" href="#error-codes">Error Codes</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/faq-guides.html">FAQ & Guides</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/examples.html">Examples</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/try-it.html">Try It</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/promo-api/video.html">Video Tutorial</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
+          <p>The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering
+            on the Expedia marketplace.</p>
+          <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+          <p>Partner must include a valid username/password in the HTTP header of the request using the below format:</p>
+          <pre><code>Authorization: Basic {username and password encoded by Base64}
+</code></pre>
+          <p>Example:</p>
+          <pre><code>Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
+</code></pre>
+          <p>Where &quot;RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&quot; is the string &quot;EQCtest12933870:ew67nk33&quot; (username:password) Base64-encoded.</p>
+          <p>For more information about getting started for the first time, and authorization, please refer to the FAQ &amp; Guides section.</p>
+          <h2 id="http-headers" data-magellan-destination="http-headers">HTTP Headers</h2>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Header</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Input Format</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Authorization</td>
+                  <td>String</td>
+                  <td>Yes</td>
+                  <td>Authorization: Basic {username: password encoded by Base64}</td>
+                </tr>
+                <tr>
+                  <td>Content-Type</td>
+                  <td>String</td>
+                  <td>Yes for Promo Create and Modify. No for Promo Read</td>
+                  <td>Content-Type: application/json</td>
+                </tr>
+                <tr>
+                  <td>Accept</td>
+                  <td>String</td>
+                  <td>Yes</td>
+                  <td>Accept: application/json</td>
+                </tr>
+                <tr>
+                  <td>Request-ID</td>
+                  <td>UUID</td>
+                  <td>No</td>
+                  <td>Tracking id used for troubleshooting purpose. If it is not provided in request, Promo API will generate one and return it in the response.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2 id="https-status-codes" data-magellan-destination="https-status-codes">HTTPS Status Codes</h2>
+          <p>The following HTTP status code may be returned by the Promo API.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Text</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>200</td>
+                  <td>OK</td>
+                  <td>Success. This code is returned after a promo score is successfully retrieved or after a promo is successfully modified.</td>
+                </tr>
+                <tr>
+                  <td>201</td>
+                  <td>Created</td>
+                  <td>Created. This code is returned after a promo is successfully created.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>Bad Request</td>
+                  <td>Parsing error. The request was invalid or other client side error. Error code range (2001, 3999).</td>
+                </tr>
+                <tr>
+                  <td>401</td>
+                  <td>Unauthorized</td>
+                  <td>Authentication error. Username/password was missing or invalid. Error code range (1001, 1099).</td>
+                </tr>
+                <tr>
+                  <td>403</td>
+                  <td>Forbidden</td>
+                  <td>Authorization error. Username/password was not authorized to create promotion or username/password not associated with the hotel. Error code range (1100, 1999).</td>
+                </tr>
+                <tr>
+                  <td>409</td>
+                  <td>Conflict</td>
+                  <td>Duplicate error. The same promo create request is sent more than once. Error code 3729 or 3730.</td>
+                </tr>
+                <tr>
+                  <td>500</td>
+                  <td>Internal Server Error</td>
+                  <td>System error. Error code range (4000, 9999).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr>
+          <h2 id="promo-create-operation" data-magellan-destination="promo-create-operation">Promo Create Operation</h2>
+          <p>The Promo Create Operation supports two types of promotions.</p>
+          <ul>
+            <li>Promotion with percent (%) discount: applicable to any type of hotel/product.</li>
+            <li>Promotion with amount ($) discount: only applicable to HotelCollect-only properties.</li>
+          </ul>
+          <p>Each create request is for a single promotion. The API performs duplicate check based on all fields in the request. In other words if the same request is sent twice by the partner, the second request is considered a duplicate.</p>
+          <p>In case of a duplicate, the service returns an HTTP 409 (Conflict error) indicating a duplicate promotion already exists and the duplicate request is ignored. The service returns error code 3729 or 3730 in the response payload for duplicate
+            request error.</p>
+          <h3 id="request" data-magellan-destination="request">Request</h3>
+          <p>The request is sent to the below endpoint:
+            <a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotelid}/promos">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotelid}/promos</a>
+          </p>
+          <p>The request consists of the full URL including the header and the payload.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>String</td>
+                  <td>Yes</td>
+                  <td>The promotion name can only include numbers and Latin letters. It has 80 characters limit including non-leading and trailing spaces. The promotion will be created in the Expedia system with the name provided by the partner, and this
+                    name will be returned in the booking message when the promotion is applied to the booking.</td>
+                </tr>
+                <tr>
+                  <td>travelDateStart</td>
+                  <td>Date</td>
+                  <td>Yes</td>
+                  <td>The travel start date during which the Promotion is in effect. It must be current or in the future. Accept date in ISO 8601 format: YYYY-MM-DD (e.g. 2014-09-16).</td>
+                </tr>
+                <tr>
+                  <td>travelDateEnd</td>
+                  <td>Date</td>
+                  <td>Yes</td>
+                  <td>The travel end date during which the Promotion is in effect. It must be later than the travel start date. Accept date in ISO 8601 format: YYYY-MM-DD (e.g. 2014-12-31).</td>
+                </tr>
+                <tr>
+                  <td>bookDateTimeStart</td>
+                  <td>DateTime</td>
+                  <td>Yes</td>
+                  <td>The start date and time when this promotion becomes available for booking. It must be current or in the future and cannot be later than the travel start date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00).
+                    Time portion is required. Promo API will return error code 3010 if the time portion is missing. The date time is in the hotel local time zone. Time zone offset is not accepted. Promo API will return error code 3010 (schema validation
+                    error) if the request contains time zone offset (e.g. 2014-09-16T18:00:00+02:00).</td>
+                </tr>
+                <tr>
+                  <td>bookDateTimeEnd</td>
+                  <td>DateTime</td>
+                  <td>Yes</td>
+                  <td>The end date and time when this promotion is no longer available for booking. It must be later than the effective start date and cannot be later than the travel end date. Accept date time in the form of YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00).
+                    Same as for the bookDateTimeStart field: - Time portion is required. - Time zone offset is not allowed.</td>
+                </tr>
+                <tr>
+                  <td>percent</td>
+                  <td>positiveInteger</td>
+                  <td>Yes</td>
+                  <td>Used for percent (%) discount. The percentage discount applies to all nights of stay. The range must be between 10 and 75 inclusively, in increments of 1%. Request should contain either the percent field or the amount field, but not
+                    both at the same time.</td>
+                </tr>
+                <tr>
+                  <td>amount</td>
+                  <td>Decimal</td>
+                  <td>No</td>
+                  <td>Used for amount ($) discount. The amount discount applies to all nights of stay. The range must be between 1 and 12,000,000 inclusive. Limitation: amount discount can be used only by HotelCollect-only properties. Request should contain
+                    either the percent field or the amount field, but not both at the same time.</td>
+                </tr>
+                <tr>
+                  <td>minLOS</td>
+                  <td>positiveInteger</td>
+                  <td>Yes</td>
+                  <td>The minimum night(s) that guest must stay. The range must be between 1 and 4 inclusively.</td>
+                </tr>
+                <tr>
+                  <td>minAdvBookDays</td>
+                  <td>Int</td>
+                  <td>No</td>
+                  <td>The minimum days before a travel date that the booking can be made. Optional, if not provided, means bookings can be made up until check-in day, assuming other constraints are met. Value between 0 and 500.</td>
+                </tr>
+                <tr>
+                  <td>mobileOnly</td>
+                  <td>Boolean</td>
+                  <td>Yes</td>
+                  <td>Should this promotion only be displayed on mobile devices (available through smart phones and tablets)</td>
+                </tr>
+                <tr>
+                  <td>RatePlan/id</td>
+                  <td>String</td>
+                  <td>Yes</td>
+                  <td>The unique identifier for the rate plan. It must be numeric or numeric + &#39;A&#39;. At least one rate plan ID for an active Expedia rate plan is required. Derived rate plan IDs should never be provided, as the promotion will always
+                    be attached to the parent. If a derived rate plan is provided, the promo will be created on the parent. If the same promo already exists on the parent, it will return an error.</td>
+                </tr>
+                <tr>
+                  <td>TravelDateBlackout/start &amp; end</td>
+                  <td>Date Accept 0 or more blackout start &amp; end dates</td>
+                  <td>Yes</td>
+                  <td>Blackout period is defined by start and end dates. The blackout period must overlap with travel start and end dates. The blackout end date must be later than the blackout start date. In JSON format, use TravelDateBlackout: [] to indicate
+                    no blackout date for this promo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="response" data-magellan-destination="response">Response</h3>
+          <p>After the request is processed by the Promo API, a response is returned back synchronously to the partner. The response will contain an HTTP status code in the header and a response payload.</p>
+          <p>In case of a success, the service generates a unique identifier for the newly created promotion, which is returned in the response payload along with all other promotion parameters from the original request. The promotion status is set to Active
+            by default.</p>
+          <p>A promo score maybe returned in the response for the promotion with percent (%) discount. If the promotion is created successfully but the service is not able to obtain a score for the new promotion, the service will return a successful response
+            without the score. For the moment no score is returned for the promotion with amount discount.</p>
+          <p>The service also returns a Request-ID in the response header for tracking and troubleshooting purposes. If a Request-ID is provided in the header of the original request, the same ID will be returned in the response header. Otherwise a new ID
+            will be generated by the Promo API.</p>
+          <p>The response payload is described by the table below.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Entity</td>
+                  <td></td>
+                  <td>A Promo object array in JSON format. In the XML format, All promo objects are a flat list under the root element “Response”.</td>
+                </tr>
+                <tr>
+                  <td>id</td>
+                  <td>Integer</td>
+                  <td>Unique identifier for the promotion generated by the promo service.</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>StatusType</td>
+                  <td>Promotion status. Always set to Active by the service for newly created promo.</td>
+                </tr>
+                <tr>
+                  <td>name, ...</td>
+                  <td></td>
+                  <td>Echo back all other promo parameters from the original request.</td>
+                </tr>
+                <tr>
+                  <td>score</td>
+                  <td>Decimal</td>
+                  <td>A score calculated by the promo service for the new promotion. The range is between 0.0 and 10.0 inclusively. This field is returned in the response only when the score is available.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>In case of a duplicate, the service generates an HTTP 409 (conflict error) and an error message that provides the duplicate promotion ID.</p>
+          <p>In case of error, the service generates an HTTP 4xx or 5xx in the response header and an error code and a detailed error message in the response payload.</p>
+          <p>In case of a successful response, the service generates an HTTP 2xx in the response header and a payload containing the resource data being processed by the promo API.</p>
+          <hr>
+          <h2 id="promo-score-preview" data-magellan-destination="promo-score-preview">Promo Score Preview</h2>
+          <p>The Promo service allows partner to get a promo score prior to actually creating the promotion.</p>
+          <p>The request to get a promo score should be in the same format as the promo create request, plus the “preview” field set to true.</p>
+          <p>The service will perform the same validations on the preview request including duplicate check. But when the “preview” field is set to true, the service will return the promo score without creating the promotion.</p>
+          <p>The range of the score returned by the service is between 0.0 and 10.0. The score represents how your promotion may perform based on our analysis of key attributes like discount level, booking window and length of stay restriction. A higher
+            score means better promotion strength.</p>
+          <h3 id="request-2" data-magellan-destination="request-2">Request</h3>
+          <p>The request is sent to the same endpoint as the promo create request.</p>
+          <p>POST <a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos</a>
+          </p>
+          <p>The request contains the same header and same payload information plus one additional field.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>promo payload</td>
+                  <td>See Promo create request above</td>
+                  <td>yes</td>
+                  <td>A full payload with the promotion information needs to be provided for a score preview request. The only difference is that an additional field, called preview, also needs to be provided.</td>
+                </tr>
+                <tr>
+                  <td>preview</td>
+                  <td>Boolean</td>
+                  <td>No</td>
+                  <td>When the value is set to true in the request, the service will try to retrieve a promo score without creating the promotion. Optional field. Default to false when it is not provided in the request. In this case the promotion will be
+                    created and a promo score, when available, will be returned as part of the response.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="response-2" data-magellan-destination="response-2">Response</h3>
+          <p>When the promo score is available, it will be returned in the response along with other promo fields from the original request. For the moment promo score is only returned for promotions with percent (%) discount, not for promotions with amount
+            discount.</p>
+          <p>In the preview mode, there is no promo ID returned in the response. If the request is successful, the service will return HTTP status code 200 in the response header. If the request does not pass validation, the service will return HTTP status
+            code 4xx or 5xx in the response plus the relevant error codes and error messages.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>score</td>
+                  <td>Decimal</td>
+                  <td>No</td>
+                  <td>The promo score represents how your promotion may perform based on our analysis of the promo strength. The range is between 0.0 and 10.0 inclusively. This is a computed field that can be returned in the response to validate your promotion
+                    before it gets created. This field can also be returned after a promotion is created.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <hr>
+          <h2 id="promo-read-operation" data-magellan-destination="promo-read-operation">Promo Read Operation</h2>
+          <p>The Promo Read operation allows partner to retrieve promotions created previously via the Promo API.</p>
+          <p>Partner can retrieve promotions by hotel ID to get all promotions for a given hotel, or by hotel ID and promo ID to get a specific promotion.</p>
+          <p>Partner can add filter on promo status to get only active promotions. Partner can also indicate in the request if a promo score should be returned for each promotion retrieved. By default the promo score is not returned as part of the response.</p>
+          <h3 id="request-3" data-magellan-destination="request-3">Request</h3>
+          <p>The promo GET request is sent to one of the following endpoints.</p>
+          <p>Retrieve list of promos by Hotel ID:</p>
+          <pre><code class="lang-HTML">GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?activeOnly=true
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?returnScore=true
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos?returnScore=true&amp;activeOnly=true
 </code></pre>
-<p>Retrieve single promo by Hotel ID and Promo ID</p>
-<pre><code class="lang-HTML">GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}
+          <p>Retrieve single promo by Hotel ID and Promo ID</p>
+          <pre><code class="lang-HTML">GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}
 GET https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}?returnScore=true
 </code></pre>
-<p>Additionally user can specify the following query parameters in the URL:</p>
-<div><table>
-<thead>
-<tr>
-<th>Query Param</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>activeOnly</td>
-<td>Boolean</td>
-<td>No</td>
-<td>When set to &quot;true&quot; it indicates the service should only return active promotions. &quot;Active&quot; promotion means its status is active and its book end date is not in the past (less than or equal to today -1 day). Optional, by default the service return both active and inactive promotions. This parameter is ignored when get promo by promo ID.</td>
-</tr>
-<tr>
-<td>returnScore</td>
-<td>Boolean</td>
-<td>No</td>
-<td>When set to &quot;true&quot; it indicates the service should return promo score in the response. Optional, by default the service does not return promo score in the response.</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response-3" data-magellan-destination="response-3">Response</h3>
-<p>The response will contain an HTTP status code in the header and a response payload. The HTTP status code indicates if the retrieval is successful, and the payload contains the list of promotions retrieved by the promo service.</p>
-<p>The payload for a successful response may contain zero or more promo objects. The attributes of each promo object are described by the table below.</p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Entity</td>
-<td></td>
-<td>A Promo object array in JSON format.</td>
-</tr>
-<tr>
-<td>id</td>
-<td>Integer</td>
-<td>Promo ID. Unique identifier generated by the promo service for each promo.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>StatusType</td>
-<td>Promo status. Active or Inactive.</td>
-</tr>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>Promo name. Max 80 characters.</td>
-</tr>
-<tr>
-<td>travelDateStart</td>
-<td>Date</td>
-<td>The travel start date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-09-16).</td>
-</tr>
-<tr>
-<td>travelDateEnd</td>
-<td>Date</td>
-<td>The travel end date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-12-31).</td>
-</tr>
-<tr>
-<td>bookDateTimeStart</td>
-<td>DateTime</td>
-<td>The start date and time when this promotion becomes available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00).</td>
-</tr>
-<tr>
-<td>bookDateTimeEnd</td>
-<td>DateTime</td>
-<td>The end date and time when this promotion is no longer available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00).</td>
-</tr>
-<tr>
-<td>percent</td>
-<td>positiveInteger</td>
-<td>Used for promo with percent (%) discount. Range between 10 and 75 inclusive. Either percent or amount discount is returned not both at the same time.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td>Decimal</td>
-<td>Used for promo with amount ($) discount. Range between 1 and 12,000,000 inclusive. Either the percent field or the amount field, but not both at the same time.</td>
-</tr>
-<tr>
-<td>minLOS</td>
-<td>positiveInteger</td>
-<td>The minimum night(s) that guest must stay. Range between 1 and 4 inclusive.</td>
-</tr>
-<tr>
-<td>minAdvBookDays</td>
-<td>Int</td>
-<td>The minimum days before arrival that the booking can be made. Range between 0 and 500 inclusive.</td>
-</tr>
-<tr>
-<td>mobileOnly</td>
-<td>Boolean</td>
-<td>If this promotion is available only through mobile devices.</td>
-</tr>
-<tr>
-<td>RatePlan/id</td>
-<td>String. One or more rate plan ID(s)</td>
-<td>Array of the rate plan IDs. At least one rate plan ID for an active Expedia rate plan is required.</td>
-</tr>
-<tr>
-<td>TravelDateBlackout/start &amp; end</td>
-<td>Date 0 or more blackout periods</td>
-<td>Array of blackout periods. An empty array indicates no blackout date for this promo.</td>
-</tr>
-<tr>
-<td>score</td>
-<td>Decimal</td>
-<td>A promo score calculated by the promo service. Range between 0.0 and 10.0 inclusive.</td>
-</tr>
-</tbody>
-</table>
-</div><p>Retrieval scenario 1: hotel ID is valid
-The promo read API will return HTTP status code 200 in the response header and the list of promotions created for the hotel in the response payload. 
-If no promotion is created for the hotel, the service will return an empty array in the response payload.</p>
-<p>Retrieval scenario 2: hotel ID is valid and promo ID is valid
-The promo read API will return HTTP status code 200 in the response header and a single promotion in the response payload.</p>
-<p>Retrieval scenario 3: hotel ID is invalid or promo ID is invalid
-The promo read API will return HTTP status code 500 in the response header and an error message in the response payload.</p>
-<hr>
-<h2 id="promo-modify-operation" data-magellan-destination="promo-modify-operation">Promo Modify Operation</h2>
-<p>The Promo Modify Operation allows partner to modify a single promotion created previously via the Promo API.</p>
-<p>Partner is required to provide the hotel ID and promo ID in the request URL. </p>
-<p>Partner is also required to send the full promo object in the modify request including the promo status which can be set to &quot;Active&quot; or &quot;Inactive&quot;.</p>
-<p>The modify request is processed as full overlay by the Promo API. No partial update is supported by the Promo API.</p>
-<h3 id="request-4" data-magellan-destination="request-4">Request</h3>
-<p>The request is sent to the below endpoint. 
-PUT <a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}</a></p>
-<p>The payload should contain the same information as the payload for promo create, plus the &quot;status&quot; field. </p>
-<div><table>
-<thead>
-<tr>
-<th>JSON Field</th>
-<th>Type</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td>String</td>
-<td>Yes</td>
-<td>Promo name, same as in the promo create request.</td>
-</tr>
-<tr>
-<td>status</td>
-<td>StatusType</td>
-<td>Yes</td>
-<td>Promotion status. Accept &quot;Active&quot; or &quot;Inactive&quot;.</td>
-</tr>
-<tr>
-<td>travelDateStart</td>
-<td>LocalDate</td>
-<td>Yes</td>
-<td>Travel start date, same as in the promo create request.</td>
-</tr>
-<tr>
-<td>…all other fields from the promo create request</td>
-<td>…</td>
-<td>…</td>
-<td>…</td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="response-4" data-magellan-destination="response-4">Response</h3>
-<p>The response may contain an HTTP status code in the header and a response payload.</p>
-<p>The same HTTP status codes defined for promo create are applicable to promo modify. </p>
-<p>A Request-ID is returned in the response header. If a Request-ID is provided in the header of the original request, the same ID will be returned. Otherwise a new ID will be generated by the Promo API and returned in the response header. The Request-ID is used for tracking and troubleshooting.</p>
-<p>The response payload for promo modify is identical to what is defined above for promo create. </p>
-<hr>
-<h2 id="error-codes" data-magellan-destination="error-codes">Error Codes</h2>
-<p>In case something is wrong, the Promo API will return an error response back to the partner.
-The error response may contain a negative HTTP status code and one of the following error codes.</p>
-<div><table>
-<thead>
-<tr>
-<th>HTTP Status Code</th>
-<th>Error Code</th>
-<th>Error Message</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>400</td>
-<td>2002</td>
-<td>Parsing error: {error detail}</td>
-</tr>
-<tr>
-<td>400</td>
-<td>2010</td>
-<td>The namespace specified is invalid. {error detail}</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3010</td>
-<td>Validation against schema failed because a value exceeds its defined length, or the format is wrong, or another validation enforced by schema. {validation error detail}</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3701</td>
-<td>Hotel ID not found. You specified an invalid hotel ID.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3702</td>
-<td>Hotel {hotel id} must be Active or Inactive, current status is {hotel status}.One of the following messages will be returned. - For Promo Create API: Hotel {hotel id} must be Active or Inactive for promo create, current status is {hotel status}. - For Promo Modify API: Hotel {hotel id} must be Active or Inactive for promo update. - For Promo Read API: Hotel {hotel id} must be Active or Inactive for promo read.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3703</td>
-<td>The promo {promo id} does not exist.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3704</td>
-<td>The promo {promo id} does not belong to hotel {hotel id}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3705</td>
-<td>The promo {promo id} has been deleted</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3707</td>
-<td>The travel start date {Travel start dateStart} must be current or in the future.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3708</td>
-<td>The travel end date {Travel end dateEnd} cannot be earlier than the travel start date {travel start dateTravelDateStart}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3709</td>
-<td>The travel end date {travel end dateTravelDateEnd} cannot be later than two years (730 days).</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3710</td>
-<td>The book start date {book start dateDateTimeStart} must be current or in the future.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3711</td>
-<td>The book end date {book end dateBookDateTimeEnd} cannot be earlier than the book start date {book start dateBookDateTimeStart}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3712</td>
-<td>The book end date {book end dateBookDateTimeEnd} cannot be later than two years (730 days)</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3713</td>
-<td>The travel start date {travel start dateTravelDateStart} cannot be prior to the book start date {book start dateBookDateTimeStart}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3714</td>
-<td>The book end date {book end dateBookDateTimeEnd} cannot be later than the travel end date {travel end dateTravelDateEnd}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3715</td>
-<td>The travel start date {travel start dateTravelStartDate} does not occur after {book start dateBookDateTimeStart  + minimum advance booking daysMinAdvBookDays} date.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3716</td>
-<td>The effective booking window is less than a minute due to effective booking start date {book start dateBookDateTimeStart} is equal to effective booking end date {BookDateTimeEnd}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3717</td>
-<td>The restriction for blackout date is invalid and does not have any overlap with travel dates. TravelDateBlackout {TravelDatebBlackout} only can be between travel start date{dateTravelDateStart} and travel end date {dateTravelDateEnd}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3718</td>
-<td>The restriction for blackout date is incorrect that the blackout start date {dateBlackOutDateStart} is later than blackout end date {dateBlackOutDateEnd}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3719</td>
-<td>The promo name {promo name} must not contain the character {The first found invalid character}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3720</td>
-<td>The percent value {percent} must be a number with no more than two decimal places.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3721</td>
-<td>The 100% free discount cannot apply to all nights.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3722</td>
-<td>Request should contain either amount or percent discount.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3723</td>
-<td>Request cannot contain both amount and percent discount at the same time.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3724</td>
-<td>Amount discount can be used only by agency hotels.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3725</td>
-<td>One of the following messages will be returned. For Promo Create API:  The promo cannot be created due to invalid travel window, the travel start date {travel start date} does not occur before {book end date + maximum advance booking days} date. For Promo Modify API:  Invalid travel window, the travel start date {tTravel Sstart dDate} does not occur before { Bbook end Ddate TimeEnd + Mmaximum advance booking daysaxAdvBookDays} date.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3726</td>
-<td>Rate Plan status is not Active.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3727</td>
-<td>Hotel ID or Rate Plan Id is invalid.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3728</td>
-<td>There are no active rate plans in your request.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3729</td>
-<td>An identical promotion was already created on {creation date}: promotion ID {promo id}. No changes were made.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3730</td>
-<td>Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3731</td>
-<td>Updating on this promotion is in process.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3732</td>
-<td>The travel end date {travel end date} must be current or in the future.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3733</td>
-<td>The book end date {book end date}must be current or in the future.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3740</td>
-<td>Rate Plan {rate plan Id} doesn&#39;t belong to hotel {hotel Id}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3741</td>
-<td>Invalid travel window, one of the following messages will be returned. The travel start date {0} does not occur after {1} date. Travel end date shouldn&#39;t be earlier than travel start date, the travel end date is {0} and the travel start date is {1}. The travel start date {0} shouldn&#39;t be after {1}. The travel end date {0} shouldn&#39;t be after {1}. The travel end date {0} is before the end of the booking window, the effective booking end date is {1}. The travel start date {0} is before when the promo can be available for booking, the effective booking start date is {1}. The travel end date is in the past and before when promo can be available for booking, the effective booking start date is {0}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3742</td>
-<td>Invalid booking window, one of the following messages will be returned. The effective booking window is incorrect due to effective booking start date {0} is later than effective booking end date {1}. The effective booking window is less than a minute due to effective booking start date and time {0} is equal to effective booking end date and time {1}. The effective booking start date {0} is beyond maximum advance purchase window of 2 years. The effective booking end date {0} is beyond maximum advance purchase window of 2 years. The effective booking end date cannot be in the past.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3743</td>
-<td>Invalid blackout date, one of the following messages will be returned. The promo cannot be edited as the restriction for black out date is incorrect. The blackout start date {0} is later than blackout end date {1}. The promo cannot be edited as the blackout start date is {0}, it must occur on or before {1}. The promo cannot be edited as the blackout end date is {0}, it must occur on or before {1}. The promo cannot be edited as the restriction for black out start date {0} is in the past. The promo cannot be edited as the restriction is invalid and does not have any overlap with travel dates, the blackout dates are {0} to {1} and travel dates are {2} to {3}. The blackout start date {0} shouldn&#39;t be in the past. The blackout start date {0} shouldn&#39;t be after blackout end date {1}. The blackout start date {0} should occur on or before {1}. The blackout end date {0} should occur on or before {1}. The blackout start date {0} shouldn&#39;t be in the past. No overlap between the blackout date range from {0} to {1} and travel date range from {2} to {3}.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3744</td>
-<td>The promo {promo -id} is NOT supported in Promo API. Only basic promo is supported.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3745</td>
-<td>The promo {promo -id} cannot be retrieved since it is NOT created by Promo API.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3746</td>
-<td>The promo {promo id} cannot be modified since it is NOT created by Promo API.</td>
-</tr>
-<tr>
-<td>400</td>
-<td>3747</td>
-<td>Date ranges of blackout must not overlap</td>
-</tr>
-<tr>
-<td>401</td>
-<td>1001</td>
-<td>Authentication error: invalid username or password.</td>
-</tr>
-<tr>
-<td>401</td>
-<td>1002</td>
-<td>Authentication error: username and password is not found in HTTP header. Please set the Authorization header for HTTP basic authentication.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>1101</td>
-<td>The promo cannot be created as the user: {user name} is not associated with the hotel {hotel id}.</td>
-</tr>
-<tr>
-<td>403</td>
-<td>1102</td>
-<td>The promo cannot be created due to user:{user name} doesn&#39;t has permission to create.</td>
-</tr>
-<tr>
-<td>409</td>
-<td>3729</td>
-<td>An identical promotion was already created on {creation date}: promotion ID {promo-id}. No changes were made.</td>
-</tr>
-<tr>
-<td>409</td>
-<td>3730</td>
-<td>Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time.</td>
-</tr>
-<tr>
-<td>409</td>
-<td>3731</td>
-<td>Updating on this promotion is in process.</td>
-</tr>
-<tr>
-<td>500</td>
-<td>4000</td>
-<td>Internal system error, please try again in a few minutes.</td>
-</tr>
-<tr>
-<td>500</td>
-<td>4100</td>
-<td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
-</tr>
-</tbody>
-</table>
-</div></div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
+          <p>Additionally user can specify the following query parameters in the URL:</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Query Param</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>activeOnly</td>
+                  <td>Boolean</td>
+                  <td>No</td>
+                  <td>When set to &quot;true&quot; it indicates the service should only return active promotions. &quot;Active&quot; promotion means its status is active and its book end date is not in the past (less than or equal to today -1 day). Optional,
+                    by default the service return both active and inactive promotions. This parameter is ignored when get promo by promo ID.</td>
+                </tr>
+                <tr>
+                  <td>returnScore</td>
+                  <td>Boolean</td>
+                  <td>No</td>
+                  <td>When set to &quot;true&quot; it indicates the service should return promo score in the response. Optional, by default the service does not return promo score in the response.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="response-3" data-magellan-destination="response-3">Response</h3>
+          <p>The response will contain an HTTP status code in the header and a response payload. The HTTP status code indicates if the retrieval is successful, and the payload contains the list of promotions retrieved by the promo service.</p>
+          <p>The payload for a successful response may contain zero or more promo objects. The attributes of each promo object are described by the table below.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Entity</td>
+                  <td></td>
+                  <td>A Promo object array in JSON format.</td>
+                </tr>
+                <tr>
+                  <td>id</td>
+                  <td>Integer</td>
+                  <td>Promo ID. Unique identifier generated by the promo service for each promo.</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>StatusType</td>
+                  <td>Promo status. Active or Inactive.</td>
+                </tr>
+                <tr>
+                  <td>name</td>
+                  <td>String</td>
+                  <td>Promo name. Max 80 characters.</td>
+                </tr>
+                <tr>
+                  <td>travelDateStart</td>
+                  <td>Date</td>
+                  <td>The travel start date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-09-16).</td>
+                </tr>
+                <tr>
+                  <td>travelDateEnd</td>
+                  <td>Date</td>
+                  <td>The travel end date during which the Promotion is in effect. Format YYYY-MM-DD (e.g. 2014-12-31).</td>
+                </tr>
+                <tr>
+                  <td>bookDateTimeStart</td>
+                  <td>DateTime</td>
+                  <td>The start date and time when this promotion becomes available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-16T00:00:00).</td>
+                </tr>
+                <tr>
+                  <td>bookDateTimeEnd</td>
+                  <td>DateTime</td>
+                  <td>The end date and time when this promotion is no longer available for booking. Format YYYY-MM-DDThh:mm:ss (e.g. 2014-09-30T11:59:00).</td>
+                </tr>
+                <tr>
+                  <td>percent</td>
+                  <td>positiveInteger</td>
+                  <td>Used for promo with percent (%) discount. Range between 10 and 75 inclusive. Either percent or amount discount is returned not both at the same time.</td>
+                </tr>
+                <tr>
+                  <td>amount</td>
+                  <td>Decimal</td>
+                  <td>Used for promo with amount ($) discount. Range between 1 and 12,000,000 inclusive. Either the percent field or the amount field, but not both at the same time.</td>
+                </tr>
+                <tr>
+                  <td>minLOS</td>
+                  <td>positiveInteger</td>
+                  <td>The minimum night(s) that guest must stay. Range between 1 and 4 inclusive.</td>
+                </tr>
+                <tr>
+                  <td>minAdvBookDays</td>
+                  <td>Int</td>
+                  <td>The minimum days before arrival that the booking can be made. Range between 0 and 500 inclusive.</td>
+                </tr>
+                <tr>
+                  <td>mobileOnly</td>
+                  <td>Boolean</td>
+                  <td>If this promotion is available only through mobile devices.</td>
+                </tr>
+                <tr>
+                  <td>RatePlan/id</td>
+                  <td>String. One or more rate plan ID(s)</td>
+                  <td>Array of the rate plan IDs. At least one rate plan ID for an active Expedia rate plan is required.</td>
+                </tr>
+                <tr>
+                  <td>TravelDateBlackout/start &amp; end</td>
+                  <td>Date 0 or more blackout periods</td>
+                  <td>Array of blackout periods. An empty array indicates no blackout date for this promo.</td>
+                </tr>
+                <tr>
+                  <td>score</td>
+                  <td>Decimal</td>
+                  <td>A promo score calculated by the promo service. Range between 0.0 and 10.0 inclusive.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Retrieval scenario 1: hotel ID is valid The promo read API will return HTTP status code 200 in the response header and the list of promotions created for the hotel in the response payload. If no promotion is created for the hotel, the service
+            will return an empty array in the response payload.</p>
+          <p>Retrieval scenario 2: hotel ID is valid and promo ID is valid The promo read API will return HTTP status code 200 in the response header and a single promotion in the response payload.</p>
+          <p>Retrieval scenario 3: hotel ID is invalid or promo ID is invalid The promo read API will return HTTP status code 500 in the response header and an error message in the response payload.</p>
+          <hr>
+          <h2 id="promo-modify-operation" data-magellan-destination="promo-modify-operation">Promo Modify Operation</h2>
+          <p>The Promo Modify Operation allows partner to modify a single promotion created previously via the Promo API.</p>
+          <p>Partner is required to provide the hotel ID and promo ID in the request URL.</p>
+          <p>Partner is also required to send the full promo object in the modify request including the promo status which can be set to &quot;Active&quot; or &quot;Inactive&quot;.</p>
+          <p>The modify request is processed as full overlay by the Promo API. No partial update is supported by the Promo API.</p>
+          <h3 id="request-4" data-magellan-destination="request-4">Request</h3>
+          <p>The request is sent to the below endpoint. PUT <a href="https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}">https://services.expediapartnercentral.com/promotions/v1/hotels/{hotel-id}/promos/{promo-id}</a>
+          </p>
+          <p>The payload should contain the same information as the payload for promo create, plus the &quot;status&quot; field.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>JSON Field</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>name</td>
+                  <td>String</td>
+                  <td>Yes</td>
+                  <td>Promo name, same as in the promo create request.</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>StatusType</td>
+                  <td>Yes</td>
+                  <td>Promotion status. Accept &quot;Active&quot; or &quot;Inactive&quot;.</td>
+                </tr>
+                <tr>
+                  <td>travelDateStart</td>
+                  <td>LocalDate</td>
+                  <td>Yes</td>
+                  <td>Travel start date, same as in the promo create request.</td>
+                </tr>
+                <tr>
+                  <td>…all other fields from the promo create request</td>
+                  <td>…</td>
+                  <td>…</td>
+                  <td>…</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="response-4" data-magellan-destination="response-4">Response</h3>
+          <p>The response may contain an HTTP status code in the header and a response payload.</p>
+          <p>The same HTTP status codes defined for promo create are applicable to promo modify.</p>
+          <p>A Request-ID is returned in the response header. If a Request-ID is provided in the header of the original request, the same ID will be returned. Otherwise a new ID will be generated by the Promo API and returned in the response header. The
+            Request-ID is used for tracking and troubleshooting.</p>
+          <p>The response payload for promo modify is identical to what is defined above for promo create.</p>
+          <hr>
+          <h2 id="error-codes" data-magellan-destination="error-codes">Error Codes</h2>
+          <p>In case something is wrong, the Promo API will return an error response back to the partner. The error response may contain a negative HTTP status code and one of the following error codes.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>HTTP Status Code</th>
+                  <th>Error Code</th>
+                  <th>Error Message</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>400</td>
+                  <td>2002</td>
+                  <td>Parsing error: {error detail}</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>2010</td>
+                  <td>The namespace specified is invalid. {error detail}</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3010</td>
+                  <td>Validation against schema failed because a value exceeds its defined length, or the format is wrong, or another validation enforced by schema. {validation error detail}</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3701</td>
+                  <td>Hotel ID not found. You specified an invalid hotel ID.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3702</td>
+                  <td>Hotel {hotel id} must be Active or Inactive, current status is {hotel status}.One of the following messages will be returned. - For Promo Create API: Hotel {hotel id} must be Active or Inactive for promo create, current status is {hotel
+                    status}. - For Promo Modify API: Hotel {hotel id} must be Active or Inactive for promo update. - For Promo Read API: Hotel {hotel id} must be Active or Inactive for promo read.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3703</td>
+                  <td>The promo {promo id} does not exist.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3704</td>
+                  <td>The promo {promo id} does not belong to hotel {hotel id}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3705</td>
+                  <td>The promo {promo id} has been deleted</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3707</td>
+                  <td>The travel start date {Travel start dateStart} must be current or in the future.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3708</td>
+                  <td>The travel end date {Travel end dateEnd} cannot be earlier than the travel start date {travel start dateTravelDateStart}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3709</td>
+                  <td>The travel end date {travel end dateTravelDateEnd} cannot be later than two years (730 days).</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3710</td>
+                  <td>The book start date {book start dateDateTimeStart} must be current or in the future.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3711</td>
+                  <td>The book end date {book end dateBookDateTimeEnd} cannot be earlier than the book start date {book start dateBookDateTimeStart}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3712</td>
+                  <td>The book end date {book end dateBookDateTimeEnd} cannot be later than two years (730 days)</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3713</td>
+                  <td>The travel start date {travel start dateTravelDateStart} cannot be prior to the book start date {book start dateBookDateTimeStart}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3714</td>
+                  <td>The book end date {book end dateBookDateTimeEnd} cannot be later than the travel end date {travel end dateTravelDateEnd}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3715</td>
+                  <td>The travel start date {travel start dateTravelStartDate} does not occur after {book start dateBookDateTimeStart + minimum advance booking daysMinAdvBookDays} date.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3716</td>
+                  <td>The effective booking window is less than a minute due to effective booking start date {book start dateBookDateTimeStart} is equal to effective booking end date {BookDateTimeEnd}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3717</td>
+                  <td>The restriction for blackout date is invalid and does not have any overlap with travel dates. TravelDateBlackout {TravelDatebBlackout} only can be between travel start date{dateTravelDateStart} and travel end date {dateTravelDateEnd}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3718</td>
+                  <td>The restriction for blackout date is incorrect that the blackout start date {dateBlackOutDateStart} is later than blackout end date {dateBlackOutDateEnd}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3719</td>
+                  <td>The promo name {promo name} must not contain the character {The first found invalid character}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3720</td>
+                  <td>The percent value {percent} must be a number with no more than two decimal places.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3721</td>
+                  <td>The 100% free discount cannot apply to all nights.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3722</td>
+                  <td>Request should contain either amount or percent discount.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3723</td>
+                  <td>Request cannot contain both amount and percent discount at the same time.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3724</td>
+                  <td>Amount discount can be used only by agency hotels.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3725</td>
+                  <td>One of the following messages will be returned. For Promo Create API: The promo cannot be created due to invalid travel window, the travel start date {travel start date} does not occur before {book end date + maximum advance booking
+                    days} date. For Promo Modify API: Invalid travel window, the travel start date {tTravel Sstart dDate} does not occur before { Bbook end Ddate TimeEnd + Mmaximum advance booking daysaxAdvBookDays} date.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3726</td>
+                  <td>Rate Plan status is not Active.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3727</td>
+                  <td>Hotel ID or Rate Plan Id is invalid.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3728</td>
+                  <td>There are no active rate plans in your request.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3729</td>
+                  <td>An identical promotion was already created on {creation date}: promotion ID {promo id}. No changes were made.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3730</td>
+                  <td>Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3731</td>
+                  <td>Updating on this promotion is in process.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3732</td>
+                  <td>The travel end date {travel end date} must be current or in the future.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3733</td>
+                  <td>The book end date {book end date}must be current or in the future.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3740</td>
+                  <td>Rate Plan {rate plan Id} doesn&#39;t belong to hotel {hotel Id}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3741</td>
+                  <td>Invalid travel window, one of the following messages will be returned. The travel start date {0} does not occur after {1} date. Travel end date shouldn&#39;t be earlier than travel start date, the travel end date is {0} and the travel
+                    start date is {1}. The travel start date {0} shouldn&#39;t be after {1}. The travel end date {0} shouldn&#39;t be after {1}. The travel end date {0} is before the end of the booking window, the effective booking end date is {1}. The
+                    travel start date {0} is before when the promo can be available for booking, the effective booking start date is {1}. The travel end date is in the past and before when promo can be available for booking, the effective booking start
+                    date is {0}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3742</td>
+                  <td>Invalid booking window, one of the following messages will be returned. The effective booking window is incorrect due to effective booking start date {0} is later than effective booking end date {1}. The effective booking window is less
+                    than a minute due to effective booking start date and time {0} is equal to effective booking end date and time {1}. The effective booking start date {0} is beyond maximum advance purchase window of 2 years. The effective booking end
+                    date {0} is beyond maximum advance purchase window of 2 years. The effective booking end date cannot be in the past.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3743</td>
+                  <td>Invalid blackout date, one of the following messages will be returned. The promo cannot be edited as the restriction for black out date is incorrect. The blackout start date {0} is later than blackout end date {1}. The promo cannot be
+                    edited as the blackout start date is {0}, it must occur on or before {1}. The promo cannot be edited as the blackout end date is {0}, it must occur on or before {1}. The promo cannot be edited as the restriction for black out start
+                    date {0} is in the past. The promo cannot be edited as the restriction is invalid and does not have any overlap with travel dates, the blackout dates are {0} to {1} and travel dates are {2} to {3}. The blackout start date {0} shouldn&#39;t
+                    be in the past. The blackout start date {0} shouldn&#39;t be after blackout end date {1}. The blackout start date {0} should occur on or before {1}. The blackout end date {0} should occur on or before {1}. The blackout start date {0}
+                    shouldn&#39;t be in the past. No overlap between the blackout date range from {0} to {1} and travel date range from {2} to {3}.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3744</td>
+                  <td>The promo {promo -id} is NOT supported in Promo API. Only basic promo is supported.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3745</td>
+                  <td>The promo {promo -id} cannot be retrieved since it is NOT created by Promo API.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3746</td>
+                  <td>The promo {promo id} cannot be modified since it is NOT created by Promo API.</td>
+                </tr>
+                <tr>
+                  <td>400</td>
+                  <td>3747</td>
+                  <td>Date ranges of blackout must not overlap</td>
+                </tr>
+                <tr>
+                  <td>401</td>
+                  <td>1001</td>
+                  <td>Authentication error: invalid username or password.</td>
+                </tr>
+                <tr>
+                  <td>401</td>
+                  <td>1002</td>
+                  <td>Authentication error: username and password is not found in HTTP header. Please set the Authorization header for HTTP basic authentication.</td>
+                </tr>
+                <tr>
+                  <td>403</td>
+                  <td>1101</td>
+                  <td>The promo cannot be created as the user: {user name} is not associated with the hotel {hotel id}.</td>
+                </tr>
+                <tr>
+                  <td>403</td>
+                  <td>1102</td>
+                  <td>The promo cannot be created due to user:{user name} doesn&#39;t has permission to create.</td>
+                </tr>
+                <tr>
+                  <td>409</td>
+                  <td>3729</td>
+                  <td>An identical promotion was already created on {creation date}: promotion ID {promo-id}. No changes were made.</td>
+                </tr>
+                <tr>
+                  <td>409</td>
+                  <td>3730</td>
+                  <td>Request is ignored because an identical request has been received. Please avoid sending duplicate promo requests at the same time.</td>
+                </tr>
+                <tr>
+                  <td>409</td>
+                  <td>3731</td>
+                  <td>Updating on this promotion is in process.</td>
+                </tr>
+                <tr>
+                  <td>500</td>
+                  <td>4000</td>
+                  <td>Internal system error, please try again in a few minutes.</td>
+                </tr>
+                <tr>
+                  <td>500</td>
+                  <td>4100</td>
+                  <td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="API Definition - Promo API"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

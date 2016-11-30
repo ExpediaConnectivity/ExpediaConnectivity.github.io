@@ -1,84 +1,152 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Sample Messages - Image API (Experimental)</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Messages - Image API (Experimental)</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Image API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a></li><li class="depth2" data-magellan-arrival="reading-all-active-images"><a class="sidebar-nav-item" href="#reading-all-active-images">Reading all Active Images</a></li><li class="depth2" data-magellan-arrival="reading-all-images-active-and-inactive-"><a class="sidebar-nav-item" href="#reading-all-images-active-and-inactive-">Reading all Images (Active and Inactive)</a></li><li class="depth2" data-magellan-arrival="reading-an-image-inactivated-as-a-duplicate"><a class="sidebar-nav-item" href="#reading-an-image-inactivated-as-a-duplicate">Reading an Image Inactivated As a Duplicate</a></li><li class="depth2" data-magellan-arrival="adding-a-new-image-for-a-property-with-minimum-data"><a class="sidebar-nav-item" href="#adding-a-new-image-for-a-property-with-minimum-data">Adding a New Image for a Property With Minimum Data</a></li><li class="depth2" data-magellan-arrival="adding-a-new-image-for-multiple-room-types"><a class="sidebar-nav-item" href="#adding-a-new-image-for-multiple-room-types">Adding a New Image for Multiple Room Types</a></li><li class="depth2" data-magellan-arrival="verifying-state-of-a-newly-added-image"><a class="sidebar-nav-item" href="#verifying-state-of-a-newly-added-image">Verifying State of a Newly Added Image</a></li><li class="depth2" data-magellan-arrival="partially-updating-an-existing-image-patch-"><a class="sidebar-nav-item" href="#partially-updating-an-existing-image-patch-">Partially Updating An Existing Image (PATCH)</a></li><li class="depth3" data-magellan-arrival="updating-only-the-status"><a class="sidebar-nav-item" href="#updating-only-the-status">Updating only the status</a></li><li class="depth3" data-magellan-arrival="updating-both-the-status-and-the-category"><a class="sidebar-nav-item" href="#updating-both-the-status-and-the-category">Updating both the status and the category</a></li><li class="depth3" data-magellan-arrival="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type"><a class="sidebar-nav-item" href="#overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type">Overriding the current list of room types to only include a specific room type</a></li><li class="depth3" data-magellan-arrival="removing-all-the-associated-room-types"><a class="sidebar-nav-item" href="#removing-all-the-associated-room-types">Removing all the associated room types</a></li><li class="depth2" data-magellan-arrival="deleting-an-unpublished-imnage"><a class="sidebar-nav-item" href="#deleting-an-unpublished-imnage">Deleting an Unpublished imnage</a></li><li class="depth2" data-magellan-arrival="invalid-get-returning-an-error"><a class="sidebar-nav-item" href="#invalid-get-returning-an-error">Invalid GET returning an error</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
-<p>This section contains sample messages illustrating how to interact with the Image API. Examples are currently not available, but will soon be added.</p>
-<h2 id="reading-all-active-images" data-magellan-destination="reading-all-active-images">Reading all Active Images</h2>
-<p>To read all active images, a GET of /images for the property will return them:</p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Image API (Experimental)</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/quick-start.html">Quick Start</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/reference.html">API Definition</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/guides.html">FAQ & Guides</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="reading-all-active-images"><a class="sidebar-nav-item" href="#reading-all-active-images">Reading all Active Images</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="reading-all-images-active-and-inactive-"><a class="sidebar-nav-item" href="#reading-all-images-active-and-inactive-">Reading all Images (Active and Inactive)</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="reading-an-image-inactivated-as-a-duplicate"><a class="sidebar-nav-item" href="#reading-an-image-inactivated-as-a-duplicate">Reading an Image Inactivated As a Duplicate</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="adding-a-new-image-for-a-property-with-minimum-data"><a class="sidebar-nav-item" href="#adding-a-new-image-for-a-property-with-minimum-data">Adding a New Image for a Property With Minimum Data</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="adding-a-new-image-for-multiple-room-types"><a class="sidebar-nav-item" href="#adding-a-new-image-for-multiple-room-types">Adding a New Image for Multiple Room Types</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="verifying-state-of-a-newly-added-image"><a class="sidebar-nav-item" href="#verifying-state-of-a-newly-added-image">Verifying State of a Newly Added Image</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="partially-updating-an-existing-image-patch-"><a class="sidebar-nav-item" href="#partially-updating-an-existing-image-patch-">Partially Updating An Existing Image (PATCH)</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="updating-only-the-status"><a class="sidebar-nav-item" href="#updating-only-the-status">Updating only the status</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="updating-both-the-status-and-the-category"><a class="sidebar-nav-item" href="#updating-both-the-status-and-the-category">Updating both the status and the category</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type"><a class="sidebar-nav-item" href="#overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type">Overriding the current list of room types to only include a specific room type</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="removing-all-the-associated-room-types"><a class="sidebar-nav-item" href="#removing-all-the-associated-room-types">Removing all the associated room types</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="deleting-an-unpublished-imnage"><a class="sidebar-nav-item" href="#deleting-an-unpublished-imnage">Deleting an Unpublished imnage</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="invalid-get-returning-an-error"><a class="sidebar-nav-item" href="#invalid-get-returning-an-error">Invalid GET returning an error</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/try-it.html">Try It</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/image-api/revision-history.html">Revision History</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
+          <p>This section contains sample messages illustrating how to interact with the Image API. Examples are currently not available, but will soon be added.</p>
+          <h2 id="reading-all-active-images" data-magellan-destination="reading-all-active-images">Reading all Active Images</h2>
+          <p>To read all active images, a GET of /images for the property will return them:</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images
 Accept: application/json
 </code></pre><pre><code class="lang-json">{
   &quot;entity&quot;: [
@@ -126,9 +194,9 @@ Accept: application/json
   ]
 }
 </code></pre>
-<h2 id="reading-all-images-active-and-inactive-" data-magellan-destination="reading-all-images-active-and-inactive-">Reading all Images (Active and Inactive)</h2>
-<p>To read all images, a query parameter needs to be passed to the GET images query:</p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images?status=all
+          <h2 id="reading-all-images-active-and-inactive-" data-magellan-destination="reading-all-images-active-and-inactive-">Reading all Images (Active and Inactive)</h2>
+          <p>To read all images, a query parameter needs to be passed to the GET images query:</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images?status=all
 Accept: application/json
 </code></pre><pre><code>{
   &quot;entity&quot;: [
@@ -206,9 +274,10 @@ Accept: application/json
     }
   ]
 }
-</code></pre><h2 id="reading-an-image-inactivated-as-a-duplicate" data-magellan-destination="reading-an-image-inactivated-as-a-duplicate">Reading an Image Inactivated As a Duplicate</h2>
-<p>Expedia runs a periodic process that detects and inactivate duplicate images. When this happens, partners can find out by reading images and look for comments. </p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/e7b8c82b-b09f-4530-9626-31d94f218c2f
+</code></pre>
+          <h2 id="reading-an-image-inactivated-as-a-duplicate" data-magellan-destination="reading-an-image-inactivated-as-a-duplicate">Reading an Image Inactivated As a Duplicate</h2>
+          <p>Expedia runs a periodic process that detects and inactivate duplicate images. When this happens, partners can find out by reading images and look for comments.</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/e7b8c82b-b09f-4530-9626-31d94f218c2f
 </code></pre><pre><code>{
     &quot;entity&quot;: {
         &quot;resourceId&quot;: &quot;e7b8c82b-b09f-4530-9626-31d94f218c2f&quot;,
@@ -225,10 +294,11 @@ Accept: application/json
         &quot;originalImageUrl&quot;: &quot;https://s3-us-west-2.amazonaws.com/eps-website/IMG_0134.JPG&quot;
     }
 }
-</code></pre><p>Please note that the numbers referenced in the comments are internal IDs, and Expedia will eventually replace them with the image public resource IDs to facilitate identifying the duplicates.</p>
-<h2 id="adding-a-new-image-for-a-property-with-minimum-data" data-magellan-destination="adding-a-new-image-for-a-property-with-minimum-data">Adding a New Image for a Property With Minimum Data</h2>
-<p>To add a new image to a property, only the image location is needed.</p>
-<pre><code>POST https://services.expediapartnercentral.com/properties/12933870/images
+</code></pre>
+          <p>Please note that the numbers referenced in the comments are internal IDs, and Expedia will eventually replace them with the image public resource IDs to facilitate identifying the duplicates.</p>
+          <h2 id="adding-a-new-image-for-a-property-with-minimum-data" data-magellan-destination="adding-a-new-image-for-a-property-with-minimum-data">Adding a New Image for a Property With Minimum Data</h2>
+          <p>To add a new image to a property, only the image location is needed.</p>
+          <pre><code>POST https://services.expediapartnercentral.com/properties/12933870/images
 Accept: application/json
 Content-Type: application/json
 {
@@ -242,9 +312,11 @@ Content-Type:  application/json; charset=UTF-8
     &quot;state&quot;: &quot;Received&quot;
   }
 }
-</code></pre><h2 id="adding-a-new-image-for-multiple-room-types" data-magellan-destination="adding-a-new-image-for-multiple-room-types">Adding a New Image for Multiple Room Types</h2>
-<p>To add a new image to a property and have it assigned to some room types, an array of all the room types this image should be assigned to is needed. In this example, we assign a new image to 3 room types, using the room types resource IDs&#39; found via the Product API.</p>
-<pre><code>POST https://services.expediapartnercentral.com/properties/12933870/images
+</code></pre>
+          <h2 id="adding-a-new-image-for-multiple-room-types" data-magellan-destination="adding-a-new-image-for-multiple-room-types">Adding a New Image for Multiple Room Types</h2>
+          <p>To add a new image to a property and have it assigned to some room types, an array of all the room types this image should be assigned to is needed. In this example, we assign a new image to 3 room types, using the room types resource IDs&#39;
+            found via the Product API.</p>
+          <pre><code>POST https://services.expediapartnercentral.com/properties/12933870/images
 Accept: application/json
 Content-Type: application/json
 {
@@ -274,9 +346,10 @@ Content-Type:  application/json; charset=UTF-8
     &quot;state&quot;: &quot;Received&quot;
   }
 }
-</code></pre><h2 id="verifying-state-of-a-newly-added-image" data-magellan-destination="verifying-state-of-a-newly-added-image">Verifying State of a Newly Added Image</h2>
-<p>To verify the state of a newly added image and make sure it gets published, a GET with the resource ID of the image will provide the information.</p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/b3626ff5-f89f-45ed-9d64-0f0285a96015
+</code></pre>
+          <h2 id="verifying-state-of-a-newly-added-image" data-magellan-destination="verifying-state-of-a-newly-added-image">Verifying State of a Newly Added Image</h2>
+          <p>To verify the state of a newly added image and make sure it gets published, a GET with the resource ID of the image will provide the information.</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/b3626ff5-f89f-45ed-9d64-0f0285a96015
 Accept: application/json
 </code></pre><pre><code>{
   &quot;entity&quot;: {
@@ -303,19 +376,22 @@ Accept: application/json
     &quot;originalImageUrl&quot;: &quot;https://s3-us-west-2.amazonaws.com/eps-website/050.jpg&quot;
   }
 }
-</code></pre><h2 id="partially-updating-an-existing-image-patch-" data-magellan-destination="partially-updating-an-existing-image-patch-">Partially Updating An Existing Image (PATCH)</h2>
-<p>Here are a few examples of PATCH requests partners could want to make. Response examples are not included, but they would be the full image resource definition with all its fields, in its final state after the partial update.</p>
-<h3 id="updating-only-the-status" data-magellan-destination="updating-only-the-status">Updating only the status</h3>
-<pre><code>{
+</code></pre>
+          <h2 id="partially-updating-an-existing-image-patch-" data-magellan-destination="partially-updating-an-existing-image-patch-">Partially Updating An Existing Image (PATCH)</h2>
+          <p>Here are a few examples of PATCH requests partners could want to make. Response examples are not included, but they would be the full image resource definition with all its fields, in its final state after the partial update.</p>
+          <h3 id="updating-only-the-status" data-magellan-destination="updating-only-the-status">Updating only the status</h3>
+          <pre><code>{
     &quot;status&quot;: &quot;Inactive&quot;
 }
-</code></pre><h3 id="updating-both-the-status-and-the-category" data-magellan-destination="updating-both-the-status-and-the-category">Updating both the status and the category</h3>
-<pre><code>{
+</code></pre>
+          <h3 id="updating-both-the-status-and-the-category" data-magellan-destination="updating-both-the-status-and-the-category">Updating both the status and the category</h3>
+          <pre><code>{
     &quot;status&quot;: &quot;Inactive&quot;,
     &quot;categoryCode&quot;: &quot;INTERIOR_ENTRANCE&quot;
 }
-</code></pre><h3 id="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type" data-magellan-destination="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type">Overriding the current list of room types to only include a specific room type</h3>
-<pre><code>{
+</code></pre>
+          <h3 id="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type" data-magellan-destination="overriding-the-current-list-of-room-types-to-only-include-a-specific-room-type">Overriding the current list of room types to only include a specific room type</h3>
+          <pre><code>{
     &quot;roomTypes&quot;: [
         {
             &quot;resourceId&quot;: 123,
@@ -323,26 +399,31 @@ Accept: application/json
         }
     ]
 }
-</code></pre><h3 id="removing-all-the-associated-room-types" data-magellan-destination="removing-all-the-associated-room-types">Removing all the associated room types</h3>
-<pre><code>{
+</code></pre>
+          <h3 id="removing-all-the-associated-room-types" data-magellan-destination="removing-all-the-associated-room-types">Removing all the associated room types</h3>
+          <pre><code>{
     &quot;roomTypes&quot;: []
 }
-</code></pre><h2 id="deleting-an-unpublished-imnage" data-magellan-destination="deleting-an-unpublished-imnage">Deleting an Unpublished imnage</h2>
-<p>When partners upload images that Expedia cannot publish, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assuming a partner pushes a corrupted image with a POST:</p>
-<pre><code> {
+</code></pre>
+          <h2 id="deleting-an-unpublished-imnage" data-magellan-destination="deleting-an-unpublished-imnage">Deleting an Unpublished imnage</h2>
+          <p>When partners upload images that Expedia cannot publish, it is possible for partners to ask Expedia to delete these to stop seeing them in the GET all images. Assuming a partner pushes a corrupted image with a POST:</p>
+          <pre><code> {
       &quot;originalImageUrl&quot;: &quot;https://s3-us-west-2.amazonaws.com/eps-website/invalidimage.txt&quot;
 }
-</code></pre><p>Expedia will return the resourceId for it straight away, with the received state:</p>
-<pre><code>{
+</code></pre>
+          <p>Expedia will return the resourceId for it straight away, with the received state:</p>
+          <pre><code>{
     &quot;entity&quot;: {
         &quot;resourceId&quot;: &quot;dcb9d144-2a5c-469c-a71c-e2f69c788e26&quot;,
         &quot;state&quot;: &quot;Received&quot;
     }
 }
-</code></pre><p>The partner can then get state with a GET:</p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
-</code></pre><p>In this case, the state will be Rejected</p>
-<pre><code>{
+</code></pre>
+          <p>The partner can then get state with a GET:</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
+</code></pre>
+          <p>In this case, the state will be Rejected</p>
+          <pre><code>{
     &quot;entity&quot;: {
         &quot;resourceId&quot;: &quot;dcb9d144-2a5c-469c-a71c-e2f69c788e26&quot;,
         &quot;status&quot;: &quot;Active&quot;,
@@ -351,16 +432,19 @@ Accept: application/json
         &quot;originalImageUrl&quot;: &quot;https://s3-us-west-2.amazonaws.com/eps-website/invalidimage.txt&quot;
     }
 }
-</code></pre><p>The partner can then issue a Delete statement to stop seeing this image completely for this property</p>
-<pre><code>DELETE https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
+</code></pre>
+          <p>The partner can then issue a Delete statement to stop seeing this image completely for this property</p>
+          <pre><code>DELETE https://services.expediapartnercentral.com/properties/12933870/images/dcb9d144-2a5c-469c-a71c-e2f69c788e26
 Accept: application/json
-</code></pre><p>The response when successful will be a 204 No Content.</p>
-<h2 id="invalid-get-returning-an-error" data-magellan-destination="invalid-get-returning-an-error">Invalid GET returning an error</h2>
-<p>Here&#39;s an example of how EPS Image returns errors to customers. If a partner provides an invalid resourceId:</p>
-<pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/notavalidresourceid
+</code></pre>
+          <p>The response when successful will be a 204 No Content.</p>
+          <h2 id="invalid-get-returning-an-error" data-magellan-destination="invalid-get-returning-an-error">Invalid GET returning an error</h2>
+          <p>Here&#39;s an example of how EPS Image returns errors to customers. If a partner provides an invalid resourceId:</p>
+          <pre><code>GET https://services.expediapartnercentral.com/properties/12933870/images/notavalidresourceid
 Accept: application/json
-</code></pre><p>An error is returned</p>
-<pre><code>{
+</code></pre>
+          <p>An error is returned</p>
+          <pre><code>{
     &quot;errors&quot;: [
         {
             &quot;code&quot;: 3802,
@@ -368,19 +452,23 @@ Accept: application/json
         }
     ]
 }
-</code></pre></div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
+</code></pre>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Sample Messages - Image API (Experimental)"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

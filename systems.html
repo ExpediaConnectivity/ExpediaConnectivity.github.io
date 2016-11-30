@@ -1,528 +1,798 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Systems - APIs for Expedia Partners</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Expedia Partner APIs for developers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systems - APIs for Expedia Partners</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
-
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-</header>
-<div class="full-width"><script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="/css/he-main.css">
-<style>
-    .card {
-        margin-bottom: 30px;
-    }
-
-    .cards {
-    }
-
-    .card a.card-header:hover {
-        text-decoration: none;
-        cursor: default;
-    }
-
-    .card .description {
-        display: table;
-        margin-top: 1rem;
-    }
-
-    .card .description>* {
-        font-size: 1.1rem;
-        line-height: 1.5em;
-        display: inline-block;
-    }
-
-    .line {
-        margin: 0 !important;
-    }
-
-    #section-intro-paragraph {
-        margin-top: 1rem;
-        margin-bottom: 0rem;
-    }
-
-    #section-lower_links {
-        margin-bottom: 100px;
-    }
-    .card .description ul {
-        margin: 0 !important;
-    }
-    .card .description li {
-        padding: 0 0.2rem 0 0 !important;
-    }
-</style>
-<script>
-    $(document).ready(function() {
-        $(".card-header").click(function(el) {
-            $(el.target).find("span").toggleClass("ui-icon-carat-1-s").toggleClass("ui-icon-carat-1-n");
-            $(el.target).closest(".card").find(".card-content .description").slideToggle();
-        });
-    });
-</script>
-<section class='hero hero-cityscape'>
-    <div class='inner'>
+  </header>
+  <div class="full-width">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/he-main.css">
+    <style>
+      .card {
+          margin-bottom: 30px;
+      }
+  
+      .cards {
+      }
+  
+      .card a.card-header:hover {
+          text-decoration: none;
+          cursor: default;
+      }
+  
+      .card .description {
+          display: table;
+          margin-top: 1rem;
+      }
+  
+      .card .description>* {
+          font-size: 1.1rem;
+          line-height: 1.5em;
+          display: inline-block;
+      }
+  
+      .line {
+          margin: 0 !important;
+      }
+  
+      #section-intro-paragraph {
+          margin-top: 1rem;
+          margin-bottom: 0rem;
+      }
+  
+      #section-lower_links {
+          margin-bottom: 100px;
+      }
+      .card .description ul {
+          margin: 0 !important;
+      }
+      .card .description li {
+          padding: 0 0.2rem 0 0 !important;
+      }
+    </style>
+    <script>
+      $(document).ready(function() {
+          $(".card-header").click(function(el) {
+              $(el.target).find("span").toggleClass("ui-icon-carat-1-s").toggleClass("ui-icon-carat-1-n");
+              $(el.target).closest(".card").find(".card-content .description").slideToggle();
+          });
+      });
+    </script>
+    <section class='hero hero-cityscape'>
+      <div class='inner'>
         <h1>Systems</h1>
         <h2>Connect your property to the Expedia Marketplace</h2>
-    </div>
-</section>
-<section id="section-intro-paragraph">
-    <div class="inner">
+      </div>
+    </section>
+    <section id="section-intro-paragraph">
+      <div class="inner">
         <div class="row">
-            <div class="twelve columns">
-                <p>
-                    If your property does not have a current Expedia agreement in place, please visit <a href="http://joinexpedia.com/" target="_blank">joinexpedia.com</a><br/>
-                    You can contact our Connectivity Partners directly to connect your property to the Expedia Marketplace.
-                </p>
-            </div>
+          <div class="twelve columns">
+            <p>
+              If your property does not have a current Expedia agreement in place, please visit <a href="http://joinexpedia.com/" target="_blank">joinexpedia.com</a>
+              <br/>You can contact our Connectivity Partners directly to connect your property to the Expedia Marketplace.
+            </p>
+          </div>
         </div>
-    </div>
-</section>
-<div id="systems" class="small-12 small-centered medium-10 large-8 columns cards" style="margin-top: 0rem;">
-    <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
+      </div>
+    </section>
+    <div id="systems" class="small-12 small-centered medium-10 large-8 columns cards" style="margin-top: 0rem;">
+      <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
         <div class="card-content"><a class="card-header">Central Reservations Systems<span class="ui-icon ui-icon-carat-1-s"></span></a>
-            <div class="description full-width">
-                <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
-                    <li class="column line"> <a target='_blank' href='http://www.1hotelrez.com'>1HotelSolution.com Co., Ltd.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.africabookings.com'>Africa Bookings Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.altabix.com/'>ALTABIX</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.asiatech.in'>AsiaTech Hospitality Solution Pvt Ltd</a> </li>
-                    <li class="column line"> Athena Solutions </li>
-                    <li class="column line"> Aurum Marketing srl </li>
-                    <li class="column line"> <a target='_blank' href='http://www.b4checkin.com'>b4checkin</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bitlasoft.com/'>Bitlasoftware Pvt Ltd</a> </li>
-                    <li class="column line"> Bizcomit </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookandlink.com'>BookandLink</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.BookLogic.net'>BookLogic</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bug-hotel.org/'>Bug Software LLC</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cefalu.net'>Cefalu.net</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.clhg.com'>City Lodge hotel Group</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.clock-hs.com'>Clock Hotel Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cmnetsolucoes.com.br/'>CM Net EQC</a> </li>
-                    <li class="column line"> Constellation </li>
-                    <li class="column line"> <a target='_blank' href='http://www.webcrs.com'>CRS Technologies India PVT</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.derbysoft.com/'>Derbysoft</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.extensionsforjoomla.com'>e4jConnect</a> </li>
-                    <li class="column line"> Earth, Sea & Sky Vacations </li>
-                    <li class="column line"> EASEROOM (Unit of GI Hospitalities Private Limited) </li>
-                    <li class="column line"> <a target='_blank' href='http://www.easy-rez.com'>Easy-Rez</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.engisoft.com'>Engisoft</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.estargroup.it'>Estar Group</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.genares.com/index.htm'>Genares</a> </li>
-                    <li class="column line"> Great Hotels of the World </li>
-                    <li class="column line"> <a target='_blank' href='https://EffectiveTours.com'>Harizma Holdings Lanka</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hti-systems.co.za'>Hospitality Technology International (Pty) Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.beds-to-web.de'>Hostel-Booking.com Reservierungssyteme GmbH</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.pelicansolution.com'>Hotel Exchange</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotel-net.it/'>HotelNet</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelpartner.ch/'>HotelPartner</a> </li>
-                    <li class="column line"> HotelRunner </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hoteltoweb.com'>Hoteltoweb</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotetec.com'>Hotetec Accomodation SL</a> </li>
-                    <li class="column line"> IGM </li>
-                    <li class="column line"> Impactiv,Inc </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innlinkcrs.com/'>InnLink LLC-Travlynx</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.reservit.com'>Interface Technologies</a> </li>
-                    <li class="column line"> LemonPixel.pl </li>
-                    <li class="column line"> <a target='_blank' href='http://www.magadesign.net/'>Magarental AG</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.merlinsmatrix.com'>Merlins Matrix Co Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mm-one.com'>MM-One Group Srl</a> </li>
-                    <li class="column line"> NewBook Pty Ltd </li>
-                    <li class="column line"> <a target='_blank' href='http://www.novaxs.com.br/'>Nova XS Tecnologia da Informação LTDA.</a> </li>
-                    <li class="column line"> PHOBS </li>
-                    <li class="column line"> <a target='_blank' href='http://www.reservhotel.com'>ReservHOTEL International</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.reshotel.in/'>Reshotel Solutions India Private Limited</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.resonline.ru'>Resonline LLC</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.resortdata.com'>Resort Data Processing, Inc.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.roiback.com/'>ROIBACK</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sabrehospitality.com/'>Sabre</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sceptrehospitality.com/'>Sceptre Hospitality Resources</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sinergiasoluciones.com.ar'>Sinergia Soluciones</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://smoobu.com'>Smoobu GmbH</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.krossbooking.com'>Solutions Plus s.r.l.</a> </li>
-                    <li class="column line"> Stays Solutions Limited </li>
-                    <li class="column line"> <a target='_blank' href='http://www.stranto.com'>Stranto Business Solutions GmbH</a> </li>
-                    <li class="column line"> Supranational Vendor </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tesipro.com/'>Tesipro</a> </li>
-                    <li class="column line"> Tokeet </li>
-                    <li class="column line"> <a target='_blank' href='http://www.touronline.de'>TourOnline AG</a> </li>
-                    <li class="column line"> Tradyso </li>
-                    <li class="column line"> <a target='_blank' href='http://www.travelclick.com'>TravelClick</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.virtualcom.it'>Virtual Interactive</a> </li>
-                    <li class="column line"> Wanda Hotels & Resorts </li>
-                    <li class="column line"> WJ & Company </li>
-                    <li class="column line"> <a target='_blank' href='http://www.channelmessenger.com/'>Xmedia</a> </li>
-                    <li class="column line"> XN Hotel Systems </li>
-                    <li class="column line"> Xtreeme GmbH </li>
-                    <li class="column line"> <a target='_blank' href='http://www.zadego.com'>Zadego GmbH – Easybooking</a> </li>
-                </ul>
-            </div>
+          <div class="description full-width">
+            <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
+              <li class="column line"> <a target='_blank' href='http://www.1hotelrez.com'>1HotelSolution.com Co., Ltd.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.africabookings.com'>Africa Bookings Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.altabix.com/'>ALTABIX</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.asiatech.in'>AsiaTech Hospitality Solution Pvt Ltd</a> 
+              </li>
+              <li class="column line">Athena Solutions</li>
+              <li class="column line">Aurum Marketing srl</li>
+              <li class="column line"> <a target='_blank' href='http://www.b4checkin.com'>b4checkin</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.bitlasoft.com/'>Bitlasoftware Pvt Ltd</a> 
+              </li>
+              <li class="column line">Bizcomit</li>
+              <li class="column line"> <a target='_blank' href='http://www.bookandlink.com'>BookandLink</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.BookLogic.net'>BookLogic</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.bug-hotel.org/'>Bug Software LLC</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cefalu.net'>Cefalu.net</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.clhg.com'>City Lodge hotel Group</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.clock-hs.com'>Clock Hotel Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cmnetsolucoes.com.br/'>CM Net EQC</a> 
+              </li>
+              <li class="column line">Constellation</li>
+              <li class="column line"> <a target='_blank' href='http://www.webcrs.com'>CRS Technologies India PVT</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.derbysoft.com/'>Derbysoft</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.extensionsforjoomla.com'>e4jConnect</a> 
+              </li>
+              <li class="column line">Earth, Sea & Sky Vacations</li>
+              <li class="column line">EASEROOM (Unit of GI Hospitalities Private Limited)</li>
+              <li class="column line"> <a target='_blank' href='http://www.easy-rez.com'>Easy-Rez</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.engisoft.com'>Engisoft</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.estargroup.it'>Estar Group</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.genares.com/index.htm'>Genares</a> 
+              </li>
+              <li class="column line">Great Hotels of the World</li>
+              <li class="column line"> <a target='_blank' href='https://EffectiveTours.com'>Harizma Holdings Lanka</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hti-systems.co.za'>Hospitality Technology International (Pty) Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.beds-to-web.de'>Hostel-Booking.com Reservierungssyteme GmbH</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.pelicansolution.com'>Hotel Exchange</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotel-net.it/'>HotelNet</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelpartner.ch/'>HotelPartner</a> 
+              </li>
+              <li class="column line">HotelRunner</li>
+              <li class="column line"> <a target='_blank' href='http://www.hoteltoweb.com'>Hoteltoweb</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotetec.com'>Hotetec Accomodation SL</a> 
+              </li>
+              <li class="column line">IGM</li>
+              <li class="column line">Impactiv,Inc</li>
+              <li class="column line"> <a target='_blank' href='http://www.innlinkcrs.com/'>InnLink LLC-Travlynx</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.reservit.com'>Interface Technologies</a> 
+              </li>
+              <li class="column line">LemonPixel.pl</li>
+              <li class="column line"> <a target='_blank' href='http://www.magadesign.net/'>Magarental AG</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.merlinsmatrix.com'>Merlins Matrix Co Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mm-one.com'>MM-One Group Srl</a> 
+              </li>
+              <li class="column line">NewBook Pty Ltd</li>
+              <li class="column line"> <a target='_blank' href='http://www.novaxs.com.br/'>Nova XS Tecnologia da Informação LTDA.</a> 
+              </li>
+              <li class="column line">PHOBS</li>
+              <li class="column line"> <a target='_blank' href='http://www.reservhotel.com'>ReservHOTEL International</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.reshotel.in/'>Reshotel Solutions India Private Limited</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.resonline.ru'>Resonline LLC</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.resortdata.com'>Resort Data Processing, Inc.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.roiback.com/'>ROIBACK</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sabrehospitality.com/'>Sabre</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sceptrehospitality.com/'>Sceptre Hospitality Resources</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sinergiasoluciones.com.ar'>Sinergia Soluciones</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://smoobu.com'>Smoobu GmbH</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.krossbooking.com'>Solutions Plus s.r.l.</a> 
+              </li>
+              <li class="column line">Stays Solutions Limited</li>
+              <li class="column line"> <a target='_blank' href='http://www.stranto.com'>Stranto Business Solutions GmbH</a> 
+              </li>
+              <li class="column line">Supranational Vendor</li>
+              <li class="column line"> <a target='_blank' href='http://www.tesipro.com/'>Tesipro</a> 
+              </li>
+              <li class="column line">Tokeet</li>
+              <li class="column line"> <a target='_blank' href='http://www.touronline.de'>TourOnline AG</a> 
+              </li>
+              <li class="column line">Tradyso</li>
+              <li class="column line"> <a target='_blank' href='http://www.travelclick.com'>TravelClick</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.virtualcom.it'>Virtual Interactive</a> 
+              </li>
+              <li class="column line">Wanda Hotels & Resorts</li>
+              <li class="column line">WJ & Company</li>
+              <li class="column line"> <a target='_blank' href='http://www.channelmessenger.com/'>Xmedia</a> 
+              </li>
+              <li class="column line">XN Hotel Systems</li>
+              <li class="column line">Xtreeme GmbH</li>
+              <li class="column line"> <a target='_blank' href='http://www.zadego.com'>Zadego GmbH – Easybooking</a> 
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
+      </div>
+      <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
         <div class="card-content"><a class="card-header">Property Management Systems<span class="ui-icon ui-icon-carat-1-s"></span></a>
-            <div class="description full-width">
-                <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
-                    <li class="column line"> <a target='_blank' href='http://www.acigrup.com'>AciGrup S.L</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.africaonlinesystems.com'>Africa Online Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.agilysys.com'>Agilysys, Inc</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.alacer.co.uk'>Alacer</a> </li>
-                    <li class="column line"> <a target='_blank' href='mailto:Info@dormproject.ch'>alixon gmbh</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.anandsystems.com/index.htm'>Anand Systems Inc</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.arpies.com'>Arpies Yazlm Bilgisayar Danmanlk Turizm Tic. Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.beds24.com'>beds24</a> </li>
-                    <li class="column line"> Beijing Tian Xia Lv Xing Technology Co.,Ltd </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookingautomation.com'>Booking Automation Inc</a> </li>
-                    <li class="column line"> Booking Experts </li>
-                    <li class="column line"> <a target='_blank' href='https://www.bookingexperts.nl/'>BookingExperts.nl</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cellarch.com/index.htm'>CellArch Technologies</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cimso.com'>CIMSO</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.classone.es'>Class One</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cloudinn.net'>Cloudinn</a> </li>
-                    <li class="column line"> DeepThink LLC </li>
-                    <li class="column line"> <a target='_blank' href='http://www.quetzalsparadise.com/www.paraisoquetzal.com'>Desarrolador de Turismo de Centroamerica S.L. (DTC S.L.)</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.desbravador.com.br'>Desbravador Software Ltda</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.e-novate.asia'>E-Novate Pte Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.eZeeFrontDesk.com'>eZee Technosys</a> </li>
-                    <li class="column line"> Fairbridge Inns EQC </li>
-                    <li class="column line"> <a target='_blank' href='http://www.fivestarhotelsystems.com'>Five Star Hotel Systems Corporation</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.frontdeskanywhere.com/'>Frontdesk Anywhere</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://gracesoft.com/'>Gracesoft Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.grupotca.com'>Grupo TCA</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.holiday-velvet.com'>Holiday Velvet</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.minsuyun.com'>Hongkong Kooyoo Technology Co., Ltd.</a> </li>
-                    <li class="column line"> Hostel System </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hostpms.com'>Host Hotel Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.hoteladvisor.net'>Hoteladvisor.net</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelconcepts.com'>Hotel Concepts</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotellinx.com'>Hotellinx Systems Ltd</a> </li>
-                    <li class="column line"> Hotel Management of New Orleans </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hoteloga.com'>HotelOga</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotel-profi.de'>Hotel Profi</a> </li>
-                    <li class="column line"> Hotel Time </li>
-                    <li class="column line"> <a target='_blank' href='http://icnea.com'>Icnea Tecnologia S.L.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.visualmatrixpms.com'>Image Technology Systems</a> </li>
-                    <li class="column line"> iMagicsoft </li>
-                    <li class="column line"> <a target='_blank' href='http://www.indracompany.com/en'>Indra</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innfinity.com'>INNfinity Hospitality</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.inngeniuspms.com'>InnGenius Property Management Solutions</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innquest.com'>InnQuest Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innroad.com/'>innRoad</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innsight.com'>INNsight Hospitality Group</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.innsoft.com/'>Innsoft, Incorporated</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.idsfortune.com'>Intellect Data Systems and Software Ltd. (IDS)</a> </li>
-                    <li class="column line"> Ipnordic A/S </li>
-                    <li class="column line"> <a target='_blank' href='http://www.iqwareinc.com/'>IQWARE</a> </li>
-                    <li class="column line"> KE-Booking </li>
-                    <li class="column line"> <a target='_blank' href='http://www.lodgegate.com'>Lodgegate</a> </li>
-                    <li class="column line"> Logidiam </li>
-                    <li class="column line"> LuxuryRes </li>
-                    <li class="column line"> <a target='_blank' href='http://www.astrohotel.es'>Mallorca Soft</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.maxxton.com'>Maxxton India Technologies Pvt. Ltd.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mefisto.cz'>MEFISTO SOFTWARE, a.s.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mingus.biz'>Mingus Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.miragehotelsystem.com'>Mirage Hotel Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.motelsw.com'>Motel Software Solutions</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.msisolutions.com/'>Multi-Systems, Inc., (MSI)</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelxp.it'>Nebiz</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.nicehotels.com'>Ni.Ce. Informatica</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.nightsbridge.co.za'>Nightsbridge</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.nivera.com.tr/index.php'>Nivera Technologies</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.maestropms.com'>NORTHWIND</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.onetechsolution.com'>ONETECH solution</a> </li>
-                    <li class="column line"> OnlineBooking </li>
-                    <li class="column line"> <a target='_blank' href='http://www.online-int.com.au'>Online Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.openhotel.com'>Open Hotel Inc</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.micros.com'>Oracle Hospitality</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.oreve-technologies.com/index.php'>Oreve Technologies</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.perfecthandssolutions.com'>Perfect Hands Solutions Pvt. Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.pmscloud.com'>PMS Cloud LP</a> </li>
-                    <li class="column line"> Presidium Services LLC </li>
-                    <li class="column line"> Promoir BV </li>
-                    <li class="column line"> Protel Hotel Software </li>
-                    <li class="column line"> <a target='_blank' href='http://www.pyn.ro/'>Pyn Booking</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.resortdata.com'>Resort Data Processing, Inc.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.resrequest.com'>ResRequest</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.rms-global.com'>RMS (Aust) Pty Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.roomraccoon.com'>RoomRaccoon</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.roomsy.com'>Roomsy</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.rsiintl.com'>RSI International</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.sabeeapp.com/'>SabeeApp</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://senit.lk'>Senit Technologies ( Pvt ) Ltd.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.availroom.com'>SIALD SOFTWARE SL</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sigesgroup.it/'>Sigesgroup</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.silverbyte.com'>Silverbyte</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sirvoy.com'>Sirvoy</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.slopebooking.com'>Slope</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.softbrands.com/'>Softbrands INFOR</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.newhotel.com'>Software Newhotel SA</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.straitpms.com'>Strait Solutions</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.switch.cm'>SWITCHBOARD</a> </li>
-                    <li class="column line"> TDS Network International </li>
-                    <li class="column line"> <a target='_blank' href='http://www.telicom.ca'>Telicom</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tobook.com/about.asp'>To Book Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.vrbookings.com'>Trading Estate Service srl</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.vacationspal.com'>Vacationspal</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelasp.com'>WinSaaS</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.worldwebtechnologies.com/'>World Web Technologies</a> </li>
-                    <li class="column line"> YesPMS </li>
-                    <li class="column line"> <a target='_blank' href='http://zari.me'>ZARI (Yellotravel Inc.)</a> </li>
-                </ul>
-            </div>
+          <div class="description full-width">
+            <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
+              <li class="column line"> <a target='_blank' href='http://www.acigrup.com'>AciGrup S.L</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.africaonlinesystems.com'>Africa Online Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.agilysys.com'>Agilysys, Inc</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.alacer.co.uk'>Alacer</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='mailto:Info@dormproject.ch'>alixon gmbh</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.anandsystems.com/index.htm'>Anand Systems Inc</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.arpies.com'>Arpies Yazlm Bilgisayar Danmanlk Turizm Tic. Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.beds24.com'>beds24</a> 
+              </li>
+              <li class="column line">Beijing Tian Xia Lv Xing Technology Co.,Ltd</li>
+              <li class="column line"> <a target='_blank' href='http://www.bookingautomation.com'>Booking Automation Inc</a> 
+              </li>
+              <li class="column line">Booking Experts</li>
+              <li class="column line"> <a target='_blank' href='https://www.bookingexperts.nl/'>BookingExperts.nl</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cellarch.com/index.htm'>CellArch Technologies</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cimso.com'>CIMSO</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.classone.es'>Class One</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cloudinn.net'>Cloudinn</a> 
+              </li>
+              <li class="column line">DeepThink LLC</li>
+              <li class="column line"> <a target='_blank' href='http://www.quetzalsparadise.com/www.paraisoquetzal.com'>Desarrolador de Turismo de Centroamerica S.L. (DTC S.L.)</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.desbravador.com.br'>Desbravador Software Ltda</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.e-novate.asia'>E-Novate Pte Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.eZeeFrontDesk.com'>eZee Technosys</a> 
+              </li>
+              <li class="column line">Fairbridge Inns EQC</li>
+              <li class="column line"> <a target='_blank' href='http://www.fivestarhotelsystems.com'>Five Star Hotel Systems Corporation</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.frontdeskanywhere.com/'>Frontdesk Anywhere</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://gracesoft.com/'>Gracesoft Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.grupotca.com'>Grupo TCA</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.holiday-velvet.com'>Holiday Velvet</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.minsuyun.com'>Hongkong Kooyoo Technology Co., Ltd.</a> 
+              </li>
+              <li class="column line">Hostel System</li>
+              <li class="column line"> <a target='_blank' href='http://www.hostpms.com'>Host Hotel Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.hoteladvisor.net'>Hoteladvisor.net</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelconcepts.com'>Hotel Concepts</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotellinx.com'>Hotellinx Systems Ltd</a> 
+              </li>
+              <li class="column line">Hotel Management of New Orleans</li>
+              <li class="column line"> <a target='_blank' href='http://www.hoteloga.com'>HotelOga</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotel-profi.de'>Hotel Profi</a> 
+              </li>
+              <li class="column line">Hotel Time</li>
+              <li class="column line"> <a target='_blank' href='http://icnea.com'>Icnea Tecnologia S.L.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.visualmatrixpms.com'>Image Technology Systems</a> 
+              </li>
+              <li class="column line">iMagicsoft</li>
+              <li class="column line"> <a target='_blank' href='http://www.indracompany.com/en'>Indra</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.innfinity.com'>INNfinity Hospitality</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.inngeniuspms.com'>InnGenius Property Management Solutions</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.innquest.com'>InnQuest Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.innroad.com/'>innRoad</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.innsight.com'>INNsight Hospitality Group</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.innsoft.com/'>Innsoft, Incorporated</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.idsfortune.com'>Intellect Data Systems and Software Ltd. (IDS)</a> 
+              </li>
+              <li class="column line">Ipnordic A/S</li>
+              <li class="column line"> <a target='_blank' href='http://www.iqwareinc.com/'>IQWARE</a> 
+              </li>
+              <li class="column line">KE-Booking</li>
+              <li class="column line"> <a target='_blank' href='http://www.lodgegate.com'>Lodgegate</a> 
+              </li>
+              <li class="column line">Logidiam</li>
+              <li class="column line">LuxuryRes</li>
+              <li class="column line"> <a target='_blank' href='http://www.astrohotel.es'>Mallorca Soft</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.maxxton.com'>Maxxton India Technologies Pvt. Ltd.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mefisto.cz'>MEFISTO SOFTWARE, a.s.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mingus.biz'>Mingus Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.miragehotelsystem.com'>Mirage Hotel Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.motelsw.com'>Motel Software Solutions</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.msisolutions.com/'>Multi-Systems, Inc., (MSI)</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelxp.it'>Nebiz</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.nicehotels.com'>Ni.Ce. Informatica</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.nightsbridge.co.za'>Nightsbridge</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.nivera.com.tr/index.php'>Nivera Technologies</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.maestropms.com'>NORTHWIND</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.onetechsolution.com'>ONETECH solution</a> 
+              </li>
+              <li class="column line">OnlineBooking</li>
+              <li class="column line"> <a target='_blank' href='http://www.online-int.com.au'>Online Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.openhotel.com'>Open Hotel Inc</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.micros.com'>Oracle Hospitality</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.oreve-technologies.com/index.php'>Oreve Technologies</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.perfecthandssolutions.com'>Perfect Hands Solutions Pvt. Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.pmscloud.com'>PMS Cloud LP</a> 
+              </li>
+              <li class="column line">Presidium Services LLC</li>
+              <li class="column line">Promoir BV</li>
+              <li class="column line">Protel Hotel Software</li>
+              <li class="column line"> <a target='_blank' href='http://www.pyn.ro/'>Pyn Booking</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.resortdata.com'>Resort Data Processing, Inc.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.resrequest.com'>ResRequest</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.rms-global.com'>RMS (Aust) Pty Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.roomraccoon.com'>RoomRaccoon</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.roomsy.com'>Roomsy</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.rsiintl.com'>RSI International</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.sabeeapp.com/'>SabeeApp</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://senit.lk'>Senit Technologies ( Pvt ) Ltd.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.availroom.com'>SIALD SOFTWARE SL</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sigesgroup.it/'>Sigesgroup</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.silverbyte.com'>Silverbyte</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sirvoy.com'>Sirvoy</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.slopebooking.com'>Slope</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.softbrands.com/'>Softbrands INFOR</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.newhotel.com'>Software Newhotel SA</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.straitpms.com'>Strait Solutions</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.switch.cm'>SWITCHBOARD</a> 
+              </li>
+              <li class="column line">TDS Network International</li>
+              <li class="column line"> <a target='_blank' href='http://www.telicom.ca'>Telicom</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.tobook.com/about.asp'>To Book Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.vrbookings.com'>Trading Estate Service srl</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.vacationspal.com'>Vacationspal</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelasp.com'>WinSaaS</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.worldwebtechnologies.com/'>World Web Technologies</a> 
+              </li>
+              <li class="column line">YesPMS</li>
+              <li class="column line"> <a target='_blank' href='http://zari.me'>ZARI (Yellotravel Inc.)</a> 
+              </li>
+            </ul>
+          </div>
         </div>
-    </div>
-    <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
+      </div>
+      <div class="card he-active_now he-animate he-delay_100 he-fade_in active">
         <div class="card-content">
-            <a class="card-header">Channel Managers/Rate Allocators<span class="ui-icon ui-icon-carat-1-s"></span></a>
-            <div class="description full-width">
-                <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
-                    <li class="column line"> <a target='_blank' href='http://www.11infotech.com'>11Infotech</a> </li>
-                    <li class="column line"> Accubook </li>
-                    <li class="column line"> <a target='_blank' href='http://www.activemetrics.com'>Active Metrics</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.allotz.com'>Allotz</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.amk-web.com'>AMK</a> </li>
-                    <li class="column line"> AROBS Transilvania Software </li>
-                    <li class="column line"> <a target='_blank' href='http://www.athena.com.tw'>Athena Information Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.avaibook.com'>AvaiBook</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://site.availpro.com/'>Availpro</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.itsolutions.es / http://www.avantio.com/'>Avantio VRMS</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.avenues.info'>Avenues South Asias</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.avirato.com'>Avirato</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.axisrooms.com'>AxisRooms Travel Distribution Solutions Pvt. Ltd.</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.octorate.com'>BBliverate Octorate</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.default.it'>BeGenius</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.berrysoftware.co.za'>Berry Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.billypds.com/english/home/'>BillyPDS</a> </li>
-                    <li class="column line"> Bohemia REI </li>
-                    <li class="column line"> Bookassist </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookingland.com'>Bookingland, SL</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.mybookingpal.com/'>BookingPal</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookitech.com'>Booki Tech S.r.l.s</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.busy-rooms.com/en'>BusyRooms</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.chanelink.com'>Chanelink</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://channelmanager.com.au'>ChannelManager.com.au</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.channelrush.com'>ChannelRUSH</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.chinaonline.net.cn/home_new_eng/index.asp'>China Online</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.claritycommerce.com'>Clarity Commerce</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.clips.co.jp/'>Clips</a> </li>
-                    <li class="column line"> Consejeria de Cultura y turismo, Murcia </li>
-                    <li class="column line"> <a target='_blank' href='http://www.coral-technologies.com'>Coral-Technologies</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.cultuzz.de'>Cultuzz</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookon.org'>CWD S.r.l</a> </li>
-                    <li class="column line"> Detco </li>
-                    <li class="column line"> <a target='_blank' href='https://www.myallocator.com/'>Digital Arbitrage</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.digitaldruid.net'>DigitalDruid</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.dingus-services.com/'>Dingus Services</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.directwithhotels.com/'>DirectWithHotels</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.efimatica.com/'>Efimatica</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.ericsoft.com'>Ericsoft</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.fastbooking.org'>Fastbooking</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://finite-soft.com/'>Finite-Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.freetobook.com/'>Freetobook</a> </li>
-                    <li class="column line"> Gestimusa </li>
-                    <li class="column line"> <a target='_blank' href='http://www.gestionealbergo.it'>Gestione Albergo Srl</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.giagi.it'>Giagi.it web solutions</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.gimh.es'>GIMH</a> </li>
-                    <li class="column line"> Global Hospitality Services (GHS) </li>
-                    <li class="column line"> <a target='_blank' href='http://www.gncjp.com'>Global Network Connection</a> </li>
-                    <li class="column line"> GMS </li>
-                    <li class="column line"> <a target='_blank' href='http://www.gna.es'>GNA</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.greeka.info'>Greeka / Syncrez</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.yieldplanet.com'>GTH Solutions YieldPlanet</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.guestcentric.com/'>GuestCentric Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.guestline.com/'>Guestline Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelbookingsolutions.com/'>HBSi (Hotel booking solutions Inc)</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hdnglobal.com/'>HDN Global</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.highlandvision.com/'>Highland Vision</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://hirum.com.au'>Hirum</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelan.com'>Hotelan</a> </li>
-                    <li class="column line"> Hotel Availabilities LTD </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelconcepts.com'>Hotel Concepts</a> </li>
-                    <li class="column line"> hoteliers.com </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hoteliers.guru'>Hoteliers Dot Guru Pte. Ltd.</a> </li>
-                    <li class="column line"> Hoteliga </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotellinksolutions.com'>Hotel Link Solutions</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelnetsolutions.de'>HotelNetSolutions</a> </li>
-                    <li class="column line"> Hotel Washington Amsterdam </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hotelwebservice.com'>HotelWebservice GMBH</a> </li>
-                    <li class="column line"> HSDS UK Ltd </li>
-                    <li class="column line"> <a target='_blank' href='http://www.hsystem.com.br'>HSystem</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.ICEWOODS.com'>Icewoods Digital Technology</a> </li>
-                    <li class="column line"> IMS Media </li>
-                    <li class="column line"> <a target='_blank' href='http://www.interalp-touristik.com'>Interalp Touristik</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.easyram.it'>Internettare</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.iper.net'>Ipernet</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.jrs.co.jp/'>JR Systems</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.lasersoft.it'>Lasersoft S.r.l</a> </li>
-                    <li class="column line"> <a target='_blank' href='https://www.levart.com.au/'>Levart Technologies</a> </li>
-                    <li class="column line"> Luxury Apartments </li>
-                    <li class="column line"> <a target='_blank' href='http://www.madeep.com'>Madeep</a> </li>
-                    <li class="column line"> MaxiMojo Software (Pvt.) Ltd </li>
-                    <li class="column line"> <a target='_blank' href='http://www.medialabinformatica.it'>MediaLab Sofware Engineering S.N.C.</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.misterbooking.com'>Misterbooking</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mymotelmanager.com'>Motel Manager</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mrgroup.eu'>MR Group SAS</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.nozio.biz/'>Netplan Srl</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.netroomz.com.au'>Netroomz</a> </li>
-                    <li class="column line"> Netskin.net </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bookingexpert.it'>Nexteam SRL</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.nlasystems.com/'>NLA Systems Ltd.</a> </li>
-                    <li class="column line"> Old Town Apartments </li>
-                    <li class="column line"> One Fine Stay </li>
-                    <li class="column line"> <a target='_blank' href='http://www.online-booking.org'>Online-Booking.org</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://software.onressystems.com/'>OnRes Systems Inc</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.otelia.it'>Otelia.it</a> </li>
-                    <li class="column line"> Otelms </li>
-                    <li class="column line"> <a target='_blank' href='http://www.p3.ie'>P3 Technology Limited</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.passepartout.net'>Passepartout</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.planet-winner.com'>Planet Winner</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.prestige-inet.com'>Prestige Software</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.primal-res.gr/en/index.php'>Primal-RES</a> </li>
-                    <li class="column line"> Profit Room </li>
-                    <li class="column line"> <a target='_blank' href='http://www.publygoo.it'>PublyGoo</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.simplebooking.travel/'>QNT Simple Booking</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.quickyield.com'>QuickYield</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.rategain.com/'>RateGain</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.ratetiger.com'>Rate Tiger</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.rescon24.com'>RESCON24</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.resonline.com'>ResOnline</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.revparguru.com'>Revparguru</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.r-h-n.com'>RHN</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.bukly.com'>Rio Tera - Agência Web Ltda</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.mghworld.net'>Roomito Online Pvt Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.ruralgest.com/'>RuralGest Sistemas de Reservas S.L</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://sanhait.co.kr/'>Sanha Information Technology INC</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.seanuts.co.jp'>Seanuts Co., Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.seekda.com'>Seekda Gmbh</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.seekom.com'>Seekom</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.selena.net'>Selena</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.sestante.net'>Sestante s.r.l.</a> </li>
-                    <li class="column line"> Seu Oasis Licenciamento de Programa de Computador Ltda </li>
-                    <li class="column line"> <a target='_blank' href='http://www.siteminder.com.au'>Siteminder</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.fnsmanager.com'>Sleep and Go S.L</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.slimtrader.com'>Slimtrader</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.smartHOTEL.nl'>smartHOTEL.nl</a> </li>
-                    <li class="column line"> Snap Hospitality </li>
-                    <li class="column line"> <a target='_blank' href='http://www.staah.com'>STAAH</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.stardekk.be'>Stardekk</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.surehigh.com.tw/'>Surehigh International Technology Group</a> </li>
-                    <li class="column line"> Synthense LSI Software </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tanggo.org'>TANGGO</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tecnes.com'>Tecnes Milano s.r.l</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.temairazu.com/'>Temairazu</a> </li>
-                    <li class="column line"> Tosom srl </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tourisoft.com'>Tourisoft</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.tomas.ch'>Tourist Data Shop Ltd</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.travelclick.com'>TravelClick</a> </li>
-                    <li class="column line"> Travelline </li>
-                    <li class="column line"> UAB GTI SOLUTIONS </li>
-                    <li class="column line"> <a target='_blank' href='http://www.univisit.com'>UniVisit</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.update247.com.au'>Update247</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.useross.com'>UseRoss</a> </li>
-                    <li class="column line"> Vertical Booking </li>
-                    <li class="column line"> <a target='_blank' href='http://www.viato.travel/'>Viato Travel</a> </li>
-                    <li class="column line"> Visit Technology </li>
-                    <li class="column line"> <a target='_blank' href='http://www.visualforma.pt'>VisualForma</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.roomshop.it/'>Vivido</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.wealthywalker.com'>Wealthywalker</a> </li>
-                    <li class="column line"> Webbens Srl </li>
-                    <li class="column line"> Welcome Computer Systems </li>
-                    <li class="column line"> <a target='_blank' href='http://www.wubook.net'>Wubook Srl</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.xotelia.com/'>Xotelia</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.xyzt.pt/'>XYZT</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.yadoken.net'>Yadoken</a> </li>
-                    <li class="column line"> <a target='_blank' href='http://www.zadego.com'>Zadego GmbH – Easybooking</a> </li>
-                </ul>
-            </div>
+          <a class="card-header">Channel Managers/Rate Allocators<span class="ui-icon ui-icon-carat-1-s"></span></a>
+          <div class="description full-width">
+            <ul class="full-width row small-up-1 medium-up-2 xxlarge-up-3">
+              <li class="column line"> <a target='_blank' href='http://www.11infotech.com'>11Infotech</a> 
+              </li>
+              <li class="column line">Accubook</li>
+              <li class="column line"> <a target='_blank' href='http://www.activemetrics.com'>Active Metrics</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.allotz.com'>Allotz</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.amk-web.com'>AMK</a> 
+              </li>
+              <li class="column line">AROBS Transilvania Software</li>
+              <li class="column line"> <a target='_blank' href='http://www.athena.com.tw'>Athena Information Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.avaibook.com'>AvaiBook</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://site.availpro.com/'>Availpro</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.itsolutions.es / http://www.avantio.com/'>Avantio VRMS</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.avenues.info'>Avenues South Asias</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.avirato.com'>Avirato</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.axisrooms.com'>AxisRooms Travel Distribution Solutions Pvt. Ltd.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.octorate.com'>BBliverate Octorate</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.default.it'>BeGenius</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.berrysoftware.co.za'>Berry Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.billypds.com/english/home/'>BillyPDS</a> 
+              </li>
+              <li class="column line">Bohemia REI</li>
+              <li class="column line">Bookassist</li>
+              <li class="column line"> <a target='_blank' href='http://www.bookingland.com'>Bookingland, SL</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.mybookingpal.com/'>BookingPal</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.bookitech.com'>Booki Tech S.r.l.s</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.busy-rooms.com/en'>BusyRooms</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.chanelink.com'>Chanelink</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://channelmanager.com.au'>ChannelManager.com.au</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.channelrush.com'>ChannelRUSH</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.chinaonline.net.cn/home_new_eng/index.asp'>China Online</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.claritycommerce.com'>Clarity Commerce</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.clips.co.jp/'>Clips</a> 
+              </li>
+              <li class="column line">Consejeria de Cultura y turismo, Murcia</li>
+              <li class="column line"> <a target='_blank' href='http://www.coral-technologies.com'>Coral-Technologies</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.cultuzz.de'>Cultuzz</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.bookon.org'>CWD S.r.l</a> 
+              </li>
+              <li class="column line">Detco</li>
+              <li class="column line"> <a target='_blank' href='https://www.myallocator.com/'>Digital Arbitrage</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.digitaldruid.net'>DigitalDruid</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.dingus-services.com/'>Dingus Services</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.directwithhotels.com/'>DirectWithHotels</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.efimatica.com/'>Efimatica</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.ericsoft.com'>Ericsoft</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.fastbooking.org'>Fastbooking</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://finite-soft.com/'>Finite-Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.freetobook.com/'>Freetobook</a> 
+              </li>
+              <li class="column line">Gestimusa</li>
+              <li class="column line"> <a target='_blank' href='http://www.gestionealbergo.it'>Gestione Albergo Srl</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.giagi.it'>Giagi.it web solutions</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.gimh.es'>GIMH</a> 
+              </li>
+              <li class="column line">Global Hospitality Services (GHS)</li>
+              <li class="column line"> <a target='_blank' href='http://www.gncjp.com'>Global Network Connection</a> 
+              </li>
+              <li class="column line">GMS</li>
+              <li class="column line"> <a target='_blank' href='http://www.gna.es'>GNA</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.greeka.info'>Greeka / Syncrez</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.yieldplanet.com'>GTH Solutions YieldPlanet</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.guestcentric.com/'>GuestCentric Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.guestline.com/'>Guestline Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelbookingsolutions.com/'>HBSi (Hotel booking solutions Inc)</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hdnglobal.com/'>HDN Global</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.highlandvision.com/'>Highland Vision</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://hirum.com.au'>Hirum</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelan.com'>Hotelan</a> 
+              </li>
+              <li class="column line">Hotel Availabilities LTD</li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelconcepts.com'>Hotel Concepts</a> 
+              </li>
+              <li class="column line">hoteliers.com</li>
+              <li class="column line"> <a target='_blank' href='http://www.hoteliers.guru'>Hoteliers Dot Guru Pte. Ltd.</a> 
+              </li>
+              <li class="column line">Hoteliga</li>
+              <li class="column line"> <a target='_blank' href='http://www.hotellinksolutions.com'>Hotel Link Solutions</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelnetsolutions.de'>HotelNetSolutions</a> 
+              </li>
+              <li class="column line">Hotel Washington Amsterdam</li>
+              <li class="column line"> <a target='_blank' href='http://www.hotelwebservice.com'>HotelWebservice GMBH</a> 
+              </li>
+              <li class="column line">HSDS UK Ltd</li>
+              <li class="column line"> <a target='_blank' href='http://www.hsystem.com.br'>HSystem</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.ICEWOODS.com'>Icewoods Digital Technology</a> 
+              </li>
+              <li class="column line">IMS Media</li>
+              <li class="column line"> <a target='_blank' href='http://www.interalp-touristik.com'>Interalp Touristik</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.easyram.it'>Internettare</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.iper.net'>Ipernet</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.jrs.co.jp/'>JR Systems</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.lasersoft.it'>Lasersoft S.r.l</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='https://www.levart.com.au/'>Levart Technologies</a> 
+              </li>
+              <li class="column line">Luxury Apartments</li>
+              <li class="column line"> <a target='_blank' href='http://www.madeep.com'>Madeep</a> 
+              </li>
+              <li class="column line">MaxiMojo Software (Pvt.) Ltd</li>
+              <li class="column line"> <a target='_blank' href='http://www.medialabinformatica.it'>MediaLab Sofware Engineering S.N.C.</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.misterbooking.com'>Misterbooking</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mymotelmanager.com'>Motel Manager</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mrgroup.eu'>MR Group SAS</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.nozio.biz/'>Netplan Srl</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.netroomz.com.au'>Netroomz</a> 
+              </li>
+              <li class="column line">Netskin.net</li>
+              <li class="column line"> <a target='_blank' href='http://www.bookingexpert.it'>Nexteam SRL</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.nlasystems.com/'>NLA Systems Ltd.</a> 
+              </li>
+              <li class="column line">Old Town Apartments</li>
+              <li class="column line">One Fine Stay</li>
+              <li class="column line"> <a target='_blank' href='http://www.online-booking.org'>Online-Booking.org</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://software.onressystems.com/'>OnRes Systems Inc</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.otelia.it'>Otelia.it</a> 
+              </li>
+              <li class="column line">Otelms</li>
+              <li class="column line"> <a target='_blank' href='http://www.p3.ie'>P3 Technology Limited</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.passepartout.net'>Passepartout</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.planet-winner.com'>Planet Winner</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.prestige-inet.com'>Prestige Software</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.primal-res.gr/en/index.php'>Primal-RES</a> 
+              </li>
+              <li class="column line">Profit Room</li>
+              <li class="column line"> <a target='_blank' href='http://www.publygoo.it'>PublyGoo</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.simplebooking.travel/'>QNT Simple Booking</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.quickyield.com'>QuickYield</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.rategain.com/'>RateGain</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.ratetiger.com'>Rate Tiger</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.rescon24.com'>RESCON24</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.resonline.com'>ResOnline</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.revparguru.com'>Revparguru</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.r-h-n.com'>RHN</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.bukly.com'>Rio Tera - Agência Web Ltda</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.mghworld.net'>Roomito Online Pvt Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.ruralgest.com/'>RuralGest Sistemas de Reservas S.L</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://sanhait.co.kr/'>Sanha Information Technology INC</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.seanuts.co.jp'>Seanuts Co., Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.seekda.com'>Seekda Gmbh</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.seekom.com'>Seekom</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.selena.net'>Selena</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.sestante.net'>Sestante s.r.l.</a> 
+              </li>
+              <li class="column line">Seu Oasis Licenciamento de Programa de Computador Ltda</li>
+              <li class="column line"> <a target='_blank' href='http://www.siteminder.com.au'>Siteminder</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.fnsmanager.com'>Sleep and Go S.L</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.slimtrader.com'>Slimtrader</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.smartHOTEL.nl'>smartHOTEL.nl</a> 
+              </li>
+              <li class="column line">Snap Hospitality</li>
+              <li class="column line"> <a target='_blank' href='http://www.staah.com'>STAAH</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.stardekk.be'>Stardekk</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.surehigh.com.tw/'>Surehigh International Technology Group</a> 
+              </li>
+              <li class="column line">Synthense LSI Software</li>
+              <li class="column line"> <a target='_blank' href='http://www.tanggo.org'>TANGGO</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.tecnes.com'>Tecnes Milano s.r.l</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.temairazu.com/'>Temairazu</a> 
+              </li>
+              <li class="column line">Tosom srl</li>
+              <li class="column line"> <a target='_blank' href='http://www.tourisoft.com'>Tourisoft</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.tomas.ch'>Tourist Data Shop Ltd</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.travelclick.com'>TravelClick</a> 
+              </li>
+              <li class="column line">Travelline</li>
+              <li class="column line">UAB GTI SOLUTIONS</li>
+              <li class="column line"> <a target='_blank' href='http://www.univisit.com'>UniVisit</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.update247.com.au'>Update247</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.useross.com'>UseRoss</a> 
+              </li>
+              <li class="column line">Vertical Booking</li>
+              <li class="column line"> <a target='_blank' href='http://www.viato.travel/'>Viato Travel</a> 
+              </li>
+              <li class="column line">Visit Technology</li>
+              <li class="column line"> <a target='_blank' href='http://www.visualforma.pt'>VisualForma</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.roomshop.it/'>Vivido</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.wealthywalker.com'>Wealthywalker</a> 
+              </li>
+              <li class="column line">Webbens Srl</li>
+              <li class="column line">Welcome Computer Systems</li>
+              <li class="column line"> <a target='_blank' href='http://www.wubook.net'>Wubook Srl</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.xotelia.com/'>Xotelia</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.xyzt.pt/'>XYZT</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.yadoken.net'>Yadoken</a> 
+              </li>
+              <li class="column line"> <a target='_blank' href='http://www.zadego.com'>Zadego GmbH – Easybooking</a> 
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<section id="section-lower_links" class="row">
-    <a href="/developer">
+    <section id="section-lower_links" class="row">
+      <a href="/developer">
         Learn more about Expedia Connectivity APIs
     </a>
-</section>
-</div><footer id="site-footer" class="row full-width">
+    </section>
+  </div>
+  <footer class="row full-width" id="site-footer">
     <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
-        </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Systems"/></body></html>
+  </footer>
+  <input type="hidden" id="eventTrackingPageName" value="Systems">
+</body>
+
+</html>

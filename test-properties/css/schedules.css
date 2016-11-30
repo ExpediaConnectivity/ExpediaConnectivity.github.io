@@ -1,0 +1,12 @@
+.dataTables_length,
+.dataTables_filter {
+  display: none;
+}
+.simple-content form {
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+.dataTables_paginate,
+.dataTables_info {
+  display: none;
+}

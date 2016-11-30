@@ -6,10 +6,9 @@ var environment = {
     }
 };
 
-if (window.location.host == "expediaconnectivity.com") {
-    environment.env = "prod";
-} else {
-    environment.env = "test";
+switch (window.location.host) {
+    case "expediaconnectivity.com": environment.env = "prod"; break
+    default: environment.env = "test"; break
 }
 
 console.log("Environment: " + environment.env);

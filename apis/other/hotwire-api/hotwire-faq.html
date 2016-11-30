@@ -1,117 +1,167 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>FAQ - Hotwire API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Hotwire API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Hotwire API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/api-reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a></li><li class="pagename" data-magellan-arrival="faq"><a class="sidebar-nav-item" href="#faq">FAQ</a></li><li class="depth2" data-magellan-arrival="how-do-i-obtain-an-api-key-"><a class="sidebar-nav-item" href="#how-do-i-obtain-an-api-key-">How do I obtain an API key?</a></li><li class="depth2" data-magellan-arrival="does-each-hotel-need-its-own-api-key-"><a class="sidebar-nav-item" href="#does-each-hotel-need-its-own-api-key-">Does each hotel need its own API key?</a></li><li class="depth2" data-magellan-arrival="what-are-the-limits-on-my-api-key-"><a class="sidebar-nav-item" href="#what-are-the-limits-on-my-api-key-">What are the limits on my API key?</a></li><li class="depth2" data-magellan-arrival="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-"><a class="sidebar-nav-item" href="#do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-">Do I need Hotwire approval / Hotwire account manager approval to enable a hotel on HQC connectivity?</a></li><li class="depth2" data-magellan-arrival="is-there-a-test-enviroment-available-to-me-"><a class="sidebar-nav-item" href="#is-there-a-test-enviroment-available-to-me-">Is there a test enviroment available to me?</a></li><li class="depth2" data-magellan-arrival="what-rate-plans-can-i-send-to-hotwire-"><a class="sidebar-nav-item" href="#what-rate-plans-can-i-send-to-hotwire-">What rate plans can I send to Hotwire?</a></li><li class="depth2" data-magellan-arrival="how-do-i-map-create-room-types-via-the-hqc-interface-"><a class="sidebar-nav-item" href="#how-do-i-map-create-room-types-via-the-hqc-interface-">How do I map / create room types via the HQC interface?</a></li><li class="depth2" data-magellan-arrival="who-do-i-contact-if-i-have-further-questions-"><a class="sidebar-nav-item" href="#who-do-i-contact-if-i-have-further-questions-">Who do I contact if I have further questions?</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/simulator-tool.html">Simulator Tool</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="faq" data-magellan-destination="faq">FAQ</h1>
-<h2 id="how-do-i-obtain-an-api-key-" data-magellan-destination="how-do-i-obtain-an-api-key-">How do I obtain an API key?</h2>
-<p>Please visit the <a href="getting-connected.html">Developer Registration page</a> for more information.</p>
-<h2 id="does-each-hotel-need-its-own-api-key-" data-magellan-destination="does-each-hotel-need-its-own-api-key-">Does each hotel need its own API key?</h2>
-<p>No, a hotel does not need a unique API key, the API key is only at the developer level.</p>
-<h2 id="what-are-the-limits-on-my-api-key-" data-magellan-destination="what-are-the-limits-on-my-api-key-">What are the limits on my API key?</h2>
-<p>Initially the limits on API keys are set to 2 calls per second / 2,000 calls per day. If you feel that your usage will exceed 
-this, please contact hqc@hotwire.com to increase the limits.</p>
-<h2 id="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-" data-magellan-destination="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-">Do I need Hotwire approval / Hotwire account manager approval to enable a hotel on HQC connectivity?</h2>
-<p>No, Hotwire approval is not needed to move a hotel to HQC connectivity. Once you have your interface built to the HQC API 
-you can turn a new hotel live at any time using their existing credentials.</p>
-<h2 id="is-there-a-test-enviroment-available-to-me-" data-magellan-destination="is-there-a-test-enviroment-available-to-me-">Is there a test enviroment available to me?</h2>
-<p>If you need access to a test enviroment, please contact hqc@hotwire.com. In many cases your interface can be QA&#39;d in 
-production as the live Hotwire Extranet graphical user interface. The GUI will reflect the updates made via the HQC API 
-and is available at <a href="https://www.hotwirepartnercentral.com">hotwirepartnercentral.com</a>. Usernames / passwords are the 
-same on the GUI as in the API.</p>
-<h2 id="what-rate-plans-can-i-send-to-hotwire-" data-magellan-destination="what-rate-plans-can-i-send-to-hotwire-">What rate plans can I send to Hotwire?</h2>
-<p>At this time Hotwire utilized only one rate plan: XHW. Multiple rates can be sent to Hotwire only through the usage 
-of room types.</p>
-<h2 id="how-do-i-map-create-room-types-via-the-hqc-interface-" data-magellan-destination="how-do-i-map-create-room-types-via-the-hqc-interface-">How do I map / create room types via the HQC interface?</h2>
-<p>Room type names, bedding and occupancy restrictions can be created and edited via the &quot;Manage Room Types&quot; screen on 
-the Hotwire graphical user interface <a href="https://www.hotwirepartnercentral.com">hotwirepartnercentral.com</a>.</p>
-<h2 id="who-do-i-contact-if-i-have-further-questions-" data-magellan-destination="who-do-i-contact-if-i-have-further-questions-">Who do I contact if I have further questions?</h2>
-<p>If you have more questions after reviewing the API specifications and this FAQ, please contact us 
-at hqc@hotwire.com.</p>
-</div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="FAQ - Hotwire API"/></body></html>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Hotwire API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/api-reference.html">API Reference</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="faq"><a class="sidebar-nav-item" href="#faq">FAQ</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="how-do-i-obtain-an-api-key-"><a class="sidebar-nav-item" href="#how-do-i-obtain-an-api-key-">How do I obtain an API key?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="does-each-hotel-need-its-own-api-key-"><a class="sidebar-nav-item" href="#does-each-hotel-need-its-own-api-key-">Does each hotel need its own API key?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="what-are-the-limits-on-my-api-key-"><a class="sidebar-nav-item" href="#what-are-the-limits-on-my-api-key-">What are the limits on my API key?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-"><a class="sidebar-nav-item" href="#do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-">Do I need Hotwire approval / Hotwire account manager approval to enable a hotel on HQC connectivity?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="is-there-a-test-enviroment-available-to-me-"><a class="sidebar-nav-item" href="#is-there-a-test-enviroment-available-to-me-">Is there a test enviroment available to me?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="what-rate-plans-can-i-send-to-hotwire-"><a class="sidebar-nav-item" href="#what-rate-plans-can-i-send-to-hotwire-">What rate plans can I send to Hotwire?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="how-do-i-map-create-room-types-via-the-hqc-interface-"><a class="sidebar-nav-item" href="#how-do-i-map-create-room-types-via-the-hqc-interface-">How do I map / create room types via the HQC interface?</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="who-do-i-contact-if-i-have-further-questions-"><a class="sidebar-nav-item" href="#who-do-i-contact-if-i-have-further-questions-">Who do I contact if I have further questions?</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/simulator-tool.html">Simulator Tool</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="faq" data-magellan-destination="faq">FAQ</h1>
+          <h2 id="how-do-i-obtain-an-api-key-" data-magellan-destination="how-do-i-obtain-an-api-key-">How do I obtain an API key?</h2>
+          <p>Please visit the <a href="getting-connected.html">Developer Registration page</a> for more information.</p>
+          <h2 id="does-each-hotel-need-its-own-api-key-" data-magellan-destination="does-each-hotel-need-its-own-api-key-">Does each hotel need its own API key?</h2>
+          <p>No, a hotel does not need a unique API key, the API key is only at the developer level.</p>
+          <h2 id="what-are-the-limits-on-my-api-key-" data-magellan-destination="what-are-the-limits-on-my-api-key-">What are the limits on my API key?</h2>
+          <p>Initially the limits on API keys are set to 2 calls per second / 2,000 calls per day. If you feel that your usage will exceed this, please contact hqc@hotwire.com to increase the limits.</p>
+          <h2 id="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-" data-magellan-destination="do-i-need-hotwire-approval-hotwire-account-manager-approval-to-enable-a-hotel-on-hqc-connectivity-">Do I need Hotwire approval / Hotwire account manager approval to enable a hotel on HQC connectivity?</h2>
+          <p>No, Hotwire approval is not needed to move a hotel to HQC connectivity. Once you have your interface built to the HQC API you can turn a new hotel live at any time using their existing credentials.</p>
+          <h2 id="is-there-a-test-enviroment-available-to-me-" data-magellan-destination="is-there-a-test-enviroment-available-to-me-">Is there a test enviroment available to me?</h2>
+          <p>If you need access to a test enviroment, please contact hqc@hotwire.com. In many cases your interface can be QA&#39;d in production as the live Hotwire Extranet graphical user interface. The GUI will reflect the updates made via the HQC API
+            and is available at <a href="https://www.hotwirepartnercentral.com">hotwirepartnercentral.com</a>. Usernames / passwords are the same on the GUI as in the API.</p>
+          <h2 id="what-rate-plans-can-i-send-to-hotwire-" data-magellan-destination="what-rate-plans-can-i-send-to-hotwire-">What rate plans can I send to Hotwire?</h2>
+          <p>At this time Hotwire utilized only one rate plan: XHW. Multiple rates can be sent to Hotwire only through the usage of room types.</p>
+          <h2 id="how-do-i-map-create-room-types-via-the-hqc-interface-" data-magellan-destination="how-do-i-map-create-room-types-via-the-hqc-interface-">How do I map / create room types via the HQC interface?</h2>
+          <p>Room type names, bedding and occupancy restrictions can be created and edited via the &quot;Manage Room Types&quot; screen on the Hotwire graphical user interface <a href="https://www.hotwirepartnercentral.com">hotwirepartnercentral.com</a>.</p>
+          <h2 id="who-do-i-contact-if-i-have-further-questions-" data-magellan-destination="who-do-i-contact-if-i-have-further-questions-">Who do I contact if I have further questions?</h2>
+          <p>If you have more questions after reviewing the API specifications and this FAQ, please contact us at hqc@hotwire.com.</p>
+        </div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
+    </div>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,511 +1,603 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>API Definition - Expedia QuickConnect Avail &amp; Rates API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Definition - Expedia QuickConnect Avail &amp; Rates API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Avail & Rates API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="api-definition"><a class="sidebar-nav-item" href="#api-definition">API Definition</a></li><li class="depth2" data-magellan-arrival="overview"><a class="sidebar-nav-item" href="#overview">Overview</a></li><li class="depth2" data-magellan-arrival="communication-protocol"><a class="sidebar-nav-item" href="#communication-protocol">Communication Protocol</a></li><li class="depth2" data-magellan-arrival="schema-design-guidelines"><a class="sidebar-nav-item" href="#schema-design-guidelines">Schema Design Guidelines</a></li><li class="depth2" data-magellan-arrival="availability-and-rates-request-ar-rq-"><a class="sidebar-nav-item" href="#availability-and-rates-request-ar-rq-">Availability and Rates Request (AR RQ)</a></li><li class="depth3" data-magellan-arrival="ar-rq-schema-complete-definition"><a class="sidebar-nav-item" href="#ar-rq-schema-complete-definition">AR RQ Schema Complete Definition</a></li><li class="depth2" data-magellan-arrival="availability-and-rate-response-ar-rs-"><a class="sidebar-nav-item" href="#availability-and-rate-response-ar-rs-">Availability and Rate Response (AR RS)</a></li><li class="depth3" data-magellan-arrival="ar-rs-schema-overview"><a class="sidebar-nav-item" href="#ar-rs-schema-overview">AR RS Schema Overview</a></li><li class="depth3" data-magellan-arrival="ar-rs-schema-complete-definition"><a class="sidebar-nav-item" href="#ar-rs-schema-complete-definition">AR RS Schema Complete Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas &amp; Production Endpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
-<h2 id="overview" data-magellan-destination="overview">Overview</h2>
-<h2 id="communication-protocol" data-magellan-destination="communication-protocol">Communication Protocol</h2>
-<p>The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:</p>
-<ul>
-<li>Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).</li>
-<li>Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.</li>
-<li>Content-Type of the HTTP Request Header should be: “text/xml”.</li>
-<li>Only connecting via our URLs is supported. Expedia does not support connection directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.</li>
-</ul>
-<p><a name="/schemaguidelines"></a></p>
-<h2 id="schema-design-guidelines" data-magellan-destination="schema-design-guidelines">Schema Design Guidelines</h2>
-<p>The design of Expedia QuickConnect schemas is based on the following general guidelines:  </p>
-<ul>
-<li>Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes follow the lower camel case (LCC) convention.  </li>
-<li>Information is found mostly in attributes, elements are only used to structure the information and make logical groupings.  </li>
-<li>If an element contains text, it is most likely because the text was entered manually.  </li>
-<li>Validation rules about data type, data format and data size/length are included in the schema and should be considered during development.  </li>
-<li>Expedia uses namespaces to version its schemas. Messages sent to Expedia QuickConnect should always contain the proper namespace.  </li>
-<li>Namespaces are also used for versioning: EQC partners should be careful when specifying a namespace in the messages they send to Expedia QuickConnect.  </li>
-<li>Boolean will be returned as “true” or “false”. </li>
-</ul>
-<h2 id="availability-and-rates-request-ar-rq-" data-magellan-destination="availability-and-rates-request-ar-rq-">Availability and Rates Request (AR RQ)</h2>
-<h3 id="ar-rq-schema-complete-definition" data-magellan-destination="ar-rq-schema-complete-definition">AR RQ Schema Complete Definition</h3>
-<p><em>Legend: O = Optional</em></p>
-<div><table>
-<thead>
-<tr>
-<th>Level</th>
-<th>Element / @Attribute</th>
-<th>Data Type</th>
-<th>Number of occur.</th>
-<th>Description</th>
-<th>EQC validations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>AvailRateUpdateRQ</td>
-<td></td>
-<td>1</td>
-<td>DC common message header structure</td>
-</tr>
-<tr>
-<td>0</td>
-<td>@xmlns</td>
-<td>URL</td>
-<td>1</td>
-<td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Supported namespaces for AR messages are: <a href="http://www.expediaconnect.com/EQC/AR/2007/02">http://www.expediaconnect.com/EQC/AR/2007/02</a> &amp; <a href="http://www.expediaconnect.com/EQC/AR/2011/06">http://www.expediaconnect.com/EQC/AR/2011/06</a></td>
-<td>Valid namespace, defined by at least one version of AR schema.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Authentication</td>
-<td>-</td>
-<td></td>
-<td>Grouping of required information to grant access to Expedia QuickConnect interface.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>@username</td>
-<td>String</td>
-<td></td>
-<td>Username for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
-<td>Minimum length: 4, Maximum length: 30, Username exists, User is allowed to access Expedia QuickConnect</td>
-</tr>
-<tr>
-<td>1</td>
-<td>@password</td>
-<td>String</td>
-<td></td>
-<td>Password for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
-<td>Minimum length: 6, Maximum length: 30, Password fits with the username</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Hotel</td>
-<td>-</td>
-<td></td>
-<td>Information about Hotel</td>
-</tr>
-<tr>
-<td>1</td>
-<td>@id</td>
-<td>Integer</td>
-<td></td>
-<td>Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.</td>
-<td>Positive integer of 14 digits or less, Hotel ID is valid, Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>AvailRateUpdate</td>
-<td>-</td>
-<td></td>
-<td>Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges.</td>
-<td>This element can be omitted in the request and everything brought back one level down if EQC partner doesn’t see a need to send multiple updates within same message, but also to insure backward compatibility.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>DateRange</td>
-<td>-</td>
-<td></td>
-<td>Specify dates on which availability and rate information provided in this message applies. A &#39;from&#39; and a &#39;to&#39; date must be specified. They can be equal if the EQC partner wants to update only one date. This element can be repeated more than once if EQC partner wants to update non-consecutive dates or date ranges.</td>
-<td>“from date” &lt;= “to date”</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@from</td>
-<td>Date</td>
-<td></td>
-<td>Start date of the interval (format: yyyy-mm-dd)</td>
-<td>“From date” &gt;= today – 1</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@to</td>
-<td>Date</td>
-<td></td>
-<td>End date of the interval (format: yyyy-mm-dd).</td>
-<td>“To date” &lt;= (today + 2yrs + 1 day)</td>
-</tr>
-</tbody>
-</table>
-</div><p><strong>Note:</strong> The following 7 attributes are used to indicate on which day of the week, from the date range specified in the “from”-“to” attributes, the updates should be applied. If none of the 7 attributes are specified, updates will apply to all days of the week. As soon as one attribute is specified, the updates will only apply to the days where the attribute value is set to true.
-If EQC partners need to use this feature, Expedia recommends specifying all seven attributes, indicating on which day the updates should be applied (attribute value=true) and on which day the updates should not be applied (attribute value=false) </p>
-<div><table>
-<thead>
-<tr>
-<th>Level</th>
-<th>Element / @Attribute</th>
-<th>Data Type</th>
-<th>Number of occur.</th>
-<th>Description</th>
-<th>EQC validations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2</td>
-<td>@sun</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Sunday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@mon</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Monday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@tue</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Tuesday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@wed</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Wednesday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@thu</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Thursday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@fri</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Friday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@sat</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If set to true, apply update for each Saturday in the specified date interval.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>RoomType</td>
-<td>-</td>
-<td></td>
-<td>Room type to be updated by this message. This element can be repeated more than once if hotel wants to update multiple room types for the same set of dates.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>@id</td>
-<td>String</td>
-<td></td>
-<td>Room type ID (defined by Expedia). Note: mapping of Expedia IDs to hotel codes has to be done by EQC partner.</td>
-<td>String of 50 characters or less, RoomType ID is valid only if the specified hotel has the corresponding room type defined for it in Expedia Partner Central, Room type should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this room type is inactive. </td>
-</tr>
-<tr>
-<td>2</td>
-<td>@closed</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If true, the room type is no longer available on Expedia for dates specified in the request. If false, the room type is reopened if previously closed, or stays open if already open.</td>
-<td>A close request will be refused if the room is enabled for base allocation and has base allocation left.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Inventory</td>
-<td>-</td>
-<td></td>
-<td>Number of rooms being made available for sale on Expedia. <strong>Note:</strong> only applies to a single room type.</td>
-<td>Either flexibleAllocation or totalInventoryAvailable, but not both, must be sent in any message for an availability update.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>@flexibleAllocation</td>
-<td>Integer</td>
-<td>O</td>
-<td>In the case of a hotel using base allocation: number of additional rooms available for this room type, for each day specified by &quot;DateRange&quot; element.</td>
-<td>Minimum value: 0, Maximum value: 4999</td>
-</tr>
-<tr>
-<td>3</td>
-<td>@totalInventoryAvailable</td>
-<td>Integer</td>
-<td>O</td>
-<td>Total number of rooms made available via Expedia for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation. <strong>Note:</strong> In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, the Integer value will be <strong>changed</strong> by Expedia QuickConnect to equal the current base allocation amount and a warning (7013) will be returned.</td>
-<td>Minimum value: 0, Maximum value: 4999</td>
-</tr>
-<tr>
-<td>3</td>
-<td>RatePlan</td>
-<td>-</td>
-<td>O</td>
-<td>Information about a rate plan. This element can be repeated more than once if hotel wants to update multiple rate plans under this room type for the same set of dates. <strong>Note:</strong> Rate plans can only belong to a single room type and Rate plans should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this rate plan is inactive.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>@id</td>
-<td>String</td>
-<td></td>
-<td>Rate plan ID (assigned by Expedia). Unique throughout Expedia system, so the same rate plan ID cannot be associated to more than one room type.</td>
-<td>String of 50 characters or less, RatePlan ID is valid only if the specified hotel has the corresponding rate plan defined for it in Expedia Partner Central. </td>
-</tr>
-<tr>
-<td>3</td>
-<td>@closed</td>
-<td>Boolean</td>
-<td>O</td>
-<td>If true, the rate plan is no longer available on Expedia for dates specified under the room type. If false, the rate plan is reopened if previously closed, or stays open if already open.</td>
-<td>For hotels with base allocation contracts, if this is the last rate plan opened,  and a close request is received, it will be rejected with warning code 7014.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Rate</td>
-<td>-</td>
-<td>O</td>
-<td>Room rates. The type of rate (sell, net, LAR) to include depends on the configuration for this hotel.  Up to 28 rate elements can be specified when updating per day and per length of stay rates. Else only one rate element should be defined.</td>
-<td>Use only one pricing model, Pricing model in synch with configuration of the property on Expedia Partner Central or via the PARR interface</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@rateChangeIndicator</td>
-<td>Boolean</td>
-<td>O</td>
-<td>To be used with rate plans enabled for day-of-arrival pricing only (message will be rejected if this attribute is used in conjunction with a rate plan that is not enabled for DOA pricing). Indicates that regardless of the applicable rate on the arrival date, the rate will change on this date.</td>
-<td>Rate plan is day-of-arrival pricing enabled. It not, update is rejected with error code 3125.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@currency</td>
-<td>String</td>
-<td>O</td>
-<td>3-letter currency code assigned to property on Expedia Partner Central. Based on ISO 4217 specification. Optional only when message is for rate change indicator updates, without any rate modification.</td>
-<td>Minimum length  = 3, Must match the property currency defined on Expedia Partner Central, Must always be provided when update request includes rates.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@lengthOfStay</td>
-<td>Int</td>
-<td>O</td>
-<td>For properties managing per day and per length of stay rates. Rates from length of stay 1 up to 28 can be defined by arrival date. This attribute contains the length of stay for which this rate applies.</td>
-<td>Minimum value=1, Maximum value=28</td>
-</tr>
-<tr>
-<td>5</td>
-<td>PerDay</td>
-<td>-</td>
-<td>O</td>
-<td>To be used when property is configured with Per Day pricing on Expedia Partner Central. This rate is for base occupancy of the room.</td>
-<td>Property is configured with per day pricing on Expedia Partner Central.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>@rate</td>
-<td>Decimal</td>
-<td></td>
-<td>Rate for base occupancy, per day. When used in conjunction with length of stay pricing attribute, the rate defined is the rate per day. If the rate is for 100$ for LOS=7, then the total of this stay’s rate would be 7x100=700.</td>
-<td>Rate has to be &gt;= 0.000, Rate has to be &lt;= 16 digits long</td>
-</tr>
-<tr>
-<td>5</td>
-<td>@rate</td>
-<td>Decimal</td>
-<td></td>
-<td>Rate for one person, based on double occupancy. Single person supplement and additional person fees are configured when rate plan is created and cannot be modified in this interface.</td>
-<td>Rate has to be &gt;= 0.000, Rate has to be &lt;= 16 digits long</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Restrictions</td>
-<td>-</td>
-<td>O</td>
-<td></td>
-</tr>
-<tr>
-<td>4</td>
-<td>@minLOS</td>
-<td>Integer</td>
-<td>O</td>
-<td>Specifies minimum length of stay required to qualify for this rate. Guest has to stay at least this number of nights to benefit from rate.  If not specified, the minimum length of stay will be set to a default value configured in Expedia systems (1 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS</td>
-<td>Minimum value: 1, Maximum value: 28, Attempting to set MinLOS greater than Expedia’s configured value for the hotel will result in the update being refused with error code 3135.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@maxLOS</td>
-<td>Integer</td>
-<td>O</td>
-<td>Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@closedToArrival</td>
-<td>Boolean</td>
-<td>O</td>
-<td>Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>@closedToDeparture</td>
-<td>Boolean</td>
-<td>O</td>
-<td>Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan.</td>
-</tr>
-</tbody>
-</table>
-</div><h2 id="availability-and-rate-response-ar-rs-" data-magellan-destination="availability-and-rate-response-ar-rs-">Availability and Rate Response (AR RS)</h2>
-<p>The availability and rate response message is straightforward: it is returned synchronously to update the property’s system with the status of the AR request. The status can either be Success or Error. If successful, it can contain a warning.</p>
-<h3 id="ar-rs-schema-overview" data-magellan-destination="ar-rs-schema-overview">AR RS Schema Overview</h3>
-<p><img src="/images/AR RS XML MESSAGE.jpg" alt="AR RS XML MESSAGE"></p>
-<h3 id="ar-rs-schema-complete-definition" data-magellan-destination="ar-rs-schema-complete-definition">AR RS Schema Complete Definition</h3>
-<p><em>Legend: O = Optional</em></p>
-<div><table>
-<thead>
-<tr>
-<th>Level</th>
-<th>Element / @Attribute</th>
-<th>Data Type</th>
-<th>Number of occur.</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>AvailRateUpdateRS</td>
-<td>NA</td>
-<td></td>
-<td>Root element</td>
-</tr>
-<tr>
-<td>0</td>
-<td>@xmlns</td>
-<td>URL</td>
-<td></td>
-<td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for AR RS messages <a href="http://www.expediaconnect.com/EQC/AR/2007/02">http://www.expediaconnect.com/EQC/AR/2007/02</a></td>
-</tr>
-<tr>
-<td>1</td>
-<td>Success</td>
-<td>NA</td>
-<td></td>
-<td>Element appears if the request to update availability and rates was successful. The node will be empty. If this element is present, Error node(s) does not appear. Not everything from the request was successfully processed if warnings are also returned.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Warning</td>
-<td>String</td>
-<td></td>
-<td>Detailed description of a warning. When this element appears, anything that is not listed in the warning list is assumed to be successfully processed by Expedia and updated in Expedia system. Occurrence of this element means the update request was partially applied. For example, if one of the rates provided violates our rate verification threshold, that specific rate will not be applied, but the rest of the updates will. Maximum length: 1024 characters. Maximum number of occurrences per warning code: 20. All warning scenarios are described in section <a href="guides.html#/arresponsebusinesswarnings">AR Response Business Warnings</a></td>
-</tr>
-<tr>
-<td>2</td>
-<td>@code</td>
-<td>Int</td>
-<td></td>
-<td>Code for the warning. Code will be between 7,000 and 8,000.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>Error</td>
-<td>String</td>
-<td></td>
-<td>Detailed description of an error message. When this element appears, nothing included in the AR request was processed. One or more of this element appears if the request failed. If this element is present, Success node does not appear. Maximum length: 1024 characters. All error scenarios are described in the <a href="guides.html#/troubleshooting">Troubleshooting</a> section.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>@code</td>
-<td>Int</td>
-<td></td>
-<td>Code for this error, for example: authentication, xml structure, business validation. Code will be between 1000 and 7000.</td>
-</tr>
-</tbody>
-</table>
-</div></div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="API Definition - Expedia QuickConnect Avail & Rates API"/></body></html>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Expedia QuickConnect Avail & Rates API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="api-definition"><a class="sidebar-nav-item" href="#api-definition">API Definition</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="overview"><a class="sidebar-nav-item" href="#overview">Overview</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="communication-protocol"><a class="sidebar-nav-item" href="#communication-protocol">Communication Protocol</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="schema-design-guidelines"><a class="sidebar-nav-item" href="#schema-design-guidelines">Schema Design Guidelines</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="availability-and-rates-request-ar-rq-"><a class="sidebar-nav-item" href="#availability-and-rates-request-ar-rq-">Availability and Rates Request (AR RQ)</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="ar-rq-schema-complete-definition"><a class="sidebar-nav-item" href="#ar-rq-schema-complete-definition">AR RQ Schema Complete Definition</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="availability-and-rate-response-ar-rs-"><a class="sidebar-nav-item" href="#availability-and-rate-response-ar-rs-">Availability and Rate Response (AR RS)</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="ar-rs-schema-overview"><a class="sidebar-nav-item" href="#ar-rs-schema-overview">AR RS Schema Overview</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="ar-rs-schema-complete-definition"><a class="sidebar-nav-item" href="#ar-rs-schema-complete-definition">AR RS Schema Complete Definition</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html">FAQ & Guides</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas & Production Endpoints</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="api-definition" data-magellan-destination="api-definition">API Definition</h1>
+          <h2 id="overview" data-magellan-destination="overview">Overview</h2>
+          <h2 id="communication-protocol" data-magellan-destination="communication-protocol">Communication Protocol</h2>
+          <p>The communication protocol between properties and Expedia QuickConnect consists of HTTPS (HTTP Secure) transactions with embedded XML documents. Note the following:</p>
+          <ul>
+            <li>Only HTTPS posts to Expedia’s secure server are supported. Using HTTP will not work (Expedia QuickConnect servers are not configured to accept posts over unsecured HTTP).</li>
+            <li>Communication is synchronous -- on the same socket, Expedia QuickConnect reads the request and issues a positive or negative response, depending on whether Expedia QuickConnect is able to process the request or not.</li>
+            <li>Content-Type of the HTTP Request Header should be: “text/xml”.</li>
+            <li>Only connecting via our URLs is supported. Expedia does not support connection directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons,
+              it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee
+              a specific IP range / subnet.</li>
+          </ul>
+          <p>
+            <a name="/schemaguidelines"></a>
+          </p>
+          <h2 id="schema-design-guidelines" data-magellan-destination="schema-design-guidelines">Schema Design Guidelines</h2>
+          <p>The design of Expedia QuickConnect schemas is based on the following general guidelines:</p>
+          <ul>
+            <li>Elements and attributes naming convention: Elements follow the upper camel case (UCC) convention while attributes follow the lower camel case (LCC) convention.</li>
+            <li>Information is found mostly in attributes, elements are only used to structure the information and make logical groupings.</li>
+            <li>If an element contains text, it is most likely because the text was entered manually.</li>
+            <li>Validation rules about data type, data format and data size/length are included in the schema and should be considered during development.</li>
+            <li>Expedia uses namespaces to version its schemas. Messages sent to Expedia QuickConnect should always contain the proper namespace.</li>
+            <li>Namespaces are also used for versioning: EQC partners should be careful when specifying a namespace in the messages they send to Expedia QuickConnect.</li>
+            <li>Boolean will be returned as “true” or “false”.</li>
+          </ul>
+          <h2 id="availability-and-rates-request-ar-rq-" data-magellan-destination="availability-and-rates-request-ar-rq-">Availability and Rates Request (AR RQ)</h2>
+          <h3 id="ar-rq-schema-complete-definition" data-magellan-destination="ar-rq-schema-complete-definition">AR RQ Schema Complete Definition</h3>
+          <p><em>Legend: O = Optional</em>
+          </p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Element / @Attribute</th>
+                  <th>Data Type</th>
+                  <th>Number of occur.</th>
+                  <th>Description</th>
+                  <th>EQC validations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>AvailRateUpdateRQ</td>
+                  <td></td>
+                  <td>1</td>
+                  <td>DC common message header structure</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>@xmlns</td>
+                  <td>URL</td>
+                  <td>1</td>
+                  <td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Supported namespaces for AR messages are: <a href="http://www.expediaconnect.com/EQC/AR/2007/02">http://www.expediaconnect.com/EQC/AR/2007/02</a> &amp;
+                    <a
+                    href="http://www.expediaconnect.com/EQC/AR/2011/06">http://www.expediaconnect.com/EQC/AR/2011/06</a>
+                  </td>
+                  <td>Valid namespace, defined by at least one version of AR schema.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Authentication</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Grouping of required information to grant access to Expedia QuickConnect interface.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>@username</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Username for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
+                  <td>Minimum length: 4, Maximum length: 30, Username exists, User is allowed to access Expedia QuickConnect</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>@password</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Password for Expedia QuickConnect login (case sensitive), provided by Expedia.</td>
+                  <td>Minimum length: 6, Maximum length: 30, Password fits with the username</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Hotel</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Information about Hotel</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>@id</td>
+                  <td>Integer</td>
+                  <td></td>
+                  <td>Hotel ID defined by Expedia and uniquely identifying a property in Expedia system.</td>
+                  <td>Positive integer of 14 digits or less, Hotel ID is valid, Hotel ID in Expedia system is assigned to the credentials provided in Authentication node.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>AvailRateUpdate</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges.</td>
+                  <td>This element can be omitted in the request and everything brought back one level down if EQC partner doesn’t see a need to send multiple updates within same message, but also to insure backward compatibility.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>DateRange</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Specify dates on which availability and rate information provided in this message applies. A &#39;from&#39; and a &#39;to&#39; date must be specified. They can be equal if the EQC partner wants to update only one date. This element can
+                    be repeated more than once if EQC partner wants to update non-consecutive dates or date ranges.</td>
+                  <td>“from date” &lt;= “to date”</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@from</td>
+                  <td>Date</td>
+                  <td></td>
+                  <td>Start date of the interval (format: yyyy-mm-dd)</td>
+                  <td>“From date” &gt;= today – 1</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@to</td>
+                  <td>Date</td>
+                  <td></td>
+                  <td>End date of the interval (format: yyyy-mm-dd).</td>
+                  <td>“To date” &lt;= (today + 2yrs + 1 day)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Note:</strong> The following 7 attributes are used to indicate on which day of the week, from the date range specified in the “from”-“to” attributes, the updates should be applied. If none of the 7 attributes are specified, updates will
+            apply to all days of the week. As soon as one attribute is specified, the updates will only apply to the days where the attribute value is set to true. If EQC partners need to use this feature, Expedia recommends specifying all seven attributes,
+            indicating on which day the updates should be applied (attribute value=true) and on which day the updates should not be applied (attribute value=false)</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Element / @Attribute</th>
+                  <th>Data Type</th>
+                  <th>Number of occur.</th>
+                  <th>Description</th>
+                  <th>EQC validations</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2</td>
+                  <td>@sun</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Sunday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@mon</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Monday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@tue</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Tuesday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@wed</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Wednesday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@thu</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Thursday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@fri</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Friday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@sat</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If set to true, apply update for each Saturday in the specified date interval.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>RoomType</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Room type to be updated by this message. This element can be repeated more than once if hotel wants to update multiple room types for the same set of dates.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@id</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Room type ID (defined by Expedia). Note: mapping of Expedia IDs to hotel codes has to be done by EQC partner.</td>
+                  <td>String of 50 characters or less, RoomType ID is valid only if the specified hotel has the corresponding room type defined for it in Expedia Partner Central, Room type should be active. If it isn’t, the update will still work but a warning
+                    will be returned to indicate that this room type is inactive.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@closed</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If true, the room type is no longer available on Expedia for dates specified in the request. If false, the room type is reopened if previously closed, or stays open if already open.</td>
+                  <td>A close request will be refused if the room is enabled for base allocation and has base allocation left.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Inventory</td>
+                  <td>-</td>
+                  <td></td>
+                  <td>Number of rooms being made available for sale on Expedia. <strong>Note:</strong> only applies to a single room type.</td>
+                  <td>Either flexibleAllocation or totalInventoryAvailable, but not both, must be sent in any message for an availability update.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>@flexibleAllocation</td>
+                  <td>Integer</td>
+                  <td>O</td>
+                  <td>In the case of a hotel using base allocation: number of additional rooms available for this room type, for each day specified by &quot;DateRange&quot; element.</td>
+                  <td>Minimum value: 0, Maximum value: 4999</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>@totalInventoryAvailable</td>
+                  <td>Integer</td>
+                  <td>O</td>
+                  <td>Total number of rooms made available via Expedia for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation. <strong>Note:</strong> In the case of a hotel using base allocation: if the
+                    value sent is lower than the current base allocation room count, the Integer value will be <strong>changed</strong> by Expedia QuickConnect to equal the current base allocation amount and a warning (7013) will be returned.</td>
+                  <td>Minimum value: 0, Maximum value: 4999</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>RatePlan</td>
+                  <td>-</td>
+                  <td>O</td>
+                  <td>Information about a rate plan. This element can be repeated more than once if hotel wants to update multiple rate plans under this room type for the same set of dates. <strong>Note:</strong> Rate plans can only belong to a single room
+                    type and Rate plans should be active. If it isn’t, the update will still work but a warning will be returned to indicate that this rate plan is inactive.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>@id</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Rate plan ID (assigned by Expedia). Unique throughout Expedia system, so the same rate plan ID cannot be associated to more than one room type.</td>
+                  <td>String of 50 characters or less, RatePlan ID is valid only if the specified hotel has the corresponding rate plan defined for it in Expedia Partner Central.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>@closed</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>If true, the rate plan is no longer available on Expedia for dates specified under the room type. If false, the rate plan is reopened if previously closed, or stays open if already open.</td>
+                  <td>For hotels with base allocation contracts, if this is the last rate plan opened, and a close request is received, it will be rejected with warning code 7014.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Rate</td>
+                  <td>-</td>
+                  <td>O</td>
+                  <td>Room rates. The type of rate (sell, net, LAR) to include depends on the configuration for this hotel. Up to 28 rate elements can be specified when updating per day and per length of stay rates. Else only one rate element should be defined.</td>
+                  <td>Use only one pricing model, Pricing model in synch with configuration of the property on Expedia Partner Central or via the PARR interface</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@rateChangeIndicator</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>To be used with rate plans enabled for day-of-arrival pricing only (message will be rejected if this attribute is used in conjunction with a rate plan that is not enabled for DOA pricing). Indicates that regardless of the applicable
+                    rate on the arrival date, the rate will change on this date.</td>
+                  <td>Rate plan is day-of-arrival pricing enabled. It not, update is rejected with error code 3125.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@currency</td>
+                  <td>String</td>
+                  <td>O</td>
+                  <td>3-letter currency code assigned to property on Expedia Partner Central. Based on ISO 4217 specification. Optional only when message is for rate change indicator updates, without any rate modification.</td>
+                  <td>Minimum length = 3, Must match the property currency defined on Expedia Partner Central, Must always be provided when update request includes rates.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@lengthOfStay</td>
+                  <td>Int</td>
+                  <td>O</td>
+                  <td>For properties managing per day and per length of stay rates. Rates from length of stay 1 up to 28 can be defined by arrival date. This attribute contains the length of stay for which this rate applies.</td>
+                  <td>Minimum value=1, Maximum value=28</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>PerDay</td>
+                  <td>-</td>
+                  <td>O</td>
+                  <td>To be used when property is configured with Per Day pricing on Expedia Partner Central. This rate is for base occupancy of the room.</td>
+                  <td>Property is configured with per day pricing on Expedia Partner Central.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>@rate</td>
+                  <td>Decimal</td>
+                  <td></td>
+                  <td>Rate for base occupancy, per day. When used in conjunction with length of stay pricing attribute, the rate defined is the rate per day. If the rate is for 100$ for LOS=7, then the total of this stay’s rate would be 7x100=700.</td>
+                  <td>Rate has to be &gt;= 0.000, Rate has to be &lt;= 16 digits long</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>@rate</td>
+                  <td>Decimal</td>
+                  <td></td>
+                  <td>Rate for one person, based on double occupancy. Single person supplement and additional person fees are configured when rate plan is created and cannot be modified in this interface.</td>
+                  <td>Rate has to be &gt;= 0.000, Rate has to be &lt;= 16 digits long</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Restrictions</td>
+                  <td>-</td>
+                  <td>O</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@minLOS</td>
+                  <td>Integer</td>
+                  <td>O</td>
+                  <td>Specifies minimum length of stay required to qualify for this rate. Guest has to stay at least this number of nights to benefit from rate. If not specified, the minimum length of stay will be set to a default value configured in Expedia
+                    systems (1 is the default, but it can be changed). Refer to section 5.6.4 for more details on MinLOS and MaxLOS</td>
+                  <td>Minimum value: 1, Maximum value: 28, Attempting to set MinLOS greater than Expedia’s configured value for the hotel will result in the update being refused with error code 3135.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@maxLOS</td>
+                  <td>Integer</td>
+                  <td>O</td>
+                  <td>Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed). Refer to section
+                    5.6.4 for more details on MinLOS and MaxLOS.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@closedToArrival</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>@closedToDeparture</td>
+                  <td>Boolean</td>
+                  <td>O</td>
+                  <td>Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h2 id="availability-and-rate-response-ar-rs-" data-magellan-destination="availability-and-rate-response-ar-rs-">Availability and Rate Response (AR RS)</h2>
+          <p>The availability and rate response message is straightforward: it is returned synchronously to update the property’s system with the status of the AR request. The status can either be Success or Error. If successful, it can contain a warning.</p>
+          <h3 id="ar-rs-schema-overview" data-magellan-destination="ar-rs-schema-overview">AR RS Schema Overview</h3>
+          <p>
+            <img src="/images/AR RS XML MESSAGE.jpg" alt="AR RS XML MESSAGE">
+          </p>
+          <h3 id="ar-rs-schema-complete-definition" data-magellan-destination="ar-rs-schema-complete-definition">AR RS Schema Complete Definition</h3>
+          <p><em>Legend: O = Optional</em>
+          </p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Element / @Attribute</th>
+                  <th>Data Type</th>
+                  <th>Number of occur.</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>AvailRateUpdateRS</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>Root element</td>
+                </tr>
+                <tr>
+                  <td>0</td>
+                  <td>@xmlns</td>
+                  <td>URL</td>
+                  <td></td>
+                  <td>Namespace which belongs to this message. Also used to validate version of schema on which this message is based. Namespace for AR RS messages <a href="http://www.expediaconnect.com/EQC/AR/2007/02">http://www.expediaconnect.com/EQC/AR/2007/02</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Success</td>
+                  <td>NA</td>
+                  <td></td>
+                  <td>Element appears if the request to update availability and rates was successful. The node will be empty. If this element is present, Error node(s) does not appear. Not everything from the request was successfully processed if warnings
+                    are also returned.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Warning</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Detailed description of a warning. When this element appears, anything that is not listed in the warning list is assumed to be successfully processed by Expedia and updated in Expedia system. Occurrence of this element means the update
+                    request was partially applied. For example, if one of the rates provided violates our rate verification threshold, that specific rate will not be applied, but the rest of the updates will. Maximum length: 1024 characters. Maximum number
+                    of occurrences per warning code: 20. All warning scenarios are described in section <a href="guides.html#/arresponsebusinesswarnings">AR Response Business Warnings</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>@code</td>
+                  <td>Int</td>
+                  <td></td>
+                  <td>Code for the warning. Code will be between 7,000 and 8,000.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Error</td>
+                  <td>String</td>
+                  <td></td>
+                  <td>Detailed description of an error message. When this element appears, nothing included in the AR request was processed. One or more of this element appears if the request failed. If this element is present, Success node does not appear.
+                    Maximum length: 1024 characters. All error scenarios are described in the <a href="guides.html#/troubleshooting">Troubleshooting</a> section.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>@code</td>
+                  <td>Int</td>
+                  <td></td>
+                  <td>Code for this error, for example: authentication, xml structure, business validation. Code will be between 1000 and 7000.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
+    </div>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

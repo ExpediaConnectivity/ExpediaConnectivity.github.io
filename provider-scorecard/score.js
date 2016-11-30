@@ -1,5 +1,9 @@
 function providerPortalServiceBaseUrl() {
-    return environment.isProd() ? "https://provider-portal-service.prod-p.expedia.com" : "https://provider-portal-service.us-west-2.test.expedia.com";
+    switch (environment.env) {
+        case "prod": return "https://provider-portal-service.prod-p.expedia.com";
+        case "dev":  return "https://provider-portal-service.us-west-2.test.expedia.com";
+        default:     return "https://provider-portal-service.us-west-2.test.expedia.com";
+    }
 }
 
 var provider = false;
@@ -137,7 +141,9 @@ function generateScorecardCategory(category, id) {
         var element = category["attributes"][key];
         var elementSelector = "#" + id + " #" + key;
         var value = element.value;
-        if (element.unit == "days") {
+        if (value == "") {
+            value = "Not Available"
+        } else if (element.unit == "days") {
             value += " " + element.unit;
         } else if (element.unit == "$") {
             value = element.unit + value;
@@ -151,6 +157,9 @@ function generateScorecardCategory(category, id) {
             var deltasuccess = (element.deltaSuccess != null) ? element.deltaSuccess : element.success;
             var delta = $("<span/>").addClass(deltasuccess ? "green" : "red").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
             $(elementSelector + " .rate-change").html(delta).append(" " + element.delta + "%");
+        } else {
+            $(elementSelector + " .rate-change").html("");
+            $(elementSelector).addClass("solid-background");
         }
     }
 }
@@ -163,7 +172,7 @@ function generateScorecardFeature(category, id) {
         var elementSelector = "#" + id + " #" + key;
         var state = category["attributes"][key];
         $(elementSelector + " .state").html(state ? "&#x2713;" : "&#x2717;");
-        $(elementSelector).addClass(state ? "green" : "red");
+        $(elementSelector).addClass(state ? "feature-green" : "feature-red");
 
     }
 }

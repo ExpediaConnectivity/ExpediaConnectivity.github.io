@@ -1,84 +1,184 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Sample Messages - Expedia QuickConnect Products Availability And Rates Retrieval API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Messages - Expedia QuickConnect Products Availability And Rates Retrieval API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Products Availability And Rates Retrieval API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/guides.html">FAQ &amp; Guides</a></li><li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a></li><li class="depth2" data-magellan-arrival="requesting-all-active-room-types-and-rate-plans-configuration"><a class="sidebar-nav-item" href="#requesting-all-active-room-types-and-rate-plans-configuration">Requesting all active room types and rate plans configuration</a></li><li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes"><a class="sidebar-nav-item" href="#requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes">Requesting all active room types and rate plans configurations along with rate linkage information and additional room type attributes</a></li><li class="depth3" data-magellan-arrival="request-"><a class="sidebar-nav-item" href="#request-">Request:</a></li><li class="depth3" data-magellan-arrival="response-"><a class="sidebar-nav-item" href="#response-">Response:</a></li><li class="depth2" data-magellan-arrival="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products"><a class="sidebar-nav-item" href="#requesting-all-room-types-and-rate-plans-configuration-including-inactive-products">Requesting all room types and rate plans configuration, including inactive products</a></li><li class="depth3" data-magellan-arrival="request-2"><a class="sidebar-nav-item" href="#request-2">Request</a></li><li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a></li><li class="depth2" data-magellan-arrival="requesting-information-for-all-products-of-an-hotel-for-1-day"><a class="sidebar-nav-item" href="#requesting-information-for-all-products-of-an-hotel-for-1-day">Requesting information for all products of an hotel, for 1 day</a></li><li class="depth3" data-magellan-arrival="request-3"><a class="sidebar-nav-item" href="#request-3">Request</a></li><li class="depth3" data-magellan-arrival="response-3"><a class="sidebar-nav-item" href="#response-3">Response</a></li><li class="depth2" data-magellan-arrival="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel"><a class="sidebar-nav-item" href="#requesting-all-room-type-level-avail-and-rate-data-for-an-hotel">Requesting all room type-level avail and rate data for an hotel</a></li><li class="depth3" data-magellan-arrival="request-4"><a class="sidebar-nav-item" href="#request-4">Request</a></li><li class="depth2" data-magellan-arrival="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type"><a class="sidebar-nav-item" href="#requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type">Requesting all active rate plans&#39; avail and rate data for a specific room type</a></li><li class="depth3" data-magellan-arrival="request-5"><a class="sidebar-nav-item" href="#request-5">Request</a></li><li class="depth3" data-magellan-arrival="response-4"><a class="sidebar-nav-item" href="#response-4">Response</a></li><li class="depth2" data-magellan-arrival="requesting-1-rate-plan-for-400-days"><a class="sidebar-nav-item" href="#requesting-1-rate-plan-for-400-days">Requesting 1 rate plan for 400 days</a></li><li class="depth3" data-magellan-arrival="request-6"><a class="sidebar-nav-item" href="#request-6">Request</a></li><li class="depth3" data-magellan-arrival="response-5"><a class="sidebar-nav-item" href="#response-5">Response</a></li><li class="depth2" data-magellan-arrival="requesting-all-room-types-and-rate-plans-for-365-days"><a class="sidebar-nav-item" href="#requesting-all-room-types-and-rate-plans-for-365-days">Requesting all room types and rate plans for 365 days</a></li><li class="depth3" data-magellan-arrival="request-7"><a class="sidebar-nav-item" href="#request-7">Request</a></li><li class="depth3" data-magellan-arrival="response-6"><a class="sidebar-nav-item" href="#response-6">Response</a></li><li class="depth2" data-magellan-arrival="requesting-rate-plan-linkage-information"><a class="sidebar-nav-item" href="#requesting-rate-plan-linkage-information">Requesting Rate Plan Linkage Information</a></li><li class="depth3" data-magellan-arrival="request-8"><a class="sidebar-nav-item" href="#request-8">Request</a></li><li class="depth3" data-magellan-arrival="response-7"><a class="sidebar-nav-item" href="#response-7">Response</a></li><li class="depth2" data-magellan-arrival="requesting-all-available-product-attributes"><a class="sidebar-nav-item" href="#requesting-all-available-product-attributes">Requesting all available product attributes</a></li><li class="depth3" data-magellan-arrival="request-9"><a class="sidebar-nav-item" href="#request-9">Request</a></li><li class="depth3" data-magellan-arrival="response-8"><a class="sidebar-nav-item" href="#response-8">Response</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/schemas.html">XML Schemas &amp; Production Endpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
-<h2 id="requesting-all-active-room-types-and-rate-plans-configuration" data-magellan-destination="requesting-all-active-room-types-and-rate-plans-configuration">Requesting all active room types and rate plans configuration</h2>
-<p>The following example shows how to request all active room types and rate plans for a hotel, and what the response will be like. These requests do not ask for rate linkage or room type attributes.</p>
-<h3 id="request" data-magellan-destination="request">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Expedia QuickConnect Products Availability And Rates Retrieval API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/quick-start.html">Quick Start</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/reference.html">API Definition</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/guides.html">FAQ & Guides</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="sample-messages"><a class="sidebar-nav-item" href="#sample-messages">Sample Messages</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-active-room-types-and-rate-plans-configuration"><a class="sidebar-nav-item" href="#requesting-all-active-room-types-and-rate-plans-configuration">Requesting all active room types and rate plans configuration</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request"><a class="sidebar-nav-item" href="#request">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes"><a class="sidebar-nav-item" href="#requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes">Requesting all active room types and rate plans configurations along with rate linkage information and additional room type attributes</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-"><a class="sidebar-nav-item" href="#request-">Request:</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-"><a class="sidebar-nav-item" href="#response-">Response:</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products"><a class="sidebar-nav-item" href="#requesting-all-room-types-and-rate-plans-configuration-including-inactive-products">Requesting all room types and rate plans configuration, including inactive products</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-2"><a class="sidebar-nav-item" href="#request-2">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-information-for-all-products-of-an-hotel-for-1-day"><a class="sidebar-nav-item" href="#requesting-information-for-all-products-of-an-hotel-for-1-day">Requesting information for all products of an hotel, for 1 day</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-3"><a class="sidebar-nav-item" href="#request-3">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-3"><a class="sidebar-nav-item" href="#response-3">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel"><a class="sidebar-nav-item" href="#requesting-all-room-type-level-avail-and-rate-data-for-an-hotel">Requesting all room type-level avail and rate data for an hotel</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-4"><a class="sidebar-nav-item" href="#request-4">Request</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type"><a class="sidebar-nav-item" href="#requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type">Requesting all active rate plans' avail and rate data for a specific room type</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-5"><a class="sidebar-nav-item" href="#request-5">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-4"><a class="sidebar-nav-item" href="#response-4">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-1-rate-plan-for-400-days"><a class="sidebar-nav-item" href="#requesting-1-rate-plan-for-400-days">Requesting 1 rate plan for 400 days</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-6"><a class="sidebar-nav-item" href="#request-6">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-5"><a class="sidebar-nav-item" href="#response-5">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-room-types-and-rate-plans-for-365-days"><a class="sidebar-nav-item" href="#requesting-all-room-types-and-rate-plans-for-365-days">Requesting all room types and rate plans for 365 days</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-7"><a class="sidebar-nav-item" href="#request-7">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-6"><a class="sidebar-nav-item" href="#response-6">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-rate-plan-linkage-information"><a class="sidebar-nav-item" href="#requesting-rate-plan-linkage-information">Requesting Rate Plan Linkage Information</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-8"><a class="sidebar-nav-item" href="#request-8">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-7"><a class="sidebar-nav-item" href="#response-7">Response</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="requesting-all-available-product-attributes"><a class="sidebar-nav-item" href="#requesting-all-available-product-attributes">Requesting all available product attributes</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="request-9"><a class="sidebar-nav-item" href="#request-9">Request</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="response-8"><a class="sidebar-nav-item" href="#response-8">Response</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/schemas.html">XML Schemas & Production Endpoints</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/revision-history.html">Revision History</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="sample-messages" data-magellan-destination="sample-messages">Sample Messages</h1>
+          <h2 id="requesting-all-active-room-types-and-rate-plans-configuration" data-magellan-destination="requesting-all-active-room-types-and-rate-plans-configuration">Requesting all active room types and rate plans configuration</h2>
+          <p>The following example shows how to request all active room types and rate plans for a hotel, and what the response will be like. These requests do not ask for rate linkage or room type attributes.</p>
+          <h3 id="request" data-magellan-destination="request">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
     &lt;Hotel id=&quot;1780042&quot;/&gt;
     &lt;ParamSet&gt;
@@ -86,8 +186,8 @@
     &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response" data-magellan-destination="response">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response" data-magellan-destination="response">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;ProductList&gt;
         &lt;Hotel id=&quot;1780042&quot; name=&quot;EQC Test Hotel (OBP)&quot; city=&quot;Region Test&quot;/&gt;
         &lt;RoomType id=&quot;200004626&quot; code=&quot;Ocean View&quot; name=&quot;Ocean View&quot; status=&quot;Active&quot;&gt;
@@ -99,9 +199,9 @@
     &lt;/ProductList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes" data-magellan-destination="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes">Requesting all active room types and rate plans configurations along with rate linkage information and additional room type attributes</h2>
-<h3 id="request-" data-magellan-destination="request-">Request:</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes" data-magellan-destination="requesting-all-active-room-types-and-rate-plans-configurations-along-with-rate-linkage-information-and-additional-room-type-attributes">Requesting all active room types and rate plans configurations along with rate linkage information and additional room type attributes</h2>
+          <h3 id="request-" data-magellan-destination="request-">Request:</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
     &lt;Hotel id=&quot;734658&quot;/&gt;
     &lt;ParamSet&gt;
@@ -109,8 +209,8 @@
     &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-" data-magellan-destination="response-">Response:</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-" data-magellan-destination="response-">Response:</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;ProductList&gt;
         &lt;Hotel id=&quot;734658&quot; name=&quot;EQC Test Hotel (OBP)&quot; city=&quot;Region Test&quot;/&gt;
         &lt;RoomType id=&quot;463364&quot; code=&quot;Ocean View&quot; name=&quot;Ocean View&quot; status=&quot;Active&quot; smokingPref=&quot;Either&quot; maxOccupants=&quot;3&quot;&gt;
@@ -139,10 +239,11 @@
     &lt;/ProductList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products" data-magellan-destination="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products">Requesting all room types and rate plans configuration, including inactive products</h2>
-<p>The following example shows how to request all active and inactive room types and rate plans for a hotel, and what the response will be like. This hotel has 1 active and 1 inactive room type. For the active room type, there is 1 inactive rate plan, and 3 active rate plans.</p>
-<h3 id="request-2" data-magellan-destination="request-2">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products" data-magellan-destination="requesting-all-room-types-and-rate-plans-configuration-including-inactive-products">Requesting all room types and rate plans configuration, including inactive products</h2>
+          <p>The following example shows how to request all active and inactive room types and rate plans for a hotel, and what the response will be like. This hotel has 1 active and 1 inactive room type. For the active room type, there is 1 inactive rate
+            plan, and 3 active rate plans.</p>
+          <h3 id="request-2" data-magellan-destination="request-2">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
   &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot; /&gt;
   &lt;Hotel id=&quot;1780110&quot; /&gt;
       &lt;ParamSet&gt;
@@ -150,8 +251,8 @@
   &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-2" data-magellan-destination="response-2">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-2" data-magellan-destination="response-2">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
   &lt;ProductList&gt;
     &lt;Hotel id=&quot;1780110&quot; name=&quot;EQC Test Hotel (PDP) EUR&quot; city=&quot;Region Test&quot;/&gt;
     &lt;RoomType id=&quot;203167&quot; code=&quot;Standard room with two single beds&quot; name=&quot;Superior Double&quot; status=&quot;Inactive&quot;&gt;
@@ -167,10 +268,10 @@
   &lt;/ProductList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-information-for-all-products-of-an-hotel-for-1-day" data-magellan-destination="requesting-information-for-all-products-of-an-hotel-for-1-day">Requesting information for all products of an hotel, for 1 day</h2>
-<p>The following example shows how to request all active products&#39; avail, rates and restriction data for 1 day. Note that this hotel has 2 room types and 1 rate plan per room type.</p>
-<h3 id="request-3" data-magellan-destination="request-3">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-information-for-all-products-of-an-hotel-for-1-day" data-magellan-destination="requesting-information-for-all-products-of-an-hotel-for-1-day">Requesting information for all products of an hotel, for 1 day</h2>
+          <p>The following example shows how to request all active products&#39; avail, rates and restriction data for 1 day. Note that this hotel has 2 room types and 1 rate plan per room type.</p>
+          <h3 id="request-3" data-magellan-destination="request-3">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
    &lt;Hotel id=&quot;1780109&quot;/&gt;
    &lt;ParamSet&gt;
@@ -178,8 +279,8 @@
    &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-3" data-magellan-destination="response-3">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-3" data-magellan-destination="response-3">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;AvailRateList&gt;
       &lt;Hotel id=&quot;1780109&quot;/&gt;
       &lt;AvailRate date=&quot;2012-08-01&quot;&gt;
@@ -215,10 +316,10 @@
    &lt;/AvailRateList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel" data-magellan-destination="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel">Requesting all room type-level avail and rate data for an hotel</h2>
-<p>The following example shows how to request all room type data for a hotel for 3 days, using the request filters.</p>
-<h3 id="request-4" data-magellan-destination="request-4">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel" data-magellan-destination="requesting-all-room-type-level-avail-and-rate-data-for-an-hotel">Requesting all room type-level avail and rate data for an hotel</h2>
+          <p>The following example shows how to request all room type data for a hotel for 3 days, using the request filters.</p>
+          <h3 id="request-4" data-magellan-destination="request-4">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
    &lt;Hotel id=&quot;1780109&quot;/&gt;
    &lt;ParamSet&gt;
@@ -263,10 +364,10 @@
    &lt;/AvailRateList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type" data-magellan-destination="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type">Requesting all active rate plans&#39; avail and rate data for a specific room type</h2>
-<p>The following request shows how to request all active rate plans for a specific room type, for one day. Note that specifying only a room type ID implies all rate plans will be returned.</p>
-<h3 id="request-5" data-magellan-destination="request-5">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type" data-magellan-destination="requesting-all-active-rate-plans-avail-and-rate-data-for-a-specific-room-type">Requesting all active rate plans&#39; avail and rate data for a specific room type</h2>
+          <p>The following request shows how to request all active rate plans for a specific room type, for one day. Note that specifying only a room type ID implies all rate plans will be returned.</p>
+          <h3 id="request-5" data-magellan-destination="request-5">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
    &lt;Hotel id=&quot;1780109&quot;/&gt;
    &lt;ParamSet&gt;
@@ -276,8 +377,8 @@
    &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-4" data-magellan-destination="response-4">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-4" data-magellan-destination="response-4">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;AvailRateList&gt;
       &lt;Hotel id=&quot;1780109&quot;/&gt;
       &lt;AvailRate date=&quot;2012-08-01&quot;&gt;
@@ -299,10 +400,10 @@
    &lt;/AvailRateList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-1-rate-plan-for-400-days" data-magellan-destination="requesting-1-rate-plan-for-400-days">Requesting 1 rate plan for 400 days</h2>
-<p>The following request shows an attempt to query 400 days for 1 rate plan. The response will actually only contain 365 days. The PARR API never returns more than 365 days per response when a rate plan is requested.</p>
-<h3 id="request-6" data-magellan-destination="request-6">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-1-rate-plan-for-400-days" data-magellan-destination="requesting-1-rate-plan-for-400-days">Requesting 1 rate plan for 400 days</h2>
+          <p>The following request shows an attempt to query 400 days for 1 rate plan. The response will actually only contain 365 days. The PARR API never returns more than 365 days per response when a rate plan is requested.</p>
+          <h3 id="request-6" data-magellan-destination="request-6">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
     &lt;Hotel id=&quot;1780110&quot;/&gt;
     &lt;ParamSet&gt;
@@ -314,8 +415,8 @@
     &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-5" data-magellan-destination="response-5">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-5" data-magellan-destination="response-5">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
    &lt;AvailRateList&gt;
       &lt;Hotel id=&quot;1780110&quot;/&gt;
       &lt;AvailRate date=&quot;2011-08-01&quot;&gt;
@@ -365,10 +466,11 @@
       &lt;/AvailRate&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-room-types-and-rate-plans-for-365-days" data-magellan-destination="requesting-all-room-types-and-rate-plans-for-365-days">Requesting all room types and rate plans for 365 days</h2>
-<p>The following request shows an attempt to request all products for one hotel for the next 365 days. The response will only contain the closest first 31 days from the start date, and the other dates will not be returned, as a request for multiple products is constrained by our system to only return a maximum of 31 days at once. The hotel has 2 room types, each with 2 rate plans.</p>
-<h3 id="request-7" data-magellan-destination="request-7">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-room-types-and-rate-plans-for-365-days" data-magellan-destination="requesting-all-room-types-and-rate-plans-for-365-days">Requesting all room types and rate plans for 365 days</h2>
+          <p>The following request shows an attempt to request all products for one hotel for the next 365 days. The response will only contain the closest first 31 days from the start date, and the other dates will not be returned, as a request for multiple
+            products is constrained by our system to only return a maximum of 31 days at once. The hotel has 2 room types, each with 2 rate plans.</p>
+          <h3 id="request-7" data-magellan-destination="request-7">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
     &lt;Hotel id=&quot;2333447&quot;/&gt;
     &lt;ParamSet&gt;
@@ -376,8 +478,8 @@
     &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-6" data-magellan-destination="response-6">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-6" data-magellan-destination="response-6">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;AvailRateList&gt;
         &lt;Hotel id=&quot;2333447&quot;/&gt;
         &lt;AvailRate date=&quot;2012-08-01&quot;&gt;
@@ -472,10 +574,11 @@
     &lt;/AvailRateList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-rate-plan-linkage-information" data-magellan-destination="requesting-rate-plan-linkage-information">Requesting Rate Plan Linkage Information</h2>
-<p>The following request shows an attempt to request all active products, and include rate plan linkage information. The response will contain rate plan linkage information for the products that have linkage defined. The hotel has 1 room type and 4 rate plans, where 1 has rate plan linkage rule defined.</p>
-<h3 id="request-8" data-magellan-destination="request-8">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-rate-plan-linkage-information" data-magellan-destination="requesting-rate-plan-linkage-information">Requesting Rate Plan Linkage Information</h2>
+          <p>The following request shows an attempt to request all active products, and include rate plan linkage information. The response will contain rate plan linkage information for the products that have linkage defined. The hotel has 1 room type and
+            4 rate plans, where 1 has rate plan linkage rule defined.</p>
+          <h3 id="request-8" data-magellan-destination="request-8">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
   &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot; /&gt;
   &lt;Hotel id=&quot;7794&quot; /&gt;
       &lt;ParamSet&gt;
@@ -483,8 +586,8 @@
   &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-7" data-magellan-destination="response-7">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-7" data-magellan-destination="response-7">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
   &lt;ProductList&gt;
     &lt;Hotel id=&quot;7794&quot; name=&quot;The Test Hotel In Milan&quot; city=&quot;Milan&quot;/&gt;
     &lt;RoomType id=&quot;16273&quot; code=&quot;GDX&quot; name=&quot;Grand Deluxe Room&quot; status=&quot;Active&quot;&gt;
@@ -498,10 +601,10 @@
   &lt;/ProductList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-<h2 id="requesting-all-available-product-attributes" data-magellan-destination="requesting-all-available-product-attributes">Requesting all available product attributes</h2>
-<p>The following request and response shows all the information that our PARR service can return. It will include rate linkage, room type and rate plan attributes, compensation details and cancellation policy.</p>
-<h3 id="request-9" data-magellan-destination="request-9">Request</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h2 id="requesting-all-available-product-attributes" data-magellan-destination="requesting-all-available-product-attributes">Requesting all available product attributes</h2>
+          <p>The following request and response shows all the information that our PARR service can return. It will include rate linkage, room type and rate plan attributes, compensation details and cancellation policy.</p>
+          <h3 id="request-9" data-magellan-destination="request-9">Request</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;Authentication username=&quot;eqcxnet&quot; password=&quot;ECLPASS&quot;/&gt;
     &lt;Hotel id=&quot;211&quot;/&gt;
     &lt;ParamSet&gt;
@@ -509,8 +612,8 @@
     &lt;/ParamSet&gt;
 &lt;/ProductAvailRateRetrievalRQ&gt;
 </code></pre>
-<h3 id="response-8" data-magellan-destination="response-8">Response</h3>
-<pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
+          <h3 id="response-8" data-magellan-destination="response-8">Response</h3>
+          <pre><code class="lang-xml">&lt;ProductAvailRateRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/PAR/2013/07&quot;&gt;
     &lt;ProductList&gt;
         &lt;Hotel name=&quot;Test Hotel 211&quot; city=&quot;Montreal&quot; id=&quot;211&quot;/&gt;
         &lt;RoomType name=&quot;Standard&quot; id=&quot;20000&quot; status=&quot;Active&quot; code=&quot;Standard&quot; smokingPref=&quot;Either&quot; maxOccupants=&quot;3&quot;&gt;
@@ -557,19 +660,22 @@
     &lt;/ProductList&gt;
 &lt;/ProductAvailRateRetrievalRS&gt;
 </code></pre>
-</div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Sample Messages - Expedia QuickConnect Products Availability And Rates Retrieval API"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

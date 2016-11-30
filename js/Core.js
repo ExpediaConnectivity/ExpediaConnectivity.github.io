@@ -13,23 +13,13 @@ var Core = Core || {
         this.highlightActiveNav('#nav-main li.mainlink');
 
         // Foundation
-        var magellan = new Foundation.Magellan($(document), {
+        new Foundation.Magellan($(document), {
             'data-options': {
                 'data-animation-duration': 150
             }
         });
-            /*.foundation({
-            "magellan-expedition": {
-                active_class : 'active',
-                threshold : 0,
-                destination_threshold : 40,
-                throttle_delay : 30,
-                fixed_top : 0,
-                offset_by_height : false,
-                duration : 150,
-                easing : 'swing'
-            }
-        });*/
+
+        $(document).foundation();
 
         // Set size
         this.demoForm();
@@ -162,7 +152,7 @@ var Core = Core || {
 
     cloneSideMenuToOffCanvas: function() {
         var src = $('.sidebar-nav');
-        var dest = $('.left-off-canvas-menu');
+        var dest = $('#mobileMenu');
         if (src.length == 0 || dest.length == 0) {
             return;
         }
@@ -170,7 +160,7 @@ var Core = Core || {
 
         // Copy header to menu title
         var header = menu.find('header').detach();
-        $('.off-canvas-nav-bar .tab-bar-section .title').append(header);
+        $('.off-canvas-nav-bar .title-bar .title-bar-left .title-bar-title').append(header);
 
         // Close menu when an item is clicked.
         menu.find('a').click(function() {
@@ -187,13 +177,17 @@ var Core = Core || {
     },
 
     checkOffCanvasMenuPosition: function() {
-        var menu = $('.left-off-canvas-menu');
+        var menu = $('#mobileMenu');
+        var topBar = $('#nav-main');
+        var mobileBar = $('#mobileMenuBar');
+
         if (menu.length == 0) {
             return;
         }
-        var top = $(document).scrollTop() - $('.off-canvas-wrap').offset().top + $('.off-canvas-nav-bar').height();
+
+        var top = $(document).scrollTop() - topBar.outerHeight(true) - mobileBar.outerHeight(true);
         if (top < 0) {
-          top = 0;
+            top = 0;
         }
         menu.css('margin-top', top);
     },

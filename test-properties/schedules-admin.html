@@ -1,270 +1,127 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Schedules Admin - APIs for Expedia Partners</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Expedia Partner APIs for developers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedules Admin - APIs for Expedia Partners</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body id="page-index" class="he-active_now he-animate he-fade_in no-js"><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
-
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-</header>
-<div class="full-width"><link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
-<script src="/js/jquery.DataTables.min.js"></script>
-<script src="/js/dataTables.buttons.min.js"></script>
-<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-<script src="/js/jwtAuthentication.js"></script>
-<script src="/test-properties/urls.js"></script>
-<style>
-    .dataTables_length, .dataTables_filter {
-        display: none;
-    }
-
-    .simple-content form {
-        margin-top: 50px;
-        margin-bottom: 200px;
-    }
-
-    .dataTables_paginate,.dataTables_info {
-        display: none;
-    }
-</style>
-<div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>Test Property Assignment - Administration View</h1>
-    <hr/>
-    <br/>
-    <h2>Properties assigned to all accounts</h2>
-    <br/>
-    <div class="loader" style="display: none;">
+  </header>
+  <div class="full-width">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="/test-properties/css/schedules.css">
+    <script src="/js/jquery.DataTables.min.js"></script>
+    <script src="/js/dataTables.buttons.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="/js/jwtAuthentication.js"></script>
+    <script src="/test-properties/js/urls.js"></script>
+    <script src="/test-properties/js/schedules-admin.js"></script>
+    <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
+      <h1>Test Property Assignment - Administration View</h1>
+      <hr/>
+      <br/>
+      <h2>Properties assigned to all accounts</h2>
+      <br/>
+      <div class="loader" style="display: none;">
         <div class="background">&nbsp;</div>
         <svg class="circular">
-            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+          <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
         </svg>
-    </div>
-    <table id="hotels" class="display" cellspacing="0" width="100%"></table>
-    <form>
+      </div>
+      <table id="hotels" class="display" cellspacing="0" width="100%"></table>
+      <form>
         <div id="result" class="formline center"></div>
-    </form>
-</div>
-
-<script>
-    var datatable = false;
-    var assignmentRequestFields = [];
-
-    var columns = [
-        { title: "TUID" },
-        { title: "Property ID" },
-        { title: "Name" },
-        { title: "Valid To", type: "date" },
-        { title: "Model" },
-        { title: "Currency" },
-        { title: "Pricing" },
-        { title: "RAT" },
-        { title: "API Username" }
-    ];
-
-    var buttons = [
-        { text: "Toggle Indefinite", action: toggleIndefinite }
-    ];
-
-    $(document).ready(function() {
-        datatable = $("#hotels").DataTable({
-            dom: 'frtiB',
-            columns: columns,
-            buttons: buttons,
-            pageLength: 100,
-            ajax: function (data, callback, settings) {
-                jwtRequest("GET", hotelAssignmentServiceUrls.schedule(), function(data, textStatus, jqxhr) {
-                    console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-                    if ($("#result").hasClass("error")) {
-                        $("#result").removeClass("error").text("");
-                    }
-                    $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
-                    $(document).tooltip();
-                    if (jqxhr.responseText == "") {
-                        datatable.clear().draw();
-                    } else {
-                        callback({data: parseData(JSON.parse(jqxhr.responseText))});
-                        datatable.order([ 3, "asc" ]).draw();
-                    }
-                }, function(jqxhr) {
-                    ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
-                });
-            }
-        }).on('click', 'tr', function() {
-            if ($(this).hasClass("selected")) {
-                $(this).removeClass("selected");
-                $(".dt-button").prop("disabled", true).addClass("disabled").attr("title", "Select a schedule to extend or unassign a property");
-                console.log("disabled");
-            } else {
-                $("#hotels tr").removeClass("selected");
-                $(this).addClass("selected");
-                $(".dt-button").prop("disabled", false).removeClass("disabled").removeAttr("title");
-                console.log("enabled");
-            }
-        });
-    });
-
-    $('#requestHotelForm').submit(function (event) {
-        event.preventDefault();
-        autoAssignHotel();
-    });
-
-    function parseData(data) {
-        var table = [];
-        for (var i in data) {
-            var tuid = data[i];
-            for (var j in tuid.hotels) {
-                var hotel = tuid.hotels[j];
-                for (var k in hotel.dates) {
-                    var date = hotel.dates[k];
-                    table.push([tuid.tuid, hotel.hotelId, hotel.hotelName, date.endDate,
-                                hotel.businessModel, hotel.currencyCode, hotel.pricingType, hotel.ratType, hotel.eqcAccountUsername]);
-                }
-            }
-        }
-        if (table.length == 0) {
-            datatable.clear().draw();
-        }
-        return table;
-    }
-
-    function getNiceErrorText(jqxhr) {
-        var content = jqxhr.getResponseHeader("Content-type");
-        if (content.indexOf("json") >= 0) {
-            var json;
-            try {
-                json = JSON.parse(jqxhr.responseText);
-            } catch (e) {
-                return jqxhr.responseText;
-            }
-            return json.details || json.message || json.description;
-        } else if (content.indexOf("text/text")) {
-            return jqxhr.responseText;
-        }
-
-        return false;
-    }
-
-    function ajaxError(jqxhr, humanError) {
-        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
-        var details = getNiceErrorText(jqxhr);
-        $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
-    }
-
-    function loadStartButtons() {
-        $(".loader").show();
-        $("a.dt-button").each(function(i, el) {
-            $(el).attr("data-href", $(el).attr("href")).removeAttr("href").addClass("disabled");
-        });
-    }
-
-    function loadEndButtons() {
-        $(".loader").hide();
-        $("#result").removeClass("error");
-        $("a.dt-button").each(function(i, el) {
-            $(el).attr("href", $(el).attr("data-href")).removeAttr("data-href").removeClass("disabled");
-        });
-    }
-
-    function toggleIndefinite(e, dt, node, config) {
-        loadStartButtons();
-        var hotelid = dt.cell(".selected", 1).data();
-        ga('send', 'event', 'toggleIndefinite', 'request', localStorage.getItem('username') + "|" + hotelid);
-        jwtRequest("POST", hotelAssignmentServiceUrls.scheduleToggleIndefinite(hotelid), function(data, textStatus, jqxhr) {
-            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-            loadEndButtons();
-            $("#result").text("Successfully toggled schedule expiry").effect( "highlight", {color:"#FECB2F"}, 700 );
-            datatable.ajax.reload();
-            ga('send', 'event', 'toggleIndefinite', 'success', localStorage.getItem('username') + "|" + hotelid);
-        }, function(jqxhr) {
-            loadEndButtons();
-            ajaxError(jqxhr, "Could not toggle schedule expiry");
-            ga('send', 'event', 'toggleIndefinite', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
-        });
-    }
-
-
-</script>
-</div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
-        </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      </form>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Schedules Admin"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+  <input type="hidden" id="eventTrackingPageName" value="Schedules Admin">
+</body>
+
+</html>

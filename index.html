@@ -1,144 +1,198 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>APIs for Expedia Partners</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="Expedia Partner APIs for developers">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APIs for Expedia Partners</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body id="page-index" class="he-active_now he-animate he-fade_in"><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
+
+<body class="he-active_now he-animate he-fade_in no-js" id="page-index">
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
-
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-</header>
-<link rel="stylesheet" href="/css/he-main.css">
-<style>
-    #section-intro_paragraph {
-        margin-bottom: 1rem;
-    }
+  </header>
+  <div class="full-width">
+    <link rel="stylesheet" href="/css/he-main.css">
 
-    .hackathon-ad {
-        margin-top: 0;
-    }
-</style>
+    <section class='hero hero-hotelroom'>
+      <div class='inner'>
+        <h1>Expedia Connectivity</h1>
+        <h2>Eliminate time intensive processes across rates and reservations, marketing, promotions, and analytics.</h2>
+      </div>
+    </section>
+    <div id="page-index" class="he-active_now he-animate he-fade_in">
+      <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
-<section class='hero hero-oceanview'>
-    <div class='inner'>
-        <h1>Developer APIs</h1>
-        <h2>Get up and running with the Expedia partner APIs</h2>
-    </div>
-</section>
-<section id="section-intro_paragraph">
-    <div class="inner">
-        <div class="row">
+      <section id="section-intro_paragraph">
+        <div class="inner">
+          <div class="row">
             <div class="twelve columns">
-                <p>
-                    Welcome to Expedia's Partner API website.  We provide documentation and reference material, as well
-                    as tutorials and quickstart guides to get you up and running with the various APIs Expedia provides.
-                </p>
+              <p>
+                Take control of end-to-end processes – from centralized reservations to targeted promotions. Expedia Connectivity automates the way properties reach, promote, and compete across Expedia’s entire marketplace of over 200 world-class booking sites. It transforms
+                time-intensive processes while helping connected properties drive revenue. Expedia Connectivity is the real-time Expedia marketplace, automated.
+              </p>
             </div>
+          </div>
         </div>
+      </section>
+
+      <section id="section-primary_boxes">
+        <div class="inner">
+          <div class="row full-width" id="primary-box-wrap">
+            <div class="six columns he-waypoint he-animate he-fade_in">
+              <a href="/providers" class="primary-box">
+                <h3>
+                                Expedia Connectivity for Providers
+                            </h3>
+                <img class="round-img" src="/images/image-scooter.png" />
+                <p>
+                  Make it easy for your customers to optimize their experience in the Expedia Global marketplace. Our connectivity APIs make it simple to adopt new features that provide additional value to your customers and increase opportunities for growth.
+                  <span>
+                                    Explore the Value of Expedia Connectivity
+                                </span>
+                </p>
+              </a>
+            </div>
+            <!--
+                 -->
+            <div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
+              <a href="/properties" class="primary-box">
+                <h3>
+                                Expedia Connectivity for Properties
+                            </h3>
+                <img class="round-img" src="/images/image-bed.png" />
+                <p>
+                  Simplify the management of room inventory, availability, and rates; promote time-sensitive offers; and take advantage of new opportunities across the Expedia Global marketplace. Connectivity automates time-intensive processes, giving you time to focus
+                  on other areas of your business.
+                  <span>
+                                    Explore the Benefits of Expedia Connectivity
+                                </span>
+                </p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="section-three_icons">
+        <div class="inner">
+          <div class="row full-width" id="index-lower-columns">
+            <!--
+                 -->
+            <div class="six columns he-waypoint he-animate he-delay_100 he-fade_in">
+              <img class="icon round-img" src="/images/icon-browser.png" />
+              <h4>Discover Connectivity Systems</h4>
+              <p>
+                Thinking of using a third-party technology partner to manage your property on Expedia? Connect with one of our dedicated systems to gain instant, always-on exposure across the Expedia marketplace.
+              </p>
+              <a href="/systems">
+                            Learn more about Expedia Connectivity Systems
+                        </a>
+            </div>
+            <!--
+                 -->
+            <div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
+              <img class="icon round-img" src="/images/icon-code_tag.png" />
+              <h4>Deploy Connectivity APIs</h4>
+              <p>
+                Rapidly access the largest set of hospitality APIs designed to ease the management of everything from rate and reservations to real-time marketing analytics.
+              </p>
+              <a href="/developer">
+                            Learn more about Expedia Connectivity APIs
+                        </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
-</section>
-<section class="row">
-    <a href="/blog#post-hackathon">
-        <img class="hackathon-ad twelve columns show-for-medium" src="/images/hackathon/ad.png"/>
-        <img class="hackathon-ad twelve columns show-for-small-only" src="/images/hackathon/ad_mobile.png"/>
-    </a>
-</section>
-<div class="row full-width"><div class="small-12 small-centered medium-8 xlarge-6 columns cards"><div class="category he-active_now he-animate he-delay_100 he-fade_in">Availability, Rates, Restrictions, Booking Notification, Retrieval And Confirmation</div><div class="card he-active_now he-animate he-delay_200 he-fade_in"><div class="card-logo"><span>E</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Expedia QuickConnect Avail & Rates API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas & Production Endpoints</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a></div><div class="description"><p>Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_300 he-fade_in"><div class="card-logo"><span>B</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/quick-start.html">Booking Notification API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/schemas.html">XML Schemas</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/revision-history.html">Revision History</a></div><div class="description"><p>The Booking Notification API allows partners to receive new, modified or cancelled reservations in near real time, as Expedia customers make these bookings.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_400 he-fade_in"><div class="card-logo"><span>E</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Expedia QuickConnect Booking Retrieval & Confirmation API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-bc.html">Booking Confirmation API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/xml-schemas.html">XML Schemas & Production Enpoints</a></div><div class="description"><p>The Booking Retrieval and Booking Confirmation APIs are two simple interfaces that allow Expedia partners to electronically retrieve bookings made on any Expedia Inc. point of sale, and provide a confirmation number. </p>
-</div></div></div><div class="category he-active_now he-animate he-delay_500 he-fade_in">Product Management</div><div class="card he-active_now he-animate he-delay_600 he-fade_in"><div class="card-logo"><img src="/apis/product-management/product-api/icon.svg"/></div><div class="card-content"><a class="card-header" href="/apis/product-management/product-api/quick-start.html">Product API</a><div class="links"><a class="card-section" href="/apis/product-management/product-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/product-management/product-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/product-management/product-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/product-management/product-api/try-it.html">Try It</a> | <a class="card-section" href="/apis/product-management/product-api/revision-history.html">Revision History</a> | <a class="card-section" href="/apis/product-management/product-api/video.html">Video Tutorial</a></div><div class="description"><p>The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager. It also offers the possibility to read basic property configuration to better use the API to manage room types and rate plans afterwards.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_700 he-fade_in"><div class="card-logo"><span>P</span></div><div class="card-content"><a class="card-header" href="/apis/product-management/promo-api/quick-start.html">Promo API</a><div class="links"><a class="card-section" href="/apis/product-management/promo-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/product-management/promo-api/api-definition.html">API Definition</a> | <a class="card-section" href="/apis/product-management/promo-api/faq-guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/product-management/promo-api/examples.html">Examples</a> | <a class="card-section" href="/apis/product-management/promo-api/try-it.html">Try It</a> | <a class="card-section" href="/apis/product-management/promo-api/video.html">Video Tutorial</a></div><div class="description"><p>The Promo API enables partners to create promotions in the Expedia marketplace. It complements the existing Expedia Partner Central (EPC) self-service promo tools and thus provides more flexibility and options for hoteliers to manage their offering on the Expedia marketplace.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_800 he-fade_in"><div class="card-logo"><img src="/apis/product-management/property-api/icon.svg"/></div><div class="card-content"><a class="card-header" href="/apis/product-management/property-api/api-definition.html">Property API</a><div class="links"><a class="card-section" href="/apis/product-management/property-api/api-definition.html">API Definition</a> | <a class="card-section" href="/apis/product-management/property-api/supported-features.html">Supported Features</a> | <a class="card-section" href="/apis/product-management/property-api/code-list.html">Code Lists</a> | <a class="card-section" href="/apis/product-management/property-api/video.html">Video Tutorial</a></div><div class="description"><p>The Property API is used to onboard property attributes, images, policies, and fees.  Additionally, this API can be used to update property content post onboarding.  The quickest way to get started is to review the <a href="http://developer.expediapartnercentral.com/apis/product-management/property-api/supported-features.html">Supported Features</a> and review the API Definition.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_900 he-fade_in"><div class="card-logo"><span>E</span></div><div class="card-content"><a class="card-header" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/quick-start.html">Expedia QuickConnect Products Availability And Rates Retrieval API</a><div class="links"><a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/schemas.html">XML Schemas & Production Endpoints</a> | <a class="card-section" href="/apis/product-management/expedia-quickconnect-products-availability-and-rates-retrieval-api/revision-history.html">Revision History</a></div><div class="description"><p>The Product, Availability and Rates API (PARR) was designed for any partner that needs to connect to Expedia to read/retrieve the current product configuration (rooms and rates defined), as well as the current rates and availability loaded in the system. PLEASE NOTE: for retrieving product information, Expedia STRONGLY encourages partners to use the Product API.</p>
-</div></div></div><div class="card he-active_now he-animate he-delay_1000 he-fade_in"><div class="card-logo"><span>I</span></div><div class="card-content"><a class="card-header" href="/apis/product-management/image-api/quick-start.html">Image API (Experimental)</a><div class="links"><a class="card-section" href="/apis/product-management/image-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/product-management/image-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/product-management/image-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/product-management/image-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/product-management/image-api/try-it.html">Try It</a> | <a class="card-section" href="/apis/product-management/image-api/revision-history.html">Revision History</a></div><div class="description"><p>The Image API enables Expedia partners to add new images (one at a time), read images that currently exist for a property, and edit existing images&#39; meta data like categories or room assignment.</p>
-</div></div></div><div class="category he-active_now he-animate he-delay_1100 he-fade_in">Insights</div><div class="card he-active_now he-animate he-delay_1200 he-fade_in"><div class="card-logo"><img src="/apis/insights/marketplace-feed/icon.svg"/></div><div class="card-content"><a class="card-header" href="/apis/insights/marketplace-feed/quickstart.html">Marketplace Feed (Experimental)</a><div class="links"><a class="card-section" href="/apis/insights/marketplace-feed/quickstart.html">Quick Start</a> | <a class="card-section" href="/apis/insights/marketplace-feed/reference.html">Reference</a> | <a class="card-section" href="/apis/insights/marketplace-feed/swagger.html">Try It</a> | <a class="card-section" href="/apis/insights/marketplace-feed/video.html">Video Tutorial</a></div><div class="description"><p>The Marketplace Feed API enables hoteliers to assess how competitive they are in the Expedia marketplace.  This feed currently offers insights into how competitive a hotel&#39;s availability and rates are, as well as feedback provided by Expedia guests.</p>
-</div></div></div><div class="category he-active_now he-animate he-delay_1300 he-fade_in">Other</div><div class="card he-active_now he-animate he-delay_1400 he-fade_in"><div class="card-logo"><span>H</span></div><div class="card-content"><a class="card-header" href="/apis/other/hotwire-api/api-reference.html">Hotwire API</a><div class="links"><a class="card-section" href="/apis/other/hotwire-api/api-reference.html">API Reference</a> | <a class="card-section" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a> | <a class="card-section" href="/apis/other/hotwire-api/hotwire-faq.html">FAQ</a> | <a class="card-section" href="/apis/other/hotwire-api/simulator-tool.html">Simulator Tool</a></div><div class="description"><p>Hotwire QuickConnect is a set of APIs that allow a client system to interact with the information
-available in the <a href="https://extranet.hotwire.com">Hotwire Hotel Extranet</a>. In turn, that information is used
-by Hotwire.com and its affiliates to display and sell hotel rooms to travelers.
-Currently the Hotwire QuickConnect API can be used to create and update a hotel’s availability, rates,
-and inventory (ARI), and retrieve recently confirmed and/or cancelled bookings. The ARI functionality
-includes the ability to set the number of available rooms, per-day rate amounts and extra person
-charges, and several restrictions. Retrieved bookings contain guest and Hotwire single use credit card
-information.</p>
-</div></div></div></div></div><footer id="site-footer" class="row full-width">
+  </div>
+  <footer class="row full-width" id="site-footer">
     <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
-        </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Index Page"/></body></html>
+  </footer>
+  <input type="hidden" id="eventTrackingPageName" value="Index">
+</body>
+
+</html>

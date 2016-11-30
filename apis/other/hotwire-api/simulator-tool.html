@@ -1,93 +1,135 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Simulator Tool - Hotwire API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulator Tool - Hotwire API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Hotwire API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/api-reference.html">API Reference</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/hotwire-faq.html">FAQ</a></li><li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a></li><li class="depth2" data-magellan-arrival="booking-retrieval-simulator"><a class="sidebar-nav-item" href="#booking-retrieval-simulator">Booking Retrieval Simulator</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-request-xml-examples"><a class="sidebar-nav-item" href="#booking-retrieval-request-xml-examples">Booking Retrieval Request XML Examples</a></li><li class="depth3" data-magellan-arrival="booking-retrieval-response-xml-examples"><a class="sidebar-nav-item" href="#booking-retrieval-response-xml-examples">Booking Retrieval Response XML Examples</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
-<h2 id="booking-retrieval-simulator" data-magellan-destination="booking-retrieval-simulator">Booking Retrieval Simulator</h2>
-<p>The API endpoint in pre-production exposes a simulator that allows a user to retrieve example booking responses. This enables developers to test basic integration with the booking retrieval API without having to create test customer bookings in the pre-production environment.</p>
-<p>To invoke the simulator:</p>
-<p>Provide your usual apiKey
-Use the authorization credentials &#39;hqcsim@hotwire.com:hotwire’ (aHFjc2ltQGhvdHdpcmUuY29tOmhvdHdpcmU=)
-Send the request to the pre-production endpoint <a href="https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl">https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl</a>
-Send hotel id 17515
-The contents of the response will vary depending on the value sent in the MinsInPast parameter of the request</p>
-<p>If MinsInPast is less than or equal to 60, the response will be empty
-If MinsInPast is greater than 60, the response will contain several <Booking> elements with various guest, room, and length of stay combinations. One booking will be cancelled.</p>
-<h3 id="booking-retrieval-request-xml-examples" data-magellan-destination="booking-retrieval-request-xml-examples">Booking Retrieval Request XML Examples</h3>
-<p><strong>Example 1</strong> shows a request for bookings made or cancelled at a hotel within the past 300 minutes.</p>
-<pre><code class="lang-xml">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns2=&quot;http://api.xnet.hotwire/&quot;&gt;
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Hotwire API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/api-reference.html">API Reference</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/getting-connected.html">Getting Connected</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/other/hotwire-api/hotwire-faq.html">FAQ</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="simulator-tool"><a class="sidebar-nav-item" href="#simulator-tool">Simulator Tool</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="booking-retrieval-simulator"><a class="sidebar-nav-item" href="#booking-retrieval-simulator">Booking Retrieval Simulator</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="booking-retrieval-request-xml-examples"><a class="sidebar-nav-item" href="#booking-retrieval-request-xml-examples">Booking Retrieval Request XML Examples</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="booking-retrieval-response-xml-examples"><a class="sidebar-nav-item" href="#booking-retrieval-response-xml-examples">Booking Retrieval Response XML Examples</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="simulator-tool" data-magellan-destination="simulator-tool">Simulator tool</h1>
+          <h2 id="booking-retrieval-simulator" data-magellan-destination="booking-retrieval-simulator">Booking Retrieval Simulator</h2>
+          <p>The API endpoint in pre-production exposes a simulator that allows a user to retrieve example booking responses. This enables developers to test basic integration with the booking retrieval API without having to create test customer bookings
+            in the pre-production environment.</p>
+          <p>To invoke the simulator:</p>
+          <p>Provide your usual apiKey Use the authorization credentials &#39;hqcsim@hotwire.com:hotwire’ (aHFjc2ltQGhvdHdpcmUuY29tOmhvdHdpcmU=) Send the request to the pre-production endpoint <a href="https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl">https://api.preprod.hotwire.com/xnetApi/v1.1/XnetHotelService?wsdl</a>
+            Send hotel id 17515 The contents of the response will vary depending on the value sent in the MinsInPast parameter of the request</p>
+          <p>If MinsInPast is less than or equal to 60, the response will be empty If MinsInPast is greater than 60, the response will contain several
+            <Booking>elements with various guest, room, and length of stay combinations. One booking will be cancelled.</p>
+          <h3 id="booking-retrieval-request-xml-examples" data-magellan-destination="booking-retrieval-request-xml-examples">Booking Retrieval Request XML Examples</h3>
+          <p><strong>Example 1</strong> shows a request for bookings made or cancelled at a hotel within the past 300 minutes.</p>
+          <pre><code class="lang-xml">&lt;soapenv:Envelope xmlns:soapenv=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns2=&quot;http://api.xnet.hotwire/&quot;&gt;
    &lt;soapenv:Header/&gt;
    &lt;soapenv:Body&gt;
       &lt;ns2:retrieveBooking&gt;
@@ -99,9 +141,11 @@ If MinsInPast is greater than 60, the response will contain several <Booking> el
    &lt;/soapenv:Body&gt;
 &lt;/soapenv:Envelope&gt;
 </code></pre>
-<h3 id="booking-retrieval-response-xml-examples" data-magellan-destination="booking-retrieval-response-xml-examples">Booking Retrieval Response XML Examples</h3>
-<p>Example 1 shows an empty response – there were no confirmed or cancelled bookings made within the requested number of minutes. The <BookingRetrievalResponse> element contains no child <Booking> elements.</p>
-<pre><code class="lang-xml">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+          <h3 id="booking-retrieval-response-xml-examples" data-magellan-destination="booking-retrieval-response-xml-examples">Booking Retrieval Response XML Examples</h3>
+          <p>Example 1 shows an empty response – there were no confirmed or cancelled bookings made within the requested number of minutes. The
+            <BookingRetrievalResponse>element contains no child
+              <Booking>elements.</p>
+          <pre><code class="lang-xml">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
    &lt;soap:Body&gt;
       &lt;ns2:retrieveBookingResponse xmlns:ns2=&quot;http://api.xnet.hotwire/&quot;&gt;
          &lt;BookingRetrievalRS version=&quot;1&quot; timeStamp=&quot;2012-10-15T10:57:00.777-07:00&quot; echoToken=&quot;1111111&quot;/&gt;
@@ -109,8 +153,8 @@ If MinsInPast is greater than 60, the response will contain several <Booking> el
    &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </code></pre>
-<p><strong>Example 2</strong> shows a response with multiple active and cancelled bookings.</p>
-<pre><code class="lang-xml">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
+          <p><strong>Example 2</strong> shows a response with multiple active and cancelled bookings.</p>
+          <pre><code class="lang-xml">&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&gt;
    &lt;soap:Body&gt;
       &lt;ns2:retrieveBookingResponse xmlns:ns2=&quot;http://api.xnet.hotwire/&quot;&gt;
          &lt;BookingRetrievalRS version=&quot;1&quot; timeStamp=&quot;2012-10-19T10:49:55.543-07:00&quot;&gt;
@@ -165,19 +209,22 @@ If MinsInPast is greater than 60, the response will contain several <Booking> el
    &lt;/soap:Body&gt;
 &lt;/soap:Envelope&gt;
 </code></pre>
-</div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="Simulator Tool - Hotwire API"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,217 +1,336 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>FAQ &amp; Guides - Expedia QuickConnect Avail &amp; Rates API</title><meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html>
+<html>
 
-<title>Expedia Connectivity</title>
-
-<link rel="stylesheet" href="/css/normalize.css">
-<link rel="stylesheet" href="/css/foundation.min.css">
-<link rel="stylesheet" href="/css/code/styles/github-gist.css">
-<link rel="stylesheet" href="/css/styles.css">
-
-<link rel="icon" href="/favicon.ico" />
-<link rel="stylesheet" href="/css/he-animate.css">
-
-<script src="/js/jquery.js"></script>
-<script src="/js/vendor/modernizr.js"></script>
-<script src="/js/highlight.pack.js"></script>
-<script src="/js/foundation.min.js"></script>
-<script src="/js/Core.js"></script>
-<script src="/js/he-main.js"></script>
-<script src="/js/he-plugins.js"></script>
-<script src="/js/he-smoothscroll.js"></script>
-<script src="/js/he-waypoints.js"></script>
-<script src="/js/environment.js"></script>
-<script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ &amp; Guides - Expedia QuickConnect Avail &amp; Rates API</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/foundation.min.css">
+  <link rel="stylesheet" href="/css/code/styles/github-gist.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/css/he-animate.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vendor/modernizr.js"></script>
+  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/foundation.min.js"></script>
+  <script src="/js/Core.js"></script>
+  <script src="/js/he-main.js"></script>
+  <script src="/js/he-plugins.js"></script>
+  <script src="/js/he-smoothscroll.js"></script>
+  <script src="/js/he-waypoints.js"></script>
+  <script src="/js/environment.js"></script>
+  <script>
     $(document).ready(function() {
         $('.api-content pre>code').each(function(i, block) {
             hljs.highlightBlock(block);
         });
         Core.init();
     });
-
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
             m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
     ga('create', 'UA-79394707-1', 'auto');
     ga('send', 'pageview');
     function googleTranslateElementInit() {
         new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
     }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</head><body><div id="google_translate_element" style="display: none;"></div>
-<header id="site-navigation">
-    <nav id="nav-top" class="row full-width">
-        <div class="inner">
-            <ul>
-                <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li>
-                <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li>
-            </ul>
-        </div>
-    </nav>
-    <nav id="nav-main" class="row full-width">
-        <div class="inner">
-            <a id="logo" href="/">
-                <img src="/images/DevLogo_40k.png" />
-            </a>
+  </script>
+  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</head>
 
-            <div id="menu-toggle" class="hide-for-large"></div>
-            <div id="menu-wrap">
-                <div class="hide-for-large"></div>
-                <ul>
-                    <li class="mainlink"><a href="/providers">Connectivity for Providers</a></li>
-                    <li class="mainlink"><a href="/properties">Connectivity for Properties</a></li>
-                    <li class="mainlink"><a href="/systems">Systems</a></li>
-                    <li class="mainlink"><a href="/developer">Developer APIs</a></li>
-                    <li class="mainlink"><a href="/blog">Blog</a></li>
-                    <li class="mainlink"><a href="/contact-us">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
+<body>
+  <div id="google_translate_element" style="display: none"></div>
+  <header id="site-navigation">
+    <nav class="row full-width" id="nav-top">
+      <div class="inner">
+        <ul>
+          <li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a>
+          </li>
+          <li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-</header>
-<div class="row full-width"><div class="off-canvas-nav-bar sticky"><nav class="top-bar tab-bar hide-for-medium" data-topbar role="navigation"><section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a></section><section class="middle tab-bar-section"><span class="title"></span></section></nav></div></div><div class="row full-width"><div class="hide-for-small-only medium-3 large-2 columns menu"><nav role="navigation" class="sidebar-nav"><header>Expedia QuickConnect Avail & Rates API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/reference.html">API Definition</a></li><li class="pagename" data-magellan-arrival="faq-guides"><a class="sidebar-nav-item" href="#faq-guides">FAQ &amp; Guides</a></li><li class="depth2" data-magellan-arrival="getting-connected-with-expedia-for-the-first-time"><a class="sidebar-nav-item" href="#getting-connected-with-expedia-for-the-first-time">Getting Connected with Expedia for the First Time</a></li><li class="depth3" data-magellan-arrival="development-phase"><a class="sidebar-nav-item" href="#development-phase">Development phase</a></li><li class="depth3" data-magellan-arrival="test-phase"><a class="sidebar-nav-item" href="#test-phase">Test phase</a></li><li class="depth3" data-magellan-arrival="beta-soft-launch-phase"><a class="sidebar-nav-item" href="#beta-soft-launch-phase">Beta (Soft Launch) phase</a></li><li class="depth3" data-magellan-arrival="go-live-phase"><a class="sidebar-nav-item" href="#go-live-phase">Go Live phase</a></li><li class="depth2" data-magellan-arrival="guidelines"><a class="sidebar-nav-item" href="#guidelines">Guidelines</a></li><li class="depth3" data-magellan-arrival="basic-connectivity-requirements"><a class="sidebar-nav-item" href="#basic-connectivity-requirements">Basic Connectivity Requirements</a></li><li class="depth3" data-magellan-arrival="mapping-property-room-and-rate-plan-codes-to-expedia-ids"><a class="sidebar-nav-item" href="#mapping-property-room-and-rate-plan-codes-to-expedia-ids">Mapping property room and rate plan codes to Expedia IDs</a></li><li class="depth3" data-magellan-arrival="included-features"><a class="sidebar-nav-item" href="#included-features">Included Features</a></li><li class="depth3" data-magellan-arrival="sending-updates-to-expedia"><a class="sidebar-nav-item" href="#sending-updates-to-expedia">Sending updates to Expedia</a></li><li class="depth3" data-magellan-arrival="date-ranges"><a class="sidebar-nav-item" href="#date-ranges">Date Ranges</a></li><li class="depth3" data-magellan-arrival="minimum-and-maximum-lengths-of-stay"><a class="sidebar-nav-item" href="#minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</a></li><li class="depth3" data-magellan-arrival="sequencing-ordering-of-messages"><a class="sidebar-nav-item" href="#sequencing-ordering-of-messages">Sequencing/Ordering of Messages</a></li><li class="depth3" data-magellan-arrival="property-re-synchronization-mechanism"><a class="sidebar-nav-item" href="#property-re-synchronization-mechanism">Property Re/Synchronization Mechanism</a></li><li class="depth3" data-magellan-arrival="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-"><a class="sidebar-nav-item" href="#send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-">Send the right type of rate to Expedia: sell rate, net rate or LAR?</a></li><li class="depth3" data-magellan-arrival="code-to-the-correct-pricing-model"><a class="sidebar-nav-item" href="#code-to-the-correct-pricing-model">Code to the Correct Pricing Model</a></li><li class="depth3" data-magellan-arrival="managing-rates-for-a-property-using-occupancy-based-pricing"><a class="sidebar-nav-item" href="#managing-rates-for-a-property-using-occupancy-based-pricing">Managing Rates for a Property Using Occupancy-based Pricing</a></li><li class="depth3" data-magellan-arrival="ar-responses-containing-more-than-20-warnings"><a class="sidebar-nav-item" href="#ar-responses-containing-more-than-20-warnings">AR Responses Containing more than 20 Warnings</a></li><li class="depth3" data-magellan-arrival="alarms-and-monitoring"><a class="sidebar-nav-item" href="#alarms-and-monitoring">Alarms and Monitoring</a></li><li class="depth3" data-magellan-arrival="specifying-number-of-rooms-available-inclusive-of-base-allocation"><a class="sidebar-nav-item" href="#specifying-number-of-rooms-available-inclusive-of-base-allocation">Specifying number of rooms available inclusive of base allocation</a></li><li class="depth3" data-magellan-arrival="closing-rate-plans-with-remaining-base-allocation"><a class="sidebar-nav-item" href="#closing-rate-plans-with-remaining-base-allocation">Closing rate plans with remaining base allocation</a></li><li class="depth3" data-magellan-arrival="closing-rooms-to-avoid-overbookings"><a class="sidebar-nav-item" href="#closing-rooms-to-avoid-overbookings">Closing rooms to avoid overbookings</a></li><li class="depth3" data-magellan-arrival="using-day-of-week-attributes-with-date-ranges"><a class="sidebar-nav-item" href="#using-day-of-week-attributes-with-date-ranges">Using day of week attributes with date ranges</a></li><li class="depth3" data-magellan-arrival="rate-plan-linkage-and-ar"><a class="sidebar-nav-item" href="#rate-plan-linkage-and-ar">Rate Plan Linkage and AR</a></li><li class="depth3" data-magellan-arrival="retry"><a class="sidebar-nav-item" href="#retry">Retry</a></li><li class="depth3" data-magellan-arrival="concurrency"><a class="sidebar-nav-item" href="#concurrency">Concurrency</a></li><li class="depth2" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">Troubleshooting</a></li><li class="depth3" data-magellan-arrival="detailed-error-handling-and-retry-strategy-recommendation"><a class="sidebar-nav-item" href="#detailed-error-handling-and-retry-strategy-recommendation">Detailed Error Handling and Retry Strategy Recommendation</a></li><li class="depth3" data-magellan-arrival="communication-issues-for-any-of-the-eqc-apis"><a class="sidebar-nav-item" href="#communication-issues-for-any-of-the-eqc-apis">Communication Issues for any of the EQC APIs</a></li><li class="depth3" data-magellan-arrival="ssl-certificate-validation-problems"><a class="sidebar-nav-item" href="#ssl-certificate-validation-problems">SSL Certificate Validation Problems</a></li><li class="depth3" data-magellan-arrival="miscellaneous"><a class="sidebar-nav-item" href="#miscellaneous">Miscellaneous</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas &amp; Production Endpoints</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a></li></ul></nav></div><div class="off-canvas-wrap" data-offcanvas><div class="inner-wrap"><aside class="left-off-canvas-menu hide-for-medium"></aside><div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content"><h1 id="faq-guides" data-magellan-destination="faq-guides">FAQ &amp; Guides</h1>
-<p><a name="/gettingconnected"></a></p>
-<h2 id="getting-connected-with-expedia-for-the-first-time" data-magellan-destination="getting-connected-with-expedia-for-the-first-time">Getting Connected with Expedia for the First Time</h2>
-<p>Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:</p>
-<p><img src="/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg" alt="ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT"></p>
-<h3 id="development-phase" data-magellan-destination="development-phase">Development phase</h3>
-<p>All our API specifications are on this site.  You must abide by our <a href="/terms.html">terms and conditions</a>.
-If you have any development related questions during this phase, please send email <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.</p>
-<h3 id="test-phase" data-magellan-destination="test-phase">Test phase</h3>
-<p>Expedia will send you access details for a test property in production once you send the following information to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>:</p>
-<ul>
-<li>Company name</li>
-<li>System Type (CRS, PMS, Channel Manager, etc)</li>
-<li>System name</li>
-<li>Address</li>
-<li>Phone number</li>
-<li>Contact information</li>
-<li>Website</li>
-<li>How many hotels utilize your system?</li>
-<li>System description</li>
-</ul>
-<p>In order to assign a property that will suit your needs we need to know more about what you have coded for. Please return a completed <a href="/files/EQC%20Interface%20Questionnaire.docx">interface questionnaire</a> to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.</p>
-<h3 id="beta-soft-launch-phase" data-magellan-destination="beta-soft-launch-phase">Beta (Soft Launch) phase</h3>
-<p>If testing is successful, select one of your hotels to be Beta and return a completed <a href="/files/EQC%20Enrollment%20Form.docx">enrollment form</a> to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a> so we can initiate the Soft Launch process (one hour phone call with testing plan, one week monitoring in production with a real hotel). There are also some <a href="/files/EQC%20Softlaunch%20Scenarios.docx">soft launch scenarios</a> to view.</p>
-<h3 id="go-live-phase" data-magellan-destination="go-live-phase">Go Live phase</h3>
-<p>After soft launch is over (usually it takes one week), the connectivity will be officially up and running in production and other properties can be connected.</p>
-<h2 id="guidelines" data-magellan-destination="guidelines">Guidelines</h2>
-<h3 id="basic-connectivity-requirements" data-magellan-destination="basic-connectivity-requirements">Basic Connectivity Requirements</h3>
-<p>In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:</p>
-<ul>
-<li>Have a reliable connection to the Internet</li>
-<li>Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)</li>
-<li>Be able to connect using Expedia QuickConnect URL. Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an IP range, as Expedia cannot guarantee a specific IP range / subnet.</li>
-<li>Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)</li>
-<li>Be able to send changes to rates and availability using XML messages</li>
-<li>Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages</li>
-<li>Be able to provide confirmation numbers for retrieved bookings (reservations, modifications and cancelations) using XML messages</li>
-<li>Be able to handle errors and warning scenarios as per this specification’s recommendations</li>
-</ul>
-<p>Optionally, EQC partners can also retrieve products, availability and rate data using XML messages.</p>
-<h3 id="mapping-property-room-and-rate-plan-codes-to-expedia-ids" data-magellan-destination="mapping-property-room-and-rate-plan-codes-to-expedia-ids">Mapping property room and rate plan codes to Expedia IDs</h3>
-<p>To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping between its property’s room and rate codes and Expedia’s equivalent room type and rate plan IDs. For example, a rate code SUM08001 in the hotel system maps to a unique rate plan ID 1093294 in Expedia system. This mapping is crucial for sending updates, because the EQC partner must specify this Expedia ID in its XML messages instead of the property’s equivalent code. </p>
-<p>Any time a property changes its room or rate codes, or requests new products to be created in Expedia’s, the EQC partner must update the mapping of the property’s codes in its system with Expedia’s equivalent new or existing IDs to maintain successful communication of availability updates and booking notifications between the EQC partner and Expedia. </p>
-<p>Note: Expedia IDs are also used to identify the room type and rate plan of a booking in the fax notification sent to the property.
-The Expedia product mapping can be obtained electronically via the Product API, or manually via ExpediaPartnerCentral.com. The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy. </p>
-<h4 id="view-expedia-room-type-and-rate-plan-ids-via-expedia-partner-central" data-magellan-destination="view-expedia-room-type-and-rate-plan-ids-via-expedia-partner-central">View Expedia room type and rate plan IDs via Expedia Partner Central</h4>
-<p>To verify the room type and rate plan IDs currently defined for your property in Expedia’s system, use the Room and Rate Plan Summary page at ExpediaPartner Central.com. This page allows the EQC partner to look up a property’s room and rate plan names to determine Expedia’s equivalent IDs.</p>
-<h3 id="included-features" data-magellan-destination="included-features">Included Features</h3>
-<p>The following table is an overview of what is and is not included in the availability and rates API. 
-Note: The features listed as “not supported” are ones that are managed through Expedia&#39;s tools. Some of these features can be managed by the EQC partner, while others are managed by the Expedia Market Manager.</p>
-<div><table>
-<thead>
-<tr>
-<th>Supported</th>
-<th>Not Supported</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Updates by Property for Room Types and/or Rate Plans using Expedia IDs as identifiers (mapping of Expedia IDs to hotel codes to be done by EQC partner)</td>
-<td>Updates by Property for Room Types and Rate Plans using hotel codes as identifiers (only Expedia identifiers can be used)</td>
-</tr>
-<tr>
-<td>Updates by date range and day(s) of week</td>
-<td>Modification of base allocation count through EQC</td>
-</tr>
-<tr>
-<td>Update of multiple room types and rate plans at the same time, for multiple different date ranges.</td>
-<td>Closing a room with outstanding base allocation</td>
-</tr>
-<tr>
-<td>Total room allocation for properties with or without base allocation contracts</td>
-<td>Closing all rate plans for a room with outstanding base allocation</td>
-</tr>
-<tr>
-<td>Additional allocation for properties with base allocation contracts</td>
-<td>Single-person supplements in per-person pricing Extra person/child/infant fees for all pricing models</td>
-</tr>
-<tr>
-<td>Opening and Closing – rate plans</td>
-<td></td>
-</tr>
-<tr>
-<td>Opening and Closing – room types</td>
-<td></td>
-</tr>
-<tr>
-<td>Rate per day for base occupancy (per day pricing model)</td>
-<td></td>
-</tr>
-<tr>
-<td>Rate per day for base occupancy, per length of stay (per day length of stay pricing model)</td>
-<td></td>
-</tr>
-<tr>
-<td>Rate per day by occupancy (occupancy based pricing model) <strong>Recommended</strong></td>
-<td></td>
-</tr>
-<tr>
-<td>Rates could be Net Rate, Sell Rate or Lowest Available Rate, based on product configuration in Expedia system.</td>
-<td></td>
-</tr>
-<tr>
-<td>Day-of-arrival pricing with rate change indicator</td>
-<td></td>
-</tr>
-<tr>
-<td>Minimum length of stay (based on arrival or stay through)</td>
-<td></td>
-</tr>
-<tr>
-<td>Maximum length-of-stay (based on arrival or stay through)</td>
-<td></td>
-</tr>
-<tr>
-<td>Update number of rooms available as far as two years in advance</td>
-<td></td>
-</tr>
-<tr>
-<td>Closed-to-arrival restrictions</td>
-<td></td>
-</tr>
-<tr>
-<td>Closed-to-departure restriction</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><p><a name="/sendingupdatestoexpedia"></a></p>
-<h3 id="sending-updates-to-expedia" data-magellan-destination="sending-updates-to-expedia">Sending updates to Expedia</h3>
-<p>In order to keep Expedia in synch with the hotel availabilty and rates, updates should be triggered by the hotel’s system as soon as rates, availability or restrictions change. 
-Speaking from experience, Expedia expects to receive per day, on average, approximately 180 updates per product, per hotel. For a typical hotel connected through EQC, which has on average 10 different room type/rate plans combinations, this should translate into approximately 1,800 updates per hotel, every day.
-Some specific conditions could cause hotels to generate significantly more updates per day. If you feel that your hotel will consistently generate more than 180 updates per product, please request help from Expedia through your Connectivity Account Manager.</p>
-<h4 id="counting-how-many-updates-are-included-in-a-message" data-magellan-destination="counting-how-many-updates-are-included-in-a-message">Counting how many updates are included in a message</h4>
-<p>Expedia has specific rules and recommendations around message bundling, specifically related to how many updates are included in any one given message. Update count is defined as follows:
-Expedia defines the Update Count of an AR message as the number of distinct data elements being changed by that message. Each individual rate, restriction or status change for one stay date is counted as one update.
-For example, the following message excerpt contains 3 updates: number of rooms, a rate and a CTD restriction for one day.</p>
-<pre><code class="lang-xml">&lt;AvailRateUpdate&gt;
+    <nav class="row full-width" id="nav-main">
+      <div class="inner">
+        <a id="logo" href="/">
+          <img src="/images/DevLogo_40k.png">
+        </a>
+        <div class="hide-for-large" id="menu-toggle"></div>
+        <div id="menu-wrap">
+          <div class="hide-for-large"></div>
+          <ul>
+            <li class="mainlink"><a href="/providers">Connectivity for Providers</a>
+            </li>
+            <li class="mainlink"><a href="/properties">Connectivity for Properties</a>
+            </li>
+            <li class="mainlink"><a href="/systems">Systems</a>
+            </li>
+            <li class="mainlink"><a href="/developer">Developer APIs</a>
+            </li>
+            <li class="mainlink"><a href="/blog">Blog</a>
+            </li>
+            <li class="mainlink"><a href="/contact-us">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="row full-width">
+    <div class="off-canvas-nav-bar sticky">
+      <nav class="top-bar tab-bar hide-for-medium" data-topbar="" role="navigation">
+        <section class="left-small"><a class="left-off-canvas-toggle menu-icon" href=""><span></span></a>
+        </section>
+        <section class="middle tab-bar-section"><span class="title"></span>
+        </section>
+      </nav>
+    </div>
+  </div>
+  <div class="row full-width">
+    <div class="hide-for-small-only medium-3 large-2 columns menu">
+      <nav role="navigation" class="sidebar-nav">
+        <header>Expedia QuickConnect Avail & Rates API</header>
+        <ul class="sidebar-nav-items columns" data-magellan-expedition>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/reference.html">API Definition</a>
+          </li>
+          <li class="pagename" data-magellan-arrival="faq-guides"><a class="sidebar-nav-item" href="#faq-guides">FAQ & Guides</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="getting-connected-with-expedia-for-the-first-time"><a class="sidebar-nav-item" href="#getting-connected-with-expedia-for-the-first-time">Getting Connected with Expedia for the First Time</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="development-phase"><a class="sidebar-nav-item" href="#development-phase">Development phase</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="test-phase"><a class="sidebar-nav-item" href="#test-phase">Test phase</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="beta-soft-launch-phase"><a class="sidebar-nav-item" href="#beta-soft-launch-phase">Beta (Soft Launch) phase</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="go-live-phase"><a class="sidebar-nav-item" href="#go-live-phase">Go Live phase</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="guidelines"><a class="sidebar-nav-item" href="#guidelines">Guidelines</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="basic-connectivity-requirements"><a class="sidebar-nav-item" href="#basic-connectivity-requirements">Basic Connectivity Requirements</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="mapping-property-room-and-rate-plan-codes-to-expedia-ids"><a class="sidebar-nav-item" href="#mapping-property-room-and-rate-plan-codes-to-expedia-ids">Mapping property room and rate plan codes to Expedia IDs</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="included-features"><a class="sidebar-nav-item" href="#included-features">Included Features</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="sending-updates-to-expedia"><a class="sidebar-nav-item" href="#sending-updates-to-expedia">Sending updates to Expedia</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="date-ranges"><a class="sidebar-nav-item" href="#date-ranges">Date Ranges</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="minimum-and-maximum-lengths-of-stay"><a class="sidebar-nav-item" href="#minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="sequencing-ordering-of-messages"><a class="sidebar-nav-item" href="#sequencing-ordering-of-messages">Sequencing/Ordering of Messages</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="property-re-synchronization-mechanism"><a class="sidebar-nav-item" href="#property-re-synchronization-mechanism">Property Re/Synchronization Mechanism</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-"><a class="sidebar-nav-item" href="#send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-">Send the right type of rate to Expedia: sell rate, net rate or LAR?</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="code-to-the-correct-pricing-model"><a class="sidebar-nav-item" href="#code-to-the-correct-pricing-model">Code to the Correct Pricing Model</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="managing-rates-for-a-property-using-occupancy-based-pricing"><a class="sidebar-nav-item" href="#managing-rates-for-a-property-using-occupancy-based-pricing">Managing Rates for a Property Using Occupancy-based Pricing</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="ar-responses-containing-more-than-20-warnings"><a class="sidebar-nav-item" href="#ar-responses-containing-more-than-20-warnings">AR Responses Containing more than 20 Warnings</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="alarms-and-monitoring"><a class="sidebar-nav-item" href="#alarms-and-monitoring">Alarms and Monitoring</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="specifying-number-of-rooms-available-inclusive-of-base-allocation"><a class="sidebar-nav-item" href="#specifying-number-of-rooms-available-inclusive-of-base-allocation">Specifying number of rooms available inclusive of base allocation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="closing-rate-plans-with-remaining-base-allocation"><a class="sidebar-nav-item" href="#closing-rate-plans-with-remaining-base-allocation">Closing rate plans with remaining base allocation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="closing-rooms-to-avoid-overbookings"><a class="sidebar-nav-item" href="#closing-rooms-to-avoid-overbookings">Closing rooms to avoid overbookings</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="using-day-of-week-attributes-with-date-ranges"><a class="sidebar-nav-item" href="#using-day-of-week-attributes-with-date-ranges">Using day of week attributes with date ranges</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="rate-plan-linkage-and-ar"><a class="sidebar-nav-item" href="#rate-plan-linkage-and-ar">Rate Plan Linkage and AR</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="retry"><a class="sidebar-nav-item" href="#retry">Retry</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="concurrency"><a class="sidebar-nav-item" href="#concurrency">Concurrency</a>
+          </li>
+          <li class="depth2" data-magellan-arrival="troubleshooting"><a class="sidebar-nav-item" href="#troubleshooting">Troubleshooting</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="detailed-error-handling-and-retry-strategy-recommendation"><a class="sidebar-nav-item" href="#detailed-error-handling-and-retry-strategy-recommendation">Detailed Error Handling and Retry Strategy Recommendation</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="communication-issues-for-any-of-the-eqc-apis"><a class="sidebar-nav-item" href="#communication-issues-for-any-of-the-eqc-apis">Communication Issues for any of the EQC APIs</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="ssl-certificate-validation-problems"><a class="sidebar-nav-item" href="#ssl-certificate-validation-problems">SSL Certificate Validation Problems</a>
+          </li>
+          <li class="depth3" data-magellan-arrival="miscellaneous"><a class="sidebar-nav-item" href="#miscellaneous">Miscellaneous</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas & Production Endpoints</a>
+          </li>
+          <li class="pagename"><a class="sidebar-nav-item" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="off-canvas-wrap" data-offcanvas="">
+      <div class="inner-wrap">
+        <aside class="left-off-canvas-menu hide-for-medium"></aside>
+        <div class="small-12 medium-9 medium-offset-3 large-8 large-offset-2 columns end api-content">
+          <h1 id="faq-guides" data-magellan-destination="faq-guides">FAQ &amp; Guides</h1>
+          <p>
+            <a name="/gettingconnected"></a>
+          </p>
+          <h2 id="getting-connected-with-expedia-for-the-first-time" data-magellan-destination="getting-connected-with-expedia-for-the-first-time">Getting Connected with Expedia for the First Time</h2>
+          <p>Before activation on Expedia QuickConnect, the EQC partner has to go through several steps:</p>
+          <p>
+            <img src="/images/ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT.jpg" alt="ACTIVATION PROCESS ON EXPEDIA QUICKCONNECT">
+          </p>
+          <h3 id="development-phase" data-magellan-destination="development-phase">Development phase</h3>
+          <p>All our API specifications are on this site. You must abide by our <a href="/terms.html">terms and conditions</a>. If you have any development related questions during this phase, please send email <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.</p>
+          <h3 id="test-phase" data-magellan-destination="test-phase">Test phase</h3>
+          <p>Expedia will send you access details for a test property in production once you send the following information to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>:</p>
+          <ul>
+            <li>Company name</li>
+            <li>System Type (CRS, PMS, Channel Manager, etc)</li>
+            <li>System name</li>
+            <li>Address</li>
+            <li>Phone number</li>
+            <li>Contact information</li>
+            <li>Website</li>
+            <li>How many hotels utilize your system?</li>
+            <li>System description</li>
+          </ul>
+          <p>In order to assign a property that will suit your needs we need to know more about what you have coded for. Please return a completed <a href="/files/EQC%20Interface%20Questionnaire.docx">interface questionnaire</a> to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.</p>
+          <h3 id="beta-soft-launch-phase" data-magellan-destination="beta-soft-launch-phase">Beta (Soft Launch) phase</h3>
+          <p>If testing is successful, select one of your hotels to be Beta and return a completed <a href="/files/EQC%20Enrollment%20Form.docx">enrollment form</a> to <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a> so we can initiate the Soft Launch
+            process (one hour phone call with testing plan, one week monitoring in production with a real hotel). There are also some <a href="/files/EQC%20Softlaunch%20Scenarios.docx">soft launch scenarios</a> to view.</p>
+          <h3 id="go-live-phase" data-magellan-destination="go-live-phase">Go Live phase</h3>
+          <p>After soft launch is over (usually it takes one week), the connectivity will be officially up and running in production and other properties can be connected.</p>
+          <h2 id="guidelines" data-magellan-destination="guidelines">Guidelines</h2>
+          <h3 id="basic-connectivity-requirements" data-magellan-destination="basic-connectivity-requirements">Basic Connectivity Requirements</h3>
+          <p>In order for properties to use the Expedia QuickConnect solution, they must meet the following requirements:</p>
+          <ul>
+            <li>Have a reliable connection to the Internet</li>
+            <li>Be able to initiate HTTPS connections to Expedia QuickConnect servers and provide authentication (username/password)</li>
+            <li>Be able to connect using Expedia QuickConnect URL. Expedia does not support connection to the QuickConnect Service directly via IP Address, as this address is subject to change without notice. If the EQC partner generally prefers IP Addresses
+              for communication performance reasons, it may consider implementing an address caching strategy to reduce DNS lookups for the URLs. Additionally, if partner whitelists outbound connections, it must do so using a URL pattern rather than an
+              IP range, as Expedia cannot guarantee a specific IP range / subnet.</li>
+            <li>Be able to generate XML documents conforming to Expedia QuickConnect schemas (XSD)</li>
+            <li>Be able to send changes to rates and availability using XML messages</li>
+            <li>Be able to retrieve bookings (reservations, modifications and cancelations) using XML messages</li>
+            <li>Be able to provide confirmation numbers for retrieved bookings (reservations, modifications and cancelations) using XML messages</li>
+            <li>Be able to handle errors and warning scenarios as per this specification’s recommendations</li>
+          </ul>
+          <p>Optionally, EQC partners can also retrieve products, availability and rate data using XML messages.</p>
+          <h3 id="mapping-property-room-and-rate-plan-codes-to-expedia-ids" data-magellan-destination="mapping-property-room-and-rate-plan-codes-to-expedia-ids">Mapping property room and rate plan codes to Expedia IDs</h3>
+          <p>To use Expedia QuickConnect, the EQC partner must develop and maintain a mapping between its property’s room and rate codes and Expedia’s equivalent room type and rate plan IDs. For example, a rate code SUM08001 in the hotel system maps to a
+            unique rate plan ID 1093294 in Expedia system. This mapping is crucial for sending updates, because the EQC partner must specify this Expedia ID in its XML messages instead of the property’s equivalent code.</p>
+          <p>Any time a property changes its room or rate codes, or requests new products to be created in Expedia’s, the EQC partner must update the mapping of the property’s codes in its system with Expedia’s equivalent new or existing IDs to maintain
+            successful communication of availability updates and booking notifications between the EQC partner and Expedia.</p>
+          <p>Note: Expedia IDs are also used to identify the room type and rate plan of a booking in the fax notification sent to the property. The Expedia product mapping can be obtained electronically via the Product API, or manually via ExpediaPartnerCentral.com.
+            The Expedia room type and rate plan IDs are alpha-numeric, and the relationship between room type and rate plan is a one to many hirachy.</p>
+          <h4 id="view-expedia-room-type-and-rate-plan-ids-via-expedia-partner-central" data-magellan-destination="view-expedia-room-type-and-rate-plan-ids-via-expedia-partner-central">View Expedia room type and rate plan IDs via Expedia Partner Central</h4>
+          <p>To verify the room type and rate plan IDs currently defined for your property in Expedia’s system, use the Room and Rate Plan Summary page at ExpediaPartner Central.com. This page allows the EQC partner to look up a property’s room and rate
+            plan names to determine Expedia’s equivalent IDs.</p>
+          <h3 id="included-features" data-magellan-destination="included-features">Included Features</h3>
+          <p>The following table is an overview of what is and is not included in the availability and rates API. Note: The features listed as “not supported” are ones that are managed through Expedia&#39;s tools. Some of these features can be managed by
+            the EQC partner, while others are managed by the Expedia Market Manager.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Supported</th>
+                  <th>Not Supported</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Updates by Property for Room Types and/or Rate Plans using Expedia IDs as identifiers (mapping of Expedia IDs to hotel codes to be done by EQC partner)</td>
+                  <td>Updates by Property for Room Types and Rate Plans using hotel codes as identifiers (only Expedia identifiers can be used)</td>
+                </tr>
+                <tr>
+                  <td>Updates by date range and day(s) of week</td>
+                  <td>Modification of base allocation count through EQC</td>
+                </tr>
+                <tr>
+                  <td>Update of multiple room types and rate plans at the same time, for multiple different date ranges.</td>
+                  <td>Closing a room with outstanding base allocation</td>
+                </tr>
+                <tr>
+                  <td>Total room allocation for properties with or without base allocation contracts</td>
+                  <td>Closing all rate plans for a room with outstanding base allocation</td>
+                </tr>
+                <tr>
+                  <td>Additional allocation for properties with base allocation contracts</td>
+                  <td>Single-person supplements in per-person pricing Extra person/child/infant fees for all pricing models</td>
+                </tr>
+                <tr>
+                  <td>Opening and Closing – rate plans</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Opening and Closing – room types</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Rate per day for base occupancy (per day pricing model)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Rate per day for base occupancy, per length of stay (per day length of stay pricing model)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Rate per day by occupancy (occupancy based pricing model) <strong>Recommended</strong>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Rates could be Net Rate, Sell Rate or Lowest Available Rate, based on product configuration in Expedia system.</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Day-of-arrival pricing with rate change indicator</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Minimum length of stay (based on arrival or stay through)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Maximum length-of-stay (based on arrival or stay through)</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Update number of rooms available as far as two years in advance</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Closed-to-arrival restrictions</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>Closed-to-departure restriction</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <a name="/sendingupdatestoexpedia"></a>
+          </p>
+          <h3 id="sending-updates-to-expedia" data-magellan-destination="sending-updates-to-expedia">Sending updates to Expedia</h3>
+          <p>In order to keep Expedia in synch with the hotel availabilty and rates, updates should be triggered by the hotel’s system as soon as rates, availability or restrictions change. Speaking from experience, Expedia expects to receive per day, on
+            average, approximately 180 updates per product, per hotel. For a typical hotel connected through EQC, which has on average 10 different room type/rate plans combinations, this should translate into approximately 1,800 updates per hotel, every
+            day. Some specific conditions could cause hotels to generate significantly more updates per day. If you feel that your hotel will consistently generate more than 180 updates per product, please request help from Expedia through your Connectivity
+            Account Manager.</p>
+          <h4 id="counting-how-many-updates-are-included-in-a-message" data-magellan-destination="counting-how-many-updates-are-included-in-a-message">Counting how many updates are included in a message</h4>
+          <p>Expedia has specific rules and recommendations around message bundling, specifically related to how many updates are included in any one given message. Update count is defined as follows: Expedia defines the Update Count of an AR message as
+            the number of distinct data elements being changed by that message. Each individual rate, restriction or status change for one stay date is counted as one update. For example, the following message excerpt contains 3 updates: number of rooms,
+            a rate and a CTD restriction for one day.</p>
+          <pre><code class="lang-xml">&lt;AvailRateUpdate&gt;
         &lt;DateRange from=&quot;2012-08-01&quot; to=&quot;2012-08-01&quot;/&gt;
         &lt;RoomType id=&quot;9989&quot;&gt;
             &lt;Inventory totalInventoryAvailable=&quot;50&quot;/&gt;
@@ -224,8 +343,8 @@ For example, the following message excerpt contains 3 updates: number of rooms, 
         &lt;/RoomType&gt;
     &lt;/AvailRateUpdate&gt;
 </code></pre>
-<p>The following excerpt contains 1098 updates: number of rooms, a rate and a CTD for 366 days.</p>
-<pre><code class="lang-xml">&lt;AvailRateUpdate&gt;
+          <p>The following excerpt contains 1098 updates: number of rooms, a rate and a CTD for 366 days.</p>
+          <pre><code class="lang-xml">&lt;AvailRateUpdate&gt;
         &lt;DateRange from=&quot;2012-08-01&quot; to=&quot;2013-07-31&quot;/&gt;
         &lt;RoomType id=&quot;9989&quot;&gt;
             &lt;Inventory totalInventoryAvailable=&quot;50&quot;/&gt;
@@ -238,20 +357,21 @@ For example, the following message excerpt contains 3 updates: number of rooms, 
         &lt;/RoomType&gt;
     &lt;/AvailRateUpdate&gt;
 </code></pre>
-<h4 id="prevent-duplicate-updates" data-magellan-destination="prevent-duplicate-updates">Prevent Duplicate Updates</h4>
-<p>The property must ensure that it only sends Expedia QuickConnect true updates, not information that has already been transmitted to Expedia. For example, it is poor practice to send a property’s entire Expedia availabilty every day. Messages should only be sent to keep Expedia synchronized with changes on the hotel system. 
-Avoiding redundant updates will also ensure that those necessary updates are processed faster, since each update is handled sequentially and:</p>
-<ul>
-<li>Expedia QuickConnect only allows one connection open per property at a time</li>
-<li>Processing one message can be a lengthy process, taking up to 5 seconds. </li>
-</ul>
-<h4 id="availabilty-changes-related-to-expedia-bookings" data-magellan-destination="availabilty-changes-related-to-expedia-bookings">Availabilty Changes related to Expedia bookings</h4>
-<p>Whenever Expedia books or cancels a room, the hotel system interface to Expedia QuickConnect should NOT update number of rooms available for sale on Expedia as this will be updated automatically by Expedia.
-For example, if the property receives a booking for room type ID “111” for December 24th 2016 to December 26th 2016 from Expedia, the property should NOT send a decrement of 1 room for the room type “111” for December 24th and December 25th 2016. Expedia is already aware.</p>
-<h4 id="combining-multiple-updates-in-one-message-to-make-messaging-more-efficient" data-magellan-destination="combining-multiple-updates-in-one-message-to-make-messaging-more-efficient">Combining multiple updates in one message to make messaging more efficient</h4>
-<p>To reduce the number of messages sent to Expedia QuickConnect, the EQC partner should make use of multiple AvailRateUpdate elements in one message, and leverage the possibility to specify multiple date ranges, room types and rate plans in the same message. 
-Multiple updates can be bundled into one single AR message by making use of the new AR schema that allows for one or more AvailRateUpdate elements. The following example is an update request for 5 different products and for one day, with different values for each product:</p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+          <h4 id="prevent-duplicate-updates" data-magellan-destination="prevent-duplicate-updates">Prevent Duplicate Updates</h4>
+          <p>The property must ensure that it only sends Expedia QuickConnect true updates, not information that has already been transmitted to Expedia. For example, it is poor practice to send a property’s entire Expedia availabilty every day. Messages
+            should only be sent to keep Expedia synchronized with changes on the hotel system. Avoiding redundant updates will also ensure that those necessary updates are processed faster, since each update is handled sequentially and:</p>
+          <ul>
+            <li>Expedia QuickConnect only allows one connection open per property at a time</li>
+            <li>Processing one message can be a lengthy process, taking up to 5 seconds.</li>
+          </ul>
+          <h4 id="availabilty-changes-related-to-expedia-bookings" data-magellan-destination="availabilty-changes-related-to-expedia-bookings">Availabilty Changes related to Expedia bookings</h4>
+          <p>Whenever Expedia books or cancels a room, the hotel system interface to Expedia QuickConnect should NOT update number of rooms available for sale on Expedia as this will be updated automatically by Expedia. For example, if the property receives
+            a booking for room type ID “111” for December 24th 2016 to December 26th 2016 from Expedia, the property should NOT send a decrement of 1 room for the room type “111” for December 24th and December 25th 2016. Expedia is already aware.</p>
+          <h4 id="combining-multiple-updates-in-one-message-to-make-messaging-more-efficient" data-magellan-destination="combining-multiple-updates-in-one-message-to-make-messaging-more-efficient">Combining multiple updates in one message to make messaging more efficient</h4>
+          <p>To reduce the number of messages sent to Expedia QuickConnect, the EQC partner should make use of multiple AvailRateUpdate elements in one message, and leverage the possibility to specify multiple date ranges, room types and rate plans in the
+            same message. Multiple updates can be bundled into one single AR message by making use of the new AR schema that allows for one or more AvailRateUpdate elements. The following example is an update request for 5 different products and for one
+            day, with different values for each product:</p>
+          <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!-- Sample AR request message: multiple AvailRateUpdate elements--&gt;
 &lt;AvailRateUpdateRQ xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
@@ -315,149 +435,180 @@ Multiple updates can be bundled into one single AR message by making use of the 
     &lt;/AvailRateUpdate&gt;
 &lt;/AvailRateUpdateRQ&gt;
 </code></pre>
-<h4 id="restricting-the-maximum-number-of-updates-per-message" data-magellan-destination="restricting-the-maximum-number-of-updates-per-message">Restricting the maximum number of updates per message</h4>
-<p>Expedia will restrict the max number of updates allowed in one message. Any request containing more than 3000 updates will be rejected by Expedia and no update will be applied. The error message returned will be:
-3107: Update exceeds allowable size - Maximum allowable size is 3000 updates.
-If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
-Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. 
-If you are unsure on how to proceed, we recommend requesting help from Expedia through your Connectivity Account Manager.</p>
-<h3 id="date-ranges" data-magellan-destination="date-ranges">Date Ranges</h3>
-<p>Properties can manage their rates and availabilty for up to 2 years in the future. 
-We recommend that EQC partners be careful when making use of long date ranges within one AR RQ. Long date ranges imply many updates per message, and Expedia limits one message to 3,000 updates at most.</p>
-<h3 id="minimum-and-maximum-lengths-of-stay" data-magellan-destination="minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</h3>
-<h4 id="arrival-vs-stay-through" data-magellan-destination="arrival-vs-stay-through">Arrival VS stay-through</h4>
-<p>Expedia supports two different methods to apply minimum and maximum length of stay restrictions.
-Arrival-based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading the LOS configured for the requested arrival date.
-Stay-through based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading all days of the requested stay and applying the most restrictive values from any of those days.
-This is a hotel-level setting in Expedia system, and any Expedia market managers can modify this setting. If you are not sure which setting applies to your hotel, please contact:</p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
-<h4 id="restricting-updates-beyond-a-certain-minimum-length-of-stay-value" data-magellan-destination="restricting-updates-beyond-a-certain-minimum-length-of-stay-value">Restricting updates beyond a certain Minimum length of stay value</h4>
-<p>Expedia will not accept updates past a certain minimum length of stay value. When a hotel exceeds the maximum value allowed per Expedia configuration, it will receive the following error:
-3135: MinLOS value ([value specified in message]) exceeds Extranet auto-approval threshold ([configuration for this hotel in Expedia system]) for length of stay.
-This is a setting that is configured on a per-hotel basis in Expedia system. If you feel your hotel is misconfigured, please reach out to your market manager.</p>
-<h3 id="sequencing-ordering-of-messages" data-magellan-destination="sequencing-ordering-of-messages">Sequencing/Ordering of Messages</h3>
-<p>Sequencing of messages (order in which messages are sent by the EQC partner and then processed by Expedia QuickConnect) is critical. EQC partners should ensure that messages for Expedia QuickConnect are sent in the right order so that Expedia QuickConnect is not updated with outdated information.
-Since Expedia QuickConnect only accepts one connection at a time per property, and processes requests synchronously, an older message sent after a newer one would be processed in the order it is received, potentially overwriting more up to date information in Expedia QuickConnect. Therefore, it is important that EQC partners take extra care when designing their solution to make sure this cannot happen in their systems.</p>
-<h3 id="property-re-synchronization-mechanism" data-magellan-destination="property-re-synchronization-mechanism">Property Re/Synchronization Mechanism</h3>
-<p>For many different reasons, it is possible for Expedia and its EQC partner to have their rates and/or availability fall out-of-synch. 
-When a property is first activated on Expedia QuickConnect, the EQC partner’s system and Expedia QuickConnect should be synchronized. The EQC partner’s system therefore requires a function that can synchronize the property by triggering updates that send all the information about rates and availability for at least the next 365 days.
-Also, an EQC partner could experience system problems and lose track of which updates were already sent to Expedia. It might then become necessary to perform resynch of availability and rates for specific products and dates.
-Several parameters should be configurable before triggering synchronization:</p>
-<ul>
-<li>The interval of dates on which to perform the synchronization</li>
-<li>Which room type(s) (one or more, possibly a list)</li>
-<li>Which rate plan(s) (one or more, possibly a list)</li>
-</ul>
-<p>he (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.</p>
-<p><a name="/sendtherighttypeofratetoExpedia"></a></p>
-<h3 id="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-" data-magellan-destination="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-">Send the right type of rate to Expedia: sell rate, net rate or LAR?</h3>
-<p>Expedia accepts receiving sell rate, net rate or LAR (lowest available rate) for rate update through EQC, and the type of rate to send to Expedia must be insync with the configuration in the Expedia system. 
-Please verify which type of rate is being used to update Expedia products using the new Product, Avail, Rate and Restrictions API, or log on the Extranet and consult product information there.</p>
-<div><table>
-<thead>
-<tr>
-<th>Product Type</th>
-<th>Distribution Type</th>
-<th>Rate Acquisition Type </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Flex product, sell rate based</td>
-<td>Hotel Collect and Expedia Collect</td>
-<td>Sell rate</td>
-</tr>
-<tr>
-<td>Flex product, net rate based</td>
-<td>Hotel Collect and Expedia Collect</td>
-<td>Net rate</td>
-</tr>
-<tr>
-<td>Expedia Collect-only product</td>
-<td>Expedia Collect</td>
-<td>Net rate or LAR</td>
-</tr>
-<tr>
-<td>Hotel Collect-only product</td>
-<td>Hotel Collect</td>
-<td>Sell rate</td>
-</tr>
-</tbody>
-</table>
-</div><p>Please note that each flex product consists of a primary product and a derived product, where hotel should only send AR update for the primary product not for the derived product. The derived product will have the same availability as the primary product and the derived rate will be calculated by Expedia.</p>
-<div><table>
-<thead>
-<tr>
-<th>Product Type</th>
-<th>Base Product – AR Update by Hotel</th>
-<th>Derived Product – Calculated by Expedia</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Flex products, sell rate based</td>
-<td>Hotel Collect rate plan, Sell Rate</td>
-<td>Expedia Collect rate plan</td>
-</tr>
-<tr>
-<td>Flex products,  net  rate based</td>
-<td>Expedia Collect rate plan, Net Rate</td>
-<td>Hotel Collect rate plan</td>
-</tr>
-</tbody>
-</table>
-</div><p>It is critical for the EQC partner to define the right type of rate to upload because there will not be any validation done on the EQC AR interface to confirm the rate sent has the right type. Sending the wrong rate will either make Expedia rate much lower than hotel desired rate (when sending a net rate for a sell rate or LAR based product), or much higer (when sending a sell rate or LAR for a net rate based product). </p>
-<h3 id="code-to-the-correct-pricing-model" data-magellan-destination="code-to-the-correct-pricing-model">Code to the Correct Pricing Model</h3>
-<p>When developing Expedia QuickConnect, make sure you develop the correct pricing models for your customers.
-Currently Expedia offers three different pricing models. The table below provides a brief description for each of them.</p>
-<div><table>
-<thead>
-<tr>
-<th>Pricing Model</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Occupancy-based Pricing</td>
-<td>Pricing model based on number of travelers staying in the room. It is recommended for the hotel to define a rate for each applicable occupancy, and if a rate is not assigned to a given occupancy, the following rules will apply: Any gap in defined occupancy rates will result in the rate for the next higher occupancy being charged (for an exception to this rule with regards to children, see below). So if rate is specified for occupancy of two but not for occupancy of one, the rate for double occupancy will be applied automatically when a guest wants to book a single. Any number of guests exceeding the highest specified occupancy rate (up to the maximum occupancy allowed in the room) will be charged extra person fees. By default, children are always charged an extra child fee and do not factor in to the occupancy being charged, with one exception:  the extra child fee is waived if there is a gap in the defined occupancy rates and it costs less to treat the child as an adult. For example, if there is one adult and one child booking a room on dates where there is only  a rate defined for a double occupancy and not for a single occupancy, rather than charge a double occupancy plus the extra child fee, the fee is waived for that first child.**Note that a property setting is available for those that wish to charge children as regular occupants until the number of allowed guests exceeds the highest defined occupancy. </td>
-</tr>
-<tr>
-<td>Per-day Pricing</td>
-<td>Pricing model where a price is assigned to a room for each day for the base occupancy. With this pricing model, a room is assigned a rate each day for a base number of occupants. Though commonly configured for two occupants, the base number can be customized by rate plan. A single guest will always be quoted the rate for the base number of occupants, whereas guests above the base number are charged extra person fees if configured. For example, a single guest would be quoted a base double rate for each day at the property, while four guests would be quoted the base rate plus extra person fees for two of the occupants. Room rates are based on the number of adults in a booking, while children are charged an extra person fee. Children are only charged an adult guest rate if there are not enough adults to fill the base occupancy for a booking. For example, a booking for one adult and two children in a hotel with per-day pricing and a base occupancy of two will only charge an extra person fee for one child.</td>
-</tr>
-<tr>
-<td>Day-of-Arrival Pricing</td>
-<td>A pricing attribute that can be optionally enabled by Expedia (at the demand of the hotel) on a rate plan, where the guest pays the same rate on each day of stay. Rate changes can be requested on specific days using a rate change indicator flag. Day-of-Arrival pricing can be enabled for rate plans using anyone of the above pricing models.</td>
-</tr>
-<tr>
-<td>Per Day Length-of-Stay Pricing</td>
-<td>A pricing attribute that is currently only available in conjunction with Per-Day pricing. Allows hotels to define rates for length of stays 1 up to 28, per arrival date. For each date of a year, hotels can send up to 28 rates. More specifically: -    The rate to be sent for each length of stay is the rate for one night. If a rate of 100$ is sent for LOS=7, the base rate total for 7 nights will be 7x100$. -    The first time a hotel sends Expedia rates for a specific day, it is recommended to send rates for all supported lengths of stay per day. For example, for arrival on September 1st, Expedia should receive up to 28 different rates, for LOS 1 to 28, assuming the hotel supports 28. -    Subsquent updates should be made only to the length of stay rates changing: for example, if rates for LOS 7 and above are changing, the update message should only contain the rates for LOS 7 and above. If a rate is not defined for a length of stay, it will not be available for sale on Expedia points of sale. This is true for both gaps between 2 defined LOS, or any LOS after the max defined. For example, if, for arrival on Septembre 1st, rates for LOS 1, 3 and 5 are defined, it will not be possible to stay for 2,4 and 6 or more nights when arriving on that date. After a LOS rate is defined in Expedia system, it is not possible to remove it. Hotels should make use of restrictions to make previously loaded rates unavailable if needed: Min and Max LOS can be used to restrict specific length of stays, close at room and rate levels can also be used, etc. Restrictions are still in effect: for example, even if a rate for LOS=5 is defined, it might not be possible to book it if one of the subsequent days is closed for departure, or if it is completely closed at the room or rate level.</td>
-</tr>
-</tbody>
-</table>
-</div><p>Expedia recommends EQC partners to use occupancy-based pricing as this pricing model offers the most flexible solution for pricing. A simple migration process can also convert a property currently on the per-day pricing model to occupancy-based pricing (the property can request this from their Market Manager). Note that migration from per-person to occupancy-based pricing involves a manual transfer of information which requires scheduling with the property’s Market Manager.
-Please make sure the pricing model you specify when sending rate updates is the right one pre-configured for your property on Expedia Partner Central. You can obtain pricing model information through a PARR request for product details, including the “returnRatePlanAttributes” attribute. Alternatively, you can access Expedia Partner Central and confirm, from the Inventory Grid page, which pricing model is set for your property.  Should a property be using a pricing model you have not developed please contact:</p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
-<h3 id="managing-rates-for-a-property-using-occupancy-based-pricing" data-magellan-destination="managing-rates-for-a-property-using-occupancy-based-pricing">Managing Rates for a Property Using Occupancy-based Pricing</h3>
-<p>If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central), and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level.
-For example, if a property already has occupancy level 4 newly configured for it on Expedia Partner Central and wants to set the rate for occupancy level 4 of a room type to $160.00, then it should include the following input in the AR RQ message:</p>
-<pre><code class="lang-xml">&lt;PerOccupancy rate=&quot;160.00&quot; occupancy=&quot;4&quot;/&gt;
+          <h4 id="restricting-the-maximum-number-of-updates-per-message" data-magellan-destination="restricting-the-maximum-number-of-updates-per-message">Restricting the maximum number of updates per message</h4>
+          <p>Expedia will restrict the max number of updates allowed in one message. Any request containing more than 3000 updates will be rejected by Expedia and no update will be applied. The error message returned will be: 3107: Update exceeds allowable
+            size - Maximum allowable size is 3000 updates. If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different
+            strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. Expedia recommends designing a system that properly balances between number
+            of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. If you are unsure on how to proceed, we recommend
+            requesting help from Expedia through your Connectivity Account Manager.</p>
+          <h3 id="date-ranges" data-magellan-destination="date-ranges">Date Ranges</h3>
+          <p>Properties can manage their rates and availabilty for up to 2 years in the future. We recommend that EQC partners be careful when making use of long date ranges within one AR RQ. Long date ranges imply many updates per message, and Expedia limits
+            one message to 3,000 updates at most.</p>
+          <h3 id="minimum-and-maximum-lengths-of-stay" data-magellan-destination="minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</h3>
+          <h4 id="arrival-vs-stay-through" data-magellan-destination="arrival-vs-stay-through">Arrival VS stay-through</h4>
+          <p>Expedia supports two different methods to apply minimum and maximum length of stay restrictions. Arrival-based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading the LOS configured for the requested
+            arrival date. Stay-through based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading all days of the requested stay and applying the most restrictive values from any of those days. This is a hotel-level
+            setting in Expedia system, and any Expedia market managers can modify this setting. If you are not sure which setting applies to your hotel, please contact:</p>
+          <ul>
+            <li>eqcss@expedia.com for new activations</li>
+            <li>hothelp@expedia.com for existing connections</li>
+          </ul>
+          <h4 id="restricting-updates-beyond-a-certain-minimum-length-of-stay-value" data-magellan-destination="restricting-updates-beyond-a-certain-minimum-length-of-stay-value">Restricting updates beyond a certain Minimum length of stay value</h4>
+          <p>Expedia will not accept updates past a certain minimum length of stay value. When a hotel exceeds the maximum value allowed per Expedia configuration, it will receive the following error: 3135: MinLOS value ([value specified in message]) exceeds
+            Extranet auto-approval threshold ([configuration for this hotel in Expedia system]) for length of stay. This is a setting that is configured on a per-hotel basis in Expedia system. If you feel your hotel is misconfigured, please reach out
+            to your market manager.</p>
+          <h3 id="sequencing-ordering-of-messages" data-magellan-destination="sequencing-ordering-of-messages">Sequencing/Ordering of Messages</h3>
+          <p>Sequencing of messages (order in which messages are sent by the EQC partner and then processed by Expedia QuickConnect) is critical. EQC partners should ensure that messages for Expedia QuickConnect are sent in the right order so that Expedia
+            QuickConnect is not updated with outdated information. Since Expedia QuickConnect only accepts one connection at a time per property, and processes requests synchronously, an older message sent after a newer one would be processed in the order
+            it is received, potentially overwriting more up to date information in Expedia QuickConnect. Therefore, it is important that EQC partners take extra care when designing their solution to make sure this cannot happen in their systems.</p>
+          <h3 id="property-re-synchronization-mechanism" data-magellan-destination="property-re-synchronization-mechanism">Property Re/Synchronization Mechanism</h3>
+          <p>For many different reasons, it is possible for Expedia and its EQC partner to have their rates and/or availability fall out-of-synch. When a property is first activated on Expedia QuickConnect, the EQC partner’s system and Expedia QuickConnect
+            should be synchronized. The EQC partner’s system therefore requires a function that can synchronize the property by triggering updates that send all the information about rates and availability for at least the next 365 days. Also, an EQC
+            partner could experience system problems and lose track of which updates were already sent to Expedia. It might then become necessary to perform resynch of availability and rates for specific products and dates. Several parameters should be
+            configurable before triggering synchronization:</p>
+          <ul>
+            <li>The interval of dates on which to perform the synchronization</li>
+            <li>Which room type(s) (one or more, possibly a list)</li>
+            <li>Which rate plan(s) (one or more, possibly a list)</li>
+          </ul>
+          <p>he (re)synchronization data should only be sent once, without repeating the same information twice for any product included in the process.</p>
+          <p>
+            <a name="/sendtherighttypeofratetoExpedia"></a>
+          </p>
+          <h3 id="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-" data-magellan-destination="send-the-right-type-of-rate-to-expedia-sell-rate-net-rate-or-lar-">Send the right type of rate to Expedia: sell rate, net rate or LAR?</h3>
+          <p>Expedia accepts receiving sell rate, net rate or LAR (lowest available rate) for rate update through EQC, and the type of rate to send to Expedia must be insync with the configuration in the Expedia system. Please verify which type of rate is
+            being used to update Expedia products using the new Product, Avail, Rate and Restrictions API, or log on the Extranet and consult product information there.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Product Type</th>
+                  <th>Distribution Type</th>
+                  <th>Rate Acquisition Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Flex product, sell rate based</td>
+                  <td>Hotel Collect and Expedia Collect</td>
+                  <td>Sell rate</td>
+                </tr>
+                <tr>
+                  <td>Flex product, net rate based</td>
+                  <td>Hotel Collect and Expedia Collect</td>
+                  <td>Net rate</td>
+                </tr>
+                <tr>
+                  <td>Expedia Collect-only product</td>
+                  <td>Expedia Collect</td>
+                  <td>Net rate or LAR</td>
+                </tr>
+                <tr>
+                  <td>Hotel Collect-only product</td>
+                  <td>Hotel Collect</td>
+                  <td>Sell rate</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Please note that each flex product consists of a primary product and a derived product, where hotel should only send AR update for the primary product not for the derived product. The derived product will have the same availability as the primary
+            product and the derived rate will be calculated by Expedia.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Product Type</th>
+                  <th>Base Product – AR Update by Hotel</th>
+                  <th>Derived Product – Calculated by Expedia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Flex products, sell rate based</td>
+                  <td>Hotel Collect rate plan, Sell Rate</td>
+                  <td>Expedia Collect rate plan</td>
+                </tr>
+                <tr>
+                  <td>Flex products, net rate based</td>
+                  <td>Expedia Collect rate plan, Net Rate</td>
+                  <td>Hotel Collect rate plan</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>It is critical for the EQC partner to define the right type of rate to upload because there will not be any validation done on the EQC AR interface to confirm the rate sent has the right type. Sending the wrong rate will either make Expedia
+            rate much lower than hotel desired rate (when sending a net rate for a sell rate or LAR based product), or much higer (when sending a sell rate or LAR for a net rate based product).</p>
+          <h3 id="code-to-the-correct-pricing-model" data-magellan-destination="code-to-the-correct-pricing-model">Code to the Correct Pricing Model</h3>
+          <p>When developing Expedia QuickConnect, make sure you develop the correct pricing models for your customers. Currently Expedia offers three different pricing models. The table below provides a brief description for each of them.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Pricing Model</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Occupancy-based Pricing</td>
+                  <td>Pricing model based on number of travelers staying in the room. It is recommended for the hotel to define a rate for each applicable occupancy, and if a rate is not assigned to a given occupancy, the following rules will apply: Any gap
+                    in defined occupancy rates will result in the rate for the next higher occupancy being charged (for an exception to this rule with regards to children, see below). So if rate is specified for occupancy of two but not for occupancy
+                    of one, the rate for double occupancy will be applied automatically when a guest wants to book a single. Any number of guests exceeding the highest specified occupancy rate (up to the maximum occupancy allowed in the room) will be
+                    charged extra person fees. By default, children are always charged an extra child fee and do not factor in to the occupancy being charged, with one exception: the extra child fee is waived if there is a gap in the defined occupancy
+                    rates and it costs less to treat the child as an adult. For example, if there is one adult and one child booking a room on dates where there is only a rate defined for a double occupancy and not for a single occupancy, rather than
+                    charge a double occupancy plus the extra child fee, the fee is waived for that first child.**Note that a property setting is available for those that wish to charge children as regular occupants until the number of allowed guests exceeds
+                    the highest defined occupancy.</td>
+                </tr>
+                <tr>
+                  <td>Per-day Pricing</td>
+                  <td>Pricing model where a price is assigned to a room for each day for the base occupancy. With this pricing model, a room is assigned a rate each day for a base number of occupants. Though commonly configured for two occupants, the base
+                    number can be customized by rate plan. A single guest will always be quoted the rate for the base number of occupants, whereas guests above the base number are charged extra person fees if configured. For example, a single guest would
+                    be quoted a base double rate for each day at the property, while four guests would be quoted the base rate plus extra person fees for two of the occupants. Room rates are based on the number of adults in a booking, while children are
+                    charged an extra person fee. Children are only charged an adult guest rate if there are not enough adults to fill the base occupancy for a booking. For example, a booking for one adult and two children in a hotel with per-day pricing
+                    and a base occupancy of two will only charge an extra person fee for one child.</td>
+                </tr>
+                <tr>
+                  <td>Day-of-Arrival Pricing</td>
+                  <td>A pricing attribute that can be optionally enabled by Expedia (at the demand of the hotel) on a rate plan, where the guest pays the same rate on each day of stay. Rate changes can be requested on specific days using a rate change indicator
+                    flag. Day-of-Arrival pricing can be enabled for rate plans using anyone of the above pricing models.</td>
+                </tr>
+                <tr>
+                  <td>Per Day Length-of-Stay Pricing</td>
+                  <td>A pricing attribute that is currently only available in conjunction with Per-Day pricing. Allows hotels to define rates for length of stays 1 up to 28, per arrival date. For each date of a year, hotels can send up to 28 rates. More specifically:
+                    - The rate to be sent for each length of stay is the rate for one night. If a rate of 100$ is sent for LOS=7, the base rate total for 7 nights will be 7x100$. - The first time a hotel sends Expedia rates for a specific day, it is recommended
+                    to send rates for all supported lengths of stay per day. For example, for arrival on September 1st, Expedia should receive up to 28 different rates, for LOS 1 to 28, assuming the hotel supports 28. - Subsquent updates should be made
+                    only to the length of stay rates changing: for example, if rates for LOS 7 and above are changing, the update message should only contain the rates for LOS 7 and above. If a rate is not defined for a length of stay, it will not be
+                    available for sale on Expedia points of sale. This is true for both gaps between 2 defined LOS, or any LOS after the max defined. For example, if, for arrival on Septembre 1st, rates for LOS 1, 3 and 5 are defined, it will not be possible
+                    to stay for 2,4 and 6 or more nights when arriving on that date. After a LOS rate is defined in Expedia system, it is not possible to remove it. Hotels should make use of restrictions to make previously loaded rates unavailable if
+                    needed: Min and Max LOS can be used to restrict specific length of stays, close at room and rate levels can also be used, etc. Restrictions are still in effect: for example, even if a rate for LOS=5 is defined, it might not be possible
+                    to book it if one of the subsequent days is closed for departure, or if it is completely closed at the room or rate level.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Expedia recommends EQC partners to use occupancy-based pricing as this pricing model offers the most flexible solution for pricing. A simple migration process can also convert a property currently on the per-day pricing model to occupancy-based
+            pricing (the property can request this from their Market Manager). Note that migration from per-person to occupancy-based pricing involves a manual transfer of information which requires scheduling with the property’s Market Manager. Please
+            make sure the pricing model you specify when sending rate updates is the right one pre-configured for your property on Expedia Partner Central. You can obtain pricing model information through a PARR request for product details, including
+            the “returnRatePlanAttributes” attribute. Alternatively, you can access Expedia Partner Central and confirm, from the Inventory Grid page, which pricing model is set for your property. Should a property be using a pricing model you have not
+            developed please contact:</p>
+          <ul>
+            <li>eqcss@expedia.com for new activations</li>
+            <li>hothelp@expedia.com for existing connections</li>
+          </ul>
+          <h3 id="managing-rates-for-a-property-using-occupancy-based-pricing" data-magellan-destination="managing-rates-for-a-property-using-occupancy-based-pricing">Managing Rates for a Property Using Occupancy-based Pricing</h3>
+          <p>If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central),
+            and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level. For example, if a property already has occupancy level
+            4 newly configured for it on Expedia Partner Central and wants to set the rate for occupancy level 4 of a room type to $160.00, then it should include the following input in the AR RQ message:</p>
+          <pre><code class="lang-xml">&lt;PerOccupancy rate=&quot;160.00&quot; occupancy=&quot;4&quot;/&gt;
 </code></pre>
-<p>The AR API currently doesn’t support removal of occupancies. If occupancies need to be removed, please contact: </p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
-<h3 id="ar-responses-containing-more-than-20-warnings" data-magellan-destination="ar-responses-containing-more-than-20-warnings">AR Responses Containing more than 20 Warnings</h3>
-<p>When messages fail various Expedia validations, Expedia will return up to 20 warnings per type of problem. For example, if a supplier attempts to close remaining base allocation for 120 days, it will get the following response back:</p>
-<pre><code class="lang-xml">&lt;AvailRateUpdateRS xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2007/02&quot;&gt;
+          <p>The AR API currently doesn’t support removal of occupancies. If occupancies need to be removed, please contact:</p>
+          <ul>
+            <li>eqcss@expedia.com for new activations</li>
+            <li>hothelp@expedia.com for existing connections</li>
+          </ul>
+          <h3 id="ar-responses-containing-more-than-20-warnings" data-magellan-destination="ar-responses-containing-more-than-20-warnings">AR Responses Containing more than 20 Warnings</h3>
+          <p>When messages fail various Expedia validations, Expedia will return up to 20 warnings per type of problem. For example, if a supplier attempts to close remaining base allocation for 120 days, it will get the following response back:</p>
+          <pre><code class="lang-xml">&lt;AvailRateUpdateRS xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2007/02&quot;&gt;
     &lt;Success&gt;
         &lt;Warning code=&quot;7013&quot;&gt;Warning 1 out of 120 for this cause. Inventory date 2011-08-30; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]&lt;/Warning&gt;
         &lt;Warning code=&quot;7013&quot;&gt;Warning 2 out of 120 for this cause. Inventory date 2011-08-31; Room Type ID 352546; Unable to set total inventory below the current base allocation value (12). Update will be modified to cap reduction to base allocation level. Ref=[683b1aa6-c1b5-11e0-8047-ef7899c6c51b]&lt;/Warning&gt;
@@ -482,26 +633,38 @@ For example, if a property already has occupancy level 4 newly configured for it
     &lt;/Success&gt;
 &lt;/AvailRateUpdateRS&gt;
 </code></pre>
-<p>The EQC partner should solve the problems reported and attempt to resend the information to Expedia again. If needed, it is possible to obtain the full list of warnings that the request generated, if the request is issued within 7 days of the message creation date. For more details, please contact hothelp@expedia.com.</p>
-<h3 id="alarms-and-monitoring" data-magellan-destination="alarms-and-monitoring">Alarms and Monitoring</h3>
-<p>EQC partners should include monitors in their interface implementation that will allow partners to see the ratio of successful AR updates and to get detailed information on any errors or warnings. Alarms should also be created to notify concerned individuals (e.g. EQC partner tech support) when the rate of message errors or warnings returned by Expedia exceeds an acceptable threshold. It is recommended that an alarm be triggered when any type of message returns errors or warnings at a rate of 10% or more.
-Partners should review errors and warnings frequently to ensure that bookings are received and confirmed, and that all updates are processed correctly. Failure to do so may result in Expedia booking rooms at the incorrect price or already sold out, or bookings to fall back to fax or email if not confirmed.</p>
-<h3 id="specifying-number-of-rooms-available-inclusive-of-base-allocation" data-magellan-destination="specifying-number-of-rooms-available-inclusive-of-base-allocation">Specifying number of rooms available inclusive of base allocation</h3>
-<p>For hotels that have a base allocation agreement with Expedia, the most straightforward method for the EQC partner to update number of rooms available is to specify the total rather than a flexible allocation. The totalInventoryAvailable attribute includes base allocation as well as any flexible allocation, so the EQC partner does not need to manage a separate count for base allocation and deduct that amount from the non-base (i.e. flexible) amount before providing updates.
-It is important to note, however, that if there is unsold base allocation remaining for the room type specified in an update and the totalInventoryAvailable is set lower than that base amount, then Expedia QuickConnect will automatically update the value to equal the current base amount. When the totalInventoryAvailable amount is adjusted in this manner, a warning (7013) will be returned with the success message and it will provide the adjusted total for the update.
-Here are a few examples of how the totalInventoryAvailable amount will be divided into the base and flexible allocation for a property’s room count depending on whether there is base allocation contract:</p>
-<p><img src="/images/Base Allocation.jpg" alt="Base Allocation"></p>
-<h3 id="closing-rate-plans-with-remaining-base-allocation" data-magellan-destination="closing-rate-plans-with-remaining-base-allocation">Closing rate plans with remaining base allocation</h3>
-<p>Hotels typically use more than one rate plan to sell a room. One important reason for multiple rate plans is that those needed to sell rooms for standalone bookings (room-only) are different from those needed for package bookings (room + flight/car/train). As a result, hotels usually have both standalone and package versions of a rate plan configured, such as: Room Only (S), Room Only (P) and Room incl. Breakfast (S), Room incl. Breakfast (P).
-Expedia allows a hotel to close out any and all of its rate plans, regardless of flexible allocation, as long as there is no base allocation remaining for the associated room type on affected days. If the base allocation is not entirely sold for a room type on a particular day, then one standalone rate plan is obliged to remain open in order for Expedia to be able to make bookings from that base allocation. As a result, if a hotel sends AR requests to close out all rate plans when there is a base allocation remaining, the request to close the last standalone rate plan will be rejected and a warning message (Warning 7014) is returned. </p>
-<h3 id="closing-rooms-to-avoid-overbookings" data-magellan-destination="closing-rooms-to-avoid-overbookings">Closing rooms to avoid overbookings</h3>
-<p>In order to close a room that is still available on Expedia, always send a close message for the room type along with setting the number of available rooms @totalInventoryAvailable or @flexibleAllocation to zero. Sending zero (0) for flexible allocation or total will not completely close the room type and, in a case of cancellation, the room will become available again on Expedia. Refer also to Section 5.6.13 &quot;Closing rate plans with remaining base allocation&quot; above for additional recommendations for properties with base allocation contracts.</p>
-<h3 id="using-day-of-week-attributes-with-date-ranges" data-magellan-destination="using-day-of-week-attributes-with-date-ranges">Using day of week attributes with date ranges</h3>
-<p>Day of week attributes can be used when EQC partners want to perform updates based on the day of week. For example, EQC partners might want to update rates for Friday, Saturday and Sunday, for the month of August 2012.
-To do so, it is not necessary to call out every single date needing to be updated. Instead, day of week attributes can be used.
-As soon as day of week attributes are used, updates will only be applied to the attributes for which the value is set to true. Missing or omitted day of week attributes will see their value defaulted to false.
-When using day of weeks along with date ranges, Expedia recommends always specifying all 7 attributes, with their desired value (true for days requiring an update, false for days that shouldn’t be updated). This is the safest way for EQC partners to insure Expedia will interpret their updates the desired way.</p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+          <p>The EQC partner should solve the problems reported and attempt to resend the information to Expedia again. If needed, it is possible to obtain the full list of warnings that the request generated, if the request is issued within 7 days of the
+            message creation date. For more details, please contact hothelp@expedia.com.</p>
+          <h3 id="alarms-and-monitoring" data-magellan-destination="alarms-and-monitoring">Alarms and Monitoring</h3>
+          <p>EQC partners should include monitors in their interface implementation that will allow partners to see the ratio of successful AR updates and to get detailed information on any errors or warnings. Alarms should also be created to notify concerned
+            individuals (e.g. EQC partner tech support) when the rate of message errors or warnings returned by Expedia exceeds an acceptable threshold. It is recommended that an alarm be triggered when any type of message returns errors or warnings at
+            a rate of 10% or more. Partners should review errors and warnings frequently to ensure that bookings are received and confirmed, and that all updates are processed correctly. Failure to do so may result in Expedia booking rooms at the incorrect
+            price or already sold out, or bookings to fall back to fax or email if not confirmed.</p>
+          <h3 id="specifying-number-of-rooms-available-inclusive-of-base-allocation" data-magellan-destination="specifying-number-of-rooms-available-inclusive-of-base-allocation">Specifying number of rooms available inclusive of base allocation</h3>
+          <p>For hotels that have a base allocation agreement with Expedia, the most straightforward method for the EQC partner to update number of rooms available is to specify the total rather than a flexible allocation. The totalInventoryAvailable attribute
+            includes base allocation as well as any flexible allocation, so the EQC partner does not need to manage a separate count for base allocation and deduct that amount from the non-base (i.e. flexible) amount before providing updates. It is important
+            to note, however, that if there is unsold base allocation remaining for the room type specified in an update and the totalInventoryAvailable is set lower than that base amount, then Expedia QuickConnect will automatically update the value
+            to equal the current base amount. When the totalInventoryAvailable amount is adjusted in this manner, a warning (7013) will be returned with the success message and it will provide the adjusted total for the update. Here are a few examples
+            of how the totalInventoryAvailable amount will be divided into the base and flexible allocation for a property’s room count depending on whether there is base allocation contract:</p>
+          <p>
+            <img src="/images/Base Allocation.jpg" alt="Base Allocation">
+          </p>
+          <h3 id="closing-rate-plans-with-remaining-base-allocation" data-magellan-destination="closing-rate-plans-with-remaining-base-allocation">Closing rate plans with remaining base allocation</h3>
+          <p>Hotels typically use more than one rate plan to sell a room. One important reason for multiple rate plans is that those needed to sell rooms for standalone bookings (room-only) are different from those needed for package bookings (room + flight/car/train).
+            As a result, hotels usually have both standalone and package versions of a rate plan configured, such as: Room Only (S), Room Only (P) and Room incl. Breakfast (S), Room incl. Breakfast (P). Expedia allows a hotel to close out any and all
+            of its rate plans, regardless of flexible allocation, as long as there is no base allocation remaining for the associated room type on affected days. If the base allocation is not entirely sold for a room type on a particular day, then one
+            standalone rate plan is obliged to remain open in order for Expedia to be able to make bookings from that base allocation. As a result, if a hotel sends AR requests to close out all rate plans when there is a base allocation remaining, the
+            request to close the last standalone rate plan will be rejected and a warning message (Warning 7014) is returned.</p>
+          <h3 id="closing-rooms-to-avoid-overbookings" data-magellan-destination="closing-rooms-to-avoid-overbookings">Closing rooms to avoid overbookings</h3>
+          <p>In order to close a room that is still available on Expedia, always send a close message for the room type along with setting the number of available rooms @totalInventoryAvailable or @flexibleAllocation to zero. Sending zero (0) for flexible
+            allocation or total will not completely close the room type and, in a case of cancellation, the room will become available again on Expedia. Refer also to Section 5.6.13 &quot;Closing rate plans with remaining base allocation&quot; above for
+            additional recommendations for properties with base allocation contracts.</p>
+          <h3 id="using-day-of-week-attributes-with-date-ranges" data-magellan-destination="using-day-of-week-attributes-with-date-ranges">Using day of week attributes with date ranges</h3>
+          <p>Day of week attributes can be used when EQC partners want to perform updates based on the day of week. For example, EQC partners might want to update rates for Friday, Saturday and Sunday, for the month of August 2012. To do so, it is not necessary
+            to call out every single date needing to be updated. Instead, day of week attributes can be used. As soon as day of week attributes are used, updates will only be applied to the attributes for which the value is set to true. Missing or omitted
+            day of week attributes will see their value defaulted to false. When using day of weeks along with date ranges, Expedia recommends always specifying all 7 attributes, with their desired value (true for days requiring an update, false for days
+            that shouldn’t be updated). This is the safest way for EQC partners to insure Expedia will interpret their updates the desired way.</p>
+          <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!--Sample AR request message: updating rates for 1 room type and 1 rate plan every weekend of the month of August 2012--&gt;
 &lt;AvailRateUpdateRQ xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
@@ -519,494 +682,555 @@ When using day of weeks along with date ranges, Expedia recommends always specif
     &lt;/AvailRateUpdate&gt;
 &lt;/AvailRateUpdateRQ&gt;
 </code></pre>
-<h3 id="rate-plan-linkage-and-ar" data-magellan-destination="rate-plan-linkage-and-ar">Rate Plan Linkage and AR</h3>
-<p>For products with rate plan linkage rules in place and effective on a set of stay dates, the partner is not allowed to update the child products’ rates for those dates. Restrictions are not expected to be managed either if they are linked.
-Child rate plans with linkage rules cannot be managed over AR when a rule is effective for the stay dates being updated. Only the parent can be managed: Expedia will automatically derive rates and restriction updates to the child. If a partner attempts to manage rates and / or restrictions on a rate plan where a rate plan linkage rule exists, the EQC AR service will return a successful response to the partner but will ignore the updates received on the child.</p>
-<h3 id="retry" data-magellan-destination="retry">Retry</h3>
-<ul>
-<li>Retry strategy if EQC partner cannot establish communication: If EQC partner receives an error from their application, saying it cannot connect to Expedia QuickConnect (including a connection refused), the EQC partner should perform retries.</li>
-<li>Retry strategy in case of specific errors returned in XML response: EQC partners should implement retry strategy to handle messages that fail because of communication/network errors  (error code equal to or greater than 4000):</li>
-<li>Expedia QuickConnect is in maintenance mode</li>
-<li>Expedia QuickConnect is experiencing temporary problems</li>
-<li>A network error occurred
-This retry strategy should be different than the retry where the communication cannot be established. </li>
-</ul>
-<h3 id="concurrency" data-magellan-destination="concurrency">Concurrency</h3>
-<p>Expedia QuickConnect only allows one connection at a time per hotel. EQC partners cannot send concurrent requests to update the same hotel. Requests should be queued in the hotel system.</p>
-<p><a name="/troubleshooting"></a></p>
-<h2 id="troubleshooting" data-magellan-destination="troubleshooting">Troubleshooting</h2>
-<h3 id="detailed-error-handling-and-retry-strategy-recommendation" data-magellan-destination="detailed-error-handling-and-retry-strategy-recommendation">Detailed Error Handling and Retry Strategy Recommendation</h3>
-<p>Expedia recommends implementing a strong retry strategy to insure important messages are successfully delivered and processed by Expedia. Expedia QuickConnect defines several different categories of errors. When implementing connectivity, EQC partners should handle errors properly. Depending on the type of interface and type of error, different strategies should be used.</p>
-<h4 id="system-errors-retry-recommendation-specific-to-interfaces-updating-expedia-systems-ar-" data-magellan-destination="system-errors-retry-recommendation-specific-to-interfaces-updating-expedia-systems-ar-">System errors retry recommendation, specific to interfaces updating Expedia systems (AR)</h4>
-<p><strong>Communication errors (cannot establish connection, connection timeout, no response):</strong> If the EQC partner’s system receives a network or communication error from its application, saying that the connection to Expedia QuickConnect cannot be established, or that the connection times out, or even that there is no answer coming from Expedia on the connection, it should retry the message using the following strategy:</p>
-<div><table>
-<thead>
-<tr>
-<th>Occurrence</th>
-<th>Time</th>
-<th>Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>T0*: new message</td>
-<td>Try to send message to Expedia QuickConnect but failed to establish communication. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>T0 + 1 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>T0 + 2 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>T0 + 4 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>T0 + 8 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>T0 + 15 minutes</td>
-<td>Try to send message. If failed, put the message on hold, wait before sending any other message, and raise an alarm to someone on the support team.</td>
-</tr>
-</tbody>
-</table>
-</div><p><strong>Network and communication errors in AR RS (error codes between 4000 and 4099):</strong> if the EQC partner manages to connect to Expedia QuickConnect and receives an AR Response in XML with an error message code between 4000 and 4099, the EQC partner should adopt this retry strategy:</p>
-<div><table>
-<thead>
-<tr>
-<th>Occurrence</th>
-<th>Time</th>
-<th>Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>T0*: new message</td>
-<td>Try to send message to Expedia QuickConnect but received an AR Response with an error code between 4000 and 4099. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.</td>
-</tr>
-<tr>
-<td>1</td>
-<td>T0 + 1 minute</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>T0 + 2 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>T1 + 4 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>T2 + 6 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>T3 + 8 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>T4 + 16 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>T5 + 32 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>8</td>
-<td>T6 + 1h04 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>T7 + 2h08 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>10</td>
-<td>T8 + 4h16 minutes</td>
-<td>Try to send message. If failed, keep retrying.</td>
-</tr>
-<tr>
-<td>11</td>
-<td>T9 + 8h32 minutes</td>
-<td>Try to send message. If failed, drop the message, raise an alarm to someone in the EQC partner’s team and try to send the next message in queue.</td>
-</tr>
-</tbody>
-</table>
-</div><p>** TO: Time Zero</p>
-<p><strong>Internal system errors with error codes greater or equal to 4100:</strong> Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.</p>
-<h4 id="error-handling-recommendation-for-non-retriable-errors" data-magellan-destination="error-handling-recommendation-for-non-retriable-errors">Error handling recommendation for non-retriable errors</h4>
-<p>In many cases, messages shouldn’t be retried:</p>
-<ul>
-<li>Business errors (error codes 3xxx): A message failing because of a business error should be dropped right away to allow other messages to go through (no retries). An alarm should be raised in the PMS or CRS system, and/or a report should be run every day in the EQC partner’s system for information on the problems the interface encountered.</li>
-<li>Authentication errors (error codes 1xxx): if the EQC partner’s system receives an authentication error, the EQC partner should stop trying to send the message and an alarm should be raised to an administrator to verify the configuration of the EQC partner’s system and to contact Expedia.</li>
-<li>Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.</li>
-<li>Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.</li>
-</ul>
-<h3 id="communication-issues-for-any-of-the-eqc-apis" data-magellan-destination="communication-issues-for-any-of-the-eqc-apis">Communication Issues for any of the EQC APIs</h3>
-<h4 id="connection-cannot-be-established" data-magellan-destination="connection-cannot-be-established">Connection Cannot Be Established</h4>
-<p>For many different reasons, attempting to connect to Expedia QuickConnect might not work. If the problem is:</p>
-<ul>
-<li>Connection timeout (before establishing connection)</li>
-<li>Cannot resolve host name</li>
-<li>Cannot establish connection
-Before looking for assistance on the Expedia QuickConnect discussion forum, the EQC partner should:</li>
-<li>Verify the URL used to connect to Expedia QuickConnect and make sure the address starts with https://</li>
-<li>Verify the domain name, and make sure that the address you are using is the right one for the environment you are targeting (do not try to send QA information to production, or vice-versa)</li>
-<li>If the EQC partner’s system is behind a firewall, make sure that port 443 is opened for connection to Expedia’s production environment (contact Expedia if you don’t know what the URL to the production environment is)</li>
-</ul>
-<p>It is also possible to fail to obtain a connection because Expedia QuickConnect servers cannot accept any more connections than the ones currently established to other EQC partners. In this case, the EQC partner will receive a communication error saying:</p>
-<ul>
-<li>Connection refused</li>
-</ul>
-<p>When this happens, the EQC partner should simply enter in retry mode as previously described.</p>
-<h4 id="connection-established-no-response" data-magellan-destination="connection-established-no-response">Connection Established, No Response</h4>
-<p>If the EQC partner’s system manages to establish a connection to Expedia QuickConnect servers, but is not getting a response, the EQC partner should:</p>
-<ul>
-<li>Make sure that the EQC partner’s system is not closing the connection too early. Because updates are done synchronously in Expedia’s backend, the processing can take several seconds. That is why Expedia QuickConnect cuts the connection only after 1 minute of inactivity. Therefore, the EQC partner should keep the connection open for at least 60 seconds.</li>
-<li>Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting for bytes that never arrive, and eventually times out.</li>
-</ul>
-<h4 id="connection-established-error-returned-error-code-greater-than-or-equal-to-4000-" data-magellan-destination="connection-established-error-returned-error-code-greater-than-or-equal-to-4000-">Connection Established, Error Returned (error code greater than or equal to 4000)</h4>
-<p>The EQC partner might encounter different types of errors while trying to connect to Expedia QuickConnect. These errors are monitored by the Expedia QuickConnect team, so there is no need to advise Expedia QuickConnect of a problem when this occurs. The following is a list of the most common errors, and what the EQC partner should do about them. Please note that every error returned by Expedia services contains a reference ID that can be used when communicating with Expedia to investigate a problem.</p>
-<div><table>
-<thead>
-<tr>
-<th>Error Code</th>
-<th>Error Desc</th>
-<th>Explanation and EQC partner Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4000, 4004, 4007</td>
-<td>Internal system error, please try again in a few minutes.</td>
-<td>Enter in incremental retry mode. </td>
-</tr>
-<tr>
-<td>4001</td>
-<td>Internal timeout error, please try again in a few minutes.</td>
-<td>Enter in incremental retry mode. </td>
-</tr>
-<tr>
-<td>4100, 4101</td>
-<td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
-<td>Do not retry this message.  Expedia has been notified of the issue and will work on finding a solution for it. It is recommended to perform the update manually on Expedia Partner Central.</td>
-</tr>
-<tr>
-<td>4206</td>
-<td>Expedia QuickConnect interface is temporarily closed. Please try again shortly.</td>
-<td>Enter in incremental retry mode. </td>
-</tr>
-<tr>
-<td>5000</td>
-<td>Internal database error, please try again in a few minutes.</td>
-<td>Enter in incremental retry mode.</td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="authentication-issues-error-code-in-the-1000s-" data-magellan-destination="authentication-issues-error-code-in-the-1000s-">Authentication Issues (error code in the 1000s)</h4>
-<p>The following table lists a few possible errors related to communication issues, and what the EQC partner should do about them:</p>
-<div><table>
-<thead>
-<tr>
-<th>Error Code</th>
-<th>Error Desc</th>
-<th>Explanation and EQC partner Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1000</td>
-<td>Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access.</td>
-<td>This message should not be retried. Contact rollout@expedia.com to gain access to EQC for new activations. Contact hothelp@expedia.com to gain access to EQC for hotels that have been EQC-enabled for a while.</td>
-</tr>
-<tr>
-<td>1001</td>
-<td>Authentication error: invalid username or password.</td>
-<td>This message should not be retried. Verify username and password configured in your EQC interface. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>1003</td>
-<td>The user account provided doesn’t have the right access level</td>
-<td>This message should not be retried. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="parsing-and-other-protocol-issues" data-magellan-destination="parsing-and-other-protocol-issues">Parsing and other protocol issues</h4>
-<div><table>
-<thead>
-<tr>
-<th>Error Code</th>
-<th>Error Desc</th>
-<th>Explanation and EQC partner Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>2002</td>
-<td>Parsing error: parsing_error_description.</td>
-<td>Correct XML format to comply with Expedia QuickConnect’s specification. Developers of the EQC partner system should be involved to find the problem.</td>
-</tr>
-<tr>
-<td>2010</td>
-<td>The namespace specified is invalid.</td>
-<td>Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.</td>
-</tr>
-<tr>
-<td>3010</td>
-<td>Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema.</td>
-<td>Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.</td>
-</tr>
-<tr>
-<td>3210</td>
-<td>Communication error: exceed max number of connections allowed (1).</td>
-<td>EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message</td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="response-business-errors" data-magellan-destination="response-business-errors">Response Business Errors</h4>
-<p>Once an AR RQ transaction has successfully been transmitted to Expedia QuickConnect, it can either receive a positive or negative acknowledgment. When errors are returned in AR Responses, none of the updates contained in the request were processed. In the case of availability and rates updates, several different types of errors can happen, and the negative acknowledgment of a transaction that failed can contain one or more of those error codes:</p>
-<div><table>
-<thead>
-<tr>
-<th>Error Code</th>
-<th>Error Desc</th>
-<th>Explanation and EQC partner Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>3015</td>
-<td>Business validation error, such as but not limited to: No updates provided in ICPRUpdateMessage, MaxLOS value (X) smaller than the MinLOS value(Y), The NumberOfGuests attribute may not be 0, etc.</td>
-<td>This error can happen for various reasons: The AR RQ sent contained no updates - only room or rate IDs and dates, Contradictory Min and Max LOS were included in the message (Min &gt; Max), For an OBP rate update, occupancy=0 was specified, which is not allowed/impossible, etc. EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3020</td>
-<td>Validation error: start date must not be before yesterday.</td>
-<td>Make sure the system cannot send a date in the past, and drop this message (no retry).</td>
-</tr>
-<tr>
-<td>3021</td>
-<td>Validation error: end date must not be before start date.</td>
-<td>Make sure the system cannot send an end date smaller than a start date, and drop this message (no retry).</td>
-</tr>
-<tr>
-<td>3022</td>
-<td>Validation error: end date must be within 2 years range.</td>
-<td>Make sure that the end date of a date range cannot be greater than today + 2 years, and drop this message (no retry).</td>
-</tr>
-<tr>
-<td>3026</td>
-<td>Flexible and total allocation cannot be sent together for roomType.</td>
-<td>Make sure that the system cannot generate an AR request which specifies both flexible allocation and total allocation available for a room type.</td>
-</tr>
-<tr>
-<td>3090</td>
-<td>Pricing models mismatch: you tried to update a price for <name of pricing model>, but your property is configured to use <name of other pricing model>.</td>
-<td>Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on Expedia Partner Central for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3103</td>
-<td>Currency code mismatch.</td>
-<td>Make sure the property is sending the same currency as the one configured on Expedia Partner Central for this property. The property should send the same currency as the one configured on Expedia Partner Central for this property.</td>
-</tr>
-<tr>
-<td>3107</td>
-<td>Update exceeds allowable size  - Maximum allowable size is 3000 updates</td>
-<td>The message contains too many different updates. Expedia limits the number of distinct updates in one message to 3000. Please refer to <a href="guides.html#/sendingupdatestoexpedia">Sending Updates To Expedia</a> and its sub sections for detailed information about Expedia recommendation for maximum number of updates per messages.</td>
-</tr>
-<tr>
-<td>3108</td>
-<td>Duplicate Updates in the same message – [exact nature of conflicting updates received in request]</td>
-<td>The message sent contains the same product and dates twice or more, and the updates requested conflicts with one another. Please make sure to only send us rates, restrictions or availability updates for a product and stay date combination once in a message.</td>
-</tr>
-<tr>
-<td>3123</td>
-<td>Length of stay has to be provided for the Rate Plans with LOS enabled</td>
-<td>The message didn’t include the Rate/@lengthOfStay attribute for a rate plan that is length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3124</td>
-<td>Length of stay attribute can only be set on Rate Plans with LOS enabled</td>
-<td>The message included the Rate/@lengthOfStay attribute for a rate plan that is not length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3125</td>
-<td>Field not accessible for edit for this hotel and source  - [Exact field not accessible]</td>
-<td>The message sent contains updates that cannot be accepted for the hotel specified. The sources may vary: Rate change edit not allowed: the rate change indicator is used in request but product isn’t enabled for day of arrival pricing. Please correct the problem in the message. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3128</td>
-<td>Invalid data in request</td>
-<td>For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3129</td>
-<td>Invalid Date</td>
-<td>Verify the dates you provided in the AR RQ and then resubmit your message.</td>
-</tr>
-<tr>
-<td>3135</td>
-<td>MinLOS value ([value provided in RQ]) exceeds Extranet auto-approval threshold ([Expedia configuration]) for length of stay</td>
-<td>You submitted a MinLOS restriction value greater than the acceptable threshold defined for your hotel in Expedia system. Please resubmit your update with a smaller value, or contact your market manager.</td>
-</tr>
-<tr>
-<td>3142</td>
-<td>Rate plan does not match the property acquisition type  - Rate plan XXX does not match acquisition type</td>
-<td>You provided an update for a derived/non-manageable rate, which is not allowed.  For more information about flex rate plans and derived/non-manageable rates, please refer to the <a href="guides.html#/sendtherighttypeofratetoExpedia">Send the right type of rate to Expedia</a> section</td>
-</tr>
-<tr>
-<td>3145</td>
-<td>Not available for updates. Hotel undergoing business model conversion.</td>
-<td>Verify if hotel has completed business model conversion for ETP and resubmit updates. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3202</td>
-<td>Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel.</td>
-<td>Verify if there is a mapping issue in EQC partner’s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to update through Expedia Partner Central). For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3203</td>
-<td>The following RoomTypeIDs do not belong to the given hotel : room_type_ID</td>
-<td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3204</td>
-<td>The following RatePlanIDs do not belong to the given hotel : rate_plan_ID</td>
-<td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>3405</td>
-<td>Message size limit exceeded.</td>
-<td>The overall size of the AR incoming request exceeds our limit of 100 kb. EQC partner needs to break down AR RQ into smaller requests.</td>
-</tr>
-</tbody>
-</table>
-</div><p><a name="/arresponsebusinesswarnings"></a></p>
-<h4 id="ar-response-business-warnings" data-magellan-destination="ar-response-business-warnings">AR Response Business Warnings</h4>
-<p>Once an AR RQ transaction has been submitted to Expedia QuickConnect, it can either receive a successful or negative acknowledgment. A successful acknowledgment can optionally contain warnings, which are meant to indicate that part of the incoming request was not successfully processed, with details on what failed. When warnings are returned, anything that is not explicitely listed as a warning has been successfully processed.
-A request can potentially contain dozens of warnings. If a request generated too many warnings, not all of them will be reported back to the EQC partner in the response. When this happens the warning messages will clearly indicate that the EQC partner should fix the problems with the request first before resubmitting it to Expedia later.</p>
-<div><table>
-<thead>
-<tr>
-<th>Warning Code</th>
-<th>Error Desc</th>
-<th>Explanation and EQC partner Action </th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>7009</td>
-<td>Occupancy exceeds maximum allowed value</td>
-<td>Applicable to occupancy-based pricing hotels only. The EQC partner requested to update an occupancy level that exceeds the room’s maximum occupancy defined in Expedia system. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>7010</td>
-<td>Room type cannot be closed because there is base allocation remaining on the room.</td>
-<td>The room type will remain available on Expedia until all base allocation is sold. For assistance, please contact your market manager, who will manage the process internally or correct the issue.</td>
-</tr>
-<tr>
-<td>7013</td>
-<td>Unable to set total allocation below the current base allocation value (XX). Update will be modified to cap reduction to base allocation level.</td>
-<td>The EQC partner must notify the property that the requested total allocation was CHANGED by Expedia QuickConnect to match its current outstanding base allocation. For assistance, please contact your market manager, who will manage the process internally or correct the issue.</td>
-</tr>
-<tr>
-<td>7014</td>
-<td>At least one standalone rate plan should be kept open until all base allocation has been sold.</td>
-<td>The last available rate plan of the standalone rate category has to remain open until all base allocation has been sold. For assistance, please contact your market manager, who will manage the process internally or correct the issue.</td>
-</tr>
-<tr>
-<td>7016</td>
-<td>MaxLOS value (value provided) smaller than the MinLOS value (value provided).</td>
-<td>This problem will occur if a MinLOS restriction received in incoming AR RQ is greater than existing MaxLOS restriction already stored in Expedia system for this hotel. The EQC partner must make sure to provide a MinLOS value smaller than MaxLOS. Note that if an EQC partner includes within the same AR RQ a MinLOS &gt; MaxLOS, an error will be returned.</td>
-</tr>
-<tr>
-<td>7018</td>
-<td>Base Availability request adjusted to prevent total availability from exceeding the system maximum</td>
-<td>Only applicable to hotels on base allocation and for updates made using “flexibleAllocation”. If the total of base and flexible allocation exceeds Expedia’s hard limit of 4999, this error will be returned. In this specific case, the update was processed and the total allocation is adjusted to 4999 automatically. Note that it is not possible to provide flexible or total allocation greater than 4999 in AR RQs, as the schema doesn’t allow it. This warning is returned solely when there is base allocation left in Expedia systems, and the addition of base plus the value provided in AR RQ exceeds 4999.</td>
-</tr>
-<tr>
-<td>7019</td>
-<td>Net rate must be within Rate Verification threshold.</td>
-<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>7021</td>
-<td>Sell/LAR rate must be within Rate Verification threshold.</td>
-<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>7022</td>
-<td>Inactive Rate Plan Updated.</td>
-<td>The update was processed; however this product will never be sold until an Expedia Market Manager activates this product. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
-</tr>
-<tr>
-<td>7023</td>
-<td>Restrictions were not updated due to a rate plan linkage rule. Only Main rate plans, not Derived rate plans, can receive restrictions updates.</td>
-<td>An active rate plan linkage rule exists, that links the restrictions between the rate plan provided in the request and a parent/main rate plan. It is not possible to update a child/derived rate plan.</td>
-</tr>
-<tr>
-<td>7024</td>
-<td>Rates were not updated due to a rate plan linkage rule. Only Main rate plans, not Derived rate plans, can receive rates updates.</td>
-<td>An active rate plan linkage rule exists, that links the rates between the rate plan provided in the request and a parent/main rate plan. It is not possible to update the child/derived rate plan.</td>
-</tr>
-<tr>
-<td>7025</td>
-<td>Net rate must be within Rate Verification threshold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
-<td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The net rate update we received was outside of the rate verification threshold defined for either the parent/main rate plan, or the child/derived rate plan. The net rates of both the parent/main and child/derived rate plans were not updated. This warning is equivalent to 7019 (used for unlinked rate plans). </td>
-</tr>
-<tr>
-<td>7026</td>
-<td>At least one rate plan should be kept open until all base allocation has been sold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
-<td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The AR request attempted to close either the last open parent/main rate plan, or the child/derived rate plan, but there was base allocation left. The availability statuses of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7013 (used for unlinked rate plans). </td>
-</tr>
-<tr>
-<td>7027</td>
-<td>Sell rate must be within Rate Verification threshold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
-<td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The sell rate update we received was outside of the rate verification threshold defined for either the parent/main rate plan, or the child/ derived rate plan. The sell rates of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7021 (used for unlinked rate plans). </td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="ssl-certificate-validation-problems" data-magellan-destination="ssl-certificate-validation-problems">SSL Certificate Validation Problems</h3>
-<p>EQC partners developing in Java should use version 1.4.2_13 or more recent to avoid issues with certificate signing authorities. If EQC partners prefer to keep using an older version of Java or in-house SSL libraries, they need to import the Entrust CA certificate.</p>
-<ul>
-<li>Entrust CA common name CN = Entrust.net Certification Authority (2048).</li>
-<li>To manually import the Entrust.net Certification Authority (2048) Certificate, download the CA certificate at <a href="https://www.entrust.net/downloads/root_request.cfm">https://www.entrust.net/downloads/root_request.cfm</a>.</li>
-</ul>
-<h3 id="miscellaneous" data-magellan-destination="miscellaneous">Miscellaneous</h3>
-<p>Like any technology, it is possible in some very rare situations that Expedia QuickConnect will fail to process a message and generate a comprehensive AR RS. In such a situation, where the data returned by Expedia QuickConnect is not proper XML, the EQC partner should retry the message. Even though this situation should never happen, the EQC partner should be ready to handle it.</p>
-</div><a class="exit-off-canvas hide-for-medium"></a></div></div></div><footer id="site-footer" class="row full-width">
-    <div class="large-8 large-centered columns">
-        <div class="links text-center">
-            <a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> |
-            <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> |
-            <a class="link-item" href="/terms">Terms and Conditions</a> |
-            <a class="link-item" href="/privacy">Privacy Policy</a> |
-            <a class="link-item" href="/license">License Agreement</a>
+          <h3 id="rate-plan-linkage-and-ar" data-magellan-destination="rate-plan-linkage-and-ar">Rate Plan Linkage and AR</h3>
+          <p>For products with rate plan linkage rules in place and effective on a set of stay dates, the partner is not allowed to update the child products’ rates for those dates. Restrictions are not expected to be managed either if they are linked. Child
+            rate plans with linkage rules cannot be managed over AR when a rule is effective for the stay dates being updated. Only the parent can be managed: Expedia will automatically derive rates and restriction updates to the child. If a partner attempts
+            to manage rates and / or restrictions on a rate plan where a rate plan linkage rule exists, the EQC AR service will return a successful response to the partner but will ignore the updates received on the child.</p>
+          <h3 id="retry" data-magellan-destination="retry">Retry</h3>
+          <ul>
+            <li>Retry strategy if EQC partner cannot establish communication: If EQC partner receives an error from their application, saying it cannot connect to Expedia QuickConnect (including a connection refused), the EQC partner should perform retries.</li>
+            <li>Retry strategy in case of specific errors returned in XML response: EQC partners should implement retry strategy to handle messages that fail because of communication/network errors (error code equal to or greater than 4000):</li>
+            <li>Expedia QuickConnect is in maintenance mode</li>
+            <li>Expedia QuickConnect is experiencing temporary problems</li>
+            <li>A network error occurred This retry strategy should be different than the retry where the communication cannot be established.</li>
+          </ul>
+          <h3 id="concurrency" data-magellan-destination="concurrency">Concurrency</h3>
+          <p>Expedia QuickConnect only allows one connection at a time per hotel. EQC partners cannot send concurrent requests to update the same hotel. Requests should be queued in the hotel system.</p>
+          <p>
+            <a name="/troubleshooting"></a>
+          </p>
+          <h2 id="troubleshooting" data-magellan-destination="troubleshooting">Troubleshooting</h2>
+          <h3 id="detailed-error-handling-and-retry-strategy-recommendation" data-magellan-destination="detailed-error-handling-and-retry-strategy-recommendation">Detailed Error Handling and Retry Strategy Recommendation</h3>
+          <p>Expedia recommends implementing a strong retry strategy to insure important messages are successfully delivered and processed by Expedia. Expedia QuickConnect defines several different categories of errors. When implementing connectivity, EQC
+            partners should handle errors properly. Depending on the type of interface and type of error, different strategies should be used.</p>
+          <h4 id="system-errors-retry-recommendation-specific-to-interfaces-updating-expedia-systems-ar-" data-magellan-destination="system-errors-retry-recommendation-specific-to-interfaces-updating-expedia-systems-ar-">System errors retry recommendation, specific to interfaces updating Expedia systems (AR)</h4>
+          <p><strong>Communication errors (cannot establish connection, connection timeout, no response):</strong> If the EQC partner’s system receives a network or communication error from its application, saying that the connection to Expedia QuickConnect
+            cannot be established, or that the connection times out, or even that there is no answer coming from Expedia on the connection, it should retry the message using the following strategy:</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Occurrence</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>T0*: new message</td>
+                  <td>Try to send message to Expedia QuickConnect but failed to establish communication. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>T0 + 1 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>T0 + 2 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>T0 + 4 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>T0 + 8 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>T0 + 15 minutes</td>
+                  <td>Try to send message. If failed, put the message on hold, wait before sending any other message, and raise an alarm to someone on the support team.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p><strong>Network and communication errors in AR RS (error codes between 4000 and 4099):</strong> if the EQC partner manages to connect to Expedia QuickConnect and receives an AR Response in XML with an error message code between 4000 and 4099,
+            the EQC partner should adopt this retry strategy:</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Occurrence</th>
+                  <th>Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>0</td>
+                  <td>T0*: new message</td>
+                  <td>Try to send message to Expedia QuickConnect but received an AR Response with an error code between 4000 and 4099. Stop trying to send any other message (to avoid out of order messages) and enter retry mode for the current message.</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>T0 + 1 minute</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>T0 + 2 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>T1 + 4 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>T2 + 6 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>T3 + 8 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>T4 + 16 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>T5 + 32 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>T6 + 1h04 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>T7 + 2h08 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>T8 + 4h16 minutes</td>
+                  <td>Try to send message. If failed, keep retrying.</td>
+                </tr>
+                <tr>
+                  <td>11</td>
+                  <td>T9 + 8h32 minutes</td>
+                  <td>Try to send message. If failed, drop the message, raise an alarm to someone in the EQC partner’s team and try to send the next message in queue.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>** TO: Time Zero</p>
+          <p><strong>Internal system errors with error codes greater or equal to 4100:</strong> Those messages should not be retried as they are indicative of a non-temporary problem in Expedia systems. Our teams actively monitor those problems and do their
+            best to fix them in a timely fashion. For more information about those problems, the EQC partners should contact Expedia.</p>
+          <h4 id="error-handling-recommendation-for-non-retriable-errors" data-magellan-destination="error-handling-recommendation-for-non-retriable-errors">Error handling recommendation for non-retriable errors</h4>
+          <p>In many cases, messages shouldn’t be retried:</p>
+          <ul>
+            <li>Business errors (error codes 3xxx): A message failing because of a business error should be dropped right away to allow other messages to go through (no retries). An alarm should be raised in the PMS or CRS system, and/or a report should be
+              run every day in the EQC partner’s system for information on the problems the interface encountered.</li>
+            <li>Authentication errors (error codes 1xxx): if the EQC partner’s system receives an authentication error, the EQC partner should stop trying to send the message and an alarm should be raised to an administrator to verify the configuration of
+              the EQC partner’s system and to contact Expedia.</li>
+            <li>Parsing errors (error codes 2xxx): if the EQC partner’s system receives a wrong XML format error, the EQC partner should stop trying to send messages and should raise an alarm to an administrator to look at the problem. This error should not
+              happen if EQC partners first try to parse the XML message they are trying to send to Expedia QuickConnect to make sure that it validates against Expedia QuickConnect schema.</li>
+            <li>Warnings (codes between 7000 and 8000 for AR, 10,000+ for BC): warnings are problems with the request that were ignored in order to process the other valid updates in the request. They are equivalent to business errors, but do not make the
+              whole request fail. EQC partners should take the exact same actions with warnings as they take with business errors. It is important to capture warnings and take corrective actions.</li>
+          </ul>
+          <h3 id="communication-issues-for-any-of-the-eqc-apis" data-magellan-destination="communication-issues-for-any-of-the-eqc-apis">Communication Issues for any of the EQC APIs</h3>
+          <h4 id="connection-cannot-be-established" data-magellan-destination="connection-cannot-be-established">Connection Cannot Be Established</h4>
+          <p>For many different reasons, attempting to connect to Expedia QuickConnect might not work. If the problem is:</p>
+          <ul>
+            <li>Connection timeout (before establishing connection)</li>
+            <li>Cannot resolve host name</li>
+            <li>Cannot establish connection Before looking for assistance on the Expedia QuickConnect discussion forum, the EQC partner should:</li>
+            <li>Verify the URL used to connect to Expedia QuickConnect and make sure the address starts with https://</li>
+            <li>Verify the domain name, and make sure that the address you are using is the right one for the environment you are targeting (do not try to send QA information to production, or vice-versa)</li>
+            <li>If the EQC partner’s system is behind a firewall, make sure that port 443 is opened for connection to Expedia’s production environment (contact Expedia if you don’t know what the URL to the production environment is)</li>
+          </ul>
+          <p>It is also possible to fail to obtain a connection because Expedia QuickConnect servers cannot accept any more connections than the ones currently established to other EQC partners. In this case, the EQC partner will receive a communication
+            error saying:</p>
+          <ul>
+            <li>Connection refused</li>
+          </ul>
+          <p>When this happens, the EQC partner should simply enter in retry mode as previously described.</p>
+          <h4 id="connection-established-no-response" data-magellan-destination="connection-established-no-response">Connection Established, No Response</h4>
+          <p>If the EQC partner’s system manages to establish a connection to Expedia QuickConnect servers, but is not getting a response, the EQC partner should:</p>
+          <ul>
+            <li>Make sure that the EQC partner’s system is not closing the connection too early. Because updates are done synchronously in Expedia’s backend, the processing can take several seconds. That is why Expedia QuickConnect cuts the connection only
+              after 1 minute of inactivity. Therefore, the EQC partner should keep the connection open for at least 60 seconds.</li>
+            <li>Make sure the content length specified in the HTTPS header corresponds to the actual length of the HTTPS request. If the length specified in the header is actually longer than the message itself, it results in Expedia QuickConnect waiting
+              for bytes that never arrive, and eventually times out.</li>
+          </ul>
+          <h4 id="connection-established-error-returned-error-code-greater-than-or-equal-to-4000-" data-magellan-destination="connection-established-error-returned-error-code-greater-than-or-equal-to-4000-">Connection Established, Error Returned (error code greater than or equal to 4000)</h4>
+          <p>The EQC partner might encounter different types of errors while trying to connect to Expedia QuickConnect. These errors are monitored by the Expedia QuickConnect team, so there is no need to advise Expedia QuickConnect of a problem when this
+            occurs. The following is a list of the most common errors, and what the EQC partner should do about them. Please note that every error returned by Expedia services contains a reference ID that can be used when communicating with Expedia to
+            investigate a problem.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Error Code</th>
+                  <th>Error Desc</th>
+                  <th>Explanation and EQC partner Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>4000, 4004, 4007</td>
+                  <td>Internal system error, please try again in a few minutes.</td>
+                  <td>Enter in incremental retry mode.</td>
+                </tr>
+                <tr>
+                  <td>4001</td>
+                  <td>Internal timeout error, please try again in a few minutes.</td>
+                  <td>Enter in incremental retry mode.</td>
+                </tr>
+                <tr>
+                  <td>4100, 4101</td>
+                  <td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
+                  <td>Do not retry this message. Expedia has been notified of the issue and will work on finding a solution for it. It is recommended to perform the update manually on Expedia Partner Central.</td>
+                </tr>
+                <tr>
+                  <td>4206</td>
+                  <td>Expedia QuickConnect interface is temporarily closed. Please try again shortly.</td>
+                  <td>Enter in incremental retry mode.</td>
+                </tr>
+                <tr>
+                  <td>5000</td>
+                  <td>Internal database error, please try again in a few minutes.</td>
+                  <td>Enter in incremental retry mode.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 id="authentication-issues-error-code-in-the-1000s-" data-magellan-destination="authentication-issues-error-code-in-the-1000s-">Authentication Issues (error code in the 1000s)</h4>
+          <p>The following table lists a few possible errors related to communication issues, and what the EQC partner should do about them:</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Error Code</th>
+                  <th>Error Desc</th>
+                  <th>Explanation and EQC partner Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1000</td>
+                  <td>Access denied: you are not authorized to use Expedia QuickConnect. Please contact Expedia to gain access.</td>
+                  <td>This message should not be retried. Contact rollout@expedia.com to gain access to EQC for new activations. Contact hothelp@expedia.com to gain access to EQC for hotels that have been EQC-enabled for a while.</td>
+                </tr>
+                <tr>
+                  <td>1001</td>
+                  <td>Authentication error: invalid username or password.</td>
+                  <td>This message should not be retried. Verify username and password configured in your EQC interface. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>1003</td>
+                  <td>The user account provided doesn’t have the right access level</td>
+                  <td>This message should not be retried. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 id="parsing-and-other-protocol-issues" data-magellan-destination="parsing-and-other-protocol-issues">Parsing and other protocol issues</h4>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Error Code</th>
+                  <th>Error Desc</th>
+                  <th>Explanation and EQC partner Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2002</td>
+                  <td>Parsing error: parsing_error_description.</td>
+                  <td>Correct XML format to comply with Expedia QuickConnect’s specification. Developers of the EQC partner system should be involved to find the problem.</td>
+                </tr>
+                <tr>
+                  <td>2010</td>
+                  <td>The namespace specified is invalid.</td>
+                  <td>Correct namespace and send a new message. Please note that namespaces are used to version Expedia service interfaces. Developers of the EQC partner system should be involved to find the problem.</td>
+                </tr>
+                <tr>
+                  <td>3010</td>
+                  <td>Validation against schema failed because a value exceeds its defined length, the format is wrong, or because of another validation enforced by schema.</td>
+                  <td>Correct the error in the system, and drop this message (no retry). Developers of the EQC partner system should be involved to find the problem.</td>
+                </tr>
+                <tr>
+                  <td>3210</td>
+                  <td>Communication error: exceed max number of connections allowed (1).</td>
+                  <td>EQC partner tried to open more than one simultaneous connection per hotel. For any given hotel, never attempt to send 2 concurrent messages. Always wait for a message to be responded by Expedia before sending any subsequent message</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h4 id="response-business-errors" data-magellan-destination="response-business-errors">Response Business Errors</h4>
+          <p>Once an AR RQ transaction has successfully been transmitted to Expedia QuickConnect, it can either receive a positive or negative acknowledgment. When errors are returned in AR Responses, none of the updates contained in the request were processed.
+            In the case of availability and rates updates, several different types of errors can happen, and the negative acknowledgment of a transaction that failed can contain one or more of those error codes:</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Error Code</th>
+                  <th>Error Desc</th>
+                  <th>Explanation and EQC partner Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>3015</td>
+                  <td>Business validation error, such as but not limited to: No updates provided in ICPRUpdateMessage, MaxLOS value (X) smaller than the MinLOS value(Y), The NumberOfGuests attribute may not be 0, etc.</td>
+                  <td>This error can happen for various reasons: The AR RQ sent contained no updates - only room or rate IDs and dates, Contradictory Min and Max LOS were included in the message (Min &gt; Max), For an OBP rate update, occupancy=0 was specified,
+                    which is not allowed/impossible, etc. EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation
+                    of Expedia QuickConnect. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3020</td>
+                  <td>Validation error: start date must not be before yesterday.</td>
+                  <td>Make sure the system cannot send a date in the past, and drop this message (no retry).</td>
+                </tr>
+                <tr>
+                  <td>3021</td>
+                  <td>Validation error: end date must not be before start date.</td>
+                  <td>Make sure the system cannot send an end date smaller than a start date, and drop this message (no retry).</td>
+                </tr>
+                <tr>
+                  <td>3022</td>
+                  <td>Validation error: end date must be within 2 years range.</td>
+                  <td>Make sure that the end date of a date range cannot be greater than today + 2 years, and drop this message (no retry).</td>
+                </tr>
+                <tr>
+                  <td>3026</td>
+                  <td>Flexible and total allocation cannot be sent together for roomType.</td>
+                  <td>Make sure that the system cannot generate an AR request which specifies both flexible allocation and total allocation available for a room type.</td>
+                </tr>
+                <tr>
+                  <td>3090</td>
+                  <td>Pricing models mismatch: you tried to update a price for
+                    <name of pricing model>, but your property is configured to use
+                      <name of other pricing model>.</td>
+                  <td>Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on Expedia Partner Central for your property. For assistance, please contact eqcss@expedia.com for new activations
+                    and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3103</td>
+                  <td>Currency code mismatch.</td>
+                  <td>Make sure the property is sending the same currency as the one configured on Expedia Partner Central for this property. The property should send the same currency as the one configured on Expedia Partner Central for this property.</td>
+                </tr>
+                <tr>
+                  <td>3107</td>
+                  <td>Update exceeds allowable size - Maximum allowable size is 3000 updates</td>
+                  <td>The message contains too many different updates. Expedia limits the number of distinct updates in one message to 3000. Please refer to <a href="guides.html#/sendingupdatestoexpedia">Sending Updates To Expedia</a> and its sub sections for
+                    detailed information about Expedia recommendation for maximum number of updates per messages.</td>
+                </tr>
+                <tr>
+                  <td>3108</td>
+                  <td>Duplicate Updates in the same message – [exact nature of conflicting updates received in request]</td>
+                  <td>The message sent contains the same product and dates twice or more, and the updates requested conflicts with one another. Please make sure to only send us rates, restrictions or availability updates for a product and stay date combination
+                    once in a message.</td>
+                </tr>
+                <tr>
+                  <td>3123</td>
+                  <td>Length of stay has to be provided for the Rate Plans with LOS enabled</td>
+                  <td>The message didn’t include the Rate/@lengthOfStay attribute for a rate plan that is length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured
+                    on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3124</td>
+                  <td>Length of stay attribute can only be set on Rate Plans with LOS enabled</td>
+                  <td>The message included the Rate/@lengthOfStay attribute for a rate plan that is not length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured
+                    on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3125</td>
+                  <td>Field not accessible for edit for this hotel and source - [Exact field not accessible]</td>
+                  <td>The message sent contains updates that cannot be accepted for the hotel specified. The sources may vary: Rate change edit not allowed: the rate change indicator is used in request but product isn’t enabled for day of arrival pricing.
+                    Please correct the problem in the message. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3128</td>
+                  <td>Invalid data in request</td>
+                  <td>For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3129</td>
+                  <td>Invalid Date</td>
+                  <td>Verify the dates you provided in the AR RQ and then resubmit your message.</td>
+                </tr>
+                <tr>
+                  <td>3135</td>
+                  <td>MinLOS value ([value provided in RQ]) exceeds Extranet auto-approval threshold ([Expedia configuration]) for length of stay</td>
+                  <td>You submitted a MinLOS restriction value greater than the acceptable threshold defined for your hotel in Expedia system. Please resubmit your update with a smaller value, or contact your market manager.</td>
+                </tr>
+                <tr>
+                  <td>3142</td>
+                  <td>Rate plan does not match the property acquisition type - Rate plan XXX does not match acquisition type</td>
+                  <td>You provided an update for a derived/non-manageable rate, which is not allowed. For more information about flex rate plans and derived/non-manageable rates, please refer to the <a href="guides.html#/sendtherighttypeofratetoExpedia">Send the right type of rate to Expedia</a> section</td>
+                </tr>
+                <tr>
+                  <td>3145</td>
+                  <td>Not available for updates. Hotel undergoing business model conversion.</td>
+                  <td>Verify if hotel has completed business model conversion for ETP and resubmit updates. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3202</td>
+                  <td>Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel.</td>
+                  <td>Verify if there is a mapping issue in EQC partner’s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to update through Expedia
+                    Partner Central). For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3203</td>
+                  <td>The following RoomTypeIDs do not belong to the given hotel : room_type_ID</td>
+                  <td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new
+                    activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3204</td>
+                  <td>The following RatePlanIDs do not belong to the given hotel : rate_plan_ID</td>
+                  <td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new
+                    activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>3405</td>
+                  <td>Message size limit exceeded.</td>
+                  <td>The overall size of the AR incoming request exceeds our limit of 100 kb. EQC partner needs to break down AR RQ into smaller requests.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>
+            <a name="/arresponsebusinesswarnings"></a>
+          </p>
+          <h4 id="ar-response-business-warnings" data-magellan-destination="ar-response-business-warnings">AR Response Business Warnings</h4>
+          <p>Once an AR RQ transaction has been submitted to Expedia QuickConnect, it can either receive a successful or negative acknowledgment. A successful acknowledgment can optionally contain warnings, which are meant to indicate that part of the incoming
+            request was not successfully processed, with details on what failed. When warnings are returned, anything that is not explicitely listed as a warning has been successfully processed. A request can potentially contain dozens of warnings. If
+            a request generated too many warnings, not all of them will be reported back to the EQC partner in the response. When this happens the warning messages will clearly indicate that the EQC partner should fix the problems with the request first
+            before resubmitting it to Expedia later.</p>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Warning Code</th>
+                  <th>Error Desc</th>
+                  <th>Explanation and EQC partner Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7009</td>
+                  <td>Occupancy exceeds maximum allowed value</td>
+                  <td>Applicable to occupancy-based pricing hotels only. The EQC partner requested to update an occupancy level that exceeds the room’s maximum occupancy defined in Expedia system. For assistance, please contact eqcss@expedia.com for new activations
+                    and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>7010</td>
+                  <td>Room type cannot be closed because there is base allocation remaining on the room.</td>
+                  <td>The room type will remain available on Expedia until all base allocation is sold. For assistance, please contact your market manager, who will manage the process internally or correct the issue.</td>
+                </tr>
+                <tr>
+                  <td>7013</td>
+                  <td>Unable to set total allocation below the current base allocation value (XX). Update will be modified to cap reduction to base allocation level.</td>
+                  <td>The EQC partner must notify the property that the requested total allocation was CHANGED by Expedia QuickConnect to match its current outstanding base allocation. For assistance, please contact your market manager, who will manage the
+                    process internally or correct the issue.</td>
+                </tr>
+                <tr>
+                  <td>7014</td>
+                  <td>At least one standalone rate plan should be kept open until all base allocation has been sold.</td>
+                  <td>The last available rate plan of the standalone rate category has to remain open until all base allocation has been sold. For assistance, please contact your market manager, who will manage the process internally or correct the issue.</td>
+                </tr>
+                <tr>
+                  <td>7016</td>
+                  <td>MaxLOS value (value provided) smaller than the MinLOS value (value provided).</td>
+                  <td>This problem will occur if a MinLOS restriction received in incoming AR RQ is greater than existing MaxLOS restriction already stored in Expedia system for this hotel. The EQC partner must make sure to provide a MinLOS value smaller
+                    than MaxLOS. Note that if an EQC partner includes within the same AR RQ a MinLOS &gt; MaxLOS, an error will be returned.</td>
+                </tr>
+                <tr>
+                  <td>7018</td>
+                  <td>Base Availability request adjusted to prevent total availability from exceeding the system maximum</td>
+                  <td>Only applicable to hotels on base allocation and for updates made using “flexibleAllocation”. If the total of base and flexible allocation exceeds Expedia’s hard limit of 4999, this error will be returned. In this specific case, the
+                    update was processed and the total allocation is adjusted to 4999 automatically. Note that it is not possible to provide flexible or total allocation greater than 4999 in AR RQs, as the schema doesn’t allow it. This warning is returned
+                    solely when there is base allocation left in Expedia systems, and the addition of base plus the value provided in AR RQ exceeds 4999.</td>
+                </tr>
+                <tr>
+                  <td>7019</td>
+                  <td>Net rate must be within Rate Verification threshold.</td>
+                  <td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations
+                    and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>7021</td>
+                  <td>Sell/LAR rate must be within Rate Verification threshold.</td>
+                  <td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations
+                    and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>7022</td>
+                  <td>Inactive Rate Plan Updated.</td>
+                  <td>The update was processed; however this product will never be sold until an Expedia Market Manager activates this product. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+                </tr>
+                <tr>
+                  <td>7023</td>
+                  <td>Restrictions were not updated due to a rate plan linkage rule. Only Main rate plans, not Derived rate plans, can receive restrictions updates.</td>
+                  <td>An active rate plan linkage rule exists, that links the restrictions between the rate plan provided in the request and a parent/main rate plan. It is not possible to update a child/derived rate plan.</td>
+                </tr>
+                <tr>
+                  <td>7024</td>
+                  <td>Rates were not updated due to a rate plan linkage rule. Only Main rate plans, not Derived rate plans, can receive rates updates.</td>
+                  <td>An active rate plan linkage rule exists, that links the rates between the rate plan provided in the request and a parent/main rate plan. It is not possible to update the child/derived rate plan.</td>
+                </tr>
+                <tr>
+                  <td>7025</td>
+                  <td>Net rate must be within Rate Verification threshold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
+                  <td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The net rate update we received was outside of the rate verification threshold defined for either the parent/main rate
+                    plan, or the child/derived rate plan. The net rates of both the parent/main and child/derived rate plans were not updated. This warning is equivalent to 7019 (used for unlinked rate plans).</td>
+                </tr>
+                <tr>
+                  <td>7026</td>
+                  <td>At least one rate plan should be kept open until all base allocation has been sold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
+                  <td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The AR request attempted to close either the last open parent/main rate plan, or the child/derived rate plan, but there
+                    was base allocation left. The availability statuses of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7013 (used for unlinked rate plans).</td>
+                </tr>
+                <tr>
+                  <td>7027</td>
+                  <td>Sell rate must be within Rate Verification threshold. The rate plans (listed) with the violation and their Main/Derived rate plans (not listed) are not updated.</td>
+                  <td>An active rate plan linkage rule exists between the rate plan provided in the request and a parent/main rate plan. The sell rate update we received was outside of the rate verification threshold defined for either the parent/main rate
+                    plan, or the child/ derived rate plan. The sell rates of both the parent/main and child/ derived rate plans were not updated. This warning is equivalent to 7021 (used for unlinked rate plans).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 id="ssl-certificate-validation-problems" data-magellan-destination="ssl-certificate-validation-problems">SSL Certificate Validation Problems</h3>
+          <p>EQC partners developing in Java should use version 1.4.2_13 or more recent to avoid issues with certificate signing authorities. If EQC partners prefer to keep using an older version of Java or in-house SSL libraries, they need to import the
+            Entrust CA certificate.</p>
+          <ul>
+            <li>Entrust CA common name CN = Entrust.net Certification Authority (2048).</li>
+            <li>To manually import the Entrust.net Certification Authority (2048) Certificate, download the CA certificate at <a href="https://www.entrust.net/downloads/root_request.cfm">https://www.entrust.net/downloads/root_request.cfm</a>.</li>
+          </ul>
+          <h3 id="miscellaneous" data-magellan-destination="miscellaneous">Miscellaneous</h3>
+          <p>Like any technology, it is possible in some very rare situations that Expedia QuickConnect will fail to process a message and generate a comprehensive AR RS. In such a situation, where the data returned by Expedia QuickConnect is not proper
+            XML, the EQC partner should retry the message. Even though this situation should never happen, the EQC partner should be ready to handle it.</p>
         </div>
-        <div class="show-for-large">
-            <div class="footer-logo">&nbsp;</div>
-        </div>
-        <div id="footer-copyright">© 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+        <a class="exit-off-canvas hide-for-medium"></a>
+      </div>
     </div>
-</footer>
-<input type="hidden" id="eventTrackingPageName" value="FAQ & Guides - Expedia QuickConnect Avail & Rates API"/></body></html>
+  </div>
+  <footer class="row full-width" id="site-footer">
+    <div class="large-8 large-centered columns">
+      <div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item"
+        href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a>
+      </div>
+      <div class="show-for-large">
+        <div class="footer-logo">&nbsp;</div>
+      </div>
+      <div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div>
+    </div>
+  </footer>
+</body>
+
+</html>
