@@ -220,6 +220,19 @@
   position: fixed;
   height: 100%;
 }
+.is-open-left {
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.off-canvas-wrapper-inner {
+  @include transform(translate3d(0,0,0));
+}
+.menu-icon::after {
+  -webkit-box-shadow: 0 7px 0 #fefefe,0 14px 0 #fefefe;
+  box-shadow: 0 7px 0 #fefefe,0 14px 0 #fefefe;
+}
 
 /* Color Pallet */
 /* Api Styling */

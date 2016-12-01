@@ -164,15 +164,16 @@ var Core = Core || {
 
         // Close menu when an item is clicked.
         menu.find('a').click(function() {
-            $('.exit-off-canvas').trigger('click');
+            $('#mobileMenu').foundation('close');
         });
         dest.append(menu);
+
     },
 
     checkOffCanvasVisibility: function() {
         // Reset off canvas section if medium-up
-        if (Foundation.MediaQuery.atLeast('medium')) {
-            $('.exit-off-canvas').trigger('click');
+        if (Foundation.MediaQuery.atLeast('large') && $('#mobileMenu').hasClass('is-open')) {
+            $('#mobileMenu').foundation('close');
         }
     },
 
