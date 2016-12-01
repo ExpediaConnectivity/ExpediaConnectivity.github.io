@@ -102,11 +102,14 @@ function getParameterByName(name) {
 $(document).ready(function() {
     var hash = getParameterByName("id");
     if (hash == null || hash == "") {
+        ga('send', 'event', 'scorecard', 'demo', window.location.href);
         generateScorecard(demo);
         return;
     }
     $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash, function(data) {
         generateScorecard(data);
+    }).fail(function(jqxhr) {
+        ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
     $(".scorecard-column .border").click(function(event) {
@@ -115,7 +118,7 @@ $(document).ready(function() {
             if ($(event.target).hasClass("border")) {
                 id = $(event.target).attr("id")
             }
-            ga('send', 'event', 'scorecard', 'click.' + id, provider);
+            ga('send', 'event', 'scorecard', 'click', id + '.' + provider);
         }
     })
 });
