@@ -151,13 +151,13 @@ function metricClickCallback(event) {
                 } else if (topProvider.unit) {
                     value += topProvider.unit;
                 }
-                console.log(topProvider);
+
                 $("#top-metrics .top-metric-cards")
                     .append($("<div>")
                         .addClass("top-performer")
                         .append($("<div>")
                             .addClass("position")
-                            .text((i + 1) + ".")
+                            .text((i + 1))
                         ).append($("<div>")
                             .addClass("name")
                             .text(topProvider.name)
@@ -215,7 +215,10 @@ function generateScorecardCategory(category, id) {
             var delta = $("<span/>").addClass(deltasuccess ? "green" : "red").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
             $(elementSelector + " .rate-change").html(delta).append(" " + element.delta + "%");
         } else {
-            $(elementSelector + " .rate-change").html("");
+            $(elementSelector + " .rate-change").remove();
+            $(elementSelector + " .rate-period").remove();
+            $(elementSelector + " .value").removeClass("small-6").addClass("small-12");
+            $(elementSelector + " .metric").removeClass("small-8").addClass("small-12");
             $(elementSelector).addClass("solid-background");
         }
     }
