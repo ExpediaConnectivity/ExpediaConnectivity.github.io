@@ -13,13 +13,21 @@ ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><!--feature:noindex-->
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="score.css">
-<script src="score.js"></script>
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="css/score.css">
+<script src="js/score.js"></script>
 <div class="xlarge-10 xlarge-centered medium-10 medium-centered columns simple-content">
     <h1>Provider Scorecard</h1>
     <p class="announce">
         These are your metrics for Q4 2016.
     </p>
+</div>
+<div class="reveal" id="top-metrics" data-reveal>
+    <h1></h1>
+    <p></p>
+    <div class="top-metric-cards"></div>
+    <button class="close-button" data-close aria-lable="Close" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 <div class="scorecard-row row full-width">
     <div class="scorecard-provider medium-offset-1 xlarge-8 medium-6 small-12 text-center medium-text-left columns">
@@ -41,12 +49,12 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 SUCCESS RATES
             </div>
-            <div id="arMessages" class="border columns has-tip" data-tooltip aria-haspopup="true" title="Success rate of availability, rate and inventory messages. Message errors can result in rate and availability data being out of sync between your system and the Expedia marketplace.">
+            <div id="arMessages" class="border columns has-tip" data-heading="AR Messages" data-tooltip aria-haspopup="true" title="Success rate of availability, rate and inventory messages. Message errors can result in rate and availability data being out of sync between your system and the Expedia marketplace.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">+ 3.2%</span>
                 <span class="metric small-12 columns">AR Messages</span>
             </div>
-            <div id="bcMessages" class="border columns has-tip" data-tooltip aria-haspopup="true" title="Success rate of booking confirmations. Booking delivery failures may result in fallbacks to fax and email to properties, resulting in data being out of sync between your system and the Expedia marketplace. These errors can also lead to overbookings and resultant refunds and relocations.">
+            <div id="bcMessages" class="border columns has-tip" data-heading="BC Messages" data-tooltip aria-haspopup="true" title="Success rate of booking confirmations. Booking delivery failures may result in fallbacks to fax and email to properties, resulting in data being out of sync between your system and the Expedia marketplace. These errors can also lead to overbookings and resultant refunds and relocations.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">+ 3.2%</span>
                 <span class="metric small-12 columns">BC Messages</span>
@@ -56,7 +64,7 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 ONBOARDING SPEED
             </div>
-            <div id="onboardingSpeed" class="border columns has-tip" data-tooltip aria-haspopup="true" title="Average time taken for new properties to go live, calculated from the day a hotel signed a contract with Expedia. Delays in onboarding mean that properties cannot begin listing and selling their inventory on the Expedia marketplace.">
+            <div id="onboardingSpeed" class="border columns has-tip" data-heading="Onboarding Speed" data-tooltip aria-haspopup="true" title="Average time taken for new properties to go live, calculated from the day a hotel signed a contract with Expedia. Delays in onboarding mean that properties cannot begin listing and selling their inventory on the Expedia marketplace.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">+ 3.2%</span>
             </div>
@@ -65,7 +73,7 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 CONNECTIVITY ACTIVATION
             </div>
-            <div id="connectivityActivation" class="border columns has-tip" data-tooltip aria-haspopup="true" title="Average time taken after connection to receive first AR (I) message">
+            <div id="connectivityActivation" class="border columns has-tip" data-heading="Connectivity Activation" data-tooltip aria-haspopup="true" title="Average time taken after connection to receive first AR (I) message">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">+ 3.2%</span>
             </div>
@@ -145,12 +153,12 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 SUPPLY QUALITY
             </div>
-            <div id="availabilityLose" class="border columns has-tip" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent availability to Expedia travelers relative to the market.">
+            <div id="availabilityLose" class="border columns has-tip" data-heading="Availability Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent availability to Expedia travelers relative to the market.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">&#x25B2; 3.2%</span>
                 <span class="metric small-12 columns">Availability Lose</span>
             </div>
-            <div id="rateLose" class="border columns has-tip" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent rate plans to Expedia travelers relative to the market.">
+            <div id="rateLose" class="border columns has-tip" data-heading="Rate Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent rate plans to Expedia travelers relative to the market.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">&#x25BC; 3.2%</span>
                 <span class="metric small-12 columns">Rate Lose</span>
@@ -160,7 +168,7 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 MARKETPLACE
             </div>
-            <div id="etpPenetration" class="border columns has-tip" data-tooltip aria-haspopup="true" title="The percentage of your properties that support Expedia Traveler Preference, a business model that gives Expedia travelers the option of when to pay for their booking.">
+            <div id="etpPenetration" class="border columns has-tip" data-heading="ETP Penetration" data-tooltip aria-haspopup="true" title="The percentage of your properties that support Expedia Traveler Preference, a business model that gives Expedia travelers the option of when to pay for their booking.">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="metric small-12 columns">ETP Penetration</span>
             </div>
@@ -169,7 +177,7 @@ function googleTranslateElementInit() {
             <div class="scorecard-title columns">
                 NEW BUSINESS
             </div>
-            <div id="newHotels" class="border columns">
+            <div id="newHotels" class="border columns" data-heading="New Hotels">
                 <span class="value small-6 columns">95.3%</span>
                 <span class="rate-change text-right small-6 columns">+ 3.2%</span>
                 <span class="metric small-12 columns">New Hotels</span>

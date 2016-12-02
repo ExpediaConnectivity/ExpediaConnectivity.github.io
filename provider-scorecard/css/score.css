@@ -105,3 +105,17 @@ hr {
 .tooltip {
   min-width: 200px;
 }
+#top-metrics .top-metric-cards .top-performer {
+  font-size: 1.3em;
+}
+#top-metrics .top-metric-cards .top-performer .position {
+  margin-right: 5px;
+  display: inline-block;
+}
+#top-metrics .top-metric-cards .top-performer .name {
+  display: inline-block;
+}
+#top-metrics .top-metric-cards .top-performer .score {
+  display: inline-block;
+  float: right;
+}

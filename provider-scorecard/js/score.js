@@ -112,16 +112,70 @@ $(document).ready(function() {
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-column .border").click(function(event) {
-        if (provider) {
-            var id = $(event.target).parents(".border").attr("id");
-            if ($(event.target).hasClass("border")) {
-                id = $(event.target).attr("id")
-            }
-            ga('send', 'event', 'scorecard', 'click', id + '.' + provider);
-        }
-    })
+    $(".scorecard-column .border").click(metricClickCallback);
 });
+
+function metricClickCallback(event) {
+    if (!provider) {
+        return;
+    }
+
+    var category = $(event.target).parents(".border").attr("id");
+    if ($(event.target).hasClass("border")) {
+        category = $(event.target).attr("id")
+    }
+    ga('send', 'event', 'scorecard', 'click', category + '.' + provider);
+    var hash = getParameterByName("id");
+    if (hash == null || hash == "") {
+        ga('send', 'event', 'scorecard', 'demoClick', window.location.href);
+        return;
+    }
+    var heading = $("#" + category).attr("data-heading");
+    var section = $(event.target).parents(".scorecard-row").attr("id");
+    if (section == "enhance") {
+        return;
+    }
+
+    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/" + section + "/" + category + "/" + hash)
+        .done(function(jqxhr) {
+            $("#top-metrics h1").text(heading);
+            $("#top-metrics p").text("These are the top 5 performers in this category.");
+            $("#top-metrics .top-metric-cards").empty();
+            for (var i = 0; i < jqxhr.length; i++) {
+                var topProvider = jqxhr[i];
+                var value = topProvider.value;
+                if (topProvider.unit == "days") {
+                    value += " " + topProvider.unit;
+                } else if (topProvider.unit == "$") {
+                    value = topProvider.unit + value;
+                } else if (topProvider.unit) {
+                    value += topProvider.unit;
+                }
+                console.log(topProvider);
+                $("#top-metrics .top-metric-cards")
+                    .append($("<div>")
+                        .addClass("top-performer")
+                        .append($("<div>")
+                            .addClass("position")
+                            .text((i + 1) + ".")
+                        ).append($("<div>")
+                            .addClass("name")
+                            .text(topProvider.name)
+                        ).append($("<div>")
+                            .addClass("score")
+                            .text(value)
+                        )
+                    );
+            }
+            $("#top-metrics").foundation('open');
+        }).fail(function(jqxhr) {
+            $("#top-metrics h1").text(heading);
+            $("#top-metrics p").text("There was an error providing you with these metrics.  This error has been reported.");
+            $("#top-metrics .top-metric-cards").empty();
+            $("#top-metrics").foundation('open');
+            ga('send', 'event', 'scorecard', 'error.' + category + "." + provider, jqxhr.status);
+        });
+}
 
 
 function generateScorecard(scorecard) {
