@@ -160,7 +160,7 @@ var Core = Core || {
 
         // Copy header to menu title
         var header = menu.find('header').detach();
-        $('.off-canvas-nav-bar .title-bar .title-bar-left .title-bar-title').append(header);
+        $('.off-canvas-nav-bar .title-bar .title-bar-title').append(header);
 
         // Close menu when an item is clicked.
         menu.find('a').click(function() {
@@ -179,18 +179,29 @@ var Core = Core || {
 
     checkOffCanvasMenuPosition: function() {
         var menu = $('#mobileMenu');
-        var topBar = $('#nav-main');
-        var mobileBar = $('#mobileMenuBar');
+        var wrapper = $('.off-canvas-wrapper');
+
+        var topHeight = $('#nav-main').outerHeight(true) + $('#mobileMenuBar').outerHeight(true);
+        var bottomHeight = $('#site-footer').outerHeight(true);
+        var documentHeight = $(document).height();
+        var scrolled = $(window).scrollTop();
 
         if (menu.length == 0) {
             return;
         }
 
-        var top = $(document).scrollTop() - topBar.outerHeight(true) - mobileBar.outerHeight(true);
+        var top = scrolled - topHeight;
         if (top < 0) {
             top = 0;
         }
         menu.css('margin-top', top);
+
+        var height = documentHeight - topHeight - bottomHeight - top;
+        menu.css('height', height);
+
+        if(wrapper.height() < height) {
+            wrapper.css('height', height);
+        }
     },
 
     onResize: function() {
