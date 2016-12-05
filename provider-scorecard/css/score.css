@@ -23,6 +23,9 @@
   text-align: center;
   font-size: 3em;
 }
+.scorecard-row .scorecard-rank:hover {
+  cursor: pointer;
+}
 .scorecard-row .scorecard-column .check {
   height: 8em !important;
 }

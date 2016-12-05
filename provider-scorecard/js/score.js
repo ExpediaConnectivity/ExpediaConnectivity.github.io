@@ -113,7 +113,30 @@ $(document).ready(function() {
     });
 
     $(".scorecard-column .border").click(metricClickCallback);
+    $(".scorecard-rank").click(overallClickCallback)
 });
+
+function overallClickCallback(event) {
+    var hash = getParameterByName("id");
+    if (hash == null || hash == "") {
+        ga('send', 'event', 'scorecard', 'demoClick.overall', window.location.href);
+        return;
+    }
+    ga('send', 'event', 'scorecard', 'click', 'overall.' + provider);
+    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/overall/" + hash)
+        .done(function(jqxhr) {
+            $("#top-metrics h1").text("Overall Ranking");
+            $("#top-metrics p").text("These are the top providers, ranked according to each providers overall score.");
+            populateTopMetricsList(jqxhr, false);
+            $("#top-metrics").foundation('open');
+        }).fail(function(jqxhr) {
+            $("#top-metrics h1").text(heading);
+            $("#top-metrics p").text("There was an error providing you with these metrics.  This error has been reported.");
+            $("#top-metrics .top-metric-cards").empty();
+            $("#top-metrics").foundation('open');
+            ga('send', 'event', 'scorecard', 'error.overall.' + provider, jqxhr.status);
+        });
+}
 
 function metricClickCallback(event) {
     if (!provider) {
@@ -127,7 +150,7 @@ function metricClickCallback(event) {
     ga('send', 'event', 'scorecard', 'click', category + '.' + provider);
     var hash = getParameterByName("id");
     if (hash == null || hash == "") {
-        ga('send', 'event', 'scorecard', 'demoClick', window.location.href);
+        ga('send', 'event', 'scorecard', 'demoClick.' + category, window.location.href);
         return;
     }
     var heading = $("#" + category).attr("data-heading");
@@ -140,33 +163,7 @@ function metricClickCallback(event) {
         .done(function(jqxhr) {
             $("#top-metrics h1").text(heading);
             $("#top-metrics p").text("These are the top 5 performers in this category.");
-            $("#top-metrics .top-metric-cards").empty();
-            for (var i = 0; i < jqxhr.length; i++) {
-                var topProvider = jqxhr[i];
-                var value = topProvider.value;
-                if (topProvider.unit == "days") {
-                    value += " " + topProvider.unit;
-                } else if (topProvider.unit == "$") {
-                    value = topProvider.unit + value;
-                } else if (topProvider.unit) {
-                    value += topProvider.unit;
-                }
-
-                $("#top-metrics .top-metric-cards")
-                    .append($("<div>")
-                        .addClass("top-performer")
-                        .append($("<div>")
-                            .addClass("position")
-                            .text((i + 1))
-                        ).append($("<div>")
-                            .addClass("name")
-                            .text(topProvider.name)
-                        ).append($("<div>")
-                            .addClass("score")
-                            .text(value)
-                        )
-                    );
-            }
+            populateTopMetricsList(jqxhr, true);
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
             $("#top-metrics h1").text(heading);
@@ -175,6 +172,46 @@ function metricClickCallback(event) {
             $("#top-metrics").foundation('open');
             ga('send', 'event', 'scorecard', 'error.' + category + "." + provider, jqxhr.status);
         });
+}
+
+function populateTopMetricsList(providers, showValues) {
+    $("#top-metrics .top-metric-cards").empty();
+    for (var i = 0; i < providers.length; i++) {
+        var topProvider = providers[i];
+        var value = topProvider.value;
+        if (topProvider.unit == "days") {
+            value += " " + topProvider.unit;
+        } else if (topProvider.unit == "$") {
+            value = topProvider.unit + value;
+        } else if (topProvider.unit) {
+            value += topProvider.unit;
+        }
+
+        var position = (i + 1);
+        if (providers.length >= 10 && i < 9) {
+            position = "&nbsp;" + position;
+        }
+
+        var topProviderHtml = $("<div>")
+            .addClass("top-performer")
+            .append($("<div>")
+                .addClass("position")
+                .html(position)
+            ).append($("<div>")
+                .addClass("name")
+                .text(topProvider.name)
+            );
+
+        if (showValues) {
+            topProviderHtml.append($("<div>")
+                .addClass("score")
+                .text(value)
+            );
+        }
+
+        $("#top-metrics .top-metric-cards").append(topProviderHtml);
+
+    }
 }
 
 
