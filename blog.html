@@ -41,10 +41,10 @@ function googleTranslateElementInit() {
     box-shadow: 0px 2px #c7c7c7;
 }
 .blog-spacer {
-    height: 100px;
+    height: 75px;
 }
-.blog-spacer-head {
-    height: 50px;
+.blog-table {
+    overflow: auto;
 }
 .blog-tags {
     font-size: 12px;
@@ -62,6 +62,7 @@ function googleTranslateElementInit() {
     -moz-border-radius: 5px 5px 0px 0px;
     -webkit-border-radius: 5px 5px 0px 0px;
     border: 0px none #000000;
+    box-shadow: 0px 2.5px 0px #FECC09;
 }
 
 h1 {
@@ -85,6 +86,24 @@ h1 {
         font-size: 3.5em;
     }
 }
+@media (max-width: 640px) {
+    .blog-content {
+        padding: 10px;
+    }
+    .blog-date {
+        padding: 10px;
+    }
+    .blog-spacer {
+        height: 50px;
+    }
+    .blog-tags {
+        padding: 10px;
+    }
+    .blog-title {
+        padding: 10px;
+        text-align: center;
+    }
+}
 h2 {
     font-size: 1.4em;
     margin: 0 0;
@@ -104,12 +123,12 @@ h2 {
 
 <a name="eqc-url-change"></a>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
-        <div class="blog-spacer-head">&nbsp;</div>
+    <div class="small-12 small-centered medium-10 columns">
+        <div class="blog-spacer">&nbsp;</div>
     </div>
 </div>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
                 <h2>Expedia QuickConnect APIs Users: Important Changes Required</h2>
@@ -139,31 +158,34 @@ h2 {
               With this new domain, the IP addresses will dynamically change over time and therefore you should use our fully qualified domain name. Please do not attempt to configure connectivity based on an IP address.
               <br/><br/>
               Here’s how the different paths to EQC messages are changing:
-              <table>
-                <tr>
-                  <th>Old</th><th>New</th>
-                </tr>
-                <tr>
-                  <td><a href="https://ws.expediaquickconnect.com/promos">https://ws.expediaquickconnect.com/promos</a></td>
-                  <td><a href="https://services.expediapartnercentral.com/promotions">https://services.expediapartnercentral.com/promotions</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://ws.expediaquickconnect.com/connect/parr">https://ws.expediaquickconnect.com/connect/parr</a></td>
-                  <td><a href="https://services.expediapartnercentral.com/eqc/parr">https://services.expediapartnercentral.com/eqc/parr</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://ws.expediaquickconnect.com/connect/br">https://ws.expediaquickconnect.com/connect/br</a></td>
-                  <td><a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://ws.expediaquickconnect.com/connect/bc">https://ws.expediaquickconnect.com/connect/bc</a></td>
-                  <td><a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></td>
-                </tr>
-                <tr>
-                  <td><a href="https://ws.expediaquickconnect.com/connect/ar">https://ws.expediaquickconnect.com/connect/ar</a></td>
-                  <td><a href="https://services.expediapartnercentral.com/eqc/ar">https://services.expediapartnercentral.com/eqc/ar</a></td>
-                </tr>
-              </table>
+              <br/><br/>
+              <div class="blog-table">
+                <table>
+                  <tr>
+                    <th>Old</th><th>New</th>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ws.expediaquickconnect.com/promos">https://ws.expediaquickconnect.com/promos</a></td>
+                    <td><a href="https://services.expediapartnercentral.com/promotions">https://services.expediapartnercentral.com/promotions</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ws.expediaquickconnect.com/connect/parr">https://ws.expediaquickconnect.com/connect/parr</a></td>
+                    <td><a href="https://services.expediapartnercentral.com/eqc/parr">https://services.expediapartnercentral.com/eqc/parr</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ws.expediaquickconnect.com/connect/br">https://ws.expediaquickconnect.com/connect/br</a></td>
+                    <td><a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ws.expediaquickconnect.com/connect/bc">https://ws.expediaquickconnect.com/connect/bc</a></td>
+                    <td><a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://ws.expediaquickconnect.com/connect/ar">https://ws.expediaquickconnect.com/connect/ar</a></td>
+                    <td><a href="https://services.expediapartnercentral.com/eqc/ar">https://services.expediapartnercentral.com/eqc/ar</a></td>
+                  </tr>
+                </table>
+              </div>
               <br/><br/>
               <strong>Replace PARR with the more modern Product API</strong>
               <br/><br/>
@@ -190,12 +212,12 @@ h2 {
 
 <a name="post-hackathon"></a>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
-        <div class="blog-spacer-head">&nbsp;</div>
+    <div class="small-12 small-centered medium-10 columns">
+        <div class="blog-spacer">&nbsp;</div>
     </div>
 </div>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
                 <h2>Expedia Connectivity Partner Hackathon</h2>
@@ -248,12 +270,12 @@ h2 {
 </div>
 <a name="value-add-promo"></a>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-spacer">&nbsp;</div>
     </div>
 </div>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
                 <h2>Are you ready for Value Add Promotions?</h2>
@@ -319,12 +341,12 @@ h2 {
 </div>
 <a name="delete-old-rate-plans"></a>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-spacer">&nbsp;</div>
     </div>
 </div>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
                 <h2>Delete those old rate plans</h2>
@@ -358,7 +380,7 @@ h2 {
     </div>
 </div>
 <div class="row">
-    <div class="small-8 small-centered large-10 large-centered columns">
+    <div class="small-12 small-centered medium-10 columns">
         <div class="blog-spacer">&nbsp;</div>
     </div>
 </div>
