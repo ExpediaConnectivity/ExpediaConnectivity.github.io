@@ -383,9 +383,15 @@ html {
 body {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
   background: #FFF;
+  -webkit-font-smoothing: unset !important;
+  -moz-osx-font-smoothing: unset !important;
+  text-rendering: optimizeLegibility;
 }
 .body-grey-background {
   background-color: #EFEFEF;
+}
+.card-section {
+  padding: 0 !important;
 }
 .simple-content {
   margin-top: 60px;
