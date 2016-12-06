@@ -18,17 +18,32 @@ function googleTranslateElementInit() {
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
 <script src="/test-properties/js/index.js"></script>
+<link rel="stylesheet" href="/test-properties/css/index.css">
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>EPC Login</h1>
     <p class="announce">
         Please enter your Expedia Partner Central (EPC) login details below.
     </p>
     <form id="loginform" class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
-        <div class="formline"><span class="right-align">Username: </span><input id="username" placeholder=""/></div>
-        <div class="formline"><span class="right-align">Password: </span><input id="password" type="password"
-                                                                                placeholder=""/></div>
-        <div id="result" class="formline center"></div>
-        <div class="formline"><input class="submit" type="submit" value="Login"/></div>
+        <div class="formline row">
+            <span class="small-5 text-right columns">Username: </span>
+            <span class="small-6 text-right columns"><input id="username" placeholder=""/></span>
+        </div>
+        <div class="formline row">
+            <span class="small-5 text-right columns">Password: </span>
+            <span class="small-6 text-right columns"><input id="password" type="password" placeholder=""/></span>
+        </div>
+        <div id="result" class="formline center row"></div>
+        <div class="row">
+            <div class="formline small-6 small-offset-6 columns">
+                <input class="submit" type="submit" value="Login"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="forgot formline center small-6 small-offset-6 columns">
+                <a href="https://www.expediapartnercentral.com/Account/ForgotPassword">Forgot Password</a> | <a href="mailto:hothelp@expedia.com?subject=Forgotten Username">Forgot Username</a>
+            </div>
+        </div>
     </form>
     <div class="loader" style="display: none;">
         <div class="background">&nbsp;</div>

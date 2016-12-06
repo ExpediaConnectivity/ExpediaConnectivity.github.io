@@ -400,6 +400,12 @@ a:hover {
     color: #0065b0;
 }
 
+@media (max-width: 950px) {
+    .primary-box p span {
+        margin: 0 0 4rem 3rem;
+    }
+}
+
 
 
 #index-lower-columns a {

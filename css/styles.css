@@ -247,10 +247,14 @@
   vertical-align: text-bottom;
   margin-left: 5px;
   background-color: #008CBA;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: normal;
 }
 .cards .card {
   margin-top: 20px;
   background: #f8f8f8;
+  border: none !important;
   border-radius: 4px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -347,6 +351,15 @@ input.disabled {
 
 #contactus {
   margin-top: 24px;
+  text-align: center;
+}
+#contactus input {
+  width: 100%;
+}
+#contactus .g-recaptcha {
+  width: 304px;
+  display: inline-block;
+  margin-bottom: 10px;
 }
 .contactus-info h3 {
   margin-bottom: 0px;
@@ -551,13 +564,6 @@ a {
 }
 .index-content h3 {
   color: initial;
-}
-form#contactus {
-  text-align: center;
-}
-form#contactus .g-recaptcha {
-  width: 304px;
-  display: inline-block;
 }
 section#section-lower_links a {
   background-color: #FECB2F;
@@ -883,13 +889,6 @@ form .formline {
   margin-bottom: 10px;
   vertical-align: middle;
 }
-form .formline span {
-  display: inline-block;
-  width: 40%;
-  margin-right: 10%;
-  font-size: inherit;
-  vertical-align: middle;
-}
 form .formline textarea {
   display: inline-block;
   width: 100%;
@@ -900,17 +899,18 @@ form .formline textarea {
   padding: 0.5rem;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   margin: 0;
+  margin-bottom: 10px;
   height: 10em;
 }
 form .formline input {
   display: inline-block;
-  width: 100%;
   border: 1px solid #EFEFEF;
   border-radius: 4px;
   padding: 0.5rem;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-size: 0.8em;
   margin: 0;
+  margin-bottom: 10px;
 }
 form .formline .submit {
   background: #FECB2F;
@@ -923,21 +923,6 @@ form .error {
 }
 form .request-hotel {
   margin-top: 0.7em;
-}
-#loginform input,
-#registerform input {
-  width: 49%;
-}
-#loginform .submit,
-#registerform .submit {
-  float: right;
-  margin-right: 0.8em;
-}
-#registerform .formline label {
-  display: inline;
-  position: absolute;
-  margin-top: 0.6rem;
-  margin-left: 10px;
 }
 #hotels_wrapper > .dt-buttons {
   margin-top: 0.7em;

@@ -56,17 +56,9 @@ function googleTranslateElementInit() {
         <form id="contactus" onsubmit="sendmail(this); return false;">
             <div class="formline">
                 <input id="name" placeholder="Name" type="text" required/>
-            </div>
-            <div class="formline">
                 <input id="email" placeholder="Email" type="email" required/>
-            </div>
-            <div class="formline">
                 <input id="phone" placeholder="Phone Number" type="tel"/>
-            </div>
-            <div class="formline">
                 <input id="company" placeholder="Company" type="text"/>
-            </div>
-            <div class="formline">
                 <select id="subject" name="subject"  placeholder="Please select an appropriate subject" required>
                     <option value="unknown">Please select an appropriate subject</option>
                     <option value="interested">I'm interested in adopting Expedia APIs</option>
@@ -77,14 +69,8 @@ function googleTranslateElementInit() {
                     <option value="vendor">I'm a Vendor and my details have changed</option>
                     <option value="other">Other/Not Specified</option>
                 </select>
-            </div>
-            <div class="formline">
                 <textarea id="message" placeholder="Type your message here" required></textarea>
-            </div>
-            <div class="formline">
                 <div class="g-recaptcha" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
-            </div>
-            <div class="formline">
                 <input type="submit" value="Send" class="submit"/>
             </div>
             <div id="result" class="formline right"></div>
