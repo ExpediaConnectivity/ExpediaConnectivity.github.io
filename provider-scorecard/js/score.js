@@ -256,7 +256,6 @@ function generateScorecardCategory(category, id) {
             $(elementSelector + " .rate-period").remove();
             $(elementSelector + " .value").removeClass("small-6").addClass("small-12");
             $(elementSelector + " .metric").removeClass("small-8").addClass("small-12");
-            $(elementSelector).addClass("solid-background");
         }
     }
 }
@@ -269,7 +268,7 @@ function generateScorecardFeature(category, id) {
         var elementSelector = "#" + id + " #" + key;
         var state = category["attributes"][key];
         $(elementSelector + " .state").html(state ? "&#x2713;" : "&#x2717;");
-        $(elementSelector).addClass(state ? "feature-green" : "feature-red");
+        $(elementSelector).addClass(state ? "green" : "red");
 
     }
 }

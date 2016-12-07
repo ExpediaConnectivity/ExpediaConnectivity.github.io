@@ -1,3 +1,6 @@
+body {
+  background: white;
+}
 .scorecard-row .scorecard-category {
   color: #0087F5;
   font-weight: bold;
@@ -34,10 +37,19 @@
   height: 6em;
   padding-top: 1em;
   margin-bottom: 50px;
+  background: #f8f8f8;
+  box-shadow: 0px 2px #c7c7c7;
+  border-radius: 4px;
 }
 .scorecard-row .scorecard-column .border:hover {
   cursor: pointer;
-  border-color: #444;
+  box-shadow: 0px 4px 4px #ddd;
+  position: relative;
+  top: -2px;
+}
+.scorecard-row .scorecard-column .border:active {
+  top: 0;
+  box-shadow: 0px 2px 2px #ddd;
 }
 .scorecard-row .scorecard-column .has-tip {
   font-weight: normal;
@@ -71,35 +83,17 @@
 .scorecard-row .scorecard-column .feature {
   text-align: center;
 }
-.scorecard-row .scorecard-column > .green {
-  background: #cbe9cd;
-  background: linear-gradient(to right, #cbe9cd 0%, #cbe9cd 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
-}
 .scorecard-row .scorecard-column > .green .value {
-  color: darkgreen;
+  color: #0087F5;
 }
-.scorecard-row .scorecard-column > .feature-green,
-.scorecard-row .scorecard-column .solid-background.green {
-  background: #cbe9cd;
-}
-.scorecard-row .scorecard-column > .feature-green .state,
-.scorecard-row .scorecard-column .solid-background.green .state {
-  color: darkgreen;
-}
-.scorecard-row .scorecard-column > .red {
-  background: #F8E5D8;
-  background: linear-gradient(to right, #f8e5d8 0%, #f8e5d8 50%, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 100%);
+.scorecard-row .scorecard-column > .green .state {
+  color: #0087F5;
 }
 .scorecard-row .scorecard-column > .red .value {
-  color: #de8344;
+  color: #f50200;
 }
-.scorecard-row .scorecard-column > .feature-red,
-.scorecard-row .scorecard-column .solid-background.red {
-  background: #F8E5D8;
-}
-.scorecard-row .scorecard-column > .feature-red .state,
-.scorecard-row .scorecard-column .solid-background.red .state {
-  color: darkred;
+.scorecard-row .scorecard-column > .red .state {
+  color: #f50200;
 }
 hr {
   margin-bottom: 3em;
@@ -107,6 +101,9 @@ hr {
 }
 .tooltip {
   min-width: 200px;
+}
+#top-metrics {
+  width: 700px;
 }
 #top-metrics .top-metric-cards .top-performer {
   font-size: 1.3em;
