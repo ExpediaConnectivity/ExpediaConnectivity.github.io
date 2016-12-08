@@ -27,6 +27,10 @@ var hotelAssignmentServiceUrls = {
         return hotelAssignmentServiceBaseUrl() + "/v1/schedule/all";
     },
 
+    adminUnscheduled: function() {
+        return hotelAssignmentServiceBaseUrl() + "/v1/hotels/all?unscheduledOnly=true";
+    },
+
     factors: function() {
         return hotelAssignmentServiceBaseUrl() + "/v1/hotels/factors";
     },
