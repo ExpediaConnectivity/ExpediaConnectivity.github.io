@@ -1,7 +1,7 @@
 /* schedules-admin page app */
-requirejs(['schedules-admin', 'unscheduled-admin'],
-    function   (schedules, unscheduled) {
+requirejs(['features', 'schedules-admin', 'unscheduled-admin'],
+    function   (features, schedules, unscheduled) {
+        features.init();
         schedules.init();
-        /* switch off for now */
-        /* unscheduled.init(); */
+        unscheduled.init();
     });

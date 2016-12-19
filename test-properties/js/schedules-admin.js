@@ -1,4 +1,4 @@
-define( function() {
+define(["./features"], function(features) {
 
     var datatable = false;
     var assignmentRequestFields = [];
@@ -145,6 +145,17 @@ define( function() {
         datatable.ajax.reload();
     }
 
+    var onFeaturesLoaded = function() {
+
+        if (features.isOn("admin-assign")) {
+            datatable.button().add(1, {
+                action: displayUnassignDialog,
+                text: 'Unassign'
+            });
+        }
+
+    }
+
     return {
         init: function () {
             $('#requestHotelForm').submit(function (event) {
@@ -189,6 +200,7 @@ define( function() {
             });
 
             setupUnassignDialogSubmit();
+            $.subscribe('features.loaded', onFeaturesLoaded);
             $.subscribe('hotel.scheduled', onHotelScheduled);
             $.subscribe('hotel.unscheduled', onHotelUnscheduled);
         }

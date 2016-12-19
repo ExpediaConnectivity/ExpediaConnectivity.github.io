@@ -65,5 +65,10 @@ var hotelAssignmentServiceUrls = {
 
     scheduleToggleIndefinite: function(hotelId) {
         return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/toggleRestricted";
-    }
+    },
+
+    features: function() {
+        return hotelAssignmentServiceBaseUrl() + "/v1/users/features";
+    },
+
 }

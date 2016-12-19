@@ -1,4 +1,4 @@
-define(function () {
+define(["./features"], function(features) {
     var unscheduledTable = false;
 
     var columns2 = [
@@ -87,8 +87,6 @@ define(function () {
                     displayError(jqxhr, "Could not lookup unscheduled test hotels.");
                 });
             }
-        }).on('click', 'tr', function() {
-            displayAssignDialog(unscheduledTable.row(this).data());
         });
     }
 
@@ -211,10 +209,21 @@ define(function () {
         $("#result").addClass("error").html(msg).effect( "highlight", {color:"#D62D20"}, 700 );
     }
 
+    var onFeaturesLoaded = function() {
+
+        if (features.isOn("admin-assign")) {
+            unscheduledTable.on('click', 'tr', function() {
+                displayAssignDialog(unscheduledTable.row(this).data());
+            })
+        }
+
+    }
+
     return {
         init: function() {
             setupUnscheduledTable();
             setupAssignDialogSubmit();
+            $.subscribe('features.loaded', onFeaturesLoaded);
             $.subscribe('hotel.scheduled', onHotelScheduled);
             $.subscribe('hotel.unscheduled', onHotelUnscheduled);
         }
