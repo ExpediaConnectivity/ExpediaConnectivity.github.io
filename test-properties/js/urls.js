@@ -39,6 +39,10 @@ var hotelAssignmentServiceUrls = {
         return hotelAssignmentServiceBaseUrl() + "/v1/schedule/assign";
     },
 
+    adminAssign: function(tuid, hotelId) {
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/admin/" + tuid + "/assign/" + hotelId;
+    },
+
     scheduleHotel: function(hotelId) {
         return hotelAssignmentServiceUrls.schedule() + "/hotelId/" + hotelId;
     },
@@ -49,6 +53,14 @@ var hotelAssignmentServiceUrls = {
 
     setPassword: function(hotelId) {
         return hotelAssignmentServiceUrls.scheduleHotel(hotelId) + "/change";
+    },
+
+    adminSetPassword: function(tuid, hotelId) {
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/admin/" + tuid + "/change/" + hotelId;
+    },
+
+    adminUnassign: function(tuid, hotelId) {
+        return hotelAssignmentServiceBaseUrl() + "/v1/schedule/admin/" + tuid + "/" + hotelId;
     },
 
     scheduleToggleIndefinite: function(hotelId) {

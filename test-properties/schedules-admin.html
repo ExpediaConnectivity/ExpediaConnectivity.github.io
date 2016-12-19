@@ -20,6 +20,7 @@ function googleTranslateElementInit() {
 <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="/js/jwtAuthentication.js"></script>
 <script src="/test-properties/js/urls.js"></script>
+<script src="/test-properties/js/tiny-pubsub.min.js"></script>
 <script data-main="/test-properties/js/app.js" src="/test-properties/js/require.js"></script>
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>Test Property Assignment - Administration View</h1>
@@ -40,5 +41,41 @@ function googleTranslateElementInit() {
     <h2>Properties not currently assigned</h2>
     <br/>
     <table id="unscheduledHotels" class="display" cellspacing="0" width="100%"></table>
+    <div id="assign-dialogue" data-reveal class="tiny reveal dialog">
+        <h1>Assign Test Property</h1>
+        <div></div>
+        <form id='assignForm'>
+            <p>tuid:</p>
+            <div class='formline'><input type='text' id='tuidTxt' placeholder='' required/></div>
+            <p>Choose a password for the test API credentials</p>
+            <div class='formline'><input type="password" id="passwordTxt" name="passwordTxt" placeholder="8+ characters, requires numbers, symbols, mixed case" /></div>
+            <div class='formline center error'></div><div class='formline'><input type='submit' value='Assign' class='submit'/></div>
+            <input type="hidden" id="hotelIdTxt" />
+            <input type="hidden" id="usernameTxt" />
+        </form>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="msg-dialogue" data-reveal class="tiny reveal dialog">
+        <h1>Test Property Assigned</h1>
+        <div></div>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="unassign-dialogue" data-reveal class="tiny reveal dialog">
+        <h1>Confirm unassign test property?</h1>
+        <div></div>
+        <form id='unassignForm'>
+            <div class='formline center error'></div><div class='formline'><input type='submit' value='Unassign' class='submit'/></div>
+            <input type="hidden" id="hotelIdTxt" />
+            <input type="hidden" id="tuidTxt" />
+        </form>
+        <button class="close-button" data-close aria-lable="Close" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+
 </div>
 </div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Schedules Admin"></body></html>

@@ -2,5 +2,6 @@
 requirejs(['schedules-admin', 'unscheduled-admin'],
     function   (schedules, unscheduled) {
         schedules.init();
-        unscheduled.init();
+        /* switch off for now */
+        /* unscheduled.init(); */
     });

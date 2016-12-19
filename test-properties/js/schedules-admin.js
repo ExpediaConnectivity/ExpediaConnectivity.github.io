@@ -17,6 +17,7 @@ define( function() {
 
     var buttons = [
         {text: "Toggle Indefinite", action: toggleIndefinite}
+        //{text: "Unassign", action: displayUnassignDialog}
     ];
 
 
@@ -94,6 +95,56 @@ define( function() {
         });
     }
 
+    function unassignHotel(tuid, hotelId) {
+        loadStartButtons();
+        ga('send', 'event', 'adminUnassignHotel', 'request', localStorage.getItem('username') + "|" + hotelId);
+        jwtRequest("DELETE", hotelAssignmentServiceUrls.adminUnassign(tuid, hotelId), function (data, textStatus, jqxhr) {
+            console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
+            loadEndButtons();
+            $("#result").text("Successfully unassigned test property " + hotelId + " from tuid " + tuid).effect("highlight", {color: "#FECB2F"}, 700);
+            $.publish('hotel.unscheduled', [hotelId]);
+            ga('send', 'event', 'adminUnassignHotel', 'success', localStorage.getItem('username') + "|" + hotelId);
+        }, function (jqxhr) {
+            loadEndButtons();
+            ajaxError(jqxhr, "Could not unassign " + hotelId);
+            ga('send', 'event', 'adminUnassignHotel', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelId);
+        });
+    }
+
+
+    function setupUnassignDialogSubmit() {
+        $('#unassignForm').submit(function (event) {
+            event.preventDefault();
+            var tuid = $("#unassign-dialogue #tuidTxt").val();
+            var hotelId = $("#unassign-dialogue #hotelIdTxt").val();
+            $("#unassign-dialogue").foundation('close');
+            unassignHotel(tuid, hotelId);
+            return false;
+        });
+    }
+
+    function displayUnassignDialog(e, dt, node, config) {
+        var hotelId = dt.cell(".selected", 1).data();
+        var tuid = dt.cell(".selected", 0).data();
+        $("#unassign-dialogue #hotelIdTxt").val(hotelId);
+        $("#unassign-dialogue #tuidTxt").val(tuid);
+        $("#unassign-dialogue>div")
+            .empty()
+            .append($("<p/>").text("Unassign test property " + hotelId + " from tuid " + tuid + "?"))
+            .parent()
+            .foundation('open');
+    }
+
+
+
+    var onHotelScheduled = function(_, hotelId) {
+        datatable.ajax.reload();
+    }
+
+    var onHotelUnscheduled = function(_, hotelId) {
+        datatable.ajax.reload();
+    }
+
     return {
         init: function () {
             $('#requestHotelForm').submit(function (event) {
@@ -136,6 +187,10 @@ define( function() {
                     console.log("enabled");
                 }
             });
+
+            setupUnassignDialogSubmit();
+            $.subscribe('hotel.scheduled', onHotelScheduled);
+            $.subscribe('hotel.unscheduled', onHotelUnscheduled);
         }
 
     }
