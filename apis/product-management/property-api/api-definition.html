@@ -126,7 +126,7 @@ function googleTranslateElementInit() {
 <p>The below example is a request to onboard a new property using SetPropertyDetails.</p>
 <ul>
 <li>Information for more than one property is accepted in the request, max. batch size is 50 properties per request.</li>
-<li>Each property must have a unique providerPropertyId</li>
+<li>Each property must have a unique </li>
 </ul>
 <pre><code class="lang-javascript">[{
     &quot;providerPropertyId&quot;: &quot;1289472&quot;,
@@ -288,7 +288,7 @@ function googleTranslateElementInit() {
 <td>String</td>
 <td>Yes</td>
 <td>No</td>
-<td>Unique ID for the property from the Provider&#39;s system.</td>
+<td>Unique ID for the property from the Provider&#39;s system. Must <strong>not</strong> contain any whitespace.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -493,7 +493,7 @@ function googleTranslateElementInit() {
 </tbody>
 </table>
 </div><p><strong>contact</strong></p>
-<p>Contact set data are represented as a dictionary, with the following dictionary keys.</p>
+<p>Contact set data are represented as a dictionary, with the following dictionary keys (strict checking against the key name).</p>
 <div><table>
 <thead>
 <tr>
@@ -511,7 +511,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>ReservationManager</td>
 <td>Yes</td>
-<td>firstName, lastName, email or fax required.  Property will fail onboarding if this information is not submitted.</td>
+<td>firstName, lastName, and <strong>either</strong> an email or fax number is required.  Property will fail onboarding if this information is not submitted.</td>
 </tr>
 <tr>
 <td>AlternateReservationManager</td>
@@ -582,7 +582,7 @@ function googleTranslateElementInit() {
 <td>phoneNumberType</td>
 <td>String</td>
 <td>No</td>
-<td>See <a href="./code-list.html#phoneNumberType">code list</a>.  If no type submitted, then &#39;Undefined&#39; used.</td>
+<td>Strict checking against <a href="./code-list.html#phoneNumberType">this list of phone number types</a>.  If no type submitted, then the default of &#39;Undefined&#39; used.</td>
 </tr>
 <tr>
 <td>countryAccessCode</td>
