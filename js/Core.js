@@ -198,10 +198,6 @@ var Core = Core || {
 
         var height = documentHeight - topHeight - bottomHeight - top;
         menu.css('height', height);
-
-        if(wrapper.height() < height) {
-            wrapper.css('height', height);
-        }
     },
 
     onResize: function() {
