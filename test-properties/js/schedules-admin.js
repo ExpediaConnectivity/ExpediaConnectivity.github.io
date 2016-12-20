@@ -164,10 +164,11 @@ define(["./features"], function(features) {
             });
 
             datatable = $("#hotels").DataTable({
-                dom: 'frtiB',
+                dom: 'lfrtiBp',
                 columns: columns,
                 buttons: buttons,
-                pageLength: 100,
+                lengthMenu: [[10, 25, 100, -1], [10, 25, 100, "All"]],
+                pageLength: 10,
                 ajax: function (data, callback, settings) {
                     jwtRequest("GET", hotelAssignmentServiceUrls.adminSchedule(), function (data, textStatus, jqxhr) {
                         console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);

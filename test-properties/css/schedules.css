@@ -1,13 +1,13 @@
-.dataTables_length,
-.dataTables_filter {
+.non-admin .dataTables_length,
+.non-admin .dataTables_filter {
   display: none;
 }
 .simple-content form {
   margin-top: 50px;
   margin-bottom: 200px;
 }
-.dataTables_paginate,
-.dataTables_info {
+.non-admin .dataTables_paginate,
+.non-admin .dataTables_info {
   display: none;
 }
 #requestHotelForm .submit {
@@ -19,4 +19,15 @@
 }
 .dialog .error {
   color: #D62D20;
+}
+/* fix length and filter wrapping */
+.dataTables_filter input {
+  width: initial;
+  display: initial;
+}
+.dataTables_length select {
+  width: initial;
+}
+.dt-buttons {
+  margin-bottom: 10px;
 }

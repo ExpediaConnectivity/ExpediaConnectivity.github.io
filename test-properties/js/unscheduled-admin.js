@@ -65,10 +65,11 @@ define(["./features"], function(features) {
 
     function setupUnscheduledTable() {
         unscheduledTable = $("#unscheduledHotels").DataTable({
-            dom: 'frtiB',
+            dom: 'lfrtiBp',
             columns: columns2,
             buttons: buttons2,
-            pageLength: 100,
+            lengthMenu: [[10, 25, 100, -1], [10, 25, 100, "All"]],
+            pageLength: 10,
             ajax: function (data, callback, settings) {
                 jwtRequest("GET", hotelAssignmentServiceUrls.adminUnscheduled(), function(data, textStatus, jqxhr) {
                     console.log("Successful response for unscheduled " + jqxhr.url + " : " + jqxhr.responseText);
@@ -81,7 +82,7 @@ define(["./features"], function(features) {
                         unscheduledTable.clear().draw();
                     } else {
                         callback({data: parseHotelData(JSON.parse(jqxhr.responseText))});
-                        unscheduledTable.order([ 3, "asc" ]).draw();
+                        unscheduledTable.order([ 2, "asc" ]).draw();
                     }
                 }, function(jqxhr) {
                     displayError(jqxhr, "Could not lookup unscheduled test hotels.");
@@ -213,7 +214,9 @@ define(["./features"], function(features) {
 
         if (features.isOn("admin-assign")) {
             unscheduledTable.on('click', 'tr', function() {
-                displayAssignDialog(unscheduledTable.row(this).data());
+                if (this.rowIndex > 0) {
+                    displayAssignDialog(unscheduledTable.row(this).data());
+                }
             })
         }
 

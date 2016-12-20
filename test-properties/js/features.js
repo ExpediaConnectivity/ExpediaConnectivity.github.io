@@ -3,6 +3,8 @@ define(function () {
     var features = {};
 
     function loadFeatures() {
+
+        /*
         jwtRequest("GET", hotelAssignmentServiceUrls.features(), function(data, textStatus, jqxhr) {
             console.log("Successful response for features " + jqxhr.url + " : " + jqxhr.responseText);
             parseFeatures(JSON.parse(jqxhr.responseText));
@@ -12,6 +14,10 @@ define(function () {
             console.log("Could not lookup features test hotels. ");
             console.log(jqxhr.responseText);
         });
+        */
+
+        parseFeatures(JSON.parse('[{"payload": {"isOn": true}, "name": "admin-assign"}]'));
+        $.publish('features.loaded');
     }
 
 
