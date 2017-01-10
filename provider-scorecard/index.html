@@ -15,12 +15,6 @@ function googleTranslateElementInit() {
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><!--feature:noindex-->
 <link type="text/css" rel="stylesheet" charset="UTF-8" href="css/score.css">
 <script src="js/score.js"></script>
-<div class="xlarge-10 xlarge-centered medium-10 medium-centered columns simple-content">
-    <h1>Provider Scorecard</h1>
-    <p class="announce">
-        These are your metrics for Q4 2016.
-    </p>
-</div>
 <div class="reveal" id="top-metrics" data-reveal>
     <h1></h1>
     <p></p>
@@ -29,172 +23,143 @@ function googleTranslateElementInit() {
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
-<div class="scorecard-row row full-width">
-    <div class="scorecard-provider medium-offset-1 xlarge-8 medium-6 small-12 text-center medium-text-left columns">
-        Example
+<div class="simple-content">
+    <h1>Provider Scorecard</h1>
+    <div class="row full-width">
+        <div class="scorecard-provider medium-8 small-12 text-center medium-text-left columns">
+            Example
+        </div>
+        <div class="scorecard-rank medium-4 small-12 end columns">
+            Rank:
+            <span class="rating">
+                <span class="rank">1</span>
+                of
+                <span class="total">123</span>
+            </span>
+        </div>
     </div>
-    <div class="scorecard-rank xlarge-2 medium-4 small-12 end columns">
-        <sup class="rank">1</sup>
-        &frasl;
-        <sub class="total">123</sub>
-    </div>
+    <p>
+        These are your metrics for Q4 2016. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
 </div>
-<hr class="medium-10 small-12 medium-centered columns" style="margin-top: 3em;"/>
-<div id="optimise" class="scorecard-row row full-width">
-    <div class="scorecard-category xlarge-1 medium-offset-1 medium-10 small-12 xlarge-text-left columns">
-        OPTIMISE
+<div id="optimise" class="scorecard-row row">
+    <div class="scorecard-category small-9 columns">
+        Optimise
     </div>
-    <div class="scorecard-cards xlarge-7 xlarge-offset-0 medium-10 medium-offset-1 small-12 columns">
-        <div class="scorecard-column xlarge-4 medium-6 small-12 columns">
-            <div class="scorecard-title columns">
-                SUCCESS RATES
-            </div>
-            <div id="arMessages" class="border columns has-tip" data-heading="AR Messages" data-tooltip aria-haspopup="true" title="Success rate of availability, rate and inventory messages. Message errors can result in rate and availability data being out of sync between your system and the Expedia marketplace.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">+ 3.2%</span>
-                <span class="metric small-8 columns">AR Messages</span>
-                <span class="rate-period text-right small-4 columns">YOY</span>
-            </div>
-            <div id="bcMessages" class="border columns has-tip" data-heading="BC Messages" data-tooltip aria-haspopup="true" title="Success rate of booking confirmations. Booking delivery failures may result in fallbacks to fax and email to properties, resulting in data being out of sync between your system and the Expedia marketplace. These errors can also lead to overbookings and resultant refunds and relocations.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">+ 3.2%</span>
-                <span class="metric small-8 columns">BC Messages</span>
-                <span class="rate-period text-right small-4 columns">YOY</span>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-4 medium-6 columns">
-            <div class="scorecard-title columns">
-                ONBOARDING SPEED
-            </div>
-            <div id="onboardingSpeed" class="border columns has-tip" data-heading="Onboarding Speed" data-tooltip aria-haspopup="true" title="Average time taken for new properties to go live, calculated from the day a hotel signed a contract with Expedia. Delays in onboarding mean that properties cannot begin listing and selling their inventory on the Expedia marketplace.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">+ 3.2%</span>
-                <span class="rate-period text-right small-6 columns">YOY</span>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-4 medium-6 columns">
-            <div class="scorecard-title columns">
-                CONNECTIVITY ACTIVATION
-            </div>
-            <div id="connectivityActivation" class="border columns has-tip" data-heading="Connectivity Activation" data-tooltip aria-haspopup="true" title="Average time taken after connection to receive first AR (I) message">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">+ 3.2%</span>
-                <span class="rate-period text-right small-6 columns">YOY</span>
-            </div>
-        </div>
-    </div>
-    <div class="scorecard-category-score xlarge-2 xlarge-offset-0 medium-10 small-10 small-offset-1 columns end">
-        OPTIMISE SCORE
+    <div class="scorecard-category-score small-3 columns">
         <div class="score-total small-12 columns">
             <div class="score-value" style="width: 50%">&nbsp;</div>
         </div>
-    </div>
-</div>
-<hr class="medium-10 small-12 medium-centered columns"/>
-<div id="enhance" class="scorecard-row row full-width">
-    <div class="scorecard-category xlarge-1 medium-offset-1 medium-10 small-12 columns">
-        ENHANCE
-    </div>
-    <div class="scorecard-cards xlarge-7 xlarge-offset-0 medium-10 medium-offset-1 small-12 columns">
-        <div class="scorecard-column small-12 columns">
-            <div class="xlarge-4 medium-6 small-12 columns">
-                <div class="scorecard-title columns">
-                    FEATURE SUPPORT
-                </div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 columns">
-            <div id="productApi" class="border check columns">
-                <div class="state">&#x2753;</div>
-                <div class="feature">Product API</div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 columns">
-            <div id="valueAddPromo" class="border check columns">
-                <div class="state">&#x2753;</div>
-                <div class="feature">Value Add Promo</div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 small-expand columns">
-            <div id="rateManagement" class="border check columns" data-tooltip aria-haspopup="true" title="Supports Rate Acquisition Types of Lowest Available Rate (LAR) and Sell">
-                <div class="state">&#x2753;</div>
-                <div class="feature">Rate Management</div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 columns">
-            <div id="etp" class="border check columns has-tip" data-tooltip aria-haspopup="true" title="Expedia Traveler Preference">
-                <div class="state">&#x2753;</div>
-                <div class="feature">ETP</div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 columns">
-            <div id="evc" class="border check columns has-tip" data-tooltip aria-haspopup="true" title="Expedia Virtual Card">
-                <div class="state">&#x2753;</div>
-                <div class="feature">EVC</div>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-2 large-3 medium-4 columns">
-            <div id="bc" class="border check columns has-tip" data-tooltip aria-haspopup="true" title="Booking Confirmation">
-                <div class="state">&#x2753;</div>
-                <div class="feature">BC</div>
-            </div>
+        <div class="score-value">
+            Score: 95.55%
         </div>
     </div>
-    <div class="scorecard-category-score xlarge-2 xlarge-offset-0 medium-10 small-10 small-offset-1 columns end">
-        ENHANCE SCORE
-        <div class="score-total columns">
-            <div class="score-value" style="width: 50%">&nbsp;</div>
+    <div class="scorecard-description small-9 end columns">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="scorecard-cards small-12 columns">
+        <div id="arMessages" class="border large-3 medium-6 small-12 columns has-tip" data-heading="AR Messages" data-tooltip aria-haspopup="true" title="Success rate of availability, rate and inventory messages. Message errors can result in rate and availability data being out of sync between your system and the Expedia marketplace.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">+ 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+            <span class="metric small-12 columns">AR Messages</span>
+        </div>
+        <div id="bcMessages" class="border large-3 medium-6 small-12 columns has-tip" data-heading="BC Messages" data-tooltip aria-haspopup="true" title="Success rate of booking confirmations. Booking delivery failures may result in fallbacks to fax and email to properties, resulting in data being out of sync between your system and the Expedia marketplace. These errors can also lead to overbookings and resultant refunds and relocations.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">+ 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+            <span class="metric small-12 columns">BC Messages</span>
+        </div>
+        <div id="onboardingSpeed" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Onboarding Speed" data-tooltip aria-haspopup="true" title="Average time taken for new properties to go live, calculated from the day a hotel signed a contract with Expedia. Delays in onboarding mean that properties cannot begin listing and selling their inventory on the Expedia marketplace.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">+ 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+        </div>
+        <div id="connectivityActivation" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Connectivity Activation" data-tooltip aria-haspopup="true" title="Average time taken after connection to receive first AR (I) message">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">+ 3.2%</span>
         </div>
     </div>
 </div>
-<hr class="medium-10 small-12 medium-centered columns"/>
-<div id="grow" class="scorecard-row row full-width">
-    <div class="scorecard-category xlarge-1 medium-offset-1 medium-10 small-12 xlarge-text-left columns">
-        GROW
+<div id="enhance" class="scorecard-row row">
+    <div class="scorecard-category small-9 columns">
+        Enhance
     </div>
-    <div class="scorecard-cards xlarge-7 xlarge-offset-0 medium-10 medium-offset-1 small-12 columns">
-        <div class="scorecard-column xlarge-4 medium-6 small-12 columns">
-            <div class="scorecard-title columns">
-                SUPPLY QUALITY
-            </div>
-            <div id="availabilityLose" class="border columns has-tip" data-heading="Availability Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent availability to Expedia travelers relative to the market.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">&#x25B2; 3.2%</span>
-                <span class="metric small-8 columns">Availability Lose</span>
-                <span class="rate-period text-right small-4 columns">YOY</span>
-            </div>
-            <div id="rateLose" class="border columns has-tip" data-heading="Rate Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent rate plans to Expedia travelers relative to the market.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">&#x25BC; 3.2%</span>
-                <span class="metric small-8 columns">Rate Lose</span>
-                <span class="rate-period text-right small-4 columns">YOY</span>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-4 medium-6 small-12 columns">
-            <div class="scorecard-title columns">
-                MARKETPLACE
-            </div>
-            <div id="etpPenetration" class="border columns has-tip" data-heading="ETP Penetration" data-tooltip aria-haspopup="true" title="The percentage of your properties that support Expedia Traveler Preference, a business model that gives Expedia travelers the option of when to pay for their booking.">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="metric small-12 columns">ETP Penetration</span>
-            </div>
-        </div>
-        <div class="scorecard-column xlarge-4 medium-6 small-12 columns">
-            <div class="scorecard-title columns">
-                NEW BUSINESS
-            </div>
-            <div id="newHotels" class="border columns" data-heading="New Hotels">
-                <span class="value small-6 columns">95.3%</span>
-                <span class="rate-change text-right small-6 columns">+ 3.2%</span>
-                <span class="metric small-8 columns">New Hotels</span>
-                <span class="rate-period text-right small-4 columns">YOY</span>
-            </div>
-        </div>
-    </div>
-    <div class="scorecard-category-score xlarge-2 xlarge-offset-0 medium-10 small-10 small-offset-1 columns end">
-        GROW SCORE
+    <div class="scorecard-category-score small-3 columns">
         <div class="score-total small-12 columns">
             <div class="score-value" style="width: 50%">&nbsp;</div>
         </div>
+        <div class="score-value">
+            Score: 95.55%
+        </div>
     </div>
-</div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2016 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"></body></html>
+    <div class="scorecard-description small-9 end columns">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="scorecard-cards small-12 columns">
+        <div id="productApi" class="border check large-3 medium-6 small-12 columns">
+            <div class="state">&#x2753;</div>
+            <div class="feature">Product API</div>
+        </div>
+        <div id="valueAddPromo" class="border check large-3 medium-6 small-12 columns">
+            <div class="state">&#x2753;</div>
+            <div class="feature">Value Add Promo</div>
+        </div>
+        <div id="rateManagement" class="border check large-3 medium-6 small-12 columns" data-tooltip aria-haspopup="true" title="Supports Rate Acquisition Types of Lowest Available Rate (LAR) and Sell">
+            <div class="state">&#x2753;</div>
+            <div class="feature">Rate Management</div>
+        </div>
+        <div id="etp" class="border check large-3 medium-6 small-12 columns has-tip" data-tooltip aria-haspopup="true" title="Expedia Traveler Preference">
+            <div class="state">&#x2753;</div>
+            <div class="feature">ETP</div>
+        </div>
+        <div id="evc" class="border check large-3 medium-6 small-12 columns has-tip" data-tooltip aria-haspopup="true" title="Expedia Virtual Card">
+            <div class="state">&#x2753;</div>
+            <div class="feature">EVC</div>
+        </div>
+        <div id="bc" class="border check large-3 medium-6 small-12 end columns has-tip" data-tooltip aria-haspopup="true" title="Booking Confirmation">
+            <div class="state">&#x2753;</div>
+            <div class="feature">BC</div>
+        </div>
+    </div>
+</div>
+<div id="grow" class="scorecard-row row">
+    <div class="scorecard-category small-9 columns">
+        Grow
+    </div>
+    <div class="scorecard-category-score small-3 columns">
+        <div class="score-total small-12 columns">
+            <div class="score-value" style="width: 50%">&nbsp;</div>
+        </div>
+        <div class="score-value">
+            Score: 95.55%
+        </div>
+    </div>
+    <div class="scorecard-description small-9 end columns">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class="scorecard-cards small-12 columns">
+        <div id="availabilityLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Availability Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent availability to Expedia travelers relative to the market.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">&#x25B2; 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+            <span class="metric small-12 columns">Availability Lose</span>
+        </div>
+        <div id="rateLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Rate Lose" data-tooltip aria-haspopup="true" title="The percentage of your properties that have not offered consistent rate plans to Expedia travelers relative to the market.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">&#x25BC; 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+            <span class="metric small-12 columns">Rate Lose</span>
+        </div>
+        <div id="etpPenetration" class="border large-3 medium-6 small-12 columns has-tip" data-heading="ETP Penetration" data-tooltip aria-haspopup="true" title="The percentage of your properties that support Expedia Traveler Preference, a business model that gives Expedia travelers the option of when to pay for their booking.">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="metric small-12 columns">ETP Penetration</span>
+        </div>
+        <div id="newHotels" class="border large-3 medium-6 small-12 columns" data-heading="New Hotels">
+            <span class="value small-6 columns">95.3%</span>
+            <span class="rate-change text-right small-6 columns">+ 3.2%</span>
+            <span class="rate-period text-right small-6 columns">YOY</span>
+            <span class="metric small-12 columns">New Hotels</span>
+        </div>
+    </div>
+</div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"></body></html>

@@ -66,12 +66,14 @@ var demo = {
             "arMessages": {
                 "value": "94.1",
                 "success": false,
-                "delta": -4.3
+                "delta": -4.3,
+                "unit": "%"
             },
             "bcMessages": {
                 "value": "99.7",
                 "success": true,
-                "delta": 0.2
+                "delta": 0.2,
+                "unit": "%"
             },
             "onboardingSpeed": {
                 "value": "5.7",
@@ -100,6 +102,7 @@ function getParameterByName(name) {
 }
 
 $(document).ready(function() {
+    setInterval(createBorders, 200);
     var hash = getParameterByName("id");
     if (hash == null || hash == "") {
         ga('send', 'event', 'scorecard', 'demo', window.location.href);
@@ -113,7 +116,7 @@ $(document).ready(function() {
     });
 
     $(".scorecard-column .border").click(metricClickCallback);
-    $(".scorecard-rank").click(overallClickCallback)
+    $(".scorecard-rank").click(overallClickCallback);
 });
 
 function overallClickCallback(event) {
@@ -180,11 +183,11 @@ function populateTopMetricsList(providers, showValues) {
         var topProvider = providers[i];
         var value = topProvider.value;
         if (topProvider.unit == "days") {
-            value += " " + topProvider.unit;
+            value += "<span class='unit-bottom'>" + topProvider.unit + "</span>";
         } else if (topProvider.unit == "$") {
             value = topProvider.unit + value;
         } else if (topProvider.unit) {
-            value += topProvider.unit;
+            value += "<span class='unit-top'>" + topProvider.unit + "</span>";
         }
 
         var position = (i + 1);
@@ -205,7 +208,7 @@ function populateTopMetricsList(providers, showValues) {
         if (showValues) {
             topProviderHtml.append($("<div>")
                 .addClass("score")
-                .text(value)
+                .html(value)
             );
         }
 
@@ -238,19 +241,19 @@ function generateScorecardCategory(category, id) {
         if (value == "") {
             value = "Not Available"
         } else if (element.unit == "days") {
-            value += " " + element.unit;
+            value += "<span class='unit-bottom'>" + element.unit + "</span>";
         } else if (element.unit == "$") {
             value = element.unit + value;
         } else if (element.unit) {
-            value += element.unit;
+            value += "<span class='unit-top'>" + element.unit + "</span>";
         }
-        $(elementSelector + " .value").text(value);
+        $(elementSelector + " .value").html(value);
         $(elementSelector).addClass(element.success ? "green" : "red");
 
         if (element.delta) {
             var deltasuccess = (element.deltaSuccess != null) ? element.deltaSuccess : element.success;
             var delta = $("<span/>").addClass(deltasuccess ? "green" : "red").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
-            $(elementSelector + " .rate-change").html(delta).append(" " + element.delta + "%");
+            $(elementSelector + " .rate-change").html(delta).append(" " + Math.abs(element.delta) + "%");
         } else {
             $(elementSelector + " .rate-change").remove();
             $(elementSelector + " .rate-period").remove();
@@ -270,5 +273,27 @@ function generateScorecardFeature(category, id) {
         $(elementSelector + " .state").html(state ? "&#x2713;" : "&#x2717;");
         $(elementSelector).addClass(state ? "green" : "red");
 
+    }
+}
+
+function createBorders() {
+    $("#optimise .border").removeAttr("style");
+    $("#enhance .border").removeAttr("style");
+    $("#grow .border").removeAttr("style");
+    if (Foundation.MediaQuery.atLeast("large")) {
+        $("#enhance #productApi,#valueAddPromo,#rateManagement,#etp").css("border-bottom", "1px solid lightgrey");
+        $("#enhance #evc,#bc").css("border-top", "none");
+        $("#enhance #etp").css("border-right", "none");
+        $("#enhance #bc").css("border-right", "1px solid lightgrey");
+    } else if (Foundation.MediaQuery.current == "medium") {
+        $("#optimise #bcMessages").css("border-right", "none");
+        $("#enhance #valueAddPromo,#etp").css("border-right", "none");
+        $("#grow #rateLose").css("border-right", "none");
+    } else if (Foundation.MediaQuery.current == "small") {
+        $("#enhance .border").css("border-right", "none");
+        $("#optimise .border").css("border-right", "none");
+        $("#grow .border").css("border-right", "none");
+    } else {
+        console.log("Cannot detect screen size.")
     }
 }

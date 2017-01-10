@@ -1,15 +1,48 @@
 body {
   background: white;
+  color: #404040;
+}
+.simple-content {
+  padding-left: 35px;
+  padding-right: 35px;
+  margin-bottom: 50px;
+}
+.simple-content h1 {
+  font-size: 38px;
+  margin-bottom: 0;
+}
+.simple-content .scorecard-provider {
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0;
+}
+.simple-content .scorecard-rank {
+  text-align: right;
+  font-size: 30px;
+  padding: 0;
+}
+.simple-content .scorecard-rank .rating {
+  color: #2962b5;
+}
+.scorecard-row {
+  margin-left: 35px;
+  margin-right: 35px;
+  max-width: none;
+  background: #f8f8f8;
+  box-shadow: 0px 2px #c7c7c7;
+  border-radius: 4px;
+  margin-bottom: 50px;
 }
 .scorecard-row .scorecard-category {
-  color: #0087F5;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 3em;
+  font-size: 2em;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
 }
 .scorecard-row .scorecard-category-score {
   color: inherit;
-  margin-bottom: 3em;
+  margin-top: 2em;
+  text-align: right;
 }
 .scorecard-row .scorecard-category-score .score-total {
   background: ghostwhite;
@@ -17,83 +50,83 @@ body {
   border: 1px solid #dddddd;
 }
 .scorecard-row .scorecard-category-score .score-total .score-value {
-  background: #0087F5;
+  background: #406f1d;
 }
-.scorecard-row .scorecard-provider {
-  font-size: 3em;
-}
-.scorecard-row .scorecard-rank {
-  text-align: center;
-  font-size: 3em;
+.scorecard-row .scorecard-description {
+  margin-bottom: 1em;
 }
 .scorecard-row .scorecard-rank:hover {
   cursor: pointer;
 }
-.scorecard-row .scorecard-column .check {
-  height: 8em !important;
+.scorecard-row .scorecard-cards {
+  padding: 0;
 }
-.scorecard-row .scorecard-column .border {
-  border: 1px solid lightgrey;
-  height: 6em;
+.scorecard-row .scorecard-cards .check {
+  height: auto !important;
+  padding-bottom: 1em;
   padding-top: 1em;
-  margin-bottom: 50px;
-  background: #f8f8f8;
-  box-shadow: 0px 2px #c7c7c7;
-  border-radius: 4px;
 }
-.scorecard-row .scorecard-column .border:hover {
+.scorecard-row .scorecard-cards .border {
+  border-top: 1px solid lightgrey;
+  border-right: 1px solid lightgrey;
+  border-bottom: none;
+  height: 8em;
+  padding-top: 1em;
+}
+.scorecard-row .scorecard-cards .border:last-of-type {
+  border-right: none;
+}
+.scorecard-row .scorecard-cards .border:hover {
   cursor: pointer;
-  box-shadow: 0px 4px 4px #ddd;
-  position: relative;
-  top: -2px;
 }
-.scorecard-row .scorecard-column .border:active {
-  top: 0;
-  box-shadow: 0px 2px 2px #ddd;
-}
-.scorecard-row .scorecard-column .has-tip {
+.scorecard-row .scorecard-cards .has-tip {
   font-weight: normal;
   color: inherit;
   display: inherit;
 }
-.scorecard-row .scorecard-column * {
+.scorecard-row .scorecard-cards * {
   line-height: 1em;
-  margin-bottom: 10px;
 }
-.scorecard-row .scorecard-column .scorecard-title {
-  color: lightslategrey;
+.scorecard-row .scorecard-cards .value {
+  font-size: 2.5em;
 }
-.scorecard-row .scorecard-column .value {
-  font-size: 2em;
+.scorecard-row .scorecard-cards .value .unit-top {
+  font-size: 0.5em;
+  position: relative;
+  top: -0.7em;
 }
-.scorecard-row .scorecard-column .rate-change {
-  line-height: 2em;
+.scorecard-row .scorecard-cards .value .unit-bottom {
+  font-size: 0.5em;
 }
-.scorecard-row .scorecard-column .rate-change .green {
+.scorecard-row .scorecard-cards .rate-change {
+  line-height: 1.25em;
+}
+.scorecard-row .scorecard-cards .rate-change .green {
   color: darkgreen;
 }
-.scorecard-row .scorecard-column .rate-change .red {
+.scorecard-row .scorecard-cards .rate-change .red {
   color: darkred;
 }
-.scorecard-row .scorecard-column .state {
-  font-size: 2em;
-  line-height: 2em;
-  text-align: center;
+.scorecard-row .scorecard-cards .state {
+  font-size: 1.5em;
+  display: inline-block;
+  vertical-align: middle;
 }
-.scorecard-row .scorecard-column .feature {
-  text-align: center;
+.scorecard-row .scorecard-cards .feature {
+  display: inline-block;
+  vertical-align: middle;
 }
-.scorecard-row .scorecard-column > .green .value {
-  color: #0087F5;
+.scorecard-row .scorecard-cards > .green .value {
+  color: #406f1d;
 }
-.scorecard-row .scorecard-column > .green .state {
-  color: #0087F5;
+.scorecard-row .scorecard-cards > .green .state {
+  color: #406f1d;
 }
-.scorecard-row .scorecard-column > .red .value {
-  color: #f50200;
+.scorecard-row .scorecard-cards > .red .value {
+  color: #a92216;
 }
-.scorecard-row .scorecard-column > .red .state {
-  color: #f50200;
+.scorecard-row .scorecard-cards > .red .state {
+  color: #a92216;
 }
 hr {
   margin-bottom: 3em;
