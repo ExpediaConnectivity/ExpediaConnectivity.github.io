@@ -8,11 +8,13 @@ function providerPortalServiceBaseUrl() {
 
 var provider = false;
 
+var foundationSize = false;
+
 var demo = {
     "provider": {
         "name": "ExpediaProvider",
-        "rank": 28,
-        "total": 355,
+        "rank": 13,
+        "total": 71,
         "score": 0.92780685
     },
     "grow": {
@@ -22,30 +24,29 @@ var demo = {
                 "value": "1.7",
                 "success": true,
                 "delta": -14,
-                "unit": "%"
+                "deltaSuccess": true,
+                "unit": "%",
+                "differenceFromStandard": -0.28356838
             },
             "rateLose": {
                 "value": "2.9",
                 "success": true,
                 "delta": -4,
-                "unit": "%"
+                "deltaSuccess": true,
+                "unit": "%",
+                "differenceFromStandard": -1.0790994
             },
             "etpPenetration": {
                 "value": "26",
                 "success": false,
-                "unit": "%"
+                "unit": "%",
+                "differenceFromStandard": -0.23718792
             },
             "newHotels": {
                 "value": "50",
                 "success": true,
+                "deltaSuccess": true,
                 "delta": 26
-            },
-            "hotelRevenue": {
-                "value": "16679937",
-                "success": true,
-                "delta": -3,
-                "deltaSuccess": false,
-                "unit": "$"
             }
         }
     },
@@ -67,25 +68,33 @@ var demo = {
                 "value": "94.1",
                 "success": false,
                 "delta": -4.3,
-                "unit": "%"
+                "deltaSuccess": false,
+                "unit": "%",
+                "differenceFromStandard": -0.038735867
             },
             "bcMessages": {
                 "value": "99.7",
                 "success": true,
                 "delta": 0.2,
-                "unit": "%"
+                "deltaSuccess": true,
+                "unit": "%",
+                "differenceFromStandard": 0.016783476
             },
             "onboardingSpeed": {
                 "value": "5.7",
                 "success": true,
                 "delta": -29,
-                "unit": "days"
+                "deltaSuccess": true,
+                "unit": "days",
+                "differenceFromStandard": -1.2933865
             },
             "connectivityActivation": {
                 "value": "2.5",
                 "success": true,
                 "delta": -14,
-                "unit": "days"
+                "deltaSuccess": true,
+                "unit": "days",
+                "differenceFromStandard": -2.512195
             }
         }
     }
@@ -115,7 +124,7 @@ $(document).ready(function() {
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-column .border").click(metricClickCallback);
+    $(".scorecard-row .border").click(metricClickCallback);
     $(".scorecard-rank").click(overallClickCallback);
 });
 
@@ -183,11 +192,9 @@ function populateTopMetricsList(providers, showValues) {
         var topProvider = providers[i];
         var value = topProvider.value;
         if (topProvider.unit == "days") {
-            value += "<span class='unit-bottom'>" + topProvider.unit + "</span>";
-        } else if (topProvider.unit == "$") {
-            value = topProvider.unit + value;
-        } else if (topProvider.unit) {
-            value += "<span class='unit-top'>" + topProvider.unit + "</span>";
+            value += "<span class='unit-bottom'> days</span>";
+        } else if (topProvider.unit == "%") {
+            value += "<span class='unit-top'>%</span>";
         }
 
         var position = (i + 1);
@@ -232,23 +239,32 @@ function generateScorecard(scorecard) {
 
 function generateScorecardCategory(category, id) {
     $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
+    $("#" + id + " .scorecard-category-score .score-percentage").text("Score: " + Math.round(category.score * 100) + "%");
 
     for (key in category["attributes"]) {
         if (key == "score") continue;
         var element = category["attributes"][key];
         var elementSelector = "#" + id + " #" + key;
         var value = element.value;
+
         if (value == "") {
             value = "Not Available"
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
-        } else if (element.unit == "$") {
-            value = element.unit + value;
-        } else if (element.unit) {
+            var standard = Math.abs(element.differenceFromStandard).toFixed(1) + " days ";
+            standard += (element.differenceFromStandard < 0) ? "quicker than recommended" : "longer than recommended";
+        } else if (element.unit == "%") {
             value += "<span class='unit-top'>" + element.unit + "</span>";
+            var standard = Math.abs(element.differenceFromStandard * 100).toFixed(1) + "% ";
+            standard += (element.differenceFromStandard < 0) ? "less than recommended" : "higher than recommended";
         }
         $(elementSelector + " .value").html(value);
         $(elementSelector).addClass(element.success ? "green" : "red");
+        if (element.success) {
+            $(elementSelector + " .standard").remove();
+        } else {
+            $(elementSelector + " .standard").text(standard).addClass("red");
+        }
 
         if (element.delta) {
             var deltasuccess = (element.deltaSuccess != null) ? element.deltaSuccess : element.success;
@@ -265,6 +281,7 @@ function generateScorecardCategory(category, id) {
 
 function generateScorecardFeature(category, id) {
     $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
+    $("#" + id + " .scorecard-category-score .score-percentage").text("Score: " + Math.round(category.score * 100) + "%");
 
     for (key in category["attributes"]) {
         if (key == "score") continue;
@@ -277,6 +294,11 @@ function generateScorecardFeature(category, id) {
 }
 
 function createBorders() {
+    if (!foundationSize) {
+        foundationSize = Foundation.MediaQuery.current;
+    } else if (Foundation.MediaQuery.current == foundationSize) {
+        return;
+    }
     $("#optimise .border").removeAttr("style");
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");

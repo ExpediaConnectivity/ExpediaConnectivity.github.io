@@ -24,6 +24,7 @@ body {
 }
 .simple-content .scorecard-rank .rating {
   color: #2962b5;
+  cursor: pointer;
 }
 .scorecard-row {
   margin-left: 35px;
@@ -45,9 +46,8 @@ body {
   text-align: right;
 }
 .scorecard-row .scorecard-category-score .score-total {
-  background: ghostwhite;
-  padding: 2px;
-  border: 1px solid #dddddd;
+  background: #E0E0E0;
+  padding: 0;
 }
 .scorecard-row .scorecard-category-score .score-total .score-value {
   background: #406f1d;
@@ -98,6 +98,9 @@ body {
 .scorecard-row .scorecard-cards .value .unit-bottom {
   font-size: 0.5em;
 }
+.scorecard-row .scorecard-cards .metric {
+  margin-top: 1em;
+}
 .scorecard-row .scorecard-cards .rate-change {
   line-height: 1.25em;
 }
@@ -111,6 +114,7 @@ body {
   font-size: 1.5em;
   display: inline-block;
   vertical-align: middle;
+  margin-right: 0.5em;
 }
 .scorecard-row .scorecard-cards .feature {
   display: inline-block;
@@ -122,10 +126,16 @@ body {
 .scorecard-row .scorecard-cards > .green .state {
   color: #406f1d;
 }
+.scorecard-row .scorecard-cards > .green .standard {
+  color: #406f1d;
+}
 .scorecard-row .scorecard-cards > .red .value {
   color: #a92216;
 }
 .scorecard-row .scorecard-cards > .red .state {
+  color: #a92216;
+}
+.scorecard-row .scorecard-cards > .red .standard {
   color: #a92216;
 }
 hr {
