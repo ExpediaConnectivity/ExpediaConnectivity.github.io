@@ -655,9 +655,9 @@ nav li {
   padding: 0 0 0 1.6rem;
 }
 nav a {
-  color: rgba(255, 255, 255, 0.7);
-  /*#6b6b6b;*/
+  color: rgba(255, 255, 255, 0.7) !important;
   cursor: pointer;
+  text-decoration: none !important;
 }
 #nav-top a {
   font-size: 0.8rem;
@@ -668,16 +668,13 @@ nav a {
   font-weight: 600;
 }
 nav li:hover a {
-  color: #FFF;
-  /*#0065b8;*/
+  color: #FFF !important;
 }
 #nav-top {
   box-sizing: border-box;
-  /*padding: 0.2rem 0 0.1rem;*/
   text-align: center;
   font-size: 0.8rem;
   background: #FECB2F;
-  /*#f5f5f5;*/
 }
 #nav-top .inner {
   text-align: right;
@@ -690,7 +687,6 @@ nav li:hover a {
 #nav-main {
   position: relative;
   background: #5f5f5f;
-  /*#ffffff;*/
   height: 61px;
   display: table;
 }
@@ -712,7 +708,7 @@ nav li:hover a {
   text-align: center;
 }
 #nav-main li.active a {
-  color: white;
+  color: white !important;
 }
 #logo {
   width: 200px !important;

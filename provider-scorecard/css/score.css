@@ -61,7 +61,7 @@ body {
 .scorecard-row .scorecard-cards {
   padding: 0;
 }
-.scorecard-row .scorecard-cards .check {
+.scorecard-row .scorecard-cards .checkmark {
   height: auto !important;
   padding-bottom: 1em;
   padding-top: 1em;
@@ -111,7 +111,6 @@ body {
   color: darkred;
 }
 .scorecard-row .scorecard-cards .state {
-  font-size: 1.5em;
   display: inline-block;
   vertical-align: middle;
   margin-right: 0.5em;
@@ -125,6 +124,9 @@ body {
 }
 .scorecard-row .scorecard-cards > .green .state {
   color: #406f1d;
+  line-height: 1.6em;
+  margin-left: 4px;
+  margin-right: 1em;
 }
 .scorecard-row .scorecard-cards > .green .standard {
   color: #406f1d;
@@ -134,6 +136,7 @@ body {
 }
 .scorecard-row .scorecard-cards > .red .state {
   color: #a92216;
+  font-size: 1.5em;
 }
 .scorecard-row .scorecard-cards > .red .standard {
   color: #a92216;

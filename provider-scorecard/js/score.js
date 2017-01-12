@@ -287,7 +287,7 @@ function generateScorecardFeature(category, id) {
         if (key == "score") continue;
         var elementSelector = "#" + id + " #" + key;
         var state = category["attributes"][key];
-        $(elementSelector + " .state").html(state ? "&#x2713;" : "&#x2717;");
+        $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
         $(elementSelector).addClass(state ? "green" : "red");
 
     }
