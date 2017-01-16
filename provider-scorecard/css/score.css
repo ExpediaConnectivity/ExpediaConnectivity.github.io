@@ -89,6 +89,7 @@ body {
 }
 .scorecard-row .scorecard-cards .value {
   font-size: 2.5em;
+  font-family: "Helvetica Neue";
 }
 .scorecard-row .scorecard-cards .value .unit-top {
   font-size: 0.5em;
@@ -103,12 +104,6 @@ body {
 }
 .scorecard-row .scorecard-cards .rate-change {
   line-height: 1.25em;
-}
-.scorecard-row .scorecard-cards .rate-change .green {
-  color: darkgreen;
-}
-.scorecard-row .scorecard-cards .rate-change .red {
-  color: darkred;
 }
 .scorecard-row .scorecard-cards .state {
   display: inline-block;
@@ -125,6 +120,12 @@ body {
   text-align: right;
   font-size: 2em;
 }
+.scorecard-row .scorecard-cards .rate-change.green {
+  color: #406f1d;
+}
+.scorecard-row .scorecard-cards .rate-change.red {
+  color: #a92216;
+}
 .scorecard-row .scorecard-cards > .green .value {
   color: #406f1d;
 }
@@ -133,6 +134,9 @@ body {
   line-height: 1.6em;
   margin-left: 4px;
   margin-right: 1em;
+}
+.scorecard-row .scorecard-cards > .green .feature {
+  color: #406f1d;
 }
 .scorecard-row .scorecard-cards > .green .standard {
   color: #406f1d;
@@ -143,6 +147,9 @@ body {
 .scorecard-row .scorecard-cards > .red .state {
   color: #a92216;
   font-size: 1.5em;
+}
+.scorecard-row .scorecard-cards > .red .feature {
+  color: #a92216;
 }
 .scorecard-row .scorecard-cards > .red .standard {
   color: #a92216;
@@ -156,6 +163,10 @@ hr {
 }
 #enhance .border:hover {
   cursor: default;
+}
+#enhance .border {
+  white-space: nowrap;
+  overflow-x: hidden;
 }
 #top-metrics {
   width: 700px;

@@ -268,8 +268,8 @@ function generateScorecardCategory(category, id) {
 
         if (element.delta) {
             var deltasuccess = (element.deltaSuccess != null) ? element.deltaSuccess : element.success;
-            var delta = $("<span/>").addClass(deltasuccess ? "green" : "red").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
-            $(elementSelector + " .rate-change").html(delta).append(" " + Math.abs(element.delta) + "%");
+            var delta = $("<span/>").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
+            $(elementSelector + " .rate-change").addClass(deltasuccess ? "green" : "red").html(delta).append(" " + Math.abs(element.delta) + "%");
         } else {
             $(elementSelector + " .rate-change").remove();
             $(elementSelector + " .rate-period").remove();
@@ -293,19 +293,22 @@ function generateScorecardFeature(category, id) {
 }
 
 function createBorders() {
-    if (!foundationSize) {
-        foundationSize = Foundation.MediaQuery.current;
-    } else if (Foundation.MediaQuery.current == foundationSize) {
+    if (Foundation.MediaQuery.current == foundationSize) {
         return;
     }
+    foundationSize = Foundation.MediaQuery.current;
     $("#optimise .border").removeAttr("style");
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");
-    if (Foundation.MediaQuery.atLeast("large")) {
+    if (Foundation.MediaQuery.atLeast("xlarge")) {
         $("#enhance #productApi,#valueAddPromo,#rateManagement,#etp").css("border-bottom", "1px solid lightgrey");
         $("#enhance #evc,#bc").css("border-top", "none");
         $("#enhance #etp").css("border-right", "none");
         $("#enhance #bc").css("border-right", "1px solid lightgrey");
+    } else if (Foundation.MediaQuery.current == "large") {
+        $("#enhance #productApi,#valueAddPromo,#rateManagement").css("border-bottom", "1px solid lightgrey");
+        $("#enhance #etp,#evc,#bc").css("border-top", "none");
+        $("#enhance #rateManagement").css("border-right", "none");
     } else if (Foundation.MediaQuery.current == "medium") {
         $("#optimise #bcMessages").css("border-right", "none");
         $("#enhance #valueAddPromo,#etp").css("border-right", "none");
