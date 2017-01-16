@@ -274,7 +274,6 @@ function generateScorecardCategory(category, id) {
             $(elementSelector + " .rate-change").remove();
             $(elementSelector + " .rate-period").remove();
             $(elementSelector + " .value").removeClass("small-6").addClass("small-12");
-            $(elementSelector + " .metric").removeClass("small-8").addClass("small-12");
         }
     }
 }
