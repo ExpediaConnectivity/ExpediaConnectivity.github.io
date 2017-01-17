@@ -123,17 +123,17 @@
   padding: 4px 0;
   font-size: 0.9em;
   list-style-type: none;
-  color: #0065B8;
+  color: #0065B8 !important;
 }
 .sidebar-nav a:hover {
-  color: #0065B8;
+  color: #0065B8 !important;
   text-decoration: underline;
 }
 .sidebar-nav .active {
   background-color: #EFEFEF;
 }
 .sidebar-nav .active a {
-  color: #0065B8;
+  color: #0065B8 !important;
   text-decoration: underline;
 }
 .nofloat {
