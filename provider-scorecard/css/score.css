@@ -170,14 +170,37 @@ hr {
 }
 #top-metrics {
   width: 700px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+}
+#top-metrics h1 {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#top-metrics p {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+#top-metrics .close-button {
+  margin: 0;
+}
+#top-metrics .top-metric-cards {
+  margin-top: 1em;
+}
+#top-metrics .top-metric-cards .gap {
+  height: 7px;
+  background: linear-gradient(to bottom, #c7c7c7, #f8f8f8);
+}
+#top-metrics .top-metric-cards .given-provider {
+  font-family: "Helvetica Neue";
 }
 #top-metrics .top-metric-cards .top-performer {
   font-size: 1.3em;
   line-height: 3em;
-  margin-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
-  border: 1px solid #dddddd;
+  border-top: 1px solid #dddddd;
 }
 #top-metrics .top-metric-cards .top-performer .position {
   margin-right: 1em;

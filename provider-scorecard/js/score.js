@@ -174,7 +174,10 @@ function metricClickCallback(event) {
     $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/" + section + "/" + category + "/" + hash)
         .done(function(jqxhr) {
             $("#top-metrics h1").text(heading);
-            $("#top-metrics p").text("These are the top 5 performers in this category.");
+            $("#top-metrics p").text("These are the top 5 performers in this category:");
+            if ($("#" + category).attr("title")) {
+                $("#top-metrics p").html($("#" + category).attr("title") + "<br/>These are the top 5 performers in this category:");
+            }
             populateTopMetricsList(jqxhr, true);
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
@@ -186,8 +189,9 @@ function metricClickCallback(event) {
         });
 }
 
-function populateTopMetricsList(providers, showValues) {
+function populateTopMetricsList(jqxhr, showValues) {
     $("#top-metrics .top-metric-cards").empty();
+    var providers = jqxhr.topProviders;
     for (var i = 0; i < providers.length; i++) {
         var topProvider = providers[i];
         var value = topProvider.value;
@@ -221,6 +225,37 @@ function populateTopMetricsList(providers, showValues) {
 
         $("#top-metrics .top-metric-cards").append(topProviderHtml);
 
+    }
+
+    if (jqxhr.givenProviderIndex < providers.length) {
+        $("#top-metrics .top-metric-cards .top-performer").eq(jqxhr.givenProviderIndex).addClass("given-provider");
+    } else {
+        var position = jqxhr.givenProviderIndex + 1;
+        var givenProvider = jqxhr.givenProvider;
+        var value = givenProvider.value;
+        if (givenProvider.unit == "days") {
+            value += "<span class='unit-bottom'> days</span>";
+        } else if (givenProvider.unit == "%") {
+            value += "<span class='unit-top'>%</span>";
+        }
+        var givenProviderHtml = $("<div>")
+            .addClass("top-performer")
+            .addClass("given-provider")
+            .append($("<div>")
+                .addClass("position")
+                .html(position)
+            ).append($("<div>")
+                .addClass("name")
+                .text(givenProvider.name)
+            );
+
+        if (showValues) {
+            givenProviderHtml.append($("<div>")
+                .addClass("score")
+                .html(value)
+            );
+        }
+        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
     }
 }
 
@@ -263,7 +298,9 @@ function generateScorecardCategory(category, id) {
         if (element.success) {
             $(elementSelector + " .standard").remove();
         } else {
-            $(elementSelector + " .standard").text(standard).addClass("red");
+            // Removed until people change their minds again
+            $(elementSelector + " .standard").remove();
+            //$(elementSelector + " .standard").text(standard).addClass("red");
         }
 
         if (element.delta) {
