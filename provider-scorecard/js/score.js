@@ -175,8 +175,8 @@ function metricClickCallback(event) {
         .done(function(jqxhr) {
             $("#top-metrics h1").text(heading);
             $("#top-metrics p").text("These are the top 5 performers in this category:");
-            if ($("#" + category).attr("title")) {
-                $("#top-metrics p").html($("#" + category).attr("title") + "<br/>These are the top 5 performers in this category:");
+            if ($("#" + category).attr("data-description")) {
+                $("#top-metrics p").html($("#" + category).attr("data-description") + "<br/>These are the top 5 performers in this category:");
             }
             populateTopMetricsList(jqxhr, true);
             $("#top-metrics").foundation('open');
@@ -210,7 +210,7 @@ function populateTopMetricsList(jqxhr, showValues) {
             .addClass("top-performer")
             .append($("<div>")
                 .addClass("position")
-                .html(position)
+                .html(position + ".")
             ).append($("<div>")
                 .addClass("name")
                 .text(topProvider.name)
@@ -243,7 +243,7 @@ function populateTopMetricsList(jqxhr, showValues) {
             .addClass("given-provider")
             .append($("<div>")
                 .addClass("position")
-                .html(position)
+                .html(position + ".")
             ).append($("<div>")
                 .addClass("name")
                 .text(givenProvider.name)
