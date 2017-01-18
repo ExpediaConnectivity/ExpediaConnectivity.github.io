@@ -123,17 +123,17 @@
   padding: 4px 0;
   font-size: 0.9em;
   list-style-type: none;
-  color: #0065B8 !important;
+  color: #0065B8;
 }
 .sidebar-nav a:hover {
-  color: #0065B8 !important;
+  color: #0065B8;
   text-decoration: underline;
 }
 .sidebar-nav .active {
   background-color: #EFEFEF;
 }
 .sidebar-nav .active a {
-  color: #0065B8 !important;
+  color: #0065B8;
   text-decoration: underline;
 }
 .nofloat {
@@ -655,20 +655,22 @@ nav li {
   padding: 0 0 0 1.6rem;
 }
 nav a {
-  color: rgba(255, 255, 255, 0.7) !important;
   cursor: pointer;
-  text-decoration: none !important;
 }
 #nav-top a {
   font-size: 0.8rem;
   font-weight: 300;
 }
 #nav-main a {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
   font-weight: 600;
 }
+#nav-main a:hover {
+  color: #FFF;
+}
 nav li:hover a {
-  color: #FFF !important;
+  color: #FFF;
 }
 #nav-top {
   box-sizing: border-box;
