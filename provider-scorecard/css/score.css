@@ -154,6 +154,16 @@ body {
 .scorecard-row .scorecard-cards > .red .standard {
   color: #a92216;
 }
+.scorecard-row .scorecard-improve {
+  margin-bottom: 1em;
+  border-top: 1px solid lightgrey;
+  border-bottom: none;
+  padding-top: 1em;
+  text-align: right;
+  color: #2962b5;
+  cursor: pointer;
+  font-size: 1.0em;
+}
 hr {
   margin-bottom: 3em;
   max-width: 100%;
@@ -167,6 +177,11 @@ hr {
 #enhance .border {
   white-space: nowrap;
   overflow-x: hidden;
+}
+#enhance .improve-thanks {
+  text-align: left;
+  color: #406f1d;
+  font-size: 1em;
 }
 #top-metrics {
   padding-left: 0;
@@ -215,4 +230,18 @@ hr {
 #top-metrics .top-metric-cards .top-performer .score {
   display: inline-block;
   float: right;
+}
+#top-metrics .top-metric-cards .improve {
+  text-align: right;
+  color: #2962b5;
+  cursor: pointer;
+  font-size: 1.3em;
+}
+#top-metrics .top-metric-cards .improve-thanks {
+  text-align: left;
+  color: #406f1d;
+  line-height: 1.3em;
+  font-size: 1em;
+  padding-top: 5px;
+  padding-bottom: 6px;
 }
