@@ -122,6 +122,9 @@ $(document).ready(function() {
     $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash, function(data) {
         generateScorecard(data);
     }).fail(function(jqxhr) {
+        $("#top-metrics h1").text("");
+        $("#top-metrics p").text("Unfortuntely a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
+        $("#top-metrics").foundation('open');
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
