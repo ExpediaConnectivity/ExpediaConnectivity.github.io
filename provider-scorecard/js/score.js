@@ -308,8 +308,9 @@ function generateScorecardCategory(category, id) {
         var value = element.value;
         var difference = element.differenceFromStandard || 0;
 
-        if (value == "") {
-            value = "Not Available"
+        if (!element.hasOwnProperty("value") || value == null || value == "") {
+            $(elementSelector).html("");
+            continue;
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
             var standard = Math.abs(difference).toFixed(1) + " days ";
