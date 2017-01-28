@@ -2,19 +2,19 @@
 	"swagger": "2.0",
 	"info": {
 		"version": "v1",
-		"title": "EPS Property Onboarding API",
-		"description": "The EPS Property Onboarding API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.\n\nNote: All requests should include Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.\n\nPlease contact EPS Product Support to authorize your existing EQC credentials to use the Property API OR to request a new EQC account.\n\nTo start experimenting, we've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 12933870",
+		"title": "EPS Property API",
+		"description": "The EPS Property API is used to onboard property attributes, images, policies, and fees. Additionally, this API can be used to update property content post onboarding. The quickest way to get started is to review the Supported Features (https://expediaconnectivity.com/apis/product-management/property-api/supported-features.html) and review the API Definition.\n\nNote: All requests should include Basic Authentication in HTTP header, using your Expedia Quick Connect (EQC) credentials.\n\nPlease contact EPS Product Support to authorize your existing EQC credentials to use the Property API OR to request a new EQC account.\n\nTo start experimenting, we've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 12933870.",
 		"contact": {
-			"name": "Expedia EPS Xpresso Team",
+			"name": "EPS Product Support",
 			"url": "https://expediaconnectivity.com/developer",
 			"email": "EPSProductSupport@expedia.com"
 		}
 	},
 	"host": "services.expediapartnercentral.com",
-	"basePath": "/properties/v1",
+	"basePath": "/properties",
 	"schemes": ["https"],
 	"paths": {
-		"/{provider}/{providerPropertyId}": {
+		"/v1/{provider}/{providerPropertyId}": {
 			"get": {
 				"tags": ["Properties"],
 				"summary": "Gets a specific property with a given providerPropertyId for the given provider.",
@@ -24,22 +24,17 @@
 				"parameters": [{
 						"name": "providerPropertyId",
 						"in": "path",
-						"description": "The Provider's unique ID for property.",
+						"description": "The provider's unique ID for property.",
 						"required": true,
-						"type": "string"
+						"type": "string",
+						"default": "12933870"
 					}, {
 						"name": "provider",
 						"in": "path",
-						"description": "The providers' identifier.",
+						"description": "The provider's identifier.",
 						"required": true,
-						"type": "string"
-					}, {
-						"name": "TUID",
-						"in": "header",
-						"description": "For Internal Use Only.",
-						"required": false,
-						"type": "integer",
-						"format": "int32"
+						"type": "string",
+						"default": "spoofer"
 					}
 				],
 				"responses": {
@@ -69,22 +64,17 @@
 				"parameters": [{
 						"name": "provider",
 						"in": "path",
-						"description": "The providers' identifier.",
+						"description": "The provider's identifier.",
 						"required": true,
-						"type": "string"
+						"type": "string",
+						"default": "spoofer"
 					}, {
 						"name": "providerPropertyId",
 						"in": "path",
 						"description": "The provider's unique ID for property.",
 						"required": true,
-						"type": "string"
-					}, {
-						"name": "TUID",
-						"in": "header",
-						"description": "For Internal Use Only.",
-						"required": false,
-						"type": "integer",
-						"format": "int32"
+						"type": "string",
+						"default": "12933870"
 					}
 				],
 				"responses": {
@@ -106,7 +96,7 @@
 				}
 			}
 		},
-		"/{provider}": {
+		"/v1/{provider}": {
 			"put": {
 				"tags": ["Properties"],
 				"summary": "Creates or updates properties for a given provider. For updates, the entire property document must be sent: the update operation is a full overlay.",
@@ -116,9 +106,10 @@
 				"parameters": [{
 						"name": "provider",
 						"in": "path",
-						"description": "The providers' identifier.",
+						"description": "The provider's identifier.",
 						"required": true,
-						"type": "string"
+						"type": "string",
+						"default": "spoofer"
 					}, {
 						"name": "properties",
 						"in": "body",
@@ -129,14 +120,8 @@
 							"items": {
 								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
 							}
-						}
-					}, {
-						"name": "TUID",
-						"in": "header",
-						"description": "For Internal Use Only.",
-						"required": false,
-						"type": "integer",
-						"format": "int32"
+						},
+						"default": "[\r\n  {\r\n    \"providerPropertyId\": \"12933870\",\r\n    \"name\": \"Property Name\",\r\n    \"latitude\": \"21.3752\",\r\n    \"longitude\": \"-88.3261\",\r\n    \"providerPropertyUrl\": \"http://example.org\",\r\n    \"structureType\": \"Hotel\",\r\n    \"currencyCode\": \"GBP\",\r\n    \"billingCurrencyCode\": \"GBP\",\r\n    \"timeZone\": \"Europe/Dublin\",\r\n    \"addresses\": [\r\n      {\r\n        \"line1\": \"Address Line 1\",\r\n        \"line2\": null,\r\n        \"city\": \"City\",\r\n        \"state\": \"State or Province\",\r\n        \"postalCode\": \"77780\",\r\n        \"countryCode\": \"MEX\"\r\n      }\r\n    ],\r\n    \"ratings\": [\r\n      {\r\n        \"score\": 4.0,\r\n        \"maxScore\": 5.0,\r\n        \"source\": \"AAA\",\r\n        \"description\": \"4 STARS\"\r\n      }\r\n    ],\r\n    \"contacts\": {\r\n      \"property\": {\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"1234567\"\r\n          }\r\n        ]\r\n      },\r\n      \"reservationManager\": {\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"emails\": [\r\n          \"abc@xyz.com\"\r\n        ],\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"4567890\"\r\n          },\r\n          {\r\n            \"phoneNumberType\": \"Fax\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"7890123\"\r\n          }\r\n        ]\r\n      },\r\n      \"alternateReservationManager\": {\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"1234567\"\r\n          }\r\n        ]\r\n      },\r\n      \"generalManager\": {\r\n        \"firstName\": \"General\",\r\n        \"lastName\": \"Manager\",\r\n        \"emails\": [\r\n          \"abc123@xyz.com\"\r\n        ]\r\n      }\r\n    },\r\n    \"airports\": [\r\n      {\r\n        \"code\": \"PCM\",\r\n        \"name\": \"Playa del Carmen Airport\"\r\n      }\r\n    ],\r\n    \"contents\": [\r\n      {\r\n        \"locale\": \"en-US\",\r\n        \"name\": \"Localized Property Name\",\r\n        \"providerPropertyUrl\": null,\r\n        \"images\": [\r\n          {\r\n            \"url\": \"http://images.xyz.com/mainImage.jpg\",\r\n            \"categoryCode\": \"FEATURED_IMAGE\",\r\n            \"caption\": \"Main Image\"\r\n          },\r\n          {\r\n            \"url\": \"http://images.xyz.com/additionalImage.jpg\",\r\n            \"categoryCode\": null,\r\n            \"caption\": \"Additional Image\"\r\n          }\r\n        ],\r\n        \"amenities\": [\r\n          {\r\n            \"code\": \"BREAKFAST\",\r\n            \"detailCode\": \"FREE\",\r\n            \"value\": null\r\n          },\r\n          {\r\n            \"code\": \"WIFI_INTERNET\",\r\n            \"detailCode\": \"SURCHARGE_PER_STAY\",\r\n            \"value\": 10.99\r\n          }\r\n        ],\r\n        \"paragraphs\": [\r\n          {\r\n            \"code\": \"DESCRIPTION\",\r\n            \"value\": \"Property description.\"\r\n          },\r\n          {\r\n            \"code\": \"SPECIAL_CHECKIN_INSTRUCTIONS\",\r\n            \"value\": \"Special check-in instructions.\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"propertyCollectedMandatoryFees\": [\r\n      {\r\n        \"code\": \"RESORT_FEE\",\r\n        \"scope\": \"PER_PERSON\",\r\n        \"duration\": \"PER_NIGHT\",\r\n        \"value\": 25.99,\r\n        \"startDate\": null,\r\n        \"endDate\": null\r\n      }\r\n    ],\r\n    \"taxes\": [\r\n      {\r\n        \"code\": \"VAT\",\r\n        \"detailCode\": \"PERCENT_PER_STAY\",\r\n        \"value\": 20.0\r\n      }\r\n    ],\r\n    \"policies\": [\r\n      {\r\n        \"code\": \"MINIMUM_CHECKIN_AGE\",\r\n        \"detailCode\": null,\r\n        \"value\": \"18\"\r\n      },\r\n      {\r\n        \"code\": \"CHECKIN_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"2:00 PM\"\r\n      },\r\n      {\r\n        \"code\": \"CHECKOUT_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"11:00 AM\"\r\n      },\r\n      {\r\n        \"code\": \"CANCELLATION_CUTOFF_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"6:00 PM\"\r\n      }\r\n    ],\r\n    \"inventorySettings\": {\r\n      \"rateAcquisitionType\": \"NET_RATE\"\r\n    },\r\n    \"attributes\": [\r\n      {\r\n        \"code\": \"TOTAL_ROOMS\",\r\n        \"value\": \"15\"\r\n      }\r\n    ]\r\n  }\r\n]"
 					}
 				],
 				"responses": {
@@ -158,7 +143,7 @@
 				}
 			}
 		},
-		"/{provider}/{providerPropertyId}/status": {
+		"/v1/{provider}/{providerPropertyId}/status": {
 			"get": {
 				"tags": ["PropertyStatus"],
 				"summary": "Returns the current status of a particular property.",
@@ -168,22 +153,17 @@
 				"parameters": [{
 						"name": "provider",
 						"in": "path",
-						"description": "The providers' identifier.",
+						"description": "The provider's identifier.",
 						"required": true,
-						"type": "string"
+						"type": "string",
+						"default": "spoofer"
 					}, {
 						"name": "providerPropertyId",
 						"in": "path",
-						"description": "Provider's unique property ID for property.",
+						"description": "The provider's unique property ID for property.",
 						"required": true,
-						"type": "string"
-					}, {
-						"name": "TUID",
-						"in": "header",
-						"description": "For Internal Use Only.",
-						"required": false,
-						"type": "integer",
-						"format": "int32"
+						"type": "string",
+						"default": "12933870"
 					}
 				],
 				"responses": {
@@ -229,136 +209,6 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
-					}
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Content.Property": {
-			"type": "object",
-			"properties": {
-				"providerPropertyId": {
-					"type": "string"
-				},
-				"provider": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"expediaId": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"name": {
-					"type": "string"
-				},
-				"defaultLocale": {
-					"type": "string"
-				},
-				"latitude": {
-					"type": "string"
-				},
-				"longitude": {
-					"type": "string"
-				},
-				"providerPropertyUrl": {
-					"type": "string"
-				},
-				"structureType": {
-					"type": "string"
-				},
-				"currencyCode": {
-					"type": "string"
-				},
-				"billingCurrencyCode": {
-					"type": "string"
-				},
-				"timeZone": {
-					"type": "string"
-				},
-				"addresses": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Address"
-					}
-				},
-				"ratings": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyRating"
-					},
-					"readOnly": true
-				},
-				"contacts": {
-					"type": "object",
-					"properties": {
-						"Property": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"ReservationManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"AlternateReservationManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"GeneralManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						},
-						"PropertyExtranetUser": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
-						}
-					},
-					"readOnly": true
-				},
-				"airports": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Airport"
-					},
-					"readOnly": true
-				},
-				"contents": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyContent"
-					}
-				},
-				"propertyCollectedMandatoryFees": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee"
-					},
-					"readOnly": true
-				},
-				"taxes": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Tax"
-					},
-					"readOnly": true
-				},
-				"policies": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Policy"
-					},
-					"readOnly": true
-				},
-				"inventorySettings": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.InventorySettings"
-				},
-				"attributes": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyAttribute"
-					},
-					"readOnly": true
-				},
-				"status": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Link"
-				},
-				"roomTypes": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomType"
 					}
 				}
 			}
@@ -418,15 +268,13 @@
 					"type": "array",
 					"items": {
 						"type": "string"
-					},
-					"readOnly": true
+					}
 				},
 				"phoneNumbers": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PhoneNumber"
-					},
-					"readOnly": true
+					}
 				}
 			}
 		},
@@ -457,22 +305,19 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Image"
-					},
-					"readOnly": true
+					}
 				},
 				"amenities": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Amenity"
-					},
-					"readOnly": true
+					}
 				},
 				"paragraphs": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Paragraph"
-					},
-					"readOnly": true
+					}
 				}
 			}
 		},
@@ -531,14 +376,6 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.InventorySettings": {
-			"type": "object",
-			"properties": {
-				"rateAcquisitionType": {
-					"type": "string"
-				}
-			}
-		},
 		"Expedia.Xpresso.Common.Models.Content.PropertyAttribute": {
 			"type": "object",
 			"properties": {
@@ -579,7 +416,7 @@
 			"type": "object",
 			"properties": {
 				"phoneNumberType": {
-					"enum": ["Undefined", "Phone", "Fax", "Mobile"],
+					"enum": ["Phone", "Fax", "Mobile"],
 					"type": "string"
 				},
 				"countryAccessCode": {
@@ -633,24 +470,150 @@
 				}
 			}
 		},
+		"Expedia.Xpresso.Common.Models.Content.InventorySettings": {
+			"type": "object",
+			"properties": {
+				"rateAcquisitionType": {
+					"enum": ["SELL_LAR", "NET_RATE"],
+					"type": "string"
+				}
+			}
+		},
+		"Expedia.Xpresso.Common.Models.Content.Property": {
+			"type": "object",
+			"properties": {
+				"providerPropertyId": {
+					"type": "string"
+				},
+				"provider": {
+					"type": "string",
+					"readOnly": true
+				},
+				"expediaId": {
+					"format": "int32",
+					"type": "integer",
+					"readOnly": true
+				},
+				"name": {
+					"type": "string"
+				},
+				"latitude": {
+					"type": "string"
+				},
+				"longitude": {
+					"type": "string"
+				},
+				"createdUtc": {
+					"format": "date-time",
+					"type": "string",
+					"readOnly": true
+				},
+				"modifiedUtc": {
+					"format": "date-time",
+					"type": "string",
+					"readOnly": true
+				},
+				"providerPropertyUrl": {
+					"type": "string"
+				},
+				"structureType": {
+					"enum": ["HOTEL", "MOTEL", "APART_HOTEL", "BED_AND_BREAKFAST", "INN", "APARTMENT", "CONDO", "COTTAGE"],
+					"type": "string"
+				},
+				"currencyCode": {
+					"type": "string"
+				},
+				"billingCurrencyCode": {
+					"type": "string"
+				},
+				"timeZone": {
+					"type": "string"
+				},
+				"addresses": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Address"
+					}
+				},
+				"ratings": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyRating"
+					}
+				},
+				"contacts": {
+					"type": "object",
+					"properties": {
+						"Property": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"ReservationManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"AlternateReservationManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"GeneralManager": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						},
+						"PropertyExtranetUser": {
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+						}
+					}
+				},
+				"airports": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Airport"
+					}
+				},
+				"contents": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyContent"
+					}
+				},
+				"propertyCollectedMandatoryFees": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee"
+					}
+				},
+				"taxes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Tax"
+					}
+				},
+				"policies": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Policy"
+					}
+				},
+				"inventorySettings": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.InventorySettings"
+				},
+				"attributes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyAttribute"
+					}
+				},
+				"status": {
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Link"
+				},
+				"roomTypes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomType"
+					}
+				}
+			}
+		},
 		"Expedia.Xpresso.Common.Models.Content.PropertyResponse": {
 			"type": "object",
 			"properties": {
-				"statistics": {
-					"type": "object",
-					"additionalProperties": {
-						"format": "int32",
-						"type": "integer"
-					},
-					"readOnly": true
-				},
-				"validationErrors": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.ValidationError"
-					},
-					"readOnly": true
-				},
 				"entity": {
 					"type": "array",
 					"items": {
@@ -662,25 +625,6 @@
 					"items": {
 						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
 					}
-				}
-			}
-		},
-		"Expedia.Xpresso.Common.Models.Content.ValidationError": {
-			"type": "object",
-			"properties": {
-				"provider": {
-					"format": "int32",
-					"type": "integer"
-				},
-				"providerPropertyId": {
-					"type": "string"
-				},
-				"code": {
-					"enum": ["PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
-					"type": "string"
-				},
-				"message": {
-					"type": "string"
 				}
 			}
 		},
@@ -702,8 +646,7 @@
 			"type": "object",
 			"properties": {
 				"provider": {
-					"format": "int32",
-					"type": "integer"
+					"type": "string"
 				},
 				"providerPropertyId": {
 					"type": "string"
@@ -713,6 +656,7 @@
 					"type": "integer"
 				},
 				"code": {
+					"enum": ["OnboardingFailed", "ExpediaIdAssigned", "FinanceSetupPending", "OnboardingSucceeded", "PropertySaved", "FinanceSetupSucceeded", "ExpediaIdAssignmentPending", "PropertyDisabled"],
 					"type": "string"
 				},
 				"timestampUtc": {
@@ -722,7 +666,7 @@
 				"reasonCodes": {
 					"type": "array",
 					"items": {
-						"enum": ["PropertyNotFound", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "InvalidProviderPropertyUrl", "NoContentImages", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode", "RateCommentsNotSupported", "BlockedPropertyChain", "NotApproved", "MultisourceNotSupported"],
+						"enum": ["None", "PropertyDisabled", "MissingExpediaId", "MissingContactInfo", "BookableProvidersExist", "InvalidPropertyName", "InvalidCoordinates", "NoValidAddresses", "NoValidPhoneNumbers", "InvalidCountryCode", "InternalError", "UnsupportedLocation", "PropertySuspended", "EpcOnboardingInProgress", "OfacCheckFailed", "MissingBillingCurrencyCode"],
 						"type": "string"
 					}
 				},
