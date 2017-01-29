@@ -123,7 +123,11 @@ $(document).ready(function() {
         generateScorecard(data);
     }).fail(function(jqxhr) {
         $("#top-metrics h1").text("");
-        $("#top-metrics p").text("Unfortuntely a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
+        if (jqxhr.status == 404) {
+            $("#top-metrics p").text("Unfortuntely we couldn't find metrics for this ID. Please check the URL provided and try again.");
+        } else {
+            $("#top-metrics p").text("Unfortuntely a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
+        }
         $("#top-metrics").foundation('open');
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
