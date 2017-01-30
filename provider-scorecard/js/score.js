@@ -293,8 +293,12 @@ function generateScorecard(scorecard) {
     provider = scorecard.provider.name;
     ga('send', 'event', 'scorecard', 'view', provider);
     $(".scorecard-provider").text(scorecard.provider.name);
-    $(".scorecard-rank .rank").text(scorecard.provider.rank);
-    $(".scorecard-rank .total").text(scorecard.provider.total);
+
+    if (scorecard.provider.managed) {
+        $(".scorecard-rank .rank").text(scorecard.provider.rank);
+        $(".scorecard-rank .total").text(scorecard.provider.total);
+        $(".scorecard-rank").removeClass("hidden");
+    }
 
     generateScorecardCategory(scorecard.grow, "grow");
     generateScorecardCategory(scorecard.optimise, "optimise");
