@@ -4,8 +4,9 @@ $(document).ready(function () {
         // filter for internal links only
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             // get anchor id
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            var hash = this.hash.replace(/\//g, '\\/');
+            var target = $(hash);
+            target = target.length ? target : $('[name=' + hash.slice(1) + ']');
             if (target.length) {
                 var scrollDistance = target.offset().top;
                 // pervent window from bottoming out when scrolling
