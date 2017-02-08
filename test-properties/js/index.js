@@ -33,12 +33,16 @@ function login(form) {
         localStorage.setItem("AuthToken", jqxhr.getResponseHeader('X-Auth-Token'));
         localStorage.setItem("username", username);
         try {
-            if (JSON.parse(data).admin) {
+            var admin = JSON.parse(data).admin;
+            localStorage.setItem("admin", admin);
+            
+            if (admin) {
                 window.location.href = "/test-properties/schedules-admin"
             } else {
                 window.location.href = "/test-properties/schedules";
             }
         } catch (e) {
+            localStorage.setItem("admin", false);
             window.location.href = "/test-properties/schedules";
         }
     }).fail(function(jqxhr) {
@@ -57,7 +61,11 @@ function login(form) {
 }
 
 if (localStorage.getItem("AuthToken") !== null) {
-    window.location.href = "/test-properties/schedules";
+    if (localStorage.getItem("admin")) {
+        window.location.href = "/test-properties/schedules-admin";
+    } else {
+        window.location.href = "/test-properties/schedules";
+    }
 }
 
 $(document).ready(function() {

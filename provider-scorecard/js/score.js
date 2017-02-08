@@ -292,6 +292,7 @@ function howToEnhanceTriggered() {
 function generateScorecard(scorecard) {
     provider = scorecard.provider.name;
     ga('send', 'event', 'scorecard', 'view', provider);
+    $("title").text(provider + " Scorecard - Expedia Connectivity");
     $(".scorecard-provider").text(scorecard.provider.name);
 
     if (scorecard.provider.managed) {
@@ -307,7 +308,7 @@ function generateScorecard(scorecard) {
 
 function generateScorecardCategory(category, id) {
     $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text("Score: " + Math.round(category.score * 100) + "%");
+    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "optimise" ? "Optimise" : "Grow") + " Score: " + Math.round(category.score * 100) + "%");
 
     for (key in category["attributes"]) {
         if (key == "score") continue;
@@ -352,7 +353,7 @@ function generateScorecardCategory(category, id) {
 
 function generateScorecardFeature(category, id) {
     $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text("Score: " + Math.round(category.score * 100) + "%");
+    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "enhance" ? "Enhance " : "") + "Score: " + Math.round(category.score * 100) + "%");
 
     for (key in category["attributes"]) {
         if (key == "score") continue;
