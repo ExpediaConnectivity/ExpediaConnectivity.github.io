@@ -295,7 +295,7 @@ function extend(e, dt, node, config) {
     }, function(jqxhr) {
         loadEndButtons();
         ajaxError(jqxhr, "Could not extend a test hotel.");
-        ga('send', 'event', 'extend', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
+        ga('send', 'event', 'extend', 'failure', localStorage.getItem('username') + "|" + jqxhr.status, hotelid);
     });
 }
 

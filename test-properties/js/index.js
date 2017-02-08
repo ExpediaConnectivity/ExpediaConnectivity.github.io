@@ -35,7 +35,7 @@ function login(form) {
         try {
             var admin = JSON.parse(data).admin;
             localStorage.setItem("admin", admin);
-            
+
             if (admin) {
                 window.location.href = "/test-properties/schedules-admin"
             } else {
