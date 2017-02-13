@@ -707,6 +707,9 @@ nav li:hover a {
   overflow: hidden;
   height: 50px;
 }
+#nav-main ul.vertical-menu {
+  height: auto;
+}
 #nav-main li {
   vertical-align: middle;
   text-align: center;

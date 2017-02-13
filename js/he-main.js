@@ -8,11 +8,16 @@ $(document).ready(function(){
     });
 
     var checkMenuVisibility = function() {
+        if (toggle.is(':visible')) {
+            $('#menu-wrap ul').addClass("vertical-menu");
+        } else {
+            $('#menu-wrap ul').removeClass("vertical-menu");
+        }
         if (!toggle.hasClass('open') && toggle.is(':visible')) {
             wrap.hide();
         } else {
             wrap.show();
-	}
+	    }
     };
     $(window).resize(checkMenuVisibility);
     checkMenuVisibility();
