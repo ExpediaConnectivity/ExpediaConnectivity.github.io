@@ -704,11 +704,6 @@ nav li:hover a {
   box-sizing: border-box;
   padding: 1.6rem 0 0.4rem;
   display: table;
-  overflow: hidden;
-  height: 50px;
-}
-#nav-main ul.vertical-menu {
-  height: auto;
 }
 #nav-main li {
   vertical-align: middle;
@@ -735,7 +730,6 @@ nav li:hover a {
   right: 35px;
   top: -5px;
   position: absolute;
-  margin-left: 250px;
 }
 #menu-wrap ul {
   display: inline-block;
