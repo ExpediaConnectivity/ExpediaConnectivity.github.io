@@ -61,7 +61,7 @@ function login(form) {
 }
 
 if (localStorage.getItem("AuthToken") !== null) {
-    if (localStorage.getItem("admin")) {
+    if (JSON.parse(localStorage.getItem("admin"))) {
         window.location.href = "/test-properties/schedules-admin";
     } else {
         window.location.href = "/test-properties/schedules";

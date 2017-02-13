@@ -11,7 +11,10 @@ function checkTokenExpiration() {
 
     $("#logoutnav").show();
     $("#hotelnav").show();
-    $("#apikeynav").show();
+    if (JSON.parse(localStorage.getItem("admin"))) {
+        $("#adminnav").show();
+    }
+
     var payload = token.split(".")[1];
     payload = JSON.parse(atob(payload));
     console.log(payload);
