@@ -1,3 +1,6 @@
+.simple-content {
+  float: none !important;
+}
 #loginform input {
   width: 100%;
 }
