@@ -1,0 +1,524 @@
+.faq .collapsed {
+  display: block !important;
+}
+body .navbar-inverse .navbar-toggle {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-inverse .navbar-collapse:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-inverse .navbar-toggle:hover {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-inverse .navbar-toggle:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-inverse .navbar-nav > .open > a {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-inverse .navbar-nav > .open > a:hover {
+  border-color: #00355f;
+  background-color: #ffcb00;
+  color: #00355f;
+}
+body .navbar-inverse .navbar-nav > .open > a:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-toggle:hover {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-toggle:active {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-toggle:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-collapse {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-collapse:hover {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-collapse:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-nav > .open > a {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-nav > .open > a:hover {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+body .navbar-default .navbar-nav > .open > a:focus {
+  border-color: #00355f;
+  background-color: #00355f;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form,
+.navbar-inverse .navbar-toggle,
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form,
+.navbar-default .navbar-toggle,
+header.navbar.navbar-collapse,
+header.navbar.navbar-form,
+header.navbar.navbar-toggle {
+  border-color: #ffcb00;
+}
+.navbar-inverse .navbar-toggle,
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:active,
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+header.navbar.navbar-nav > .open > a,
+header.navbar.navbar-nav > .open > a:hover,
+header.navbar.navbar-nav > .open > a:focus {
+  background-color: #ffcb00;
+}
+#hck-page a {
+  color: #137AAA;
+}
+#hck-page a:hover {
+  color: #0B4965;
+}
+body .btn {
+  background-color: #ffbe00;
+}
+body .btn {
+  color: #3d3100;
+}
+body .btn:hover {
+  background-color: ;
+}
+body .btn:hover {
+  color: ;
+}
+body .btn:focus {
+  background-color: ;
+}
+body .btn:focus {
+  color: ;
+}
+body .btn:active {
+  background-color: ;
+}
+body .btn:active {
+  color: ;
+}
+body .btn.active {
+  background-color: ;
+}
+body .btn.active {
+  color: ;
+}
+body .open .dropdown-toggle.btn {
+  background-color: ;
+}
+body .open .dropdown-toggle.btn {
+  color: ;
+}
+.navbar-nav > li > span {
+  color: #FFFFFF;
+}
+.navbar-nav > li > span:hover {
+  color: #00355f;
+}
+.navbar-nav > li.expanded span:hover {
+  background-color: #ffcb00;
+}
+.navbar-nav > li.expanded.active {
+  background-color: #ffcb00;
+}
+.navbar-nav > li > span > span.caret {
+  border-bottom-color: #FFFFFF;
+  border-top-color: #FFFFFF;
+  color: #FFFFFF;
+}
+body #push {
+  height: 100px;
+}
+body.navbar-is-fixed-top,
+body.admin-menu.navbar-is-fixed-top,
+body.admin-menu {
+  padding-top: 30px!important;
+}
+.col-sm-12 {
+  width: 100%!important;
+  margin: 0!important;
+}
+.col-sm-12 .tabs--primary {
+  display: none;
+}
+.page-header {
+  display: none;
+}
+.page-content {
+  padding: 0;
+}
+.search-container {
+  display: none !important;
+}
+hr {
+  display: none;
+}
+.container {
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
+#breadcrumb-navbar {
+  display: none;
+}
+#hck-page {
+  font-family: "Helvetica Neue", Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 21px;
+  color: #4F4F4F;
+  letter-spacing: 0.5px;
+}
+#hck-cover {
+  position: relative;
+  background-color: #000000;
+  background-position: center top;
+  background-size: cover;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.hck-title {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  margin-left: -150px;
+  /* Half of the width */
+  top: 20px;
+  background: rgba(26, 27, 45, 0.6);
+  border-radius: 6px;
+  padding: 18px 0;
+}
+.hck-title h1 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 300;
+  margin: 12px 0 18px;
+  color: #FFF;
+}
+.hck-title h5 {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  color: #FFF;
+}
+.hck-title p {
+  display: none;
+}
+.hck-title img {
+  width: 64px;
+  margin: 0 auto;
+  display: block;
+}
+.hck-title-info {
+  width: 280px;
+  margin: 0 auto;
+  color: #FFFFFF;
+  text-align: center;
+}
+.hck-clear {
+  clear: both;
+}
+.hck-2col-content > .hck-details:first-child {
+  width: 49%;
+  float: left;
+}
+.hck-2col-content > .hck-details:last-child {
+  width: 49%;
+  float: right;
+}
+.hck-container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.hck-introduction {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.hck-introduction h4 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  color: #000000;
+}
+.hck-schedule {
+  background: #F7F7F7;
+  border-top: 1px solid #C7C7C7;
+  border-bottom: 1px solid #C7C7C7;
+  margin-bottom: 36px;
+}
+.hck-schedule-times {
+  text-align: left;
+}
+.hck-schedule-times strong,
+.hck-judging strong,
+.hck-prizes strong {
+  font-weight: 500 !important;
+}
+.hck-schedule h3,
+.hck-judging h3,
+.hck-prizes h3,
+.hck-details h3,
+.hck-support h3 {
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+  margin: 0;
+  padding: 24px 0;
+}
+.hck-schedule-times h4 {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 22px;
+  margin: 0 0 12px;
+}
+.hck-schedule-times h4 span {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-right: 12px;
+}
+.hck-judging,
+.hck-prizes,
+.hck-details,
+.hck-support {
+  float: none;
+  width: 100%;
+  margin-bottom: 48px;
+}
+.hck-judging {
+  background-image: url('/images/ico-pie.svg');
+  background-repeat: no-repeat;
+  background-position: 0 18px;
+}
+.hck-prizes {
+  background-image: url('/images/ico-ribbon.svg');
+  background-repeat: no-repeat;
+  background-position: 0 18px;
+}
+.hck-judging h3,
+.hck-judging p,
+.hck-prizes h3,
+.hck-prizes p {
+  padding-left: 64px;
+}
+.hck-details ol li {
+  padding: 18px 0 !important;
+  border-bottom: 1px dotted #C7C7C7;
+}
+.hck-details ul li {
+  padding: 12px 0 !important;
+}
+.hck-support a:link,
+.hck-support a:visited {
+  text-decoration: none;
+  color: #0065B8;
+  font-size: 16px;
+  font-weight: 400;
+}
+.hck-support a:hover {
+  text-decoration: underline;
+  color: #0087F5;
+}
+.hck-support a:active {
+  text-decoration: underline;
+  color: #00355F;
+}
+@media only screen and (min-width: 768px) {
+  #hck-cover {
+    height: 400px;
+    margin-bottom: 30px;
+  }
+  .hck-title {
+    width: 640px;
+    margin-left: -320px;
+    padding: 24px 0;
+    top: 70px;
+  }
+  .hck-title-info {
+    width: 440px;
+    margin: 0 24px 0 0;
+    color: #FFFFFF;
+    float: right;
+    text-align: left;
+  }
+  .hck-title img {
+    float: left;
+    width: 128px;
+    margin-left: 24px;
+  }
+  .hck-title h1 {
+    font-size: 34px;
+    line-height: 40px;
+    font-weight: 300;
+    margin: 12px 0 18px;
+  }
+  .hck-title h5 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 6px;
+  }
+  .hck-title p {
+    display: block;
+  }
+  .hck-container {
+    width: 750px;
+  }
+  .hck-schedule-times {
+    padding-left: 18px;
+    width: 100%;
+  }
+  .hck-schedule h3 {
+    padding-left: 24px;
+  }
+  .hck-judging,
+  .hck-support {
+    float: left;
+    width: 49%;
+  }
+  .hck-prizes {
+    float: right;
+    width: 49%;
+  }
+  .hck-support a:link,
+  .hck-support a:visited {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #hck-cover {
+    height: 500px;
+    margin-bottom: 60px;
+  }
+  .hck-container {
+    width: 970px;
+  }
+  .hck-introduction,
+  .hck-schedule,
+  .hck-details {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .hck-introduction h4 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .hck-schedule h3,
+  .hck-judging h3,
+  .hck-prizes h3,
+  .hck-details h3,
+  .hck-support h3 {
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 34px;
+    color: #000000;
+  }
+  .hck-schedule h3 {
+    padding-left: 24px;
+  }
+  .hck-schedule-times h4 {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 0 0 12px;
+  }
+  .hck-schedule-times h4 span {
+    font-weight: 500;
+    text-transform: uppercase;
+    padding-right: 12px;
+  }
+  .hck-judging,
+  .hck-prizes {
+    margin-bottom: 48px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #hck-cover {
+    height: 500px;
+  }
+  .hck-title {
+    width: 1024px;
+    left: 50%;
+    margin-left: -512px;
+    /* Half of the width */
+  }
+  .hck-title img {
+    width: 192px;
+  }
+  .hck-title-info {
+    width: 754px;
+  }
+  .hck-title h1 {
+    font-size: 60px;
+    line-height: 72px;
+    margin: 0 0 18px;
+  }
+  .hck-title h5 {
+    font-size: 32px;
+    line-height: 60px;
+    margin: 0 0 12px;
+  }
+  .hck-title p {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .hck-container {
+    width: 1170px;
+  }
+  .hck-judging,
+  .hck-prizes {
+    margin-bottom: 60px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  #hck-cover {
+    height: 600px;
+  }
+  .hck-title {
+    background: none;
+  }
+}
+@media only screen and (min-width: 2000px) {
+  #hck-cover {
+    background-position: center center;
+  }
+  .hck-title {
+    background: rgba(26, 27, 45, 0.6);
+  }
+}
+.tracer {
+  outline: red 1px dotted;
+}
