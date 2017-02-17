@@ -121,6 +121,58 @@ h2 {
     </div>
 </section>
 
+
+<a name="bed-occ-change"></a>
+<div class="row">
+    <div class="small-12 small-centered medium-10 columns">
+        <div class="blog-spacer">&nbsp;</div>
+    </div>
+</div>
+<div class="row">
+    <div class="small-12 small-centered medium-10 columns">
+        <div class="blog-post">
+            <div class="blog-title">
+              <h2>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h2>
+            </div>
+            <div class="row">
+                <div class="small-4 large-5 columns">
+                    <div class="blog-date">
+                        <span title="16th of February, 2017">2017-02-16</span>
+                    </div>
+                </div>
+                <div class="small-4 large-5 columns">
+                    <div class="blog-tags">
+                        <span class="blog-tag label">bedding occupancy enhancements</span>
+                    </div>
+                </div>
+          </div>      
+          <div class="blog-content">
+            Expedia is enhancing the bedding and occupancy configuration for room types so we can better represent the diversity of lodging bedding options. Together with our lodging partners this will allow us to deliver a better guest experience through standardization and improved accuracy. 
+            <br/><br/>
+            <strong>What changed?</strong>
+            <br/><br/>
+            The new configuration impacts the Booking Notification API, Booking Retrieval API, and Product API*. We’ve replaced the 256 codes currently available for sending Expedia bed-type information with a simplified set of codes and attributes. 
+            For bookings, we will continue to send bed-type information in the special request field, but we’ll send it in a free-form text string instead of fixed value codes. Free-text descriptions support better representation of the diversity of bedding configurations. Please refer to the <a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html">API documentation</a> for updated specifications. 
+            <br/><br/>
+            <strong>What does this mean and what do I need to do?</strong>
+            <br/><br/>
+            Bed-type information sent to Expedia should use the 11 new codes. To avoid failed bookings and ensure the correct bed type is communicated to the front desk, you must pass the bed type to the PMS via free-text string rather than by code. 
+            <br/><br/>
+            If you use the Expedia Booking Notification API or the Expedia QuickConnect Booking Retrieval API, ensure that: 
+            <ul>
+             <li>Your system accepts a bed-type description as free-form text and pass it on to the hotelier (PMS) as a string rather than a code.</li>
+             <li>Your system accepts any bed-type code (ex. code 1.5 for multiple beds).</li>
+            </ul>
+            <br/>
+            <strong>Note:</strong> For room types with multiple bedding options such as “1 king bed” or “2 double beds,” the bed-type code might not match the bed type reflected in the free-text. The bedding option selected by the customer will be sent in the free-text booking message. As long as your system is capable of ignoring the code and consuming only the bed-type description this should not be an issue.
+            <br/><br/>
+            *If you use the Product API, you can create a room type with the new bedding and occupancy configuration through the API. Please refer to the <a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html">Expedia Product API documentation</a> for examples.
+          </div>
+        </div>
+    </div>
+</div>
+
+
 <a name="eqc-url-change"></a>
 <div class="row">
     <div class="small-12 small-centered medium-10 columns">
