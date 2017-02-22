@@ -14,12 +14,96 @@ function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><link rel="stylesheet" href="/css/he-main.css">
 <style>
+    @font-face {
+        font-family: UITKIcons;
+        src: url(https://a.travel-assets.com/uitoolkit/2-69/3eb4426adf0e53d080cfd485a53dd0eccf56f9a5/core/fonts/UITKIcons.eot?#iefix) format('No-IE-404'), url(https://a.travel-assets.com/uitoolkit/2-69/3eb4426adf0e53d080cfd485a53dd0eccf56f9a5/core//fonts/UITKIcons.svg#UITKIcons) format('svg'), url(https://a.travel-assets.com/uitoolkit/2-69/3eb4426adf0e53d080cfd485a53dd0eccf56f9a5/core//fonts/UITKIcons.woff) format('woff'), url(https://a.travel-assets.com/uitoolkit/2-69/3eb4426adf0e53d080cfd485a53dd0eccf56f9a5/core//fonts/UITKIcons.ttf) format('truetype');
+        font-weight: 400;
+        font-style: normal
+    }
+
+    .icon + .alt:not(.ie8) {
+        border: none;
+        clip: rect(0 0 0 0);
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute !important
+    }
+
+    .icon::before, .icon:after {
+        display: inline-block;
+        position: relative;
+        font-family: UITKIcons;
+        font-weight: 400;
+        line-height: 1;
+        text-align: center;
+        speak: none
+    }
+
+    .icon-toggle90:after {
+        content: "\e025"
+    }
+
     #section-intro_paragraph {
         margin-bottom: 1rem;
     }
 
     .hackathon-ad {
         margin-top: 0;
+    }
+
+    .announcement-column {
+        margin: 0;
+        padding-left: 0;
+    }
+
+    .announcement {
+        text-align: left;
+        padding-left: 20px;
+        padding-right: 20px;
+        display: block;
+    }
+
+    .announcement:hover {
+        color: inherit;
+    }
+
+    .announcement:hover>div {
+        text-decoration: underline;
+    }
+
+    .announcement > div {
+        display: inline-block;
+    }
+
+    .announcement > p {
+        margin-top: 0.5em;
+    }
+
+    .announcement > .icon {
+        float: right;
+        position: relative;
+        top: 1.25em;
+        text-align: right;
+        margin: 0 20px 0 0;
+    }
+
+    .announcement > .icon:after {
+        position: absolute;
+    }
+
+    .latest-announcenments {
+        max-width: 100%;
+        float: none;
+        margin: 0 0 2rem;
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .latest-announcenments div.category {
+        margin: 0;
     }
 </style>
 
@@ -34,17 +118,30 @@ function googleTranslateElementInit() {
         <div class="row">
             <div class="twelve columns">
                 <p>
-                    Welcome to Expedia's Partner API website. We provide guides, API definitions, samples, and a <a href="/test-properties/">tool to use our test properties</a> (if you already have an Expedia Partner Central login) to get you up and running with the various APIs Expedia provides.
+                    Welcome to Expedia's Partner API website. We provide guides, API definitions, samples, and a <a
+                        href="/test-properties/">tool to use our test properties</a> (if you already have an Expedia
+                    Partner Central login) to get you up and running with the various APIs Expedia provides.
                 </p>
             </div>
         </div>
     </div>
 </section>
-<section class="row">
-    <a href="/blog#bed-occ-change">
-        <img class="hackathon-ad twelve columns show-for-medium" src="/images/bedding_and_occupancy_banner.png"/>
-        <img class="hackathon-ad twelve columns show-for-small-only" src="/images/bedding_and_occupancy_banner_mob.png"/>
-    </a>
+<section class="latest-announcenments cards xlarge-6 medium-8 columns">
+    <div class="category">Latest Announcements</div>
+    <div class="announcement-column large-6 small-12 columns">
+        <a class="announcement card" href="/hackathon">
+            <span class="icon icon-toggle90"></span>
+            <div class="card-header">Expedia Hackathon 2017</div>
+            <p>New hackathon in Madrid in June 2017!</p>
+        </a>
+    </div>
+    <div class="announcement-column large-6 small-12 columns">
+        <a class="announcement card" href="/blog#eqc-url-change">
+            <span class="icon icon-toggle90"></span>
+            <div class="card-header">Bedding and Occupancy Configuration</div>
+            <p>More diverse bedding options available.</p>
+        </a>
+    </div>
 </section><div class="row full-width"><div class="small-12 small-centered medium-8 xlarge-6 columns cards"><div class="category he-active_now he-animate he-delay_100 he-fade_in">Availability, Rates, Restrictions, Booking Notification, Retrieval And Confirmation</div><div class="card he-active_now he-animate he-delay_200 he-fade_in"><div class="card-logo"><span>E</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Expedia QuickConnect Avail & Rates API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/schemas.html">XML Schemas & Production Endpoints</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-avail-rates-api/revision-history.html">Revision History</a></div><div class="description"><p>Expedia QuickConnect provides an electronic interface for EQC partners to send Expedia updates on availability and rates automatically.</p>
 </div></div></div><div class="card he-active_now he-animate he-delay_300 he-fade_in"><div class="card-logo"><span>B</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/quick-start.html">Booking Notification API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html">API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/sample-messages.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/schemas.html">XML Schemas</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/revision-history.html">Revision History</a></div><div class="description"><p>The Booking Notification API allows partners to receive new, modified or cancelled reservations in near real time, as Expedia customers make these bookings.</p>
 </div></div></div><div class="card he-active_now he-animate he-delay_400 he-fade_in"><div class="card-logo"><span>E</span></div><div class="card-content"><a class="card-header" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Expedia QuickConnect Booking Retrieval & Confirmation API</a><div class="links"><a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/quick-start.html">Quick Start</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-bc.html">Booking Confirmation API Definition</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html">FAQ & Guides</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html">Sample Messages</a> | <a class="card-section" href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/xml-schemas.html">XML Schemas & Production Enpoints</a></div><div class="description"><p>The Booking Retrieval and Booking Confirmation APIs are two simple interfaces that allow Expedia partners to electronically retrieve bookings made on any Expedia Inc. point of sale, and provide a confirmation number. </p>
