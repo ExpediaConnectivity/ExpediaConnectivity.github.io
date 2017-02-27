@@ -308,7 +308,7 @@ function generateScorecard(scorecard) {
 
 function generateScorecardCategory(category, id) {
     $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "optimise" ? "Optimise" : "Grow") + " Score: " + Math.round(category.score * 100) + "%");
+    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "optimise" ? "Optimize" : "Grow") + " Score: " + Math.round(category.score * 100) + "%");
 
     for (key in category["attributes"]) {
         if (key == "score") continue;
