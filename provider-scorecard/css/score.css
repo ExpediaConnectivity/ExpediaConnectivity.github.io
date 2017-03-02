@@ -84,6 +84,9 @@ body {
   color: inherit;
   display: inherit;
 }
+.scorecard-row .scorecard-cards .no-data {
+  cursor: default !important;
+}
 .scorecard-row .scorecard-cards * {
   line-height: 1em;
 }

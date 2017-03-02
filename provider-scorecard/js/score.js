@@ -237,7 +237,7 @@ function populateTopMetricsList(jqxhr, showValues, category) {
 
     if (jqxhr.givenProviderIndex < providers.length) {
         $("#top-metrics .top-metric-cards .top-performer").eq(jqxhr.givenProviderIndex).addClass("given-provider");
-    } else {
+    } else if (jqxhr.givenProvider && jqxhr.givenProviderIndex) {
         var position = jqxhr.givenProviderIndex + 1;
         var givenProvider = jqxhr.givenProvider;
         var value = givenProvider.value;
@@ -264,12 +264,12 @@ function populateTopMetricsList(jqxhr, showValues, category) {
             );
         }
         $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
+    }
 
-        if (!hasTriggeredhowToImprove) {
-            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
-            $(".improve").data("category", category);
-            $(".improve").click(howToImproveTriggered);
-        }
+    if (!hasTriggeredhowToImprove) {
+        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
+        $(".improve").data("category", category);
+        $(".improve").click(howToImproveTriggered);
     }
 }
 
@@ -319,6 +319,7 @@ function generateScorecardCategory(category, id) {
 
         if (!element.hasOwnProperty("value") || value == null || value == "") {
             $(elementSelector).html("");
+            $(elementSelector).addClass("no-data");
             continue;
         } else if (element.unit == "days") {
             value += "<span class='unit-bottom'>" + element.unit + "</span>";
