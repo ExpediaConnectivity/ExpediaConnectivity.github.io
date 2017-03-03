@@ -147,7 +147,7 @@ function overallClickCallback(event) {
         .done(function(jqxhr) {
             $("#top-metrics h1").text("Overall Ranking");
             $("#top-metrics p").text("These are the top providers, ranked according to each providers overall score.");
-            populateTopMetricsList(jqxhr, false);
+            populateTopMetricsList(jqxhr, false, "overall");
             $("#top-metrics").foundation('open');
         }).fail(function(jqxhr) {
             $("#top-metrics h1").text(heading);
