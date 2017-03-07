@@ -46,6 +46,7 @@ var buttons = [
 
 $(document).ready(function() {
     $("#reset").submit(function() {
+        var hotelid = $("#reset").data("hotelid");
         console.log("reset");
         var password = $("#reset-dialogue #password").val();
         var passwordError = validatePassword(password)
@@ -301,6 +302,7 @@ function extend(e, dt, node, config) {
 
 function resetPassword(e, dt, node, config) {
     var hotelid = dt.cell(".selected", 0).data();
+    $("#reset").data("hotelid", hotelid);
     $("#reset-dialogue>div")
         .empty()
         .append($("<p/>").text("Reset the password of Test Hotel ID " + hotelid + "."))
