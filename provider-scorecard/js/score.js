@@ -1,8 +1,8 @@
 function providerPortalServiceBaseUrl() {
     switch (environment.env) {
         case "prod": return "https://provider-portal-service.prod-p.expedia.com";
-        case "dev":  return "https://provider-portal-service.us-west-2.test.expedia.com";
-        default:     return "https://provider-portal-service.us-west-2.test.expedia.com";
+        case "dev":  return "http://localhost:8082";
+        default:     return "http://localhost:8082";
     }
 }
 
@@ -124,15 +124,15 @@ $(document).ready(function() {
     }).fail(function(jqxhr) {
         $("#top-metrics h1").text("");
         if (jqxhr.status == 404) {
-            $("#top-metrics p").text("Unfortuntely we couldn't find metrics for this ID. Please check the URL provided and try again.");
+            $("#top-metrics p").text("Unfortunately we couldn't find metrics for this ID. Please check the URL provided and try again.");
         } else {
-            $("#top-metrics p").text("Unfortuntely a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
+            $("#top-metrics p").text("Unfortunately a problem has occured while attempting to provide you with these metrics.  This error has been reported, please try again later");
         }
         $("#top-metrics").foundation('open');
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-row .border").click(metricClickCallback);
+    $(".scorecard-row .border").not("#newHotels").click(metricClickCallback);
     $(".scorecard-rank").click(overallClickCallback);
 });
 

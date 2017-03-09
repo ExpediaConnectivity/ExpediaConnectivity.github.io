@@ -79,6 +79,9 @@ body {
 .scorecard-row .scorecard-cards .border:hover {
   cursor: pointer;
 }
+.scorecard-row .scorecard-cards .border#newHotels:hover {
+  cursor: default;
+}
 .scorecard-row .scorecard-cards .has-tip {
   font-weight: normal;
   color: inherit;
