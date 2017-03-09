@@ -41,7 +41,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.ResponseWrapper[Expedia.Xpresso.Common.Models.Api.Property]"
 						}
 					},
 					"400": {
@@ -81,7 +81,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyResponse"
 						}
 					},
 					"400": {
@@ -118,7 +118,7 @@
 						"schema": {
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+								"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Property"
 							}
 						},
 						"default": "[\r\n  {\r\n    \"providerPropertyId\": \"12933870\",\r\n    \"name\": \"Property Name\",\r\n    \"latitude\": \"21.3752\",\r\n    \"longitude\": \"-88.3261\",\r\n    \"providerPropertyUrl\": \"http://example.org\",\r\n    \"structureType\": \"Hotel\",\r\n    \"currencyCode\": \"GBP\",\r\n    \"billingCurrencyCode\": \"GBP\",\r\n    \"timeZone\": \"Europe/Dublin\",\r\n    \"addresses\": [\r\n      {\r\n        \"line1\": \"Address Line 1\",\r\n        \"line2\": null,\r\n        \"city\": \"City\",\r\n        \"state\": \"State or Province\",\r\n        \"postalCode\": \"77780\",\r\n        \"countryCode\": \"MEX\"\r\n      }\r\n    ],\r\n    \"ratings\": [\r\n      {\r\n        \"score\": 4.0,\r\n        \"maxScore\": 5.0,\r\n        \"source\": \"AAA\",\r\n        \"description\": \"4 STARS\"\r\n      }\r\n    ],\r\n    \"contacts\": {\r\n      \"property\": {\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"1234567\"\r\n          }\r\n        ]\r\n      },\r\n      \"reservationManager\": {\r\n        \"firstName\": \"First\",\r\n        \"lastName\": \"Last\",\r\n        \"emails\": [\r\n          \"abc@xyz.com\"\r\n        ],\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"4567890\"\r\n          },\r\n          {\r\n            \"phoneNumberType\": \"Fax\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"7890123\"\r\n          }\r\n        ]\r\n      },\r\n      \"alternateReservationManager\": {\r\n        \"phoneNumbers\": [\r\n          {\r\n            \"phoneNumberType\": \"Phone\",\r\n            \"countryAccessCode\": \"1\",\r\n            \"areaCode\": \"123\",\r\n            \"number\": \"1234567\"\r\n          }\r\n        ]\r\n      },\r\n      \"generalManager\": {\r\n        \"firstName\": \"General\",\r\n        \"lastName\": \"Manager\",\r\n        \"emails\": [\r\n          \"abc123@xyz.com\"\r\n        ]\r\n      }\r\n    },\r\n    \"airports\": [\r\n      {\r\n        \"code\": \"PCM\",\r\n        \"name\": \"Playa del Carmen Airport\"\r\n      }\r\n    ],\r\n    \"contents\": [\r\n      {\r\n        \"locale\": \"en-US\",\r\n        \"name\": \"Localized Property Name\",\r\n        \"providerPropertyUrl\": null,\r\n        \"images\": [\r\n          {\r\n            \"url\": \"http://images.xyz.com/mainImage.jpg\",\r\n            \"categoryCode\": \"FEATURED_IMAGE\",\r\n            \"caption\": \"Main Image\"\r\n          },\r\n          {\r\n            \"url\": \"http://images.xyz.com/additionalImage.jpg\",\r\n            \"categoryCode\": null,\r\n            \"caption\": \"Additional Image\"\r\n          }\r\n        ],\r\n        \"amenities\": [\r\n          {\r\n            \"code\": \"BREAKFAST\",\r\n            \"detailCode\": \"FREE\",\r\n            \"value\": null\r\n          },\r\n          {\r\n            \"code\": \"WIFI_INTERNET\",\r\n            \"detailCode\": \"SURCHARGE_PER_STAY\",\r\n            \"value\": 10.99\r\n          }\r\n        ],\r\n        \"paragraphs\": [\r\n          {\r\n            \"code\": \"DESCRIPTION\",\r\n            \"value\": \"Property description.\"\r\n          },\r\n          {\r\n            \"code\": \"SPECIAL_CHECKIN_INSTRUCTIONS\",\r\n            \"value\": \"Special check-in instructions.\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n    \"propertyCollectedMandatoryFees\": [\r\n      {\r\n        \"code\": \"RESORT_FEE\",\r\n        \"scope\": \"PER_PERSON\",\r\n        \"duration\": \"PER_NIGHT\",\r\n        \"value\": 25.99,\r\n        \"startDate\": null,\r\n        \"endDate\": null\r\n      }\r\n    ],\r\n    \"taxes\": [\r\n      {\r\n        \"code\": \"VAT\",\r\n        \"detailCode\": \"PERCENT_PER_STAY\",\r\n        \"value\": 20.0\r\n      }\r\n    ],\r\n    \"policies\": [\r\n      {\r\n        \"code\": \"MINIMUM_CHECKIN_AGE\",\r\n        \"detailCode\": null,\r\n        \"value\": \"18\"\r\n      },\r\n      {\r\n        \"code\": \"CHECKIN_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"2:00 PM\"\r\n      },\r\n      {\r\n        \"code\": \"CHECKOUT_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"11:00 AM\"\r\n      },\r\n      {\r\n        \"code\": \"CANCELLATION_CUTOFF_TIME\",\r\n        \"detailCode\": null,\r\n        \"value\": \"6:00 PM\"\r\n      }\r\n    ],\r\n    \"inventorySettings\": {\r\n      \"rateAcquisitionType\": \"NET_RATE\",\r\n      \"distributionModels\": [\r\n        \"EXPEDIA_COLLECT\",\r\n        \"HOTEL_COLLECT\"\r\n      ]\r\n    },\r\n    \"attributes\": [\r\n      {\r\n        \"code\": \"TOTAL_ROOMS\",\r\n        \"value\": \"15\"\r\n      }\r\n    ]\r\n  }\r\n]"
@@ -128,13 +128,13 @@
 					"202": {
 						"description": "Accepted",
 						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyResponse"
 						}
 					},
 					"400": {
 						"description": "BadRequest",
 						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyResponse"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyResponse"
 						}
 					},
 					"401": {
@@ -170,7 +170,7 @@
 					"200": {
 						"description": "OK",
 						"schema": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus]"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.ResponseWrapper[Expedia.Xpresso.Common.Models.Api.PropertyStatus]"
 						}
 					},
 					"400": {
@@ -187,7 +187,7 @@
 		}
 	},
 	"definitions": {
-		"Expedia.Xpresso.Common.Models.Error": {
+		"Expedia.Xpresso.Common.Models.Api.Error": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -199,21 +199,21 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Content.Property]": {
+		"Expedia.Xpresso.Common.Models.Api.ResponseWrapper[Expedia.Xpresso.Common.Models.Api.Property]": {
 			"type": "object",
 			"properties": {
 				"entity": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Property"
 				},
 				"errors": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Error"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Address": {
+		"Expedia.Xpresso.Common.Models.Api.Address": {
 			"type": "object",
 			"properties": {
 				"line1": {
@@ -236,7 +236,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PropertyRating": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyRating": {
 			"type": "object",
 			"properties": {
 				"score": {
@@ -255,7 +255,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Contact": {
+		"Expedia.Xpresso.Common.Models.Api.Contact": {
 			"type": "object",
 			"properties": {
 				"firstName": {
@@ -273,12 +273,12 @@
 				"phoneNumbers": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PhoneNumber"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PhoneNumber"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Airport": {
+		"Expedia.Xpresso.Common.Models.Api.Airport": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -289,7 +289,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PropertyContent": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyContent": {
 			"type": "object",
 			"properties": {
 				"locale": {
@@ -304,24 +304,24 @@
 				"images": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Image"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Image"
 					}
 				},
 				"amenities": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Amenity"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Amenity"
 					}
 				},
 				"paragraphs": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Paragraph"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Paragraph"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyCollectedMandatoryFee": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -347,7 +347,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Tax": {
+		"Expedia.Xpresso.Common.Models.Api.Tax": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -362,7 +362,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Policy": {
+		"Expedia.Xpresso.Common.Models.Api.Policy": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -376,7 +376,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PropertyAttribute": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyAttribute": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -387,7 +387,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Link": {
+		"Expedia.Xpresso.Common.Models.Api.Link": {
 			"type": "object",
 			"properties": {
 				"href": {
@@ -395,7 +395,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.RoomType": {
+		"Expedia.Xpresso.Common.Models.Api.RoomType": {
 			"type": "object",
 			"properties": {
 				"bedrooms": {
@@ -412,7 +412,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PhoneNumber": {
+		"Expedia.Xpresso.Common.Models.Api.PhoneNumber": {
 			"type": "object",
 			"properties": {
 				"phoneNumberType": {
@@ -430,7 +430,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Image": {
+		"Expedia.Xpresso.Common.Models.Api.Image": {
 			"type": "object",
 			"properties": {
 				"url": {
@@ -444,7 +444,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Amenity": {
+		"Expedia.Xpresso.Common.Models.Api.Amenity": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -459,7 +459,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Paragraph": {
+		"Expedia.Xpresso.Common.Models.Api.Paragraph": {
 			"type": "object",
 			"properties": {
 				"code": {
@@ -470,7 +470,7 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.InventorySettings": {
+		"Expedia.Xpresso.Common.Models.Api.InventorySettings": {
 			"type": "object",
 			"properties": {
 				"rateAcquisitionType": {
@@ -486,10 +486,11 @@
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.Property": {
+		"Expedia.Xpresso.Common.Models.Api.Property": {
 			"type": "object",
 			"properties": {
 				"providerPropertyId": {
+					"description": "The provider's unique ID for property. Allowable characters include ASCII a-z, A-Z, 0-9, underscore, and dash.",
 					"type": "string"
 				},
 				"provider": {
@@ -539,117 +540,117 @@
 				"addresses": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Address"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Address"
 					}
 				},
 				"ratings": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyRating"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyRating"
 					}
 				},
 				"contacts": {
 					"type": "object",
 					"properties": {
 						"Property": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Contact"
 						},
 						"ReservationManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Contact"
 						},
 						"AlternateReservationManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Contact"
 						},
 						"GeneralManager": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Contact"
 						},
 						"PropertyExtranetUser": {
-							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Contact"
+							"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Contact"
 						}
 					}
 				},
 				"airports": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Airport"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Airport"
 					}
 				},
 				"contents": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyContent"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyContent"
 					}
 				},
 				"propertyCollectedMandatoryFees": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyCollectedMandatoryFee"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyCollectedMandatoryFee"
 					}
 				},
 				"taxes": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Tax"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Tax"
 					}
 				},
 				"policies": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Policy"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Policy"
 					}
 				},
 				"inventorySettings": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.InventorySettings"
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.InventorySettings"
 				},
 				"attributes": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.PropertyAttribute"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyAttribute"
 					}
 				},
 				"status": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Link"
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Link"
 				},
 				"roomTypes": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.RoomType"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.RoomType"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Content.PropertyResponse": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyResponse": {
 			"type": "object",
 			"properties": {
 				"entity": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Content.Property"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Property"
 					}
 				},
 				"errors": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Error"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.ResponseWrapper[Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus]": {
+		"Expedia.Xpresso.Common.Models.Api.ResponseWrapper[Expedia.Xpresso.Common.Models.Api.PropertyStatus]": {
 			"type": "object",
 			"properties": {
 				"entity": {
-					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus"
+					"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.PropertyStatus"
 				},
 				"errors": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Error"
+						"$ref": "#/definitions/Expedia.Xpresso.Common.Models.Api.Error"
 					}
 				}
 			}
 		},
-		"Expedia.Xpresso.Common.Models.Onboarding.PropertyStatus": {
+		"Expedia.Xpresso.Common.Models.Api.PropertyStatus": {
 			"type": "object",
 			"properties": {
 				"provider": {
