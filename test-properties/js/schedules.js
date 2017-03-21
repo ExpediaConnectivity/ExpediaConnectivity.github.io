@@ -190,25 +190,21 @@ function ajaxError(jqxhr, humanError) {
     $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
 }
 
-function addAssignmentField(request, fieldName) {
-    var val = $('#val_' + fieldName).val();
-    if (val != '') {
-        request[fieldName] = val;
-    }
-}
-
-function getAssignmentRequest() {
+function createAssignmentRequest() {
     var request = {};
     for (var i in assignmentRequestFields) {
-        addAssignmentField(request, assignmentRequestFields[i]);
+        var val = $('#val_' + assignmentRequestFields[i]).val();
+        if (val != '') {
+            request[assignmentRequestFields[i]] = val;
+        }
     }
     return JSON.stringify(request);
 }
 
-function jsonToUriVariables(json) {
+function jsonToUriVariables(json, deliminator) {
     return Object.keys(json).map(function(key){
-        return encodeURIComponent(key) + '=' + encodeURIComponent(json[key]);
-    }).join('&');
+        return key + '=' + json[key];
+    }).join(deliminator);
 }
 
 function autoAssignHotel() {
@@ -219,11 +215,12 @@ function autoAssignHotel() {
         return;
     }
     loadStart();
-    var assignmentData = getAssignmentRequest();
-    ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
+    var assignmentData = createAssignmentRequest();
+    ga('send', 'event', 'assign', 'request', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData), '|'));
     jwtRequestWithData("POST", hotelAssignmentServiceUrls.assign(), assignmentData, function(data, textStatus, jqxhr) {
         console.log("Successful response for " + jqxhr.url + " : " + jqxhr.responseText);
-        var hotelId = JSON.parse(jqxhr.responseText).hotelId;
+        var hotel = JSON.parse(jqxhr.responseText);
+        var hotelId = hotel.hotelId;
         datatable.ajax.reload(function() {
             $("#hotels>tbody>tr>td:first-child:contains(" + hotelId + ")").last().parent().children().effect( "highlight", {color:"#FECB2F"}, 700 );
         });
@@ -239,7 +236,7 @@ function autoAssignHotel() {
                 .parent()
                 .foundation('open');
 
-            ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(JSON.parse(assignmentData)));
+            ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(hotel, '|'));
         }, function(jqxhr) {
             loadEnd();
             ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password - please reset the password for the hotel manually.");
