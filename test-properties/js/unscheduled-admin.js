@@ -212,13 +212,11 @@ define(["./features"], function(features) {
 
     var onFeaturesLoaded = function() {
 
-        if (features.isOn("admin-assign")) {
-            unscheduledTable.on('click', 'tr', function() {
-                if (this.rowIndex > 0) {
-                    displayAssignDialog(unscheduledTable.row(this).data());
-                }
-            })
-        }
+        unscheduledTable.on('click', 'tr', function() {
+            if (this.rowIndex > 0) {
+                displayAssignDialog(unscheduledTable.row(this).data());
+            }
+        })
 
     }
 

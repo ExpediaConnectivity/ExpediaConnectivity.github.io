@@ -16,7 +16,7 @@ define(function () {
         });
         */
 
-        parseFeatures(JSON.parse('[{"payload": {"isOn": true}, "name": "admin-assign"}]'));
+        parseFeatures(JSON.parse('[]'));
         $.publish('features.loaded');
     }
 

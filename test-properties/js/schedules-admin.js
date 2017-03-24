@@ -147,12 +147,10 @@ define(["./features"], function(features) {
 
     var onFeaturesLoaded = function() {
 
-        if (features.isOn("admin-assign")) {
-            datatable.button().add(1, {
-                action: displayUnassignDialog,
-                text: 'Unassign'
-            });
-        }
+        datatable.button().add(1, {
+            action: displayUnassignDialog,
+            text: 'Unassign'
+        });
 
     }
 
