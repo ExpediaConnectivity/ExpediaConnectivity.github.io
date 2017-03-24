@@ -4,19 +4,15 @@ define(function () {
 
     function loadFeatures() {
 
-        /*
         jwtRequest("GET", hotelAssignmentServiceUrls.features(), function(data, textStatus, jqxhr) {
-            console.log("Successful response for features " + jqxhr.url + " : " + jqxhr.responseText);
             parseFeatures(JSON.parse(jqxhr.responseText));
+            console.log("features.loaded: " + jqxhr.responseText);
             $.publish('features.loaded');
-
         }, function(jqxhr) {
-            console.log("Could not lookup features test hotels. ");
+            console.log("Could not lookup features. ");
             console.log(jqxhr.responseText);
         });
-        */
 
-        parseFeatures(JSON.parse('[]'));
         $.publish('features.loaded');
     }
 
