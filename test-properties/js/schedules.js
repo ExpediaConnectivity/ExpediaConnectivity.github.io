@@ -156,6 +156,10 @@ function parseFactors(factors) {
         }
         var elem = $("<div class='factor large-6 medium-12 columns'>").attr("id", factor.factorName).append(label).append(sel);
         factorsLoc.append(elem);
+
+        if (factor.factorName == "businessModel") {
+            sel.change(businessModelChanged);
+        }
     }
 }
 
@@ -329,4 +333,16 @@ function validatePassword(password) {
     }
 
     return true;
+}
+
+function businessModelChanged() {
+    $("#val_ratType option").removeAttr("disabled");
+    if ($(this).val() == "Expedia Collect & Hotel Collect (ETP)") {
+        $("#val_ratType option[value='Lowest Available Rate']").removeAttr("selected").attr("disabled", "disabled");
+    } else if ($(this).val() == "Expedia Collect Only") {
+        $("#val_ratType option[value='SELL']").removeAttr("selected").attr("disabled", "disabled");
+    } else if ($(this).val() == "Hotel Collect Only") {
+        $("#val_ratType option[value!='']").removeAttr("selected").attr("disabled", "disabled");
+        $("#val_ratType option[value='SELL']").removeAttr("disabled").attr('selected');
+    }
 }
