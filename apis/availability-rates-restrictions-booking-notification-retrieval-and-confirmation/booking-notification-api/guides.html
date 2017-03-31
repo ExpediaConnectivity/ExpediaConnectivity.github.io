@@ -100,79 +100,8 @@ Note that the booking source information is sent under the POS element in the OT
   &lt;/Source&gt;
 &lt;/POS&gt;
 </code></pre>
-<p>The values used currently by the interface are listed below. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by &quot;A-&quot; in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be &quot;A-Hotels.com&quot;. </p>
-<div><table>
-<thead>
-<tr>
-<th>Interface</th>
-<th>POS/Source/RequestorID/@ID for ExpediaCollect</th>
-<th>POS/Source/RequestorID/@ID for HotelCollect</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>BN</td>
-<td>Expedia</td>
-<td>A-Expedia</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Hotels.com</td>
-<td>A-Hotels.com</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Expedia Affiliate Network</td>
-<td>A-Expedia Affiliate Network</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Egencia</td>
-<td>A-Egencia</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Travelocity</td>
-<td>A-Travelocity</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Orbitz</td>
-<td>A-Orbitz</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Wotif</td>
-<td>A-Wotif</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Hotwire</td>
-<td>A-Hotwire</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>CheapTickets</td>
-<td>A-CheapTickets</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>ebookers</td>
-<td>A-ebookers</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>MrJet</td>
-<td>A-MrJet</td>
-</tr>
-<tr>
-<td>BN</td>
-<td>Lastminute.au</td>
-<td>A-Lastminute.au</td>
-</tr>
-</tbody>
-</table>
-</div><p>Hotel suppliers must ensure proper mapping is done for the new POS ID values in the hotel system so that Hotel Collect bookings can be associated with the appropriate profile.
+<p>The values used currently by the interface are listed under <a href="#reference.html#POSBrandList">Point of Sale Brand List</a>. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by &quot;A-&quot; in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be &quot;A-Hotels.com&quot;. </p>
+<p>Hotel suppliers must ensure proper mapping is done for the new POS ID values in the hotel system so that Hotel Collect bookings can be associated with the appropriate profile.
 Note that the POS ID included in fall-back fax or email notifications will not contain &quot;A-&quot;.</p>
 <h2 id="booking-flow" data-magellan-destination="booking-flow">Booking Flow</h2>
 <p>Here&#39;s a sequence diagram describing the process flow for booking notifications.</p>
@@ -295,18 +224,8 @@ Please note that credit card inform is only sent for the booking or modify reque
 </tr>
 </tbody>
 </table>
-</div><p>The current POS ID values for  Expedia Collect bookings are:</p>
-<ul>
-<li>Expedia: for Expedia Collect bookings made on all Expedia points of sales</li>
-<li>Hotels.com: for Expedia Collect bookings made on all Hotels.com points of sales. </li>
-<li>Expedia Affiliate Network: for Expedia Collect bookings made on all Expedia affiliate networks.</li>
-</ul>
+</div><p>The current POS ID values for  Expedia Collect bookings are listed under <a href="#reference.html#POSBrandList">Point of Sale Brand List</a>.</p>
 <p>Additional POS ID values are sent in the e-notification message for Hotel Collect bookings. The values are the same for the respective points of sales, but prefixed with the letter &quot;A-&quot; in front of the current values.</p>
-<ul>
-<li>A-Expedia: for Hotel Collect bookings made on all Expedia points of sales,</li>
-<li>A-Hotels.com: for Hotel Collect bookings made on all Hotels.com points of sales. </li>
-<li>A-Expedia Affiliate Network: for Hotel Collect bookings made on all Expedia affiliate networks.</li>
-</ul>
 <p>The additional POS ID 5 is used to return a TIDS for hotels participating in Expedia Group Reconciliation process. TIDS are issued and managed by the IATA group. They are used to identify the Expedia contracting entities and compensation payment currencies. Note that TIDS ID is not related to POS ID. Possible values are driven by points of supply. Your lodging connectivity account manager can provide more details about this feature.
 To help understand better the POS element, a few examples are provided here for bookings with different POS.</p>
 <p>Expedia Collect bookings sourced from Expedia points of sales </p>
