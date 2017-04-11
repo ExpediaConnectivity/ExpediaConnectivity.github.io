@@ -1,0 +1,126 @@
+{
+  "apiVersion": "1.0",
+  "apis": [
+    {
+      "description": "getTopTpidAndRegion",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "getTopTpidAndRegion",
+          "notes": "getTopTpidAndRegion",
+          "nickname": "getTopTpidAndRegion",
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "clientId",
+              "name": "cid",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "hotelId",
+              "name": "hotelId",
+              "paramType": "query",
+              "format": "int32",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "msgId",
+              "name": "Message-ID",
+              "paramType": "header",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "OK",
+              "responseModel": "TopTpidsAndRegionsApiResponse"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 403,
+              "message": "Forbidden"
+            },
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ],
+          "deprecated": "false",
+          "type": "TopTpidsAndRegionsApiResponse"
+        }
+      ],
+      "path": "/HopsTopTpidsAndRegions"
+    }
+  ],
+  "basePath": "https://services.expediapartnercentral.com/lodging-sort/v1/hops",
+  "consumes": [
+    "application/json"
+  ],
+  "models": {
+    "TopTpidsAndRegionsApiResponse": {
+      "description": "",
+      "id": "TopTpidsAndRegionsApiResponse",
+      "properties": {
+        "error": {
+          "required": false,
+          "type": "string"
+        },
+        "hotelId": {
+          "required": false,
+          "format": "int32",
+          "type": "integer"
+        },
+        "hopsTpidsList": {
+          "items": {
+            "type": "TpidEntity"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    },
+    "TpidEntity": {
+      "description": "",
+      "id": "TpidEntity",
+      "properties": {
+        "tpid": {
+          "required": false,
+          "format": "int32",
+          "type": "integer"
+        },
+        "sortedRegionList": {
+          "items": {
+            "format": "int64",
+            "type": "integer"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "resourcePath": "/HopsTopTpidsAndRegions",
+  "swaggerVersion": "1.2"
+}

@@ -264,6 +264,9 @@
 			"type": "basic"
 		}
 	},
+	"security": {
+		"Basic": []
+	},
 	"definitions": {
 		"Comment": {
 			"type": "object",

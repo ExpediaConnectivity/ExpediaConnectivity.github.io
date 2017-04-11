@@ -1,0 +1,359 @@
+{
+  "apiVersion": "1.0",
+  "apis": [
+    {
+      "description": "hopsAverageRanks",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "hopsAverageRanks",
+          "notes": "hopsAverageRanks",
+          "nickname": "hopsAverageRanks",
+          "produces": [
+            "application/json"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "hotelId",
+              "name": "hotelId",
+              "paramType": "query",
+              "format": "int32",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "clientId",
+              "name": "cid",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": true,
+              "defaultValue": "",
+              "description": "givenSearchDates",
+              "name": "searchDate",
+              "paramType": "query",
+              "items": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": false,
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "givenCheckinDate",
+              "name": "checkin",
+              "paramType": "query",
+              "format": "date-time",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "givenNumOfDays",
+              "name": "numDays",
+              "paramType": "query",
+              "format": "int32",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "currency",
+              "name": "currency",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "path",
+              "name": "path",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "msgId",
+              "name": "Message-ID",
+              "paramType": "header",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "OK",
+              "responseModel": "SortRanksApiResponse"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 403,
+              "message": "Forbidden"
+            },
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ],
+          "deprecated": "false",
+          "type": "SortRanksApiResponse"
+        }
+      ],
+      "path": "/lodging-sort/v1/hops/HopsAverageRanks"
+    },
+    {
+      "description": "hopsAverageRanksPretty",
+      "operations": [
+        {
+          "method": "GET",
+          "summary": "hopsAverageRanksPretty",
+          "notes": "hopsAverageRanksPretty",
+          "nickname": "hopsAverageRanksPretty",
+          "produces": [
+            "text/html"
+          ],
+          "consumes": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "hotelId",
+              "name": "hotelId",
+              "paramType": "query",
+              "format": "int32",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "clientId",
+              "name": "cid",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": true,
+              "defaultValue": "",
+              "description": "givenSearchDates",
+              "name": "searchDate",
+              "paramType": "query",
+              "items": {
+                "format": "date-time",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": false,
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "givenCheckinDate",
+              "name": "checkin",
+              "paramType": "query",
+              "format": "date-time",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "givenNumOfDays",
+              "name": "numDays",
+              "paramType": "query",
+              "format": "int32",
+              "type": "integer",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "currency",
+              "name": "currency",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "path",
+              "name": "path",
+              "paramType": "query",
+              "type": "string",
+              "required": false
+            },
+            {
+              "allowMultiple": false,
+              "defaultValue": "",
+              "description": "msgId",
+              "name": "Message-ID",
+              "paramType": "header",
+              "type": "string",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 200,
+              "message": "OK",
+              "responseModel": "string"
+            },
+            {
+              "code": 401,
+              "message": "Unauthorized"
+            },
+            {
+              "code": 403,
+              "message": "Forbidden"
+            },
+            {
+              "code": 404,
+              "message": "Not Found"
+            }
+          ],
+          "deprecated": "false",
+          "type": "string"
+        }
+      ],
+      "path": "/lodging-sort/v1/hops/HopsAverageRanks/pretty"
+    }
+  ],
+  "basePath": "https://services.expediapartnercentral.com/",
+  "consumes": [
+    "application/json"
+  ],
+  "models": {
+    "TpidEntityResponse": {
+      "description": "",
+      "id": "TpidEntityResponse",
+      "properties": {
+        "tpid": {
+          "required": false,
+          "format": "int32",
+          "type": "integer"
+        },
+        "regions": {
+          "items": {
+            "type": "RegionEntityResponse"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    },
+    "AverageCheckinDataEntity": {
+      "description": "",
+      "id": "AverageCheckinDataEntity",
+      "properties": {
+        "checkinDate": {
+          "required": false,
+          "type": "string"
+        },
+        "avgRank": {
+          "required": false,
+          "format": "double",
+          "type": "number"
+        },
+        "avgPrice": {
+          "required": false,
+          "format": "double",
+          "type": "number"
+        },
+        "avgComp": {
+          "required": false,
+          "format": "double",
+          "type": "number"
+        }
+      }
+    },
+    "SortRanksApiResponse": {
+      "description": "",
+      "id": "SortRanksApiResponse",
+      "properties": {
+        "error": {
+          "required": false,
+          "type": "string"
+        },
+        "hotelId": {
+          "required": false,
+          "format": "int32",
+          "type": "integer"
+        },
+        "searchDates": {
+          "items": {
+            "type": "SearchDateEntityResponse"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    },
+    "SearchDateEntityResponse": {
+      "description": "",
+      "id": "SearchDateEntityResponse",
+      "properties": {
+        "searchDate": {
+          "required": false,
+          "type": "string"
+        },
+        "tpids": {
+          "items": {
+            "type": "TpidEntityResponse"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    },
+    "RegionEntityResponse": {
+      "description": "",
+      "id": "RegionEntityResponse",
+      "properties": {
+        "regionId": {
+          "required": false,
+          "format": "int64",
+          "type": "integer"
+        },
+        "data": {
+          "items": {
+            "type": "AverageCheckinDataEntity"
+          },
+          "required": false,
+          "type": "array"
+        }
+      }
+    }
+  },
+  "produces": [
+    "text/html",
+    "application/json"
+  ],
+  "resourcePath": "/lodging-sort/v1/hops/HopsAverageRanks",
+  "swaggerVersion": "1.2"
+}

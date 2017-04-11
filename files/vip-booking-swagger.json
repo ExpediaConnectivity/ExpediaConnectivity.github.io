@@ -1,0 +1,261 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A service that provides APIs for ...",
+    "version": "1.0.0",
+    "title": "epc-vip-access-service",
+    "contact": {
+      "url": "https://confluence.sea.corp.expecn.com/",
+      "email": "team@expedia.com"
+    },
+    "license": {
+      "url": "#"
+    }
+  },
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "security": {
+    "epsSecurity": []
+  },
+  "host": "int.services.expediapartnercentral.com",
+  "basePath": "/vip-booking",
+  "tags": [
+    {
+      "name": "hotel-status-controller",
+      "description": "Hotel Status Controller"
+    },
+    {
+      "name": "booking-guest-status-controller",
+      "description": "Booking Guest Status Controller"
+    }
+  ],
+  "paths": {
+    "/v1/bookings/guestVipStatus": {
+      "get": {
+        "tags": [
+          "booking-guest-status-controller"
+        ],
+        "summary": "getGuestVipTierStatus",
+        "operationId": "getGuestVipTierStatusUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "ids",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          }
+        }
+      }
+    },
+    "/v1/bookings/{id}/guestVipStatus": {
+      "get": {
+        "tags": [
+          "booking-guest-status-controller"
+        ],
+        "summary": "getGuestVipTierStatus",
+        "operationId": "getGuestVipTierStatusUsingGET_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          }
+        }
+      }
+    },
+    "/v1/hotels/vipStatus": {
+      "get": {
+        "tags": [
+          "hotel-status-controller"
+        ],
+        "summary": "getHotelVipStatus",
+        "operationId": "getHotelVipStatusUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "description": "ids",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "collectionFormat": "multi"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          }
+        }
+      }
+    },
+    "/v1/hotels/{id}/vipStatus": {
+      "get": {
+        "tags": [
+          "hotel-status-controller"
+        ],
+        "summary": "getHotelVipStatus",
+        "operationId": "getHotelVipStatusUsingGET_1",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ResponseEntity"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "ResponseEntity": {
+      "type": "object",
+      "properties": {
+        "body": {
+          "type": "object"
+        },
+        "statusCode": {
+          "type": "string",
+          "enum": [
+            "100",
+            "101",
+            "102",
+            "103",
+            "200",
+            "201",
+            "202",
+            "203",
+            "204",
+            "205",
+            "206",
+            "207",
+            "208",
+            "226",
+            "300",
+            "301",
+            "302",
+            "302",
+            "303",
+            "304",
+            "305",
+            "307",
+            "308",
+            "400",
+            "401",
+            "402",
+            "403",
+            "404",
+            "405",
+            "406",
+            "407",
+            "408",
+            "409",
+            "410",
+            "411",
+            "412",
+            "413",
+            "413",
+            "414",
+            "414",
+            "415",
+            "416",
+            "417",
+            "418",
+            "419",
+            "420",
+            "421",
+            "422",
+            "423",
+            "424",
+            "426",
+            "428",
+            "429",
+            "431",
+            "500",
+            "501",
+            "502",
+            "503",
+            "504",
+            "505",
+            "506",
+            "507",
+            "508",
+            "509",
+            "510",
+            "511"
+          ]
+        }
+      }
+    }
+  }
+}
