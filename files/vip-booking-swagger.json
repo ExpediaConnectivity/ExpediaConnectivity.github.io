@@ -23,7 +23,7 @@
   "security": {
     "epsSecurity": []
   },
-  "host": "int.services.expediapartnercentral.com",
+  "host": "services.expediapartnercentral.com",
   "basePath": "/vip-booking",
   "tags": [
     {
