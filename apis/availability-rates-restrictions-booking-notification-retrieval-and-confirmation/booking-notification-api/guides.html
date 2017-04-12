@@ -37,7 +37,7 @@ function googleTranslateElementInit() {
 <p>Expedia will always wait to get a valid response before sending another notification affecting the same reservation. When there are more than one notifications pending in the queue for the same booking, Expedia will always wait for a valid response for the previous notification before sending the next one. </p>
 <p>All information sent in the notification must be passed down to the hotel&#39;s Property Management System.</p>
 <h3 id="notification-expiration-time" data-magellan-destination="notification-expiration-time">Notification Expiration Time</h3>
-<p>When Expedia initiates a booking notification and creates a request message, a notification expiration date/time is set and sent in the message header. The notification time may be set to a fixed value of 2 hours 15 minutes from the notification creation time, or calculated based on date of arrival of the booking, which is configurable per partner.</p>
+<p>When Expedia initiates a booking notification and creates a request message, a notification expiration date/time is set and sent in the message header. The notification time may be set to a fixed value of 2 hours 30 minutes from the notification creation time, or calculated based on date of arrival of the booking, which is configurable per partner.</p>
 <p>The purpose of the notification expiration time is to make sure that all possible message delivery attempts between systems are made before giving up on electronic delivery of the notification. </p>
 <p>This notification expiration time is a concern for the notification sender, not for the supplier. This is sent for information only and the supplier must never stop the notification processing because of this notification expiration time being reached. Expedia will accept the response even after the notification has expired.</p>
 <p>Until the notification has been completely processed (Expedia has received a valid response message with confirmation or error message) the notification expiration time will be continually monitored by Expedia to make sure it has not yet expired. 
@@ -100,7 +100,7 @@ Note that the booking source information is sent under the POS element in the OT
   &lt;/Source&gt;
 &lt;/POS&gt;
 </code></pre>
-<p>The values used currently by the interface are listed under <a href="#reference.html#POSBrandList">Point of Sale Brand List</a>. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by &quot;A-&quot; in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be &quot;A-Hotels.com&quot;. </p>
+<p>The values used currently by the interface are listed under <a href="reference.html#/point-of-sale-brand-list">Point of Sale Brand List</a>. However this list is not a fixed list, the current values may change and new values may be added so partners should ensure they make these values configurable. A set of new values will be sent in the e-notification message for Hotel Collect bookings, which will be pre-fixed by &quot;A-&quot; in front of the current values for the respective points of sales. For example for Hotel Collect bookings made on hotels.com points of sales, the POS ID value will be &quot;A-Hotels.com&quot;. </p>
 <p>Hotel suppliers must ensure proper mapping is done for the new POS ID values in the hotel system so that Hotel Collect bookings can be associated with the appropriate profile.
 Note that the POS ID included in fall-back fax or email notifications will not contain &quot;A-&quot;.</p>
 <h2 id="booking-flow" data-magellan-destination="booking-flow">Booking Flow</h2>
@@ -224,7 +224,7 @@ Please note that credit card inform is only sent for the booking or modify reque
 </tr>
 </tbody>
 </table>
-</div><p>The current POS ID values for  Expedia Collect bookings are listed under <a href="#reference.html#POSBrandList">Point of Sale Brand List</a>.</p>
+</div><p>The current POS ID values for  Expedia Collect bookings are listed under <a href="reference.html#/point-of-sale-brand-list">Point of Sale Brand List</a>.</p>
 <p>Additional POS ID values are sent in the e-notification message for Hotel Collect bookings. The values are the same for the respective points of sales, but prefixed with the letter &quot;A-&quot; in front of the current values.</p>
 <p>The additional POS ID 5 is used to return a TIDS for hotels participating in Expedia Group Reconciliation process. TIDS are issued and managed by the IATA group. They are used to identify the Expedia contracting entities and compensation payment currencies. Note that TIDS ID is not related to POS ID. Possible values are driven by points of supply. Your lodging connectivity account manager can provide more details about this feature.
 To help understand better the POS element, a few examples are provided here for bookings with different POS.</p>
