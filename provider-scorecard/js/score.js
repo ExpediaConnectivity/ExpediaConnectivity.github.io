@@ -23,7 +23,7 @@ var demo = {
         "score": 0.8,
         "attributes": {
             "availabilityLose": {
-                "value": "1.7",
+                "value": "10.0",
                 "success": true,
                 "delta": -14,
                 "deltaSuccess": true,
@@ -31,7 +31,7 @@ var demo = {
                 "differenceFromStandard": -0.28356838
             },
             "rateLose": {
-                "value": "2.9",
+                "value": "4.0",
                 "success": true,
                 "delta": -4,
                 "deltaSuccess": true,
@@ -45,7 +45,7 @@ var demo = {
                 "differenceFromStandard": -0.23718792
             },
             "newHotels": {
-                "value": "50",
+                "value": "20",
                 "success": true,
                 "deltaSuccess": true,
                 "delta": 26
@@ -67,7 +67,7 @@ var demo = {
         "score": 0.9845119,
         "attributes": {
             "arMessages": {
-                "value": "94.1",
+                "value": "95.0",
                 "success": false,
                 "delta": -4.3,
                 "deltaSuccess": false,
@@ -75,7 +75,7 @@ var demo = {
                 "differenceFromStandard": -0.038735867
             },
             "bcMessages": {
-                "value": "99.7",
+                "value": "96.0",
                 "success": true,
                 "delta": 0.2,
                 "deltaSuccess": true,
