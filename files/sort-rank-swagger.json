@@ -131,7 +131,7 @@
           "notes": "hopsAverageRanksPretty",
           "nickname": "hopsAverageRanksPretty",
           "produces": [
-            "text/html"
+            "application/json"
           ],
           "consumes": [
             "application/json"
