@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sort Rank - Lodging Sort Rank (Experimental)</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reference - Lodging Sort Rank (Experimental)</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
     $('.api-content pre>code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
@@ -12,416 +12,249 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Lodging Sort Rank (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="sort-rank"><a class="sidebar-nav-item" href="#sort-rank">Sort Rank</a></li><li class="depth2" data-magellan-arrival="lodging-sort-v1-hops-hopsaverageranks"><a class="sidebar-nav-item" href="#lodging-sort-v1-hops-hopsaverageranks">lodging-sort/v1/hops/HopsAverageRanks</a></li><li class="depth3" data-magellan-arrival="hopsaverageranks"><a class="sidebar-nav-item" href="#hopsaverageranks">hopsAverageRanks</a></li><li class="depth3" data-magellan-arrival="hopsaveragerankspretty"><a class="sidebar-nav-item" href="#hopsaveragerankspretty">hopsAverageRanksPretty</a></li><li class="depth2" data-magellan-arrival="definitions"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/lodging-sort-rank/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="sort-rank" data-magellan-destination="sort-rank">Sort Rank</h1>
-<p>This is the Sort Ranks API, it returns the sort ranks for a given hotel id.</p>
-<h2 id="lodging-sort-v1-hops-hopsaverageranks" data-magellan-destination="lodging-sort-v1-hops-hopsaverageranks">lodging-sort/v1/hops/HopsAverageRanks</h2>
-<h3 id="hopsaverageranks" data-magellan-destination="hopsaverageranks">hopsAverageRanks</h3>
-<p>hopsAverageRanks</p>
-<ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks">https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks</a></li>
-<li>Consumes: <code>application/json</code></li>
-<li>Produces: <code>application/json</code></li>
-</ul>
-<h4 id="parameters" data-magellan-destination="parameters">Parameters</h4>
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Lodging Sort Rank (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/lodging-sort-rank/quickstart.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="sort-rank-endpoint"><a class="sidebar-nav-item" href="#sort-rank-endpoint">Sort Rank Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth3" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/lodging-sort-rank/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>The Sort Ranks API requires HTTP basic auth credentials to be supplied with every request.</p>
+<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<h2 id="sort-rank-endpoint" data-magellan-destination="sort-rank-endpoint">Sort Rank Endpoint</h2>
+<pre><code>GET /lodgingSort/v1/hops/HopsAverageRanks
+</code></pre><p>The Sort Rank endpoint will return a hotel&#39;s average sort rank data for a range of check-in dates.</p>
+<h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
 <div><table>
 <thead>
 <tr>
-<th>Parameter</th>
+<th>Name</th>
 <th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
 <th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hotelId</td>
-<td>query</td>
-<td>hotelId</td>
-<td>false</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>cid</td>
-<td>query</td>
-<td>clientId</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>searchDate</td>
-<td>query</td>
-<td>givenSearchDates</td>
-<td>false</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>checkin</td>
-<td>query</td>
-<td>givenCheckinDate</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>numDays</td>
-<td>query</td>
-<td>givenNumOfDays</td>
-<td>false</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>currency</td>
-<td>query</td>
-<td>currency</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>path</td>
-<td>query</td>
-<td>path</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Message-ID</td>
-<td>header</td>
-<td>msgId</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
-<div><table>
-<thead>
-<tr>
-<th>Status Code</th>
+<th>Example</th>
 <th>Description</th>
-<th>Response Model</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/SortRanksApiResponse">SortRanksApiResponse</a></td>
+<td><code>Authorization</code></td>
+<td>Header</td>
+<td>String</td>
+<td><code>Basic dGVzdDp0ZXN0</code></td>
+<td>Unique identifier for a property/hotel.</td>
+</tr>
+<tr>
+<td><code>hotelId</code></td>
+<td>Query</td>
+<td>Integer</td>
+<td><code>123</code></td>
+<td>Hotel identifier</td>
+</tr>
+<tr>
+<td><code>cid</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>prague-hackathon</code></td>
+<td>Client identifier</td>
+</tr>
+<tr>
+<td><code>searchDate</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>2016-05-15</code></td>
+<td>Can send in a list of search dates. Format: YYYY-MM-DD. Maximum number of search dates: 2 Each search date should be in this range: from today to previous 90 days (from today - 90 days to today) both inclusive. i.e. today-90 &lt;= searchDate &lt;= today, for each searchDate</td>
+</tr>
+<tr>
+<td><code>checkin</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>2016-05-16</code></td>
+<td>Checkin date starts on this day.  Checkin date range: from search date to next 90 days. i.e. searchDate&lt;= checkIn &lt;= searchDate+89</td>
+</tr>
+<tr>
+<td><code>numDays</code></td>
+<td>Query</td>
+<td>Integer</td>
+<td><code>1</code></td>
+<td>Number of checkin dates. Max is 90 days and numDays + checkIn &lt; searchDate + 90. Average sort rank/price/compensation is returned for each Checkin date, where Checkin date starts = checkIn and Checkin date ends = checkIn + numDays - 1.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Query</td>
+<td>String</td>
+<td><code>usd</code></td>
+<td>Standard ISO currency code (for average price and average compensation). Currently only the default USD is supported</td>
 </tr>
 </tbody>
 </table>
-</div><h4 id="potential-error-responses" data-magellan-destination="potential-error-responses">Potential Error Responses</h4>
-<div><table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>default</td>
-<td></td>
-<td><a href="#/definitions/SortRanksApiResponse">SortRanksApiResponse</a></td>
-</tr>
-</tbody>
-</table>
-</div><h3 id="hopsaveragerankspretty" data-magellan-destination="hopsaveragerankspretty">hopsAverageRanksPretty</h3>
-<p>hopsAverageRanksPretty</p>
+</div><h5 id="sample-request-with-all-parameters-specified" data-magellan-destination="sample-request-with-all-parameters-specified">Sample Request with all parameters specified</h5>
+<pre><code>https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1&amp;searchDate=2016-05-15&amp;checkin=2016-05-16&amp;numDays=2
+</code></pre><h3 id="response" data-magellan-destination="response">Response</h3>
+<p>The API returns a hotel&#39;s average sort rank, average price, and average compensation in JSON format aggregated over:</p>
 <ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks/pretty">https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks/pretty</a></li>
-<li>Consumes: <code>application/json</code></li>
-<li>Produces: <code>text/html</code></li>
+<li>Search Date: A list of search date is sent in the request, and the aggregation is for each search date.</li>
+<li>TPID: up to 3 TPIDs are defined for a hotel in top TPIDs and Regions list (see Sort Rank Report: Top TPIDs and Regions API), and the aggregation is over each TPID.</li>
+<li>Region: up to 3 Regions are defined for each of the top TPID in top TPIDs and Regions list, and the aggregation is over each Region.</li>
+<li>Checkin date: average sort rank/price/compensation is returned for each checkin date. Checkin date starts at the checkIn (as sent in the request) and ends at checkIn + numDays - 1.</li>
 </ul>
-<h4 id="parameters-2" data-magellan-destination="parameters-2">Parameters</h4>
+<h3 id="response-format" data-magellan-destination="response-format">Response Format</h3>
 <div><table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Parameter Type</th>
-<th>Description</th>
-<th>Required</th>
-<th>Data Type</th>
-<th>Default Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hotelId</td>
-<td>query</td>
-<td>hotelId</td>
-<td>false</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>cid</td>
-<td>query</td>
-<td>clientId</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>searchDate</td>
-<td>query</td>
-<td>givenSearchDates</td>
-<td>false</td>
-<td>array</td>
-<td></td>
-</tr>
-<tr>
-<td>checkin</td>
-<td>query</td>
-<td>givenCheckinDate</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>numDays</td>
-<td>query</td>
-<td>givenNumOfDays</td>
-<td>false</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>currency</td>
-<td>query</td>
-<td>currency</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>path</td>
-<td>query</td>
-<td>path</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>Message-ID</td>
-<td>header</td>
-<td>msgId</td>
-<td>false</td>
-<td>string</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
-<div><table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>200</td>
-<td>OK</td>
-<td><a href="#/definitions/string">string</a></td>
-</tr>
-</tbody>
-</table>
-</div><h4 id="potential-error-responses-2" data-magellan-destination="potential-error-responses-2">Potential Error Responses</h4>
-<div><table>
-<thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-<th>Response Model</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>401</td>
-<td>Unauthorized</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>403</td>
-<td>Forbidden</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>404</td>
-<td>Not Found</td>
-<td>#/definitions/undefined</td>
-</tr>
-<tr>
-<td>default</td>
-<td></td>
-<td>string</td>
-</tr>
-</tbody>
-</table>
-</div><hr>
-<h2 id="definitions" data-magellan-destination="definitions">Definitions</h2>
-<ul>
-<li><a name="/definitions/TpidEntityResponse"></a>TpidEntityResponse</li>
-</ul>
-<div><table>
-<thead>
-<tr>
-<th>Property Name</th>
+<th>Name</th>
 <th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>hotelId</td>
+<td>Integer</td>
+<td>Hotel Identifier</td>
+</tr>
+<tr>
+<td>searchDate</td>
+<td>String</td>
+<td>YYYY-MM-DD</td>
+</tr>
 <tr>
 <td>tpid</td>
-<td>integer</td>
-<td></td>
+<td>Integer</td>
+<td>Point of Sale (POSa)</td>
 </tr>
-<tr>
-<td>regions</td>
-<td>Array[<a href="#/definitions/RegionEntityResponse">RegionEntityResponse</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><ul>
-<li><a name="/definitions/AverageCheckinDataEntity"></a>AverageCheckinDataEntity</li>
-</ul>
-<div><table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>checkinDate</td>
-<td>string</td>
-<td></td>
+<td>String</td>
+<td>YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>regionId</td>
+<td>Long</td>
+<td>GAIA region ID</td>
 </tr>
 <tr>
 <td>avgRank</td>
-<td>number</td>
-<td></td>
+<td>Double</td>
+<td>Average sort rank (for all searches done on the specified search date for the specified checkin date on the specified TPID and region).</td>
 </tr>
 <tr>
 <td>avgPrice</td>
-<td>number</td>
-<td></td>
+<td>Double</td>
+<td>Average price is returned in USD.</td>
 </tr>
 <tr>
 <td>avgComp</td>
-<td>number</td>
-<td></td>
+<td>Double</td>
+<td>Average compensation is returned in USD.</td>
 </tr>
 </tbody>
 </table>
-</div><ul>
-<li><a name="/definitions/SortRanksApiResponse"></a>SortRanksApiResponse</li>
-</ul>
-<div><table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>error</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>hotelId</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>searchDates</td>
-<td>Array[<a href="#/definitions/SearchDateEntityResponse">SearchDateEntityResponse</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><ul>
-<li><a name="/definitions/SearchDateEntityResponse"></a>SearchDateEntityResponse</li>
-</ul>
-<div><table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>searchDate</td>
-<td>string</td>
-<td></td>
-</tr>
-<tr>
-<td>tpids</td>
-<td>Array[<a href="#/definitions/TpidEntityResponse">TpidEntityResponse</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div><ul>
-<li><a name="/definitions/RegionEntityResponse"></a>RegionEntityResponse</li>
-</ul>
-<div><table>
-<thead>
-<tr>
-<th>Property Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>regionId</td>
-<td>integer</td>
-<td></td>
-</tr>
-<tr>
-<td>data</td>
-<td>Array[<a href="#/definitions/AverageCheckinDataEntity">AverageCheckinDataEntity</a>]</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div></div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
+</div><h5 id="sample-response" data-magellan-destination="sample-response">Sample response</h5>
+<pre><code class="lang-JSON">{
+    &quot;hotelId&quot;: 1,
+    &quot;searchDates&quot;: [
+        {
+            &quot;searchDate&quot;: &quot;2016-05-15&quot;,
+            &quot;tpids&quot;: [
+                {
+                    &quot;regions&quot;: [
+                        {
+                            &quot;data&quot;: [
+                                {
+                                    &quot;avgComp&quot;: 76.67,
+                                    &quot;avgPrice&quot;: 306.69,
+                                    &quot;avgRank&quot;: 374.24,
+                                    &quot;checkinDate&quot;: &quot;2016-05-16&quot;
+                                },
+                                {
+                                    &quot;avgComp&quot;: 95.34,
+                                    &quot;avgPrice&quot;: 381.37,
+                                    &quot;avgRank&quot;: 272.98,
+                                    &quot;checkinDate&quot;: &quot;2016-05-17&quot;
+                                }
+                            ],
+                            &quot;regionId&quot;: 2114
+                        },
+                        {
+                            &quot;data&quot;: [
+                                {
+                                    &quot;avgComp&quot;: 97.66,
+                                    &quot;avgPrice&quot;: 390.64,
+                                    &quot;avgRank&quot;: 3.0,
+                                    &quot;checkinDate&quot;: &quot;2016-05-17&quot;
+                                }
+                            ],
+                            &quot;regionId&quot;: 800053
+                        },
+                        {
+                            &quot;data&quot;: [],
+                            &quot;regionId&quot;: 6144914
+                        }
+                    ],
+                    &quot;tpid&quot;: 3101
+                },
+                {
+                    &quot;regions&quot;: [
+                        {
+                            &quot;data&quot;: [
+                                {
+                                    &quot;avgComp&quot;: 79.78,
+                                    &quot;avgPrice&quot;: 319.11,
+                                    &quot;avgRank&quot;: 436.18,
+                                    &quot;checkinDate&quot;: &quot;2016-05-16&quot;
+                                },
+                                {
+                                    &quot;avgComp&quot;: 97.58,
+                                    &quot;avgPrice&quot;: 390.3,
+                                    &quot;avgRank&quot;: 387.64,
+                                    &quot;checkinDate&quot;: &quot;2016-05-17&quot;
+                                }
+                            ],
+                            &quot;regionId&quot;: 2114
+                        }
+                    ],
+                    &quot;tpid&quot;: 3107
+                },
+                {
+                    &quot;regions&quot;: [
+                        {
+                            &quot;data&quot;: [
+                                {
+                                    &quot;avgComp&quot;: 71.94,
+                                    &quot;avgPrice&quot;: 287.75,
+                                    &quot;avgRank&quot;: 372.18,
+                                    &quot;checkinDate&quot;: &quot;2016-05-16&quot;
+                                },
+                                {
+                                    &quot;avgComp&quot;: 93.25,
+                                    &quot;avgPrice&quot;: 372.97,
+                                    &quot;avgRank&quot;: 276.72,
+                                    &quot;checkinDate&quot;: &quot;2016-05-17&quot;
+                                }
+                            ],
+                            &quot;regionId&quot;: 2114
+                        }
+                    ],
+                    &quot;tpid&quot;: 3109
+                }
+            ]
+        }
+    ]
+}
+</code></pre>
+<h4 id="error-messages" data-magellan-destination="error-messages">Error Messages</h4>
+<p>Even when there are errors, the Sort Ranks API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:</p>
+<pre><code class="lang-JSON">{
+  &quot;error&quot;: &quot;No clientId specified or unknown clientId&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;error&quot;: &quot;No hotelId specified&quot;
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;error&quot;: &quot;Search Date(s) out of range&quot;,
+  &quot;hotelId&quot;: 1
+}
+</code></pre>
+<pre><code class="lang-JSON">{
+  &quot;error&quot;: &quot;Exceeded max. number of Search Dates&quot;,
+  &quot;hotelId&quot;: 1
+}
+</code></pre>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
