@@ -1,0 +1,578 @@
+{
+  "swagger": "2.0",
+  "host": "services.expediapartnercentral.com",
+  "schemes": [
+    "https"
+  ],
+  "info": {
+    "description": "View, update and delete variable margins for hotels over specific date ranges.",
+    "title": "PRS VariableMargin CRUD",
+    "version": "0.0.1"
+  },
+  "basePath": "/accelerator/v1",
+  "paths": {
+    "/hotels/{hotelId}/variablemargins": {
+      "get": {
+        "description": "Get variablemargins",
+        "summary": "Return variablemargins under hotel id provided.",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://confluence/display/SSG/VariableMargins+Get+Method+Overview"
+        },
+        "operationId": "getVariableMargins",
+        "tags": [
+          "variablemargins"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "HotelID": {
+                  "type": "integer"
+                },
+                "VariableMargins": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "VariableMarginID": {
+                        "type": "integer"
+                      },
+                      "StartDate": {
+                        "type": "string"
+                      },
+                      "EndDate": {
+                        "type": "string"
+                      },
+                      "CreateDate": {
+                        "type": "string"
+                      },
+                      "VariableMarginPercentage": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "HotelID",
+                "VariableMargins"
+              ]
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      },
+      "delete": {
+        "description": "Delete variablemargins",
+        "summary": "Deletes variablemargins under hotelid.",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://confluence/pages/viewpage.action?pageId=556899290"
+        },
+        "operationId": "deletevariablemargins",
+        "tags": [
+          "variablemarginss"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "User-ID",
+            "description": "User ID",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "post": {
+        "description": "Add variablemargin",
+        "summary": "Add a variablemargin.",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://confluence/display/SSG/VariableMargins+Add+Method+Overview"
+        },
+        "operationId": "Addvariablemargin",
+        "tags": [
+          "variablemargin"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "HotelID": {
+                  "type": "integer"
+                },
+                "VariableMargins": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "VariableMarginID": {
+                        "type": "integer"
+                      },
+                      "StartDate": {
+                        "type": "string"
+                      },
+                      "EndDate": {
+                        "type": "string"
+                      },
+                      "CreateDate": {
+                        "type": "string"
+                      },
+                      "VariableMarginPercentage": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "HotelID",
+                "VariableMargins"
+              ]
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "Request Content Type",
+            "required": true,
+            "type": "integer",
+            "enum": [
+              "application/json"
+            ]
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request Payload",
+            "required": true,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "StartDate": {
+                  "type": "string"
+                },
+                "EndDate": {
+                  "type": "string"
+                },
+                "VariableMarginPercentage": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "StartDate",
+                "EndDate",
+                "VariableMarginPercentage"
+              ]
+            }
+          },
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "User-ID",
+            "description": "User ID",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    "/hotels/{hotelId}/variablemargins/{variablemarginId}": {
+      "delete": {
+        "description": "Delete one specified variablemargin",
+        "summary": "Deletes one specified variablemargin.",
+        "externalDocs": {
+          "description": "spec page",
+          "url": "https://confluence/pages/viewpage.action?pageId=556899290"
+        },
+        "operationId": "delete a variablemargin",
+        "tags": [
+          "variablemarginss"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "variablemarginId",
+            "description": "variablemarginId ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "User-ID",
+            "description": "User ID",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      },
+      "put": {
+        "description": "Update variablemargin",
+        "summary": "Update an existing variablemargin.",
+        "externalDocs": {
+          "description": "spec page",
+          "url": "https://confluence/display/SSG/VariableMargins+Edit+Method+Overview"
+        },
+        "operationId": "updatevariablemargin",
+        "tags": [
+          "variablemargins"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "HotelID": {
+                  "type": "integer"
+                },
+                "VariableMargins": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "VariableMarginID": {
+                        "type": "integer"
+                      },
+                      "StartDate": {
+                        "type": "string"
+                      },
+                      "EndDate": {
+                        "type": "string"
+                      },
+                      "CreateDate": {
+                        "type": "string"
+                      },
+                      "VariableMarginPercentage": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "HotelID",
+                "VariableMargins"
+              ]
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "header",
+            "name": "Content-Type",
+            "description": "Request Content Type",
+            "required": true,
+            "type": "integer",
+            "enum": [
+              "application/json"
+            ]
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Request Payload",
+            "required": true,
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "VariableMarginID": {
+                  "type": "integer"
+                },
+                "StartDate": {
+                  "type": "string"
+                },
+                "EndDate": {
+                  "type": "string"
+                },
+                "VariableMarginPercentage": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "VariableMarginID",
+                "StartDate",
+                "EndDate",
+                "VariableMarginPercentage"
+              ]
+            }
+          },
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "path",
+            "name": "variablemarginId",
+            "description": "variablemarginId ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "User-ID",
+            "description": "User ID",
+            "required": true,
+            "type": "integer"
+          }
+        ]
+      }
+    },
+    "/hotels/{hotelId}/variablemarginchangehistory": {
+      "get": {
+        "description": "Get variablemargin change history",
+        "summary": "Get variablemargin change history for a hotel id",
+        "externalDocs": {
+          "description": "spec page",
+          "url": "https://confluence/display/SSG/VariableMargins+Edit+Method+Overview"
+        },
+        "operationId": "getvariablemarginChangeHistory",
+        "tags": [
+          "variablemarginsChangeHistory"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "HotelID": {
+                  "type": "integer"
+                },
+                "VariableMarginActivationHistory": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "ChangeDate": {
+                        "type": "string"
+                      },
+                      "Action": {
+                        "type": "string"
+                      },
+                      "UserID": {
+                        "type": "integer"
+                      }
+                    }
+                  }
+                },
+                "VariableMarginChangeHistory": {
+                  "type": "object",
+                  "properties": {
+                    "VariableMarginID": {
+                      "type": "integer"
+                    },
+                    "ChangeHistory": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "ChangeDate": {
+                            "type": "string"
+                          },
+                          "Action": {
+                            "type": "string"
+                          },
+                          "UserID": {
+                            "type": "integer"
+                          },
+                          "StartDate": {
+                            "type": "string"
+                          },
+                          "EndDate": {
+                            "type": "string"
+                          },
+                          "VariableMarginPercentage": {
+                            "type": "integer"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "required": [
+                "HotelID",
+                "VariableMarginActivationHistory",
+                "VariableMarginChangeHistory"
+              ]
+            }
+          }
+        },
+        "security": [
+          {
+            "basicAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "hotelId",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "name": "startDate",
+            "description": "startDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "endDate",
+            "description": "endDate",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "in": "header",
+            "name": "Client-ID",
+            "description": "Client ID",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "basicAuth": {
+      "type": "basic",
+      "description": "HTTP Basic Authentication. Works over `HTTP` and `HTTPS`"
+    }
+  }
+}
