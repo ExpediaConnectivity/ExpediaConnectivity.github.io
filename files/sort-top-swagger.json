@@ -19,15 +19,6 @@
             {
               "allowMultiple": false,
               "defaultValue": "",
-              "description": "clientId",
-              "name": "cid",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
               "description": "hotelId",
               "name": "hotelId",
               "paramType": "query",

@@ -79,13 +79,6 @@
             "description": "Hotel ID",
             "required": true,
             "type": "integer"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
-            "type": "string"
           }
         ]
       },
@@ -118,20 +111,6 @@
             "in": "path",
             "name": "hotelId",
             "description": "Hotel ID",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "User-ID",
-            "description": "User ID",
             "required": true,
             "type": "integer"
           }
@@ -240,20 +219,6 @@
             "description": "Hotel ID",
             "required": true,
             "type": "integer"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "User-ID",
-            "description": "User ID",
-            "required": true,
-            "type": "integer"
           }
         ]
       }
@@ -295,20 +260,6 @@
             "in": "path",
             "name": "variablemarginId",
             "description": "variablemarginId ID",
-            "required": true,
-            "type": "integer"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "User-ID",
-            "description": "User ID",
             "required": true,
             "type": "integer"
           }
@@ -428,20 +379,6 @@
             "description": "variablemarginId ID",
             "required": true,
             "type": "integer"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "User-ID",
-            "description": "User ID",
-            "required": true,
-            "type": "integer"
           }
         ]
       }
@@ -556,13 +493,6 @@
             "name": "endDate",
             "description": "endDate",
             "required": false,
-            "type": "string"
-          },
-          {
-            "in": "header",
-            "name": "Client-ID",
-            "description": "Client ID",
-            "required": true,
             "type": "string"
           }
         ]
