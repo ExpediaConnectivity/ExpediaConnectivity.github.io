@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Production"
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/production-api",
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "security": {
+    "epsSecurity": []
+  },
+  "paths": {
+    "/MonthlyStays": {
+      "get": {
+        "description": "Hotel’s production for each stay month.\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "hotel_adr": {
+                    "description": "Average Daily Rate - Base rate per room night for hotel rooms",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_adr": {
+                    "description": "ADR delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "hotel_only": {
+                    "description": "Price for room only",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "package": {
+                    "description": "Price for package",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "total": {
+                    "description": "hotel_only + package",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_hotel_only": {
+                    "description": "Price for room only - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_package": {
+                    "description": "Price for package - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_total": {
+                    "description": "Price for total - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "year_month": {
+                    "description": "YYYYMM",
+                    "type": "string",
+                    "format": "yyyymm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

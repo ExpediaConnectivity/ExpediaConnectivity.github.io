@@ -1,0 +1,117 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Production"
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/production-api",
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "security": {
+    "epsSecurity": []
+  },
+  "paths": {
+    "/FlashReport": {
+      "get": {
+        "description": "Hotel and compset performance for past and future stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ytd_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

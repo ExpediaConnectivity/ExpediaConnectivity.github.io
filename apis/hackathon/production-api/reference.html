@@ -1,0 +1,299 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reference - Production API (Experimental)</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Production API (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="default"><a class="sidebar-nav-item" href="#default">default</a></li><li class="depth3" data-magellan-arrival="get-production-api-bookingtrends"><a class="sidebar-nav-item" href="#get-production-api-bookingtrends">GET /production-api/BookingTrends</a></li><li class="depth3" data-magellan-arrival="get-production-api-flashreport"><a class="sidebar-nav-item" href="#get-production-api-flashreport">GET /production-api/FlashReport</a></li><li class="depth3" data-magellan-arrival="get-production-api-futurestayproduction7days"><a class="sidebar-nav-item" href="#get-production-api-futurestayproduction7days">GET /production-api/FutureStayProduction7Days</a></li><li class="depth3" data-magellan-arrival="get-production-api-futurestayproduction28days"><a class="sidebar-nav-item" href="#get-production-api-futurestayproduction28days">GET /production-api/FutureStayProduction28Days</a></li><li class="depth3" data-magellan-arrival="get-production-api-monthlystays"><a class="sidebar-nav-item" href="#get-production-api-monthlystays">GET /production-api/MonthlyStays</a></li><li class="depth2" data-magellan-arrival="definitions"><a class="sidebar-nav-item" href="#definitions">Definitions</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/production-api/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
+<h2 id="default" data-magellan-destination="default">default</h2>
+<h3 id="get-production-api-bookingtrends" data-magellan-destination="get-production-api-bookingtrends">GET /production-api/BookingTrends</h3>
+<p>Insights into the travelers’ booking patterns</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/production-api/BookingTrends">https://services.expediapartnercentral.com/production-api/BookingTrends</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters" data-magellan-destination="parameters">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>htid</td>
+<td>query</td>
+<td>Hotel ID</td>
+<td>true</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>$format</td>
+<td>query</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Successful response</td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;category&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;caption&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;l28d_compset_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_compset_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_compset_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_compset_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_hotel_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_hotel_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_hotel_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_hotel_ly&#39;:&nbsp;number<br/>}]</code></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="get-production-api-flashreport" data-magellan-destination="get-production-api-flashreport">GET /production-api/FlashReport</h3>
+<p>Hotel and compset performance for past and future stay dates</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/production-api/FlashReport">https://services.expediapartnercentral.com/production-api/FlashReport</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-2" data-magellan-destination="parameters-2">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>htid</td>
+<td>query</td>
+<td>Hotel ID</td>
+<td>true</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>$format</td>
+<td>query</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Successful response</td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;ytd_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_compset_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_compset_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_compset_adr_delta&#39;:&nbsp;number<br/>}]</code></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="get-production-api-futurestayproduction7days" data-magellan-destination="get-production-api-futurestayproduction7days">GET /production-api/FutureStayProduction7Days</h3>
+<p>Hotel production for the future 7 stay dates</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/production-api/FutureStayProduction7Days">https://services.expediapartnercentral.com/production-api/FutureStayProduction7Days</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-3" data-magellan-destination="parameters-3">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>htid</td>
+<td>query</td>
+<td>Hotel ID</td>
+<td>true</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>$format</td>
+<td>query</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-3" data-magellan-destination="success-responses-3">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Successful response</td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;week_start&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;cy_7d_pickup_nrn&#39;:&nbsp;integer,<br/>&nbsp;&nbsp;&#39;ly_7d_pickup_nrn&#39;:&nbsp;integer<br/>}]</code></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="get-production-api-futurestayproduction28days" data-magellan-destination="get-production-api-futurestayproduction28days">GET /production-api/FutureStayProduction28Days</h3>
+<p>Hotel production for the future 28 stay dates</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/production-api/FutureStayProduction28Days">https://services.expediapartnercentral.com/production-api/FutureStayProduction28Days</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-4" data-magellan-destination="parameters-4">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>htid</td>
+<td>query</td>
+<td>Hotel ID</td>
+<td>true</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>$format</td>
+<td>query</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Successful response</td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;date&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;cy_future_nrn&#39;:&nbsp;integer,<br/>&nbsp;&nbsp;&#39;ly_future_nrn&#39;:&nbsp;integer<br/>}]</code></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="get-production-api-monthlystays" data-magellan-destination="get-production-api-monthlystays">GET /production-api/MonthlyStays</h3>
+<p>Hotel’s production for each stay month.</p>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/production-api/MonthlyStays">https://services.expediapartnercentral.com/production-api/MonthlyStays</a></li>
+<li>Consumes: <code>application/json</code></li>
+<li>Produces: <code>application/json</code></li>
+</ul>
+<h4 id="parameters-5" data-magellan-destination="parameters-5">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>htid</td>
+<td>query</td>
+<td>Hotel ID</td>
+<td>true</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>$format</td>
+<td>query</td>
+<td></td>
+<td>false</td>
+<td>string</td>
+<td>json</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Successful response</td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;hotel_adr&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_adr&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;hotel_only&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;package&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;total&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_hotel_only&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_package&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_total&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;year_month&#39;:&nbsp;string<br/>}]</code></td>
+</tr>
+</tbody>
+</table>
+</div><hr>
+<h2 id="definitions" data-magellan-destination="definitions">Definitions</h2>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>

@@ -1,0 +1,380 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Production"
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/production-api",
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "security": {
+    "epsSecurity": []
+  },
+  "paths": {
+    "/BookingTrends": {
+      "get": {
+        "description": "Insights into the travelers’ booking patterns\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "description": "",
+                    "type": "string"
+                  },
+                  "caption": {
+                    "description": "",
+                    "type": "string"
+                  },
+                  "l28d_compset_cy": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_compset_ly": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_compset_cy": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_compset_ly": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_hotel_cy": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_hotel_ly": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_hotel_cy": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_hotel_ly": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FlashReport": {
+      "get": {
+        "description": "Hotel and compset performance for past and future stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ytd_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_nrn_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_adr_delta": {
+                    "description": "",
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FutureStayProduction7Days": {
+      "get": {
+        "description": "Hotel production for the future 7 stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "week_start": {
+                    "description": "",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "cy_7d_pickup_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ly_7d_pickup_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FutureStayProduction28Days": {
+      "get": {
+        "description": "Hotel production for the future 28 stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "description": "",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "cy_future_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ly_future_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MonthlyStays": {
+      "get": {
+        "description": "Hotel’s production for each stay month.\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "hotel_adr": {
+                    "description": "Average Daily Rate - Base rate per room night for hotel rooms",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_adr": {
+                    "description": "ADR delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "hotel_only": {
+                    "description": "Price for room only",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "package": {
+                    "description": "Price for package",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "total": {
+                    "description": "hotel_only + package",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_hotel_only": {
+                    "description": "Price for room only - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_package": {
+                    "description": "Price for package - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_total": {
+                    "description": "Price for total - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "year_month": {
+                    "description": "YYYYMM",
+                    "type": "string",
+                    "format": "yyyymm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

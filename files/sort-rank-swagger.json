@@ -27,15 +27,6 @@
               "required": false
             },
             {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "clientId",
-              "name": "cid",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
               "allowMultiple": true,
               "defaultValue": "",
               "description": "givenSearchDates",
@@ -145,15 +136,6 @@
               "paramType": "query",
               "format": "int32",
               "type": "integer",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "clientId",
-              "name": "cid",
-              "paramType": "query",
-              "type": "string",
               "required": false
             },
             {

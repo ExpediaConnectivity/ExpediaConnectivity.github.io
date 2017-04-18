@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Production"
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/production-api",
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "security": {
+    "epsSecurity": []
+  },
+  "paths": {
+    "/FutureStayProduction7Days": {
+      "get": {
+        "description": "Hotel production for the future 7 stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "week_start": {
+                    "description": "",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "cy_7d_pickup_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ly_7d_pickup_nrn": {
+                    "description": "",
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
