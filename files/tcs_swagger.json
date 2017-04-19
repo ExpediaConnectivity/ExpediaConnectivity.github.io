@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "A service that provides APIs for ...",
+    "description": "TCS is essentially a centralized content supply service which aggregates content sources from a variety of suppliers, both internal & external, and abstracts much of the complexity involved in the orchestration of all these services in one single entry point.",
     "version": "1.0",
     "title": "cs-tcs-gateway",
     "contact": {
@@ -63,13 +63,6 @@
             "name": "source",
             "in": "query",
             "description": "source",
-            "required": false,
-            "type": "string"
-          },
-          {
-            "name": "abacus",
-            "in": "query",
-            "description": "abacus",
             "required": false,
             "type": "string"
           },
@@ -161,13 +154,6 @@
             "required": true,
             "type": "number",
             "format": "double"
-          },
-          {
-            "name": "abacus",
-            "in": "query",
-            "description": "abacus",
-            "required": false,
-            "type": "string"
           },
           {
             "name": "tag",
@@ -278,13 +264,6 @@
             "in": "path",
             "description": "regionId",
             "required": true,
-            "type": "string"
-          },
-          {
-            "name": "abacus",
-            "in": "query",
-            "description": "abacus",
-            "required": false,
             "type": "string"
           },
           {

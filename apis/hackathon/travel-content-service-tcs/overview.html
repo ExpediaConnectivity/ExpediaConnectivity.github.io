@@ -47,12 +47,6 @@ TCS Gateway, out of the box, supports the following sections:
 <td>We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.</td>
 </tr>
 <tr>
-<td>abacus</td>
-<td>String</td>
-<td>Optional</td>
-<td>May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.</td>
-</tr>
-<tr>
 <td>sections</td>
 <td>List<String></td>
 <td>Mandatory</td>
@@ -78,16 +72,10 @@ TCS Gateway, out of the box, supports the following sections:
 <td>We support any GAIA “multi_city_vicinity” and “city” featureType as parameter here.</td>
 </tr>
 <tr>
-<td>abacus</td>
-<td>String</td>
-<td>Optional</td>
-<td>May not be relevant for your use case, however we have the capability of A/B testing content from 2 different sources of content for a given section.</td>
-</tr>
-<tr>
 <td>tag</td>
 <td>String</td>
 <td>Mandatory</td>
-<td><a href="https://expediaconnectivity.com/apis/other/travel-content-service-tcs/desmet.html">DesMet Tag</a> See tip how to fetch the DesMet tag.</td>
+<td><a href="https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html">DesMet Tag</a> See tip how to fetch the DesMet tag.</td>
 </tr>
 <tr>
 <td>sections</td>
@@ -99,48 +87,51 @@ TCS Gateway, out of the box, supports the following sections:
 </table>
 </div><blockquote>
 <p><strong>What are DesMet tags ?</strong></p>
-<p>DesMet is an internal Expedia service that allows cross-domain translation of terms. TCS uses DesMet tags to filter down content by &#39;experience&#39;. See the list of DesMet tags <a href="https://expediaconnectivity.com/apis/other/travel-content-service-tcs/desmet.html">here</a>.</p>
+<p>DesMet is an internal Expedia service that allows cross-domain translation of terms. TCS uses DesMet tags to filter down content by &#39;experience&#39;. See the list of DesMet tags <a href="https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html">here</a>.</p>
 </blockquote>
 <h2 id="sample-use-cases-real-examples" data-magellan-destination="sample-use-cases-real-examples">Sample use cases - Real examples</h2>
 <p>Destination Experience (DX) pages have been built using TCS as content provider.</p>
 <p>Through these two use cases, you will learn how to query TCS to get content for a &quot;Destination Only&quot; and &quot;Destination + Experience&quot;.</p>
 <h3 id="use-case-1-destination-only-content-" data-magellan-destination="use-case-1-destination-only-content-">Use Case 1 (Destination Only Content)</h3>
 <p>Reference for fully rendered TCS content for Destination Only: <a href="https://www.expedia.com/lp/destinations/178307[Destination">https://www.expedia.com/lp/destinations/178307[Destination</a> Only Content]</p>
-<p>Here are the different calls from the DX Pages to the TCS Gateway to retrieve content from the following sections for London (Gaia ID: 178279):</p>
+<p>Here are the different calls from the DX Pages to the TCS Gateway to retrieve content from the following sections for a given Gaia ID:</p>
 <ul>
 <li><p>Section &quot;DESTINATION&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION&#39;
 </code></pre></li>
 <li><p>Section &quot;NEIGHBORHOOD&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=NEIGHBORHOOD&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD&#39;
 </code></pre></li>
 <li><p>Section &quot;SIMILAR_DESTINATION&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?sections=SIMILAR_DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION&#39;
 </code></pre></li>
 </ul>
 <p>Where:</p>
 <ul>
 <li>USERNAME: Your Partner Hackathon username</li>
 <li>PASSWORD: Your Partner Hackathon password</li>
+<li>GAIA_ID: The region ID. See the <a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia API documentation</a> to find the right identifiers.</li>
 </ul>
 <hr>
 <h3 id="use-case-2-destination-experience-content-" data-magellan-destination="use-case-2-destination-experience-content-">Use Case 2 (Destination + Experience Content)</h3>
-<p>Reference for fully rendered TCS content for Destination + Experience Content: <a href="https://www.expedia.com/lp/destinations/178307/shopping">https://www.expedia.com/lp/destinations/178307/shopping</a></p>
-<p>Here are the different calls from the DX Pages to TCS Gateway to retrieve the following sections for London (Gaia ID: 178279) and the experience (shopping):</p>
+<p>Reference for fully rendered TCS content for Destination + Experience Content (ex for London): <a href="https://www.expedia.com/lp/destinations/178307/shopping">https://www.expedia.com/lp/destinations/178307/shopping</a></p>
+<p>Here are the different calls from the DX Pages to TCS Gateway to retrieve the following sections for destination and experience:</p>
 <ul>
 <li><p>Section &quot;DESTINATION&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&amp;sections=DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=DESTINATION&#39;
 </code></pre></li>
 <li><p>Section &quot;NEIGHBORHOOD&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&amp;sections=NEIGHBORHOOD&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=NEIGHBORHOOD&#39;
 </code></pre></li>
 <li><p>Section &quot;SIMILAR_DESTINATION&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/178279?tag=shopping&amp;sections=SIMILAR_DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=SIMILAR_DESTINATION&#39;
 </code></pre></li>
 </ul>
 <p>Where:</p>
 <ul>
 <li>USERNAME: Your Partner Hackathon username</li>
 <li>PASSWORD: Your Partner Hackathon password</li>
+<li>GAIA_ID: The region ID. See the <a href="https://expediaconnectivity.com/apis/hackathon/gaia/overview.html">Gaia API documentation</a> to find the right identifiers.</li>
+<li>TAG: A <a href="https://expediaconnectivity.com/apis/hackathon/travel-content-service-tcs/desmet.html">DesMet Tag</a> (the experience)</li>
 </ul>
 </div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
