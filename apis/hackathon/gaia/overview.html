@@ -1,0 +1,110 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Overview - Gaia</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Gaia</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename" data-magellan-arrival="overview"><a class="sidebar-nav-item" href="#overview">Overview</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="getting-details-for-a-gaia-id"><a class="sidebar-nav-item" href="#getting-details-for-a-gaia-id">Getting Details for a Gaia ID</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth2" data-magellan-arrival="finding-a-gaia-id"><a class="sidebar-nav-item" href="#finding-a-gaia-id">Finding a Gaia ID</a></li><li class="depth3" data-magellan-arrival="response-2"><a class="sidebar-nav-item" href="#response-2">Response</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/gaia/swagger.html">Swagger</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="overview" data-magellan-destination="overview">Overview</h1>
+<p>Gaia is a large database of shapes and points representing things like cities, regions, or point of interests. Every elements is identified by a unique numerical identifier. </p>
+<p>Some of the API available via this portal uses Gaia ID has either inputs or outputs. This page explains how you can find the details attached to a Gaia ID or how you can determine the Gaia ID of a given city or point of interests.</p>
+<h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
+<p>The API takes basic auth headers for authentication. The credentials expected are the same as any other public API available via this portal.</p>
+<h2 id="getting-details-for-a-gaia-id" data-magellan-destination="getting-details-for-a-gaia-id">Getting Details for a Gaia ID</h2>
+<p>You can use the following endpoint from this portal:</p>
+<pre><code class="lang-bash">curl  -u [USERNAME]:[PASSWORD] --header &#39;Accept: application/json&#39; -X GET &#39;https://services.expediapartnercentral.com/gaia/search/id/[GAIA_ID]&#39;
+</code></pre>
+<p>Where:</p>
+<ul>
+<li>USERNAME: Your Partner Hackathon username</li>
+<li>PASSWORD: Your Partner Hackathon password</li>
+<li>GAIA_ID: the Gaia unique identifier</li>
+</ul>
+<h3 id="response" data-magellan-destination="response">Response</h3>
+<pre><code class="lang-json">{
+  &quot;id&quot;: &quot;178281&quot;,
+  &quot;type&quot;: &quot;multi_city_vicinity&quot;,
+  &quot;name&quot;: &quot;Madrid (and vicinity), Spain&quot;,
+  &quot;source&quot;: {
+    &quot;srcId&quot;: &quot;178281&quot;,
+    &quot;systemId&quot;: 300
+  },
+  &quot;position&quot;: {
+    &quot;type&quot;: &quot;Point&quot;,
+    &quot;coordinates&quot;: [
+      -3.703565,
+      40.417007
+    ]
+  },
+  &quot;categories&quot;: [
+    &quot;geoAdmin:metropolitanArea&quot;,
+    &quot;meta:destination&quot;,
+    &quot;tourism:metropolitanArea&quot;
+  ],
+  &quot;status&quot;: &quot;active&quot;
+}
+</code></pre>
+<p><em>*Minor modification done to response above for clarity</em></p>
+<h2 id="finding-a-gaia-id" data-magellan-destination="finding-a-gaia-id">Finding a Gaia ID</h2>
+<p>You can use the following endpoint from this portal:</p>
+<pre><code class="lang-bash">curl  -u [USERNAME]:[PASSWORD] --header &#39;Accept: application/json&#39; -X GET &#39;https://services.expediapartnercentral.com/gaia/search/name/[SEARCH_KEY]&#39;
+</code></pre>
+<p>Where:</p>
+<ul>
+<li>USERNAME: Your Partner Hackathon username</li>
+<li>PASSWORD: Your Partner Hackathon password</li>
+<li>SEARCH_KEY: The prefix of the region/city/point of interet you are looking for.</li>
+</ul>
+<h3 id="response-2" data-magellan-destination="response-2">Response</h3>
+<pre><code class="lang-json">{
+  &quot;q&quot;: &quot;madrid&quot;,
+  &quot;rc&quot;: &quot;OK&quot;,
+  &quot;sr&quot;: [
+    {
+      &quot;@type&quot;: &quot;gaiaRegionResult&quot;,
+      &quot;index&quot;: &quot;0&quot;,
+      &quot;gaiaId&quot;: &quot;178281&quot;,
+      &quot;type&quot;: &quot;MULTICITY&quot;,
+      &quot;regionNames&quot;: {
+        &quot;fullName&quot;: &quot;Madrid (and vicinity), Spain&quot;,
+        &quot;shortName&quot;: &quot;Madrid (and vicinity)&quot;,
+        &quot;displayName&quot;: &quot;&lt;B&gt;Madrid&lt;/B&gt;, Spain&quot;,
+        &quot;lastSearchName&quot;: &quot;Madrid, Spain&quot;
+      },
+      &quot;coordinates&quot;: {
+        &quot;lat&quot;: &quot;40.417007&quot;,
+        &quot;long&quot;: &quot;-3.703565&quot;
+      },
+      &quot;hotelCountPerRegion&quot;: &quot;1092&quot;,
+      &quot;popularity&quot;: &quot;13063.0&quot;
+    },
+    {
+      &quot;@type&quot;: &quot;gaiaRegionResult&quot;,
+      &quot;index&quot;: &quot;1&quot;,
+      &quot;gaiaId&quot;: &quot;6200391&quot;,
+      &quot;type&quot;: &quot;CITY&quot;,
+      &quot;regionNames&quot;: {
+        &quot;fullName&quot;: &quot;Madrid City Centre, Madrid, Spain&quot;,
+        &quot;shortName&quot;: &quot;Madrid City Centre&quot;,
+        &quot;displayName&quot;: &quot;&lt;B&gt;Madrid&lt;/B&gt; City Centre, &lt;B&gt;Madrid&lt;/B&gt;, Spain&quot;,
+        &quot;lastSearchName&quot;: &quot;Madrid City Centre, Madrid, Spain&quot;
+      },
+      &quot;coordinates&quot;: {
+        &quot;lat&quot;: &quot;40.423513&quot;,
+        &quot;long&quot;: &quot;-3.698524&quot;
+      },
+      &quot;hotelCountPerRegion&quot;: &quot;755&quot;,
+      &quot;popularity&quot;: &quot;677.0&quot;
+    }
+  ]
+}
+</code></pre>
+<p><em>*Minor modification done to response above for clarity</em></p>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>

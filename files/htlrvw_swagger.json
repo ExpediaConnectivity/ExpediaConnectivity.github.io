@@ -1,0 +1,167 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A service that provides an API to analyze user hotel reviews.",
+    "version": "1.0",
+    "title": "cs-htlrv-analysis",
+    "contact": {
+      "name": "Guy Masse",
+      "url": "https://expediaconnectivity.com/developer",
+      "email": "gmasse@expedia.com"
+    }
+  },
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "hotel-review-controller",
+      "description": "Hotel Review Controller"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/hotel-review/service/v1/analyze": {
+      "post": {
+        "tags": [
+          "hotel-review-controller"
+        ],
+        "summary": "Analyze User Hotel Review",
+        "description": "Extract entities from the provided text and assign a sentiment score to them. The JSON response contains the analyzed text with the list of entities, their position within the text and their sentiment score.",
+        "operationId": "analyzeUsingPOST",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "text",
+            "description": "text to submit for analysis",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Response"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Basic": {
+      "type": "basic"
+    }
+  },
+  "definitions": {
+    "Response": {
+      "type": "object",
+      "required": [
+        "result",
+        "success"
+      ],
+      "properties": {
+        "result": {
+          "description": "Result of the analysis",
+          "$ref": "#/definitions/Result"
+        },
+        "success": {
+          "type": "boolean",
+          "example": true,
+          "description": "Success of the analysis"
+        }
+      },
+      "description": "Analysis Response"
+    },
+    "Entity": {
+      "type": "object",
+      "required": [
+        "sentiment",
+        "tokens",
+        "type"
+      ],
+      "properties": {
+        "sentiment": {
+          "type": "number",
+          "format": "double",
+          "example": 0.84553,
+          "description": "Sentiment score, between 0 and 1 where 0 is very negative and 1 very positive."
+        },
+        "tokens": {
+          "type": "array",
+          "description": "List of the tokens part of this entity",
+          "items": {
+            "$ref": "#/definitions/Token"
+          }
+        },
+        "type": {
+          "type": "string",
+          "example": "Miscellaneous",
+          "description": "Class of this entity"
+        }
+      }
+    },
+    "Token": {
+      "type": "object",
+      "required": [
+        "position",
+        "word"
+      ],
+      "properties": {
+        "position": {
+          "type": "integer",
+          "format": "int32",
+          "example": 9,
+          "description": "Starting index of this word within the analyzed text"
+        },
+        "word": {
+          "type": "string",
+          "example": "rooms",
+          "description": "Word part of the entity"
+        }
+      }
+    },
+    "Result": {
+      "type": "object",
+      "required": [
+        "entities",
+        "text"
+      ],
+      "properties": {
+        "entities": {
+          "type": "array",
+          "description": "List of the entities extracted from the text",
+          "items": {
+            "$ref": "#/definitions/Entity"
+          }
+        },
+        "text": {
+          "type": "string",
+          "example": "Booked 2 rooms for 1 night at this beautiful hotel in the heart of Madrid- we had a scheduled flight the next day but wished we could extend our stay further.The hotel is close to museums, touristy and shopping areas. The hotel staff are exceptional, they provided top notch personalised service from the moment we stepped in.",
+          "description": "Text Analyzed"
+        }
+      },
+      "description": "Analysis Result"
+    }
+  }
+}

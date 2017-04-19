@@ -1,0 +1,547 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "A service that provides APIs for ...",
+    "version": "1.0",
+    "title": "cs-tcs-gateway",
+    "contact": {
+      "email": "noreply@expedia.com"
+    },
+    "license": {}
+  },
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/travel-content",
+  "tags": [
+    {
+      "name": "tcs-gateway-controller",
+      "description": "Tcs Gateway Controller"
+    }
+  ],
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/service/travel/id/{id}": {
+      "get": {
+        "tags": [
+          "tcs-gateway-controller"
+        ],
+        "summary": "searchById",
+        "operationId": "searchByIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "id",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "section",
+            "in": "query",
+            "description": "section",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "ACTIVITY",
+              "AFFINITY",
+              "ARTICLE",
+              "DESTINATION",
+              "NEIGHBORHOOD",
+              "POI",
+              "SIMILAR_DESTINATION",
+              "TIP"
+            ]
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "description": "source",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "abacus",
+            "in": "query",
+            "description": "abacus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": false,
+            "type": "string",
+            "default": "EN"
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "version",
+            "required": false,
+            "type": "integer",
+            "default": 2,
+            "format": "int32"
+          },
+          {
+            "name": "useCache",
+            "in": "query",
+            "description": "useCache",
+            "required": false,
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Single«TcsResultDTO»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/service/travel/latLng/{latitude}/{longitude}": {
+      "get": {
+        "tags": [
+          "tcs-gateway-controller"
+        ],
+        "summary": "searchByLatLng",
+        "operationId": "searchByLatLngUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "latitude",
+            "in": "path",
+            "description": "latitude",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "longitude",
+            "in": "path",
+            "description": "longitude",
+            "required": true,
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "name": "abacus",
+            "in": "query",
+            "description": "abacus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": false,
+            "type": "string",
+            "default": "EN"
+          },
+          {
+            "name": "sections",
+            "in": "query",
+            "description": "sections",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "ACTIVITY",
+                "AFFINITY",
+                "ARTICLE",
+                "DESTINATION",
+                "NEIGHBORHOOD",
+                "POI",
+                "SIMILAR_DESTINATION",
+                "TIP"
+              ]
+            },
+            "collectionFormat": "multi",
+            "enum": [
+              "ACTIVITY",
+              "AFFINITY",
+              "ARTICLE",
+              "DESTINATION",
+              "NEIGHBORHOOD",
+              "POI",
+              "SIMILAR_DESTINATION",
+              "TIP"
+            ]
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "version",
+            "required": false,
+            "type": "integer",
+            "default": 2,
+            "format": "int32"
+          },
+          {
+            "name": "useCache",
+            "in": "query",
+            "description": "useCache",
+            "required": false,
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Single«TcsResultDTO»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/service/travel/regionId/{regionId}": {
+      "get": {
+        "tags": [
+          "tcs-gateway-controller"
+        ],
+        "summary": "searchByRegionId",
+        "operationId": "searchByRegionIdUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "regionId",
+            "in": "path",
+            "description": "regionId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "abacus",
+            "in": "query",
+            "description": "abacus",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "description": "tag",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "langId",
+            "in": "query",
+            "description": "langId",
+            "required": false,
+            "type": "string",
+            "default": "EN"
+          },
+          {
+            "name": "sections",
+            "in": "query",
+            "description": "sections",
+            "required": true,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "ACTIVITY",
+                "AFFINITY",
+                "ARTICLE",
+                "DESTINATION",
+                "NEIGHBORHOOD",
+                "POI",
+                "SIMILAR_DESTINATION",
+                "TIP"
+              ]
+            },
+            "collectionFormat": "multi",
+            "enum": [
+              "ACTIVITY",
+              "AFFINITY",
+              "ARTICLE",
+              "DESTINATION",
+              "NEIGHBORHOOD",
+              "POI",
+              "SIMILAR_DESTINATION",
+              "TIP"
+            ]
+          },
+          {
+            "name": "version",
+            "in": "query",
+            "description": "version",
+            "required": false,
+            "type": "integer",
+            "default": 2,
+            "format": "int32"
+          },
+          {
+            "name": "useCache",
+            "in": "query",
+            "description": "useCache",
+            "required": false,
+            "type": "boolean",
+            "default": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Single«TcsResultDTO»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    },
+    "/service/travel/sections": {
+      "get": {
+        "tags": [
+          "tcs-gateway-controller"
+        ],
+        "summary": "getSesions",
+        "operationId": "getSesionsUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Single«Set«string»»"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "Basic": {
+      "type": "basic"
+    }
+  },
+  "definitions": {
+    "MetricDTO": {
+      "type": "object",
+      "properties": {
+        "creationDate": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Metric"
+          }
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "AuditDTO": {
+      "type": "object",
+      "properties": {
+        "errorMessage": {
+          "type": "string"
+        },
+        "source": {
+          "type": "string"
+        },
+        "transactionType": {
+          "type": "string",
+          "enum": [
+            "Fallback",
+            "Normal",
+            "OverridesRemote",
+            "OverridesStatic",
+            "Error"
+          ]
+        }
+      }
+    },
+    "TcsResultDTO": {
+      "type": "object",
+      "properties": {
+        "creationDate": {
+          "type": "string"
+        },
+        "durationInMs": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "langId": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/SectionDTO"
+          }
+        }
+      }
+    },
+    "SectionDTO": {
+      "type": "object",
+      "properties": {
+        "audit": {
+          "$ref": "#/definitions/AuditDTO"
+        },
+        "cacheable": {
+          "type": "boolean"
+        },
+        "cacheableStatus": {
+          "type": "string",
+          "enum": [
+            "DISTRIBUTABLE",
+            "NON_DISTRIBUTABLE",
+            "ERROR"
+          ]
+        },
+        "metrics": {
+          "$ref": "#/definitions/MetricDTO"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "Metric": {
+      "type": "object",
+      "properties": {
+        "expected": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "originalIds": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "resultIds": {
+          "type": "string"
+        }
+      }
+    },
+    "Single«Set«string»»": {
+      "type": "object"
+    },
+    "Single«TcsResultDTO»": {
+      "type": "object"
+    }
+  }
+}
