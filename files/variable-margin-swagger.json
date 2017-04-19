@@ -128,7 +128,7 @@
           "Add Variable Margins"
         ],
         "produces": [
-          "*/*"
+          "application/json"
         ],
         "responses": {
           "201": {
