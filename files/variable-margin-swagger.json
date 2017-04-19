@@ -5,23 +5,23 @@
     "https"
   ],
   "info": {
-    "description": "View, update and delete variable margins for hotels over specific date ranges.",
-    "title": "PRS VariableMargin CRUD",
+    "description": "The Accelerator API enables Expedia partners to read, create, edit and delete accelerators via an API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.</br><br/>To start experimenting, please use your existing EQC credentials and properties. We've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 3856296.",
+    "title": "Accelerator API",
     "version": "0.0.1"
   },
   "basePath": "/accelerator/v1",
   "paths": {
     "/hotels/{hotelId}/variablemargins": {
       "get": {
-        "description": "Get variablemargins",
-        "summary": "Return variablemargins under hotel id provided.",
+        "description": "Get variable margins",
+        "summary": "Return variable margins under hotel id provided.",
         "externalDocs": {
           "description": "Find out more",
           "url": "https://confluence/display/SSG/VariableMargins+Get+Method+Overview"
         },
         "operationId": "getVariableMargins",
         "tags": [
-          "variablemargins"
+          "Retrieve Variable Margins"
         ],
         "produces": [
           "application/json"
@@ -83,15 +83,15 @@
         ]
       },
       "delete": {
-        "description": "Delete variablemargins",
-        "summary": "Deletes variablemargins under hotelid.",
+        "description": "Delete variable margins",
+        "summary": "Deletes variable margins under hotelid.",
         "externalDocs": {
           "description": "Find out more",
           "url": "https://confluence/pages/viewpage.action?pageId=556899290"
         },
         "operationId": "deletevariablemargins",
         "tags": [
-          "variablemarginss"
+          "Delete Variable Margins"
         ],
         "produces": [
           "application/json"
@@ -117,15 +117,15 @@
         ]
       },
       "post": {
-        "description": "Add variablemargin",
-        "summary": "Add a variablemargin.",
+        "description": "Add variable margin",
+        "summary": "Add a variable margin.",
         "externalDocs": {
           "description": "Find out more",
           "url": "https://confluence/display/SSG/VariableMargins+Add+Method+Overview"
         },
         "operationId": "Addvariablemargin",
         "tags": [
-          "variablemargin"
+          "Add Variable Margins"
         ],
         "produces": [
           "*/*"
@@ -225,15 +225,15 @@
     },
     "/hotels/{hotelId}/variablemargins/{variablemarginId}": {
       "delete": {
-        "description": "Delete one specified variablemargin",
-        "summary": "Deletes one specified variablemargin.",
+        "description": "Delete one specified variable margin",
+        "summary": "Deletes one specified variable margin.",
         "externalDocs": {
           "description": "spec page",
           "url": "https://confluence/pages/viewpage.action?pageId=556899290"
         },
         "operationId": "delete a variablemargin",
         "tags": [
-          "variablemarginss"
+          "Delete Variable Margins"
         ],
         "produces": [
           "application/json"
@@ -266,15 +266,15 @@
         ]
       },
       "put": {
-        "description": "Update variablemargin",
-        "summary": "Update an existing variablemargin.",
+        "description": "Update variable margin",
+        "summary": "Update an existing variable margin.",
         "externalDocs": {
           "description": "spec page",
           "url": "https://confluence/display/SSG/VariableMargins+Edit+Method+Overview"
         },
         "operationId": "updatevariablemargin",
         "tags": [
-          "variablemargins"
+          "Update Variable Margins"
         ],
         "produces": [
           "application/json"
@@ -385,15 +385,15 @@
     },
     "/hotels/{hotelId}/variablemarginchangehistory": {
       "get": {
-        "description": "Get variablemargin change history",
-        "summary": "Get variablemargin change history for a hotel id",
+        "description": "Get variable margin change history",
+        "summary": "Get variable margin change history for a hotel id",
         "externalDocs": {
           "description": "spec page",
           "url": "https://confluence/display/SSG/VariableMargins+Edit+Method+Overview"
         },
         "operationId": "getvariablemarginChangeHistory",
         "tags": [
-          "variablemarginsChangeHistory"
+          "Retrieve Variable Margins Change History"
         ],
         "produces": [
           "application/json"
