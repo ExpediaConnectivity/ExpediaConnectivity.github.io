@@ -20,23 +20,100 @@ function googleTranslateElementInit() {
 <p>The Accelerator API uses a Basic Authorization scheme. The same credentials used to manage properties via EQC today are compatible with the Accelerator API.</p>
 <h3 id="getting-started" data-magellan-destination="getting-started">Getting Started</h3>
 <p>The simplest way to start interacting with the Accelerator API is to access the 
-<a href="https://services.expediapartnercentral.com/accelerator/v1/hotels/3856296/variablemargins" target="_blank">https://services.expediapartnercentral.com/accelerator/v1/hotels/3856296/variablemargins</a> endpoint in a browser, and input EQC API username and password when prompted for it.</p>
+<a href="https://services.expediapartnercentral.com/accelerator/v1/hotels/12933870/variablemargins" target="_blank">https://services.expediapartnercentral.com/accelerator/v1/hotels/12933870/variablemargins</a> endpoint in a browser, and input EQC API username and password when prompted for it.</p>
 <p>Partners working with Expedia APIs for the first time and interested in testing this right away can use the following test account to try the above URL:</p>
 <pre><code>username: EQCtest12933870
 password: ew67nk33
-</code></pre><p><strong>Note</strong>: the URL above contains the hotel ID <code>3856296</code> which belongs to the test account. When using your own EQC API credentials, you will need to specify one of your own hotel IDs.</p>
-<p>Having used the test account, the URL above should return the following JSON document:</p>
+</code></pre><p><strong>Note</strong>: the URL above contains the hotel ID <code>12933870</code> which belongs to the test account. When using your own EQC API credentials, you will need to specify one of your own hotel IDs. For the purpose of this getting started guide, we&#39;ll be using the test account and its test hotel for all the examples.</p>
+<p>Clicking on the URL above should return the following JSON document:</p>
 <pre><code class="lang-json">{
-  &quot;HotelID&quot;: 3856296,
-  &quot;VariableMargins&quot;: [],
-  &quot;Warnings&quot;: [
+  &quot;HotelID&quot;: 12933870,
+  &quot;VariableMargins&quot;: [
     {
-      &quot;WarningCode&quot;: 2002,
-      &quot;WarningMessage&quot;: &quot;Hotel 3856296 does not have variable margins set.&quot;
+      &quot;VariableMarginID&quot;: 200090903,
+      &quot;StartDate&quot;: &quot;2017-05-01&quot;,
+      &quot;EndDate&quot;: &quot;2017-05-07&quot;,
+      &quot;CreateDate&quot;: &quot;2017-04-19 08:31:23&quot;,
+      &quot;VariableMarginPercentage&quot;: 10
     }
   ]
 }
 </code></pre>
-<p>If this test hotel had any accelerators, they would have been returned as part of the <code>VariableMargins</code> array. Now it&#39;s time to start adding some! Please see the <a href="add-variable-margins.html">next section</a> for instructions on how to add accelerators for your own hotels. </p>
-<p>You can also review the complete <a href="reference.html">reference</a> documentation and expirement with all the different operations using the <a href="try-it.html">try it</a> section.</p>
+<p>As you can see, this hotel currently has a single accelerator. Let&#39;s add a second one.</p>
+<p>For that, you will need to issue a HTTP <code>POST</code> command. The example below uses the <code>curl</code> command line utility, but feel free to use your web service client of choice.</p>
+<pre><code class="lang-bash">curl -X POST \
+  https://services.expediapartnercentral.com/accelerator/v1/hotels/12933870/variablemargins \
+  -H &#39;accept: application/json&#39; \
+  -H &#39;authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&#39; \
+  -H &#39;content-type: application/json&#39; \
+  -d &#39;{
+  &quot;StartDate&quot;: &quot;2017-05-08&quot;,
+  &quot;EndDate&quot;: &quot;2017-05-11&quot;,
+  &quot;VariableMarginPercentage&quot;: 15
+}&#39;
+</code></pre>
+<p>This command should return a JSON document that looks like this:</p>
+<pre><code class="lang-json">{
+  &quot;HotelID&quot;: 12933870,
+  &quot;VariableMargins&quot;: [
+    {
+      &quot;VariableMarginID&quot;: 200090903,
+      &quot;StartDate&quot;: &quot;2017-05-01&quot;,
+      &quot;EndDate&quot;: &quot;2017-05-07&quot;,
+      &quot;CreateDate&quot;: &quot;2017-04-19 08:31:23&quot;,
+      &quot;VariableMarginPercentage&quot;: 10
+    },
+    {
+      &quot;VariableMarginID&quot;: 200090908,
+      &quot;StartDate&quot;: &quot;2017-05-08&quot;,
+      &quot;EndDate&quot;: &quot;2017-05-11&quot;,
+      &quot;CreateDate&quot;: &quot;2017-04-19 08:58:25&quot;,
+      &quot;VariableMarginPercentage&quot;: 15
+    }
+  ]
+}
+</code></pre>
+<p>You can see that the hotel now has two accelerators.</p>
+<p>You also have the ability to update a specific accelerator by issuing a <code>PUT</code> command. Let&#39;s update the one we&#39;ve just added changing its percentage and increasing it to 20:</p>
+<pre><code class="lang-bash">curl -X PUT \
+  https://services.expediapartnercentral.com/accelerator/v1/hotels/12933870/variablemargins/200090908 \
+  -H &#39;accept: application/json&#39; \
+  -H &#39;authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&#39; \
+  -H &#39;content-type: application/json&#39; \
+  -d &#39;{
+    &quot;VariableMarginID&quot;: 200090908,
+    &quot;StartDate&quot;: &quot;2017-05-08&quot;,
+    &quot;EndDate&quot;: &quot;2017-05-11&quot;,
+    &quot;VariableMarginPercentage&quot;: 20
+}&#39;
+</code></pre>
+<p>From the output, we see that the percentage has been updated:</p>
+<pre><code class="lang-json">{
+  &quot;HotelID&quot;: 12933870,
+  &quot;VariableMargins&quot;: [
+    {
+      &quot;VariableMarginID&quot;: 200090903,
+      &quot;StartDate&quot;: &quot;2017-05-01&quot;,
+      &quot;EndDate&quot;: &quot;2017-05-07&quot;,
+      &quot;CreateDate&quot;: &quot;2017-04-19 08:31:23&quot;,
+      &quot;VariableMarginPercentage&quot;: 10
+    },
+    {
+      &quot;VariableMarginID&quot;: 200090908,
+      &quot;StartDate&quot;: &quot;2017-05-08&quot;,
+      &quot;EndDate&quot;: &quot;2017-05-11&quot;,
+      &quot;CreateDate&quot;: &quot;2017-04-19 08:58:25&quot;,
+      &quot;VariableMarginPercentage&quot;: 20
+    }
+  ]
+}
+</code></pre>
+<p>Ok, time to clean up. Let&#39;s delete this accelerator, which we feel is not improving our sort rank for this hotel like we had anticipated:</p>
+<pre><code class="lang-bash">curl -X DELETE \
+  https://services.expediapartnercentral.com/accelerator/v1/hotels/12933870/variablemargins/200090908 \
+  -H &#39;accept: application/json&#39; \
+  -H &#39;authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&#39; \
+</code></pre>
+<p>The <code>DELETE</code> command simply returns a HTTP status code of <code>200</code> when successful. You can validate the effect of the delete by reading the acceleratos for the hotel again.</p>
+<p>This rounds up the basic operations of the accelerator API. You can review the complete <a href="reference.html">reference</a> documentation and expirement with all the different operations using the <a href="try-it.html">try it</a> section.</p>
 </div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
