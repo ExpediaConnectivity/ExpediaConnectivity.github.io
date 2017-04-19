@@ -47,50 +47,50 @@
                 "type": "object",
                 "properties": {
                   "category": {
-                    "description": "",
+                    "description": "Can be brand or travelerOrigination because this endpoint returns data by brand or traveler country.",
                     "type": "string"
                   },
                   "caption": {
-                    "description": "",
+                    "description": "If category=brand this property contains the name of the brand; if category=travelerOrigination this property contains the country code(3 letters)",
                     "type": "string"
                   },
                   "l28d_compset_cy": {
-                    "description": "",
+                    "description": "Compset production for last 28 days in current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_compset_ly": {
-                    "description": "",
+                    "description": "Compset production for last 28 days in last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_compset_cy": {
-                    "description": "",
+                    "description": "Compset production for last 90 days in current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_compset_ly": {
-                    "description": "",
+                    "description": "Compset production for last 90 days in last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_hotel_cy": {
-                    "description": "",
+                    "description": "Hotel production for last 28 days in current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_hotel_ly": {
-                    "description": "",
+                    "description": "Hotel production for last 28 days in last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_hotel_cy": {
-                    "description": "",
+                    "description": "Hotel production for last 90 days in current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_hotel_ly": {
-                    "description": "",
+                    "description": "Hotel production for last 90 days in last year",
                     "type": "number",
                     "format": "double"
                   }

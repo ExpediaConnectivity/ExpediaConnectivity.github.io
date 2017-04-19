@@ -20,7 +20,7 @@
   "paths": {
     "/FutureStayProduction7Days": {
       "get": {
-        "description": "Hotel production for the future 7 stay dates\n",
+        "description": "Hotel room nights for the 4 stay weeks following the report date\n",
         "parameters": [
           {
             "name": "htid",
@@ -47,17 +47,17 @@
                 "type": "object",
                 "properties": {
                   "week_start": {
-                    "description": "",
+                    "description": "The date to which cy_7d_pickup_nrn and ly_7d_pickup_nrn refers to",
                     "type": "string",
                     "format": "date"
                   },
                   "cy_7d_pickup_nrn": {
-                    "description": "",
+                    "description": "Hotel Room Nights for next 7 days from the week_start for the current year",
                     "type": "integer",
                     "format": "int32"
                   },
                   "ly_7d_pickup_nrn": {
-                    "description": "",
+                    "description": "Hotel Room Nights for next 7 days from the week_start for the last year",
                     "type": "integer",
                     "format": "int32"
                   }

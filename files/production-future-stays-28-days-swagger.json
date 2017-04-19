@@ -47,17 +47,17 @@
                 "type": "object",
                 "properties": {
                   "date": {
-                    "description": "",
+                    "description": "The date to which cy_future_nrn and ly_future_nrn refers to",
                     "type": "string",
                     "format": "date"
                   },
                   "cy_future_nrn": {
-                    "description": "",
+                    "description": "Hotel Room Nights for next 28 days of the current year",
                     "type": "integer",
                     "format": "int32"
                   },
                   "ly_future_nrn": {
-                    "description": "",
+                    "description": "Hotel Room Nights for next 28 days of the last year",
                     "type": "integer",
                     "format": "int32"
                   }
