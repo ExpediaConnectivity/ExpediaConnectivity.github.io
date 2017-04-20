@@ -66,12 +66,19 @@ function googleTranslateElementInit() {
 <tr>
 <td>200</td>
 <td>Successful response</td>
-<td><code>Array[{<br/>&nbsp;&nbsp;&#39;category&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;caption&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;l28d_compset_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_compset_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_compset_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_compset_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_hotel_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l28d_hotel_ly&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_hotel_cy&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;l90d_hotel_ly&#39;:&nbsp;number<br/>}]</code></td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;category&#39;:&nbsp;[string]&nbsp;Can&nbsp;be&nbsp;brand&nbsp;or&nbsp;travelerOrigination&nbsp;because&nbsp;this&nbsp;endpoint&nbsp;returns&nbsp;data&nbsp;by&nbsp;brand&nbsp;or&nbsp;traveler&nbsp;country.,<br/>&nbsp;&nbsp;&#39;caption&#39;:&nbsp;[string]&nbsp;If&nbsp;category=brand&nbsp;this&nbsp;property&nbsp;contains&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;brand;&nbsp;if&nbsp;category=travelerOrigination&nbsp;this&nbsp;property&nbsp;contains&nbsp;the&nbsp;country&nbsp;code(3&nbsp;letters),<br/>&nbsp;&nbsp;&#39;l28d_compset_cy&#39;:&nbsp;[number]&nbsp;Compset&nbsp;production&nbsp;for&nbsp;last&nbsp;28&nbsp;days&nbsp;in&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;l28d_compset_ly&#39;:&nbsp;[number]&nbsp;Compset&nbsp;production&nbsp;for&nbsp;last&nbsp;28&nbsp;days&nbsp;in&nbsp;last&nbsp;year,<br/>&nbsp;&nbsp;&#39;l90d_compset_cy&#39;:&nbsp;[number]&nbsp;Compset&nbsp;production&nbsp;for&nbsp;last&nbsp;90&nbsp;days&nbsp;in&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;l90d_compset_ly&#39;:&nbsp;[number]&nbsp;Compset&nbsp;production&nbsp;for&nbsp;last&nbsp;90&nbsp;days&nbsp;in&nbsp;last&nbsp;year,<br/>&nbsp;&nbsp;&#39;l28d_hotel_cy&#39;:&nbsp;[number]&nbsp;Hotel&nbsp;production&nbsp;for&nbsp;last&nbsp;28&nbsp;days&nbsp;in&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;l28d_hotel_ly&#39;:&nbsp;[number]&nbsp;Hotel&nbsp;production&nbsp;for&nbsp;last&nbsp;28&nbsp;days&nbsp;in&nbsp;last&nbsp;year,<br/>&nbsp;&nbsp;&#39;l90d_hotel_cy&#39;:&nbsp;[number]&nbsp;Hotel&nbsp;production&nbsp;for&nbsp;last&nbsp;90&nbsp;days&nbsp;in&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;l90d_hotel_ly&#39;:&nbsp;[number]&nbsp;Hotel&nbsp;production&nbsp;for&nbsp;last&nbsp;90&nbsp;days&nbsp;in&nbsp;last&nbsp;year<br/>}]</code></td>
 </tr>
 </tbody>
 </table>
 </div><h3 id="get-production-api-flashreport" data-magellan-destination="get-production-api-flashreport">GET /production-api/FlashReport</h3>
-<p>Hotel and compset performance for past and future stay dates</p>
+<p>Hotel and compset performance for past and future stay dates.</p>
+<ul>
+<li>Year To Date Stays(ytd): represents the YOY production trend (for hotel and compset) considering all stay dates starting beginning of the year until the report date.</li>
+<li>Next Week Stays(nw): represents the YOY production trend considering all stay dates for the week following the report date.</li>
+<li>Next 4 Weeks Stays(n4w): represents the YOY production trend considering all stay dates for the 4 weeks following the report date.</li>
+<li>Net Room Night Count(nrn) : represents the total number of reservations the hotel will deliver (if cancellations are made, then they are considered in the calculation).</li>
+<li>Average Daily Rate(adr) : base rate per room night for hotel rooms.</li>
+</ul>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/production-api/FlashReport">https://services.expediapartnercentral.com/production-api/FlashReport</a></li>
@@ -122,12 +129,12 @@ function googleTranslateElementInit() {
 <tr>
 <td>200</td>
 <td>Successful response</td>
-<td><code>Array[{<br/>&nbsp;&nbsp;&#39;ytd_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;ytd_compset_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;nw_compset_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_hotel_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_hotel_adr_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_compset_nrn_delta&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;n4w_compset_adr_delta&#39;:&nbsp;number<br/>}]</code></td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;ytd_hotel_nrn_delta&#39;:&nbsp;[number]&nbsp;Year&nbsp;To&nbsp;Date&nbsp;Hotel&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;ytd_hotel_adr_delta&#39;:&nbsp;[number]&nbsp;Year&nbsp;To&nbsp;Date&nbsp;Hotel&nbsp;Average&nbsp;Daily&nbsp;Rate,<br/>&nbsp;&nbsp;&#39;ytd_compset_nrn_delta&#39;:&nbsp;[number]&nbsp;Year&nbsp;To&nbsp;Date&nbsp;Compset&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;ytd_compset_adr_delta&#39;:&nbsp;[number]&nbsp;Year&nbsp;To&nbsp;Date&nbsp;Compset&nbsp;Average&nbsp;Daily&nbsp;Rate,<br/>&nbsp;&nbsp;&#39;nw_hotel_nrn_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;Week&nbsp;Hotel&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;nw_hotel_adr_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;Week&nbsp;Hotel&nbsp;Average&nbsp;Daily&nbsp;Rate,<br/>&nbsp;&nbsp;&#39;nw_compset_nrn_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;Week&nbsp;Compset&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;nw_compset_adr_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;Week&nbsp;Compset&nbsp;Average&nbsp;Daily&nbsp;Rate,<br/>&nbsp;&nbsp;&#39;n4w_hotel_nrn_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;4&nbsp;Weeks&nbsp;Hotel&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;n4w_hotel_adr_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;4&nbsp;Weeks&nbsp;Hotel&nbsp;Average&nbsp;Daily&nbsp;Rate,<br/>&nbsp;&nbsp;&#39;n4w_compset_nrn_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;4&nbsp;Weeks&nbsp;Compset&nbsp;Net&nbsp;Room&nbsp;Night,<br/>&nbsp;&nbsp;&#39;n4w_compset_adr_delta&#39;:&nbsp;[number]&nbsp;Next&nbsp;4&nbsp;Weeks&nbsp;Compset&nbsp;Average&nbsp;Daily&nbsp;Rate<br/>}]</code></td>
 </tr>
 </tbody>
 </table>
 </div><h3 id="get-production-api-futurestayproduction7days" data-magellan-destination="get-production-api-futurestayproduction7days">GET /production-api/FutureStayProduction7Days</h3>
-<p>Hotel production for the future 7 stay dates</p>
+<p>Hotel room nights for the 4 stay weeks following the report date</p>
 <ul>
 <li>Method: <code>GET</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/production-api/FutureStayProduction7Days">https://services.expediapartnercentral.com/production-api/FutureStayProduction7Days</a></li>
@@ -178,7 +185,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>200</td>
 <td>Successful response</td>
-<td><code>Array[{<br/>&nbsp;&nbsp;&#39;week_start&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;cy_7d_pickup_nrn&#39;:&nbsp;integer,<br/>&nbsp;&nbsp;&#39;ly_7d_pickup_nrn&#39;:&nbsp;integer<br/>}]</code></td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;week_start&#39;:&nbsp;[string]&nbsp;The&nbsp;date&nbsp;to&nbsp;which&nbsp;cy_7d_pickup_nrn&nbsp;and&nbsp;ly_7d_pickup_nrn&nbsp;refers&nbsp;to,<br/>&nbsp;&nbsp;&#39;cy_7d_pickup_nrn&#39;:&nbsp;[integer]&nbsp;Hotel&nbsp;Room&nbsp;Nights&nbsp;for&nbsp;next&nbsp;7&nbsp;days&nbsp;from&nbsp;the&nbsp;week_start&nbsp;for&nbsp;the&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;ly_7d_pickup_nrn&#39;:&nbsp;[integer]&nbsp;Hotel&nbsp;Room&nbsp;Nights&nbsp;for&nbsp;next&nbsp;7&nbsp;days&nbsp;from&nbsp;the&nbsp;week_start&nbsp;for&nbsp;the&nbsp;last&nbsp;year<br/>}]</code></td>
 </tr>
 </tbody>
 </table>
@@ -234,7 +241,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>200</td>
 <td>Successful response</td>
-<td><code>Array[{<br/>&nbsp;&nbsp;&#39;date&#39;:&nbsp;string,<br/>&nbsp;&nbsp;&#39;cy_future_nrn&#39;:&nbsp;integer,<br/>&nbsp;&nbsp;&#39;ly_future_nrn&#39;:&nbsp;integer<br/>}]</code></td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;date&#39;:&nbsp;[string]&nbsp;The&nbsp;date&nbsp;to&nbsp;which&nbsp;cy_future_nrn&nbsp;and&nbsp;ly_future_nrn&nbsp;refers&nbsp;to,<br/>&nbsp;&nbsp;&#39;cy_future_nrn&#39;:&nbsp;[integer]&nbsp;Hotel&nbsp;Room&nbsp;Nights&nbsp;for&nbsp;next&nbsp;28&nbsp;days&nbsp;of&nbsp;the&nbsp;current&nbsp;year,<br/>&nbsp;&nbsp;&#39;ly_future_nrn&#39;:&nbsp;[integer]&nbsp;Hotel&nbsp;Room&nbsp;Nights&nbsp;for&nbsp;next&nbsp;28&nbsp;days&nbsp;of&nbsp;the&nbsp;last&nbsp;year<br/>}]</code></td>
 </tr>
 </tbody>
 </table>
@@ -290,7 +297,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>200</td>
 <td>Successful response</td>
-<td><code>Array[{<br/>&nbsp;&nbsp;&#39;hotel_adr&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_adr&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;hotel_only&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;package&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;total&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_hotel_only&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_package&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;yoy_total&#39;:&nbsp;number,<br/>&nbsp;&nbsp;&#39;year_month&#39;:&nbsp;string<br/>}]</code></td>
+<td><code>Array[{<br/>&nbsp;&nbsp;&#39;hotel_adr&#39;:&nbsp;[number]&nbsp;Average&nbsp;Daily&nbsp;Rate&nbsp;-&nbsp;Base&nbsp;rate&nbsp;per&nbsp;room&nbsp;night&nbsp;for&nbsp;hotel&nbsp;rooms,<br/>&nbsp;&nbsp;&#39;yoy_adr&#39;:&nbsp;[number]&nbsp;ADR&nbsp;delta,<br/>&nbsp;&nbsp;&#39;hotel_only&#39;:&nbsp;[number]&nbsp;Price&nbsp;for&nbsp;room&nbsp;only,<br/>&nbsp;&nbsp;&#39;package&#39;:&nbsp;[number]&nbsp;Price&nbsp;for&nbsp;package,<br/>&nbsp;&nbsp;&#39;total&#39;:&nbsp;[number]&nbsp;hotel_only&nbsp;+&nbsp;package,<br/>&nbsp;&nbsp;&#39;yoy_hotel_only&#39;:&nbsp;[number]&nbsp;Price&nbsp;for&nbsp;room&nbsp;only&nbsp;-&nbsp;Delta,<br/>&nbsp;&nbsp;&#39;yoy_package&#39;:&nbsp;[number]&nbsp;Price&nbsp;for&nbsp;package&nbsp;-&nbsp;Delta,<br/>&nbsp;&nbsp;&#39;yoy_total&#39;:&nbsp;[number]&nbsp;Price&nbsp;for&nbsp;total&nbsp;-&nbsp;Delta,<br/>&nbsp;&nbsp;&#39;year_month&#39;:&nbsp;[string]&nbsp;YYYYMM<br/>}]</code></td>
 </tr>
 </tbody>
 </table>
