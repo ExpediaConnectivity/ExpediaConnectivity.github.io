@@ -66,6 +66,67 @@
           }
         ]
       }
+    },
+    "/hotel-review/service/v1/retrieve/{hotelId}": {
+      "get": {
+        "tags": [
+          "hotel-review-controller"
+        ],
+        "summary": "Retrieve User Hotel Review",
+        "description": "Retrieve User Hotel Reviews for specific hotels.",
+        "operationId": "retrieveUsingGET",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "hotelId",
+            "in": "path",
+            "description": "hotelId",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "from",
+            "in": "query",
+            "description": "from",
+            "required": false,
+            "type": "integer",
+            "default": 0,
+            "format": "int32"
+          },
+          {
+            "name": "nb",
+            "in": "query",
+            "description": "nb",
+            "required": false,
+            "type": "integer",
+            "default": 10,
+            "format": "int32"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/HotelReviews"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        },
+        "security": [
+          {
+            "Basic": [
+
+            ]
+          }
+        ]
+      }
     }
   },
   "securityDefinitions": {
@@ -121,6 +182,105 @@
         }
       }
     },
+    "ReviewSummaryCollection": {
+      "type": "object",
+      "properties": {
+        "reviewSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ReviewSummary"
+          }
+        }
+      }
+    },
+    "OriginSummary": {
+      "type": "object",
+      "properties": {
+        "avgOverallRating": {
+          "type": "number",
+          "format": "float"
+        },
+        "categoryCounts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "cleanliness": {
+          "type": "number",
+          "format": "float"
+        },
+        "convenienceOfLocation": {
+          "type": "number",
+          "format": "float"
+        },
+        "hotelCondition": {
+          "type": "number",
+          "format": "float"
+        },
+        "languageCounts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "neighborhoodSatisfaction": {
+          "type": "number",
+          "format": "float"
+        },
+        "origin": {
+          "type": "string"
+        },
+        "recommendedPercent": {
+          "type": "number",
+          "format": "float"
+        },
+        "reviewCnt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "roomComfort": {
+          "type": "number",
+          "format": "float"
+        },
+        "serviceAndStaff": {
+          "type": "number",
+          "format": "float"
+        }
+      }
+    },
+    "HotelReviews": {
+      "type": "object",
+      "required": [
+        "details",
+        "success"
+      ],
+      "properties": {
+        "details": {
+          "description": "Review details",
+          "$ref": "#/definitions/ReviewDetails"
+        },
+        "success": {
+          "type": "boolean",
+          "example": true,
+          "description": "Success of the process"
+        }
+      },
+      "description": "Lsit of HotelReview found for the requested Hotel Id"
+    },
+    "ReviewCollection": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Review"
+          }
+        }
+      }
+    },
     "Token": {
       "type": "object",
       "required": [
@@ -138,6 +298,161 @@
           "type": "string",
           "example": "rooms",
           "description": "Word part of the entity"
+        }
+      }
+    },
+    "Review": {
+      "type": "object",
+      "properties": {
+        "brandType": {
+          "type": "string"
+        },
+        "contentLocale": {
+          "type": "string"
+        },
+        "hotelId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isFlaggable": {
+          "type": "boolean"
+        },
+        "isRecommended": {
+          "type": "string"
+        },
+        "isUnverified": {
+          "type": "boolean"
+        },
+        "moderationStatus": {
+          "type": "string"
+        },
+        "ratingHotelCondition": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ratingOverall": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ratingRoomCleanliness": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ratingRoomComfort": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "ratingService": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reviewId": {
+          "type": "string"
+        },
+        "reviewSubmissionTime": {
+          "type": "string"
+        },
+        "reviewText": {
+          "type": "string"
+        },
+        "reviewerCategories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ReviewerCategory"
+          }
+        },
+        "roomTypeId": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string"
+        }
+      }
+    },
+    "ReviewerCategory": {
+      "type": "object",
+      "properties": {
+        "categoryId": {
+          "type": "string"
+        },
+        "categoryLabel": {
+          "type": "string"
+        }
+      }
+    },
+    "ReviewSummary": {
+      "type": "object",
+      "properties": {
+        "avgOverallRating": {
+          "type": "number",
+          "format": "float"
+        },
+        "categoryCounts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "cleanliness": {
+          "type": "number",
+          "format": "float"
+        },
+        "convenienceOfLocation": {
+          "type": "number",
+          "format": "float"
+        },
+        "hotelCondition": {
+          "type": "number",
+          "format": "float"
+        },
+        "hotelId": {
+          "type": "string"
+        },
+        "languageCounts": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "neighborhoodSatisfaction": {
+          "type": "number",
+          "format": "float"
+        },
+        "numPhotos": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "originSummary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/OriginSummary"
+          }
+        },
+        "pinnedHelpfulReview": {
+          "$ref": "#/definitions/Review"
+        },
+        "recommendedPercent": {
+          "type": "number",
+          "format": "float"
+        },
+        "roomComfort": {
+          "type": "number",
+          "format": "float"
+        },
+        "serviceAndStaff": {
+          "type": "number",
+          "format": "float"
+        },
+        "totalReviewCnt": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "valueForMoney": {
+          "type": "number",
+          "format": "float"
         }
       }
     },
@@ -162,6 +477,25 @@
         }
       },
       "description": "Analysis Result"
+    },
+    "ReviewDetails": {
+      "type": "object",
+      "properties": {
+        "numberOfReviewsInThisPage": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reviewCollection": {
+          "$ref": "#/definitions/ReviewCollection"
+        },
+        "reviewSummaryCollection": {
+          "$ref": "#/definitions/ReviewSummaryCollection"
+        },
+        "startIndex": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
     }
   }
 }
