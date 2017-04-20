@@ -14,13 +14,10 @@
       "type": "basic"
     }
   },
-  "security": {
-    "epsSecurity": []
-  },
   "paths": {
     "/BookingTrends": {
       "get": {
-        "description": "Insights into the travelers’ booking patterns\n",
+        "description": "# Insights into the travelers’ booking patterns \n\nThe competitors set is calculated based on: \n* price: it contains hotels with an ADR of +/- 10% of hotel ADR in last 12 months \n* proximity: circle radius expands from 3km to 6km to 9km and stops when at least 4 hotels are included in your competitors set.  \n  If less than 4 hotels are found at the 9km radius mark, no comp set will be displayed for that hotel \n",
         "parameters": [
           {
             "name": "htid",
@@ -51,46 +48,46 @@
                     "type": "string"
                   },
                   "caption": {
-                    "description": "If category=brand this property contains the name of the brand; if category=travelerOrigination this property contains the country code(3 letters)",
+                    "description": "If category:brand this property contains the name of the brand, if category:travelerOrigination this property contains the country code(3 letters)",
                     "type": "string"
                   },
                   "l28d_compset_cy": {
-                    "description": "Compset production for last 28 days in current year",
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 28 days of current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_compset_ly": {
-                    "description": "Compset production for last 28 days in last year",
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 28 days of last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_compset_cy": {
-                    "description": "Compset production for last 90 days in current year",
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 90 days of current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_compset_ly": {
-                    "description": "Compset production for last 90 days in last year",
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 90 days of last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_hotel_cy": {
-                    "description": "Hotel production for last 28 days in current year",
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 28 days of current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l28d_hotel_ly": {
-                    "description": "Hotel production for last 28 days in last year",
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 28 days of last year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_hotel_cy": {
-                    "description": "Hotel production for last 90 days in current year",
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 90 days of current year",
                     "type": "number",
                     "format": "double"
                   },
                   "l90d_hotel_ly": {
-                    "description": "Hotel production for last 90 days in last year",
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 90 days of last year",
                     "type": "number",
                     "format": "double"
                   }
@@ -103,7 +100,7 @@
     },
     "/FlashReport": {
       "get": {
-        "description": "Hotel and compset performance for past and future stay dates.\n - Year To Date Stays(ytd): represents the YOY production trend (for hotel and compset) considering all stay dates starting beginning of the year until the report date.\n - Next Week Stays(nw): represents the YOY production trend considering all stay dates for the week following the report date.\n - Next 4 Weeks Stays(n4w): represents the YOY production trend considering all stay dates for the 4 weeks following the report date.\n - Net Room Night Count(nrn) : represents the total number of reservations the hotel will deliver (if cancellations are made, then they are considered in the calculation).\n - Average Daily Rate(adr) : base rate per room night for hotel rooms.\n",
+        "description": "# Hotel and competitors performance for past and future stay dates.\n\n * Year To Date Stays(ytd): represents the YOY production trend (for hotel and competitors) considering all stay dates starting beginning of the year until the report date.\n * Next Week Stays(nw): represents the YOY production trend considering all stay dates for the week following the report date.\n * Next 4 Weeks Stays(n4w): represents the YOY production trend considering all stay dates for the 4 weeks following the report date.\n * Net Room Night Count(nrn) : represents the total number of reservations the hotel will deliver (if cancellations are made, then they are considered in the calculation).\n * Average Daily Rate(adr) : base rate per room night for hotel rooms.\n\nThe competitors set is calculated based on: \n* price: it contains hotels with an ADR of +/- 10% of hotel ADR in last 12 months \n* proximity: circle radius expands from 3km to 6km to 9km and stops when at least 4 hotels are included in your competitors set.  \n  If less than 4 hotels are found at the 9km radius mark, no comp set will be displayed for that hotel\n",
         "parameters": [
           {
             "name": "htid",
@@ -130,62 +127,62 @@
                 "type": "object",
                 "properties": {
                   "ytd_hotel_nrn_delta": {
-                    "description": "Year To Date Hotel Net Room Night",
+                    "description": "Year To Date Hotel Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "ytd_hotel_adr_delta": {
-                    "description": "Year To Date Hotel Average Daily Rate",
+                    "description": "Year To Date Hotel Average Daily Rate Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "ytd_compset_nrn_delta": {
-                    "description": "Year To Date Compset Net Room Night",
+                    "description": "Year To Date Competitors Set Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "ytd_compset_adr_delta": {
-                    "description": "Year To Date Compset Average Daily Rate",
+                    "description": "Year To Date Competitors Set Average Daily Rate  Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "nw_hotel_nrn_delta": {
-                    "description": "Next Week Hotel Net Room Night",
+                    "description": "Next Week Hotel Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "nw_hotel_adr_delta": {
-                    "description": "Next Week Hotel Average Daily Rate",
+                    "description": "Next Week Hotel Average Daily Rate Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "nw_compset_nrn_delta": {
-                    "description": "Next Week Compset Net Room Night",
+                    "description": "Next Week Competitors Set Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "nw_compset_adr_delta": {
-                    "description": "Next Week Compset Average Daily Rate",
+                    "description": "Next Week Competitors Set Average Daily Rate Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "n4w_hotel_nrn_delta": {
-                    "description": "Next 4 Weeks Hotel Net Room Night",
+                    "description": "Next 4 Weeks Hotel Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "n4w_hotel_adr_delta": {
-                    "description": "Next 4 Weeks Hotel Average Daily Rate",
+                    "description": "Next 4 Weeks Hotel Average Daily Rate Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "n4w_compset_nrn_delta": {
-                    "description": "Next 4 Weeks Compset Net Room Night",
+                    "description": "Next 4 Weeks Competitors Set Net Room Night Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "n4w_compset_adr_delta": {
-                    "description": "Next 4 Weeks Compset Average Daily Rate",
+                    "description": "Next 4 Weeks Competitors Set Average Daily Rate Delta",
                     "type": "number",
                     "format": "double"
                   }
@@ -198,7 +195,7 @@
     },
     "/FutureStayProduction7Days": {
       "get": {
-        "description": "Hotel room nights for the 4 stay weeks following the report date\n",
+        "description": "# Hotel room nights for the 4 stay weeks following the report date\n",
         "parameters": [
           {
             "name": "htid",
@@ -248,7 +245,7 @@
     },
     "/FutureStayProduction28Days": {
       "get": {
-        "description": "Hotel production for the future 28 stay dates\n",
+        "description": "# Hotel production for the future 28 stay dates\n",
         "parameters": [
           {
             "name": "htid",
@@ -298,7 +295,7 @@
     },
     "/MonthlyStays": {
       "get": {
-        "description": "Hotel’s production for each stay month.\n",
+        "description": "# Hotel’s production for each stay month.\n",
         "parameters": [
           {
             "name": "htid",
@@ -335,32 +332,32 @@
                     "format": "double"
                   },
                   "hotel_only": {
-                    "description": "Price for room only",
+                    "description": "Standalone Net Room Nights",
                     "type": "number",
                     "format": "double"
                   },
                   "package": {
-                    "description": "Price for package",
+                    "description": "Package Net Room Nights",
                     "type": "number",
                     "format": "double"
                   },
                   "total": {
-                    "description": "hotel_only + package",
+                    "description": "Standalone and Package Net Room Nights",
                     "type": "number",
                     "format": "double"
                   },
                   "yoy_hotel_only": {
-                    "description": "Price for room only - Delta",
+                    "description": "Standalone Net Room Nights - Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "yoy_package": {
-                    "description": "Price for package - Delta",
+                    "description": "Package Net Room Nights - Delta",
                     "type": "number",
                     "format": "double"
                   },
                   "yoy_total": {
-                    "description": "Price for total - Delta",
+                    "description": "Standalone and Package Net Room Nights - Delta",
                     "type": "number",
                     "format": "double"
                   },
