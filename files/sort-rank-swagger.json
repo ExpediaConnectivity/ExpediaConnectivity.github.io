@@ -1,13 +1,15 @@
 {
   "apiVersion": "1.0",
+  "basePath": "https://services.expediapartnercentral.com/",
+  "resourcePath": "/lodging-sort/v1/hops/HopsAverageRanks",  
   "apis": [
     {
-      "description": "hopsAverageRanks",
+      "description": "API providing average hotel ranking in customer search results, by point of sale, for searches in the last 90 days.",
       "operations": [
         {
           "method": "GET",
-          "summary": "hopsAverageRanks",
-          "notes": "hopsAverageRanks",
+          "summary": "Average Hotel Ranking",
+          "notes": "API providing average hotel ranking in customer search results, by point of sale, for searches in the last 90 days.",
           "nickname": "hopsAverageRanks",
           "produces": [
             "application/json"
@@ -29,7 +31,7 @@
             {
               "allowMultiple": true,
               "defaultValue": "",
-              "description": "givenSearchDates",
+              "description": "Customer search dates. Can provide up to 2 different dates, in format: yyyy-mm-dd.",
               "name": "searchDate",
               "paramType": "query",
               "items": {
@@ -43,7 +45,7 @@
             {
               "allowMultiple": false,
               "defaultValue": "",
-              "description": "givenCheckinDate",
+              "description": "Customer checkin date, format: yyyy-mm-dd. Can be used to filter out results. Only works if a single customer search date is provided, otherwise ignored and defaulted to search date + 1.",
               "name": "checkin",
               "paramType": "query",
               "format": "date-time",
@@ -53,38 +55,11 @@
             {
               "allowMultiple": false,
               "defaultValue": "",
-              "description": "givenNumOfDays",
+              "description": "Only considered if a single customer search date is provided. Number of days to look consider beyond the customer checkin date. For example, if checkin date is 2000-01-01, and number of days is set to 30, the API will return results for customers looking to checkin any day between 2000-01-01 and 2000-01-31",
               "name": "numDays",
               "paramType": "query",
               "format": "int32",
               "type": "integer",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "currency",
-              "name": "currency",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "path",
-              "name": "path",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "msgId",
-              "name": "Message-ID",
-              "paramType": "header",
-              "type": "string",
               "required": false
             }
           ],
@@ -112,121 +87,8 @@
         }
       ],
       "path": "/lodging-sort/v1/hops/HopsAverageRanks"
-    },
-    {
-      "description": "hopsAverageRanksPretty",
-      "operations": [
-        {
-          "method": "GET",
-          "summary": "hopsAverageRanksPretty",
-          "notes": "hopsAverageRanksPretty",
-          "nickname": "hopsAverageRanksPretty",
-          "produces": [
-            "application/json"
-          ],
-          "consumes": [
-            "application/json"
-          ],
-          "parameters": [
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "hotelId",
-              "name": "hotelId",
-              "paramType": "query",
-              "format": "int32",
-              "type": "integer",
-              "required": false
-            },
-            {
-              "allowMultiple": true,
-              "defaultValue": "",
-              "description": "givenSearchDates",
-              "name": "searchDate",
-              "paramType": "query",
-              "items": {
-                "format": "date-time",
-                "type": "string"
-              },
-              "type": "array",
-              "uniqueItems": false,
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "givenCheckinDate",
-              "name": "checkin",
-              "paramType": "query",
-              "format": "date-time",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "givenNumOfDays",
-              "name": "numDays",
-              "paramType": "query",
-              "format": "int32",
-              "type": "integer",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "currency",
-              "name": "currency",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "path",
-              "name": "path",
-              "paramType": "query",
-              "type": "string",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "msgId",
-              "name": "Message-ID",
-              "paramType": "header",
-              "type": "string",
-              "required": false
-            }
-          ],
-          "responseMessages": [
-            {
-              "code": 200,
-              "message": "OK",
-              "responseModel": "string"
-            },
-            {
-              "code": 401,
-              "message": "Unauthorized"
-            },
-            {
-              "code": 403,
-              "message": "Forbidden"
-            },
-            {
-              "code": 404,
-              "message": "Not Found"
-            }
-          ],
-          "deprecated": "false",
-          "type": "string"
-        }
-      ],
-      "path": "/lodging-sort/v1/hops/HopsAverageRanks/pretty"
     }
   ],
-  "basePath": "https://services.expediapartnercentral.com/",
   "consumes": [
     "application/json"
   ],
@@ -336,6 +198,6 @@
     "text/html",
     "application/json"
   ],
-  "resourcePath": "/lodging-sort/v1/hops/HopsAverageRanks",
+
   "swaggerVersion": "1.2"
 }

@@ -15,7 +15,7 @@ function googleTranslateElementInit() {
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Top TPIDs And Regions (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/top-tpids-and-regions/quickstart.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="top-points-of-sale-and-regions-endpoint"><a class="sidebar-nav-item" href="#top-points-of-sale-and-regions-endpoint">Top Points of Sale and Regions Endpoint</a></li><li class="depth2" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth2" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="depth2" data-magellan-arrival="tpid-to-point-of-sale-mapping"><a class="sidebar-nav-item" href="#tpid-to-point-of-sale-mapping">TPID to Point of Sale Mapping</a></li><li class="depth2" data-magellan-arrival="error-messages"><a class="sidebar-nav-item" href="#error-messages">Error Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/top-tpids-and-regions/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>The top points of sale and regions API requires HTTP basic auth credentials to be supplied with every request.</p>
-<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<p>Credentials must match a valid API username/password.  the credentials must be authorized to access data for the hotel being requested.</p>
 <h2 id="top-points-of-sale-and-regions-endpoint" data-magellan-destination="top-points-of-sale-and-regions-endpoint">Top Points of Sale and Regions Endpoint</h2>
 <pre><code>GET /lodging-sort/v1/hops/HopsTopTpidsAndRegions
 </code></pre><p>The top points of sale and regions endpoint will return a sorted list of top regions for each of the top points of sale by bookings for a specified hotel.</p>
@@ -31,13 +31,6 @@ function googleTranslateElementInit() {
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><code>Authorization</code></td>
-<td>Header</td>
-<td>String</td>
-<td><code>Basic dGVzdDp0ZXN0</code></td>
-<td>Unique identifier for a property/hotel.</td>
-</tr>
 <tr>
 <td><code>hotelId</code></td>
 <td>Query</td>
@@ -67,12 +60,12 @@ function googleTranslateElementInit() {
 <tr>
 <td>tpid</td>
 <td>Integer</td>
-<td>Point of Sale ID</td>
+<td>Point of Sale ID. Please refer to the mapping table below to resolve this to an expedia point of sale name.</td>
 </tr>
 <tr>
 <td>regionId</td>
 <td>Long</td>
-<td>GAIA region ID</td>
+<td>GAIA region ID. Please use the Gaia API referenced on this developer portal to resolve this gaia ID to a region name with coordinates.</td>
 </tr>
 </tbody>
 </table>

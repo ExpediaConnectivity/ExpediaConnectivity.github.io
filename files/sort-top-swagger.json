@@ -2,12 +2,12 @@
   "apiVersion": "1.0",
   "apis": [
     {
-      "description": "getTopTpidAndRegion",
+      "description": "For a given hotel ID, API will return information about the most popular points of sales and regions in which the hotel surfaced. The API will return Expedia IDs for points of sale and regions. Please use the documentation of this API to understand which point of sale ID (TPID) corresponds to which point of sale name. Please use the Gaia API to resolve the region IDs.",
       "operations": [
         {
           "method": "GET",
-          "summary": "getTopTpidAndRegion",
-          "notes": "getTopTpidAndRegion",
+          "summary": "For a given hotel ID, API will return information about the most popular points of sales and regions in which the hotel surfaced. The API will return Expedia IDs for points of sale and regions. Please use the documentation of this API to understand which point of sale ID (TPID) corresponds to which point of sale name. Please use the Gaia API to resolve the region IDs.",
+          "notes": "For a given hotel ID, API will return information about the most popular points of sales and regions in which the hotel surfaced. The API will return Expedia IDs for points of sale and regions. Please use the documentation of this API to understand which point of sale ID (TPID) corresponds to which point of sale name. Please use the Gaia API to resolve the region IDs.",
           "nickname": "getTopTpidAndRegion",
           "produces": [
             "application/json"
@@ -24,15 +24,6 @@
               "paramType": "query",
               "format": "int32",
               "type": "integer",
-              "required": false
-            },
-            {
-              "allowMultiple": false,
-              "defaultValue": "",
-              "description": "msgId",
-              "name": "Message-ID",
-              "paramType": "header",
-              "type": "string",
               "required": false
             }
           ],

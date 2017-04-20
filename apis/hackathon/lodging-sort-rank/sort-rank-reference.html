@@ -15,10 +15,11 @@ function googleTranslateElementInit() {
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Lodging Sort Rank (Experimental)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/lodging-sort-rank/quickstart.html">Quick Start</a></li><li class="pagename" data-magellan-arrival="reference"><a class="sidebar-nav-item" href="#reference">Reference</a></li><li class="depth2" data-magellan-arrival="authentication"><a class="sidebar-nav-item" href="#authentication">Authentication</a></li><li class="depth2" data-magellan-arrival="sort-rank-endpoint"><a class="sidebar-nav-item" href="#sort-rank-endpoint">Sort Rank Endpoint</a></li><li class="depth3" data-magellan-arrival="request-parameters"><a class="sidebar-nav-item" href="#request-parameters">Request Parameters</a></li><li class="depth3" data-magellan-arrival="response"><a class="sidebar-nav-item" href="#response">Response</a></li><li class="depth3" data-magellan-arrival="response-format"><a class="sidebar-nav-item" href="#response-format">Response Format</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/hackathon/lodging-sort-rank/try-it.html">Try It</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="reference" data-magellan-destination="reference">Reference</h1>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>The Sort Ranks API requires HTTP basic auth credentials to be supplied with every request.</p>
-<p>Credentials must match a valid hotelier username/password.  If data for a specific hotel or list of hotels is being requested, the credentials must be authorized to access data for those hotels.</p>
+<p>Credentials must match a valid API username/password, and the hotel provided needs to be assigned to the API account.  </p>
 <h2 id="sort-rank-endpoint" data-magellan-destination="sort-rank-endpoint">Sort Rank Endpoint</h2>
 <pre><code>GET /lodging-sort/v1/hops/HopsAverageRanks
 </code></pre><p>The Sort Rank endpoint will return a hotel&#39;s average sort rank data for a range of check-in dates.</p>
+<p>The data used to power this API is precomputed on a daily basis. Every 24h, searches for the past day are aggregated and made available via this API. It is important to know that for regions with little to no searches, the API will produce very little results.</p>
 <h3 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h3>
 <div><table>
 <thead>
@@ -50,33 +51,26 @@ function googleTranslateElementInit() {
 <td>Query</td>
 <td>String</td>
 <td><code>2016-05-15</code></td>
-<td>Can send in a list of search dates. Format: YYYY-MM-DD. Maximum number of search dates: 2 Each search date should be in this range: from today to previous 90 days (from today - 90 days to today) both inclusive. i.e. today-90 &lt;= searchDate &lt;= today, for each searchDate</td>
+<td>Can send in a list of search dates. Format: YYYY-MM-DD. Maximum number of search dates: 2 Each search date should be in this range: from today to previous 90 days (from today - 90 days to today) both inclusive. i.e. today-90 &lt;= searchDate &lt;= today, for each searchDate. If 2 dates are specified, the next 2 params cannot be used and will be defaulted to (checkin=searchdate+1, numdays=90).</td>
 </tr>
 <tr>
 <td><code>checkin</code></td>
 <td>Query</td>
 <td>String</td>
 <td><code>2016-05-16</code></td>
-<td>Checkin date starts on this day.  Checkin date range: from search date to next 90 days. i.e. searchDate&lt;= checkIn &lt;= searchDate+89</td>
+<td>Checkin date starts on this day.  Checkin date range: from search date to next 90 days. i.e. searchDate&lt;= checkIn &lt;= searchDate+89. Param ignored if 2 search dates are provided, in which case value defaults to searchdate+1</td>
 </tr>
 <tr>
 <td><code>numDays</code></td>
 <td>Query</td>
 <td>Integer</td>
 <td><code>1</code></td>
-<td>Number of checkin dates. Max is 90 days and numDays + checkIn &lt; searchDate + 90. Average sort rank/price/compensation is returned for each Checkin date, where Checkin date starts = checkIn and Checkin date ends = checkIn + numDays - 1.</td>
-</tr>
-<tr>
-<td><code>currency</code></td>
-<td>Query</td>
-<td>String</td>
-<td><code>usd</code></td>
-<td>Standard ISO currency code (for average price and average compensation). Currently only the default USD is supported</td>
+<td>Number of checkin dates. Max is 90 days and numDays + checkIn &lt; searchDate + 90. Average sort rank/price/compensation is returned for each Checkin date, where Checkin date starts = checkIn and Checkin date ends = checkIn + numDays - 1. Param is ignored if 2 search dates are provided, in which case value defaults to 90.</td>
 </tr>
 </tbody>
 </table>
 </div><h5 id="sample-request-with-all-parameters-specified" data-magellan-destination="sample-request-with-all-parameters-specified">Sample Request with all parameters specified</h5>
-<pre><code>https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1&amp;searchDate=2016-05-15&amp;checkin=2016-05-16&amp;numDays=2
+<pre><code>https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsAverageRanks?hotelId=1&amp;searchDate=2017-03-15&amp;checkin=2017-04-16&amp;numDays=2
 </code></pre><h3 id="response" data-magellan-destination="response">Response</h3>
 <p>The API returns a hotel&#39;s average sort rank, average price, and average compensation in JSON format aggregated over:</p>
 <ul>
@@ -118,7 +112,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>regionId</td>
 <td>Long</td>
-<td>GAIA region ID</td>
+<td>GAIA region ID. Please use the Gaia API to resolve this to something more meaningful if you need region information.</td>
 </tr>
 <tr>
 <td>avgRank</td>

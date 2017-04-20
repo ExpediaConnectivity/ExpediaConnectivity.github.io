@@ -21,7 +21,7 @@ function googleTranslateElementInit() {
 <h2 id="reading-top-point-of-sale-and-region-data" data-magellan-destination="reading-top-point-of-sale-and-region-data">Reading Top Point of Sale and Region Data</h2>
 <p>To retreive top point of sale and regions data simply pass a hotel id and client id to the </lodging-sort/v1/hops/HopsTopTpidsAndRegions> endpoint via a query parameter.</p>
 <pre><code>https://services.expediapartnercentral.com/lodging-sort/v1/hops/HopsTopTpidsAndRegions?hotelId=1
-</code></pre><p>The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel.</p>
+</code></pre><p>The response will contain a sorted list of top regions for each of the top points of sale for the specified hotel. Partners are encouraged to use the Gaia API referenced in this portal to resolve the Gaia region IDs to something more meaningful. To resolve the point of sale IDs (tpid), please refer to the reference section of this API, there is a static list of ids and names provided.</p>
 <pre><code class="lang-JSON">{
     &quot;hopsTpidsList&quot;: [
         {
