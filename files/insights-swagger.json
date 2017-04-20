@@ -71,6 +71,45 @@
         }
       }
     },
+
+    "/v1/fairShare": {
+      "get": {
+        "tags": [
+          "v1"
+        ],
+        "operationId": "fairShare",
+        "summary": "Get the fair share data for the given stayDates",
+        "description": "Get the fair share data for the given stayDates",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "description": "hotel ID",
+            "name": "hotelId",
+            "type": "integer"
+          },
+          {
+            "in": "query",
+            "description": "(Optional)the number of days from today to the future, default value is 1",
+            "name": "dayNum",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "No response was specified",
+            "schema": {
+              "$ref": "#/definitions/FairShareJSONResponse"
+            }
+          },
+          "400": {
+            "description": "status: 'Error', errorCode: 2002, errorMsg: 'This hotel has no competitors'"
+          }
+        }
+      }
+    },
     "/v1/compressionOutlook": {
       "get": {
         "tags": [
