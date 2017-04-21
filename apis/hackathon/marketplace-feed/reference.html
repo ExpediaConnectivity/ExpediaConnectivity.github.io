@@ -444,6 +444,151 @@ function googleTranslateElementInit() {
     },
     &quot;actionURL&quot;: &quot;https://hotelcontent.expediapartnercentral.com/contentmain/user_reviews.html?htid=test#GuestReview123&quot;
 }
+</code></pre><h5 id="quality-score" data-magellan-destination="quality-score">Quality Score</h5>
+<p>These messages are an aggregation of several metrics which can affect a hotels search rankings in expedia.</p>
+<p>It contains information on the rates compared with competitors, content score (which is based on how much information and photos are given), and some general factors such as refunds, relocations, and rates &amp; availability.</p>
+<h6 id="-values-properties-4" data-magellan-destination="-values-properties-4"><code>values</code> Properties</h6>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qualityScoreState</code></td>
+<td>String</td>
+<td>The overall rating of quality by Expedia</td>
+<td><code>&quot;Excellent&quot;</code></td>
+</tr>
+<tr>
+<td><code>ratesAndAvailability</code></td>
+<td>Object</td>
+<td>Rates for periods in which a competitor beats your price, or has vacancy where you do not.</td>
+<td><code>&quot;12345&quot;</code></td>
+</tr>
+<tr>
+<td><code>contentCompletion</code></td>
+<td>Object</td>
+<td>Contains Expedia&#39;s content score.</td>
+<td><code>{ &quot;contentScore&quot;: 96 }</code></td>
+</tr>
+<tr>
+<td><code>guestExperience</code></td>
+<td>Object</td>
+<td>Contains metrics on number of refunds and relocations.</td>
+<td><code>{ &quot;refunds&quot;: 1, &quot;relocations&quot;: 0 }</code></td>
+</tr>
+<tr>
+<td><code>qualityScoreFactors</code></td>
+<td>Object</td>
+<td>The states of rates, availability, content, refunds, and relocations</td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="-qualityscorefactors-properties" data-magellan-destination="-qualityscorefactors-properties"><code>qualityScoreFactors</code> Properties</h6>
+<div><table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Data Type</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ratesState</code></td>
+<td>String</td>
+<td>`&quot;Red&quot;</td>
+<td>&quot;Yellow&quot;</td>
+<td>&quot;Green&quot;, or &quot;Gray&quot; if invalid`</td>
+</tr>
+<tr>
+<td><code>availabilityState</code></td>
+<td>String</td>
+<td>`&quot;Red&quot;</td>
+<td>&quot;Yellow&quot;</td>
+<td>&quot;Green&quot;, or &quot;Gray&quot; if invalid`</td>
+</tr>
+<tr>
+<td><code>contentState</code></td>
+<td>String</td>
+<td>`&quot;Red&quot;</td>
+<td>&quot;Yellow&quot;</td>
+<td>&quot;Green&quot;, or &quot;Gray&quot; if invalid`</td>
+</tr>
+<tr>
+<td><code>refundState</code></td>
+<td>String</td>
+<td>`&quot;Red&quot;</td>
+<td>&quot;Yellow&quot;</td>
+<td>&quot;Green&quot;, or &quot;Gray&quot; if invalid`</td>
+</tr>
+<tr>
+<td><code>relocationState</code></td>
+<td>String</td>
+<td>`&quot;Red&quot;</td>
+<td>&quot;Yellow&quot;</td>
+<td>&quot;Green&quot;</td>
+<td>&quot;Recovering&quot;, or &quot;Gray&quot; if invalid`</td>
+</tr>
+</tbody>
+</table>
+</div><h6 id="example-quality-score-message" data-magellan-destination="example-quality-score-message">Example Quality Score Message</h6>
+<pre><code>{
+      &quot;id&quot;: &quot;1.USZ0ZXN0aG90ZWwmYmQwNGI2MDEmVmVyeStwb29y.tv-i-hb3QrpZkPw53WZjog-p0sU&quot;,
+      &quot;hotelId&quot;: &quot;test&quot;,
+      &quot;category&quot;: &quot;Quality Score&quot;,
+      &quot;shortMessage&quot;: &quot;Your quality score is very poor&quot;,
+      &quot;longMessage&quot;: &quot;Your search listing has fallen significantly and its visibility has been reduced on all our websites.&quot;,
+      &quot;values&quot;: {
+        &quot;qualityScoreState&quot;: &quot;Very poor&quot;,
+        &quot;ratesAndAvailability&quot;: [
+          {
+            &quot;checkInDate&quot;: &quot;2017-04-23&quot;,
+            &quot;observationDate&quot;: &quot;2017-04-21&quot;,
+            &quot;occupancy&quot;: 2,
+            &quot;lengthOfStay&quot;: 3,
+            &quot;currency&quot;: &quot;USD&quot;,
+            &quot;competitor&quot;: &quot;Wotif.com&quot;,
+            &quot;competitorPrice&quot;: 99.95,
+            &quot;competitorRoomType&quot;: &quot;One-Bedroom Suite&quot;,
+            &quot;price&quot;: 100.95,
+            &quot;roomType&quot;: &quot;One Bedroom Suite&quot;,
+            &quot;issueType&quot;: &quot;Best Available Rate Issue&quot;
+          },
+          {
+            &quot;checkInDate&quot;: &quot;2017-04-23&quot;,
+            &quot;observationDate&quot;: &quot;2017-04-21&quot;,
+            &quot;occupancy&quot;: 2,
+            &quot;lengthOfStay&quot;: 1,
+            &quot;currency&quot;: &quot;AUD&quot;,
+            &quot;competitor&quot;: &quot;Lastminute.com.au&quot;,
+            &quot;competitorPrice&quot;: 123.45,
+            &quot;competitorRoomType&quot;: &quot;Mini Suite&quot;,
+            &quot;issueType&quot;: &quot;Availability Issue&quot;
+          }
+        ],
+        &quot;contentCompletion&quot;: {
+          &quot;contentScore&quot;: 96
+        },
+        &quot;guestExperience&quot;: {
+          &quot;refunds&quot;: 1,
+          &quot;relocations&quot;: 0
+        },
+        &quot;qualityScoreFactors&quot;: {
+          &quot;ratesState&quot;: &quot;Red&quot;,
+          &quot;availabilityState&quot;: &quot;Yellow&quot;,
+          &quot;contentState&quot;: &quot;Green&quot;,
+          &quot;refundState&quot;: &quot;Yellow&quot;,
+          &quot;relocationState&quot;: &quot;Recovering&quot;
+        }
+      },
+      &quot;actionURL&quot;: &quot;https://www.expediapartnercentral.com/Portal/Home.html?htid=testhotel&amp;LinkSource=marketplace-feed.Quality+Score.test&amp;utm_source=marketplace-feed&amp;utm_medium=partner-link&amp;utm_campaign=marketplace-feed.Quality+Score.test&quot;
+    }
 </code></pre><h2 id="events-endpoint" data-magellan-destination="events-endpoint">Events Endpoint</h2>
 <pre><code>POST https://marketplace-feed.prod-p.expedia.com/v1/events
 </code></pre><p>The <code>/v1/events</code> endpoint provides a mechanism for partners to report analytics events back to Expedia.</p>
@@ -514,7 +659,7 @@ function googleTranslateElementInit() {
 <tr>
 <td><code>timestamp</code></td>
 <td>String</td>
-<td>An optional event timestanp, in ISO-8601 format.</td>
+<td>An optional event timestamp, in ISO-8601 format.</td>
 <td><code>&quot;2015-11-11T01:00:00.000Z&quot;</code></td>
 </tr>
 <tr>
