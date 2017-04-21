@@ -19,6 +19,7 @@ function googleTranslateElementInit() {
 <h2 id="top-points-of-sale-and-regions-endpoint" data-magellan-destination="top-points-of-sale-and-regions-endpoint">Top Points of Sale and Regions Endpoint</h2>
 <pre><code>GET /lodging-sort/v1/hops/HopsTopTpidsAndRegions
 </code></pre><p>The top points of sale and regions endpoint will return a sorted list of top regions for each of the top points of sale by bookings for a specified hotel.</p>
+<p>This API is based on data that gets computed every day at 11am UTC, and uses data from the previous 24h. A hotel will only surface via this API if it received at least 5 valid searches (based on expedia prefered sort rank) on at least one of 3 Expedia core Points of Sale (Expedia.com US, Travelocity.com US and Orbitz.com US) in the 24h period before 11am UTC. Otherwise it won&#39;t surface until the next day, if it meets the criteria mentioned above.</p>
 <h2 id="request-parameters" data-magellan-destination="request-parameters">Request Parameters</h2>
 <div><table>
 <thead>
@@ -106,396 +107,504 @@ function googleTranslateElementInit() {
 </thead>
 <tbody>
 <tr>
-<td>expedia.com</td>
 <td>1</td>
+<td>Expedia US</td>
 </tr>
 <tr>
-<td>expedia.com.br</td>
-<td>69</td>
-</tr>
-<tr>
-<td>expedia.ca</td>
-<td>4</td>
-</tr>
-<tr>
-<td>Expedia.com.ar</td>
-<td>70</td>
-</tr>
-<tr>
-<td>Expedia.com.mx</td>
-<td>12</td>
-</tr>
-<tr>
-<td>Expedia.com.au</td>
-<td>25</td>
-</tr>
-<tr>
-<td>Expedia.com.hk</td>
-<td>18</td>
-</tr>
-<tr>
-<td>Expedia.in</td>
-<td>27</td>
-</tr>
-<tr>
-<td>Expedia.co.jp</td>
-<td>28</td>
-</tr>
-<tr>
-<td>Expedia.co.kr</td>
-<td>16</td>
-</tr>
-<tr>
-<td>Expedia.com.my</td>
-<td>15</td>
-</tr>
-<tr>
-<td>Expedia.nz</td>
-<td>29</td>
-</tr>
-<tr>
-<td>Expedia.com.ph</td>
-<td>68</td>
-</tr>
-<tr>
-<td>Expedia.com.sg</td>
-<td>14</td>
-</tr>
-<tr>
-<td>Expedia.com.tw</td>
-<td>62</td>
-</tr>
-<tr>
-<td>Expedia.co.th</td>
-<td>17</td>
-</tr>
-<tr>
-<td>Expedia.com.vn</td>
-<td>71</td>
-</tr>
-<tr>
-<td>Expedia.co.id</td>
-<td>61</td>
-</tr>
-<tr>
-<td>expedia.co.uk</td>
 <td>3</td>
+<td>Expedia UK</td>
 </tr>
 <tr>
-<td>expedia.de</td>
+<td>4</td>
+<td>Expedia Canada</td>
+</tr>
+<tr>
 <td>6</td>
+<td>Expedia.de Reisen</td>
 </tr>
 <tr>
-<td>expedia.it</td>
-<td>8</td>
-</tr>
-<tr>
-<td>expedia.es</td>
-<td>9</td>
-</tr>
-<tr>
-<td>expedia.fr</td>
-<td>20</td>
-</tr>
-<tr>
-<td>Expedia.co.at</td>
-<td>6</td>
-</tr>
-<tr>
-<td>Expedia.be</td>
-<td>64</td>
-</tr>
-<tr>
-<td>Expedia.dk</td>
-<td>67</td>
-</tr>
-<tr>
-<td>Expedia.ie</td>
-<td>63</td>
-</tr>
-<tr>
-<td>Expedia.nl</td>
-<td>11</td>
-</tr>
-<tr>
-<td>Expedia.no</td>
-<td>66</td>
-</tr>
-<tr>
-<td>Expedia.se</td>
-<td>65</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>251463</td>
-</tr>
-<tr>
-<td>hoteis.com</td>
-<td>86175</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>97815</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208646</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208691</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>133480</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>97814</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>125191</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208666</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208650</td>
-</tr>
-<tr>
-<td>fr.hotels.com</td>
-<td>208711</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>140093</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208703</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208642</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>70583</td>
-</tr>
-<tr>
-<td>de.hotels.com</td>
-<td>71004</td>
-</tr>
-<tr>
-<td>cn.hotels.com</td>
-<td>86159</td>
-</tr>
-<tr>
-<td>hotels.co.uk</td>
-<td>207191</td>
-</tr>
-<tr>
-<td>de.hotels.com</td>
-<td>70994</td>
-</tr>
-<tr>
-<td>it.hotels.com</td>
-<td>70996</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>70995</td>
-</tr>
-<tr>
-<td>hotels.ca</td>
-<td>70991</td>
-</tr>
-<tr>
-<td>fr.hotels.com</td>
-<td>70993</td>
-</tr>
-<tr>
-<td>fr.hotels.com</td>
-<td>71002</td>
-</tr>
-<tr>
-<td>hr.hotels.com</td>
-<td>213609</td>
-</tr>
-<tr>
-<td>cs.hotels.com</td>
-<td>213610</td>
-</tr>
-<tr>
-<td>da.hotels.com</td>
-<td>70998</td>
-</tr>
-<tr>
-<td>et.hotels.com</td>
-<td>213612</td>
-</tr>
-<tr>
-<td>fi.hotels.com</td>
-<td>83481</td>
-</tr>
-<tr>
-<td>gr.hotels.com</td>
-<td>213613</td>
-</tr>
-<tr>
-<td>zh.hotels.com</td>
-<td>83786</td>
-</tr>
-<tr>
-<td>hu.hotels.com</td>
-<td>213615</td>
-</tr>
-<tr>
-<td>is.hotels.com</td>
-<td>213616</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>252364</td>
-</tr>
-<tr>
-<td>id.hotels.com</td>
-<td>236979</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>207181</td>
-</tr>
-<tr>
-<td>jp.hotels.com</td>
-<td>84882</td>
-</tr>
-<tr>
-<td>kr.hotels.com</td>
-<td>91256</td>
-</tr>
-<tr>
-<td>lv.hotels.com</td>
-<td>213617</td>
-</tr>
-<tr>
-<td>lt.hotels.com</td>
-<td>213618</td>
-</tr>
-<tr>
-<td>ms.hotels.com</td>
-<td>248814</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>91871</td>
-</tr>
-<tr>
-<td>nl.hotels.com</td>
-<td>71001</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>87703</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208654</td>
-</tr>
-<tr>
-<td>no.hotels.com</td>
-<td>71000</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>140094</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208699</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>140095</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>95327</td>
-</tr>
-<tr>
-<td>pl.hotels.com</td>
-<td>126760</td>
-</tr>
-<tr>
-<td>hoteis.com</td>
-<td>207189</td>
-</tr>
-<tr>
-<td>ru.hotels.com</td>
-<td>126796</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>84478</td>
-</tr>
-<tr>
-<td>sk.hotels.com</td>
-<td>213639</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>354116</td>
-</tr>
-<tr>
-<td>nl.hotels.com</td>
-<td>208707</td>
-</tr>
-<tr>
-<td>sv.hotels.com</td>
-<td>70999</td>
-</tr>
-<tr>
-<td>Fr.hotels.com</td>
-<td>71003</td>
-</tr>
-<tr>
-<td>tw.hotels.com</td>
-<td>91257</td>
-</tr>
-<tr>
-<td>th.hotels.com</td>
-<td>248811</td>
-</tr>
-<tr>
-<td>tr.hotels.com</td>
-<td>213635</td>
-</tr>
-<tr>
-<td>uk.hotels.com</td>
-<td>213636</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>208695</td>
-</tr>
-<tr>
-<td>hoteles.com</td>
-<td>133479</td>
-</tr>
-<tr>
-<td>vi.hotels.com</td>
-<td>144555</td>
-</tr>
-<tr>
-<td>hotels.com</td>
-<td>373527</td>
-</tr>
-<tr>
-<td>voyages-sncf.com</td>
 <td>7</td>
+<td>voyages-sncf.com</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Expedia.it</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Expedia ES</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Expedia.se</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Expedia.nl</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Expedia Mexico</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Expedia.com.sg</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Expedia Malaysia</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Expedia Korea</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Expedia Thailand</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Expedia Hong Kong</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Expedia.fr</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Expedia Australia</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Expedia India</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Expedia Japan</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Expedia.co.nz</td>
+</tr>
+<tr>
+<td>34</td>
+<td>Hotels.com en Espanol</td>
+</tr>
+<tr>
+<td>39</td>
+<td>Egencia Europe</td>
+</tr>
+<tr>
+<td>40</td>
+<td>Egencia UK</td>
+</tr>
+<tr>
+<td>41</td>
+<td>Egencia Germany</td>
+</tr>
+<tr>
+<td>61</td>
+<td>Expedia Indonesia</td>
+</tr>
+<tr>
+<td>62</td>
+<td>Expedia Taiwan</td>
+</tr>
+<tr>
+<td>63</td>
+<td>Expedia Ireland</td>
+</tr>
+<tr>
+<td>64</td>
+<td>Expedia Belgium</td>
+</tr>
+<tr>
+<td>65</td>
+<td>Expedia Sweden</td>
+</tr>
+<tr>
+<td>66</td>
+<td>Expedia Norway</td>
+</tr>
+<tr>
+<td>67</td>
+<td>Expedia Denmark</td>
+</tr>
+<tr>
+<td>68</td>
+<td>Expedia Philippines</td>
+</tr>
+<tr>
+<td>69</td>
+<td>Expedia Brazil</td>
+</tr>
+<tr>
+<td>70</td>
+<td>Expedia Argentina</td>
+</tr>
+<tr>
+<td>71</td>
+<td>Expedia Vietnam</td>
+</tr>
+<tr>
+<td>72</td>
+<td>Switzerland</td>
+</tr>
+<tr>
+<td>73</td>
+<td>Expedia Finland</td>
+</tr>
+<tr>
+<td>74</td>
+<td>Expedia Russia</td>
+</tr>
+<tr>
+<td>75</td>
+<td>Expedia China</td>
+</tr>
+<tr>
+<td>3000</td>
+<td>Hotels LATAM USD</td>
+</tr>
+<tr>
+<td>3001</td>
+<td>Hotels US USD</td>
+</tr>
+<tr>
+<td>3002</td>
+<td>Hotels Canada CAD</td>
+</tr>
+<tr>
+<td>3003</td>
+<td>Hotels Brazil BRL</td>
+</tr>
+<tr>
+<td>3004</td>
+<td>Hotels Mexico MXN</td>
+</tr>
+<tr>
+<td>3018</td>
+<td>Hotels Brazil Local</td>
+</tr>
+<tr>
+<td>3019</td>
+<td>Hotels Argentina ARS</td>
+</tr>
+<tr>
+<td>3100</td>
+<td>Hotels EMEA USD</td>
+</tr>
+<tr>
+<td>3101</td>
+<td>Hotels UK GBP</td>
+</tr>
+<tr>
+<td>3102</td>
+<td>Hotels Germany EUR</td>
+</tr>
+<tr>
+<td>3103</td>
+<td>Hotels Italy EUR</td>
+</tr>
+<tr>
+<td>3104</td>
+<td>Hotels Spain EUR</td>
+</tr>
+<tr>
+<td>3105</td>
+<td>Hotels Netherlands EUR</td>
+</tr>
+<tr>
+<td>3107</td>
+<td>Hotels Sweden SEK</td>
+</tr>
+<tr>
+<td>3109</td>
+<td>Hotels Norway NOK</td>
+</tr>
+<tr>
+<td>3110</td>
+<td>Hotels Denmark DEK</td>
+</tr>
+<tr>
+<td>3111</td>
+<td>Hotels Switzerland CHF</td>
+</tr>
+<tr>
+<td>3112</td>
+<td>Hotels Russia RUB</td>
+</tr>
+<tr>
+<td>3113</td>
+<td>Hotels Israel ILS</td>
+</tr>
+<tr>
+<td>3114</td>
+<td>Hotels South Africa ZAR</td>
+</tr>
+<tr>
+<td>3115</td>
+<td>Hotels Turkey TRY</td>
+</tr>
+<tr>
+<td>3116</td>
+<td>Hotels Poland PLN</td>
+</tr>
+<tr>
+<td>3117</td>
+<td>Hotels United Arab Emirates AED</td>
+</tr>
+<tr>
+<td>3118</td>
+<td>Hotels Saudi Arabia SAR</td>
+</tr>
+<tr>
+<td>3119</td>
+<td>Hotels Egypt EGP</td>
+</tr>
+<tr>
+<td>3180</td>
+<td>Hotels EMEA EUR</td>
+</tr>
+<tr>
+<td>3200</td>
+<td>Hotels APAC USD</td>
+</tr>
+<tr>
+<td>3201</td>
+<td>Hotels Australia AUD</td>
+</tr>
+<tr>
+<td>3202</td>
+<td>Hotels India INR</td>
+</tr>
+<tr>
+<td>3203</td>
+<td>Hotels Japan JPY</td>
+</tr>
+<tr>
+<td>3204</td>
+<td>Hotels New Zealand NZD</td>
+</tr>
+<tr>
+<td>3205</td>
+<td>Hotels Hong Kong HKD</td>
+</tr>
+<tr>
+<td>3206</td>
+<td>Hotels Singapore SGD</td>
+</tr>
+<tr>
+<td>3207</td>
+<td>Hotels Korea KRW</td>
+</tr>
+<tr>
+<td>3208</td>
+<td>Hotels China CNY</td>
+</tr>
+<tr>
+<td>3209</td>
+<td>Hotels Thailand THB</td>
+</tr>
+<tr>
+<td>3210</td>
+<td>Hotels Malaysia MYR</td>
+</tr>
+<tr>
+<td>3211</td>
+<td>Hotels Taiwan TWD</td>
+</tr>
+<tr>
+<td>3212</td>
+<td>Hotels Indonesia IDR</td>
+</tr>
+<tr>
+<td>3213</td>
+<td>Hotels Vietnam VND</td>
+</tr>
+<tr>
+<td>3214</td>
+<td>Hotels Philippines PHP</td>
+</tr>
+<tr>
+<td>3301</td>
+<td>Hotels.com Mobile US USD</td>
+</tr>
+<tr>
+<td>3401</td>
+<td>Hotels.com Mobile UK GBP</td>
+</tr>
+<tr>
+<td>3480</td>
+<td>Hotels.com Mobile EMEA EUR</td>
+</tr>
+<tr>
+<td>6010</td>
+<td>Hotwire</td>
+</tr>
+<tr>
+<td>7102</td>
+<td>Egencia Germany EUR</td>
+</tr>
+<tr>
+<td>7103</td>
+<td>Egencia Italy EUR</td>
+</tr>
+<tr>
+<td>7104</td>
+<td>Egencia Spain EUR</td>
+</tr>
+<tr>
+<td>7105</td>
+<td>Egencia Netherlands EUR</td>
+</tr>
+<tr>
+<td>7107</td>
+<td>Egencia Sweden SEK</td>
+</tr>
+<tr>
+<td>7109</td>
+<td>Egencia Norway NOK</td>
+</tr>
+<tr>
+<td>7110</td>
+<td>Egencia Denmark DEK</td>
+</tr>
+<tr>
+<td>7111</td>
+<td>Egencia Switzerland CHF</td>
+</tr>
+<tr>
+<td>7114</td>
+<td>Egencia Belgium EUR</td>
+</tr>
+<tr>
+<td>7115</td>
+<td>Egencia Ireland EUR</td>
+</tr>
+<tr>
+<td>7116</td>
+<td>Egencia Australia AUD</td>
+</tr>
+<tr>
+<td>60000</td>
+<td>Egencia</td>
+</tr>
+<tr>
+<td>60003</td>
+<td>Egencia-UK</td>
+</tr>
+<tr>
+<td>60004</td>
+<td>Egencia - CA</td>
+</tr>
+<tr>
+<td>60006</td>
+<td>Egencia-DE</td>
+</tr>
+<tr>
+<td>60008</td>
+<td>Egencia-IT</td>
+</tr>
+<tr>
+<td>60009</td>
+<td>Egencia-ES</td>
+</tr>
+<tr>
+<td>60010</td>
+<td>Egencia-SE</td>
+</tr>
+<tr>
+<td>60011</td>
+<td>Egencia-NL</td>
+</tr>
+<tr>
+<td>60013</td>
+<td>Egencia-DK</td>
+</tr>
+<tr>
+<td>60020</td>
+<td>Egencia-FR</td>
+</tr>
+<tr>
+<td>60025</td>
+<td>Egencia-AU</td>
+</tr>
+<tr>
+<td>60027</td>
+<td>Egencia - IN</td>
+</tr>
+<tr>
+<td>60035</td>
+<td>Egencia-NO</td>
+</tr>
+<tr>
+<td>60080</td>
+<td>Egencia-BE</td>
+</tr>
+<tr>
+<td>60081</td>
+<td>Egencia-IE</td>
+</tr>
+<tr>
+<td>60082</td>
+<td>Egencia-CH</td>
+</tr>
+<tr>
+<td>60083</td>
+<td>Egencia-FI</td>
+</tr>
+<tr>
+<td>70125</td>
+<td>Wotif AU</td>
+</tr>
+<tr>
+<td>70129</td>
+<td>Wotif NZ</td>
+</tr>
+<tr>
+<td>70201</td>
+<td>Orbitz</td>
+</tr>
+<tr>
+<td>70301</td>
+<td>CheapTickets</td>
+</tr>
+<tr>
+<td>70403</td>
+<td>ebookers.com</td>
+</tr>
+<tr>
+<td>70406</td>
+<td>ebookers.de</td>
+</tr>
+<tr>
+<td>70420</td>
+<td>ebookers.fr</td>
+</tr>
+<tr>
+<td>70463</td>
+<td>ebookers.ie</td>
+</tr>
+<tr>
+<td>70465</td>
+<td>MrJet.se</td>
+</tr>
+<tr>
+<td>70472</td>
+<td>ebookers.ch</td>
+</tr>
+<tr>
+<td>70473</td>
+<td>ebookers.fi</td>
+</tr>
+<tr>
+<td>80001</td>
+<td>Travelocity.com</td>
+</tr>
+<tr>
+<td>80004</td>
+<td>Travelocity.ca</td>
 </tr>
 </tbody>
 </table>
@@ -503,10 +612,6 @@ function googleTranslateElementInit() {
 <p>When there are errors, the top points of sale and regions API always returns a 200 response.  The error message is specified in an error field in the response.  The following are some sample error messages:</p>
 <pre><code class="lang-JSON">{
     &quot;error&quot;:&quot;No hotelId specified&quot;
-}
-</code></pre>
-<pre><code class="lang-JSON">{
-    &quot;error&quot;:&quot;No clientId specified or unknown clientId&quot;
 }
 </code></pre>
 <pre><code class="lang-JSON">{
