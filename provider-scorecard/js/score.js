@@ -53,7 +53,7 @@ var demo = {
         }
     },
     "enhance": {
-        "score": 1.0,
+        "score": 0.83,
         "attributes": {
             "productApi": false,
             "valueAddPromo": true,
@@ -64,7 +64,7 @@ var demo = {
         }
     },
     "optimise": {
-        "score": 0.9845119,
+        "score": 0.6845119,
         "attributes": {
             "arMessages": {
                 "value": "95.0",
