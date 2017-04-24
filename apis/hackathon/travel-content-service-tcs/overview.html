@@ -97,13 +97,13 @@ TCS Gateway, out of the box, supports the following sections:
 <p>Here are the different calls from the DX Pages to the TCS Gateway to retrieve content from the following sections for a given Gaia ID:</p>
 <ul>
 <li><p>Section &quot;DESTINATION&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=DESTINATION&#39;
 </code></pre></li>
 <li><p>Section &quot;NEIGHBORHOOD&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=NEIGHBORHOOD&#39;
 </code></pre></li>
 <li><p>Section &quot;SIMILAR_DESTINATION&quot;</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?sections=SIMILAR_DESTINATION&#39;
 </code></pre></li>
 </ul>
 <p>Where:</p>
@@ -118,13 +118,13 @@ TCS Gateway, out of the box, supports the following sections:
 <p>Here are the different calls from the DX Pages to TCS Gateway to retrieve the following sections for destination and experience:</p>
 <ul>
 <li><p>Section &quot;DESTINATION&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=DESTINATION&#39;
 </code></pre></li>
 <li><p>Section &quot;NEIGHBORHOOD&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=NEIGHBORHOOD&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=NEIGHBORHOOD&#39;
 </code></pre></li>
 <li><p>Section &quot;SIMILAR_DESTINATION&quot;:</p>
-<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;http://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=SIMILAR_DESTINATION&#39;
+<pre><code>curl -u [USERNAME]:[PASSWORD] -X GET --compressed &#39;https://services.expediapartnercentral.com/travel-content/service/travel/regionId/[GAIA_ID]?tag=[TAG]&amp;sections=SIMILAR_DESTINATION&#39;
 </code></pre></li>
 </ul>
 <p>Where:</p>
