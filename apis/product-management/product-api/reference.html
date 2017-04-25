@@ -3907,9 +3907,13 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 <tr>
 <td>Per Stay</td>
 </tr>
+<tr>
+<td>Unknown</td>
+</tr>
 </tbody>
 </table>
-</div><p><a name="/definitions/valueAddInclusionsEnum"></a></p>
+</div><p>Note: Surcharge type Unknown will be returned for any room where a surcharge cost has been specified without a type or an amount. The client is expected to add this information in such cases, and therefore, type Unknown is not supported in POST, PUT and PATCH operations.</p>
+<p><a name="/definitions/valueAddInclusionsEnum"></a></p>
 <h3 id="valueaddinclusionsenum" data-magellan-destination="valueaddinclusionsenum">valueAddInclusionsEnum</h3>
 <p>There are 2 possible enums. One applies to all rate plans of type Standalone and Package, the other to rate plans of type Corporate.</p>
 <div><table>

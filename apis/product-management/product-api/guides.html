@@ -137,6 +137,17 @@ The Product API enables partners to first create a room type, and subsequently c
     }
 }]
 </code></pre>
+<p>It is possible for a non-free extra bed to be returned with a surcharge, but no amount. This case could happen when the surcharge has been created or updated by other means that do not request an amount to be specified. This is an example of such a response:</p>
+<pre><code class="lang-json">&quot;extraBedding&quot;: [{
+    &quot;quantity&quot;: 1,
+    &quot;type&quot;: &quot;Rollaway Bed&quot;,
+    &quot;size&quot;: &quot;Full&quot;,
+    &quot;surcharge&quot;: {
+        &quot;type&quot;: &quot;Unknown&quot;
+     }
+}]
+</code></pre>
+<p>The Product-API will not accept a surcharge of type &quot;Unknown&quot; during the creation of a new room type. For a PUT or PATCH, the extra surcharge needs to be specified at the same time as the update being performed or prior to that update. The type needs to be changed and the amount set (unless the type is set to &quot;Free&quot;).</p>
 <p>Please review the <a href="reference.html#/definitions/ExtraBedDTO">ExtraBed section</a> of the API definition for more information.</p>
 <h3 id="smoking-preference" data-magellan-destination="smoking-preference">Smoking Preference</h3>
 <p>Within the room type resource, the structure for expressing smoking preferences was streamlined and simplied. In V1, to specify a room type supported both smoking and non-smoking configurations, a partner would specify:</p>
