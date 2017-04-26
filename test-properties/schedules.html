@@ -40,7 +40,7 @@ function googleTranslateElementInit() {
         <div></div>
         <form id='reset'>
             <p>New Password:</p>
-            <div class='formline'><input type='password' id='password' placeholder='8+ characters' required/></div>
+            <div class='formline'><input type='password' id='password' placeholder='8+ characters' autocomplete="off" required/></div>
             <div class='formline center error'></div><div class='formline'><input type='submit' value='Reset' class='submit'/></div>
         </form>
         <button class="close-button" data-close aria-lable="Close" type="button">
@@ -64,7 +64,7 @@ function googleTranslateElementInit() {
         <div class="row full-width request-hotel">
             <div class="large-6 columns">
                 <label>Choose a password for your test API credentials</label>
-                <input type="password" id="password" name="password" placeholder="8+ characters, requires numbers, symbols, mixed case"/>
+                <input type="password" id="password" name="password" placeholder="8+ characters, requires numbers, symbols, mixed case" autocomplete="off" />
             </div>
             <div class="large-6 columns formline">
                 <label>&nbsp;</label>
