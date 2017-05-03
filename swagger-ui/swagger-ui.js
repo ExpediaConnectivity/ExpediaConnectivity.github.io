@@ -25851,7 +25851,9 @@ SwaggerUi.Views.OperationView = Backbone.View.extend({
 
     // Location header based redirect download
     } else if(headers.location || headers.Location) {
-      window.location = response.url;
+      // Commenting based on fortify issue
+      // window.location = response.url;
+      console.log("Redirect blocked.");
 
     // Anything else (CORS)
     } else {
