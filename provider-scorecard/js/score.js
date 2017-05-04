@@ -9,8 +9,6 @@ function providerPortalServiceBaseUrl() {
 var provider = false;
 
 var foundationSize = false;
-var hasTriggeredhowToImprove = false;
-var hasTriggeredhowToEnhance = false;
 
 var demo = {
     "provider": {
@@ -132,7 +130,8 @@ $(document).ready(function() {
         ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
     });
 
-    $(".scorecard-row .border").not("#newHotels").click(metricClickCallback);
+    $("#optimise .border, #grow .border").click(metricClickCallback);
+    $("#enhance .border").click(enhanceClickCallback);
     $(".scorecard-rank").click(overallClickCallback);
 });
 
@@ -156,6 +155,34 @@ function overallClickCallback(event) {
             $("#top-metrics").foundation('open');
             ga('send', 'event', 'scorecard', 'error.overall.' + provider, jqxhr.status);
         });
+}
+
+function enhanceClickCallback(event) {
+    if ($(event.target).is(".border")) {
+        var section = $(event.target).attr("id");
+    } else {
+        var section = $(event.target).parents(".border").attr("id");
+    }
+    var title = $("#" + section + " div.feature").text();
+    var heading = $("div#" + section).attr("data-title");
+
+    $("#enhanceModal h1").text(title);
+    $("#enhanceModal p#base").text(heading);
+    if (section == 'productApi') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/product-management/product-api/quick-start.html" target=\"_blank\"" >Help me adopt this feature</a>');
+    } else if (section == 'valueAddPromo') {
+        $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
+        $("div.adopt").html('<p class="adopt-message">Adopt Value Add Promo on</p><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition"  target=\"_blank\">Expedia QuickConnect (EQC)</a><br><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq" target=\"_blank\">Booking Notification</a>');
+    } else if (section == 'etp') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#hotel-collect-bookings-and-expedia-traveler-preference-etp-" target=\"_blank\">Help me adopt this feature</a>');
+    } else if (section == 'evc') {
+        $("p#extra").html("");
+        $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#learn-more-about-expedia-virtualcard" target=\"_blank\">Help me adopt this feature</a>');
+    }
+
+    $("#enhanceModal").foundation('open');
 }
 
 function metricClickCallback(event) {
@@ -265,29 +292,7 @@ function populateTopMetricsList(jqxhr, showValues, category) {
         }
         $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
     }
-
-    if (!hasTriggeredhowToImprove) {
-        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append("<div class='top-performer improve'>How can I improve this score?</div>");
-        $(".improve").data("category", category);
-        $(".improve").click(howToImproveTriggered);
-    }
 }
-
-
-function howToImproveTriggered() {
-    $(this).html("<div class='top-performer improve-thanks'><div class='state icon icon-success'></div>&nbsp;Thank you for your interest. We will be in contact shortly with more information on how to improve this score.</div>");
-    ga('send', 'event', 'scorecard', 'improve.score', provider + '.' + $(this).data("category"));
-    hasTriggeredhowToImprove = true;
-}
-
-function howToEnhanceTriggered() {
-    $(this).html("<div class='top-performer improve-thanks'><div class='state icon icon-success'></div>&nbsp;Thank you for your interest. We will be in contact shortly with more information on how to adopt more features. You can find implementation details for our APIs here: <a href='https://expediaconnectivity.com/developer' target='_blank'>https://expediaconnectivity.com/developer</a></div></div>");
-    ga('send', 'event', 'scorecard', 'improve.score', provider + '.' + $(this).data("category"));
-    hasTriggeredhowToEnhance = true;
-}
-
-
-
 
 function generateScorecard(scorecard) {
     provider = scorecard.provider.name;
@@ -307,9 +312,6 @@ function generateScorecard(scorecard) {
 }
 
 function generateScorecardCategory(category, id) {
-    $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "optimise" ? "Optimize" : "Grow") + " Score: " + Math.round(category.score * 100) + "%");
-
     for (key in category["attributes"]) {
         if (key == "score") continue;
         var element = category["attributes"][key];
@@ -353,9 +355,6 @@ function generateScorecardCategory(category, id) {
 }
 
 function generateScorecardFeature(category, id) {
-    $("#" + id + " .scorecard-category-score .score-value").css("width", (category.score * 100) + "%");
-    $("#" + id + " .scorecard-category-score .score-percentage").text((id == "enhance" ? "Enhance " : "") + "Score: " + Math.round(category.score * 100) + "%");
-
     for (key in category["attributes"]) {
         if (key == "score") continue;
         var elementSelector = "#" + id + " #" + key;
@@ -364,13 +363,6 @@ function generateScorecardFeature(category, id) {
         $(elementSelector).addClass(state ? "green" : "red");
 
     }
-
-    if (!hasTriggeredhowToEnhance) {
-        $("#enhance").append("<div class='scorecard-improve small-12 columns adopt'>Help me adopt a feature</div>");
-        $(".adopt").data("category", "enhance");
-        $(".adopt").click(howToEnhanceTriggered);
-    }
-
 }
 
 function createBorders() {
@@ -382,17 +374,19 @@ function createBorders() {
     $("#enhance .border").removeAttr("style");
     $("#grow .border").removeAttr("style");
     if (Foundation.MediaQuery.atLeast("xlarge")) {
-        $("#enhance #productApi,#valueAddPromo,#rateManagement,#etp").css("border-bottom", "1px solid lightgrey");
-        $("#enhance #evc,#bc").css("border-top", "none");
-        $("#enhance #etp").css("border-right", "none");
-        $("#enhance #bc").css("border-right", "1px solid lightgrey");
+        // placeholder for overrides
     } else if (Foundation.MediaQuery.current == "large") {
-        $("#enhance #productApi,#valueAddPromo,#rateManagement").css("border-bottom", "1px solid lightgrey");
-        $("#enhance #etp,#evc,#bc").css("border-top", "none");
-        $("#enhance #rateManagement").css("border-right", "none");
+        $("#bcMessages .metric").html("BC Message<br />Success Rate");
+        $("#arMessages .metric").html("AR Message<br />Success Rate");
+        $("#enhance #productApi,#valueAddPromo,#etp").css("border-bottom", "10px solid #f8f8f8");
+        $("#enhance #etp").css("border-right", "none");
+        $("#enhance #evc").css("border-top", "none");
+        $("#enhance #evc").css("border-right", "10px solid #f8f8f8")
     } else if (Foundation.MediaQuery.current == "medium") {
+        $("#bcMessages .metric").text("BC Message Success Rate");
+        $("#arMessages .metric").text("AR Message Success Rate");
         $("#optimise #bcMessages").css("border-right", "none");
-        $("#enhance #valueAddPromo,#etp").css("border-right", "none");
+        $("#enhance #valueAddPromo").css("border-right", "none");
         $("#grow #rateLose").css("border-right", "none");
     } else if (Foundation.MediaQuery.current == "small") {
         $("#enhance .border").css("border-right", "none");

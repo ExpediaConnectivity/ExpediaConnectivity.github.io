@@ -13,8 +13,8 @@ ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
 }</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><!--feature:noindex-->
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="/provider-scorecard/css/score.css">
 <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://a.travel-assets.com/uitoolkit/2-69/3eb4426adf0e53d080cfd485a53dd0eccf56f9a5/core/minifiedCss/brands/exp-responsive.css">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="/provider-scorecard/css/score.css">
 <script src="/provider-scorecard/js/score.js"></script>
 <div class="reveal" id="top-metrics" data-reveal>
     <h1></h1>
@@ -23,6 +23,17 @@ function googleTranslateElementInit() {
     <button class="close-button" data-close aria-lable="Close" type="button">
         <span aria-hidden="true">&times;</span>
     </button>
+</div>
+<div class="reveal" id="enhanceModal" data-reveal>
+    <h1></h1>
+    <p id="base"></p>
+    <p id="extra"></p>
+    <div class="top-metric-cards"></div>
+    <button class="close-button" data-close aria-lable="Close" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class='gap'></div>
+    <div class='top-performer adopt'></div>
 </div>
 <div class="simple-content">
     <h1>Provider Scorecard</h1>
@@ -39,20 +50,13 @@ function googleTranslateElementInit() {
             </span>
         </div>
     </div>
-    <p>The scorecard presents the connectivity metrics associated to the 3 areas of our partnership cycle – Optimize, Enhance, Grow.  They serve to determine your ranking in relation to your competitive set, as well as opportunities for further improvements.</p>
+    <p>The scorecard presents the connectivity metrics associated to the 3 areas of our partnership cycle – Optimize, Enhance, Grow.  They serve to determine your ranking in relation to all other Expedia connectivity partners*, as well as opportunities for further improvements.</p>
     <p>These are your metrics for Q4 2016.</p>
+    <p class="footnote">* connects 20 or more properties to Expedia.</p>
 </div>
 <div id="optimise" class="scorecard-row row">
     <div class="scorecard-category xxlarge-9 large-8 medium-6 small-12 columns">
         Optimize
-    </div>
-    <div class="scorecard-category-score xxlarge-3 large-4 medium-6 small-12 columns">
-        <div class="score-total small-12 columns">
-            <div class="score-value" style="width: 0%">&nbsp;</div>
-        </div>
-        <div class="score-percentage">
-            Score:
-        </div>
     </div>
     <div class="scorecard-description small-12 medium-9 end columns">The metrics in this section reflect the health of your connection in the delivery of rates, available and inventory to Expedia, and the delivery of guest reservations to our lodging partners.  As well, they reflect your efficiency in ensuring the fastest time-to-market across Expedia’s entire marketplace of over 200 booking sites.</div>
     <div class="scorecard-cards small-12 columns">
@@ -61,7 +65,7 @@ function googleTranslateElementInit() {
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">AR Message Success Rate</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
         <div id="bcMessages" class="border large-3 medium-6 small-12 columns has-tip" data-heading="BC Messages" data-description="Success rate of booking confirmations. Booking delivery failures may result in fallbacks to fax and email to properties, resulting in data being out of sync between your system and the Expedia marketplace. These errors can also lead to overbookings and resultant refunds and relocations.">
@@ -69,7 +73,7 @@ function googleTranslateElementInit() {
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">BC Message Success Rate</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
         <div id="onboardingSpeed" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Onboarding Speed" data-description="Average time taken for new properties to go live, calculated from the day a hotel signed a contract with Expedia. Delays in onboarding mean that properties cannot begin listing and selling their inventory on the Expedia marketplace.">
@@ -77,7 +81,7 @@ function googleTranslateElementInit() {
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">Onboarding Speed</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
         <div id="connectivityActivation" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Connectivity Activation" data-description="Average time taken after connection to receive first AR (I) message">
@@ -85,7 +89,7 @@ function googleTranslateElementInit() {
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">Connectivity Activation</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
     </div>
@@ -94,39 +98,27 @@ function googleTranslateElementInit() {
     <div class="scorecard-category xxlarge-9 large-8 medium-6 small-12 columns">
         Enhance
     </div>
-    <div class="scorecard-category-score xxlarge-3 large-4 medium-6 small-12 columns">
-        <div class="score-total small-12 columns">
-            <div class="score-value" style="width: 0%">&nbsp;</div>
-        </div>
-        <div class="score-percentage">
-            Score:
-        </div>
-    </div>
     <div class="scorecard-description small-12 medium-9 end columns">The information below reflects the key features you have implemented as part of your integration to Expedia, thereby enhancing the guest booking experience, helping Expedia drive value across its global supply base, and supporting our lodging partners’ business.</div>
     <div class="scorecard-cards small-12 columns">
-        <div id="productApi" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" title="The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.">
+        <div id="productApi" class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" data-title="The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.">
             <div class="state icon"></div>
             <div class="feature">Product API</div>
+            <div class="icon icon-toggle90"></div>
         </div>
-        <div id="valueAddPromo" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" title="This new promotion type allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.">
+        <div id="valueAddPromo" class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" data-title="This promotion type allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.">
             <div class="state icon"></div>
             <div class="feature">Value Add Promo</div>
+            <div class="icon icon-toggle90"></div>
         </div>
-        <div id="rateManagement" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" title="Supports Rate Acquisition Types of Lowest Available Rate (LAR) and Sell" data-description="Supports Rate Acquisition Types of Lowest Available Rate (LAR) and Sell">
-            <div class="state icon"></div>
-            <div class="feature">Rate Management</div>
-        </div>
-        <div id="etp" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" title="Provides Expedia travellers with the option to pay at the time of booking (Expedia Collect), or when checking in (Hotel Collect).">
+        <div id="etp" class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" data-title="Provides Expedia travellers with the option to pay at the time of booking (Expedia Collect), or when checking in (Hotel Collect).">
             <div class="state icon"></div>
             <div class="feature">Expedia Travel Preference</div>
+            <div class="icon icon-toggle90"></div>
         </div>
-        <div id="evc" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" title="An Expedia Virtual Card (EVC) allows hotels to process guest payments using their existing point of sale systems, without exposing the guest’s actual credit card.">
+        <div id="evc" class="border checkmark xlarge-3 large-4 medium-6 small-12 end columns has-tip" data-title="An Expedia Virtual Card (EVC) allows hotels to process guest payments using their existing point of sale systems, without exposing the guest’s actual credit card.">
             <div class="state icon"></div>
             <div class="feature">Expedia Virtual Card</div>
-        </div>
-        <div id="bc" data-tooltip class="border checkmark xlarge-3 large-4 medium-6 small-12 end columns has-tip" title="This feature sends a booking confirmation back to Expedia, ensuring that inventory levels are updated on the Expedia Marketplace.">
-            <div class="state icon"></div>
-            <div class="feature">Booking Confirmation</div>
+            <div class="icon icon-toggle90"></div>
         </div>
     </div>
 </div>
@@ -136,33 +128,33 @@ function googleTranslateElementInit() {
     </div>
     <div class="scorecard-description small-12 medium-9 end columns">The metrics in this area reflect the key drivers of revenue for your portfolio of lodging partners as well as supply growth within Expedia.</div>
     <div class="scorecard-cards small-12 columns">
-        <div id="availabilityLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Availability Lose" data-description="The percentage of your properties that have not offered consistent availability to Expedia travelers relative to the market.">
+        <div id="availabilityLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Availability Lose" data-description="The percentage of shops made that have not offered consistent availability to Expedia travelers relative to the market.">
             <span class="value small-6 columns"></span>
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">Availability Lose</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
-        <div id="rateLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Rate Lose" data-description="The percentage of your properties that have not offered consistent rate plans to Expedia travelers relative to the market.">
+        <div id="rateLose" class="border large-3 medium-6 small-12 columns has-tip" data-heading="Rate Lose" data-description="The percentage of your properties that have not offered competitive rates to Expedia travelers relative to the market.">
             <span class="value small-6 columns"></span>
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
             <span class="metric small-9 columns">Rate Lose</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
-            <span class="standard small-9 columns end"></span>
-        </div>
-        <div id="etpPenetration" class="border large-3 medium-6 small-12 columns has-tip" data-heading="ETP Penetration" data-description="The percentage of your properties that support Expedia Traveler Preference, a business model that gives Expedia travelers the option of when to pay for their booking.">
-            <span class="value small-6 columns"></span>
-            <span class="metric small-9 columns">ETP Penetration</span>
-            <span class="small-3 columns icon icon-toggle90"></span>
+            <span class="small-3 columns icon icon-toggle90 toggle90-mod"></span>
             <span class="standard small-9 columns end"></span>
         </div>
         <div id="newHotels" class="border large-3 medium-6 small-12 columns" data-heading="New Hotels">
             <span class="value small-6 columns"></span>
             <span class="rate-change text-right small-6 columns"></span>
             <span class="rate-period text-right small-6 columns">YOY</span>
-            <span class="metric small-12 columns">New Hotels</span>
+            <span class="metric small-12 columns end">New Hotels</span>
+        </div>
+        <div id="emptyCell" class="border large-3 medium-6 small-12 columns has-tip no-data" data-heading="No data" data-description="Empty cell">
+            <span class="value small-6 columns"></span>
+            <span class="metric small-9 columns"></span>
+            <span class="standard small-9 columns"></span>
         </div>
     </div>
-</div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"/></body></html>
+</div>
+</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"/></body></html>
