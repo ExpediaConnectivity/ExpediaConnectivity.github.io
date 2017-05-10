@@ -7,7 +7,6 @@ define(function () {
         jwtRequest("GET", hotelAssignmentServiceUrls.features(), function(data, textStatus, jqxhr) {
             parseFeatures(JSON.parse(jqxhr.responseText));
             console.log("features.loaded: " + jqxhr.responseText);
-            $.publish('features.loaded');
         }, function(jqxhr) {
             console.log("Could not lookup features. ");
             console.log(jqxhr.responseText);
