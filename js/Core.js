@@ -10,6 +10,7 @@ var Core = Core || {
         this.cloneSideMenuToOffCanvas();
         this.handleEvents();
         this.addExperimentalTag('a.card-header, .cards>.category');
+        this.addAllOtherTags('a.card-header, .cards>.category');
         this.highlightActiveNav('#nav-main li.mainlink');
 
         // Foundation
@@ -223,6 +224,22 @@ var Core = Core || {
                     $el.after(tag);
                 } else {
                     $el.append(tag);
+                }
+            }
+        });
+    },
+
+    addAllOtherTags: function(e) {
+        $(e).each(function(i, el) {
+            var $el = $(el);
+            var content = $el.html();
+            var match = /\((.*?)\)/.exec(content);
+            if (match != null) {
+                $el.html(content.replace(/\(.*?\)/, ""));
+                if ($el.prop('tagName') == 'A') {
+                    $el.after('<span class="experimental-api label warning">' + match[1] + '</span>');
+                } else {
+                    $el.append('<span class="experimental-api label warning">' + match[1] + '</span>');
                 }
             }
         });
