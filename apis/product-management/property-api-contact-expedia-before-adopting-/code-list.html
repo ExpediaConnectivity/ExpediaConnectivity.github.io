@@ -1,0 +1,214 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Code Lists - Property API (Contact Expedia Before Adopting)</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery.js"></script><script src="/js/vendor/modernizr.js"></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-main.js"></script><script src="/js/he-plugins.js"></script><script src="/js/he-smoothscroll.js"></script><script src="/js/he-waypoints.js"></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></head><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu"><nav role="navigation" class="sidebar-nav"><header>Property API (Contact Expedia Before Adopting)</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api-contact-expedia-before-adopting-/api-definition.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api-contact-expedia-before-adopting-/supported-features.html">Supported Features</a></li><li class="pagename" data-magellan-arrival="code-lists"><a class="sidebar-nav-item" href="#code-lists">Code Lists</a></li><li class="depth3" data-magellan-arrival="content-attribute-detail-codes"><a class="sidebar-nav-item" href="#content-attribute-detail-codes">Content Attribute & Detail Codes</a></li><li class="depth2" data-magellan-arrival="setpropertydetails-codes"><a class="sidebar-nav-item" href="#setpropertydetails-codes">SetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="-div-id-property-structuretype-property-structuretype-div-"><a class="sidebar-nav-item" href="#-div-id-property-structuretype-property-structuretype-div-"><div id=#property.structureType> property.structureType </div></a></li><li class="depth3" data-magellan-arrival="property-contact-phonenumber-phonenumbertype"><a class="sidebar-nav-item" href="#property-contact-phonenumber-phonenumbertype">property.contact.phoneNumber.phoneNumberType</a></li><li class="depth3" data-magellan-arrival="property-inventorysetting-rateacquisitiontype"><a class="sidebar-nav-item" href="#property-inventorysetting-rateacquisitiontype">property.inventorySetting.rateAcquisitionType</a></li><li class="depth3" data-magellan-arrival="property-inventorysetting-distributionmodels"><a class="sidebar-nav-item" href="#property-inventorysetting-distributionmodels">property.inventorySetting.distributionModels</a></li><li class="depth3" data-magellan-arrival="setpropertydetails-error-codes"><a class="sidebar-nav-item" href="#setpropertydetails-error-codes">SetPropertyDetails Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertystatus-codes"><a class="sidebar-nav-item" href="#getpropertystatus-codes">GetPropertyStatus Codes</a></li><li class="depth3" data-magellan-arrival="getpropertystatus-error-codes"><a class="sidebar-nav-item" href="#getpropertystatus-error-codes">GetPropertyStatus Error Codes</a></li><li class="depth2" data-magellan-arrival="getpropertydetails-codes"><a class="sidebar-nav-item" href="#getpropertydetails-codes">GetPropertyDetails Codes</a></li><li class="depth3" data-magellan-arrival="getpropertydetails-error-codes"><a class="sidebar-nav-item" href="#getpropertydetails-error-codes">GetPropertyDetails Error Codes</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api-contact-expedia-before-adopting-/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/property-api-contact-expedia-before-adopting-/video.html">Video Tutorial</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="code-lists" data-magellan-destination="code-lists">Code Lists</h1>
+<h3 id="content-attribute-detail-codes" data-magellan-destination="content-attribute-detail-codes">Content Attribute &amp; Detail Codes</h3>
+<p>The SetPropertyDetails code list is available for download <a href="/files/PropertyAPICodeList0.4.xlsx">here</a></p>
+<h2 id="setpropertydetails-codes" data-magellan-destination="setpropertydetails-codes">SetPropertyDetails Codes</h2>
+<h3 id="-div-id-property-structuretype-property-structuretype-div-" data-magellan-destination="-div-id-property-structuretype-property-structuretype-div-"><div id=#property.structureType> property.structureType </div></h3>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HOTEL</td>
+</tr>
+<tr>
+<td>MOTEL</td>
+</tr>
+<tr>
+<td>APART_HOTEL</td>
+</tr>
+<tr>
+<td>BED_AND_BREAKFAST</td>
+</tr>
+<tr>
+<td>INN</td>
+</tr>
+<tr>
+<td>APARTMENT</td>
+</tr>
+<tr>
+<td>CONDO</td>
+</tr>
+<tr>
+<td>COTTAGE</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="property-contact-phonenumber-phonenumbertype" data-magellan-destination="property-contact-phonenumber-phonenumbertype">property.contact.phoneNumber.phoneNumberType</h3>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MOBILE</td>
+</tr>
+<tr>
+<td>PHONE</td>
+</tr>
+<tr>
+<td>FAX</td>
+</tr>
+<tr>
+<td>USRESERVATIONSTOLLFREE</td>
+</tr>
+<tr>
+<td>INTERNATIONALRESERVATIONS</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="property-inventorysetting-rateacquisitiontype" data-magellan-destination="property-inventorysetting-rateacquisitiontype">property.inventorySetting.rateAcquisitionType</h3>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SELL_LAR</td>
+<td>Rate inclusive of compensation.</td>
+</tr>
+<tr>
+<td>NET_RATE</td>
+<td>Rate without compensation</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="property-inventorysetting-distributionmodels" data-magellan-destination="property-inventorysetting-distributionmodels">property.inventorySetting.distributionModels</h3>
+<div><table>
+<thead>
+<tr>
+<th>Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>EXPEDIA_COLLECT</td>
+</tr>
+<tr>
+<td>HOTEL_COLLECT</td>
+</tr>
+</tbody>
+</table>
+</div><p>Properties that have opted into the Expedia Traveler Preference program (ETP) will have both EXPEDIA_COLLECT and HOTEL_COLLECT specified.</p>
+<h3 id="setpropertydetails-error-codes" data-magellan-destination="setpropertydetails-error-codes">SetPropertyDetails Error Codes</h3>
+<p>To be added.</p>
+<h2 id="getpropertystatus-codes" data-magellan-destination="getpropertystatus-codes">GetPropertyStatus Codes</h2>
+<p>The reasonCodes field represents all the reasons the property has a particular status.</p>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Reason Codes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Onboarding Failed</td>
+<td>PropertyDisabled</td>
+</tr>
+<tr>
+<td></td>
+<td>MissingExpediaId</td>
+</tr>
+<tr>
+<td></td>
+<td>MissingContactInfo</td>
+</tr>
+<tr>
+<td></td>
+<td>BookableProvidersExist</td>
+</tr>
+<tr>
+<td></td>
+<td>InvalidPropertyName</td>
+</tr>
+<tr>
+<td></td>
+<td>InvalidCoordinates</td>
+</tr>
+<tr>
+<td></td>
+<td>NoValidAddresses</td>
+</tr>
+<tr>
+<td></td>
+<td>NoValidPhoneNumbers</td>
+</tr>
+<tr>
+<td></td>
+<td>InvalidCountryCode</td>
+</tr>
+<tr>
+<td></td>
+<td>UnsupportedLocation</td>
+</tr>
+<tr>
+<td></td>
+<td>PropertySuspended</td>
+</tr>
+<tr>
+<td></td>
+<td>EpcOnboardingInProgress</td>
+</tr>
+<tr>
+<td></td>
+<td>OfacCheckFailed</td>
+</tr>
+<tr>
+<td></td>
+<td>MissingBillingCurrencyCode</td>
+</tr>
+<tr>
+<td></td>
+<td>InternalError</td>
+</tr>
+<tr>
+<td>PropertySaved</td>
+<td>None</td>
+</tr>
+<tr>
+<td>ExpediaIdAssigned</td>
+<td>None</td>
+</tr>
+<tr>
+<td>FinanceSetupPending</td>
+<td>None</td>
+</tr>
+<tr>
+<td>VendorIdAssigned</td>
+<td>None</td>
+</tr>
+<tr>
+<td>OnboardingSucceeded</td>
+<td>None</td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="getpropertystatus-error-codes" data-magellan-destination="getpropertystatus-error-codes">GetPropertyStatus Error Codes</h3>
+<p>None</p>
+<h2 id="getpropertydetails-codes" data-magellan-destination="getpropertydetails-codes">GetPropertyDetails Codes</h2>
+<p>None</p>
+<h3 id="getpropertydetails-error-codes" data-magellan-destination="getpropertydetails-error-codes">GetPropertyDetails Error Codes</h3>
+<p>None</p>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://expediagso.secure.force.com/kb/pkb_Home?l=en_US" target="_blank">Knowledge Base</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
