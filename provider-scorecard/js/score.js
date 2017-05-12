@@ -42,11 +42,19 @@ var demo = {
                 "unit": "%",
                 "differenceFromStandard": -0.23718792
             },
-            "newHotels": {
-                "value": "20",
+            "changeInHotelsThisQuarter": {
+                "delta": 2.0,
+                "value": "32",
+                "floatValue": 32.0,
                 "success": true,
                 "deltaSuccess": true,
-                "delta": 26
+                "differenceFromStandard": 31.5
+            },
+            "totalHotels": {
+                "delta": 8.0,
+                "value": "1581",
+                "floatValue": 1581.0,
+                "deltaSuccess": true
             }
         }
     },
