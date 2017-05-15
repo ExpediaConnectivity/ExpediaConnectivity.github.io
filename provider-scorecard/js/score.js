@@ -341,7 +341,11 @@ function generateScorecardCategory(category, id) {
             standard += (difference < 0) ? "less than recommended" : "higher than recommended";
         }
         $(elementSelector + " .value").html(value);
-        $(elementSelector).addClass(element.success ? "green" : "red");
+        if (typeof element.success != "undefined") {
+            $(elementSelector).addClass(element.success ? "green" : "red");
+        } else {
+            $(elementSelector).addClass("grey");
+        }
         if (element.success || !element.differenceFromStandard) {
             $(elementSelector + " .standard").remove();
         } else {

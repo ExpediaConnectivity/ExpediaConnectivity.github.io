@@ -139,6 +139,9 @@ body {
 .scorecard-row .scorecard-cards .rate-change.red {
   color: #a92216;
 }
+.scorecard-row .scorecard-cards > .grey .value {
+  color: #d8d8d8;
+}
 .scorecard-row .scorecard-cards > .green .value {
   color: #406f1d;
 }
