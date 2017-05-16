@@ -110,6 +110,7 @@ function googleTranslateElementInit() {
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
             $("form#contactus").html("Thank you for contacting Expedia!");
+            ga('send', 'event', 'contactus', data.subject);
         }).fail(function(jqxhr){
             ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
         });
