@@ -79,9 +79,6 @@ body {
 .scorecard-row .scorecard-cards .border:hover {
   cursor: pointer;
 }
-.scorecard-row .scorecard-cards .border#newHotels:hover {
-  cursor: default;
-}
 .scorecard-row .scorecard-cards .has-tip {
   font-weight: normal;
   color: inherit;
@@ -140,7 +137,7 @@ body {
   color: #a92216;
 }
 .scorecard-row .scorecard-cards > .grey .value {
-  color: #d8d8d8;
+  color: #404040;
 }
 .scorecard-row .scorecard-cards > .green .value {
   color: #406f1d;
