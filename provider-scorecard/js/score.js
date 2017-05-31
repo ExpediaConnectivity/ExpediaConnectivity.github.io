@@ -204,6 +204,7 @@ function enhanceClickCallback(event) {
     }
 
     $("#enhanceModal").foundation('open');
+    ga('send', 'event', 'scorecard', 'click', section + '.' + provider);
 }
 
 function metricClickCallback(event) {
