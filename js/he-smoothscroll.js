@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // filter anchor links for proper id syntax
-    $('a[href*=#]:not([href=#])').click(function () {
+    $("a[href*='#']:not([href='#'])").click(function () {
         // filter for internal links only
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
             // get anchor id
