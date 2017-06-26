@@ -151,7 +151,7 @@ function googleTranslateElementInit() {
 </table>
 </div><p><a name="/versioning"></a></p>
 <h2 id="versioning" data-magellan-destination="versioning">Versioning</h2>
-<p>Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independentely. </p>
+<p>Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independently. </p>
 <p>Starting with version 2, it is now required to provide a content-type header including the version with any POST or PUT request. For example:</p>
 <pre><code>Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre><p>The Accept header also now indicates which version is expected to be returned. Accept header is optional. If ommitted, Expedia will default to return the latest version. If provided, Expedia will validate that the version requested for the response is a valid one. Example of a valid Accept header:</p>
