@@ -322,7 +322,7 @@ function generateScorecard(scorecard) {
     $("title").text(provider + " Scorecard - Expedia Connectivity");
     $(".scorecard-provider").text(scorecard.provider.name);
 
-    if (scorecard.provider.managed) {
+    if (scorecard.provider) {
         $(".scorecard-rank .rank").text(scorecard.provider.rank);
         $(".scorecard-rank .total").text(scorecard.provider.total);
         $(".scorecard-rank").removeClass("hidden");
