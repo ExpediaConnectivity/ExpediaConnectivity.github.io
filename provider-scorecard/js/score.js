@@ -321,12 +321,9 @@ function generateScorecard(scorecard) {
     ga('send', 'event', 'scorecard', 'view', provider);
     $("title").text(provider + " Scorecard - Expedia Connectivity");
     $(".scorecard-provider").text(scorecard.provider.name);
-
-    if (scorecard.provider) {
-        $(".scorecard-rank .rank").text(scorecard.provider.rank);
-        $(".scorecard-rank .total").text(scorecard.provider.total);
-        $(".scorecard-rank").removeClass("hidden");
-    }
+    $(".scorecard-rank .rank").text(scorecard.provider.rank);
+    $(".scorecard-rank .total").text(scorecard.provider.total);
+    $(".scorecard-rank").removeClass("hidden");
 
     generateScorecardCategory(scorecard.grow, "grow");
     generateScorecardCategory(scorecard.optimise, "optimise");
