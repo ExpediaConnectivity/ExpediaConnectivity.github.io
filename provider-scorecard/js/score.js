@@ -117,6 +117,12 @@ function getParameterByName(name) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
+function getVersion() {
+    var version = getParameterByName("version");
+    var versionParam = (version == null || version == "") ? "" : "?version=" + encodeURIComponent(version);
+    return versionParam;
+}
+
 $(document).ready(function() {
     setInterval(createBorders, 200);
     var hash = getParameterByName("id");
@@ -125,7 +131,8 @@ $(document).ready(function() {
         generateScorecard(demo);
         return;
     }
-    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash, function(data) {
+
+    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash + getVersion(), function(data) {
         generateScorecard(data);
     }).fail(function(jqxhr) {
         $("#top-metrics h1").text("");
