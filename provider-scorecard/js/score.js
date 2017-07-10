@@ -170,7 +170,7 @@ function overallClickCallback(event) {
         return;
     }
     ga('send', 'event', 'scorecard', 'click', 'overall.' + provider);
-    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/overall/" + hash)
+    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/overall/" + hash + getVersion())
         .done(function(jqxhr) {
             $("#top-metrics h1").text("Overall Ranking");
             $("#top-metrics p").text("These are the top providers, ranked according to each providers overall score.");
@@ -235,7 +235,7 @@ function metricClickCallback(event) {
         return;
     }
 
-    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/" + section + "/" + category + "/" + hash)
+    $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/" + section + "/" + category + "/" + hash + getVersion())
         .done(function(jqxhr) {
             $("#top-metrics h1").text(heading);
             $("#top-metrics p").text("These are the top 5 performers in this category:");
