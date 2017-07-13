@@ -327,7 +327,7 @@ function populateTopMetricsList(jqxhr, showValues, category) {
                 .html(value)
             );
         }
-        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml);
+        $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml).append("<div class='gap'></div><h5 style='margin-right: 1rem; margin-left: 1rem;    '>Have you signed up to Expedia's error connectivity reports?</h5><p>Our connectivity error reports provide a wealth of additional information that can help you determine the root causes of connectivity issues and improve your overall success rate.</p><p style='margin-bottom: 10px;'>Please email <a href='eqcss@expedia.com?Subject=Report%20request' target='_blank'>eqcss@expedia.com</a> requesting your report and desired frequency (daily or weekly).");
     }
 }
 

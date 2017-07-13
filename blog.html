@@ -12,7 +12,7 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width">  <style>
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><style>
 .blog-author {
     padding: 0px 5px 5px 5px;
     text-align: right;
@@ -64,6 +64,26 @@ function googleTranslateElementInit() {
     border: 0px none #000000;
     box-shadow: 0px 2.5px 0px #FECC09;
 }
+.step {
+    float: right;
+    margin-top: 2px;
+    font-size: 18px;
+}
+.fi-clipboard {
+    border-bottom: none;
+}
+.fi-check {
+    color: green;
+    border-bottom: none;
+}
+.cb-status {
+    float: right;
+    margin: 9px 0 0 4px;
+}
+.cb-container {
+    cursor: pointer;
+}
+
 
 h1 {
     color: #B1B1B1;
@@ -79,6 +99,9 @@ h1 {
 @media only screen and (min-width: 840px) {
     h1 {
         font-size: 3em;
+    }
+    .step {
+        font-size: 24px;
     }
 }
 @media only screen and (min-width: 1025px) {
@@ -104,23 +127,47 @@ h1 {
         text-align: center;
     }
 }
+
 h2 {
     font-size: 1.4em;
     margin: 0 0;
     padding: 0px;
 }
+
 @media only screen and (min-width: 805px) {
     h2 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 }
+
+h5 {
+    margin-top: 6px;
+}
 </style>
+
+<script>
+function copyToClipboard(element) {
+    var ele = document.getElementById(element);
+    var link = ele.getAttribute('title')
+    var dummy = document.createElement("input");
+    document.body.appendChild(dummy);
+    dummy.setAttribute("id", "dummy_id");
+    document.getElementById("dummy_id").value=link;
+    dummy.select();
+    document.execCommand("copy");
+    document.body.removeChild(dummy);
+    var cb_success = document.getElementById(element + "-cb");
+    $(cb_success).removeClass("fi-clipboard");
+    $(cb_success).addClass("fi-check");
+    $(ele).text("COPIED!");
+}
+</script>
+
 <section class='hero hero-pool'>
     <div class='inner'>
         <h1>Expedia Connectivity Blog</h1>
     </div>
 </section>
-
 
 <a name="connectivity-reporting-webinar"></a>
 <div class="row">
@@ -132,7 +179,11 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-              <h2>Deep Dive Into Connectivity Reporting Webinar</h2>
+                <span class="cb-container" onclick="copyToClipboard('connectivity-reporting-webinar')">
+                    <span id="connectivity-reporting-webinar" class="cb-status" title="http://expediaconnectivity.com/blog#connectivity-reporting-webinar">COPY URL</span>
+                    <i id="connectivity-reporting-webinar-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
+                <h2>Deep Dive Into Connectivity Reporting Webinar</h2>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -145,7 +196,7 @@ h2 {
                         <span class="blog-tag label">reporting</span>
                     </div>
                 </div>
-          </div>      
+          </div>
           <div class="blog-content">
             Join us on June 21, 2017 for 30 minutes to Deep Dive into Connectivity Reporting.
             <br/><br/>
@@ -174,7 +225,11 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-              <h2>2017 Expedia Madrid Hackathon Winners: Innovation We Love</h2>
+                <span class="cb-container" onclick="copyToClipboard('madrid-hackathon-winners')">
+                    <span id="madrid-hackathon-winners" class="cb-status" title="http://expediaconnectivity.com/blog#madrid-hackathon-winners">COPY URL</span>
+                    <i id="madrid-hackathon-winners-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
+                <h2>2017 Expedia Madrid Hackathon Winners: Innovation We Love</h2>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -187,15 +242,15 @@ h2 {
                         <span class="blog-tag label">hackathon</span>
                     </div>
                 </div>
-          </div>      
+          </div>
           <div class="blog-content">
-            Competition was as fiery as a flamenco dance at the Expedia 2017 Lodging Partner Hackathon. 
+            Competition was as fiery as a flamenco dance at the Expedia 2017 Lodging Partner Hackathon.
             <br/><br/>
             From April 24 through April 26, Expedia hosted 37 developers from 17 countries representing 15 technology partners to collaborate and compete. The developers worked in teams, supported by an Expedia coach, to build creative solutions using both existing Expedia APIs and other technologies.
             <br/><br/>
-            Inspiration, spirited discussions and a couple of late nights fueled the innovation that led to many brilliant solutions. Olé! 
+            Inspiration, spirited discussions and a couple of late nights fueled the innovation that led to many brilliant solutions. Olé!
             <br/><br/>
-            In the end, a few solutions really wowed the judges and stood out as game changers for improving travel property management. These teams thought beyond traditional hotel needs and expensive formal data collection to present some simple solutions to complicated problems. 
+            In the end, a few solutions really wowed the judges and stood out as game changers for improving travel property management. These teams thought beyond traditional hotel needs and expensive formal data collection to present some simple solutions to complicated problems.
             <br/><br/>
             <strong>First Place: HotelOga</strong>
             <br/><br/>
@@ -223,7 +278,7 @@ h2 {
             <br/><br/>
             <strong>Congratulations to our winners!</strong>
             <br/><br/>
-            Thank you to all who participated in the 2017 Expedia Partner Hackathon. We look forward to partnering with you on future solutions to improve the travel industry. 
+            Thank you to all who participated in the 2017 Expedia Partner Hackathon. We look forward to partnering with you on future solutions to improve the travel industry.
           </div>
         </div>
     </div>
@@ -240,7 +295,11 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-              <h2>Support Your Hoteliers with Enhanced Point of Sale Brand Identification</h2>
+                <span class="cb-container"onclick="copyToClipboard('enhanced-pos-branding')">
+                    <span id="enhanced-pos-branding" class="cb-status" title="http://expediaconnectivity.com/blog#enhanced-pos-branding">COPY URL</span>
+                    <i id="enhanced-pos-branding-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
+                <h4>Support Your Hoteliers with Enhanced Point of Sale Brand Identification</h4>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -253,7 +312,7 @@ h2 {
                         <span class="blog-tag label">brand expansion</span>
                     </div>
                 </div>
-          </div>      
+          </div>
           <div class="blog-content">
             <strong>What's New?</strong>
             <br/>
@@ -265,11 +324,11 @@ h2 {
             <br/><br/>
             <strong>What Does this Mean?</strong>
             <br/>
-            Your system must be able to accept additional values for brands that will be sent over your Booking API. This includes the ability to consume and pass the relevant brand information to the PMS so hoteliers can see the proper Point of Sale Brand information in the reservation details when checking in their guests. 
+            Your system must be able to accept additional values for brands that will be sent over your Booking API. This includes the ability to consume and pass the relevant brand information to the PMS so hoteliers can see the proper Point of Sale Brand information in the reservation details when checking in their guests.
             <br/><br/>
             <strong>How Does it Work?</strong>
             <br/>
-            Point of Sale Brand information is already being passed to you in bookings today. We will continue to use the same field in our APIs, and simply begin sending additional values. 
+            Point of Sale Brand information is already being passed to you in bookings today. We will continue to use the same field in our APIs, and simply begin sending additional values.
             <br/><br/>
             For Partners on Expedia QuickConnect (EQC) – Specifics on Point of Sale Brands and requirements can be found in the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>.
             <br/><br/>
@@ -277,7 +336,7 @@ h2 {
             <br/><br/>
             <strong>What Do I Need to Do?</strong>
             <br/>
-            To support this critical feature, first review the applicable API Specifications to understand the required updates, then make any changes necessary to ensure that your system can accept the new Point of Sale Brands and pass them to the PMS. 
+            To support this critical feature, first review the applicable API Specifications to understand the required updates, then make any changes necessary to ensure that your system can accept the new Point of Sale Brands and pass them to the PMS.
             <br/><br/>
             <strong>PMS is the Key!</strong>
             <br/>
@@ -303,7 +362,11 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-              <h2>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h2>
+                <span class="cb-container" onclick="copyToClipboard('bed-occ-change')">
+                    <span id="bed-occ-change" class="cb-status" title="http://expediaconnectivity.com/blog#bed-occ-change">COPY URL</span>
+                    <i id="bed-occ-change-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
+                <h5>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h5>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -316,20 +379,20 @@ h2 {
                         <span class="blog-tag label">bedding occupancy enhancements</span>
                     </div>
                 </div>
-          </div>      
+          </div>
           <div class="blog-content">
-            Expedia is enhancing the bedding and occupancy configuration for room types so we can better represent the diversity of lodging bedding options. Together with our lodging partners this will allow us to deliver a better guest experience through standardization and improved accuracy. 
+            Expedia is enhancing the bedding and occupancy configuration for room types so we can better represent the diversity of lodging bedding options. Together with our lodging partners this will allow us to deliver a better guest experience through standardization and improved accuracy.
             <br/><br/>
             <strong>What changed?</strong>
             <br/>
-            The new configuration impacts the Booking Notification API, Booking Retrieval API, and Product API*. For bookings, we will continue to send bed-type information in the special request field. 
+            The new configuration impacts the Booking Notification API, Booking Retrieval API, and Product API*. For bookings, we will continue to send bed-type information in the special request field.
             Please refer to the API documentation for updated specifications:  <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html">Booking Notification API</a> or <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API</a>.
             <br/><br/>
             <strong>What does this mean and what do I need to do?</strong>
             <br/>
-            To avoid failed bookings and ensure the correct bed type is communicated to the front desk, you must pass the bed type to the PMS via free-text string rather than by code. 
+            To avoid failed bookings and ensure the correct bed type is communicated to the front desk, you must pass the bed type to the PMS via free-text string rather than by code.
             <br/><br/>
-            If you use the Expedia Booking Notification API or the Expedia Booking Retrieval API, ensure that: 
+            If you use the Expedia Booking Notification API or the Expedia Booking Retrieval API, ensure that:
             <ul>
              <li>Your system accepts a bed-type description as free-form text and pass it on to the hotelier (PMS) as a string rather than a code.</li>
              <li>Your system accepts any bed-type code (ex. code 1.5 for multiple beds).</li>
@@ -354,7 +417,11 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
-                <h2>Expedia QuickConnect APIs Users: Important Changes Required</h2>
+                <span class="cb-container" onclick="copyToClipboard('eqc-url-change')">
+                    <span id="eqc-url-change" class="cb-status" title="http://expediaconnectivity.com/blog#eqc-url-change">COPY URL</span>
+                    <i id="eqc-url-change-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
+                <h5>Expedia QuickConnect APIs Users: Important Changes Required</h5>
             </div>
             <div class="row">
                 <div class="small-4 large-5 columns">
@@ -373,7 +440,7 @@ h2 {
               <br/><br/>
               <strong>New domain name for Expedia QuickConnect APIs Using Dynamic IP Addressing</strong>
               <br/><br/>
-              At Expedia we strive to build the best and most robust APIs in order to make sure you and your customers can run your business without disruption. 
+              At Expedia we strive to build the best and most robust APIs in order to make sure you and your customers can run your business without disruption.
               As part of our next upgrade, on February 28th, 2017, we plan to replace the current production domain for the Expedia QuickConnect services (https://ws.expediaquickconnect.com/) with a new one: <a href="https://services.expediapartnercentral.com/">https://services.expediapartnercentral.com/</a>
               <br/><br/>
               We kindly ask you to adopt the new domain before <b>February 28th, 2017</b>. The new endpoints are available today.
@@ -412,8 +479,8 @@ h2 {
               <br/><br/>
               <strong>Replace PARR with the more modern Product API</strong>
               <br/><br/>
-              Several months ago we have introduced the Product API. In addition to read room type and rate plan setting, the new API allows you to create and modify products and thus drive efficiency for you and your customers. 
-              We invite you to take a look at the Product API on <a href="https://expediaconnectivity.com/developer">https://expediaconnectivity.com/developer</a>. 
+              Several months ago we have introduced the Product API. In addition to read room type and rate plan setting, the new API allows you to create and modify products and thus drive efficiency for you and your customers.
+              We invite you to take a look at the Product API on <a href="https://expediaconnectivity.com/developer">https://expediaconnectivity.com/developer</a>.
               <br/><br/>
               Going forward, EQC PARR API will not be enhanced with new features.
               <br/><br/>
@@ -421,8 +488,8 @@ h2 {
               <br/><br/>
               <strong>New self-service test property assignment tool; EQC Simulator to be retired</strong>
               <br/><br/>
-              We’re excited to announce the release of a new feature enabling you to reserve test properties for all your testing needs. 
-              This new self-service feature allows for more robust and complete testing. Log in to <a href="https://expediaconnectivity.com/test-properties/">https://expediaconnectivity.com/test-properties/</a> with your EPC user credentials to get started. If you need to reserve a test property, and you forgot your password, please use the “forgot password” of the https://www.expediapartnercentral.com login page. 
+              We’re excited to announce the release of a new feature enabling you to reserve test properties for all your testing needs.
+              This new self-service feature allows for more robust and complete testing. Log in to <a href="https://expediaconnectivity.com/test-properties/">https://expediaconnectivity.com/test-properties/</a> with your EPC user credentials to get started. If you need to reserve a test property, and you forgot your password, please use the “forgot password” of the https://www.expediapartnercentral.com login page.
               If you forgot your username, please reach out to <a href="mailto:hothelp@expedia.com">hothelp@expedia.com</a> to obtain it.
               <br/><br/>
               Expedia will proceed with decommissioning the Expedia QuickConnect Simulator for EQC AR, BR, BC and PARR applications. The simulators will go offline on January 27th, 2017. Please make sure to use the new test property assignment feature for all your testing needs going forward.
@@ -443,6 +510,10 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
+                <span class="cb-container" onclick="copyToClipboard('post-hackathon')">
+                    <span id="post-hackathon" class="cb-status" title="http://expediaconnectivity.com/blog#post-hackathon">COPY URL</span>
+                    <i id="post-hackathon-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
                 <h2>Expedia Connectivity Partner Hackathon</h2>
             </div>
             <div class="row">
@@ -501,6 +572,10 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
+                <span class="cb-container" onclick="copyToClipboard('value-add-promo')">
+                    <span id="value-add-promo" class="cb-status" title="http://expediaconnectivity.com/blog#value-add-promo">COPY URL</span>
+                    <i id="value-add-promo-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
                 <h2>Are you ready for Value Add Promotions?</h2>
             </div>
             <div class="row">
@@ -572,6 +647,10 @@ h2 {
     <div class="small-12 small-centered medium-10 columns">
         <div class="blog-post">
             <div class="blog-title">
+                <span class="cb-container" onclick="copyToClipboard('delete-old-rate-plans')">
+                    <span id="delete-old-rate-plans" class="cb-status" title="http://expediaconnectivity.com/blog#delete-old-rate-plans">COPY URL</span>
+                    <i id="delete-old-rate-plans-cb" class="step fi-clipboard tip-right")"></i>
+                </span>
                 <h2>Delete those old rate plans</h2>
             </div>
             <div class="row">
