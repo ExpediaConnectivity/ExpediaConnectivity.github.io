@@ -100,6 +100,11 @@ function googleTranslateElementInit() {
     </div>
     <div class="scorecard-description small-12 medium-9 end columns">The information below reflects the key features you have implemented as part of your integration to Expedia, thereby enhancing the guest booking experience, helping Expedia drive value across its global supply base, and supporting our lodging partners’ business.</div>
     <div class="scorecard-cards small-12 columns">
+        <div id="pci" class="border checkmark xlarge-3 large-4 medium-6 end small-12 columns has-tip red" data-title="As a Connectivity partner in receipt of customer payment card data, we are requesting that you provide proof of PCI compliance in the form of an Attestation of Compliance (AOC). Please send your latest AOC to eqcss@expedia.com as soon as possible.">
+            <div class="state icon icon-help"></div>
+            <div class="feature" data-tooltip aria-haspopup="true" class="has-tip" title="This feature will contribute to your next quarterly scorecard.">PCI Compliance</div>
+            <div class="icon icon-toggle90"></div>
+        </div>
         <div id="productApi" class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" data-title="The Product API enables Expedia partners to read, create, and edit room types and rate plans via the API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.">
             <div class="state icon"></div>
             <div class="feature">Product API</div>
@@ -115,9 +120,14 @@ function googleTranslateElementInit() {
             <div class="feature">Expedia Travel Preference</div>
             <div class="icon icon-toggle90"></div>
         </div>
-        <div id="evc" class="border checkmark xlarge-3 large-4 medium-6 small-12 end columns has-tip" data-title="Expedia Virtual Card (EVC) allows properties to charge Expedia at time of check out for the net rate of Expedia collect bookings, rather than having to manually invoice Expedia for payment.">
+        <div id="evc" class="border checkmark xlarge-3 large-4 medium-6 small-12 columns has-tip" data-title="Expedia Virtual Card (EVC) allows properties to charge Expedia at time of check out for the net rate of Expedia collect bookings, rather than having to manually invoice Expedia for payment.">
             <div class="state icon"></div>
             <div class="feature">Expedia Virtual Card</div>
+            <div class="icon icon-toggle90"></div>
+        </div>
+        <div id="pos" class="border checkmark xlarge-3 large-4 medium-6 small-12 end columns has-tip red" data-title="Expedia is expanding Point of Sale Brands passed in our Booking APIs so properties can identify which POS Brand a customer booked their travel on. Adopt to improve your score* today!">
+            <div class="state icon icon-help"></div>
+            <div class="feature" data-tooltip aria-haspopup="true" class="has-tip" title="This feature will contribute to your next quarterly scorecard.">Point of Sale Identification</div>
             <div class="icon icon-toggle90"></div>
         </div>
     </div>

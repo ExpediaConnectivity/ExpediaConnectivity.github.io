@@ -16,6 +16,10 @@ body {
   font-weight: 200;
   font-size: smaller;
 }
+.divider {
+  border-top: 1px solid #e8e8e8;
+  margin-bottom: 1em;
+}
 .simple-content {
   padding-left: 35px;
   padding-right: 35px;
