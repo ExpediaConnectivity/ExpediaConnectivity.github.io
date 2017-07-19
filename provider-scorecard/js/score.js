@@ -15,6 +15,8 @@ define(function() {
 
     var foundationSize = false;
 
+    var version;
+
     var demo = {
         "provider": {
             "name": "ExpediaProvider",
@@ -123,8 +125,13 @@ define(function() {
     }
 
     function getVersion() {
-        var version = getParameterByName("version");
         var versionParam = (version == null || version == "") ? "" : "?version=" + encodeURIComponent(version);
+        return versionParam;
+    }
+
+    function getVersionFromUrl() {
+        var versionInUrl = getParameterByName("version");
+        var versionParam = (versionInUrl == null || versionInUrl == "") ? "" : "?version=" + encodeURIComponent(versionInUrl);
         return versionParam;
     }
 
@@ -137,7 +144,7 @@ define(function() {
             return;
         }
 
-        $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash + getVersion(), function (data) {
+        $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/" + hash + getVersionFromUrl(), function (data) {
             generateScorecard(data);
         }).fail(function (jqxhr) {
             $("#top-metrics h1").text("");
@@ -338,6 +345,7 @@ define(function() {
 
     function generateScorecard(scorecard) {
         provider = scorecard.provider.name;
+        version = scorecard.version.key;
         ga('send', 'event', 'scorecard', 'view', provider);
         $("title").text(provider + " Scorecard - Expedia Connectivity");
         $(".scorecard-provider").text(scorecard.provider.name);
@@ -345,10 +353,16 @@ define(function() {
         $(".scorecard-rank .total").text(scorecard.provider.total);
         $(".scorecard-rank").removeClass("hidden");
 
+        setLabel(scorecard.version.displayName);
         generateScorecardCategory(scorecard.grow, "grow");
         generateScorecardCategory(scorecard.optimise, "optimise");
         generateScorecardFeature(scorecard.enhance, "enhance");
     }
+
+    function setLabel(name) {
+        $("#versionName").html("These are your metrics for " + name + ".");
+    }
+
 
     function generateScorecardCategory(category, id) {
         for (key in category["attributes"]) {
