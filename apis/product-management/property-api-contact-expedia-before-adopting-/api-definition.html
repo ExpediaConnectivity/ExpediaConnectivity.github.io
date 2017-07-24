@@ -519,7 +519,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>AlternateReservationManager</td>
 <td>Yes</td>
-<td>Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted.</td>
+<td>Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of &quot;24hr- &quot; is added to FirstName if field is not provided.</td>
 </tr>
 <tr>
 <td>GeneralManager</td>
@@ -548,13 +548,13 @@ function googleTranslateElementInit() {
 <td>firstName</td>
 <td>String</td>
 <td>Yes</td>
-<td>Required for ReservationManager, optional for others</td>
+<td>Required for ReservationManager and PropertyExtranetUser, optional for others. Must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode.</td>
 </tr>
 <tr>
 <td>lastName</td>
 <td>String</td>
 <td>Yes</td>
-<td></td>
+<td>Required for ReservationManager and PropertyExtranetUser, optional for others. Must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode.</td>
 </tr>
 <tr>
 <td>phoneNumbers</td>
@@ -566,7 +566,7 @@ function googleTranslateElementInit() {
 <td>emails</td>
 <td>Array of Strings</td>
 <td>See Notes</td>
-<td>Email required for ReservationManager</td>
+<td>Email required for ReservationManager. Must be well-formed Internet format and cannot contain Unicode.</td>
 </tr>
 </tbody>
 </table>
@@ -919,8 +919,8 @@ function googleTranslateElementInit() {
             &quot;modifiedUtc&quot;: &quot;2015-09-10T23:59:48.7349626Z&quot;,
             &quot;providerPropertyUrl&quot;: &quot;http://example.org&quot;,
             &quot;structureType&quot;: &quot;Hotel&quot;,
-            &quot;currencyCode&quot;: &quot;GBP&quot;,
-            &quot;billingCurrencyCode&quot;: &quot;GBP&quot;,
+            &quot;currencyCode&quot;: &quot;EUR&quot;,
+            &quot;billingCurrencyCode&quot;: &quot;EUR&quot;,
             &quot;timeZone&quot;: &quot;Europe/Dublin&quot;,
             &quot;addresses&quot;: [
                 {
