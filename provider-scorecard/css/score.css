@@ -143,6 +143,16 @@ body {
 .scorecard-row .scorecard-cards > .grey .value {
   color: #404040;
 }
+.scorecard-row .scorecard-cards > .grey .state {
+  color: #404040;
+  font-size: 1.5em;
+}
+.scorecard-row .scorecard-cards > .grey .feature {
+  color: #404040;
+}
+.scorecard-row .scorecard-cards > .grey .standard {
+  color: #404040;
+}
 .scorecard-row .scorecard-cards > .green .value {
   color: #406f1d;
 }

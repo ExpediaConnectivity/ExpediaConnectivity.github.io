@@ -221,7 +221,7 @@ define(function() {
             $("p#extra").html("");
             $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/guides.html#learn-more-about-expedia-virtualcard" target=\"_blank\">Help me adopt this feature</a>');
         } else if (section == 'pos') {
-            $("p#base").append($('<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q3, 2017 scorecard results.</p>'))
+            $("p#base").append($('<br/><br/>Thank you if you have already adopted Point of Sale Identification. Please note that your POS status will not be reflected in the scorecard until next quarter.<hr class="divider"><p class="footnote">* This feature does not impact your current scorecard, but will be assessed for the Q3, 2017 scorecard results.</p>'))
             $("p#extra").html("");
             $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
         } else if (section == 'pci') {
@@ -418,7 +418,6 @@ define(function() {
             var state = category["attributes"][key];
             $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
             $(elementSelector).addClass(state ? "green" : "red");
-
         }
     }
 
