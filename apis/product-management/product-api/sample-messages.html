@@ -167,7 +167,7 @@ Authorization: Basic [your encoded username:password in base64]
 <h3 id="all-room-types-read" data-magellan-destination="all-room-types-read">All Room Types Read</h3>
 <p>This example shows how to do a read request to retrieve all room types under a given property. We&#39;ll illustrate how to add the status param on the request to get all active and inactive room types. In this example, the property has active and inactive room types, sorted by resourceId.</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780041/roomTypes?status=all
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780041/roomTypes?status=all
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
@@ -243,7 +243,7 @@ Authorization: Basic [your encoded username:password in Base64]
       ],
       &quot;_links&quot;: {
         &quot;self&quot;: {
-          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/209857&quot;
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/209857&quot;
         }
       }
     },
@@ -299,7 +299,7 @@ Authorization: Basic [your encoded username:password in Base64]
       ],
       &quot;_links&quot;: {
         &quot;self&quot;: {
-          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/200108425&quot;
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/200108425&quot;
         }
       }
     }        
@@ -309,7 +309,7 @@ Authorization: Basic [your encoded username:password in Base64]
 <h3 id="single-room-type-read" data-magellan-destination="single-room-type-read">Single Room Type Read</h3>
 <p>This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bedding options, and supporting both smoking and non-smoking</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200192910
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Authorization: Basic [your encoded username:password in Base64]
@@ -398,7 +398,7 @@ Authorization: Basic [your encoded username:password in Base64]
         &quot;wheelchairAccessibility&quot;:false,
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200192910&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200192910&quot;
             }
         }
     }
@@ -407,7 +407,7 @@ Authorization: Basic [your encoded username:password in Base64]
 <h3 id="room-type-create-predefined-room-name-" data-magellan-destination="room-type-create-predefined-room-name-">Room Type Create (Predefined Room Name)</h3>
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking</p>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
@@ -551,7 +551,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         &quot;wheelchairAccessibility&quot;: false,
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339&quot;
             }
         }
     }
@@ -560,7 +560,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <h3 id="room-type-create-room-name-attributes-" data-magellan-destination="room-type-create-room-name-attributes-">Room Type Create (Room Name Attributes)</h3>
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking</p>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
@@ -715,7 +715,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         &quot;wheelchairAccessibility&quot;: false,
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339&quot;
             }
         }
     }
@@ -724,7 +724,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <h3 id="room-type-create-ignored-room-name-attributes-" data-magellan-destination="room-type-create-ignored-room-name-attributes-">Room Type Create (Ignored Room Name Attributes)</h3>
 <p>When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our API Definition section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/properties/1780041/roomTypes
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
@@ -860,7 +860,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         ],
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339&quot;
             }
         }
     }
@@ -868,7 +868,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
 <h3 id="room-type-modify-predefined-name-code-and-age-categories-" data-magellan-destination="room-type-modify-predefined-name-code-and-age-categories-">Room Type Modify (Predefined Name, Code and Age Categories)</h3>
 <p>Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.</p>
-<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
@@ -1014,7 +1014,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         &quot;wheelchairAccessibility&quot;: false,
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339&quot;
             }
         }
     }
@@ -1023,7 +1023,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <h3 id="modify-room-type-predefined-name-to-name-attributes-" data-magellan-destination="modify-room-type-predefined-name-to-name-attributes-">Modify Room Type (Predefined Name to Name Attributes)</h3>
 <p>Leveraging the Create example from above, predefined name is modified to a new room name built from attributes, child age category is removed, and partner code is changed.</p>
 <p>The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.</p>
-<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre>
@@ -1157,7 +1157,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         ],
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780041/roomTypes/201171339&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339&quot;
             }
         }
     }
@@ -1225,7 +1225,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <h3 id="rate-thresholds-read" data-magellan-destination="rate-thresholds-read">Rate Thresholds Read</h3>
 <p>This example shows how to retrieve the rate thresholds for a given room type.</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/rateThresholds
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1241,7 +1241,7 @@ If there are rate thresholds defined for the room type, the response would be:</
     &quot;source&quot;: &quot;RecentBookings&quot;,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/rateThresholds&quot;
+        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/rateThresholds&quot;
       }
     }
   }
@@ -1257,7 +1257,7 @@ More dynamic information like availability and rate information per stay date is
 <h3 id="all-active-rate-plans-read" data-magellan-destination="all-active-rate-plans-read">All Active Rate Plans Read</h3>
 <p>This example shows how to retrieve all active rate plans under a given room type.</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1322,7 +1322,7 @@ Authorization: Basic [your encoded username:password in Base64]
             &quot;mobileOnly&quot;: false,
             &quot;_links&quot;: {
                 &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020299&quot;
+                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020299&quot;
                 }
             }
         },
@@ -1382,7 +1382,7 @@ Authorization: Basic [your encoded username:password in Base64]
             &quot;mobileOnly&quot;: false,
             &quot;_links&quot;: {
                 &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205020302&quot;
+                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205020302&quot;
                 }
             }        
     },
@@ -1451,7 +1451,7 @@ Authorization: Basic [your encoded username:password in Base64]
             &quot;mobileOnly&quot;: false,
             &quot;_links&quot;: {
                 &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/205833985&quot;
+                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/205833985&quot;
                 }
             }
     }
@@ -1461,7 +1461,7 @@ Authorization: Basic [your encoded username:password in Base64]
 <h3 id="single-rate-plan-read-perday-pricing-expediacollect-net-rate-" data-magellan-destination="single-rate-plan-read-perday-pricing-expediacollect-net-rate-">Single Rate Plan Read (PerDay Pricing, ExpediaCollect, Net Rate)</h3>
 <p>This example is for a Per Day Pricing, ExpediaCollect, Net Rate Rate Plan.</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204297188
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204297188
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1549,7 +1549,7 @@ Authorization: Basic [your encoded username:password in Base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700&quot;
       }
     }    
   }
@@ -1557,7 +1557,7 @@ Authorization: Basic [your encoded username:password in Base64]
 </code></pre>
 <h3 id="single-rate-plan-read-occupancy-based-pricing-expediacollect-sell-rate-" data-magellan-destination="single-rate-plan-read-occupancy-based-pricing-expediacollect-sell-rate-">Single Rate Plan Read (Occupancy-Based Pricing, ExpediaCollect, Sell Rate)</h3>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204126855
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1630,7 +1630,7 @@ Authorization: Basic [your encoded username:password in Base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204126855&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204126855&quot;
       }
     }    
   }
@@ -1638,7 +1638,7 @@ Authorization: Basic [your encoded username:password in Base64]
 </code></pre>
 <h3 id="single-rate-plan-read-occupancy-based-pricing-hotelcollect-" data-magellan-destination="single-rate-plan-read-occupancy-based-pricing-hotelcollect-">Single Rate Plan Read (Occupancy-Based Pricing, HotelCollect)</h3>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204321248
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1717,7 +1717,7 @@ Authorization: Basic [your encoded username:password in Base64]
     &quot;mobileOnly&quot;: true,
    &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204321248&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204321248&quot;
       }
     }    
   }
@@ -1725,7 +1725,7 @@ Authorization: Basic [your encoded username:password in Base64]
 </code></pre>
 <h3 id="single-rate-plan-read-expedia-traveler-preference-" data-magellan-destination="single-rate-plan-read-expedia-traveler-preference-">Single Rate Plan Read (Expedia Traveler Preference)</h3>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1803,7 +1803,7 @@ Authorization: Basic [your encoded username:password in Base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200828484/ratePlans/204309700&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200828484/ratePlans/204309700&quot;
       }
     }    
   }
@@ -1812,7 +1812,7 @@ Authorization: Basic [your encoded username:password in Base64]
 <h3 id="single-rate-plan-read-with-rateplanlinkage-" data-magellan-destination="single-rate-plan-read-with-rateplanlinkage-">Single Rate Plan Read (with RatePlanLinkage)</h3>
 <p>The rate plan being requested (resourceId: 208504016) derives its rate and availability from a parent rate plan (resourceId: 208503977). Note that another rate plan (resourceId: 208616685) derives its own rate and availability from this rate plan (resourceId: 208504016)</p>
 <p>Request:</p>
-<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016
+<pre><code class="lang-HTTP">GET https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208504016
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -1900,14 +1900,14 @@ Authorization: Basic [your encoded username:password in Base64]
     },
     &quot;_links&quot;: {
       &quot;self&quot;: {
-        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208504016&quot;
+        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208504016&quot;
       },
       &quot;parentRatePlan&quot;: {
-        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706774/ratePlans/208503977&quot;
+        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706774/ratePlans/208503977&quot;
       },
       &quot;derivedRatePlans&quot;: [
         {
-          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/208616685&quot;
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/208616685&quot;
         }
       ]
     }
@@ -1915,7 +1915,7 @@ Authorization: Basic [your encoded username:password in Base64]
 }
 </code></pre>
 <h3 id="rate-plan-create-per-day-pricing-expediacollect-" data-magellan-destination="rate-plan-create-per-day-pricing-expediacollect-">Rate Plan Create (Per-day-Pricing, ExpediaCollect)</h3>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
@@ -2045,14 +2045,14 @@ Authorization: Basic [your encoded username:password in Base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204886798&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204886798&quot;
       }
     } 
   }
 }
 </code></pre>
 <h3 id="rate-plan-create-expedia-traveler-preference-" data-magellan-destination="rate-plan-create-expedia-traveler-preference-">Rate Plan Create (Expedia Traveler Preference)</h3>
-<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
+<pre><code class="lang-HTTP">POST https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/   HTTP/1.1
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Content-Length: 984
@@ -2172,7 +2172,7 @@ Authorization: Basic [your encoded username:password in base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700&quot;
       }
     }    
   }
@@ -2180,7 +2180,7 @@ Authorization: Basic [your encoded username:password in base64]
 </code></pre>
 <h3 id="rate-plan-modify-name-additional-guest-amount-value-adds-full-overlay-put-" data-magellan-destination="rate-plan-modify-name-additional-guest-amount-value-adds-full-overlay-put-">Rate Plan Modify (Name, Additional Guest Amount, Value Adds) - Full Overlay (PUT)</h3>
 <p>In this example, the rate plan created in a previous example is modified to have a more meaningful name, lower additional guest amounts and free Internet.</p>
-<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700 
+<pre><code class="lang-HTTP">PUT https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700 
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f
@@ -2328,7 +2328,7 @@ Authorization: Basic [your encoded username:password in base64]
     &quot;mobileOnly&quot;: false,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700&quot;
+         &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700&quot;
       }
     }    
   }
@@ -2408,7 +2408,7 @@ Authorization: Basic [your encoded username:password in base64]
 }
 </code></pre><h3 id="rate-plan-delete" data-magellan-destination="rate-plan-delete">Rate Plan Delete</h3>
 <p>In this example, the rate plan created in a previous example is deleted.</p>
-<pre><code class="lang-HTTP">DELETE https://services.expediapartnercentral.com/products/properties/1780044/roomTypes/200835/ratePlans/204309700
+<pre><code class="lang-HTTP">DELETE https://services.expediapartnercentral.com/properties/1780044/roomTypes/200835/ratePlans/204309700
 Content-Type: application/vnd.expedia.eps.product-v2+json
 Accept: application/vnd.expedia.eps.product-v2+json
 Request-ID : 307af24f-f59a-11e4-822e-005056b1298f

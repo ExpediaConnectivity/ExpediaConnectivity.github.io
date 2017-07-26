@@ -63,7 +63,7 @@ password: ew67nk33
 }
 </code></pre>
 <p>Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
-<a href="https://services.expediapartnercentral.com/products/properties/12933870/roomTypes">https://services.expediapartnercentral.com/products/properties/12933870/roomTypes</a></p>
+<a href="https://services.expediapartnercentral.com/properties/12933870/roomTypes">https://services.expediapartnercentral.com/properties/12933870/roomTypes</a></p>
 <p>The result will be an array of active room types under this property. For example:</p>
 <pre><code class="lang-JSON">{
     &quot;entity&quot;: [
@@ -111,7 +111,7 @@ password: ew67nk33
             ],
             &quot;_links&quot;: {
                 &quot;self&quot;: {
-                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986&quot;
+                    &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986&quot;
                 }
             }
         }
@@ -119,7 +119,7 @@ password: ew67nk33
 }
 </code></pre>
 <p>Partners can then get to the rate plans of a room type. To find rate plans associated to a room type, add the room type resource ID and /roomTypes to the URL:
-<a href="https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans">https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans</a></p>
+<a href="https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans">https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans</a></p>
 <p>The result will be an array of active rate plans under this property and room type. For example:</p>
 <pre><code class="lang-JSON">{
   &quot;entity&quot;: [
@@ -189,7 +189,7 @@ password: ew67nk33
       &quot;mobileOnly&quot;: false,
       &quot;_links&quot;: {
         &quot;self&quot;: {
-          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208502996&quot;
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/208502996&quot;
         }
       }
     },
@@ -259,7 +259,7 @@ password: ew67nk33
       &quot;mobileOnly&quot;: false,
       &quot;_links&quot;: {
         &quot;self&quot;: {
-          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/208503003&quot;
+          &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/208503003&quot;
         }
       }
     }
@@ -268,8 +268,8 @@ password: ew67nk33
 </code></pre>
 <hr>
 <h2 id="add-a-rate-plan" data-magellan-destination="add-a-rate-plan">Add a Rate Plan</h2>
-<p>To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <a href="https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/products/properties/12933873/roomTypes/201357991/ratePlans</a> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:</p>
-<pre><code>POST https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans
+<p>To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <a href="https://services.expediapartnercentral.com/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/properties/12933873/roomTypes/201357991/ratePlans</a> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:</p>
+<pre><code>POST https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans
 Content-Type: application/vnd.expedia.eps.product-v2+json
 </code></pre><pre><code class="lang-JSON">{
   &quot;distributionRules&quot;: [
@@ -345,7 +345,7 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
         &quot;mobileOnly&quot;: false,
         &quot;_links&quot;: {
             &quot;self&quot;: {
-                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201357986/ratePlans/207994977&quot;
+                &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans/207994977&quot;
             }
         }
     }

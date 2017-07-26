@@ -231,10 +231,10 @@ The Product API enables partners to first create a room type, and subsequently c
 <p>Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference program will need to combine these into 1 rate plan creation request to Expedia. Partners should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.</p>
 <h2 id="getting-active-or-all-resources-when-calling-a-list-endpoint" data-magellan-destination="getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</h2>
 <p>By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:</p>
-<pre><code class="lang-HTML">/properties?status=all
+<pre><code class="lang-HTML">/products/properties?status=all
 </code></pre>
 <p>This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:</p>
-<pre><code class="lang-HTML">/products/v1/properties/123/roomTypes?status=all
+<pre><code class="lang-HTML">/properties/123/roomTypes?status=all
 </code></pre>
 <p><a name="/update"></a></p>
 <h2 id="modify-partial-or-full-overlay-" data-magellan-destination="modify-partial-or-full-overlay-">Modify: partial or full overlay?</h2>

@@ -37,9 +37,9 @@ function googleTranslateElementInit() {
 <h2 id="resources-endpoints-overview" data-magellan-destination="resources-endpoints-overview">Resources &amp; Endpoints Overview</h2>
 <ul>
 <li>All of Expedia APIs now live under the <a href="https://services.expediapartnercentral.com/">https://services.expediapartnercentral.com/</a> domain. API  users should make sure to only ever use the fully qualified domain name in their requests to our APIs, and never try to guess/hardcode the IP this address resolves to. In order to provide a robust, highly available and scalable solution, Expedia can change the IPs being used without notice.</li>
-<li>In order to access property information: <code>/product/properties/{propertyResourceId}</code>. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.</li>
-<li>Room types can be accessed in the context of a property: <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</code>. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
-<li>Rate plans can be accessed as part of a room type (they belong to a room type): <code>/product/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</code>. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
+<li>In order to access property information: <code>/products/properties/{propertyResourceId}</code>. Property resource ID is optional. If omitted, the list of active properties assigned to the account will be returned.</li>
+<li>Room types can be accessed in the context of a property: <code>/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</code>. Room type resource ID is optional. If omitted, the list of active room types for the property will be returned.</li>
+<li>Rate plans can be accessed as part of a room type (they belong to a room type): <code>/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</code>. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
 </ul>
 <div><table>
 <thead>
@@ -66,85 +66,85 @@ function googleTranslateElementInit() {
 <tr>
 <td>Room Type</td>
 <td>Read multiple room types (GET) belonging to a single property</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/</a></td>
 <td>status=all (optional) If status is not provided, only active room types are returned.</td>
 </tr>
 <tr>
 <td>Room Type</td>
 <td>Read a single room type (GET)</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type</td>
 <td>Create a single room type (POST)</td>
-<td>POST <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/</a></td>
+<td>POST <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type</td>
 <td>Update a single room type (PUT) in full overlay mode</td>
-<td>PUT <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>PUT <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type</td>
 <td>Update a single room type (PATCH) in partial update mode</td>
-<td>PATCH <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
+<td>PATCH <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type Amenity</td>
 <td>Get amenities for a single room type</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type Amenity</td>
 <td>Set amenities for a room type (PUT) in full overlay mode</td>
-<td>PUT <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities</a></td>
+<td>PUT <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/amenities</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Room Type Rate Thresholds</td>
 <td>Get rate thresholds for a single room type</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/rateThresholds</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Read multiple rate plans belonging to a single room type (GET)</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
 <td>status=all (optional) If status is not provided, only active rate plans are returned.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Read a single rate plan (GET)</td>
-<td>GET <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>GET <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Create a single rate plan (POST)</td>
-<td>POST <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
+<td>POST <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Update a single rate plan (PUT) in full overlay mode</td>
-<td>PUT <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>PUT <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Update a single rate plan (PATCH) in partial update mode</td>
-<td>PATCH <a href="https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>PATCH <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
 <td>None</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>Delete a single rate plan (DELETE)</td>
-<td>DELETE <a href="https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/products/v1/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
+<td>DELETE <a href="https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}">https://services.expediapartnercentral.com/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</a></td>
 <td>None</td>
 </tr>
 </tbody>
@@ -315,8 +315,8 @@ Simple entity response:</p>
 <h3 id="single-entity-vs-entity-array-in-read-get-responses" data-magellan-destination="single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</h3>
 <p>There are two different read operations available against the Product API resources:</p>
 <ul>
-<li>To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}</li>
-<li>To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/. </li>
+<li>To get a specific resource, the resource ID needs to be specified on the URL. For example: /products/properties/{propertyId}</li>
+<li>To get all the active resources in the system, omit the resource ID on the URL. For example: /products/properties/. </li>
 </ul>
 <p>For example, when requesting a single property, EPS Product API will return the property resource information as part of an Entity object:</p>
 <pre><code class="lang-JSON">{
@@ -664,7 +664,7 @@ Simple entity response:</p>
 <h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>HTTP Request (GET)</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -726,7 +726,7 @@ Simple entity response:</p>
 </div><h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
 <ul>
 <li>Method: <code>POST</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -850,7 +850,7 @@ Simple entity response:</p>
 </div><h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>HTTP Request (GET)</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -913,7 +913,7 @@ Simple entity response:</p>
 <h4 id="room-type-modify-full-overlay-put-" data-magellan-destination="room-type-modify-full-overlay-put-">Room Type Modify - Full Overlay (PUT)</h4>
 <ul>
 <li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1057,7 +1057,7 @@ Simple entity response:</p>
 <p>Also note that all validation rules are applied on the complete updated room type data. For instance, only providing a <code>ageCategories</code> that has no &quot;Adult&quot; category will yield the appropriate error response.</p>
 <ul>
 <li>Method: <code>PATCH</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1553,7 +1553,7 @@ Simple entity response:</p>
 <h3 id="read-a-single-room-type-s-amenities" data-magellan-destination="read-a-single-room-type-s-amenities">Read a single room type&#39;s amenities</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities</a></li>
 <li>Consumes: <code>HTTP Request (GET)</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1612,7 +1612,7 @@ Simple entity response:</p>
 </div><h3 id="set-room-type-amenities-to-an-existing-room-type" data-magellan-destination="set-room-type-amenities-to-an-existing-room-type">Set room type amenities to an existing room type</h3>
 <ul>
 <li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/amenities</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/amenities</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1738,7 +1738,7 @@ Simple entity response:</p>
 <h3 id="obtain-rate-thresholds-for-a-single-room-type" data-magellan-destination="obtain-rate-thresholds-for-a-single-room-type">Obtain rate thresholds for a single room type</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/rateThresholds</a></li>
 <li>Consumes: <code>HTTP Request (GET)</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1848,7 +1848,7 @@ Simple entity response:</p>
 </tbody>
 </table>
 </div><p><strong>Example</strong>
-GET <a href="https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds">https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds</a></p>
+GET <a href="https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/rateThresholds">https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/rateThresholds</a></p>
 <pre><code>{
   &quot;entity&quot;: {
     &quot;type&quot;: &quot;SellLAR&quot;,
@@ -1857,7 +1857,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
     &quot;source&quot;: &quot;RecentBookings&quot;,
     &quot;_links&quot;: {
       &quot;self&quot;: {
-        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/rateThresholds&quot;
+        &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/rateThresholds&quot;
       }
     }
   }
@@ -1866,7 +1866,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 <h3 id="obtain-a-list-of-rate-plans" data-magellan-destination="obtain-a-list-of-rate-plans">Obtain a list of rate plans</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>HTTP Request (GET)</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -1936,7 +1936,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 </div><h3 id="create-a-new-rate-plan" data-magellan-destination="create-a-new-rate-plan">Create a new rate plan</h3>
 <ul>
 <li>Method: <code>POST</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -2077,7 +2077,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 </div><h3 id="read-a-single-rate-plan" data-magellan-destination="read-a-single-rate-plan">Read a single rate plan</h3>
 <ul>
 <li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: HTTP Request (GET)</li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -2147,7 +2147,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 <h4 id="rate-plan-modify-full-overlay-put-" data-magellan-destination="rate-plan-modify-full-overlay-put-">Rate Plan Modify - Full Overlay (PUT)</h4>
 <ul>
 <li>Method: <code>PUT</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -2291,7 +2291,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
   &quot;mobileOnly&quot;: false,
   &quot;_links&quot;: {
     &quot;self&quot;: {
-      &quot;href&quot;: &quot;https://services.expediapartnercentral.com/products/properties/12933870/roomTypes/201706782/ratePlans/205020307&quot;
+      &quot;href&quot;: &quot;https://services.expediapartnercentral.com/properties/12933870/roomTypes/201706782/ratePlans/205020307&quot;
     }
   }
 }
@@ -2323,7 +2323,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 <p>Also note that all validation rules are applied on the complete updated rate plan data. For instance, only providing a <code>travelDateStart</code> that is after the current <code>travelDateEnd</code> will yield the appropriate error response.</p>
 <ul>
 <li>Method: <code>PATCH</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
@@ -2437,7 +2437,7 @@ GET <a href="https://services.expediapartnercentral.com/products/properties/1293
 </div><h3 id="delete-an-existing-rate-plan" data-magellan-destination="delete-an-existing-rate-plan">Delete an existing rate plan</h3>
 <ul>
 <li>Method: <code>DELETE</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/products/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}/ratePlans/{ratePlanId}</a></li>
 <li>Consumes: HTTP Request (DELETE)</li>
 <li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
 </ul>
