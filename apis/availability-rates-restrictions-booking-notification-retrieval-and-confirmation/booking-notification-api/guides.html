@@ -228,7 +228,7 @@ Please note that credit card inform is only sent for the booking or modify reque
 <p>Additional POS ID values are sent in the e-notification message for Hotel Collect bookings. The values are the same for the respective points of sales, but prefixed with the letter &quot;A-&quot; in front of the current values.</p>
 <p>The additional POS ID 5 is used to return a TIDS for hotels participating in Expedia Group Reconciliation process. TIDS are issued and managed by the IATA group. They are used to identify the Expedia contracting entities and compensation payment currencies. Note that TIDS ID is not related to POS ID. Possible values are driven by points of supply. Your lodging connectivity account manager can provide more details about this feature.
 To help understand better the POS element, a few examples are provided here for bookings with different POS.</p>
-<p>Expedia Collect bookings sourced from Expedia points of sales </p>
+<p>Expedia Collect bookings sourced from Expedia points of sale </p>
 <pre><code class="lang-xml">    &lt;POS&gt;
         &lt;Source&gt;
             &lt;RequestorID Type=&quot;18&quot; ID=&quot;Expedia&quot;/&gt;
@@ -238,7 +238,7 @@ To help understand better the POS element, a few examples are provided here for 
         &lt;/Source&gt;
     &lt;/POS&gt;
 </code></pre>
-<p>Expedia Collect bookings sourced from Hotels.com points of sales </p>
+<p>Expedia Collect bookings sourced from Hotels.com points of sale </p>
 <pre><code class="lang-xml">    &lt;POS&gt;
         &lt;Source&gt;
             &lt; RequestorID Type=&quot;18&quot; ID=&quot;Hotels.com&quot;/&gt;
@@ -248,7 +248,17 @@ To help understand better the POS element, a few examples are provided here for 
         &lt;/Source&gt;
     &lt;/POS&gt;
 </code></pre>
-<p>Hotel Collect bookings sourced from Expedia points of sales </p>
+<p>Expedia Collect bookings sourced from American Express points of sale (&#39;American Express Travel&#39; in this case): </p>
+<pre><code class="lang-xml">    &lt;POS&gt;
+        &lt;Source&gt;
+            &lt; RequestorID Type=&quot;18&quot; ID=&quot;American Express Travel&quot;/&gt;
+            &lt;BookingChannel Type=&quot;2&quot;&gt;
+                &lt;CompanyName&gt;Expedia&lt;/CompanyName&gt;
+            &lt;/BookingChannel&gt;
+        &lt;/Source&gt;
+    &lt;/POS&gt;
+</code></pre>
+<p>Hotel Collect bookings sourced from Expedia points of sale </p>
 <pre><code class="lang-xml">    &lt;POS&gt;
         &lt;Source&gt;
             &lt;RequestorID Type=&quot;18&quot; ID=&quot;A-Expedia&quot;/&gt;
@@ -261,7 +271,7 @@ To help understand better the POS element, a few examples are provided here for 
         &lt;/Source&gt;
     &lt;/POS&gt;
 </code></pre>
-<p>Hotel Collect bookings sourced from Hotels.com points of sales</p>
+<p>Hotel Collect bookings sourced from Hotels.com points of sale</p>
 <pre><code class="lang-xml">    &lt;POS&gt;
         &lt;Source&gt;
             &lt; RequestorID Type=&quot;18&quot; ID=&quot;A-Hotels.com&quot;/&gt;
@@ -271,7 +281,7 @@ To help understand better the POS element, a few examples are provided here for 
         &lt;/Source&gt;
     &lt;/POS&gt;
 </code></pre>
-<p>Hotel Collect bookings sourced from Travelocity points of sales: </p>
+<p>Hotel Collect bookings sourced from Travelocity points of sale: </p>
 <pre><code class="lang-xml">    &lt;POS&gt;
         &lt;Source&gt;
             &lt; RequestorID Type=&quot;18&quot; ID=&quot;A-Travelocity&quot;/&gt;
