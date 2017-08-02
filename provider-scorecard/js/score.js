@@ -24,6 +24,10 @@ define(function() {
             "total": 71,
             "score": 0.92780685
         },
+        "version": {
+            "key": "",
+            "displayName" : "Demo"
+        },
         "grow": {
             "score": 0.8,
             "attributes": {
