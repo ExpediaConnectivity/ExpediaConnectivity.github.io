@@ -189,7 +189,7 @@ define(function() {
         $.get(providerPortalServiceBaseUrl() + "/v1/scorecard/top/overall/" + hash + getVersion())
             .done(function (jqxhr) {
                 $("#top-metrics h1").text("Overall Ranking");
-                $("#top-metrics p").text("These are the top providers, ranked according to each providers overall score.");
+                $("#top-metrics p").text("These are the top providers, ranked according to each provider's overall score.");
                 populateTopMetricsList(jqxhr, false, "overall");
                 $("#top-metrics").foundation('open');
             }).fail(function (jqxhr) {
