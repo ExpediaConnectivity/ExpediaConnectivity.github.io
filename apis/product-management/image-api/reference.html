@@ -130,11 +130,15 @@ function googleTranslateElementInit() {
 </tr>
 <tr>
 <td>500</td>
-<td>Internal system error (shouldn’t be retried)</td>
+<td>Internal system error (should not be retried)</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Internal system error (should be retried)</td>
+<td>Temporary internal system error (should be retried)</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Timeout error (should be retried)</td>
 </tr>
 </tbody>
 </table>
@@ -208,10 +212,10 @@ function googleTranslateElementInit() {
 </div><h2 id="basic-response-wrapper-structure-with-entity-and-errors" data-magellan-destination="basic-response-wrapper-structure-with-entity-and-errors">Basic Response Wrapper Structure with Entity and Errors</h2>
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
 <h3 id="entity" data-magellan-destination="entity">Entity</h3>
-<p>The entities supported by the product API are rate plans, room types and properties.</p>
-<p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. </p>
+<p>The only supported entity by the Image API is image.</p>
+<p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Image and EPS Product services. </p>
 <p>Consider the following code in Java:</p>
-<pre><code class="lang-Java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
+<pre><code class="lang-java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
     private T entity;
     private List&lt;ErrorDTO&gt; errors;
 }
@@ -226,7 +230,7 @@ Simple entity response:</p>
 }
 </code></pre>
 <h3 id="single-entity-vs-entity-array-in-read-get-responses" data-magellan-destination="single-entity-vs-entity-array-in-read-get-responses">Single Entity VS Entity Array in Read/GET Responses</h3>
-<p>There are two different read operations available against the Product API resources:</p>
+<p>There are two different read operations available against the Image API resources:</p>
 <ul>
 <li>To get a specific resource, the resource ID needs to be specified on the URL. For example: /properties/{propertyId}/images/{ImageId}</li>
 <li>To get all the active resources in the system, omit the resource ID on the URL. For example: /properties/{propertyId}/images. </li>
@@ -290,7 +294,7 @@ Simple entity response:</p>
 <p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.</p>
 <p>Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.</p>
 <p>A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
-<pre><code class="lang-Java">   ResponseEntity&lt;ResponseWrapperDTO&lt;RoomTypeDTO&gt;&gt; response = restTemplate.exchange(
+<pre><code class="lang-java">   ResponseEntity&lt;ResponseWrapperDTO&lt;RoomTypeDTO&gt;&gt; response = restTemplate.exchange(
             &quot;url&quot;,
             HttpMethod.POST,
             entity,

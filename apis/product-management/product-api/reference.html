@@ -212,11 +212,15 @@ function googleTranslateElementInit() {
 </tr>
 <tr>
 <td>500</td>
-<td>Internal system error (shouldn’t be retried)</td>
+<td>Internal system error (should not be retried)</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Internal system error (should be retried)</td>
+<td>Temporary internal system error (should be retried)</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Timeout error (should be retried)</td>
 </tr>
 </tbody>
 </table>
@@ -296,9 +300,9 @@ function googleTranslateElementInit() {
 <p>All responses provided by the API will either contain an HTTP Entity element, which may represent a single object or an array of objects, or an Errors object for an array of errors. </p>
 <h3 id="entity" data-magellan-destination="entity">Entity</h3>
 <p>The entities supported by the product API are rate plans, room types and properties.</p>
-<p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Promo services. </p>
+<p>The Entity approach allows partners to use the same wrapper for all resources exposed by the new generation of Expedia Partner Services like the EPS Product and EPS Image services. </p>
 <p>Consider the following code in Java:</p>
-<pre><code class="lang-Java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
+<pre><code class="lang-java">public class ResponseWrapperDTO&lt;T&gt; implements Serializable {
     private T entity;
     private List&lt;ErrorDTO&gt; errors;
 }
@@ -377,7 +381,7 @@ Simple entity response:</p>
 <p>Entity and errors are in the same wrapper because most frameworks will de-serialize responses automatically, but require a target type to which the response will be de-serialized.</p>
 <p>Both successful and unsuccessful responses are returned by the same DTO, but can have either entity or errors, never both.</p>
 <p>A Java implementation to handle this, using Spring’s RestTemplate, could look like this:</p>
-<pre><code class="lang-Java">   ResponseEntity&lt;ResponseWrapperDTO&lt;RoomTypeDTO&gt;&gt; response = restTemplate.exchange(
+<pre><code class="lang-java">   ResponseEntity&lt;ResponseWrapperDTO&lt;RoomTypeDTO&gt;&gt; response = restTemplate.exchange(
             &quot;url&quot;,
             HttpMethod.POST,
             entity,
@@ -1225,7 +1229,7 @@ Simple entity response:</p>
 </tr>
 <tr>
 <td>_links</td>
-<td><a href="#/definitions/RoomTypeDTO.LinksDTO">RoomTypeLinks</a></td>
+<td><a href="#/definitions/RoomTypeDTOLinks">RoomTypeLinks</a></td>
 <td>No</td>
 <td>Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
 </tr>
@@ -1530,7 +1534,7 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-</div><p><a name="/definitions/RoomTypeDTO.LinksDTO"></a></p>
+</div><p><a name="/definitions/RoomTypeDTOLinks"></a></p>
 <h4 id="roomtypelinks" data-magellan-destination="roomtypelinks">RoomTypeLinks</h4>
 <div><table>
 <thead>
@@ -1827,6 +1831,29 @@ Simple entity response:</p>
 <td>source</td>
 <td><a href="#/definitions/rateThresholdsSourceEnum">rateThresholdsSourceEnum</a></td>
 <td>Defines how the minimum and maximum amounts were calculated. It is either RecentBookings (thresholds calculated using last 10 bookings, and applying multiplication and division factor to find maximum and minimum values) or Manual (manually defined by Expedia). RecentBookings is Expedia&#39;s default method.</td>
+</tr>
+<tr>
+<td>_links</td>
+<td><a href="#/definitions/RateVerificationThresholdsDTOLinks">RateThresholdsLinks</a></td>
+<td>Collection of URLs that point to various resources related to the current resource.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RateVerificationThresholdsDTOLinks"></a></p>
+<h4 id="ratethresholdslinks" data-magellan-destination="ratethresholdslinks">RateThresholdsLinks</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td><a href="#/definitions/LinkDTO">Link</a></td>
+<td>URL of the current resource.</td>
 </tr>
 </tbody>
 </table>
@@ -2636,7 +2663,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 </tr>
 <tr>
 <td>_links</td>
-<td><a href="#/definitions/RatePlanDTO.LinksDTO">RatePlanLinks</a></td>
+<td><a href="#/definitions/RatePlanDTOLinks">RatePlanLinks</a></td>
 <td>Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
 </tr>
 </tbody>
@@ -2990,7 +3017,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 </tr>
 </tbody>
 </table>
-</div><p><a name="/definitions/RatePlanDTO.LinksDTO"></a></p>
+</div><p><a name="/definitions/RatePlanDTOLinks"></a></p>
 <h4 id="rateplanlinks" data-magellan-destination="rateplanlinks">RatePlanLinks</h4>
 <div><table>
 <thead>
@@ -3015,6 +3042,11 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>derivedRatePlans</td>
 <td>Array[<a href="#/definitions/LinkDTO">Link</a>]</td>
 <td>List of URLs that point to the derived Rate Plans. These Rate Plans have their rates and availability derived from this Rate Plan. Optional, only returned if a rate plan is being derived by children rate plans via rate plan linkage rules.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
+</tr>
+<tr>
+<td>depositPolicy</td>
+<td><a href="#/definitions/LinkDTO">Link</a></td>
+<td>URL of the property deposit policy.  Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
 </tr>
 </tbody>
 </table>
