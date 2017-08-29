@@ -64,7 +64,7 @@ $(document).ready(function() {
             ga('send', 'event', 'pwreset', 'success', localStorage.getItem('username'));
         }, function(jqxhr) {
             loadEndButtons();
-            ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid);
+            ajaxError(jqxhr, "Could not reset password for hotel ID " + hotelid + ".<br> Please try again later or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
             ga('send', 'event', 'pwreset', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
         });
         return false;
@@ -96,7 +96,7 @@ $(document).ready(function() {
                     datatable.order([ 2, "asc" ]).draw();
                 }
             }, function(jqxhr) {
-                ajaxError(jqxhr, "Could not lookup your scheduled test hotels.");
+                ajaxError(jqxhr, "Could not lookup your scheduled test hotels.<br> Please try again later or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
                 $(".dt-button").addClass("disabled").attr("title", "Select a property from the table first");
                 if (datatable && datatable.length == 0) {
                     datatable.clear().draw();
@@ -183,15 +183,11 @@ function getNiceErrorText(jqxhr) {
 function ajaxError(jqxhr, humanError) {
     try {
         console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
-
-        if (jqxhr) {
-            var details = getNiceErrorText(jqxhr);
-        }
     } catch (e) {
         console.log(humanError);
         console.log(jqxhr);
     }
-    $("#result").addClass("error").html(humanError + (details ? "<br/>" + details : "")).effect( "highlight", {color:"#D62D20"}, 700 );
+    $("#result").addClass("error").html(humanError).effect( "highlight", {color:"#D62D20"}, 700 );
 }
 
 function createAssignmentRequest() {
@@ -243,17 +239,20 @@ function autoAssignHotel() {
             ga('send', 'event', 'assign', 'success', localStorage.getItem('username') + "|" + jsonToUriVariables(hotel, '|'));
         }, function(jqxhr) {
             loadEnd();
-            ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password - please reset the password for the hotel manually.");
+            ajaxError(jqxhr, "Successfully assigned hotel " + hotelId + " but could not set EQC password.<br> Please reset the password for the hotel manually.");
             ga('send', 'event', 'assign', 'password.failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
         });
     }, function(jqxhr) {
         loadEnd();
         if (jqxhr.status == 409) {
-            ajaxError(null, "No hotels to assign which match your preferences, please email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>");;
+            if (jqxhr.responseText.match(/HOTEL_COLLECT_ONLY|EXPEDIA_COLLECT_ONLY/) != null) {
+                ajaxError(null, "No hotels to assign which match your preferences.<br> Please request an ETP property instead, or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
+            } else {
+                ajaxError(null, "No hotels to assign which match your preferences.<br> Please email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
+            }
         } else {
-            ajaxError(jqxhr, "Could not schedule a test hotel.");
+            ajaxError(jqxhr, "Could not schedule a test hotel.<br> Please try again later or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
         }
-
         ga('send', 'event', 'assign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText);
     });
 }
@@ -271,7 +270,7 @@ function unassign(e, dt, node, config) {
         ga('send', 'event', 'unassign', 'success', localStorage.getItem('username') + "|" + hotelid);
     }, function(jqxhr) {
         loadEndButtons();
-        ajaxError(jqxhr, "Could not unassign a test hotel.");
+        ajaxError(jqxhr, "Could not unassign a test hotel.<br> Please try again later or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
         ga('send', 'event', 'unassign', 'failure', localStorage.getItem('username') + "|" + jqxhr.responseText, hotelid);
     });
 }
@@ -296,7 +295,7 @@ function extend(e, dt, node, config) {
         ga('send', 'event', 'extend', 'success', localStorage.getItem('username') + "|" + hotelid);
     }, function(jqxhr) {
         loadEndButtons();
-        ajaxError(jqxhr, "Could not extend a test hotel.");
+        ajaxError(jqxhr, "Could not extend a test hotel.<br> Please try again later or email <a href='mailto:eqcss" + "@expedia.com'>eqcss" + "@expedia.com</a>.");
         ga('send', 'event', 'extend', 'failure', localStorage.getItem('username') + "|" + jqxhr.status, hotelid);
     });
 }
