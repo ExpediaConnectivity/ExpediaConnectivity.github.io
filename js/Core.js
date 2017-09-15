@@ -53,7 +53,7 @@ var Core = Core || {
         }
         // Check for Google Translate modifications
         if ($(document.body).css("top") != "0px" && $(document.body).css("top") != "auto") {
-            $(".menu").css("top", $(document.body).css("top"));
+            $(".api-menu").css("top", $(document.body).css("top"));
         }
         try {
             if ($("html").hasClass("translated-ltr") || $("html").hasClass("translated-rtl")) {
@@ -110,7 +110,7 @@ var Core = Core || {
         if ($(document).scrollTop() >= headerHeight) {
             top = 0;
         }
-        $('.menu').css('margin-top', top);
+        $('.api-menu').css('margin-top', top);
     },
 
     resizeMenuNav: function() {
