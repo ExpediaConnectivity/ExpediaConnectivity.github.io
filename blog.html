@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery-3.2.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Blog - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery-3.2.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
     $('.api-content pre>code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
@@ -12,141 +12,7 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><style>
-.blog-author {
-    padding: 0px 5px 5px 5px;
-    text-align: right;
-    color: #B1B1B1;
-}
-.blog-content {
-    padding: 20px;
-    text-align: justify;
-}
-.blog-content a {
-        text-decoration: underline;
-}
-.blog-date {
-    padding: 10px 20px 10px 20px;
-    text-align: left;
-    color: #B1B1B1;
-}
-.blog-post {
-    background: #F8F8F8;
-    border-radius: 5px 5px 5px 5px;
-    -moz-border-radius: 5px 5px 5px 5px;
-    -webkit-border-radius: 5px 5px 5px 5px;
-    border: 0px none #000000;
-    /*border-style: solid;
-    border-width: 1px;*/
-    box-shadow: 0px 2px #c7c7c7;
-}
-.blog-spacer {
-    height: 75px;
-}
-.blog-table {
-    overflow: auto;
-}
-.blog-tags {
-    font-size: 12px;
-    padding: 10px 20px 10px 20px;
-    text-align: right;
-}
-.blog-tag {
-    background-color: #008CBA;
-}
-.blog-title {
-    padding: 10px 20px 10px;
-    text-align: justify;
-    background-color: #E5E5E5;
-    border-radius: 5px 5px 0px 0px;
-    -moz-border-radius: 5px 5px 0px 0px;
-    -webkit-border-radius: 5px 5px 0px 0px;
-    border: 0px none #000000;
-    box-shadow: 0px 2.5px 0px #FECC09;
-}
-.step {
-    float: right;
-    margin-top: 2px;
-    font-size: 18px;
-}
-.fi-clipboard {
-    border-bottom: none;
-}
-.fi-check {
-    color: green;
-    border-bottom: none;
-}
-.cb-status {
-    float: right;
-    margin: 9px 0 0 4px;
-}
-.cb-container {
-    cursor: pointer;
-}
-
-
-h1 {
-    color: #B1B1B1;
-    font-size: 2em;
-    margin: 0 0;
-    text-align: center;
-}
-@media only screen and (min-width: 705px) {
-    h1 {
-        font-size: 2.5em;
-    }
-}
-@media only screen and (min-width: 840px) {
-    h1 {
-        font-size: 3em;
-    }
-    .step {
-        font-size: 24px;
-    }
-}
-@media only screen and (min-width: 1025px) {
-    h1 {
-        font-size: 3.5em;
-    }
-}
-@media (max-width: 640px) {
-    .blog-content {
-        padding: 10px;
-    }
-    .blog-date {
-        padding: 10px;
-    }
-    .blog-spacer {
-        height: 50px;
-    }
-    .blog-tags {
-        padding: 10px;
-    }
-    .blog-title {
-        padding: 10px;
-        text-align: center;
-    }
-}
-
-h2 {
-    font-size: 1.4em;
-    margin: 0 0;
-    padding: 0px;
-}
-
-@media only screen and (min-width: 805px) {
-    h2 {
-        font-size: 1.8em;
-    }
-}
-
-h5 {
-    margin-top: 6px;
-}
-</style>
-
-<script>
-function copyToClipboard(element) {
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><link rel="stylesheet" href="/css/blog.css"><script>function copyToClipboard(element) {
     var ele = document.getElementById(element);
     var link = ele.getAttribute('title')
     var dummy = document.createElement("input");
@@ -160,553 +26,175 @@ function copyToClipboard(element) {
     $(cb_success).removeClass("fi-clipboard");
     $(cb_success).addClass("fi-check");
     $(ele).text("COPIED!");
-}
-</script>
+}</script><body><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><section class="hero hero-pool"><div class="inner"><h1>Expedia Connectivity Blog</h1></div></section><a name="the-expedia-connectivity-provider-scorecard"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('the-expedia-connectivity-provider-scorecard')"><span class="cb-status" id="the-expedia-connectivity-provider-scorecard" title="https://expediaconnectivity.com/blog#the-expedia-connectivity-provider-scorecard">COPY</span><i class="step fi-clipboard tip-right" id="the-expedia-connectivity-provider-scorecard-cb"></i></span><h2>The Expedia Connectivity Provider Scorecard</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2017-08-23</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">scorecard</span></div></div></div><div class="blog-content"><p>Hotel and lodging partners rely on our connected platforms to help power their business and attract guests. Whether you’re a channel manager, central reservation system or property management system, a strong connection to Expedia will result in happy customers and help grow your business.</p>
+<p>It’s important that all connected systems meet standards and operate at top performance. As a Connectivity partner, we want to ensure that you understand the health of your connection and are aware of opportunities for improvement.</p>
+<p>We’ve created the Expedia Connectivity Provider Scorecard (see <a href="https://expediaconnectivity.com/provider-scorecard/">example</a>) to provide transparency and fairness in our Connectivity partner assessments. This dynamic evaluation tells you how you’re doing and how you compare among other Connectivity providers.</p>
+<p>We track and measure three primary areas of our partnership cycle – Optimize, Enhance and Grow. Each of these areas contains related metrics about the quality of your connection.</p>
+<p><strong>Optimize</strong>
+This area measures your efficiency and speed when interacting with Expedia’s inventory management and reservations functions. You can also see your activation and property onboarding metrics.</p>
+<p><strong>Enhance</strong>
+This section reflects the status of your adoption of important features that enhance guest experiences and provide advanced options for lodging partners.</p>
+<p><strong>Grow</strong>
+The metrics in this area offer details on your overall supply and success of your connected properties in the Expedia marketplace. You can monitor the effectiveness of the rates and availability provided by your lodging partners.</p>
+<p>If you haven’t received your scorecard or have questions, contact your account manager or email <a href="mailto:EQCSS@expedia.com?Subject=Provider scorecard inquiry">EQCSS@expedia.com</a> to request it.</p>
+</div><div class="blog-author"></div></div></div></div><a name="2017-expedia-madrid-hackathon-winners-innovation-we-love"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('2017-expedia-madrid-hackathon-winners-innovation-we-love')"><span class="cb-status" id="2017-expedia-madrid-hackathon-winners-innovation-we-love" title="https://expediaconnectivity.com/blog#2017-expedia-madrid-hackathon-winners-innovation-we-love">COPY</span><i class="step fi-clipboard tip-right" id="2017-expedia-madrid-hackathon-winners-innovation-we-love-cb"></i></span><h2>2017 Expedia Madrid Hackathon Winners: Innovation We Love</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2017-05-10</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">hackathon</span></div></div></div><div class="blog-content"><p>Competition was as fiery as a flamenco dance at the Expedia 2017 Lodging Partner Hackathon.</p>
+<p>From April 24 through April 26, Expedia hosted 37 developers from 17 countries representing 15 technology partners to collaborate and compete. The developers worked in teams, supported by an Expedia coach, to build creative solutions using both existing Expedia APIs and other technologies.</p>
+<p>Inspiration, spirited discussions and a couple of late nights fueled the innovation that led to many brilliant solutions. Olé!</p>
+<p>In the end, a few solutions really wowed the judges and stood out as game changers for improving travel property management. These teams thought beyond traditional hotel needs and expensive formal data collection to present some simple solutions to complicated problems.</p>
+<p><strong>First Place: HotelOga</strong></p>
+<p><img src="/images/1stplace.jpg" alt="1st place"></p>
+<p>Problem: In emerging markets, acquiring new customers is time consuming. Hotel managers know that they need to optimize their property information for online customer acquisition channels, but it requires a different set of technical skills and resources than the local teams often possess.
+Solution: The HotelOga team created an easy-to-use mobile app that lets you simply walk through a property and take some images - the tool takes care of the rest! It intelligently interprets pictures to extract the room and property amenities required to onboard a property, including photos, in 3 minutes.</p>
+<p><strong>Second Place: HotelSpider</strong></p>
+<p><img src="/images/2ndplace.jpg" alt="2nd place"></p>
+<p>Problem: On-boarding a property for online channel distribution is time-consuming. Many data points need to be created and entered manually.
+Solution: The HotelSpider team built a tool to crowdsource content - generating hotel descriptions, amenities, images and other content from guest review data and other sources. Property managers need to simply verify their auto-generated profile and attributes rather than creating content from scratch.</p>
+<p><strong>Third Place: Team Air (combined of 3 companies: Vertical Booking, NextPax, Djubo)</strong></p>
+<p><img src="/images/3rdplace.jpg" alt="3rd place"></p>
+<p>Problem: Vacation Rental properties have different parameters than hotels. Many providers manage thousands of units, so on boarding and content maintenance is not straightforward and can be overwhelming.
+Solution: Team Air built a tool that provides a simple, single page overview with action triggers to improve vacation rental specific content for multiple units. They further enhanced the experience by including direct feedback on improvements to the quality score.</p>
+<p><strong>Congratulations to our winners!</strong></p>
+<p>Thank you to all who participated in the 2017 Expedia Partner Hackathon. We look forward to partnering with you on future solutions to improve the travel industry.</p>
+</div><div class="blog-author"></div></div></div></div><a name="support-your-hoteliers-with-enhanced-point-of-sale-brand-identification"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('support-your-hoteliers-with-enhanced-point-of-sale-brand-identification')"><span class="cb-status" id="support-your-hoteliers-with-enhanced-point-of-sale-brand-identification" title="https://expediaconnectivity.com/blog#support-your-hoteliers-with-enhanced-point-of-sale-brand-identification">COPY</span><i class="step fi-clipboard tip-right" id="support-your-hoteliers-with-enhanced-point-of-sale-brand-identification-cb"></i></span><h2>Support Your Hoteliers with Enhanced Point of Sale Brand Identification</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2017-05-01</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">brand expansion</span></div></div></div><div class="blog-content"><p><strong>What&#39;s New?</strong>
+Expedia is expanding Point of Sale Brand information passed through our APIs so hotel partners can recognize the booking point of sale from our dynamic portfolio of travel brands. Without proper Point of Sale Brand information being passed to your properties, guests can be greeted as having booked from a different Point of Sale Brand upon check-in, which can lead to customer confusion and poor customer experience.</p>
+<p><strong>When Can I See Enhanced Point of Sale Brand Identification? </strong>
+Beginning May 1st, you can begin adopting the changes. This feature is a requirement for all connections and any future certifications, so please ensure that your system supports our enhanced list of brands in order to remain compliant with our certification standards.</p>
+<p><strong>What Does this Mean?</strong>
+Your system must be able to accept additional values for brands that will be sent over your Booking API. This includes the ability to consume and pass the relevant brand information to the PMS so hoteliers can see the proper Point of Sale Brand information in the reservation details when checking in their guests.</p>
+<p><strong>How Does it Work?</strong>
+Point of Sale Brand information is already being passed to you in bookings today for the following Points of Sale:</p>
+<ul>
+<li>Expedia</li>
+<li>Hotels.com</li>
+<li>Expedia Affiliate Network</li>
+</ul>
+<p>We will continue to use the same field in our APIs, and simply begin sending additional values. The newly added Points of Sale are as follows:</p>
+<ul>
+<li>Egencia</li>
+<li>Travelocity</li>
+<li>Orbitz</li>
+<li>Wotif</li>
+<li>Hotwire</li>
+<li>CheapTickets</li>
+<li>Ebookers</li>
+<li>MrJet</li>
+<li>Lastminute.au</li>
+<li>American Express Travel</li>
+<li>Amex The Hotel Collection</li>
+<li>Amex FINE HOTELS AND RESORTS</li>
+</ul>
+<p>For Partners on Expedia QuickConnect (EQC) – Specifics on Point of Sale Brands and requirements can be found in the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>.</p>
+<p>For Partners on Booking Notification – Specifics on Point of Sale Brands and requirements can be found in the &quot;Hotel Reservation Notification RQ/RS&quot; section of the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#hotel-reservation-notification-rq-rs">Booking Notification API Definition</a>, while the expanded list can be found in the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#point-of-sale-brand-list">Point of Sale Brand List</a>.</p>
+<p><strong>What Do I Need to Do?</strong>
+To support this critical feature, first review the applicable API Specifications to understand the required updates, then make any changes necessary to ensure that your system can accept the new Point of Sale Brands and pass them to the PMS.</p>
+<p><strong>PMS is the Key!</strong>
+Consuming the new Point of Sale Brands is not enough on its own. It is critical that the Point of Sale Brand information is also passed to all of the PMS providers your systems connect with. To certify that you have completed this work, you must provide a screenshot from a PMS partner displaying that the new Point of Sale Brands reaches these PMS systems.</p>
+<p><strong>Don’t Wait to Take Action!</strong>
+Supporting the new Point of Sale Brands is a requirement for certification. Contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a> to send your confirmation and screenshot example today. If you are unable to meet this compliance, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a>. We will work with you to ensure you have all the information required.</p>
+<p>As a valued Expedia partner, we trust you will adjust your integration with Expedia quickly to provide the added benefits to your hoteliers. If you have any questions please do not hesitate to contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a>.</p>
+</div><div class="blog-author"></div></div></div></div><a name="bedding-and-occupancy-configurations-are-getting-better"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('bedding-and-occupancy-configurations-are-getting-better')"><span class="cb-status" id="bedding-and-occupancy-configurations-are-getting-better" title="https://expediaconnectivity.com/blog#bedding-and-occupancy-configurations-are-getting-better">COPY</span><i class="step fi-clipboard tip-right" id="bedding-and-occupancy-configurations-are-getting-better-cb"></i></span><h2>Bedding and Occupancy Configurations are Getting Better</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2017-02-16</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">bedding occupancy enhancements</span></div></div></div><div class="blog-content"><p><strong>What You Need to Know</strong>
+Expedia is enhancing the bedding and occupancy configuration for room types so we can better represent the diversity of lodging bedding options. Together with our lodging partners this will allow us to deliver a better guest experience through standardization and improved accuracy.</p>
+<p><strong>What changed?</strong>
+The new configuration impacts the Booking Notification API, Booking Retrieval API, and Product API*. For bookings, we will continue to send bed-type information in the special request field. Please refer to the API documentation for updated specifications: <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html">Booking Notification API</a> or <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API</a>.</p>
+<p><strong>What does this mean and what do I need to do?</strong>
+To avoid failed bookings and ensure the correct bed type is communicated to the front desk, you must pass the bed type to the PMS via free-text string rather than by code.</p>
+<p>If you use the Expedia Booking Notification API or the Expedia Booking Retrieval API, ensure that:</p>
+<ul>
+<li>Your system accepts a bed-type description as free-form text and pass it on to the hotelier (PMS) as a string rather than a code.</li>
+<li>Your system accepts any bed-type code (ex. code 1.5 for multiple beds).</li>
+</ul>
+<p><strong>Note:</strong> For room types with multiple bedding options such as “1 king bed” or “2 double beds,” the bed-type code might not match the bed type reflected in the free-text. The bedding option selected by the customer will be sent in the free-text special request. As long as your system is capable of ignoring the code and consuming only the bed-type description this should not be an issue.</p>
+<p>** We’ve replaced the 256 codes currently available for sending Expedia bed-type information with a simplified set of codes and attributes. If you use the Product API, you can create a room type with the new bedding and occupancy configuration through the API. Please refer to the <a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html#bedtypeenum">Expedia Product API documentation</a> for examples.</p>
+</div><div class="blog-author"></div></div></div></div><a name="expedia-quickconnect-apis-users-important-changes-required"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('expedia-quickconnect-apis-users-important-changes-required')"><span class="cb-status" id="expedia-quickconnect-apis-users-important-changes-required" title="https://expediaconnectivity.com/blog#expedia-quickconnect-apis-users-important-changes-required">COPY</span><i class="step fi-clipboard tip-right" id="expedia-quickconnect-apis-users-important-changes-required-cb"></i></span><h2>Expedia QuickConnect APIs Users: Important Changes Required</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2016-11-30</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">url change</span></div></div></div><div class="blog-content"><p>We would like to inform our Expedia QuickConnect users that we&#39;re working on changes that will require updates by our users.</p>
+<p><strong>New domain name for Expedia QuickConnect APIs Using Dynamic IP Addressing</strong></p>
+<p>At Expedia we strive to build the best and most robust APIs in order to make sure you and your customers can run your business without disruption. As part of our next upgrade, on February 28th, 2017, we plan to replace the current production domain for the Expedia QuickConnect services (<a href="https://ws.expediaquickconnect.com/">https://ws.expediaquickconnect.com/</a>) with a new one: <a href="https://services.expediapartnercentral.com/">https://services.expediapartnercentral.com/</a></p>
+<p>We kindly ask you to adopt the new domain before <strong>February 28th, 2017</strong>. The new endpoints are available today.</p>
+<p>With this new domain, the IP addresses will dynamically change over time and therefore you should use our fully qualified domain name. Please do not attempt to configure connectivity based on an IP address.</p>
+<p>Here’s how the different paths to EQC messages are changing:</p>
+<div class="blog-table">
 
-<section class='hero hero-pool'>
-    <div class='inner'>
-        <h1>Expedia Connectivity Blog</h1>
-    </div>
-</section>
+<table>
 
-<a name="partner-scorecard-update"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('partner-scorecard-update')">
-                    <span id="partner-scorecard-update" class="cb-status" title="https://expediaconnectivity.com/blog#partner-scorecard-update">COPY URL</span>
-                    <i id="partner-scorecard-update-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h2>The Expedia Connectivity Provider Scorecard</h2>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="23rd of Aug, 2017">2017-08-23</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">scorecard</span>
-                    </div>
-                </div>
-          </div>
-          <div class="blog-content">
-            Hotel and lodging partners rely on our connected platforms to help power their business and attract guests. Whether you’re a channel manager, central reservation system or property management system, a strong connection to Expedia will result in happy customers and help grow your business.
-            <br><br>
-            It’s important that all connected systems meet standards and operate at top performance.
-            As a Connectivity partner, we want to ensure that you understand the health of your connection and are aware of opportunities for improvement.
-            <br><br>
-            We’ve created the Expedia Connectivity Provider Scorecard (see <a href="https://expediaconnectivity.com/provider-scorecard/">example</a>) to provide transparency and fairness in our Connectivity partner assessments. This dynamic evaluation tells you how you’re doing and how you compare among other Connectivity providers.
-            <br><br>
-            We track and measure three primary areas of our partnership cycle – Optimize, Enhance and Grow. Each of these areas contains related metrics about the quality of your connection.
-            <br><br>
-            <strong>Optimize</strong><br>
-            This area measures your efficiency and speed when interacting with Expedia’s inventory management and reservations functions. You can also see your activation and property onboarding metrics.
-            <br><br>
-            <strong>Enhance</strong><br>
-            This section reflects the status of your adoption of important features that enhance guest experiences and provide advanced options for lodging partners.
-            <br><br>
-            <strong>Grow</strong><br>
-            The metrics in this area offer details on your overall supply and success of your connected properties in the Expedia marketplace. You can monitor the effectiveness of the rates and availability provided by your lodging partners.
-            <br><br>
-            If you haven’t received your scorecard or have questions, contact your account manager or email <a href="mailto:EQCSS@expedia.com?Subject=Provider scorecard inquiry">EQCSS@expedia.com</a> to request it.
-          </div>
-        </div>
-    </div>
-</div>
+<tbody>
 
-<a name="madrid-hackathon-winners"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('madrid-hackathon-winners')">
-                    <span id="madrid-hackathon-winners" class="cb-status" title="https://expediaconnectivity.com/blog#madrid-hackathon-winners">COPY URL</span>
-                    <i id="madrid-hackathon-winners-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h2>2017 Expedia Madrid Hackathon Winners: Innovation We Love</h2>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="1st of May, 2017">2017-05-10</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">hackathon</span>
-                    </div>
-                </div>
-          </div>
-          <div class="blog-content">
-            Competition was as fiery as a flamenco dance at the Expedia 2017 Lodging Partner Hackathon.
-            <br/><br/>
-            From April 24 through April 26, Expedia hosted 37 developers from 17 countries representing 15 technology partners to collaborate and compete. The developers worked in teams, supported by an Expedia coach, to build creative solutions using both existing Expedia APIs and other technologies.
-            <br/><br/>
-            Inspiration, spirited discussions and a couple of late nights fueled the innovation that led to many brilliant solutions. Olé!
-            <br/><br/>
-            In the end, a few solutions really wowed the judges and stood out as game changers for improving travel property management. These teams thought beyond traditional hotel needs and expensive formal data collection to present some simple solutions to complicated problems.
-            <br/><br/>
-            <strong>First Place: HotelOga</strong>
-            <br/><br/>
-            <p><img alt="1st place" src="/images/1stplace.jpg"></p>
-            <br/>
-            Problem: In emerging markets, acquiring new customers is time consuming. Hotel managers know that they need to optimize their property information for online customer acquisition channels, but it requires a different set of technical skills and resources than the local teams often possess.
-            <br/>
-            Solution: The HotelOga team created an easy-to-use mobile app that lets you simply walk through a property and take some images - the tool takes care of the rest! It intelligently interprets pictures to extract the room and property amenities required to onboard a property, including photos, in 3 minutes.
-            <br/><br/>
-            <strong>Second Place: HotelSpider </strong>
-            <br/><br/>
-            <p><img alt="2nd place" src="/images/2ndplace.jpg"></p>
-            <br/>
-            Problem: On-boarding a property for online channel distribution is time-consuming. Many data points need to be created and entered manually.
-            <br/>
-            Solution: The HotelSpider team built a tool to crowdsource content - generating hotel descriptions, amenities, images and other content from guest review data and other sources.  Property managers need to simply verify their auto-generated profile and attributes rather than creating content from scratch.
-            <br/><br/>
-            <strong>Third Place: Team Air (combined of 3 companies: Vertical Booking, NextPax, Djubo)</strong>
-            <br/><br/>
-            <p><img alt="3rd place" src="/images/3rdplace.jpg"></p>
-            <br/>
-            Problem: Vacation Rental properties have different parameters than hotels. Many providers manage thousands of units, so on boarding and content maintenance is not straightforward and can be overwhelming.
-            <br/>
-            Solution: Team Air built a tool that provides a simple, single page overview with action triggers to improve vacation rental specific content for multiple units. They further enhanced the experience by including direct feedback on improvements to the quality score.
-            <br/><br/>
-            <strong>Congratulations to our winners!</strong>
-            <br/><br/>
-            Thank you to all who participated in the 2017 Expedia Partner Hackathon. We look forward to partnering with you on future solutions to improve the travel industry.
-          </div>
-        </div>
-    </div>
-</div>
+<tr>
 
+<th>Old</th>
 
-<a name="enhanced-pos-branding"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('enhanced-pos-branding')">
-                    <span id="enhanced-pos-branding" class="cb-status" title="https://expediaconnectivity.com/blog#enhanced-pos-branding">COPY URL</span>
-                    <i id="enhanced-pos-branding-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h4>Support Your Hoteliers with Enhanced Point of Sale Brand Identification</h4>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="1st of May, 2017">2017-05-01</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">brand expansion</span>
-                    </div>
-                </div>
-          </div>
-          <div class="blog-content">
-            <strong>What's New?</strong>
-            <br/>
-            Expedia is expanding Point of Sale Brand information passed through our APIs so hotel partners can recognize the booking point of sale from our dynamic portfolio of travel brands. Without proper Point of Sale Brand information being passed to your properties, guests can be greeted as having booked from a different Point of Sale Brand upon check-in, which can lead to customer confusion and poor customer experience.
-            <br/><br/>
-            <strong>When Can I See Enhanced Point of Sale Brand Identification? </strong>
-            <br/>
-            Beginning May 1st, you can begin adopting the changes. This feature is a requirement for all connections and any future certifications, so please ensure that your system supports our enhanced list of brands in order to remain compliant with our certification standards.
-            <br/><br/>
-            <strong>What Does this Mean?</strong>
-            <br/>
-            Your system must be able to accept additional values for brands that will be sent over your Booking API. This includes the ability to consume and pass the relevant brand information to the PMS so hoteliers can see the proper Point of Sale Brand information in the reservation details when checking in their guests.
-            <br/><br/>
-            <strong>How Does it Work?</strong>
-            <br/>
-            Point of Sale Brand information is already being passed to you in bookings today for the following Points of Sale:
-            <br/>
-            <ul>
-                <li>Expedia</li>
-                <li>Hotels.com</li>
-                <li>Expedia Affiliate Network</li>
-            </ul>
-            We will continue to use the same field in our APIs, and simply begin sending additional values. The newly added Points of Sale are as follows:
-            <ul>
-                <li>Egencia</li>
-                <li>Travelocity</li>
-                <li>Orbitz</li>
-                <li>Wotif</li>
-                <li>Hotwire</li>
-                <li>CheapTickets</li>
-                <li>Ebookers</li>
-                <li>MrJet</li>
-                <li>Lastminute.au</li>
-                <li>American Express Travel</li>
-                <li>Amex The Hotel Collection</li>
-                <li>Amex FINE HOTELS AND RESORTS</li>
-            </ul>
-            For Partners on Expedia QuickConnect (EQC) – Specifics on Point of Sale Brands and requirements can be found in the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>.
-            <br/><br/>
-            For Partners on Booking Notification – Specifics on Point of Sale Brands and requirements can be found in the "Hotel Reservation Notification RQ/RS" section of the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#hotel-reservation-notification-rq-rs">Booking Notification API Definition</a>, while the expanded list can be found in the <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#point-of-sale-brand-list">Point of Sale Brand List</a>.
-            <br/><br/>
-            <strong>What Do I Need to Do?</strong>
-            <br/>
-            To support this critical feature, first review the applicable API Specifications to understand the required updates, then make any changes necessary to ensure that your system can accept the new Point of Sale Brands and pass them to the PMS.
-            <br/><br/>
-            <strong>PMS is the Key!</strong>
-            <br/>
-            Consuming the new Point of Sale Brands is not enough on its own. It is critical that the Point of Sale Brand information is also passed to all of the PMS providers your systems connect with. To certify that you have completed this work, you must provide a screenshot from a PMS partner displaying that the new Point of Sale Brands reaches these PMS systems.            <br/><br/>
-            <strong>Don’t Wait to Take Action!</strong>
-            <br/>
-            Supporting the new Point of Sale Brands is a requirement for certification. Contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a> to send your confirmation and screenshot example today. If you are unable to meet this compliance, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a>. We will work with you to ensure you have all the information required.
-            <br/><br/>
-            As a valued Expedia partner, we trust you will adjust your integration with Expedia quickly to provide the added benefits to your hoteliers. If you have any questions please do not hesitate to contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20enhanced%20POS">EQC System Specialist Team</a>.
-          </div>
-        </div>
-    </div>
+<th>New</th>
+
+</tr>
+
+<tr>
+
+<td><a href="https://ws.expediaquickconnect.com/connect/parr">https://ws.expediaquickconnect.com/connect/parr</a></td>
+
+<td><a href="https://services.expediapartnercentral.com/eqc/parr">https://services.expediapartnercentral.com/eqc/parr</a></td>
+
+</tr>
+
+<tr>
+
+<td><a href="https://ws.expediaquickconnect.com/connect/br">https://ws.expediaquickconnect.com/connect/br</a></td>
+
+<td><a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></td>
+
+</tr>
+
+<tr>
+
+<td><a href="https://ws.expediaquickconnect.com/connect/bc">https://ws.expediaquickconnect.com/connect/bc</a></td>
+
+<td><a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></td>
+
+</tr>
+
+<tr>
+
+<td><a href="https://ws.expediaquickconnect.com/connect/ar">https://ws.expediaquickconnect.com/connect/ar</a></td>
+
+<td><a href="https://services.expediapartnercentral.com/eqc/ar">https://services.expediapartnercentral.com/eqc/ar</a></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
 </div>
 
+<p><strong>Replace PARR with the more modern Product API</strong></p>
+<p>Several months ago we have introduced the Product API. In addition to read room type and rate plan setting, the new API allows you to create and modify products and thus drive efficiency for you and your customers. We invite you to take a look at the Product API on <a href="https://expediaconnectivity.com/developer">https://expediaconnectivity.com/developer</a>.</p>
+<p>Going forward, EQC PARR API will not be enhanced with new features.</p>
+<p>If you are using EQC PARR for the availability and rates retrieval feature, stay tuned. We will have more updates for you in 2017.</p>
+<p><strong>New self-service test property assignment tool; EQC Simulator to be retired</strong></p>
+<p>We’re excited to announce the release of a new feature enabling you to reserve test properties for all your testing needs. This new self-service feature allows for more robust and complete testing. Log in to <a href="https://expediaconnectivity.com/test-properties/">https://expediaconnectivity.com/test-properties/</a> with your EPC user credentials to get started. If you need to reserve a test property, and you forgot your password, please use the “forgot password” of the <a href="https://www.expediapartnercentral.com">https://www.expediapartnercentral.com</a> login page. If you forgot your username, please reach out to <a href="mailto:hothelp@expedia.com">hothelp@expedia.com</a> to obtain it.</p>
+<p>Expedia will proceed with decommissioning the Expedia QuickConnect Simulator for EQC AR, BR, BC and PARR applications. The simulators will go offline on January 27th, 2017. Please make sure to use the new test property assignment feature for all your testing needs going forward.</p>
+<p>For any questions or concerns about these changes, please reach out to our support specialists at <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.</p>
+</div><div class="blog-author"></div></div></div></div><a name="expedia-connectivity-partner-hackathon"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('expedia-connectivity-partner-hackathon')"><span class="cb-status" id="expedia-connectivity-partner-hackathon" title="https://expediaconnectivity.com/blog#expedia-connectivity-partner-hackathon">COPY</span><i class="step fi-clipboard tip-right" id="expedia-connectivity-partner-hackathon-cb"></i></span><h2>Expedia Connectivity Partner Hackathon</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2016-08-11</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">hackathon</span></div></div></div><div class="blog-content"><p>40+ futurists gathered in Prague to brainstorm, create and present their solutions to drive more bookings and revenue for hotels, using current and experimental APIs.</p>
+<p>The hackathon provided us direct feedback: nearly 50 actionable improvements. Our teams are busy converting these into working solutions to drive increased benefits to hoteliers and simplify adoption of our API&#39;s.</p>
+<p>We invite you to watch this video that captures the vibe, energy and productivity of this event.</p>
+<iframe width="100%" height="400" src="https://www.youtube.com/embed/9yWe6IoxuG0" frameborder="0" allowfullscreen=""></iframe>
 
-<a name="bed-occ-change"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('bed-occ-change')">
-                    <span id="bed-occ-change" class="cb-status" title="https://expediaconnectivity.com/blog#bed-occ-change">COPY URL</span>
-                    <i id="bed-occ-change-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h5>Bedding and Occupancy Configurations are Getting Better: What You Need to Know</h5>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="16th of February, 2017">2017-02-16</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">bedding occupancy enhancements</span>
-                    </div>
-                </div>
-          </div>
-          <div class="blog-content">
-            Expedia is enhancing the bedding and occupancy configuration for room types so we can better represent the diversity of lodging bedding options. Together with our lodging partners this will allow us to deliver a better guest experience through standardization and improved accuracy.
-            <br/><br/>
-            <strong>What changed?</strong>
-            <br/>
-            The new configuration impacts the Booking Notification API, Booking Retrieval API, and Product API*. For bookings, we will continue to send bed-type information in the special request field.
-            Please refer to the API documentation for updated specifications:  <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html">Booking Notification API</a> or <a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html">Booking Retrieval API</a>.
-            <br/><br/>
-            <strong>What does this mean and what do I need to do?</strong>
-            <br/>
-            To avoid failed bookings and ensure the correct bed type is communicated to the front desk, you must pass the bed type to the PMS via free-text string rather than by code.
-            <br/><br/>
-            If you use the Expedia Booking Notification API or the Expedia Booking Retrieval API, ensure that:
-            <ul>
-             <li>Your system accepts a bed-type description as free-form text and pass it on to the hotelier (PMS) as a string rather than a code.</li>
-             <li>Your system accepts any bed-type code (ex. code 1.5 for multiple beds).</li>
-            </ul>
-            <br/>
-            <strong>Note:</strong> For room types with multiple bedding options such as “1 king bed” or “2 double beds,” the bed-type code might not match the bed type reflected in the free-text. The bedding option selected by the customer will be sent in the free-text special request. As long as your system is capable of ignoring the code and consuming only the bed-type description this should not be an issue.
-            <br/><br/>
-            ** We’ve replaced the 256 codes currently available for sending Expedia bed-type information with a simplified set of codes and attributes. If you use the Product API, you can create a room type with the new bedding and occupancy configuration through the API. Please refer to the <a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html#bedtypeenum">Expedia Product API documentation</a> for examples.
-          </div>
-        </div>
-    </div>
-</div>
-
-
-<a name="eqc-url-change"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('eqc-url-change')">
-                    <span id="eqc-url-change" class="cb-status" title="https://expediaconnectivity.com/blog#eqc-url-change">COPY URL</span>
-                    <i id="eqc-url-change-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h5>Expedia QuickConnect APIs Users: Important Changes Required</h5>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="30th of November, 2016">2016-11-30</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">url change</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-content">
-              We would like to inform our Expedia QuickConnect users that we're working on changes that will require updates by our users.
-              <br/><br/>
-              <strong>New domain name for Expedia QuickConnect APIs Using Dynamic IP Addressing</strong>
-              <br/><br/>
-              At Expedia we strive to build the best and most robust APIs in order to make sure you and your customers can run your business without disruption.
-              As part of our next upgrade, on February 28th, 2017, we plan to replace the current production domain for the Expedia QuickConnect services (https://ws.expediaquickconnect.com/) with a new one: <a href="https://services.expediapartnercentral.com/">https://services.expediapartnercentral.com/</a>
-              <br/><br/>
-              We kindly ask you to adopt the new domain before <b>February 28th, 2017</b>. The new endpoints are available today.
-              <br/><br/>
-              With this new domain, the IP addresses will dynamically change over time and therefore you should use our fully qualified domain name. Please do not attempt to configure connectivity based on an IP address.
-              <br/><br/>
-              Here’s how the different paths to EQC messages are changing:
-              <br/><br/>
-              <div class="blog-table">
-                <table>
-                  <tr>
-                    <th>Old</th><th>New</th>
-                  </tr>
-                  <tr>
-                    <td><a href="https://ws.expediaquickconnect.com/connect/parr">https://ws.expediaquickconnect.com/connect/parr</a></td>
-                    <td><a href="https://services.expediapartnercentral.com/eqc/parr">https://services.expediapartnercentral.com/eqc/parr</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://ws.expediaquickconnect.com/connect/br">https://ws.expediaquickconnect.com/connect/br</a></td>
-                    <td><a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://ws.expediaquickconnect.com/connect/bc">https://ws.expediaquickconnect.com/connect/bc</a></td>
-                    <td><a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></td>
-                  </tr>
-                  <tr>
-                    <td><a href="https://ws.expediaquickconnect.com/connect/ar">https://ws.expediaquickconnect.com/connect/ar</a></td>
-                    <td><a href="https://services.expediapartnercentral.com/eqc/ar">https://services.expediapartnercentral.com/eqc/ar</a></td>
-                  </tr>
-                </table>
-              </div>
-              <br/><br/>
-              <strong>Replace PARR with the more modern Product API</strong>
-              <br/><br/>
-              Several months ago we have introduced the Product API. In addition to read room type and rate plan setting, the new API allows you to create and modify products and thus drive efficiency for you and your customers.
-              We invite you to take a look at the Product API on <a href="https://expediaconnectivity.com/developer">https://expediaconnectivity.com/developer</a>.
-              <br/><br/>
-              Going forward, EQC PARR API will not be enhanced with new features.
-              <br/><br/>
-              If you are using EQC PARR for the availability and rates retrieval feature, stay tuned. We will have more updates for you in 2017.
-              <br/><br/>
-              <strong>New self-service test property assignment tool; EQC Simulator to be retired</strong>
-              <br/><br/>
-              We’re excited to announce the release of a new feature enabling you to reserve test properties for all your testing needs.
-              This new self-service feature allows for more robust and complete testing. Log in to <a href="https://expediaconnectivity.com/test-properties/">https://expediaconnectivity.com/test-properties/</a> with your EPC user credentials to get started. If you need to reserve a test property, and you forgot your password, please use the “forgot password” of the https://www.expediapartnercentral.com login page.
-              If you forgot your username, please reach out to <a href="mailto:hothelp@expedia.com">hothelp@expedia.com</a> to obtain it.
-              <br/><br/>
-              Expedia will proceed with decommissioning the Expedia QuickConnect Simulator for EQC AR, BR, BC and PARR applications. The simulators will go offline on January 27th, 2017. Please make sure to use the new test property assignment feature for all your testing needs going forward.
-              <br/><br/>
-              For any questions or concerns about these changes, please reach out to our support specialists at <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>.
-            </div>
-        </div>
-    </div>
-</div>
-
-<a name="post-hackathon"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('post-hackathon')">
-                    <span id="post-hackathon" class="cb-status" title="https://expediaconnectivity.com/blog#post-hackathon">COPY URL</span>
-                    <i id="post-hackathon-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h2>Expedia Connectivity Partner Hackathon</h2>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="11th of August, 2016">2016-08-11</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">hackathon</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-content">
-                40+ futurists gathered in Prague to brainstorm, create and present their solutions to drive more bookings and revenue for hotels, using current and experimental APIs.<br/><br/>
-
-                The hackathon provided us direct feedback: nearly 50 actionable improvements. Our teams are busy converting these into working solutions to drive increased benefits to hoteliers and simplify adoption of our API's.<br/><br/>
-
-                We invite you to watch this video that captures the vibe, energy and productivity of this event.<br/><br/>
-
-                <iframe width="100%" height="400" src="https://www.youtube.com/embed/9yWe6IoxuG0" frameborder="0" allowfullscreen></iframe><br/><br/>
-
-                <strong>1st Place: <img style="height:2em;" src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg"/></strong>
-                creating an image management tools for hotels to bulk upload, identify and categorize images.<br/><br/>
-
-                <strong>2nd Place: <img style="height:2em;" src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png"/></strong>
-                creating a mobile application for hotels to optimize their visibility and room production in Expedia's market place.<br/><br/>
-
-                <strong>3rd Place: SWITCH.CM</strong>
-                creating a rapid onboarding application based on externally available information about hotels.<br/><br/>
-
-                <strong>All-Inclusive Award:</strong> integrated most number of APIs into their project
-                Tourisoft<br/><br/>
-
-                <strong>Prêt-a-Porter Award x 2:</strong> developed the most production-ready application
-                Edwardian Hotels
-                JumboTours<br/><br/>
-
-                <strong>Happy Traveller Award:</strong> solved the biggest customer pain B2B/C
-                Hostaway<br/><br/>
-
-                <strong>Coolest Gizmo Award:</strong> a beautiful example of the Internet of Things (IoT)
-                HotelOGA
-            </div>
-        </div>
-    </div>
-</div>
-<a name="value-add-promo"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('value-add-promo')">
-                    <span id="value-add-promo" class="cb-status" title="https://expediaconnectivity.com/blog#value-add-promo">COPY URL</span>
-                    <i id="value-add-promo-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h2>Are you ready for Value Add Promotions?</h2>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="9th of June, 2016">2016-06-09</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">value add</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-content">
-                <strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.
-
-                <br/>
-                <br/>
-                <strong>When are Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Partners in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.
-
-                <br/>
-                <br/>
-                <strong>What Does this Mean?</strong> Your customers will be invited to create Value Add Promotions for Expedia Brand Websites. To be successful, your systems must consume and pass the relevant information down to the PMS so that your customers can view Value Add information in the reservation details when checking in their guests.
-
-                <br/>
-                <br/>
-                <strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.
-
-                <br/>
-                <br/>
-                For Partners on Expedia QuickConnect (EQC) – Specifics on Value Adds and the new Special Request 6 field can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>. A specific examples of Special Request 6 in the XML can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html#booking-retrieval-response-2-new-bookings-returned-with-value-add-promotion">Sample Messages</a> sections.
-
-                <br/>
-                <br/>
-                For Partners on Booking Notification – Specifics on Value Adds and the new Special Request 6 field can be found in the "Hotel Reservation Notification RQ/RS" section of the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq">Booking Notification API Definition</a>.
-
-                <br/>
-                <br/>
-                <strong>What To Do Today?</strong> Review the EQC Booking Retrieval specification to make sure that you can support the new Special Request field to support this critical feature in Expedia Bookings. If you cannot support it yet please designate time for your teams to work on making any mapping changes or updates required to support it by <strong>July 15th, 2016</strong>.
-
-                <br/>
-                <br/>
-                <strong>PMS is the Key!</strong> Consuming the Special Request field is not enough on its own. It is critical that the Value Add information is also passed to all of the PMS providers you connect with.
-
-                <br/>
-                <br/>
-                <strong>Don’t Wait to Take Action!</strong> Supporting Value Add Promotions is a requirement for certification. Please take a minute to let us know where you are in the process of adopting Value Adds <a href="http://goo.gl/forms/S2cvhQHwiYxjixA42">here</a>. If you cannot support Value Add Promotions at this time, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a>. We will work with you to ensure you are prepared by July.
-
-                <br/>
-                <br/>
-                We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a> or your Account Manager.
-
-                <br/>
-                <br/>
-                <strong>Thank you</strong>
-            </div>
-            <div class="blog-author">Value Add Team</div>
-        </div>
-    </div>
-</div>
-<a name="delete-old-rate-plans"></a>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-post">
-            <div class="blog-title">
-                <span class="cb-container" onclick="copyToClipboard('delete-old-rate-plans')">
-                    <span id="delete-old-rate-plans" class="cb-status" title="https://expediaconnectivity.com/blog#delete-old-rate-plans">COPY URL</span>
-                    <i id="delete-old-rate-plans-cb" class="step fi-clipboard tip-right"></i>
-                </span>
-                <h2>Delete those old rate plans</h2>
-            </div>
-            <div class="row">
-                <div class="small-4 large-5 columns">
-                    <div class="blog-date">
-                        <span title="3rd of June, 2016">2016-06-03</span>
-                    </div>
-                </div>
-                <div class="small-8 large-5 columns">
-                    <div class="blog-tags">
-                        <span class="blog-tag label">product</span>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-content">While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.
-
-                <br/>
-                <br/>
-                Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.
-
-                <br/>
-                <br/>
-                As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for
-                <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.
-
-            </div>
-            <div class="blog-author">Product API Team</div>
-        </div>
-    </div>
-</div>
-<div class="row">
-    <div class="small-12 small-centered medium-10 columns">
-        <div class="blog-spacer">&nbsp;</div>
-    </div>
-</div>
-</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Blog"/></body></html>
+<p><strong>1st Place: <img src="http://www.theglobalconference.co.uk/wp-content/uploads/2016/02/Hotelbeds-Logo.jpg" alt=""></strong> creating an image management tools for hotels to bulk upload, identify and categorize images.</p>
+<p><strong>2nd Place: <img src="http://cdn.guestcentric.com/wp-content/uploads/2015/07/horz_logo_color_250px-1.png" alt=""></strong> creating a mobile application for hotels to optimize their visibility and room production in Expedia&#39;s market place.</p>
+<p><strong>3rd Place: SWITCH.CM</strong> creating a rapid onboarding application based on externally available information about hotels.</p>
+<p><strong>All-Inclusive Award:</strong> integrated most number of APIs into their project Tourisoft</p>
+<p><strong>Prêt-a-Porter Award x 2:</strong> developed the most production-ready application Edwardian Hotels JumboTours</p>
+<p><strong>Happy Traveller Award:</strong> solved the biggest customer pain B2B/C Hostaway</p>
+<p><strong>Coolest Gizmo Award:</strong> a beautiful example of the Internet of Things (IoT) HotelOGA</p>
+</div><div class="blog-author"></div></div></div></div><a name="are-you-ready-for-value-add-promotions-"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('are-you-ready-for-value-add-promotions-')"><span class="cb-status" id="are-you-ready-for-value-add-promotions-" title="https://expediaconnectivity.com/blog#are-you-ready-for-value-add-promotions-">COPY</span><i class="step fi-clipboard tip-right" id="are-you-ready-for-value-add-promotions--cb"></i></span><h2>Are you ready for Value Add Promotions?</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2016-06-09</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">value add</span></div></div></div><div class="blog-content"><p><strong>What are Value Add Promotions?</strong> This new promotion allows properties to create travel deals that provide additional value without lowering room rates. For example, free spa credits or a free breakfast with a booking.</p>
+<p><strong>When are Value Add Promotions Going Live?</strong> Expedia is expanding Value Add Promotions to all of our Global Partners in July and we are requiring all of our Connectivity Partners to support Value Add Promotions by July 15th.</p>
+<p><strong>What Does this Mean?</strong> Your customers will be invited to create Value Add Promotions for Expedia Brand Websites. To be successful, your systems must consume and pass the relevant information down to the PMS so that your customers can view Value Add information in the reservation details when checking in their guests.</p>
+<p><strong>How Does it Work?</strong> Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.</p>
+<p>For Partners on Expedia QuickConnect (EQC) – Specifics on Value Adds and the new Special Request 6 field can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition">Expedia QuickConnect Booking Retrieval API Definition section</a>. A specific examples of Special Request 6 in the XML can be found in the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/examples.html#booking-retrieval-response-2-new-bookings-returned-with-value-add-promotion">Sample Messages</a> sections.</p>
+<p>For Partners on Booking Notification – Specifics on Value Adds and the new Special Request 6 field can be found in the &quot;Hotel Reservation Notification RQ/RS&quot; section of the <a href="/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq">Booking Notification API Definition</a>.</p>
+<p><strong>What To Do Today?</strong> Review the EQC Booking Retrieval specification to make sure that you can support the new Special Request field to support this critical feature in Expedia Bookings. If you cannot support it yet please designate time for your teams to work on making any mapping changes or updates required to support it by <strong>July 15th, 2016</strong>.</p>
+<p><strong>PMS is the Key!</strong> Consuming the Special Request field is not enough on its own. It is critical that the Value Add information is also passed to all of the PMS providers you connect with.</p>
+<p><strong>Don’t Wait to Take Action!</strong> Supporting Value Add Promotions is a requirement for certification. Please take a minute to let us know where you are in the process of adopting Value Adds <a href="http://goo.gl/forms/S2cvhQHwiYxjixA42">here</a>. If you cannot support Value Add Promotions at this time, please contact your Account Manager or <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a>. We will work with you to ensure you are prepared by July.</p>
+<p>We trust you will be able to adjust your integration with Expedia quickly and in time to provide the added benefits to your customers. If you have any questions please do not hesitate to contact <a href="mailto:eqcss@expedia.com?Subject=Question%20about%20supporting%20value%20add%20promotions">EQC Self Service</a> or your Account Manager.</p>
+<p><strong>Thank you</strong></p>
+</div><div class="blog-author">Value Add Team</div></div></div></div><a name="delete-those-old-rate-plans"></a><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-post"><div class="blog-title"><span class="cb-container" onclick="copyToClipboard('delete-those-old-rate-plans')"><span class="cb-status" id="delete-those-old-rate-plans" title="https://expediaconnectivity.com/blog#delete-those-old-rate-plans">COPY</span><i class="step fi-clipboard tip-right" id="delete-those-old-rate-plans-cb"></i></span><h2>Delete those old rate plans</h2></div><div class="row"><div class="small-4 large-5 columns"><div class="blog-date">2016-06-03</div></div><div class="small-8 large-5 columns"><div class="blog-tags"><span class="blog-tag label">product</span></div></div></div><div class="blog-content"><p>While there are many things that change in the world of Expedia Connectivity, there are a few things that will likely remain the same. First is that we will continue to look for ways to make it easier for you to do business with us. The second is that we will deliver new functionality incrementally.</p>
+<p>Last year when we released the Product API, we made it possible for partners to create and modify rate plans. Naturally, over time, partners have inactivated rate plans that were no longer useful to them. These unused rate plans have an impact on response times and system processing. In addition, unused rate plans create confusion that can make it more difficult for hotel managers to update their room rates. This difficulty can result in costly errors.</p>
+<p>As of a recent Product release, it is now possible to use the HTTP DELETE verb with the Product API to delete a rate plan. To begin using this new feature in your application and make life easier for hotel managers, please refer to the API documentation for <a href="/apis/product-management/product-api/reference.html">Product Delete</a>.</p>
+</div><div class="blog-author">Product API Team</div></div></div></div><div class="row"><div class="small-12 small-centered medium-10 columns"><div class="blog-spacer"></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>

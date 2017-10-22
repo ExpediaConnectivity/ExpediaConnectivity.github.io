@@ -1,0 +1,130 @@
+.blog-author {
+    padding: 0px 5px 5px 5px;
+    text-align: right;
+    color: #B1B1B1;
+}
+.blog-content {
+    padding: 20px;
+    text-align: justify;
+}
+.blog-content a {
+        text-decoration: underline;
+}
+.blog-date {
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+    color: #B1B1B1;
+}
+.blog-post {
+    background: #F8F8F8;
+    border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border: 0px none #000000;
+    /*border-style: solid;
+    border-width: 1px;*/
+    box-shadow: 0px 2px #c7c7c7;
+}
+.blog-spacer {
+    height: 75px;
+}
+.blog-table {
+    overflow: auto;
+}
+.blog-tags {
+    font-size: 12px;
+    padding: 10px 20px 10px 20px;
+    text-align: right;
+}
+.blog-tag {
+    background-color: #008CBA;
+}
+.blog-title {
+    padding: 10px 20px 10px;
+    text-align: justify;
+    background-color: #E5E5E5;
+    border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    -webkit-border-radius: 5px 5px 0px 0px;
+    border: 0px none #000000;
+    box-shadow: 0px 2.5px 0px #FECC09;
+}
+.step {
+    float: right;
+    margin-top: 2px;
+    font-size: 18px;
+}
+.fi-clipboard {
+    border-bottom: none;
+}
+.fi-check {
+    color: green;
+    border-bottom: none;
+}
+.cb-status {
+    float: right;
+    margin: 9px 0 0 4px;
+}
+.cb-container {
+    cursor: pointer;
+}
+
+
+h1 {
+    color: #B1B1B1;
+    font-size: 2em;
+    margin: 0 0;
+    text-align: center;
+}
+@media only screen and (min-width: 705px) {
+    h1 {
+        font-size: 2.5em;
+    }
+}
+@media only screen and (min-width: 840px) {
+    h1 {
+        font-size: 3em;
+    }
+    .step {
+        font-size: 24px;
+    }
+}
+@media only screen and (min-width: 1025px) {
+    h1 {
+        font-size: 3.5em;
+    }
+}
+@media (max-width: 640px) {
+    .blog-content {
+        padding: 10px;
+    }
+    .blog-date {
+        padding: 10px;
+    }
+    .blog-spacer {
+        height: 50px;
+    }
+    .blog-tags {
+        padding: 10px;
+    }
+    .blog-title {
+        padding: 10px;
+        text-align: center;
+    }
+}
+
+h2 {
+    font-size: 1.4em;
+    margin: 0 0;
+    padding: 0px;
+}
+
+@media only screen and (min-width: 805px) {
+    h2 {
+        font-size: 1.6em;
+    }
+}
+
+h5 {
+    margin-top: 6px;
+}
