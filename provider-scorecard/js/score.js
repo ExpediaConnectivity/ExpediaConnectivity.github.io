@@ -353,6 +353,7 @@ define(function() {
         ga('send', 'event', 'scorecard', 'view', provider);
         $("title").text(provider + " Scorecard - Expedia Connectivity");
         $(".scorecard-provider").text(scorecard.provider.name);
+        $(".scorecard-system").text(scorecard.provider.system);
         $(".scorecard-rank .rank").text(scorecard.provider.rank);
         $(".scorecard-rank .total").text(scorecard.provider.total);
         $(".scorecard-rank").removeClass("hidden");
