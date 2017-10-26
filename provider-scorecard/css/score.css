@@ -35,11 +35,15 @@ body {
   margin-bottom: 1em;
   font-size: 2em;
 }
+.simple-content .scorecard-provider {
+  display: inline-block;
+  margin-right: 0.67em;
+}
 .simple-content .scorecard-system {
   font-size: .67em;
   padding: 0;
   margin-top: 0.2em;
-  margin-left: 1em;
+  display: inline-block;
 }
 .simple-content .scorecard-rank {
   text-align: right;
