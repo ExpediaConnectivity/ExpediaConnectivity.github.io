@@ -28,47 +28,6 @@ define(function() {
             "key": "",
             "displayName" : "Demo"
         },
-        "grow": {
-            "score": 0.8,
-            "attributes": {
-                "availabilityLose": {
-                    "value": "10.0",
-                    "success": false,
-                    "delta": -14,
-                    "deltaSuccess": true,
-                    "unit": "%",
-                    "differenceFromStandard": -0.28356838
-                },
-                "rateLose": {
-                    "value": "4.1",
-                    "success": false,
-                    "delta": -4,
-                    "deltaSuccess": true,
-                    "unit": "%",
-                    "differenceFromStandard": -1.0790994
-                },
-                "etpPenetration": {
-                    "value": "26",
-                    "success": false,
-                    "unit": "%",
-                    "differenceFromStandard": -0.23718792
-                },
-                "changeInHotelsThisQuarter": {
-                    "delta": 2.0,
-                    "value": "32",
-                    "floatValue": 32.0,
-                    "success": true,
-                    "deltaSuccess": true,
-                    "differenceFromStandard": 31.5
-                },
-                "totalHotels": {
-                    "delta": 8.0,
-                    "value": "1581",
-                    "floatValue": 1581.0,
-                    "deltaSuccess": true
-                }
-            }
-        },
         "enhance": {
             "score": 0.83,
             "attributes": {
@@ -161,7 +120,7 @@ define(function() {
             ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
         });
 
-        $("#optimise .border, #grow .border").not("#totalHotels, #changeInHotelsThisQuarter").click(metricClickCallback);
+        $("#optimise .border").not("#totalHotels, #changeInHotelsThisQuarter").click(metricClickCallback);
         $("#enhance .border").click(enhanceClickCallback);
         $(".scorecard-rank").click(overallClickCallback);
         $("#totalHotels, #changeInHotelsThisQuarter").click(onlyDescriptionClickCallback);
@@ -359,7 +318,6 @@ define(function() {
         $(".scorecard-rank").removeClass("hidden");
 
         setLabel(scorecard.version.displayName);
-        generateScorecardCategory(scorecard.grow, "grow");
         generateScorecardCategory(scorecard.optimise, "optimise");
         generateScorecardFeature(scorecard.enhance, "enhance");
     }
@@ -433,7 +391,6 @@ define(function() {
         foundationSize = Foundation.MediaQuery.current;
         $("#optimise .border").removeAttr("style");
         $("#enhance .border").removeAttr("style");
-        $("#grow .border").removeAttr("style");
         if (Foundation.MediaQuery.atLeast("xlarge")) {
             $("#pci, #productApi, #valueAddPromo, #etp").css("border-bottom", "10px solid #f8f8f8");
             $("#pos").css("border-right", "10px solid #f8f8f8");
@@ -456,7 +413,6 @@ define(function() {
             $("#arMessages .metric").text("AR Message Success Rate");
             $("#optimise #bcMessages").css("border-right", "none");
             $("#enhance #valueAddPromo").css("border-right", "none");
-            $("#grow #rateLose").css("border-right", "none");
             $("#etp .feature").text("Expedia Travel Pref.");
             $("#pos .feature").text("Point of Sale ID.");
             $("#evc").css("border-right", "none");
@@ -468,7 +424,6 @@ define(function() {
         } else if (Foundation.MediaQuery.current == "small") {
             $("#enhance .border").css("border-right", "none");
             $("#optimise .border").css("border-right", "none");
-            $("#grow .border").css("border-right", "none");
             $("#etp .feature").text("Expedia Travel Preference");
             $("#pos .feature").text("Point of Sale Identification");
         } else {
