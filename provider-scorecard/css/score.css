@@ -31,18 +31,27 @@ body {
 }
 .simple-content .provider {
   padding: 0;
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   font-size: 2em;
+}
+.simple-content .scorecard-name {
+  display: inline-block;
+  padding: 0.5rem .9375rem;
+  background-color: white;
+  margin-bottom: 0.67rem;
+  border-right: 1px solid #f8f8f8;
 }
 .simple-content .scorecard-provider {
   display: inline-block;
-  margin-right: 0.67em;
+}
+.simple-content .scorecard-label {
+  font-size: .5em;
+  color: darkgray;
 }
 .simple-content .scorecard-system {
-  font-size: .67em;
-  padding: 0;
   display: inline-block;
+  padding: 0;
 }
 .simple-content .scorecard-rank {
   text-align: right;

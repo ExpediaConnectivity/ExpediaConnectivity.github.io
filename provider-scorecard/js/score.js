@@ -307,15 +307,21 @@ define(function() {
     }
 
     function generateScorecard(scorecard) {
-        provider = scorecard.provider.name;
-        version = scorecard.version.key;
+        var provider = scorecard.provider.name;
+        var version = scorecard.version.key;
         ga('send', 'event', 'scorecard', 'view', provider);
         $("title").text(provider + " Scorecard - Expedia Connectivity");
         $(".scorecard-provider").text(scorecard.provider.name);
-        $(".scorecard-system").text(scorecard.provider.system);
-        $(".scorecard-rank .rank").text(scorecard.provider.rank);
-        $(".scorecard-rank .total").text(scorecard.provider.total);
-        $(".scorecard-rank").removeClass("hidden");
+        if (scorecard.provider.system) {
+            $(".scorecard-system").text(scorecard.provider.system);
+            $("#systemName").removeClass("hidden");
+        }
+
+        if (scorecard.provider.rank) {
+            $(".scorecard-rank .rank").text(scorecard.provider.rank);
+            $(".scorecard-rank .total").text(scorecard.provider.total);
+            $(".scorecard-rank").removeClass("hidden");
+        }
 
         setLabel(scorecard.version.displayName);
         generateScorecardCategory(scorecard.optimise, "optimise");
