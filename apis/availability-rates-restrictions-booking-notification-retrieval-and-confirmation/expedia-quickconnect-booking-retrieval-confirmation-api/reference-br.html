@@ -784,49 +784,19 @@ To ensure the right booking is being cancelled the hotel should verify the booki
 <td>EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect.</td>
 </tr>
 <tr>
-<td>3020</td>
-<td>Validation error: start date must not be before yesterday.</td>
-<td>Make sure the system cannot send a date in the past, and drop this message (no retry).</td>
-</tr>
-<tr>
-<td>3021</td>
-<td>Validation error: end date must not be before start date.</td>
-<td>Make sure the system cannot send an end date smaller than a start date, and drop this message (no retry).</td>
-</tr>
-<tr>
-<td>3129</td>
-<td>Invalid Date.</td>
-<td>Verify the dates you provided in the AR RQ and then resubmit your message.</td>
-</tr>
-<tr>
-<td>3143</td>
-<td>There is no Product information for the hotel in the database</td>
-<td>The hotel you requested information for has no products currently defined in Expedia system yet. This should happen for new hotels not ready to be managed by EQC partner yet. Please contact your market manager for more details.</td>
-</tr>
-<tr>
-<td>3144</td>
-<td>There is no matching product information avalable</td>
-<td>The request you made to obtain avail and rate data didn&#39;t produce any results. This might for different reasons: You requested dates for which no avail or rates are currently defined in Expedia system, or you issued a request for all active products but there are no active products for this hotel.</td>
-</tr>
-<tr>
 <td>3202</td>
 <td>Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel.</td>
 <td>Verify if there is a mapping issue in EQC partner&#39;s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to access this hotel through Expedia Partner Central).</td>
 </tr>
 <tr>
-<td>3203</td>
-<td>The following RoomTypeIDs do not belong to the given hotel : <room_type_ID></td>
-<td>Fix mapping in EQC partner&#39;s system.</td>
+<td>3206</td>
+<td>Your account is not linked to any hotels.</td>
+<td>When calling Booking Retrieval service, ensure there is atleast one Property Associated to the EQC account.</td>
 </tr>
 <tr>
-<td>3204</td>
-<td>The following RatePlanIDs do not belong to the given hotel : <rate_plan_ID></td>
-<td>Fix mapping in EQC partner&#39;s system.</td>
-</tr>
-<tr>
-<td>3205</td>
-<td>Rate Plan ID <rateplanID> does not belong to Room Type ID <roomTypeID></td>
-<td>When requesting avail and rate data, the EQC partner provided an incorrect room type ID – rate plan ID association. Please verify your mapping and drop this message (no retry).</td>
+<td>3207</td>
+<td>Hotel ID is a mandatory field for this request</td>
+<td>Specify the Hotel ID you need to retrieve bookings for.</td>
 </tr>
 <tr>
 <td>3210</td>

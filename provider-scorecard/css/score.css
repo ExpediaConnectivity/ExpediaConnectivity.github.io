@@ -240,14 +240,6 @@ hr {
   color: #406f1d;
   font-size: 1em;
 }
-#grow {
-  background: white;
-}
-#grow .border {
-  white-space: nowrap;
-  overflow-x: hidden;
-  background: white;
-}
 #enhanceModal {
   padding-left: 0;
   padding-right: 0;
