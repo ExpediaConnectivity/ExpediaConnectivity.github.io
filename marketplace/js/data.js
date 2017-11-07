@@ -1,5168 +1,5169 @@
-define({allProviders:  [
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 86.8,
-                "company": "1HotelSolution.com Co., Ltd.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Advanced Purchase"
-                ],
-                "system": "1HotelRez",
-                "type": "CRS",
-                "website": "www.1hotelrez.com"
-            },
-            {
-                "availSuccess": 97.5,
-                "bookSuccess": 99.1,
-                "company": "Aaron Hotels and Hostels Holding GmbH",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Autoupdate",
-                "type": "CRS",
-                "website": "http://www.beds-to-web.de/"
-            },
-            {
-                "availSuccess": 97.9,
-                "bookSuccess": 99.2,
-                "company": "Accubook",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "AccuSell",
-                "type": "CM",
-                "website": "accubook.net"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.2,
-                "company": "AciGrup S.L",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Acinet",
-                "type": "PMS",
-                "website": "http://acigrup.com/v3/"
-            },
-            {
-                "availSuccess": 94.9,
-                "bookSuccess": 97.2,
-                "company": "Active Metrics",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Advanced Purchase"
-                ],
-                "system": "Synergy",
-                "type": "CM",
-                "website": "www.activemetrics.com"
-            },
-            {
-                "availSuccess": 96.5,
-                "bookSuccess": 98.4,
-                "company": "alixon gmbh",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HostelOffice / DormProject",
-                "type": "PMS",
-                "website": "www.dormproject.ch"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 66.0,
-                "company": "Allotz",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Allotz Channel Manager",
-                "type": "CM",
-                "website": "www.allotz.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 94.9,
-                "company": "ALTABIX",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "FlowLink",
-                "type": "CRS",
-                "website": "https://www.cityexpress.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.8,
-                "company": "Anand Systems Inc",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "ASI Front Desk (v5.3+)",
-                "type": "PMS",
-                "website": "www.AnandSystems.com"
-            },
-            {
-                "availSuccess": 90.3,
-                "bookSuccess": 97.8,
-                "company": "AROBS Transilvania Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RateWizz",
-                "type": "CM",
-                "website": "www.ratewizz.com"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 98.2,
-                "company": "Arpies Yazlm Bilgisayar Danmanlk Turizm Tic. Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Arpies Yazilim",
-                "type": "PMS",
-                "website": "http://www.sistemhotelsoftware.com/Home/ChannelManager"
-            },
-            {
-                "availSuccess": 91.4,
-                "bookSuccess": 69.6,
-                "company": "AsiaTech Hospitality Solution Pvt Ltd",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "AsiaTech",
-                "type": "CRS",
-                "website": "https://www.asiatech.in"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.6,
-                "company": "Athena Information Systems",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "TravelLink",
-                "type": "CM",
-                "website": "http://www.athena.com.tw"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 99.4,
-                "company": "Athena Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Advanced Purchase"
-                ],
-                "system": "HermesHotels",
-                "type": "CRS",
-                "website": "http://www.hermeshotels.it/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 95.4,
-                "company": "Aurum Marketing srl",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Aurum Hotels Interface",
-                "type": "CRS",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 95.7,
-                "bookSuccess": 97.7,
-                "company": "AvaiBook",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "AvaiBook",
-                "type": "CM",
-                "website": "www.avaibook.com"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.1,
-                "company": "Availpro",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Availpro",
-                "type": "CM",
-                "website": "http://site.availpro.com/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 99.8,
-                "company": "AVAILROOM S.L.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "AVAILROOM",
-                "type": "PMS",
-                "website": "www.availroom.com"
-            },
-            {
-                "availSuccess": 97.4,
-                "bookSuccess": 41.7,
-                "company": "Avantio VRMS",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Avantio",
-                "type": "CM",
-                "website": "www.avantio.es"
-            },
-            {
-                "availSuccess": 95.7,
-                "bookSuccess": 97.8,
-                "company": "Avenues South Asias",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "ResAvenue Channel Manager",
-                "type": "CM",
-                "website": "www.resavenue.com"
-            },
-            {
-                "availSuccess": 93.5,
-                "bookSuccess": 96.9,
-                "company": "Avirato",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Avirato",
-                "type": "CM",
-                "website": "www.avirato.com"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 97.2,
-                "company": "AxisRooms Travel Distribution Solutions Pvt. Ltd.",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "AxisRooms",
-                "type": "CM",
-                "website": "www.axisrooms.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 95.2,
-                "company": "b4checkin",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "B4Checkin",
-                "type": "CRS",
-                "website": "www.b4checkin.com"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 87.3,
-                "company": "BBliverate Octorate",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Octorate",
-                "type": "CM",
-                "website": "www.octorate.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.1,
-                "company": "beds24",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Beds24 PMS",
-                "type": "PMS",
-                "website": "www.beds24.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 92.9,
-                "company": "BeGenius",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookinGenius",
-                "type": "CM",
-                "website": "www.begenius.it"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 98.9,
-                "company": "Beijing Miot. Ltd.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Advanced Purchase"
-                ],
-                "system": "Yunzhanggui",
-                "type": "PMS",
-                "website": "www.360pms.com"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 93.5,
-                "company": "Berry Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "iGems",
-                "type": "CM",
-                "website": "www.igems.co.za"
-            },
-            {
-                "availSuccess": 89.8,
-                "bookSuccess": 80.1,
-                "company": "BillyPDS",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "BillyPDS",
-                "type": "CM",
-                "website": "http://www.bookingmanager.com/"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 84.3,
-                "company": "Bohemia REI",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Pattayasunnyrentals.net",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 92.6,
-                "company": "BookandLink",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "BookandLink",
-                "type": "CRS",
-                "website": "http://www.bookandlink.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 92.8,
-                "company": "Bookassist",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Channel Connect",
-                "type": "CM",
-                "website": "bookassist.com"
-            },
-            {
-                "availSuccess": 94.2,
-                "bookSuccess": 99.5,
-                "company": "Booki Tech S.r.l.s",
-                "featuresSupported": [
-                    "Displays All Point of Sale Brands"
-                ],
-                "restrictionsSupported": [],
-                "system": "Booki Tech",
-                "type": "CM",
-                "website": "https://cm.bookitech.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 95.1,
-                "company": "Booking Automation Inc",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookingAutomation",
-                "type": "PMS",
-                "website": "BookingAutomation.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 92.3,
-                "company": "Booking Experts",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Booking Experts",
-                "type": "PMS",
-                "website": "www.bookingexperts.com"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 99.8,
-                "company": "BookingCenter",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "BookingCenter",
-                "type": "CM",
-                "website": "www.bookingcenter.com"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 100.0,
-                "company": "BookingLite",
-                "featuresSupported": [
-                    "Displays All Point of Sale Brands"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookingLite",
-                "type": "PMS",
-                "website": "https://bookinglite.ru"
-            },
-            {
-                "availSuccess": 95.4,
-                "bookSuccess": 95.5,
-                "company": "BookingPal",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "BookingPal",
-                "type": "CM",
-                "website": "IMPORTANT"
-            },
-            {
-                "availSuccess": 88.9,
-                "bookSuccess": 86.6,
-                "company": "BookLogic",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "MaxiChannel Manager",
-                "type": "CRS",
-                "website": "www.BookLogic.net"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 95.9,
-                "company": "Brasil Bookings",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Brasil Bookings",
-                "type": "PMS",
-                "website": "www.brasilbookings.com.br"
-            },
-            {
-                "availSuccess": 97.4,
-                "bookSuccess": 98.9,
-                "company": "BusyRooms",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BusyRooms",
-                "type": "CM",
-                "website": "www.busy-rooms.com"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 99.5,
-                "company": "CE Computer Engineering AG",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "QOnline CRS",
-                "type": "CRS",
-                "website": "SwissQualityHotels.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 86.5,
-                "company": "ChannelManager.com.au",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "ChannelManager.com.au",
-                "type": "CM",
-                "website": "channelmanager.com.au"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 85.2,
-                "company": "ChannelRUSH",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "ChannelRUSH Channel Manager",
-                "type": "CM",
-                "website": "www.channelrush.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 19.4,
-                "company": "Che Lagarto Hostel",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Che Lagarto",
-                "type": "CRS",
-                "website": "www.chelagarto.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 90.7,
-                "company": "CHINAOnline",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "COL switch - Green Tree Chain",
-                "type": "CM",
-                "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 95.3,
-                "company": "CHINAOnline",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "COL switch - Jin Jiang Chain",
-                "type": "CM",
-                "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 99.8,
-                "company": "Clips",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "Neppan",
-                "type": "CM",
-                "website": "http://www.clips.co.jp/"
-            },
-            {
-                "availSuccess": 77.4,
-                "bookSuccess": null,
-                "company": "Club Mahindra Hotels & Resorts",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Crest CRS",
-                "type": "CRS",
-                "website": "www.clubmahindra.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 97.0,
-                "company": "Compusoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Compusoft",
-                "type": "PMS",
-                "website": "www.compusoft.dk"
-            },
-            {
-                "availSuccess": 97.3,
-                "bookSuccess": 94.6,
-                "company": "Constellation",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Elloha/Constellation",
-                "type": "CRS",
-                "website": "http://www.elloha.com/"
-            },
-            {
-                "availSuccess": 98.9,
-                "bookSuccess": 99.2,
-                "company": "Coral-Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "ORBE (ONLINE RESERVATION BOOKING ENGINE)",
-                "type": "CM",
-                "website": "http://www.coral-technologies.com/en/orbe/acerca-de-orbe.html"
-            },
-            {
-                "availSuccess": 96.2,
-                "bookSuccess": 96.6,
-                "company": "Cultuzz",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Cultuzz Channel Manager",
-                "type": "CM",
-                "website": "www.cultuzz.de"
-            },
-            {
-                "availSuccess": 94.9,
-                "bookSuccess": 99.9,
-                "company": "CWD S.r.l",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookOn",
-                "type": "CM",
-                "website": "www.bookon.org"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 98.2,
-                "company": "DeepThink LLC",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "ThinkReservations",
-                "type": "PMS",
-                "website": "www.thinkreservations.com"
-            },
-            {
-                "availSuccess": 95.6,
-                "bookSuccess": 94.7,
-                "company": "DerbySoft",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "DHotelier",
-                "type": "CRS",
-                "website": "http://www.derbysoft.com/"
-            },
-            {
-                "availSuccess": 94.5,
-                "bookSuccess": 80.0,
-                "company": "DerbySoft",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "One by DerbySoft",
-                "type": "CM",
-                "website": "http://www.dsone.com/"
-            },
-            {
-                "availSuccess": 96.7,
-                "bookSuccess": 99.5,
-                "company": "Digital Arbitrage",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "My Allocator",
-                "type": "CM",
-                "website": "https://www.myallocator.com/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 96.7,
-                "company": "DigitalDruid",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HotelDruid",
-                "type": "CM",
-                "website": "www.hoteldruid.com"
-            },
-            {
-                "availSuccess": 91.7,
-                "bookSuccess": 98.8,
-                "company": "Dingus Services",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Advanced Purchase"
-                ],
-                "system": "Dingus CM",
-                "type": "CM",
-                "website": "http://www.dingus-services.com/"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 89.1,
-                "company": "Direct Hotels Pvt Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "eGlobe Solutions",
-                "type": "PMS",
-                "website": "http://eglobe-solutions.com/"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 93.9,
-                "company": "DirectWithHotels",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "DirectWithHotels System",
-                "type": "CM",
-                "website": "http://www.directwithhotels.com/"
-            },
-            {
-                "availSuccess": 97.8,
-                "bookSuccess": 86.1,
-                "company": "e4jConnect",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "e4j - Extensionsforjoomla.com",
-                "type": "CRS",
-                "website": "https://e4jconnect.com"
-            },
-            {
-                "availSuccess": null,
-                "bookSuccess": null,
-                "company": "Earth, Sea & Sky Vacations",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "V12/ISILink",
-                "type": "CRS",
-                "website": "cabovillas.com"
-            },
-            {
-                "availSuccess": 53.1,
-                "bookSuccess": 95.8,
-                "company": "EASEROOM (Unit of GI Hospitalities Private Limited)",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "EaseRoom Channel Manager",
-                "type": "CRS",
-                "website": "https://www.easeroom.com/"
-            },
-            {
-                "availSuccess": 95.4,
-                "bookSuccess": 93.0,
-                "company": "Easy-Rez",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Easy-Rez CRS",
-                "type": "CRS",
-                "website": "https://www.easy-rez.com"
-            },
-            {
-                "availSuccess": 96.3,
-                "bookSuccess": 95.4,
-                "company": "Efimatica",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Obehotel",
-                "type": "CM",
-                "website": "www.obehotel.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 96.7,
-                "company": "eGate by CNS",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "eGate by CNS",
-                "type": "PMS",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 97.9,
-                "company": "Engisoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Bird iCRS",
-                "type": "CRS",
-                "website": "www.engisoft.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 98.4,
-                "company": "Engisoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Bird iCRS - Acta Hotels",
-                "type": "CRS",
-                "website": "www.engisoft.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 98.1,
-                "company": "EpicBrain",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Octopus",
-                "type": "PMS",
-                "website": "https://admin.12go.co.kr"
-            },
-            {
-                "availSuccess": 93.3,
-                "bookSuccess": 99.2,
-                "company": "Ericsoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Ericsoft ChannelManager",
-                "type": "CM",
-                "website": "www.ericsoft.com"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 85.7,
-                "company": "Estar Group",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookingEstar",
-                "type": "CRS",
-                "website": "http://www.estargroup.it"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 98.0,
-                "company": "eZee Technosys",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "eZee Absolute",
-                "type": "PMS",
-                "website": "www.ezeeabsolute.com"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 97.4,
-                "company": "eZee Technosys",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "eZee Centrix",
-                "type": "CM",
-                "website": "www.ezeecentrix.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.3,
-                "company": "EzyRez",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "EzyChannel",
-                "type": "CM",
-                "website": "http://www.ezyrez.com.au"
-            },
-            {
-                "availSuccess": 94.6,
-                "bookSuccess": 96.0,
-                "company": "Fairbridge Inns EQC",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "FairCloud PMS",
-                "type": "PMS",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 36.5,
-                "company": "Fairbridge Inns EQC",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "xMitter",
-                "type": "PMS",
-                "website": "www.xmitter.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.3,
-                "company": "Fastbooking",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "FastBooking Channel Manager",
-                "type": "CM",
-                "website": "http://www.fastbooking.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 98.2,
-                "company": "Figaro",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "Figaro - Channel Manager",
-                "type": "CM",
-                "website": "www.evols.it"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 99.9,
-                "company": "Finite-Systems",
-                "featuresSupported": [
-                    "Value Add Promotions",
-                    "Displays All Point of Sale Brands"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Finite Software Systems CM",
-                "type": "CM",
-                "website": "www.finite-soft.com"
-            },
-            {
-                "availSuccess": 94.6,
-                "bookSuccess": 95.3,
-                "company": "Five Star Hotel Systems Corporation",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Five Star Software",
-                "type": "PMS",
-                "website": "http://www.fivestarhotelsystems.com/products_services/products_services.htm"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 98.6,
-                "company": "Freetobook",
-                "featuresSupported": [
-                    "Product API",
-                    "Property API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Freetobook System",
-                "type": "CM",
-                "website": "www.freetobook.com"
-            },
-            {
-                "availSuccess": 84.8,
-                "bookSuccess": 96.2,
-                "company": "Frontdesk Anywhere",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Frontdesk Anywhere PMS",
-                "type": "PMS",
-                "website": "frontdeskanywhere.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 85.9,
-                "company": "Frontdesk24",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Frontdesk24",
-                "type": "PMS",
-                "website": "frontdesk24.ru"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 99.5,
-                "company": "Galaxy H\u00f4tels",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Galaxy H\u00f4tels",
-                "type": "CRS",
-                "website": "galaxy-hotels.fr"
-            },
-            {
-                "availSuccess": 93.4,
-                "bookSuccess": 97.5,
-                "company": "Gestione Albergo Srl",
-                "featuresSupported": [
-                    "Value Add Promotions",
-                    "Displays All Point of Sale Brands"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "LeoPortals Manager",
-                "type": "CM",
-                "website": "www.gestionealbergo.it"
-            },
-            {
-                "availSuccess": 91.6,
-                "bookSuccess": 33.9,
-                "company": "GIMH",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "GIMH Channel Manager",
-                "type": "CM",
-                "website": "http://www.gimh.es/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.2,
-                "company": "Global Network Connection",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "EZ Site Controller",
-                "type": "CM",
-                "website": "http://www.ezsitecontroller.jp/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 99.8,
-                "company": "Global Serviced Apartments",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Global Serviced Apartments, LLC",
-                "type": "PMS",
-                "website": "globalservicedapts.com"
-            },
-            {
-                "availSuccess": 89.2,
-                "bookSuccess": 95.6,
-                "company": "GMS",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "GMS Channel Manager",
-                "type": "CM",
-                "website": "https://www.gms.info/"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 99.4,
-                "company": "GNA",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "GnaHS Channel Manager",
-                "type": "CM",
-                "website": "www.gna.es"
-            },
-            {
-                "availSuccess": 96.4,
-                "bookSuccess": 94.5,
-                "company": "Gracesoft Software",
-                "featuresSupported": [
-                    "PCI Attestation Supplied"
-                ],
-                "restrictionsSupported": [],
-                "system": "Easy InnKeeping",
-                "type": "PMS",
-                "website": "http://gracesoft.com/"
-            },
-            {
-                "availSuccess": 96.8,
-                "bookSuccess": 85.4,
-                "company": "Greeka / Syncrez",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Syncrez",
-                "type": "CM",
-                "website": "www.syncrez.com"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.5,
-                "company": "Grupo Posadas",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through",
-                    "Advanced Purchase"
-                ],
-                "system": "AltiusPar",
-                "type": "CRS",
-                "website": "http://www.altiuspar.com/"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 97.2,
-                "company": "GTH Solutions YieldPlanet",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "YieldPlanet",
-                "type": "CM",
-                "website": "https://www.yieldplanet.com/"
-            },
-            {
-                "availSuccess": 96.4,
-                "bookSuccess": 98.9,
-                "company": "Gubse AG",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Sihot PMS",
-                "type": "PMS",
-                "website": "https://www.sihot.com/en/modules/sihotpms"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 99.5,
-                "company": "GuestCentric Systems",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Evolution CRS",
-                "type": "CRS",
-                "website": "www.guestcentric.com"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 98.6,
-                "company": "GuestCentric Systems",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "GuestCentric Systems Channel Manager",
-                "type": "CM",
-                "website": "http://www.guestcentric.com/features/channel-management/"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 99.9,
-                "company": "Guestline Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Roomlynx",
-                "type": "CM",
-                "website": "www.guestline.com"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 98.9,
-                "company": "Harizma Holdings Lanka",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Effective Tours",
-                "type": "CRS",
-                "website": "https://EffectiveTours.com"
-            },
-            {
-                "availSuccess": 97.1,
-                "bookSuccess": 98.8,
-                "company": "HDN Global",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "HDN Global",
-                "type": "CM",
-                "website": "http://www.hdnglobal.com/"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 98.2,
-                "company": "High Level Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "High Level PMS",
-                "type": "PMS",
-                "website": "http://www.high-level-software.com/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 81.8,
-                "company": "Highland Vision",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Highland Vision Bookings",
-                "type": "CM",
-                "website": "http://www.highlandvision.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.8,
-                "company": "Hirum",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "Hisite",
-                "type": "CM",
-                "website": "www.hirum.com.au"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 89.9,
-                "company": "Hospitality Technology International (Pty) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "eRes",
-                "type": "CRS",
-                "website": "http://www.hti-systems.co.za/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 88.5,
-                "company": "Hospitality Technology International (Pty) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "eRes - ThornyBush",
-                "type": "CRS",
-                "website": "http://www.hti-systems.co.za/"
-            },
-            {
-                "availSuccess": 97.8,
-                "bookSuccess": 92.6,
-                "company": "Hospitality Technology International (Pty) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "eRes\u00a0- Apollo Hotels",
-                "type": "CRS",
-                "website": "http://www.hti-systems.co.za/"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 94.8,
-                "company": "Hospitality Technology International (Pty) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "eRes\u00a0- Legend Hotels",
-                "type": "CRS",
-                "website": "http://www.hti-systems.co.za/"
-            },
-            {
-                "availSuccess": 96.9,
-                "bookSuccess": 97.3,
-                "company": "Hospitality Technology International (Pty) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "eRes\u00a0- Tsogo Sun Hotels",
-                "type": "CRS",
-                "website": "http://www.hti-systems.co.za/"
-            },
-            {
-                "availSuccess": 98.2,
-                "bookSuccess": 99.1,
-                "company": "Host Hotel Systems",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Host PMS",
-                "type": "PMS",
-                "website": "www.hostpms.com"
-            },
-            {
-                "availSuccess": 82.7,
-                "bookSuccess": 85.4,
-                "company": "Hostaway",
-                "featuresSupported": [
-                    "Product API"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "Hostaway",
-                "type": "CM",
-                "website": "www.hostaway.com"
-            },
-            {
-                "availSuccess": 98.5,
-                "bookSuccess": 98.4,
-                "company": "Hosteeva LLC",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Hosteeva",
-                "type": "CRS",
-                "website": "https:// www.hosteeva.com"
-            },
-            {
-                "availSuccess": 98.9,
-                "bookSuccess": 98.1,
-                "company": "Hostel System",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "FrontDesk Master",
-                "type": "PMS",
-                "website": "www.frontdeskmaster.com"
-            },
-            {
-                "availSuccess": 93.3,
-                "bookSuccess": 99.9,
-                "company": "Hotel Availabilities LTD",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HotelAvailabilities",
-                "type": "CM",
-                "website": "https://hotelavailabilities.com"
-            },
-            {
-                "availSuccess": 93.4,
-                "bookSuccess": 98.7,
-                "company": "Hotel Concepts",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Rezexchange",
-                "type": "CM",
-                "website": "https://amadeus-hospitality.com/central-reservations-system/rezexchange/"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 95.0,
-                "company": "Hotel Link Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotel Link Solutions",
-                "type": "CM",
-                "website": "www.hotellinksolutions.com"
-            },
-            {
-                "availSuccess": 98.1,
-                "bookSuccess": 87.7,
-                "company": "Hotel Profi",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotel Profi",
-                "type": "PMS",
-                "website": "www.hotel-profi.de"
-            },
-            {
-                "availSuccess": 89.5,
-                "bookSuccess": 85.5,
-                "company": "Hotel Story",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotelstory",
-                "type": "CM",
-                "website": "www.hotelstory.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 80.9,
-                "company": "Hoteladvisor.net",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hoteladvisor",
-                "type": "PMS",
-                "website": "travelaps.com"
-            },
-            {
-                "availSuccess": 94.5,
-                "bookSuccess": null,
-                "company": "Hotelan",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "ComHotel",
-                "type": "CM",
-                "website": "www.hotelan.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 96.6,
-                "company": "Hoteliers Dot Guru Pte. Ltd.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hoteliers.Guru Channel Management",
-                "type": "CM",
-                "website": "https://www.hoteliers.guru"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 98.0,
-                "company": "hoteliers.com",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "hoteliers.com",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.1,
-                "company": "Hoteliga",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hoteliga",
-                "type": "CM",
-                "website": "www.hoteliga.com"
-            },
-            {
-                "availSuccess": 98.1,
-                "bookSuccess": 99.3,
-                "company": "HotelNet",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "HotelNet CRS",
-                "type": "CRS",
-                "website": "www.hotel-net.it"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 98.7,
-                "company": "HotelNetSolutions",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "HotelNetSolutions",
-                "type": "CM",
-                "website": "www.hotelnetsolutions.de"
-            },
-            {
-                "availSuccess": null,
-                "bookSuccess": 15.8,
-                "company": "Hoteloga",
-                "featuresSupported": [
-                    "Product API",
-                    "Property API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "HotelOga",
-                "type": "PMS",
-                "website": "www.hoteloga.com"
-            },
-            {
-                "availSuccess": 98.1,
-                "bookSuccess": 99.6,
-                "company": "HotelPartner",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HotelPartner CRS",
-                "type": "CRS",
-                "website": "hotelpartner-ym.com"
-            },
-            {
-                "availSuccess": 96.7,
-                "bookSuccess": 98.0,
-                "company": "HotelRunner",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "HotelRunner",
-                "type": "CRS",
-                "website": "www.hotelrunner.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 96.6,
-                "company": "HotelWebservice GMBH",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "HotelWebservice Channel Manager",
-                "type": "CM",
-                "website": "www.hotelwebservice.com"
-            },
-            {
-                "availSuccess": 97.4,
-                "bookSuccess": 86.8,
-                "company": "Hotetec Accomodation SL",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Hotetec",
-                "type": "CRS",
-                "website": "http://www.travelopenapps.org/"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 97.8,
-                "company": "HSystem",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HUNIT",
-                "type": "CM",
-                "website": "www.hsystem.com.br"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 86.2,
-                "company": "Hubs1",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Hubs1",
-                "type": "CRS",
-                "website": "www.hubs1.net"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 86.2,
-                "company": "IAI S.A",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "IdoSell Booking",
-                "type": "PMS",
-                "website": "http://www.idosell.com/"
-            },
-            {
-                "availSuccess": 82.9,
-                "bookSuccess": 97.3,
-                "company": "IBS Hospitality Solutions (Formerly HBSi)",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through",
-                    "Advanced Purchase"
-                ],
-                "system": "Demand Gateway",
-                "type": "CM",
-                "website": "http://www.ibsplc.com/products/hospitality-solutions/demand-gateway"
-            },
-            {
-                "availSuccess": 95.1,
-                "bookSuccess": 97.5,
-                "company": "IBS Hospitality Solutions (Formerly HBSi)",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through",
-                    "Advanced Purchase"
-                ],
-                "system": "Demand Gateway - Disney",
-                "type": "CM",
-                "website": "http://www.hotelbookingsolutions.com/"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.1,
-                "company": "IBS Hospitality Solutions (Formerly HBSi)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Demand Gateway - Fairmont",
-                "type": "CM",
-                "website": "http://www.hotelbookingsolutions.com/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 91.6,
-                "company": "Icewoods Digital Technology",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Tour Echo",
-                "type": "CM",
-                "website": "http://www.TOURWOODS.com"
-            },
-            {
-                "availSuccess": 61.0,
-                "bookSuccess": 84.0,
-                "company": "Icnea Tecnologia S.L.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Icnea",
-                "type": "PMS",
-                "website": "http://icnea.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.4,
-                "company": "Idiso",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Idiso",
-                "type": "CRS",
-                "website": "www.idiso.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.6,
-                "company": "Idiso",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Sirius",
-                "type": "CRS",
-                "website": "www.idiso.com"
-            },
-            {
-                "availSuccess": 98.9,
-                "bookSuccess": 97.5,
-                "company": "IGM",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "IGM Synergy Hotel CRS",
-                "type": "CRS",
-                "website": "http://www.roomleader.com/"
-            },
-            {
-                "availSuccess": 88.9,
-                "bookSuccess": 87.9,
-                "company": "Image Technology Systems",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "VisualMatrix",
-                "type": "PMS",
-                "website": "https://vmpms.com/"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 98.8,
-                "company": "IMS Media",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "My Bookings",
-                "type": "CM",
-                "website": "www.my-bookings.org/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 98.3,
-                "company": "Indra",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "TMS for Hotels",
-                "type": "CRS",
-                "website": "http://www.tmsforhotels.com/"
-            },
-            {
-                "availSuccess": 94.5,
-                "bookSuccess": 98.2,
-                "company": "Indra",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "TMS for Hotels -  nhHotels",
-                "type": "CRS",
-                "website": "http://www.tmsforhotels.com/"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 99.5,
-                "company": "Inn Style",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Inn Style",
-                "type": "PMS",
-                "website": "www.innstyle.co.uk"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 96.4,
-                "company": "INNfinity Hospitality",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "INNfinity V2",
-                "type": "PMS",
-                "website": "http://www.innfinity.com"
-            },
-            {
-                "availSuccess": 95.3,
-                "bookSuccess": 98.4,
-                "company": "InnGenius Property Management Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Inn-Connect Channel Manager",
-                "type": "PMS",
-                "website": "http://www.inngeniuspms.com/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 97.0,
-                "company": "InnQuest Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "roomMaster",
-                "type": "PMS",
-                "website": "www.innquest.com"
-            },
-            {
-                "availSuccess": 93.6,
-                "bookSuccess": 99.1,
-                "company": "innRoad",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "innRoad PMS",
-                "type": "PMS",
-                "website": "www.innroad.com"
-            },
-            {
-                "availSuccess": 64.9,
-                "bookSuccess": 94.9,
-                "company": "Innsoft, Incorporated",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Check-Inn PMS",
-                "type": "PMS",
-                "website": "www.innsoft.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 99.5,
-                "company": "Interalp Touristik",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Interalp",
-                "type": "CM",
-                "website": "http://www.interalp-touristik.com/de/channel-manager.html"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 99.4,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit",
-                "type": "CRS",
-                "website": "http://www.reservit.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.3,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - Brithotel",
-                "type": "CRS",
-                "website": "www.reservit.com"
-            },
-            {
-                "availSuccess": 96.5,
-                "bookSuccess": 99.8,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - Citotel",
-                "type": "CRS",
-                "website": "www.reservit.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.0,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - FastHotel",
-                "type": "CRS",
-                "website": "www.reservit.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.5,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - Logis Hotels",
-                "type": "CRS",
-                "website": "http://www.reservit.com"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.7,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - SEH Hotels",
-                "type": "CRS",
-                "website": "http://www.reservit.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 97.7,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Reservit - Zenitude",
-                "type": "CRS",
-                "website": "http://www.reservit.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.6,
-                "company": "Interface Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "ReservIT Softbooker Canada",
-                "type": "CRS",
-                "website": "www.softbooker.com"
-            },
-            {
-                "availSuccess": 95.2,
-                "bookSuccess": 79.3,
-                "company": "Internettare",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Easyram",
-                "type": "CM",
-                "website": "www.easyram.it"
-            },
-            {
-                "availSuccess": 97.8,
-                "bookSuccess": 99.9,
-                "company": "Ipernet",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Iperbooking channel Manager",
-                "type": "CM",
-                "website": "www.iperbooking.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 100.0,
-                "company": "Ipnordic A/S",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HotelBoss",
-                "type": "PMS",
-                "website": "www.hotelboss.dk"
-            },
-            {
-                "availSuccess": 85.0,
-                "bookSuccess": 85.2,
-                "company": "IQWARE",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "IQWare PMS",
-                "type": "PMS",
-                "website": "www.iqwareinc.com/"
-            },
-            {
-                "availSuccess": 92.7,
-                "bookSuccess": 87.6,
-                "company": "ITF CROUP CO.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Maximum Length of Stay"
-                ],
-                "system": "RabbitJetsPMS",
-                "type": "PMS",
-                "website": "rabbitjets.com"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 100.0,
-                "company": "JR Systems",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Rakutsu",
-                "type": "CM",
-                "website": "http://www.raku-2.jp/"
-            },
-            {
-                "availSuccess": 94.1,
-                "bookSuccess": 80.4,
-                "company": "KE-Booking",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "KE-Booking CRS",
-                "type": "PMS",
-                "website": "www.ke-booking.com"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 98.6,
-                "company": "LemonPixel.pl",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotres.pl",
-                "type": "CRS",
-                "website": "www.hotres.pl"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.5,
-                "company": "Levart",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Levart Channel Manager",
-                "type": "CM",
-                "website": "http://www.levartdistributionsystems.com.au/"
-            },
-            {
-                "availSuccess": 97.8,
-                "bookSuccess": 99.4,
-                "company": "Lodgegate",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Lodgegate PMS",
-                "type": "PMS",
-                "website": "www.lodgegate.com"
-            },
-            {
-                "availSuccess": 90.4,
-                "bookSuccess": 97.2,
-                "company": "LuxuryRes",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "EzRes",
-                "type": "PMS",
-                "website": "www.luxuryres.com"
-            },
-            {
-                "availSuccess": 60.5,
-                "bookSuccess": 99.1,
-                "company": "Madeep",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Mad Booking",
-                "type": "CM",
-                "website": "www.madeep.com"
-            },
-            {
-                "availSuccess": 97.9,
-                "bookSuccess": 90.2,
-                "company": "Magarental AG",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "MAGARENTAL",
-                "type": "CRS",
-                "website": "https://www.magarental.com/en/software/magarental"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 69.1,
-                "company": "Mallorca Soft",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Astro Hotel",
-                "type": "PMS",
-                "website": "www.mallorcasoft.es"
-            },
-            {
-                "availSuccess": 90.6,
-                "bookSuccess": 100.0,
-                "company": "MaxiMojo Software (Pvt.) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hospitality Solutions Mantra",
-                "type": "CM",
-                "website": "www.maximojo.com"
-            },
-            {
-                "availSuccess": 92.3,
-                "bookSuccess": 85.3,
-                "company": "MaxiMojo Software (Pvt.) Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotel Mantra",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 92.1,
-                "company": "Maxxton India Technologies Pvt. Ltd.",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Newyse",
-                "type": "PMS",
-                "website": "www.maxxton.com"
-            },
-            {
-                "availSuccess": 94.6,
-                "bookSuccess": 91.2,
-                "company": "MediaLab Sofware Engineering S.N.C.",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "MainApps - Magellano",
-                "type": "CM",
-                "website": "www.magellano.info"
-            },
-            {
-                "availSuccess": 98.0,
-                "bookSuccess": 99.8,
-                "company": "Meridian",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Meridian Reservation Systems",
-                "type": "CRS",
-                "website": "http://www.reservationsystems.com/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.2,
-                "company": "Mingus Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotello",
-                "type": "PMS",
-                "website": "http://www.mingus.biz/en/index.htm"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 99.0,
-                "company": "Misterbooking",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Misterbooking CM",
-                "type": "CM",
-                "website": "https://www.misterbooking.com"
-            },
-            {
-                "availSuccess": 92.4,
-                "bookSuccess": 82.4,
-                "company": "MM-One Group Srl",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "BookingOne Connect",
-                "type": "CRS",
-                "website": "http://www.mm-one.com/"
-            },
-            {
-                "availSuccess": 92.0,
-                "bookSuccess": 98.3,
-                "company": "Motel Software Solutions",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Mini Hotel",
-                "type": "PMS",
-                "website": "www.minihotelpms.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.2,
-                "company": "MR Group SAS",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "MRGroup",
-                "type": "CM",
-                "website": "www.booknowhotel.com"
-            },
-            {
-                "availSuccess": 97.5,
-                "bookSuccess": 97.5,
-                "company": "Nebiz",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "HotelXP",
-                "type": "PMS",
-                "website": "www.hotelxp.it"
-            },
-            {
-                "availSuccess": 97.9,
-                "bookSuccess": 79.7,
-                "company": "Netroomz",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "Freeloader",
-                "type": "CM",
-                "website": "www.netroomz.com.au"
-            },
-            {
-                "availSuccess": 98.2,
-                "bookSuccess": 99.4,
-                "company": "Netskin.net",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotel.BB",
-                "type": "CM",
-                "website": "https://www.hotel.bb/"
-            },
-            {
-                "availSuccess": 73.1,
-                "bookSuccess": 99.8,
-                "company": "NewBook Pty Ltd",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "NewBook",
-                "type": "CRS",
-                "website": "www.newbook.cloud"
-            },
-            {
-                "availSuccess": 89.0,
-                "bookSuccess": 99.6,
-                "company": "Nexteam SRL",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "BookingExpert Italy",
-                "type": "CM",
-                "website": "www.bookingexpert.it"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.5,
-                "company": "NextPax",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Lodgix Property Management System",
-                "type": "CRS",
-                "website": "http://www.nextpax.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 99.5,
-                "company": "Nightsbridge",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "NightsBridge PMS",
-                "type": "PMS",
-                "website": "http://site.nightsbridge.com/pms-connector/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.6,
-                "company": "Nivera Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Reseliva",
-                "type": "PMS",
-                "website": "www.reseliva.com"
-            },
-            {
-                "availSuccess": 81.3,
-                "bookSuccess": 97.8,
-                "company": "NORTHWIND",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Maestro Property Management-PMS",
-                "type": "PMS",
-                "website": "www.maestropms.com"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.2,
-                "company": "Nova XS Tecnologia da Informa\u00e7\u00e3o LTDA.",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Nova XS",
-                "type": "CRS",
-                "website": "www.novaxs.com.br"
-            },
-            {
-                "availSuccess": 75.8,
-                "bookSuccess": 88.9,
-                "company": "O Hotel Suites Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Ostays",
-                "type": "PMS",
-                "website": "Http://ostays.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 96.0,
-                "company": "Odalys",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Odalys CRS",
-                "type": "CRS",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 98.0,
-                "bookSuccess": 99.6,
-                "company": "Old Town Apartments",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Old Town Apartments System",
-                "type": "CM",
-                "website": "www.apartmentsapart.com"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 97.4,
-                "company": "Omnibees CRS",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Omnibees (HoteisNet)",
-                "type": "CM",
-                "website": "www.omnibees.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.7,
-                "company": "one UP",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "one UP",
-                "type": "CM",
-                "website": "www.1-up.co.uk"
-            },
-            {
-                "availSuccess": 0.5,
-                "bookSuccess": 81.4,
-                "company": "ONETECH solution",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "ONETECH PMS",
-                "type": "PMS",
-                "website": "www.onetechsolution.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.6,
-                "company": "Online Systems",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Chart PMS",
-                "type": "PMS",
-                "website": "http://www.online-int.com.au"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.1,
-                "company": "OnRes Systems Inc",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "AccomPro",
-                "type": "CM",
-                "website": "http://software.onressystems.com/"
-            },
-            {
-                "availSuccess": 96.0,
-                "bookSuccess": 99.1,
-                "company": "Open Hotel Inc",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Open Hotel PMS",
-                "type": "PMS",
-                "website": "www.openhotel.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 99.8,
-                "company": "Oracle Hospitality",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Micros Channel Manager Europe",
-                "type": "CM",
-                "website": "www.micros.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.3,
-                "company": "Oracle Hospitality",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Micros Channel Manager USA/Canada",
-                "type": "CM",
-                "website": "www.micros.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.9,
-                "company": "Oracle Hospitality",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Micros Suite 8 EMEA",
-                "type": "CM",
-                "website": "www.micros.com"
-            },
-            {
-                "availSuccess": 88.3,
-                "bookSuccess": 86.8,
-                "company": "Oravel Stays Pvt. Ltd.",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "OYORooms",
-                "type": "CRS",
-                "website": "http://www.oyorooms.com"
-            },
-            {
-                "availSuccess": 87.4,
-                "bookSuccess": 41.0,
-                "company": "Oreve Technologies",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Room online",
-                "type": "PMS",
-                "website": "http://www.oreve-technologies.com/index.php"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.8,
-                "company": "Otelia.it",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Otelia Channel Manager",
-                "type": "CM",
-                "website": "https://otelia.io/"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 98.0,
-                "company": "Otelms",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Otelms Channel Manager",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 95.8,
-                "bookSuccess": 96.9,
-                "company": "Passepartout",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Passepartout Welcome",
-                "type": "CM",
-                "website": "www.passepartout.net"
-            },
-            {
-                "availSuccess": 94.3,
-                "bookSuccess": 96.9,
-                "company": "Perfect Hands Solutions Pvt. Ltd",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Perfect Hands Solutions",
-                "type": "PMS",
-                "website": "www.perfecthandssolutions.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.6,
-                "company": "PHOBS",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "PHOBS CRS",
-                "type": "CRS",
-                "website": "www.phobs.net"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 87.1,
-                "company": "Pierre et Vacances - EQC",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Pierre et Vacances - CRS",
-                "type": "CRS",
-                "website": "https://www.pierreetvacances.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.7,
-                "company": "Planet Winner",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Planet Winner",
-                "type": "CM",
-                "website": "http://www.winner-hotelsoftware.com/en"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 95.5,
-                "company": "PMS Cloud LP",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "PMS Cloud",
-                "type": "PMS",
-                "website": "www.pmscloud.com"
-            },
-            {
-                "availSuccess": 96.9,
-                "bookSuccess": 97.1,
-                "company": "Prestige Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Prestige",
-                "type": "CM",
-                "website": "www.cloudhospitality.es"
-            },
-            {
-                "availSuccess": 97.0,
-                "bookSuccess": 97.3,
-                "company": "Prestige Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Prestige - AGA Hotels",
-                "type": "CM",
-                "website": "www.prestige-inet.com"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 99.7,
-                "company": "Prestige Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Prestige - Iberostar",
-                "type": "CM",
-                "website": "www.prestige-inet.com"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": null,
-                "company": "Prestige Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Prestige - Magic Costa Blanca",
-                "type": "CM",
-                "website": "www.prestige-inet.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 99.8,
-                "company": "Prestige Software",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Prestige - Pierre & Vacances",
-                "type": "CM",
-                "website": "www.prestige-inet.com"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 99.8,
-                "company": "Primal-RES",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Channels Easy",
-                "type": "CM",
-                "website": "PRIMAL-RES.GR"
-            },
-            {
-                "availSuccess": 86.4,
-                "bookSuccess": 98.2,
-                "company": "Profit Room",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Profitroom",
-                "type": "CM",
-                "website": "http://www.profitroom.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.9,
-                "company": "Promoir BV",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Roomer PMS",
-                "type": "PMS",
-                "website": "http://www.roomerpms.com"
-            },
-            {
-                "availSuccess": 90.4,
-                "bookSuccess": 98.2,
-                "company": "Protel Hotel Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Protel - PMS",
-                "type": "PMS",
-                "website": "www.protel.net"
-            },
-            {
-                "availSuccess": 91.1,
-                "bookSuccess": 94.4,
-                "company": "Pyn Booking",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Pyn Booking",
-                "type": "PMS",
-                "website": "pynbooking.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 98.1,
-                "company": "QNT S.r.l",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Simple Booking Channel Manager",
-                "type": "CM",
-                "website": "http://www.simplebooking.it/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.9,
-                "company": "QuickYield",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "QuickManager",
-                "type": "CM",
-                "website": "www.quickyield.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 95.1,
-                "company": "Rate Tiger",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Rate Tiger Connect",
-                "type": "CM",
-                "website": "www.erevmax.com"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 99.5,
-                "company": "Rate Tiger",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Rate Tiger Suite",
-                "type": "CM",
-                "website": "www.erevmax.com"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 99.5,
-                "company": "RateGain",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RateGain",
-                "type": "CM",
-                "website": "http://www.rategain.com/yieldgain_hotels.htm"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": null,
-                "company": "RateGain",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RateGain AR-Only",
-                "type": "CM",
-                "website": "http://www.rategain.com/yieldgain_hotels.htm"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 100.0,
-                "company": "Redawning",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Redawning",
-                "type": "CRS",
-                "website": "redawning.com"
-            },
-            {
-                "availSuccess": 91.0,
-                "bookSuccess": 96.4,
-                "company": "Rentals United Integration (formerly Holiday Velvet)",
-                "featuresSupported": [
-                    "Product API"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Rentals United",
-                "type": "PMS",
-                "website": "rentalsunited.com"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 84.7,
-                "company": "RESCON24",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Gastrodat",
-                "type": "CM",
-                "website": "www.gastrodat.com"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 98.3,
-                "company": "ReservHOTEL International",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Global Connection",
-                "type": "CRS",
-                "website": "www.reservhotel.com"
-            },
-            {
-                "availSuccess": 99.3,
-                "bookSuccess": 98.9,
-                "company": "ResOnline",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "ResOnline Channel Manager",
-                "type": "CM",
-                "website": "http://www.resonline.com/"
-            },
-            {
-                "availSuccess": 98.2,
-                "bookSuccess": 98.7,
-                "company": "Resonline LLC",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Resonline LLC Europe",
-                "type": "CRS",
-                "website": "www.resonline.ru"
-            },
-            {
-                "availSuccess": 83.4,
-                "bookSuccess": 89.5,
-                "company": "Resort Data Processing, Inc.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RDPWin",
-                "type": "PMS",
-                "website": "http://www.resortdata.com/"
-            },
-            {
-                "availSuccess": null,
-                "bookSuccess": 85.0,
-                "company": "ResRequest",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "ResRequest",
-                "type": "PMS",
-                "website": "www.resrequest.com"
-            },
-            {
-                "availSuccess": 97.3,
-                "bookSuccess": null,
-                "company": "Revparguru",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Revparguru Channel Manager for EQC",
-                "type": "CM",
-                "website": "www.revparguru.com"
-            },
-            {
-                "availSuccess": 96.7,
-                "bookSuccess": 99.8,
-                "company": "RezNext Global Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RezNext",
-                "type": "CM",
-                "website": "http://www.reznext.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": null,
-                "company": "RHN",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Rez Online",
-                "type": "CM",
-                "website": "http://www.r-h-n.net"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 97.4,
-                "company": "Rio Tera - Ag\u00eancia Web Ltda",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Bukly CM",
-                "type": "CM",
-                "website": "www.bukly.com"
-            },
-            {
-                "availSuccess": 98.1,
-                "bookSuccess": 98.0,
-                "company": "RMS (Aust) Pty Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "RMS",
-                "type": "PMS",
-                "website": "https://www.rmscloud.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.7,
-                "company": "ROIBACK",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "ROIBACK CRS",
-                "type": "CRS",
-                "website": "http://www.roiback.com/"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 88.2,
-                "company": "Roomito Online Pvt Ltd",
-                "featuresSupported": [
-                    "Product API"
-                ],
-                "restrictionsSupported": [],
-                "system": "Roomito Channel Manager",
-                "type": "CM",
-                "website": "www.mghworld.net"
-            },
-            {
-                "availSuccess": 96.4,
-                "bookSuccess": 98.3,
-                "company": "RoomRaccoon",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RoomRaccoon",
-                "type": "PMS",
-                "website": "https://www.roomraccoon.com/en/all-in-one/pms/page"
-            },
-            {
-                "availSuccess": 94.9,
-                "bookSuccess": 95.1,
-                "company": "Roomsy",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Roomsy PMS",
-                "type": "PMS",
-                "website": "www.roomsy.com"
-            },
-            {
-                "availSuccess": 97.9,
-                "bookSuccess": 98.5,
-                "company": "RSI International",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "RoomKey",
-                "type": "PMS",
-                "website": "www.roomkeypms.com"
-            },
-            {
-                "availSuccess": 93.0,
-                "bookSuccess": 93.7,
-                "company": "RuralGest Sistemas de Reservas S.L",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "RuralGest",
-                "type": "CM",
-                "website": "www.ruralgest.com"
-            },
-            {
-                "availSuccess": 96.5,
-                "bookSuccess": 99.7,
-                "company": "SabeeApp",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "SabeeApp",
-                "type": "PMS",
-                "website": "www.sabeeapp.com"
-            },
-            {
-                "availSuccess": 63.5,
-                "bookSuccess": 96.6,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "InnLink CRS",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 93.7,
-                "bookSuccess": 99.2,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS  - Morgans",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 89.1,
-                "bookSuccess": 99.4,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Club Quarters",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 98.9,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Commune",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 97.8,
-                "bookSuccess": 99.1,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Kimpton",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 99.1,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Loews",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 98.8,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Noble House",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 98.1,
-                "bookSuccess": 99.6,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Northland",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.1,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Pacifica",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 95.6,
-                "bookSuccess": 99.6,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Rosewood",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 87.4,
-                "bookSuccess": 98.9,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Shilo Inn",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 98.8,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Sonesta",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 97.6,
-                "bookSuccess": 99.2,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Trump International",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 99.6,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Vantage Hospitality",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 98.4,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Viceroy",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 98.6,
-                "company": "Sabre Hospitality Solutions (SynXis)",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Full Pattern Length of Stays: Arrival",
-                    "Full Pattern Length of Stays: Stay-Through"
-                ],
-                "system": "SynXis CRS - Westmont",
-                "type": "CRS",
-                "website": "http://www.sabrehospitality.com/"
-            },
-            {
-                "availSuccess": 98.5,
-                "bookSuccess": 99.6,
-                "company": "Sanha Information Technology INC",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "Sanha",
-                "type": "CM",
-                "website": "www.sanhait.co.kr"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": null,
-                "company": "Sceptre Hospitality Resources",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Value Place EQC",
-                "type": "CRS",
-                "website": "http://www.sceptrehospitality.com/"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": null,
-                "company": "Sceptre Hospitality Resources",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Value Place EQC - HMC",
-                "type": "CRS",
-                "website": "http://www.sceptrehospitality.com/"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 97.1,
-                "company": "Sceptre Hospitality Resources",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Windsurfer CRS",
-                "type": "CRS",
-                "website": "https://shr.global/"
-            },
-            {
-                "availSuccess": 97.3,
-                "bookSuccess": 99.0,
-                "company": "Scottish Youth Hostels Association",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "SYHA",
-                "type": "CRS",
-                "website": "www.syha.org.uk"
-            },
-            {
-                "availSuccess": 96.4,
-                "bookSuccess": 99.9,
-                "company": "Seanuts Co., Ltd",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "TL Lincoln",
-                "type": "CM",
-                "website": "https://www.seanuts.co.jp/"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 99.9,
-                "company": "Seekda Gmbh",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Seekda Channel Connect",
-                "type": "CM",
-                "website": "https://seekda.com/en/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.4,
-                "company": "Seekom",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "iBex Accommodation",
-                "type": "CM",
-                "website": "web.seekom.com"
-            },
-            {
-                "availSuccess": 98.9,
-                "bookSuccess": 79.4,
-                "company": "Selena",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Hera Net Manager",
-                "type": "CM",
-                "website": "www.selena.net"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 99.5,
-                "company": "Semper",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Semper",
-                "type": "CRS",
-                "website": "https://www.semper.co.za/"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 99.9,
-                "company": "Sigesgroup",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Sysdat",
-                "type": "PMS",
-                "website": "http://www.sysdat-turismo.it/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 97.6,
-                "company": "Silverbyte",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Optima PMS",
-                "type": "PMS",
-                "website": "http://www.silverbyte.com/index.html"
-            },
-            {
-                "availSuccess": 98.7,
-                "bookSuccess": 90.1,
-                "company": "Sinergia Soluciones",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Todoalojamiento.com",
-                "type": "CRS",
-                "website": "www.sinergiasoluciones.com.ar"
-            },
-            {
-                "availSuccess": 98.0,
-                "bookSuccess": 99.8,
-                "company": "Sirvoy",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Sirvoy Reservation System",
-                "type": "PMS",
-                "website": "www.sirvoy.com"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.3,
-                "company": "Siteminder",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Siteminder RDXAmerica",
-                "type": "CM",
-                "website": "http://www.siteminder.com.au"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 98.5,
-                "company": "Siteminder",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Siteminder RDXAPAC",
-                "type": "CM",
-                "website": "http://www.siteminder.com.au"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 99.6,
-                "company": "Siteminder",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Siteminder RDXEurope",
-                "type": "CM",
-                "website": "http://www.siteminder.com.au"
-            },
-            {
-                "availSuccess": 67.0,
-                "bookSuccess": 98.2,
-                "company": "Sleep and Go S.L",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "fnsManager",
-                "type": "CM",
-                "website": "http://www.fnsrooms.com/"
-            },
-            {
-                "availSuccess": 77.5,
-                "bookSuccess": null,
-                "company": "Slimtrader",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "MoBiashara",
-                "type": "CM",
-                "website": "www.slimtrader.com"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 97.9,
-                "company": "smartHOTEL.nl",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "smartHOTEL.nl",
-                "type": "CM",
-                "website": "http://www.smarthotel.nl"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 96.3,
-                "company": "SMI Co.,Ltd.",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Yadochokun",
-                "type": "CRS",
-                "website": "http://yado.smijp.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 88.4,
-                "company": "Smoobu GmbH",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Smoobu Channel Manager",
-                "type": "CRS",
-                "website": "www.smoobu.com"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 96.2,
-                "company": "Softbrands INFOR",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "HMS by Softbrands",
-                "type": "PMS",
-                "website": "http://www.infor.com/"
-            },
-            {
-                "availSuccess": 84.1,
-                "bookSuccess": 86.6,
-                "company": "Solutions Plus s.r.l.",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Kross Booking Suite",
-                "type": "CRS",
-                "website": "www.krossbooking.com"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 99.8,
-                "company": "Sonder",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Sonder Channel Manager",
-                "type": "CM",
-                "website": "www.sonder.com"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.4,
-                "company": "STAAH",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "STAAH",
-                "type": "CM",
-                "website": "www.staah.com"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 99.8,
-                "company": "Stardekk",
-                "featuresSupported": [
-                    "Product API",
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Cubilis by Stardekk",
-                "type": "CM",
-                "website": "www.cubilis.com"
-            },
-            {
-                "availSuccess": 50.5,
-                "bookSuccess": 82.6,
-                "company": "Startnow",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "All Inn",
-                "type": "CRS",
-                "website": "www.startnow.kr"
-            },
-            {
-                "availSuccess": 98.5,
-                "bookSuccess": 88.3,
-                "company": "Stays Solutions Limited",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay"
-                ],
-                "system": "stays\u2122",
-                "type": "CRS",
-                "website": "www.stays.net"
-            },
-            {
-                "availSuccess": 85.1,
-                "bookSuccess": 97.3,
-                "company": "Strait Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "MyUkTravel",
-                "type": "PMS",
-                "website": "www.straitpms.com"
-            },
-            {
-                "availSuccess": 85.3,
-                "bookSuccess": 99.1,
-                "company": "Strait Solutions",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Strait PMS",
-                "type": "PMS",
-                "website": "www.straitpms.com"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 97.6,
-                "company": "Surehigh International Technology Group",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Hotelnabe Channel Manager",
-                "type": "CM",
-                "website": "http://www.surehigh.com.tw/hotelnabe/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 98.5,
-                "company": "SWITCHBOARD",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "SWITCH.CM",
-                "type": "PMS",
-                "website": "http://switch.cm/"
-            },
-            {
-                "availSuccess": 90.1,
-                "bookSuccess": 36.3,
-                "company": "Synthense LSI Software",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Hotel In",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 99.7,
-                "bookSuccess": 99.6,
-                "company": "TDS Network International",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "WebPMSpro/ColibriPMS",
-                "type": "PMS",
-                "website": "www.colibripms.com"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 97.9,
-                "company": "Tecnes Milano s.r.l",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "RoomCloud/ParityRate",
-                "type": "CM",
-                "website": "www.parityrate.com"
-            },
-            {
-                "availSuccess": 96.5,
-                "bookSuccess": 98.4,
-                "company": "Telicom",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotelia PMS",
-                "type": "PMS",
-                "website": "http://telicom.ca/"
-            },
-            {
-                "availSuccess": 97.5,
-                "bookSuccess": 100.0,
-                "company": "Temairazu",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Temairazu Channel Manager",
-                "type": "CM",
-                "website": "www.temairazu.com"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 96.2,
-                "company": "Tesipro",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Sigh Ulyses",
-                "type": "CRS",
-                "website": "http://www.tesipro.com/"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 97.1,
-                "company": "The Ascott Limited",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "Capitaland (Ascott) ODX",
-                "type": "PMS",
-                "website": "www.the-ascott.com"
-            },
-            {
-                "availSuccess": 95.3,
-                "bookSuccess": 95.1,
-                "company": "Tokeet",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Tokeet Channel Manager",
-                "type": "CRS",
-                "website": "www.tokeet.com"
-            },
-            {
-                "availSuccess": 94.4,
-                "bookSuccess": 100.0,
-                "company": "Tosom srl",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Booking Evolution",
-                "type": "CM",
-                "website": "www.bookingevolution.com"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 91.0,
-                "company": "Tourisoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Globres",
-                "type": "CM",
-                "website": "http://www.hotel-spider.com"
-            },
-            {
-                "availSuccess": 91.9,
-                "bookSuccess": 97.5,
-                "company": "Tourisoft",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hotel-Spider",
-                "type": "CM",
-                "website": "http://www.hotel-spider.com/"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 96.9,
-                "company": "Tourist Data Shop Ltd",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "TOMAS",
-                "type": "CM",
-                "website": "www.tomas.travel"
-            },
-            {
-                "availSuccess": 98.3,
-                "bookSuccess": 99.6,
-                "company": "TourOnline AG",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "DIRS21",
-                "type": "CRS",
-                "website": "http://www.dirs21.de/"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 96.9,
-                "company": "Toyoko Inn Co., Ltd",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay"
-                ],
-                "system": "Toyoko Inn Connectivity",
-                "type": "CRS",
-                "website": "https://www.toyoko-inn.com/eng/"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.7,
-                "company": "Trading Estate Service srl",
-                "featuresSupported": [
-                    "Value Add Promotions",
-                    "Displays All Point of Sale Brands"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "VRBookings",
-                "type": "PMS",
-                "website": "www.vrbookings.com"
-            },
-            {
-                "availSuccess": 97.2,
-                "bookSuccess": 97.8,
-                "company": "Traiwan",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Traiwan",
-                "type": "CM",
-                "website": "https://traiwan.com/"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 97.7,
-                "company": "TravelClick",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "TravelClick Channel Management",
-                "type": "CM",
-                "website": "http://www.travelclick.com/en/homepage"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 98.1,
-                "company": "TravelClick",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "TravelClick iHotelier CRS",
-                "type": "CRS",
-                "website": "www.travelclick.com"
-            },
-            {
-                "availSuccess": 99.5,
-                "bookSuccess": 99.3,
-                "company": "Travelline",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Travelline Channel Manager",
-                "type": "CM",
-                "website": "http://travellineus.com"
-            },
-            {
-                "availSuccess": 90.7,
-                "bookSuccess": 95.8,
-                "company": "Trypid, Inc",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Hoteratus",
-                "type": "CRS",
-                "website": "www.hoteratus.com"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": null,
-                "company": "UAB GTI SOLUTIONS",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "YieldPartner Channel Manager",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 97.0,
-                "bookSuccess": 72.7,
-                "company": "UniVisit",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Advanced Purchase"
-                ],
-                "system": "UniVisit CDMS",
-                "type": "CM",
-                "website": "http://www.univisit.net"
-            },
-            {
-                "availSuccess": 98.8,
-                "bookSuccess": 99.7,
-                "company": "Update247",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Update247 CM",
-                "type": "CM",
-                "website": "www.update247.com.au"
-            },
-            {
-                "availSuccess": 100.0,
-                "bookSuccess": 99.6,
-                "company": "UseRoss",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Advanced Purchase"
-                ],
-                "system": "UseRoss EQC",
-                "type": "CM",
-                "website": "http://useross.com.au/"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 96.0,
-                "company": "Vacationspal",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Vacationspal",
-                "type": "PMS",
-                "website": "http://www.vacationspal.com/"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 99.7,
-                "company": "Vertical Booking",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Booking Blastness",
-                "type": "CM",
-                "website": "NULL"
-            },
-            {
-                "availSuccess": 98.4,
-                "bookSuccess": 99.6,
-                "company": "Vertical Booking",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Vertical Booking",
-                "type": "CM",
-                "website": "https://www.verticalbooking.com/en"
-            },
-            {
-                "availSuccess": 96.0,
-                "bookSuccess": 99.8,
-                "company": "Viato Travel",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure",
-                    "Advanced Purchase"
-                ],
-                "system": "Viato ChannelManager",
-                "type": "CM",
-                "website": "http://viato.travel"
-            },
-            {
-                "availSuccess": 97.7,
-                "bookSuccess": 99.8,
-                "company": "Visit Technology",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "BookVisit",
-                "type": "CM",
-                "website": "www.bookvisit.com"
-            },
-            {
-                "availSuccess": 98.6,
-                "bookSuccess": 93.6,
-                "company": "Wanda Hotels & Resorts",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "KWS",
-                "type": "CRS",
-                "website": "https://www.wanda.cn/"
-            },
-            {
-                "availSuccess": 97.1,
-                "bookSuccess": 88.1,
-                "company": "Wealthywalker",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Wealthywalker",
-                "type": "CM",
-                "website": "www.wealthywalker.com"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": null,
-                "company": "Web Data Software, LLC",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "Elliott Realty PMS for EQC",
-                "type": "PMS",
-                "website": "http://www.webdatasoftware.com/"
-            },
-            {
-                "availSuccess": 99.2,
-                "bookSuccess": 99.9,
-                "company": "webres GmbH",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Web.res",
-                "type": "CRS",
-                "website": "www.webres.de"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 99.7,
-                "company": "Welcome Computer Systems",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Welcome Connect",
-                "type": "CM",
-                "website": "http://welcome-systems.uk"
-            },
-            {
-                "availSuccess": 99.9,
-                "bookSuccess": 97.2,
-                "company": "World Web Technologies",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "WebRezPro-PMS",
-                "type": "PMS",
-                "website": "https://www.webrezpro.com/"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 98.6,
-                "company": "Wubook Srl",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "WooDoo",
-                "type": "CM",
-                "website": "http://wubook.net"
-            },
-            {
-                "availSuccess": 99.1,
-                "bookSuccess": 78.3,
-                "company": "Xmedia",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Channel Messenger",
-                "type": "CRS",
-                "website": "http://www.channelmessenger.com/"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": 90.6,
-                "company": "XN Hotel Systems",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival"
-                ],
-                "system": "XN Hotel Systems",
-                "type": "CRS",
-                "website": "http://www.xnprotel.com/"
-            },
-            {
-                "availSuccess": 99.6,
-                "bookSuccess": 98.3,
-                "company": "Xotelia",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Xotelia",
-                "type": "CM",
-                "website": "https://www.xotelia.com/"
-            },
-            {
-                "availSuccess": 99.4,
-                "bookSuccess": 100.0,
-                "company": "Xtreeme GmbH",
-                "featuresSupported": [
-                    "Value Add Promotions"
-                ],
-                "restrictionsSupported": [],
-                "system": "Planyo",
-                "type": "CRS",
-                "website": "https://www.planyo.com"
-            },
-            {
-                "availSuccess": 99.0,
-                "bookSuccess": 98.5,
-                "company": "XYZT",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "e-GDS Channel Manager",
-                "type": "CM",
-                "website": "www.xyzt.pt"
-            },
-            {
-                "availSuccess": 99.8,
-                "bookSuccess": null,
-                "company": "Yadoken",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "Yadoken",
-                "type": "CM",
-                "website": "http://www.yadoken.net/"
-            },
-            {
-                "availSuccess": 96.8,
-                "bookSuccess": 98.9,
-                "company": "Zadego GmbH",
-                "featuresSupported": [],
-                "restrictionsSupported": [
-                    "Minimum Length of Stay",
-                    "Maximum Length of Stay",
-                    "Closed to Arrival",
-                    "Closed to Departure"
-                ],
-                "system": "easybooking / zadego GmbH",
-                "type": "CRS",
-                "website": "https://www.easybooking.at/en/"
-            },
-            {
-                "availSuccess": 94.0,
-                "bookSuccess": 95.3,
-                "company": "ZARI (Yellotravel Inc.)",
-                "featuresSupported": [],
-                "restrictionsSupported": [],
-                "system": "ZARI",
-                "type": "PMS",
-                "website": "http://zari.me"
-            }
-        ]
+define({allProviders:  
+[
+    {
+        "website": "www.1hotelrez.com", 
+        "company": "1HotelSolution.com Co., Ltd.", 
+        "bookSuccess": 86.8, 
+        "system": "1HotelRez", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.beds-to-web.de/", 
+        "company": "Aaron Hotels and Hostels Holding GmbH", 
+        "bookSuccess": 99.1, 
+        "system": "Autoupdate", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.5
+    }, 
+    {
+        "website": "accubook.net", 
+        "company": "Accubook", 
+        "bookSuccess": 99.2, 
+        "system": "AccuSell", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.9
+    }, 
+    {
+        "website": "http://acigrup.com/v3/", 
+        "company": "AciGrup S.L", 
+        "bookSuccess": 99.2, 
+        "system": "Acinet", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.activemetrics.com", 
+        "company": "Active Metrics", 
+        "bookSuccess": 97.2, 
+        "system": "Synergy", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 94.9
+    }, 
+    {
+        "website": "www.dormproject.ch", 
+        "company": "alixon gmbh", 
+        "bookSuccess": 98.4, 
+        "system": "HostelOffice / DormProject", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.5
+    }, 
+    {
+        "website": "www.allotz.com", 
+        "company": "Allotz", 
+        "bookSuccess": 66.0, 
+        "system": "Allotz Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "https://www.cityexpress.com/", 
+        "company": "ALTABIX", 
+        "bookSuccess": 94.9, 
+        "system": "FlowLink", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "www.AnandSystems.com", 
+        "company": "Anand Systems Inc", 
+        "bookSuccess": 99.8, 
+        "system": "ASI Front Desk (v5.3+)", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.ratewizz.com", 
+        "company": "AROBS Transilvania Software", 
+        "bookSuccess": 97.8, 
+        "system": "RateWizz", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 90.3
+    }, 
+    {
+        "website": "http://www.sistemhotelsoftware.com/Home/ChannelManager", 
+        "company": "Arpies Yazlm Bilgisayar Danmanlk Turizm Tic. Ltd", 
+        "bookSuccess": 98.2, 
+        "system": "Arpies Yazilim", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "https://www.asiatech.in", 
+        "company": "AsiaTech Hospitality Solution Pvt Ltd", 
+        "bookSuccess": 69.6, 
+        "system": "AsiaTech", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 91.4
+    }, 
+    {
+        "website": "http://www.athena.com.tw", 
+        "company": "Athena Information Systems", 
+        "bookSuccess": 99.6, 
+        "system": "TravelLink", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "http://www.hermeshotels.it/", 
+        "company": "Athena Solutions", 
+        "bookSuccess": 99.4, 
+        "system": "HermesHotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Aurum Marketing srl", 
+        "bookSuccess": 95.4, 
+        "system": "Aurum Hotels Interface", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "www.avaibook.com", 
+        "company": "AvaiBook", 
+        "bookSuccess": 97.7, 
+        "system": "AvaiBook", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.7
+    }, 
+    {
+        "website": "http://site.availpro.com/", 
+        "company": "Availpro", 
+        "bookSuccess": 99.1, 
+        "system": "Availpro", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "www.availroom.com", 
+        "company": "AVAILROOM S.L.", 
+        "bookSuccess": 99.8, 
+        "system": "AVAILROOM", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.avantio.es", 
+        "company": "Avantio VRMS", 
+        "bookSuccess": 41.7, 
+        "system": "Avantio", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.4
+    }, 
+    {
+        "website": "www.resavenue.com", 
+        "company": "Avenues South Asias", 
+        "bookSuccess": 97.8, 
+        "system": "ResAvenue Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.7
+    }, 
+    {
+        "website": "www.avirato.com", 
+        "company": "Avirato", 
+        "bookSuccess": 96.9, 
+        "system": "Avirato", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 93.5
+    }, 
+    {
+        "website": "www.axisrooms.com", 
+        "company": "AxisRooms Travel Distribution Solutions Pvt. Ltd.", 
+        "bookSuccess": 97.2, 
+        "system": "AxisRooms", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "www.b4checkin.com", 
+        "company": "b4checkin", 
+        "bookSuccess": 95.2, 
+        "system": "B4Checkin", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.octorate.com", 
+        "company": "BBliverate Octorate", 
+        "bookSuccess": 87.3, 
+        "system": "Octorate", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.beds24.com", 
+        "company": "beds24", 
+        "bookSuccess": 99.1, 
+        "system": "Beds24 PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "www.begenius.it", 
+        "company": "BeGenius", 
+        "bookSuccess": 92.9, 
+        "system": "BookinGenius", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.360pms.com", 
+        "company": "Beijing Miot. Ltd.", 
+        "bookSuccess": 98.9, 
+        "system": "Yunzhanggui", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.igems.co.za", 
+        "company": "Berry Software", 
+        "bookSuccess": 93.5, 
+        "system": "iGems", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "http://www.bookingmanager.com/", 
+        "company": "BillyPDS", 
+        "bookSuccess": 80.1, 
+        "system": "BillyPDS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 89.8
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Bohemia REI", 
+        "bookSuccess": 84.3, 
+        "system": "Pattayasunnyrentals.net", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "http://www.bookandlink.com", 
+        "company": "BookandLink", 
+        "bookSuccess": 92.6, 
+        "system": "BookandLink", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "bookassist.com", 
+        "company": "Bookassist", 
+        "bookSuccess": 92.8, 
+        "system": "Channel Connect", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "https://cm.bookitech.com", 
+        "company": "Booki Tech S.r.l.s", 
+        "bookSuccess": 99.5, 
+        "system": "Booki Tech", 
+        "featuresSupported": [
+            "Displays All Point of Sale Brands"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 94.2
+    }, 
+    {
+        "website": "BookingAutomation.com", 
+        "company": "Booking Automation Inc", 
+        "bookSuccess": 95.1, 
+        "system": "BookingAutomation", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.bookingexperts.com", 
+        "company": "Booking Experts", 
+        "bookSuccess": 92.3, 
+        "system": "Booking Experts", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "www.bookingcenter.com", 
+        "company": "BookingCenter", 
+        "bookSuccess": 99.8, 
+        "system": "BookingCenter", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "https://bookinglite.ru", 
+        "company": "BookingLite", 
+        "bookSuccess": 100.0, 
+        "system": "BookingLite", 
+        "featuresSupported": [
+            "Displays All Point of Sale Brands"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "IMPORTANT", 
+        "company": "BookingPal", 
+        "bookSuccess": 95.5, 
+        "system": "BookingPal", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.4
+    }, 
+    {
+        "website": "www.BookLogic.net", 
+        "company": "BookLogic", 
+        "bookSuccess": 86.6, 
+        "system": "MaxiChannel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 88.9
+    }, 
+    {
+        "website": "www.brasilbookings.com.br", 
+        "company": "Brasil Bookings", 
+        "bookSuccess": 95.9, 
+        "system": "Brasil Bookings", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "www.busy-rooms.com", 
+        "company": "BusyRooms", 
+        "bookSuccess": 98.9, 
+        "system": "BusyRooms", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.4
+    }, 
+    {
+        "website": "SwissQualityHotels.com", 
+        "company": "CE Computer Engineering AG", 
+        "bookSuccess": 99.5, 
+        "system": "QOnline CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "channelmanager.com.au", 
+        "company": "ChannelManager.com.au", 
+        "bookSuccess": 86.5, 
+        "system": "ChannelManager.com.au", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.channelrush.com", 
+        "company": "ChannelRUSH", 
+        "bookSuccess": 85.2, 
+        "system": "ChannelRUSH Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.chelagarto.com", 
+        "company": "Che Lagarto Hostel", 
+        "bookSuccess": 19.4, 
+        "system": "Che Lagarto", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp", 
+        "company": "CHINAOnline", 
+        "bookSuccess": 90.7, 
+        "system": "COL switch - Green Tree Chain", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp", 
+        "company": "CHINAOnline", 
+        "bookSuccess": 95.3, 
+        "system": "COL switch - Jin Jiang Chain", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.clips.co.jp/", 
+        "company": "Clips", 
+        "bookSuccess": 99.8, 
+        "system": "Neppan", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "www.clubmahindra.com", 
+        "company": "Club Mahindra Hotels & Resorts", 
+        "bookSuccess": null, 
+        "system": "Crest CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 77.4
+    }, 
+    {
+        "website": "www.compusoft.dk", 
+        "company": "Compusoft", 
+        "bookSuccess": 97.0, 
+        "system": "Compusoft", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.elloha.com/", 
+        "company": "Constellation", 
+        "bookSuccess": 94.6, 
+        "system": "Elloha/Constellation", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.3
+    }, 
+    {
+        "website": "http://www.coral-technologies.com/en/orbe/acerca-de-orbe.html", 
+        "company": "Coral-Technologies", 
+        "bookSuccess": 99.2, 
+        "system": "ORBE (ONLINE RESERVATION BOOKING ENGINE)", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.9
+    }, 
+    {
+        "website": "www.cultuzz.de", 
+        "company": "Cultuzz", 
+        "bookSuccess": 96.6, 
+        "system": "Cultuzz Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.2
+    }, 
+    {
+        "website": "www.bookon.org", 
+        "company": "CWD S.r.l", 
+        "bookSuccess": 99.9, 
+        "system": "BookOn", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 94.9
+    }, 
+    {
+        "website": "www.thinkreservations.com", 
+        "company": "DeepThink LLC", 
+        "bookSuccess": 98.2, 
+        "system": "ThinkReservations", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.derbysoft.com/", 
+        "company": "DerbySoft", 
+        "bookSuccess": 94.7, 
+        "system": "DHotelier", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 95.6
+    }, 
+    {
+        "website": "http://www.dsone.com/", 
+        "company": "DerbySoft", 
+        "bookSuccess": 80.0, 
+        "system": "One by DerbySoft", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 94.5
+    }, 
+    {
+        "website": "https://www.myallocator.com/", 
+        "company": "Digital Arbitrage", 
+        "bookSuccess": 99.5, 
+        "system": "My Allocator", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.7
+    }, 
+    {
+        "website": "www.hoteldruid.com", 
+        "company": "DigitalDruid", 
+        "bookSuccess": 96.7, 
+        "system": "HotelDruid", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "http://www.dingus-services.com/", 
+        "company": "Dingus Services", 
+        "bookSuccess": 98.8, 
+        "system": "Dingus CM", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 91.7
+    }, 
+    {
+        "website": "http://eglobe-solutions.com/", 
+        "company": "Direct Hotels Pvt Ltd", 
+        "bookSuccess": 89.1, 
+        "system": "eGlobe Solutions", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "http://www.directwithhotels.com/", 
+        "company": "DirectWithHotels", 
+        "bookSuccess": 93.9, 
+        "system": "DirectWithHotels System", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "https://e4jconnect.com", 
+        "company": "e4jConnect", 
+        "bookSuccess": 86.1, 
+        "system": "e4j - Extensionsforjoomla.com", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.8
+    }, 
+    {
+        "website": "cabovillas.com", 
+        "company": "Earth, Sea & Sky Vacations", 
+        "bookSuccess": null, 
+        "system": "V12/ISILink", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": null
+    }, 
+    {
+        "website": "https://www.easeroom.com/", 
+        "company": "EASEROOM (Unit of GI Hospitalities Private Limited)", 
+        "bookSuccess": 95.8, 
+        "system": "EaseRoom Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 53.1
+    }, 
+    {
+        "website": "https://www.easy-rez.com", 
+        "company": "Easy-Rez", 
+        "bookSuccess": 93.0, 
+        "system": "Easy-Rez CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 95.4
+    }, 
+    {
+        "website": "www.obehotel.com", 
+        "company": "Efimatica", 
+        "bookSuccess": 95.4, 
+        "system": "Obehotel", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.3
+    }, 
+    {
+        "website": "NULL", 
+        "company": "eGate by CNS", 
+        "bookSuccess": 96.7, 
+        "system": "eGate by CNS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.engisoft.com", 
+        "company": "Engisoft", 
+        "bookSuccess": 97.9, 
+        "system": "Bird iCRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.engisoft.com", 
+        "company": "Engisoft", 
+        "bookSuccess": 98.4, 
+        "system": "Bird iCRS - Acta Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "https://admin.12go.co.kr", 
+        "company": "EpicBrain", 
+        "bookSuccess": 98.1, 
+        "system": "Octopus", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.ericsoft.com", 
+        "company": "Ericsoft", 
+        "bookSuccess": 99.2, 
+        "system": "Ericsoft ChannelManager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 93.3
+    }, 
+    {
+        "website": "http://www.estargroup.it", 
+        "company": "Estar Group", 
+        "bookSuccess": 85.7, 
+        "system": "BookingEstar", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "www.ezeeabsolute.com", 
+        "company": "eZee Technosys", 
+        "bookSuccess": 98.0, 
+        "system": "eZee Absolute", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.ezeecentrix.com", 
+        "company": "eZee Technosys", 
+        "bookSuccess": 97.4, 
+        "system": "eZee Centrix", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "http://www.ezyrez.com.au", 
+        "company": "EzyRez", 
+        "bookSuccess": 99.3, 
+        "system": "EzyChannel", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Fairbridge Inns EQC", 
+        "bookSuccess": 96.0, 
+        "system": "FairCloud PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 94.6
+    }, 
+    {
+        "website": "www.xmitter.com", 
+        "company": "Fairbridge Inns EQC", 
+        "bookSuccess": 36.5, 
+        "system": "xMitter", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "http://www.fastbooking.com/", 
+        "company": "Fastbooking", 
+        "bookSuccess": 99.3, 
+        "system": "FastBooking Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.evols.it", 
+        "company": "Figaro", 
+        "bookSuccess": 98.2, 
+        "system": "Figaro - Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.finite-soft.com", 
+        "company": "Finite-Systems", 
+        "bookSuccess": 99.9, 
+        "system": "Finite Software Systems CM", 
+        "featuresSupported": [
+            "Value Add Promotions", 
+            "Displays All Point of Sale Brands"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "http://www.fivestarhotelsystems.com/products_services/products_services.htm", 
+        "company": "Five Star Hotel Systems Corporation", 
+        "bookSuccess": 95.3, 
+        "system": "Five Star Software", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 94.6
+    }, 
+    {
+        "website": "www.freetobook.com", 
+        "company": "Freetobook", 
+        "bookSuccess": 98.6, 
+        "system": "Freetobook System", 
+        "featuresSupported": [
+            "Product API", 
+            "Property API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "frontdeskanywhere.com", 
+        "company": "Frontdesk Anywhere", 
+        "bookSuccess": 96.2, 
+        "system": "Frontdesk Anywhere PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 84.8
+    }, 
+    {
+        "website": "frontdesk24.ru", 
+        "company": "Frontdesk24", 
+        "bookSuccess": 85.9, 
+        "system": "Frontdesk24", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "galaxy-hotels.fr", 
+        "company": "Galaxy H\u00f4tels", 
+        "bookSuccess": 99.5, 
+        "system": "Galaxy H\u00f4tels", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "www.gestionealbergo.it", 
+        "company": "Gestione Albergo Srl", 
+        "bookSuccess": 97.5, 
+        "system": "LeoPortals Manager", 
+        "featuresSupported": [
+            "Value Add Promotions", 
+            "Displays All Point of Sale Brands"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 93.4
+    }, 
+    {
+        "website": "http://www.gimh.es/", 
+        "company": "GIMH", 
+        "bookSuccess": 33.9, 
+        "system": "GIMH Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 91.6
+    }, 
+    {
+        "website": "http://www.ezsitecontroller.jp/", 
+        "company": "Global Network Connection", 
+        "bookSuccess": 99.2, 
+        "system": "EZ Site Controller", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "globalservicedapts.com", 
+        "company": "Global Serviced Apartments", 
+        "bookSuccess": 99.8, 
+        "system": "Global Serviced Apartments, LLC", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "https://www.gms.info/", 
+        "company": "GMS", 
+        "bookSuccess": 95.6, 
+        "system": "GMS Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 89.2
+    }, 
+    {
+        "website": "www.gna.es", 
+        "company": "GNA", 
+        "bookSuccess": 99.4, 
+        "system": "GnaHS Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "http://gracesoft.com/", 
+        "company": "Gracesoft Software", 
+        "bookSuccess": 94.5, 
+        "system": "Easy InnKeeping", 
+        "featuresSupported": [
+            "PCI Attestation Supplied"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 96.4
+    }, 
+    {
+        "website": "www.syncrez.com", 
+        "company": "Greeka / Syncrez", 
+        "bookSuccess": 85.4, 
+        "system": "Syncrez", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.8
+    }, 
+    {
+        "website": "http://www.altiuspar.com/", 
+        "company": "Grupo Posadas", 
+        "bookSuccess": 99.5, 
+        "system": "AltiusPar", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "https://www.yieldplanet.com/", 
+        "company": "GTH Solutions YieldPlanet", 
+        "bookSuccess": 97.2, 
+        "system": "YieldPlanet", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "https://www.sihot.com/en/modules/sihotpms", 
+        "company": "Gubse AG", 
+        "bookSuccess": 98.9, 
+        "system": "Sihot PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.4
+    }, 
+    {
+        "website": "www.guestcentric.com", 
+        "company": "GuestCentric Systems", 
+        "bookSuccess": 99.5, 
+        "system": "Evolution CRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "http://www.guestcentric.com/features/channel-management/", 
+        "company": "GuestCentric Systems", 
+        "bookSuccess": 98.6, 
+        "system": "GuestCentric Systems Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "www.guestline.com", 
+        "company": "Guestline Ltd", 
+        "bookSuccess": 99.9, 
+        "system": "Roomlynx", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "https://EffectiveTours.com", 
+        "company": "Harizma Holdings Lanka", 
+        "bookSuccess": 98.9, 
+        "system": "Effective Tours", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "http://www.hdnglobal.com/", 
+        "company": "HDN Global", 
+        "bookSuccess": 98.8, 
+        "system": "HDN Global", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.1
+    }, 
+    {
+        "website": "http://www.high-level-software.com/", 
+        "company": "High Level Software", 
+        "bookSuccess": 98.2, 
+        "system": "High Level PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://www.highlandvision.com", 
+        "company": "Highland Vision", 
+        "bookSuccess": 81.8, 
+        "system": "Highland Vision Bookings", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "www.hirum.com.au", 
+        "company": "Hirum", 
+        "bookSuccess": 99.8, 
+        "system": "Hisite", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://www.hti-systems.co.za/", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
+        "bookSuccess": 89.9, 
+        "system": "eRes", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.hti-systems.co.za/", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
+        "bookSuccess": 88.5, 
+        "system": "eRes - ThornyBush", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.hti-systems.co.za/", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
+        "bookSuccess": 92.6, 
+        "system": "eRes\u00a0- Apollo Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.8
+    }, 
+    {
+        "website": "http://www.hti-systems.co.za/", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
+        "bookSuccess": 94.8, 
+        "system": "eRes\u00a0- Legend Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "http://www.hti-systems.co.za/", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
+        "bookSuccess": 97.3, 
+        "system": "eRes\u00a0- Tsogo Sun Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 96.9
+    }, 
+    {
+        "website": "www.hostpms.com", 
+        "company": "Host Hotel Systems", 
+        "bookSuccess": 99.1, 
+        "system": "Host PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.2
+    }, 
+    {
+        "website": "www.hostaway.com", 
+        "company": "Hostaway", 
+        "bookSuccess": 85.4, 
+        "system": "Hostaway", 
+        "featuresSupported": [
+            "Product API"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 82.7
+    }, 
+    {
+        "website": "https:// www.hosteeva.com", 
+        "company": "Hosteeva LLC", 
+        "bookSuccess": 98.4, 
+        "system": "Hosteeva", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 98.5
+    }, 
+    {
+        "website": "www.frontdeskmaster.com", 
+        "company": "Hostel System", 
+        "bookSuccess": 98.1, 
+        "system": "FrontDesk Master", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.9
+    }, 
+    {
+        "website": "https://hotelavailabilities.com", 
+        "company": "Hotel Availabilities LTD", 
+        "bookSuccess": 99.9, 
+        "system": "HotelAvailabilities", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 93.3
+    }, 
+    {
+        "website": "https://amadeus-hospitality.com/central-reservations-system/rezexchange/", 
+        "company": "Hotel Concepts", 
+        "bookSuccess": 98.7, 
+        "system": "Rezexchange", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 93.4
+    }, 
+    {
+        "website": "www.hotellinksolutions.com", 
+        "company": "Hotel Link Solutions", 
+        "bookSuccess": 95.0, 
+        "system": "Hotel Link Solutions", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.hotel-profi.de", 
+        "company": "Hotel Profi", 
+        "bookSuccess": 87.7, 
+        "system": "Hotel Profi", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.1
+    }, 
+    {
+        "website": "www.hotelstory.com", 
+        "company": "Hotel Story", 
+        "bookSuccess": 85.5, 
+        "system": "Hotelstory", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 89.5
+    }, 
+    {
+        "website": "travelaps.com", 
+        "company": "Hoteladvisor.net", 
+        "bookSuccess": 80.9, 
+        "system": "Hoteladvisor", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.hotelan.com", 
+        "company": "Hotelan", 
+        "bookSuccess": null, 
+        "system": "ComHotel", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 94.5
+    }, 
+    {
+        "website": "https://www.hoteliers.guru", 
+        "company": "Hoteliers Dot Guru Pte. Ltd.", 
+        "bookSuccess": 96.6, 
+        "system": "Hoteliers.Guru Channel Management", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "NULL", 
+        "company": "hoteliers.com", 
+        "bookSuccess": 98.0, 
+        "system": "hoteliers.com", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.hoteliga.com", 
+        "company": "Hoteliga", 
+        "bookSuccess": 99.1, 
+        "system": "Hoteliga", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.hotel-net.it", 
+        "company": "HotelNet", 
+        "bookSuccess": 99.3, 
+        "system": "HotelNet CRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.1
+    }, 
+    {
+        "website": "www.hotelnetsolutions.de", 
+        "company": "HotelNetSolutions", 
+        "bookSuccess": 98.7, 
+        "system": "HotelNetSolutions", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.hoteloga.com", 
+        "company": "Hoteloga", 
+        "bookSuccess": 15.8, 
+        "system": "HotelOga", 
+        "featuresSupported": [
+            "Product API", 
+            "Property API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": null
+    }, 
+    {
+        "website": "hotelpartner-ym.com", 
+        "company": "HotelPartner", 
+        "bookSuccess": 99.6, 
+        "system": "HotelPartner CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.1
+    }, 
+    {
+        "website": "www.hotelrunner.com", 
+        "company": "HotelRunner", 
+        "bookSuccess": 98.0, 
+        "system": "HotelRunner", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 96.7
+    }, 
+    {
+        "website": "www.hotelwebservice.com", 
+        "company": "HotelWebservice GMBH", 
+        "bookSuccess": 96.6, 
+        "system": "HotelWebservice Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "http://www.travelopenapps.org/", 
+        "company": "Hotetec Accomodation SL", 
+        "bookSuccess": 86.8, 
+        "system": "Hotetec", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 97.4
+    }, 
+    {
+        "website": "www.hsystem.com.br", 
+        "company": "HSystem", 
+        "bookSuccess": 97.8, 
+        "system": "HUNIT", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "www.hubs1.net", 
+        "company": "Hubs1", 
+        "bookSuccess": 86.2, 
+        "system": "Hubs1", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "http://www.idosell.com/", 
+        "company": "IAI S.A", 
+        "bookSuccess": 86.2, 
+        "system": "IdoSell Booking", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "http://www.ibsplc.com/products/hospitality-solutions/demand-gateway", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
+        "bookSuccess": 97.3, 
+        "system": "Demand Gateway", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 82.9
+    }, 
+    {
+        "website": "http://www.hotelbookingsolutions.com/", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
+        "bookSuccess": 97.5, 
+        "system": "Demand Gateway - Disney", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.1
+    }, 
+    {
+        "website": "http://www.hotelbookingsolutions.com/", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
+        "bookSuccess": 99.1, 
+        "system": "Demand Gateway - Fairmont", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.TOURWOODS.com", 
+        "company": "Icewoods Digital Technology", 
+        "bookSuccess": 91.6, 
+        "system": "Tour Echo", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://icnea.com", 
+        "company": "Icnea Tecnologia S.L.", 
+        "bookSuccess": 84.0, 
+        "system": "Icnea", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 61.0
+    }, 
+    {
+        "website": "www.idiso.com", 
+        "company": "Idiso", 
+        "bookSuccess": 99.4, 
+        "system": "Idiso", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "www.idiso.com", 
+        "company": "Idiso", 
+        "bookSuccess": 99.6, 
+        "system": "Sirius", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.roomleader.com/", 
+        "company": "IGM", 
+        "bookSuccess": 97.5, 
+        "system": "IGM Synergy Hotel CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.9
+    }, 
+    {
+        "website": "https://vmpms.com/", 
+        "company": "Image Technology Systems", 
+        "bookSuccess": 87.9, 
+        "system": "VisualMatrix", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 88.9
+    }, 
+    {
+        "website": "www.my-bookings.org/", 
+        "company": "IMS Media", 
+        "bookSuccess": 98.8, 
+        "system": "My Bookings", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.tmsforhotels.com/", 
+        "company": "Indra", 
+        "bookSuccess": 98.3, 
+        "system": "TMS for Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://www.tmsforhotels.com/", 
+        "company": "Indra", 
+        "bookSuccess": 98.2, 
+        "system": "TMS for Hotels -  nhHotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 94.5
+    }, 
+    {
+        "website": "www.innstyle.co.uk", 
+        "company": "Inn Style", 
+        "bookSuccess": 99.5, 
+        "system": "Inn Style", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "http://www.innfinity.com", 
+        "company": "INNfinity Hospitality", 
+        "bookSuccess": 96.4, 
+        "system": "INNfinity V2", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.inngeniuspms.com/", 
+        "company": "InnGenius Property Management Solutions", 
+        "bookSuccess": 98.4, 
+        "system": "Inn-Connect Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 95.3
+    }, 
+    {
+        "website": "www.innquest.com", 
+        "company": "InnQuest Software", 
+        "bookSuccess": 97.0, 
+        "system": "roomMaster", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.innroad.com", 
+        "company": "innRoad", 
+        "bookSuccess": 99.1, 
+        "system": "innRoad PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 93.6
+    }, 
+    {
+        "website": "www.innsoft.com", 
+        "company": "Innsoft, Incorporated", 
+        "bookSuccess": 94.9, 
+        "system": "Check-Inn PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 64.9
+    }, 
+    {
+        "website": "http://www.interalp-touristik.com/de/channel-manager.html", 
+        "company": "Interalp Touristik", 
+        "bookSuccess": 99.5, 
+        "system": "Interalp", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.4, 
+        "system": "Reservit", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.3, 
+        "system": "Reservit - Brithotel", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.8, 
+        "system": "Reservit - Citotel", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 96.5
+    }, 
+    {
+        "website": "www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.0, 
+        "system": "Reservit - FastHotel", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.5, 
+        "system": "Reservit - Logis Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.7, 
+        "system": "Reservit - SEH Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 97.7, 
+        "system": "Reservit - Zenitude", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "www.softbooker.com", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.6, 
+        "system": "ReservIT Softbooker Canada", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.easyram.it", 
+        "company": "Internettare", 
+        "bookSuccess": 79.3, 
+        "system": "Easyram", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.2
+    }, 
+    {
+        "website": "www.iperbooking.com", 
+        "company": "Ipernet", 
+        "bookSuccess": 99.9, 
+        "system": "Iperbooking channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.8
+    }, 
+    {
+        "website": "www.hotelboss.dk", 
+        "company": "Ipnordic A/S", 
+        "bookSuccess": 100.0, 
+        "system": "HotelBoss", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.iqwareinc.com/", 
+        "company": "IQWARE", 
+        "bookSuccess": 85.2, 
+        "system": "IQWare PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 85.0
+    }, 
+    {
+        "website": "rabbitjets.com", 
+        "company": "ITF CROUP CO.", 
+        "bookSuccess": 87.6, 
+        "system": "RabbitJetsPMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Maximum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 92.7
+    }, 
+    {
+        "website": "http://www.raku-2.jp/", 
+        "company": "JR Systems", 
+        "bookSuccess": 100.0, 
+        "system": "Rakutsu", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "www.ke-booking.com", 
+        "company": "KE-Booking", 
+        "bookSuccess": 80.4, 
+        "system": "KE-Booking CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 94.1
+    }, 
+    {
+        "website": "www.hotres.pl", 
+        "company": "LemonPixel.pl", 
+        "bookSuccess": 98.6, 
+        "system": "Hotres.pl", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://www.levartdistributionsystems.com.au/", 
+        "company": "Levart", 
+        "bookSuccess": 99.5, 
+        "system": "Levart Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "www.lodgegate.com", 
+        "company": "Lodgegate", 
+        "bookSuccess": 99.4, 
+        "system": "Lodgegate PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 97.8
+    }, 
+    {
+        "website": "www.luxuryres.com", 
+        "company": "LuxuryRes", 
+        "bookSuccess": 97.2, 
+        "system": "EzRes", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 90.4
+    }, 
+    {
+        "website": "www.madeep.com", 
+        "company": "Madeep", 
+        "bookSuccess": 99.1, 
+        "system": "Mad Booking", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 60.5
+    }, 
+    {
+        "website": "https://www.magarental.com/en/software/magarental", 
+        "company": "Magarental AG", 
+        "bookSuccess": 90.2, 
+        "system": "MAGARENTAL", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.9
+    }, 
+    {
+        "website": "www.mallorcasoft.es", 
+        "company": "Mallorca Soft", 
+        "bookSuccess": 69.1, 
+        "system": "Astro Hotel", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "www.maximojo.com", 
+        "company": "MaxiMojo Software (Pvt.) Ltd", 
+        "bookSuccess": 100.0, 
+        "system": "Hospitality Solutions Mantra", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 90.6
+    }, 
+    {
+        "website": "NULL", 
+        "company": "MaxiMojo Software (Pvt.) Ltd", 
+        "bookSuccess": 85.3, 
+        "system": "Hotel Mantra", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 92.3
+    }, 
+    {
+        "website": "www.maxxton.com", 
+        "company": "Maxxton India Technologies Pvt. Ltd.", 
+        "bookSuccess": 92.1, 
+        "system": "Newyse", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.magellano.info", 
+        "company": "MediaLab Sofware Engineering S.N.C.", 
+        "bookSuccess": 91.2, 
+        "system": "MainApps - Magellano", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 94.6
+    }, 
+    {
+        "website": "http://www.reservationsystems.com/", 
+        "company": "Meridian", 
+        "bookSuccess": 99.8, 
+        "system": "Meridian Reservation Systems", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 98.0
+    }, 
+    {
+        "website": "http://www.mingus.biz/en/index.htm", 
+        "company": "Mingus Software", 
+        "bookSuccess": 99.2, 
+        "system": "Hotello", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "https://www.misterbooking.com", 
+        "company": "Misterbooking", 
+        "bookSuccess": 99.0, 
+        "system": "Misterbooking CM", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "http://www.mm-one.com/", 
+        "company": "MM-One Group Srl", 
+        "bookSuccess": 82.4, 
+        "system": "BookingOne Connect", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 92.4
+    }, 
+    {
+        "website": "www.minihotelpms.com", 
+        "company": "Motel Software Solutions", 
+        "bookSuccess": 98.3, 
+        "system": "Mini Hotel", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 92.0
+    }, 
+    {
+        "website": "www.booknowhotel.com", 
+        "company": "MR Group SAS", 
+        "bookSuccess": 99.2, 
+        "system": "MRGroup", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.hotelxp.it", 
+        "company": "Nebiz", 
+        "bookSuccess": 97.5, 
+        "system": "HotelXP", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 97.5
+    }, 
+    {
+        "website": "www.netroomz.com.au", 
+        "company": "Netroomz", 
+        "bookSuccess": 79.7, 
+        "system": "Freeloader", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.9
+    }, 
+    {
+        "website": "https://www.hotel.bb/", 
+        "company": "Netskin.net", 
+        "bookSuccess": 99.4, 
+        "system": "Hotel.BB", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.2
+    }, 
+    {
+        "website": "www.newbook.cloud", 
+        "company": "NewBook Pty Ltd", 
+        "bookSuccess": 99.8, 
+        "system": "NewBook", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 73.1
+    }, 
+    {
+        "website": "www.bookingexpert.it", 
+        "company": "Nexteam SRL", 
+        "bookSuccess": 99.6, 
+        "system": "BookingExpert Italy", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 89.0
+    }, 
+    {
+        "website": "http://www.nextpax.com", 
+        "company": "NextPax", 
+        "bookSuccess": 99.5, 
+        "system": "Lodgix Property Management System", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://site.nightsbridge.com/pms-connector/", 
+        "company": "Nightsbridge", 
+        "bookSuccess": 99.5, 
+        "system": "NightsBridge PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "www.reseliva.com", 
+        "company": "Nivera Technologies", 
+        "bookSuccess": 99.6, 
+        "system": "Reseliva", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.maestropms.com", 
+        "company": "NORTHWIND", 
+        "bookSuccess": 97.8, 
+        "system": "Maestro Property Management-PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 81.3
+    }, 
+    {
+        "website": "www.novaxs.com.br", 
+        "company": "Nova XS Tecnologia da Informa\u00e7\u00e3o LTDA.", 
+        "bookSuccess": 99.2, 
+        "system": "Nova XS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "Http://ostays.com", 
+        "company": "O Hotel Suites Ltd", 
+        "bookSuccess": 88.9, 
+        "system": "Ostays", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 75.8
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Odalys", 
+        "bookSuccess": 96.0, 
+        "system": "Odalys CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.apartmentsapart.com", 
+        "company": "Old Town Apartments", 
+        "bookSuccess": 99.6, 
+        "system": "Old Town Apartments System", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.0
+    }, 
+    {
+        "website": "www.omnibees.com", 
+        "company": "Omnibees CRS", 
+        "bookSuccess": 97.4, 
+        "system": "Omnibees (HoteisNet)", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "www.1-up.co.uk", 
+        "company": "one UP", 
+        "bookSuccess": 99.7, 
+        "system": "one UP", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.onetechsolution.com", 
+        "company": "ONETECH solution", 
+        "bookSuccess": 81.4, 
+        "system": "ONETECH PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 0.5
+    }, 
+    {
+        "website": "http://www.online-int.com.au", 
+        "company": "Online Systems", 
+        "bookSuccess": 99.6, 
+        "system": "Chart PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://software.onressystems.com/", 
+        "company": "OnRes Systems Inc", 
+        "bookSuccess": 99.1, 
+        "system": "AccomPro", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.openhotel.com", 
+        "company": "Open Hotel Inc", 
+        "bookSuccess": 99.1, 
+        "system": "Open Hotel PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.0
+    }, 
+    {
+        "website": "www.micros.com", 
+        "company": "Oracle Hospitality", 
+        "bookSuccess": 99.8, 
+        "system": "Micros Channel Manager Europe", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.micros.com", 
+        "company": "Oracle Hospitality", 
+        "bookSuccess": 99.3, 
+        "system": "Micros Channel Manager USA/Canada", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.micros.com", 
+        "company": "Oracle Hospitality", 
+        "bookSuccess": 99.9, 
+        "system": "Micros Suite 8 EMEA", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://www.oyorooms.com", 
+        "company": "Oravel Stays Pvt. Ltd.", 
+        "bookSuccess": 86.8, 
+        "system": "OYORooms", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 88.3
+    }, 
+    {
+        "website": "http://www.oreve-technologies.com/index.php", 
+        "company": "Oreve Technologies", 
+        "bookSuccess": 41.0, 
+        "system": "Room online", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 87.4
+    }, 
+    {
+        "website": "https://otelia.io/", 
+        "company": "Otelia.it", 
+        "bookSuccess": 99.8, 
+        "system": "Otelia Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Otelms", 
+        "bookSuccess": 98.0, 
+        "system": "Otelms Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.passepartout.net", 
+        "company": "Passepartout", 
+        "bookSuccess": 96.9, 
+        "system": "Passepartout Welcome", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 95.8
+    }, 
+    {
+        "website": "www.perfecthandssolutions.com", 
+        "company": "Perfect Hands Solutions Pvt. Ltd", 
+        "bookSuccess": 96.9, 
+        "system": "Perfect Hands Solutions", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 94.3
+    }, 
+    {
+        "website": "www.phobs.net", 
+        "company": "PHOBS", 
+        "bookSuccess": 99.6, 
+        "system": "PHOBS CRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "https://www.pierreetvacances.com/", 
+        "company": "Pierre et Vacances - EQC", 
+        "bookSuccess": 87.1, 
+        "system": "Pierre et Vacances - CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.winner-hotelsoftware.com/en", 
+        "company": "Planet Winner", 
+        "bookSuccess": 99.7, 
+        "system": "Planet Winner", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.pmscloud.com", 
+        "company": "PMS Cloud LP", 
+        "bookSuccess": 95.5, 
+        "system": "PMS Cloud", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "www.cloudhospitality.es", 
+        "company": "Prestige Software", 
+        "bookSuccess": 97.1, 
+        "system": "Prestige", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.9
+    }, 
+    {
+        "website": "www.prestige-inet.com", 
+        "company": "Prestige Software", 
+        "bookSuccess": 97.3, 
+        "system": "Prestige - AGA Hotels", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.0
+    }, 
+    {
+        "website": "www.prestige-inet.com", 
+        "company": "Prestige Software", 
+        "bookSuccess": 99.7, 
+        "system": "Prestige - Iberostar", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "www.prestige-inet.com", 
+        "company": "Prestige Software", 
+        "bookSuccess": null, 
+        "system": "Prestige - Magic Costa Blanca", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "www.prestige-inet.com", 
+        "company": "Prestige Software", 
+        "bookSuccess": 99.8, 
+        "system": "Prestige - Pierre & Vacances", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "PRIMAL-RES.GR", 
+        "company": "Primal-RES", 
+        "bookSuccess": 99.8, 
+        "system": "Channels Easy", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "http://www.profitroom.com/", 
+        "company": "Profit Room", 
+        "bookSuccess": 98.2, 
+        "system": "Profitroom", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 86.4
+    }, 
+    {
+        "website": "http://www.roomerpms.com", 
+        "company": "Promoir BV", 
+        "bookSuccess": 99.9, 
+        "system": "Roomer PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.protel.net", 
+        "company": "Protel Hotel Software", 
+        "bookSuccess": 98.2, 
+        "system": "Protel - PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 90.4
+    }, 
+    {
+        "website": "pynbooking.com", 
+        "company": "Pyn Booking", 
+        "bookSuccess": 94.4, 
+        "system": "Pyn Booking", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 91.1
+    }, 
+    {
+        "website": "http://www.simplebooking.it/", 
+        "company": "QNT S.r.l", 
+        "bookSuccess": 98.1, 
+        "system": "Simple Booking Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "www.quickyield.com", 
+        "company": "QuickYield", 
+        "bookSuccess": 99.9, 
+        "system": "QuickManager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "www.erevmax.com", 
+        "company": "Rate Tiger", 
+        "bookSuccess": 95.1, 
+        "system": "Rate Tiger Connect", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.erevmax.com", 
+        "company": "Rate Tiger", 
+        "bookSuccess": 99.5, 
+        "system": "Rate Tiger Suite", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://www.rategain.com/yieldgain_hotels.htm", 
+        "company": "RateGain", 
+        "bookSuccess": 99.5, 
+        "system": "RateGain", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://www.rategain.com/yieldgain_hotels.htm", 
+        "company": "RateGain", 
+        "bookSuccess": null, 
+        "system": "RateGain AR-Only", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "redawning.com", 
+        "company": "Redawning", 
+        "bookSuccess": 100.0, 
+        "system": "Redawning", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "rentalsunited.com", 
+        "company": "Rentals United Integration (formerly Holiday Velvet)", 
+        "bookSuccess": 96.4, 
+        "system": "Rentals United", 
+        "featuresSupported": [
+            "Product API"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 91.0
+    }, 
+    {
+        "website": "www.gastrodat.com", 
+        "company": "RESCON24", 
+        "bookSuccess": 84.7, 
+        "system": "Gastrodat", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "www.reservhotel.com", 
+        "company": "ReservHOTEL International", 
+        "bookSuccess": 98.3, 
+        "system": "Global Connection", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "http://www.resonline.com/", 
+        "company": "ResOnline", 
+        "bookSuccess": 98.9, 
+        "system": "ResOnline Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.3
+    }, 
+    {
+        "website": "www.resonline.ru", 
+        "company": "Resonline LLC", 
+        "bookSuccess": 98.7, 
+        "system": "Resonline LLC Europe", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 98.2
+    }, 
+    {
+        "website": "http://www.resortdata.com/", 
+        "company": "Resort Data Processing, Inc.", 
+        "bookSuccess": 89.5, 
+        "system": "RDPWin", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 83.4
+    }, 
+    {
+        "website": "www.resrequest.com", 
+        "company": "ResRequest", 
+        "bookSuccess": 85.0, 
+        "system": "ResRequest", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": null
+    }, 
+    {
+        "website": "www.revparguru.com", 
+        "company": "Revparguru", 
+        "bookSuccess": null, 
+        "system": "Revparguru Channel Manager for EQC", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.3
+    }, 
+    {
+        "website": "http://www.reznext.com/", 
+        "company": "RezNext Global Solutions", 
+        "bookSuccess": 99.8, 
+        "system": "RezNext", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.7
+    }, 
+    {
+        "website": "http://www.r-h-n.net", 
+        "company": "RHN", 
+        "bookSuccess": null, 
+        "system": "Rez Online", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.bukly.com", 
+        "company": "Rio Tera - Ag\u00eancia Web Ltda", 
+        "bookSuccess": 97.4, 
+        "system": "Bukly CM", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "https://www.rmscloud.com/", 
+        "company": "RMS (Aust) Pty Ltd", 
+        "bookSuccess": 98.0, 
+        "system": "RMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.1
+    }, 
+    {
+        "website": "http://www.roiback.com/", 
+        "company": "ROIBACK", 
+        "bookSuccess": 99.7, 
+        "system": "ROIBACK CRS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.mghworld.net", 
+        "company": "Roomito Online Pvt Ltd", 
+        "bookSuccess": 88.2, 
+        "system": "Roomito Channel Manager", 
+        "featuresSupported": [
+            "Product API"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "https://www.roomraccoon.com/en/all-in-one/pms/page", 
+        "company": "RoomRaccoon", 
+        "bookSuccess": 98.3, 
+        "system": "RoomRaccoon", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.4
+    }, 
+    {
+        "website": "www.roomsy.com", 
+        "company": "Roomsy", 
+        "bookSuccess": 95.1, 
+        "system": "Roomsy PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 94.9
+    }, 
+    {
+        "website": "www.roomkeypms.com", 
+        "company": "RSI International", 
+        "bookSuccess": 98.5, 
+        "system": "RoomKey", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 97.9
+    }, 
+    {
+        "website": "www.ruralgest.com", 
+        "company": "RuralGest Sistemas de Reservas S.L", 
+        "bookSuccess": 93.7, 
+        "system": "RuralGest", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 93.0
+    }, 
+    {
+        "website": "www.sabeeapp.com", 
+        "company": "SabeeApp", 
+        "bookSuccess": 99.7, 
+        "system": "SabeeApp", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.5
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 96.6, 
+        "system": "InnLink CRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 63.5
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.2, 
+        "system": "SynXis CRS  - Morgans", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 93.7
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.4, 
+        "system": "SynXis CRS - Club Quarters", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 89.1
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.9, 
+        "system": "SynXis CRS - Commune", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.1, 
+        "system": "SynXis CRS - Kimpton", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.8
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.1, 
+        "system": "SynXis CRS - Loews", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.8, 
+        "system": "SynXis CRS - Noble House", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.6, 
+        "system": "SynXis CRS - Northland", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.1
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.1, 
+        "system": "SynXis CRS - Pacifica", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.6, 
+        "system": "SynXis CRS - Rosewood", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 95.6
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.9, 
+        "system": "SynXis CRS - Shilo Inn", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 87.4
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.8, 
+        "system": "SynXis CRS - Sonesta", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.2, 
+        "system": "SynXis CRS - Trump International", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.6
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 99.6, 
+        "system": "SynXis CRS - Vantage Hospitality", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.4, 
+        "system": "SynXis CRS - Viceroy", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "http://www.sabrehospitality.com/", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
+        "bookSuccess": 98.6, 
+        "system": "SynXis CRS - Westmont", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Full Pattern Length of Stays: Arrival", 
+            "Full Pattern Length of Stays: Stay-Through"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "www.sanhait.co.kr", 
+        "company": "Sanha Information Technology INC", 
+        "bookSuccess": 99.6, 
+        "system": "Sanha", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.5
+    }, 
+    {
+        "website": "http://www.sceptrehospitality.com/", 
+        "company": "Sceptre Hospitality Resources", 
+        "bookSuccess": null, 
+        "system": "Value Place EQC", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "http://www.sceptrehospitality.com/", 
+        "company": "Sceptre Hospitality Resources", 
+        "bookSuccess": null, 
+        "system": "Value Place EQC - HMC", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "https://shr.global/", 
+        "company": "Sceptre Hospitality Resources", 
+        "bookSuccess": 97.1, 
+        "system": "Windsurfer CRS", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "www.syha.org.uk", 
+        "company": "Scottish Youth Hostels Association", 
+        "bookSuccess": 99.0, 
+        "system": "SYHA", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 97.3
+    }, 
+    {
+        "website": "https://www.seanuts.co.jp/", 
+        "company": "Seanuts Co., Ltd", 
+        "bookSuccess": 99.9, 
+        "system": "TL Lincoln", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.4
+    }, 
+    {
+        "website": "https://seekda.com/en/", 
+        "company": "Seekda Gmbh", 
+        "bookSuccess": 99.9, 
+        "system": "Seekda Channel Connect", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "web.seekom.com", 
+        "company": "Seekom", 
+        "bookSuccess": 99.4, 
+        "system": "iBex Accommodation", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.selena.net", 
+        "company": "Selena", 
+        "bookSuccess": 79.4, 
+        "system": "Hera Net Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 98.9
+    }, 
+    {
+        "website": "https://www.semper.co.za/", 
+        "company": "Semper", 
+        "bookSuccess": 99.5, 
+        "system": "Semper", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "http://www.sysdat-turismo.it/", 
+        "company": "Sigesgroup", 
+        "bookSuccess": 99.9, 
+        "system": "Sysdat", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "http://www.silverbyte.com/index.html", 
+        "company": "Silverbyte", 
+        "bookSuccess": 97.6, 
+        "system": "Optima PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.sinergiasoluciones.com.ar", 
+        "company": "Sinergia Soluciones", 
+        "bookSuccess": 90.1, 
+        "system": "Todoalojamiento.com", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 98.7
+    }, 
+    {
+        "website": "www.sirvoy.com", 
+        "company": "Sirvoy", 
+        "bookSuccess": 99.8, 
+        "system": "Sirvoy Reservation System", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 98.0
+    }, 
+    {
+        "website": "http://www.siteminder.com.au", 
+        "company": "Siteminder", 
+        "bookSuccess": 99.3, 
+        "system": "Siteminder RDXAmerica", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "http://www.siteminder.com.au", 
+        "company": "Siteminder", 
+        "bookSuccess": 98.5, 
+        "system": "Siteminder RDXAPAC", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "http://www.siteminder.com.au", 
+        "company": "Siteminder", 
+        "bookSuccess": 99.6, 
+        "system": "Siteminder RDXEurope", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.fnsrooms.com/", 
+        "company": "Sleep and Go S.L", 
+        "bookSuccess": 98.2, 
+        "system": "fnsManager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 67.0
+    }, 
+    {
+        "website": "www.slimtrader.com", 
+        "company": "Slimtrader", 
+        "bookSuccess": null, 
+        "system": "MoBiashara", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 77.5
+    }, 
+    {
+        "website": "http://www.smarthotel.nl", 
+        "company": "smartHOTEL.nl", 
+        "bookSuccess": 97.9, 
+        "system": "smartHOTEL.nl", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "http://yado.smijp.com/", 
+        "company": "SMI Co.,Ltd.", 
+        "bookSuccess": 96.3, 
+        "system": "Yadochokun", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "www.smoobu.com", 
+        "company": "Smoobu GmbH", 
+        "bookSuccess": 88.4, 
+        "system": "Smoobu Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.infor.com/", 
+        "company": "Softbrands INFOR", 
+        "bookSuccess": 96.2, 
+        "system": "HMS by Softbrands", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "www.krossbooking.com", 
+        "company": "Solutions Plus s.r.l.", 
+        "bookSuccess": 86.6, 
+        "system": "Kross Booking Suite", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 84.1
+    }, 
+    {
+        "website": "www.sonder.com", 
+        "company": "Sonder", 
+        "bookSuccess": 99.8, 
+        "system": "Sonder Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "www.staah.com", 
+        "company": "STAAH", 
+        "bookSuccess": 99.4, 
+        "system": "STAAH", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "www.cubilis.com", 
+        "company": "Stardekk", 
+        "bookSuccess": 99.8, 
+        "system": "Cubilis by Stardekk", 
+        "featuresSupported": [
+            "Product API", 
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "www.startnow.kr", 
+        "company": "Startnow", 
+        "bookSuccess": 82.6, 
+        "system": "All Inn", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 50.5
+    }, 
+    {
+        "website": "www.stays.net", 
+        "company": "Stays Solutions Limited", 
+        "bookSuccess": 88.3, 
+        "system": "stays\u2122", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.5
+    }, 
+    {
+        "website": "www.straitpms.com", 
+        "company": "Strait Solutions", 
+        "bookSuccess": 97.3, 
+        "system": "MyUkTravel", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 85.1
+    }, 
+    {
+        "website": "www.straitpms.com", 
+        "company": "Strait Solutions", 
+        "bookSuccess": 99.1, 
+        "system": "Strait PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 85.3
+    }, 
+    {
+        "website": "http://www.surehigh.com.tw/hotelnabe/", 
+        "company": "Surehigh International Technology Group", 
+        "bookSuccess": 97.6, 
+        "system": "Hotelnabe Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://switch.cm/", 
+        "company": "SWITCHBOARD", 
+        "bookSuccess": 98.5, 
+        "system": "SWITCH.CM", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Synthense LSI Software", 
+        "bookSuccess": 36.3, 
+        "system": "Hotel In", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 90.1
+    }, 
+    {
+        "website": "www.colibripms.com", 
+        "company": "TDS Network International", 
+        "bookSuccess": 99.6, 
+        "system": "WebPMSpro/ColibriPMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "www.parityrate.com", 
+        "company": "Tecnes Milano s.r.l", 
+        "bookSuccess": 97.9, 
+        "system": "RoomCloud/ParityRate", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "http://telicom.ca/", 
+        "company": "Telicom", 
+        "bookSuccess": 98.4, 
+        "system": "Hotelia PMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 96.5
+    }, 
+    {
+        "website": "www.temairazu.com", 
+        "company": "Temairazu", 
+        "bookSuccess": 100.0, 
+        "system": "Temairazu Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.5
+    }, 
+    {
+        "website": "http://www.tesipro.com/", 
+        "company": "Tesipro", 
+        "bookSuccess": 96.2, 
+        "system": "Sigh Ulyses", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "www.the-ascott.com", 
+        "company": "The Ascott Limited", 
+        "bookSuccess": 97.1, 
+        "system": "Capitaland (Ascott) ODX", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.tokeet.com", 
+        "company": "Tokeet", 
+        "bookSuccess": 95.1, 
+        "system": "Tokeet Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 95.3
+    }, 
+    {
+        "website": "www.bookingevolution.com", 
+        "company": "Tosom srl", 
+        "bookSuccess": 100.0, 
+        "system": "Booking Evolution", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 94.4
+    }, 
+    {
+        "website": "http://www.hotel-spider.com", 
+        "company": "Tourisoft", 
+        "bookSuccess": 91.0, 
+        "system": "Globres", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "http://www.hotel-spider.com/", 
+        "company": "Tourisoft", 
+        "bookSuccess": 97.5, 
+        "system": "Hotel-Spider", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 91.9
+    }, 
+    {
+        "website": "www.tomas.travel", 
+        "company": "Tourist Data Shop Ltd", 
+        "bookSuccess": 96.9, 
+        "system": "TOMAS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.dirs21.de/", 
+        "company": "TourOnline AG", 
+        "bookSuccess": 99.6, 
+        "system": "DIRS21", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.3
+    }, 
+    {
+        "website": "https://www.toyoko-inn.com/eng/", 
+        "company": "Toyoko Inn Co., Ltd", 
+        "bookSuccess": 96.9, 
+        "system": "Toyoko Inn Connectivity", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "www.vrbookings.com", 
+        "company": "Trading Estate Service srl", 
+        "bookSuccess": 99.7, 
+        "system": "VRBookings", 
+        "featuresSupported": [
+            "Value Add Promotions", 
+            "Displays All Point of Sale Brands"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "https://traiwan.com/", 
+        "company": "Traiwan", 
+        "bookSuccess": 97.8, 
+        "system": "Traiwan", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.2
+    }, 
+    {
+        "website": "http://www.travelclick.com/en/homepage", 
+        "company": "TravelClick", 
+        "bookSuccess": 97.7, 
+        "system": "TravelClick Channel Management", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "www.travelclick.com", 
+        "company": "TravelClick", 
+        "bookSuccess": 98.1, 
+        "system": "TravelClick iHotelier CRS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://travellineus.com", 
+        "company": "Travelline", 
+        "bookSuccess": 99.3, 
+        "system": "Travelline Channel Manager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.5
+    }, 
+    {
+        "website": "www.hoteratus.com", 
+        "company": "Trypid, Inc", 
+        "bookSuccess": 95.8, 
+        "system": "Hoteratus", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 90.7
+    }, 
+    {
+        "website": "NULL", 
+        "company": "UAB GTI SOLUTIONS", 
+        "bookSuccess": null, 
+        "system": "YieldPartner Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.univisit.net", 
+        "company": "UniVisit", 
+        "bookSuccess": 72.7, 
+        "system": "UniVisit CDMS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.0
+    }, 
+    {
+        "website": "www.update247.com.au", 
+        "company": "Update247", 
+        "bookSuccess": 99.7, 
+        "system": "Update247 CM", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.8
+    }, 
+    {
+        "website": "http://useross.com.au/", 
+        "company": "UseRoss", 
+        "bookSuccess": 99.6, 
+        "system": "UseRoss EQC", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 100.0
+    }, 
+    {
+        "website": "http://www.vacationspal.com/", 
+        "company": "Vacationspal", 
+        "bookSuccess": 96.0, 
+        "system": "Vacationspal", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "NULL", 
+        "company": "Vertical Booking", 
+        "bookSuccess": 99.7, 
+        "system": "Booking Blastness", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "https://www.verticalbooking.com/en", 
+        "company": "Vertical Booking", 
+        "bookSuccess": 99.6, 
+        "system": "Vertical Booking", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 98.4
+    }, 
+    {
+        "website": "http://viato.travel", 
+        "company": "Viato Travel", 
+        "bookSuccess": 99.8, 
+        "system": "Viato ChannelManager", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure", 
+            "Advanced Purchase"
+        ], 
+        "type": "CM", 
+        "availSuccess": 96.0
+    }, 
+    {
+        "website": "www.bookvisit.com", 
+        "company": "Visit Technology", 
+        "bookSuccess": 99.8, 
+        "system": "BookVisit", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 97.7
+    }, 
+    {
+        "website": "https://www.wanda.cn/", 
+        "company": "Wanda Hotels & Resorts", 
+        "bookSuccess": 93.6, 
+        "system": "KWS", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 98.6
+    }, 
+    {
+        "website": "www.wealthywalker.com", 
+        "company": "Wealthywalker", 
+        "bookSuccess": 88.1, 
+        "system": "Wealthywalker", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 97.1
+    }, 
+    {
+        "website": "http://www.webdatasoftware.com/", 
+        "company": "Web Data Software, LLC", 
+        "bookSuccess": null, 
+        "system": "Elliott Realty PMS for EQC", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "www.webres.de", 
+        "company": "webres GmbH", 
+        "bookSuccess": 99.9, 
+        "system": "Web.res", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.2
+    }, 
+    {
+        "website": "http://welcome-systems.uk", 
+        "company": "Welcome Computer Systems", 
+        "bookSuccess": 99.7, 
+        "system": "Welcome Connect", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "https://www.webrezpro.com/", 
+        "company": "World Web Technologies", 
+        "bookSuccess": 97.2, 
+        "system": "WebRezPro-PMS", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "PMS", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://wubook.net", 
+        "company": "Wubook Srl", 
+        "bookSuccess": 98.6, 
+        "system": "WooDoo", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://www.channelmessenger.com/", 
+        "company": "Xmedia", 
+        "bookSuccess": 78.3, 
+        "system": "Channel Messenger", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.1
+    }, 
+    {
+        "website": "http://www.xnprotel.com/", 
+        "company": "XN Hotel Systems", 
+        "bookSuccess": 90.6, 
+        "system": "XN Hotel Systems", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "https://www.xotelia.com/", 
+        "company": "Xotelia", 
+        "bookSuccess": 98.3, 
+        "system": "Xotelia", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "https://www.planyo.com", 
+        "company": "Xtreeme GmbH", 
+        "bookSuccess": 100.0, 
+        "system": "Planyo", 
+        "featuresSupported": [
+            "Value Add Promotions"
+        ], 
+        "restrictionsSupported": [], 
+        "type": "CRS", 
+        "availSuccess": 99.4
+    }, 
+    {
+        "website": "www.xyzt.pt", 
+        "company": "XYZT", 
+        "bookSuccess": 98.5, 
+        "system": "e-GDS Channel Manager", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.0
+    }, 
+    {
+        "website": "http://www.yadoken.net/", 
+        "company": "Yadoken", 
+        "bookSuccess": null, 
+        "system": "Yadoken", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.8
+    }, 
+    {
+        "website": "https://www.easybooking.at/en/", 
+        "company": "Zadego GmbH", 
+        "bookSuccess": 98.9, 
+        "system": "easybooking / zadego GmbH", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 96.8
+    }, 
+    {
+        "website": "http://zari.me", 
+        "company": "ZARI (Yellotravel Inc.)", 
+        "bookSuccess": 95.3, 
+        "system": "ZARI", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "PMS", 
+        "availSuccess": 94.0
+    }
+]
 });
