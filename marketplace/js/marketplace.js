@@ -86,7 +86,7 @@ define(function() {
                 typeCRS: false,
                 liveSupport: false,
                 productUpdate: false,
-                sortedBy: 'score',
+                sortedBy: 'system',
                 providers: [],
             },
             methods: {

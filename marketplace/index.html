@@ -73,7 +73,7 @@ function googleTranslateElementInit() {
               <select v-model="sortedBy">
                 <option value="" disabled>Sort by:</option>
                 <option value="system">System Name</option>
-                <option value="vendor">Provider Name</option>
+                <option value="company">Provider Name</option>
               </select>
             </div>
             <a data-toggle="off-canvas">Filters</a>
@@ -83,10 +83,6 @@ function googleTranslateElementInit() {
             <a class="button" v-on:click="sortedBy = 'system'" v-bind:class="{active: sortedBy == 'system'}">System Name</a>
             <a class="button" v-on:click="sortedBy = 'company'" v-bind:class="{active: sortedBy == 'company'}">Provider Name</a>
           </div>
-        </div>
-
-        <div class="clearfix">
-          <p class="help-text float-right">See how we score our providers</p>
         </div>
 
         <div class="provider-list">
