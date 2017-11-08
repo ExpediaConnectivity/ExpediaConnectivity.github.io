@@ -12,8 +12,10 @@ body,
   border-color: #858585 #c2c2c2 #c2c2c2;
 }
 .systems span.label {
-  padding: 0.15rem 0.3rem;
-  border-radius: 2px;
+  padding: 0.23rem 0.35rem 0.2rem 0.35rem;
+  border-radius: 3px;
+  letter-spacing: 0.1em;
+  line-height: 1.1em;
 }
 .systems .CM span.label {
   background-color: #6cc86d;
@@ -23,6 +25,32 @@ body,
 }
 .systems .CRS span.label {
   background-color: #f5a362;
+}
+#system-details header div {
+  display: inline-block;
+}
+#system-details header h3 {
+  margin-right: 0.5em;
+}
+.type {
+  vertical-align: top;
+  margin-right: 2em;
+  margin-bottom: 1em;
+  margin-top: .35em;
+}
+.link-button {
+  background-color: #1c5cb5;
+  color: #fefefe;
+  padding: 0.3rem 0.8rem 0.4rem 0.8rem;
+  float: right;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  border-radius: 3px;
+  border: 1px;
+  border-style: outset;
+  border-color: #5e5e5e;
+  letter-spacing: 0.1em;
+  cursor: pointer;
 }
 .filter input[type="checkbox"],
 .filter input[type="radio"] {

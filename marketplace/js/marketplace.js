@@ -6,6 +6,7 @@ define(function() {
             system: '',
             company: '',
             type: '',
+            website: '',
             arRate: 0,
             bcRate: 0,
             availableFeatures: [
@@ -50,6 +51,7 @@ define(function() {
                 this.system = p['system'];
                 this.company = p['company'];
                 this.type = p['type'];
+                this.website = p['website'];
                 if (p['availSuccess']) {
                     this.arRate = p['availSuccess'];
                 }
@@ -66,6 +68,9 @@ define(function() {
             },
             restrictionSupported: function(r) {
                 return this.restrictionsSupported && this.restrictionsSupported.indexOf(r) >= 0;
+            },
+            openWebsite: function() {
+                window.open(this.website);
             }
         },
         mounted: function() {

@@ -1,7 +1,7 @@
 define({allProviders:  
 [
     {
-        "website": "www.1hotelrez.com", 
+        "website": "http://www.1hotelrez.com", 
         "company": "1HotelSolution.com Co., Ltd.", 
         "bookSuccess": 86.8, 
         "system": "1HotelRez", 
@@ -33,7 +33,7 @@ define({allProviders:
         "availSuccess": 97.5
     }, 
     {
-        "website": "accubook.net", 
+        "website": "http://accubook.net", 
         "company": "Accubook", 
         "bookSuccess": 99.2, 
         "system": "AccuSell", 
@@ -64,7 +64,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.activemetrics.com", 
+        "website": "http://www.activemetrics.com", 
         "company": "Active Metrics", 
         "bookSuccess": 97.2, 
         "system": "Synergy", 
@@ -77,7 +77,7 @@ define({allProviders:
         "availSuccess": 94.9
     }, 
     {
-        "website": "www.dormproject.ch", 
+        "website": "http://www.dormproject.ch", 
         "company": "alixon gmbh", 
         "bookSuccess": 98.4, 
         "system": "HostelOffice / DormProject", 
@@ -92,7 +92,7 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "www.allotz.com", 
+        "website": "http://www.allotz.com", 
         "company": "Allotz", 
         "bookSuccess": 66.0, 
         "system": "Allotz Channel Manager", 
@@ -124,7 +124,7 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "www.AnandSystems.com", 
+        "website": "http://www.AnandSystems.com", 
         "company": "Anand Systems Inc", 
         "bookSuccess": 99.8, 
         "system": "ASI Front Desk (v5.3+)", 
@@ -142,7 +142,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.ratewizz.com", 
+        "website": "http://www.ratewizz.com", 
         "company": "AROBS Transilvania Software", 
         "bookSuccess": 97.8, 
         "system": "RateWizz", 
@@ -219,17 +219,7 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "NULL", 
-        "company": "Aurum Marketing srl", 
-        "bookSuccess": 95.4, 
-        "system": "Aurum Hotels Interface", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CRS", 
-        "availSuccess": 100.0
-    }, 
-    {
-        "website": "www.avaibook.com", 
+        "website": "http://www.avaibook.com", 
         "company": "AvaiBook", 
         "bookSuccess": 97.7, 
         "system": "AvaiBook", 
@@ -262,7 +252,7 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "www.availroom.com", 
+        "website": "http://www.availroom.com", 
         "company": "AVAILROOM S.L.", 
         "bookSuccess": 99.8, 
         "system": "AVAILROOM", 
@@ -280,7 +270,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.avantio.es", 
+        "website": "http://www.avantio.es", 
         "company": "Avantio VRMS", 
         "bookSuccess": 41.7, 
         "system": "Avantio", 
@@ -295,7 +285,7 @@ define({allProviders:
         "availSuccess": 97.4
     }, 
     {
-        "website": "www.resavenue.com", 
+        "website": "http://www.resavenue.com", 
         "company": "Avenues South Asias", 
         "bookSuccess": 97.8, 
         "system": "ResAvenue Channel Manager", 
@@ -310,7 +300,7 @@ define({allProviders:
         "availSuccess": 95.7
     }, 
     {
-        "website": "www.avirato.com", 
+        "website": "http://www.avirato.com", 
         "company": "Avirato", 
         "bookSuccess": 96.9, 
         "system": "Avirato", 
@@ -320,7 +310,7 @@ define({allProviders:
         "availSuccess": 93.5
     }, 
     {
-        "website": "www.axisrooms.com", 
+        "website": "http://www.axisrooms.com", 
         "company": "AxisRooms Travel Distribution Solutions Pvt. Ltd.", 
         "bookSuccess": 97.2, 
         "system": "AxisRooms", 
@@ -338,7 +328,7 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "www.b4checkin.com", 
+        "website": "http://www.b4checkin.com", 
         "company": "b4checkin", 
         "bookSuccess": 95.2, 
         "system": "B4Checkin", 
@@ -356,7 +346,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.octorate.com", 
+        "website": "http://www.octorate.com", 
         "company": "BBliverate Octorate", 
         "bookSuccess": 87.3, 
         "system": "Octorate", 
@@ -372,7 +362,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.beds24.com", 
+        "website": "http://www.beds24.com", 
         "company": "beds24", 
         "bookSuccess": 99.1, 
         "system": "Beds24 PMS", 
@@ -390,7 +380,7 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "www.begenius.it", 
+        "website": "http://www.begenius.it", 
         "company": "BeGenius", 
         "bookSuccess": 92.9, 
         "system": "BookinGenius", 
@@ -407,7 +397,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.360pms.com", 
+        "website": "http://www.360pms.com", 
         "company": "Beijing Miot. Ltd.", 
         "bookSuccess": 98.9, 
         "system": "Yunzhanggui", 
@@ -421,7 +411,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.igems.co.za", 
+        "website": "http://www.igems.co.za", 
         "company": "Berry Software", 
         "bookSuccess": 93.5, 
         "system": "iGems", 
@@ -449,16 +439,6 @@ define({allProviders:
         "availSuccess": 89.8
     }, 
     {
-        "website": "NULL", 
-        "company": "Bohemia REI", 
-        "bookSuccess": 84.3, 
-        "system": "Pattayasunnyrentals.net", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 97.2
-    }, 
-    {
         "website": "http://www.bookandlink.com", 
         "company": "BookandLink", 
         "bookSuccess": 92.6, 
@@ -471,7 +451,7 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "bookassist.com", 
+        "website": "http://bookassist.com", 
         "company": "Bookassist", 
         "bookSuccess": 92.8, 
         "system": "Channel Connect", 
@@ -498,7 +478,7 @@ define({allProviders:
         "availSuccess": 94.2
     }, 
     {
-        "website": "BookingAutomation.com", 
+        "website": "http://BookingAutomation.com", 
         "company": "Booking Automation Inc", 
         "bookSuccess": 95.1, 
         "system": "BookingAutomation", 
@@ -513,7 +493,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.bookingexperts.com", 
+        "website": "http://www.bookingexperts.com", 
         "company": "Booking Experts", 
         "bookSuccess": 92.3, 
         "system": "Booking Experts", 
@@ -528,7 +508,7 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "www.bookingcenter.com", 
+        "website": "http://www.bookingcenter.com", 
         "company": "BookingCenter", 
         "bookSuccess": 99.8, 
         "system": "BookingCenter", 
@@ -559,7 +539,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "IMPORTANT", 
+        "website": "http://IMPORTANT", 
         "company": "BookingPal", 
         "bookSuccess": 95.5, 
         "system": "BookingPal", 
@@ -578,7 +558,7 @@ define({allProviders:
         "availSuccess": 95.4
     }, 
     {
-        "website": "www.BookLogic.net", 
+        "website": "http://www.BookLogic.net", 
         "company": "BookLogic", 
         "bookSuccess": 86.6, 
         "system": "MaxiChannel Manager", 
@@ -588,7 +568,7 @@ define({allProviders:
         "availSuccess": 88.9
     }, 
     {
-        "website": "www.brasilbookings.com.br", 
+        "website": "http://www.brasilbookings.com.br", 
         "company": "Brasil Bookings", 
         "bookSuccess": 95.9, 
         "system": "Brasil Bookings", 
@@ -604,7 +584,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "www.busy-rooms.com", 
+        "website": "http://www.busy-rooms.com", 
         "company": "BusyRooms", 
         "bookSuccess": 98.9, 
         "system": "BusyRooms", 
@@ -621,7 +601,7 @@ define({allProviders:
         "availSuccess": 97.4
     }, 
     {
-        "website": "SwissQualityHotels.com", 
+        "website": "http://SwissQualityHotels.com", 
         "company": "CE Computer Engineering AG", 
         "bookSuccess": 99.5, 
         "system": "QOnline CRS", 
@@ -637,7 +617,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "channelmanager.com.au", 
+        "website": "http://channelmanager.com.au", 
         "company": "ChannelManager.com.au", 
         "bookSuccess": 86.5, 
         "system": "ChannelManager.com.au", 
@@ -649,7 +629,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.channelrush.com", 
+        "website": "http://www.channelrush.com", 
         "company": "ChannelRUSH", 
         "bookSuccess": 85.2, 
         "system": "ChannelRUSH Channel Manager", 
@@ -667,7 +647,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.chelagarto.com", 
+        "website": "http://www.chelagarto.com", 
         "company": "Che Lagarto Hostel", 
         "bookSuccess": 19.4, 
         "system": "Che Lagarto", 
@@ -711,7 +691,7 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "www.clubmahindra.com", 
+        "website": "http://www.clubmahindra.com", 
         "company": "Club Mahindra Hotels & Resorts", 
         "bookSuccess": null, 
         "system": "Crest CRS", 
@@ -721,7 +701,7 @@ define({allProviders:
         "availSuccess": 77.4
     }, 
     {
-        "website": "www.compusoft.dk", 
+        "website": "http://www.compusoft.dk", 
         "company": "Compusoft", 
         "bookSuccess": 97.0, 
         "system": "Compusoft", 
@@ -769,7 +749,7 @@ define({allProviders:
         "availSuccess": 98.9
     }, 
     {
-        "website": "www.cultuzz.de", 
+        "website": "http://www.cultuzz.de", 
         "company": "Cultuzz", 
         "bookSuccess": 96.6, 
         "system": "Cultuzz Channel Manager", 
@@ -783,7 +763,7 @@ define({allProviders:
         "availSuccess": 96.2
     }, 
     {
-        "website": "www.bookon.org", 
+        "website": "http://www.bookon.org", 
         "company": "CWD S.r.l", 
         "bookSuccess": 99.9, 
         "system": "BookOn", 
@@ -800,7 +780,7 @@ define({allProviders:
         "availSuccess": 94.9
     }, 
     {
-        "website": "www.thinkreservations.com", 
+        "website": "http://www.thinkreservations.com", 
         "company": "DeepThink LLC", 
         "bookSuccess": 98.2, 
         "system": "ThinkReservations", 
@@ -858,7 +838,7 @@ define({allProviders:
         "availSuccess": 96.7
     }, 
     {
-        "website": "www.hoteldruid.com", 
+        "website": "http://www.hoteldruid.com", 
         "company": "DigitalDruid", 
         "bookSuccess": 96.7, 
         "system": "HotelDruid", 
@@ -940,7 +920,7 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "cabovillas.com", 
+        "website": "http://cabovillas.com", 
         "company": "Earth, Sea & Sky Vacations", 
         "bookSuccess": null, 
         "system": "V12/ISILink", 
@@ -976,7 +956,7 @@ define({allProviders:
         "availSuccess": 95.4
     }, 
     {
-        "website": "www.obehotel.com", 
+        "website": "http://www.obehotel.com", 
         "company": "Efimatica", 
         "bookSuccess": 95.4, 
         "system": "Obehotel", 
@@ -991,21 +971,7 @@ define({allProviders:
         "availSuccess": 96.3
     }, 
     {
-        "website": "NULL", 
-        "company": "eGate by CNS", 
-        "bookSuccess": 96.7, 
-        "system": "eGate by CNS", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "PMS", 
-        "availSuccess": 99.8
-    }, 
-    {
-        "website": "www.engisoft.com", 
+        "website": "http://www.engisoft.com", 
         "company": "Engisoft", 
         "bookSuccess": 97.9, 
         "system": "Bird iCRS", 
@@ -1023,7 +989,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.engisoft.com", 
+        "website": "http://www.engisoft.com", 
         "company": "Engisoft", 
         "bookSuccess": 98.4, 
         "system": "Bird iCRS - Acta Hotels", 
@@ -1054,7 +1020,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.ericsoft.com", 
+        "website": "http://www.ericsoft.com", 
         "company": "Ericsoft", 
         "bookSuccess": 99.2, 
         "system": "Ericsoft ChannelManager", 
@@ -1085,7 +1051,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "www.ezeeabsolute.com", 
+        "website": "http://www.ezeeabsolute.com", 
         "company": "eZee Technosys", 
         "bookSuccess": 98.0, 
         "system": "eZee Absolute", 
@@ -1101,7 +1067,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.ezeecentrix.com", 
+        "website": "http://www.ezeecentrix.com", 
         "company": "eZee Technosys", 
         "bookSuccess": 97.4, 
         "system": "eZee Centrix", 
@@ -1127,17 +1093,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "NULL", 
-        "company": "Fairbridge Inns EQC", 
-        "bookSuccess": 96.0, 
-        "system": "FairCloud PMS", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "PMS", 
-        "availSuccess": 94.6
-    }, 
-    {
-        "website": "www.xmitter.com", 
+        "website": "http://www.xmitter.com", 
         "company": "Fairbridge Inns EQC", 
         "bookSuccess": 36.5, 
         "system": "xMitter", 
@@ -1167,7 +1123,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.evols.it", 
+        "website": "http://www.evols.it", 
         "company": "Figaro", 
         "bookSuccess": 98.2, 
         "system": "Figaro - Channel Manager", 
@@ -1181,7 +1137,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.finite-soft.com", 
+        "website": "http://www.finite-soft.com", 
         "company": "Finite-Systems", 
         "bookSuccess": 99.9, 
         "system": "Finite Software Systems CM", 
@@ -1210,7 +1166,7 @@ define({allProviders:
         "availSuccess": 94.6
     }, 
     {
-        "website": "www.freetobook.com", 
+        "website": "http://www.freetobook.com", 
         "company": "Freetobook", 
         "bookSuccess": 98.6, 
         "system": "Freetobook System", 
@@ -1229,7 +1185,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "frontdeskanywhere.com", 
+        "website": "http://frontdeskanywhere.com", 
         "company": "Frontdesk Anywhere", 
         "bookSuccess": 96.2, 
         "system": "Frontdesk Anywhere PMS", 
@@ -1239,7 +1195,7 @@ define({allProviders:
         "availSuccess": 84.8
     }, 
     {
-        "website": "frontdesk24.ru", 
+        "website": "http://frontdesk24.ru", 
         "company": "Frontdesk24", 
         "bookSuccess": 85.9, 
         "system": "Frontdesk24", 
@@ -1254,7 +1210,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "galaxy-hotels.fr", 
+        "website": "http://galaxy-hotels.fr", 
         "company": "Galaxy H\u00f4tels", 
         "bookSuccess": 99.5, 
         "system": "Galaxy H\u00f4tels", 
@@ -1269,7 +1225,7 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "www.gestionealbergo.it", 
+        "website": "http://www.gestionealbergo.it", 
         "company": "Gestione Albergo Srl", 
         "bookSuccess": 97.5, 
         "system": "LeoPortals Manager", 
@@ -1309,7 +1265,7 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "globalservicedapts.com", 
+        "website": "http://globalservicedapts.com", 
         "company": "Global Serviced Apartments", 
         "bookSuccess": 99.8, 
         "system": "Global Serviced Apartments, LLC", 
@@ -1337,7 +1293,7 @@ define({allProviders:
         "availSuccess": 89.2
     }, 
     {
-        "website": "www.gna.es", 
+        "website": "http://www.gna.es", 
         "company": "GNA", 
         "bookSuccess": 99.4, 
         "system": "GnaHS Channel Manager", 
@@ -1365,7 +1321,7 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "www.syncrez.com", 
+        "website": "http://www.syncrez.com", 
         "company": "Greeka / Syncrez", 
         "bookSuccess": 85.4, 
         "system": "Syncrez", 
@@ -1431,7 +1387,7 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "www.guestcentric.com", 
+        "website": "http://www.guestcentric.com", 
         "company": "GuestCentric Systems", 
         "bookSuccess": 99.5, 
         "system": "Evolution CRS", 
@@ -1466,7 +1422,7 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "www.guestline.com", 
+        "website": "http://www.guestline.com", 
         "company": "Guestline Ltd", 
         "bookSuccess": 99.9, 
         "system": "Roomlynx", 
@@ -1536,7 +1492,7 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "www.hirum.com.au", 
+        "website": "http://www.hirum.com.au", 
         "company": "Hirum", 
         "bookSuccess": 99.8, 
         "system": "Hisite", 
@@ -1625,7 +1581,7 @@ define({allProviders:
         "availSuccess": 96.9
     }, 
     {
-        "website": "www.hostpms.com", 
+        "website": "http://www.hostpms.com", 
         "company": "Host Hotel Systems", 
         "bookSuccess": 99.1, 
         "system": "Host PMS", 
@@ -1640,7 +1596,7 @@ define({allProviders:
         "availSuccess": 98.2
     }, 
     {
-        "website": "www.hostaway.com", 
+        "website": "http://www.hostaway.com", 
         "company": "Hostaway", 
         "bookSuccess": 85.4, 
         "system": "Hostaway", 
@@ -1664,7 +1620,7 @@ define({allProviders:
         "availSuccess": 98.5
     }, 
     {
-        "website": "www.frontdeskmaster.com", 
+        "website": "http://www.frontdeskmaster.com", 
         "company": "Hostel System", 
         "bookSuccess": 98.1, 
         "system": "FrontDesk Master", 
@@ -1712,7 +1668,7 @@ define({allProviders:
         "availSuccess": 93.4
     }, 
     {
-        "website": "www.hotellinksolutions.com", 
+        "website": "http://www.hotellinksolutions.com", 
         "company": "Hotel Link Solutions", 
         "bookSuccess": 95.0, 
         "system": "Hotel Link Solutions", 
@@ -1729,7 +1685,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.hotel-profi.de", 
+        "website": "http://www.hotel-profi.de", 
         "company": "Hotel Profi", 
         "bookSuccess": 87.7, 
         "system": "Hotel Profi", 
@@ -1743,7 +1699,7 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "www.hotelstory.com", 
+        "website": "http://www.hotelstory.com", 
         "company": "Hotel Story", 
         "bookSuccess": 85.5, 
         "system": "Hotelstory", 
@@ -1758,7 +1714,7 @@ define({allProviders:
         "availSuccess": 89.5
     }, 
     {
-        "website": "travelaps.com", 
+        "website": "http://travelaps.com", 
         "company": "Hoteladvisor.net", 
         "bookSuccess": 80.9, 
         "system": "Hoteladvisor", 
@@ -1773,7 +1729,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.hotelan.com", 
+        "website": "http://www.hotelan.com", 
         "company": "Hotelan", 
         "bookSuccess": null, 
         "system": "ComHotel", 
@@ -1800,17 +1756,7 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "NULL", 
-        "company": "hoteliers.com", 
-        "bookSuccess": 98.0, 
-        "system": "hoteliers.com", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 99.9
-    }, 
-    {
-        "website": "www.hoteliga.com", 
+        "website": "http://www.hoteliga.com", 
         "company": "Hoteliga", 
         "bookSuccess": 99.1, 
         "system": "Hoteliga", 
@@ -1827,7 +1773,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.hotel-net.it", 
+        "website": "http://www.hotel-net.it", 
         "company": "HotelNet", 
         "bookSuccess": 99.3, 
         "system": "HotelNet CRS", 
@@ -1845,7 +1791,7 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "www.hotelnetsolutions.de", 
+        "website": "http://www.hotelnetsolutions.de", 
         "company": "HotelNetSolutions", 
         "bookSuccess": 98.7, 
         "system": "HotelNetSolutions", 
@@ -1861,7 +1807,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.hoteloga.com", 
+        "website": "http://www.hoteloga.com", 
         "company": "Hoteloga", 
         "bookSuccess": 15.8, 
         "system": "HotelOga", 
@@ -1875,7 +1821,7 @@ define({allProviders:
         "availSuccess": null
     }, 
     {
-        "website": "hotelpartner-ym.com", 
+        "website": "http://hotelpartner-ym.com", 
         "company": "HotelPartner", 
         "bookSuccess": 99.6, 
         "system": "HotelPartner CRS", 
@@ -1889,7 +1835,7 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "www.hotelrunner.com", 
+        "website": "http://www.hotelrunner.com", 
         "company": "HotelRunner", 
         "bookSuccess": 98.0, 
         "system": "HotelRunner", 
@@ -1907,7 +1853,7 @@ define({allProviders:
         "availSuccess": 96.7
     }, 
     {
-        "website": "www.hotelwebservice.com", 
+        "website": "http://www.hotelwebservice.com", 
         "company": "HotelWebservice GMBH", 
         "bookSuccess": 96.6, 
         "system": "HotelWebservice Channel Manager", 
@@ -1933,7 +1879,7 @@ define({allProviders:
         "availSuccess": 97.4
     }, 
     {
-        "website": "www.hsystem.com.br", 
+        "website": "http://www.hsystem.com.br", 
         "company": "HSystem", 
         "bookSuccess": 97.8, 
         "system": "HUNIT", 
@@ -1947,7 +1893,7 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "www.hubs1.net", 
+        "website": "http://www.hubs1.net", 
         "company": "Hubs1", 
         "bookSuccess": 86.2, 
         "system": "Hubs1", 
@@ -2053,7 +1999,7 @@ define({allProviders:
         "availSuccess": 61.0
     }, 
     {
-        "website": "www.idiso.com", 
+        "website": "http://www.idiso.com", 
         "company": "Idiso", 
         "bookSuccess": 99.4, 
         "system": "Idiso", 
@@ -2071,7 +2017,7 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "www.idiso.com", 
+        "website": "http://www.idiso.com", 
         "company": "Idiso", 
         "bookSuccess": 99.6, 
         "system": "Sirius", 
@@ -2118,7 +2064,7 @@ define({allProviders:
         "availSuccess": 88.9
     }, 
     {
-        "website": "www.my-bookings.org/", 
+        "website": "http://www.my-bookings.org/", 
         "company": "IMS Media", 
         "bookSuccess": 98.8, 
         "system": "My Bookings", 
@@ -2165,7 +2111,7 @@ define({allProviders:
         "availSuccess": 94.5
     }, 
     {
-        "website": "www.innstyle.co.uk", 
+        "website": "http://www.innstyle.co.uk", 
         "company": "Inn Style", 
         "bookSuccess": 99.5, 
         "system": "Inn Style", 
@@ -2211,7 +2157,7 @@ define({allProviders:
         "availSuccess": 95.3
     }, 
     {
-        "website": "www.innquest.com", 
+        "website": "http://www.innquest.com", 
         "company": "InnQuest Software", 
         "bookSuccess": 97.0, 
         "system": "roomMaster", 
@@ -2228,7 +2174,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.innroad.com", 
+        "website": "http://www.innroad.com", 
         "company": "innRoad", 
         "bookSuccess": 99.1, 
         "system": "innRoad PMS", 
@@ -2244,7 +2190,7 @@ define({allProviders:
         "availSuccess": 93.6
     }, 
     {
-        "website": "www.innsoft.com", 
+        "website": "http://www.innsoft.com", 
         "company": "Innsoft, Incorporated", 
         "bookSuccess": 94.9, 
         "system": "Check-Inn PMS", 
@@ -2292,7 +2238,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.reservit.com", 
+        "website": "http://www.reservit.com", 
         "company": "Interface Technologies", 
         "bookSuccess": 99.3, 
         "system": "Reservit - Brithotel", 
@@ -2309,7 +2255,7 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "www.reservit.com", 
+        "website": "http://www.reservit.com", 
         "company": "Interface Technologies", 
         "bookSuccess": 99.8, 
         "system": "Reservit - Citotel", 
@@ -2326,7 +2272,7 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "www.reservit.com", 
+        "website": "http://www.reservit.com", 
         "company": "Interface Technologies", 
         "bookSuccess": 99.0, 
         "system": "Reservit - FastHotel", 
@@ -2394,7 +2340,7 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "www.softbooker.com", 
+        "website": "http://www.softbooker.com", 
         "company": "Interface Technologies", 
         "bookSuccess": 99.6, 
         "system": "ReservIT Softbooker Canada", 
@@ -2411,7 +2357,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.easyram.it", 
+        "website": "http://www.easyram.it", 
         "company": "Internettare", 
         "bookSuccess": 79.3, 
         "system": "Easyram", 
@@ -2425,7 +2371,7 @@ define({allProviders:
         "availSuccess": 95.2
     }, 
     {
-        "website": "www.iperbooking.com", 
+        "website": "http://www.iperbooking.com", 
         "company": "Ipernet", 
         "bookSuccess": 99.9, 
         "system": "Iperbooking channel Manager", 
@@ -2439,7 +2385,7 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "www.hotelboss.dk", 
+        "website": "http://www.hotelboss.dk", 
         "company": "Ipnordic A/S", 
         "bookSuccess": 100.0, 
         "system": "HotelBoss", 
@@ -2454,7 +2400,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.iqwareinc.com/", 
+        "website": "http://www.iqwareinc.com/", 
         "company": "IQWARE", 
         "bookSuccess": 85.2, 
         "system": "IQWare PMS", 
@@ -2464,7 +2410,7 @@ define({allProviders:
         "availSuccess": 85.0
     }, 
     {
-        "website": "rabbitjets.com", 
+        "website": "http://rabbitjets.com", 
         "company": "ITF CROUP CO.", 
         "bookSuccess": 87.6, 
         "system": "RabbitJetsPMS", 
@@ -2495,7 +2441,7 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "www.ke-booking.com", 
+        "website": "http://www.ke-booking.com", 
         "company": "KE-Booking", 
         "bookSuccess": 80.4, 
         "system": "KE-Booking CRS", 
@@ -2510,7 +2456,7 @@ define({allProviders:
         "availSuccess": 94.1
     }, 
     {
-        "website": "www.hotres.pl", 
+        "website": "http://www.hotres.pl", 
         "company": "LemonPixel.pl", 
         "bookSuccess": 98.6, 
         "system": "Hotres.pl", 
@@ -2541,7 +2487,7 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "www.lodgegate.com", 
+        "website": "http://www.lodgegate.com", 
         "company": "Lodgegate", 
         "bookSuccess": 99.4, 
         "system": "Lodgegate PMS", 
@@ -2557,7 +2503,7 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "www.luxuryres.com", 
+        "website": "http://www.luxuryres.com", 
         "company": "LuxuryRes", 
         "bookSuccess": 97.2, 
         "system": "EzRes", 
@@ -2574,7 +2520,7 @@ define({allProviders:
         "availSuccess": 90.4
     }, 
     {
-        "website": "www.madeep.com", 
+        "website": "http://www.madeep.com", 
         "company": "Madeep", 
         "bookSuccess": 99.1, 
         "system": "Mad Booking", 
@@ -2603,7 +2549,7 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "www.mallorcasoft.es", 
+        "website": "http://www.mallorcasoft.es", 
         "company": "Mallorca Soft", 
         "bookSuccess": 69.1, 
         "system": "Astro Hotel", 
@@ -2617,7 +2563,7 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "www.maximojo.com", 
+        "website": "http://www.maximojo.com", 
         "company": "MaxiMojo Software (Pvt.) Ltd", 
         "bookSuccess": 100.0, 
         "system": "Hospitality Solutions Mantra", 
@@ -2634,24 +2580,7 @@ define({allProviders:
         "availSuccess": 90.6
     }, 
     {
-        "website": "NULL", 
-        "company": "MaxiMojo Software (Pvt.) Ltd", 
-        "bookSuccess": 85.3, 
-        "system": "Hotel Mantra", 
-        "featuresSupported": [
-            "Value Add Promotions"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 92.3
-    }, 
-    {
-        "website": "www.maxxton.com", 
+        "website": "http://www.maxxton.com", 
         "company": "Maxxton India Technologies Pvt. Ltd.", 
         "bookSuccess": 92.1, 
         "system": "Newyse", 
@@ -2666,7 +2595,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.magellano.info", 
+        "website": "http://www.magellano.info", 
         "company": "MediaLab Sofware Engineering S.N.C.", 
         "bookSuccess": 91.2, 
         "system": "MainApps - Magellano", 
@@ -2739,7 +2668,7 @@ define({allProviders:
         "availSuccess": 92.4
     }, 
     {
-        "website": "www.minihotelpms.com", 
+        "website": "http://www.minihotelpms.com", 
         "company": "Motel Software Solutions", 
         "bookSuccess": 98.3, 
         "system": "Mini Hotel", 
@@ -2753,7 +2682,7 @@ define({allProviders:
         "availSuccess": 92.0
     }, 
     {
-        "website": "www.booknowhotel.com", 
+        "website": "http://www.booknowhotel.com", 
         "company": "MR Group SAS", 
         "bookSuccess": 99.2, 
         "system": "MRGroup", 
@@ -2769,7 +2698,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.hotelxp.it", 
+        "website": "http://www.hotelxp.it", 
         "company": "Nebiz", 
         "bookSuccess": 97.5, 
         "system": "HotelXP", 
@@ -2783,7 +2712,7 @@ define({allProviders:
         "availSuccess": 97.5
     }, 
     {
-        "website": "www.netroomz.com.au", 
+        "website": "http://www.netroomz.com.au", 
         "company": "Netroomz", 
         "bookSuccess": 79.7, 
         "system": "Freeloader", 
@@ -2812,7 +2741,7 @@ define({allProviders:
         "availSuccess": 98.2
     }, 
     {
-        "website": "www.newbook.cloud", 
+        "website": "http://www.newbook.cloud", 
         "company": "NewBook Pty Ltd", 
         "bookSuccess": 99.8, 
         "system": "NewBook", 
@@ -2828,7 +2757,7 @@ define({allProviders:
         "availSuccess": 73.1
     }, 
     {
-        "website": "www.bookingexpert.it", 
+        "website": "http://www.bookingexpert.it", 
         "company": "Nexteam SRL", 
         "bookSuccess": 99.6, 
         "system": "BookingExpert Italy", 
@@ -2869,7 +2798,7 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "www.reseliva.com", 
+        "website": "http://www.reseliva.com", 
         "company": "Nivera Technologies", 
         "bookSuccess": 99.6, 
         "system": "Reseliva", 
@@ -2887,7 +2816,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.maestropms.com", 
+        "website": "http://www.maestropms.com", 
         "company": "NORTHWIND", 
         "bookSuccess": 97.8, 
         "system": "Maestro Property Management-PMS", 
@@ -2902,7 +2831,7 @@ define({allProviders:
         "availSuccess": 81.3
     }, 
     {
-        "website": "www.novaxs.com.br", 
+        "website": "http://www.novaxs.com.br", 
         "company": "Nova XS Tecnologia da Informa\u00e7\u00e3o LTDA.", 
         "bookSuccess": 99.2, 
         "system": "Nova XS", 
@@ -2917,7 +2846,7 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "Http://ostays.com", 
+        "website": "http://Http://ostays.com", 
         "company": "O Hotel Suites Ltd", 
         "bookSuccess": 88.9, 
         "system": "Ostays", 
@@ -2934,17 +2863,7 @@ define({allProviders:
         "availSuccess": 75.8
     }, 
     {
-        "website": "NULL", 
-        "company": "Odalys", 
-        "bookSuccess": 96.0, 
-        "system": "Odalys CRS", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CRS", 
-        "availSuccess": 99.9
-    }, 
-    {
-        "website": "www.apartmentsapart.com", 
+        "website": "http://www.apartmentsapart.com", 
         "company": "Old Town Apartments", 
         "bookSuccess": 99.6, 
         "system": "Old Town Apartments System", 
@@ -2957,7 +2876,7 @@ define({allProviders:
         "availSuccess": 98.0
     }, 
     {
-        "website": "www.omnibees.com", 
+        "website": "http://www.omnibees.com", 
         "company": "Omnibees CRS", 
         "bookSuccess": 97.4, 
         "system": "Omnibees (HoteisNet)", 
@@ -2974,7 +2893,7 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "www.1-up.co.uk", 
+        "website": "http://www.1-up.co.uk", 
         "company": "one UP", 
         "bookSuccess": 99.7, 
         "system": "one UP", 
@@ -2990,7 +2909,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.onetechsolution.com", 
+        "website": "http://www.onetechsolution.com", 
         "company": "ONETECH solution", 
         "bookSuccess": 81.4, 
         "system": "ONETECH PMS", 
@@ -3027,7 +2946,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.openhotel.com", 
+        "website": "http://www.openhotel.com", 
         "company": "Open Hotel Inc", 
         "bookSuccess": 99.1, 
         "system": "Open Hotel PMS", 
@@ -3042,7 +2961,7 @@ define({allProviders:
         "availSuccess": 96.0
     }, 
     {
-        "website": "www.micros.com", 
+        "website": "http://www.micros.com", 
         "company": "Oracle Hospitality", 
         "bookSuccess": 99.8, 
         "system": "Micros Channel Manager Europe", 
@@ -3052,7 +2971,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.micros.com", 
+        "website": "http://www.micros.com", 
         "company": "Oracle Hospitality", 
         "bookSuccess": 99.3, 
         "system": "Micros Channel Manager USA/Canada", 
@@ -3062,7 +2981,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.micros.com", 
+        "website": "http://www.micros.com", 
         "company": "Oracle Hospitality", 
         "bookSuccess": 99.9, 
         "system": "Micros Suite 8 EMEA", 
@@ -3107,17 +3026,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "NULL", 
-        "company": "Otelms", 
-        "bookSuccess": 98.0, 
-        "system": "Otelms Channel Manager", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 99.1
-    }, 
-    {
-        "website": "www.passepartout.net", 
+        "website": "http://www.passepartout.net", 
         "company": "Passepartout", 
         "bookSuccess": 96.9, 
         "system": "Passepartout Welcome", 
@@ -3134,7 +3043,7 @@ define({allProviders:
         "availSuccess": 95.8
     }, 
     {
-        "website": "www.perfecthandssolutions.com", 
+        "website": "http://www.perfecthandssolutions.com", 
         "company": "Perfect Hands Solutions Pvt. Ltd", 
         "bookSuccess": 96.9, 
         "system": "Perfect Hands Solutions", 
@@ -3144,7 +3053,7 @@ define({allProviders:
         "availSuccess": 94.3
     }, 
     {
-        "website": "www.phobs.net", 
+        "website": "http://www.phobs.net", 
         "company": "PHOBS", 
         "bookSuccess": 99.6, 
         "system": "PHOBS CRS", 
@@ -3190,7 +3099,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.pmscloud.com", 
+        "website": "http://www.pmscloud.com", 
         "company": "PMS Cloud LP", 
         "bookSuccess": 95.5, 
         "system": "PMS Cloud", 
@@ -3205,7 +3114,7 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "www.cloudhospitality.es", 
+        "website": "http://www.cloudhospitality.es", 
         "company": "Prestige Software", 
         "bookSuccess": 97.1, 
         "system": "Prestige", 
@@ -3223,7 +3132,7 @@ define({allProviders:
         "availSuccess": 96.9
     }, 
     {
-        "website": "www.prestige-inet.com", 
+        "website": "http://www.prestige-inet.com", 
         "company": "Prestige Software", 
         "bookSuccess": 97.3, 
         "system": "Prestige - AGA Hotels", 
@@ -3235,7 +3144,7 @@ define({allProviders:
         "availSuccess": 97.0
     }, 
     {
-        "website": "www.prestige-inet.com", 
+        "website": "http://www.prestige-inet.com", 
         "company": "Prestige Software", 
         "bookSuccess": 99.7, 
         "system": "Prestige - Iberostar", 
@@ -3247,7 +3156,7 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "www.prestige-inet.com", 
+        "website": "http://www.prestige-inet.com", 
         "company": "Prestige Software", 
         "bookSuccess": null, 
         "system": "Prestige - Magic Costa Blanca", 
@@ -3259,7 +3168,7 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "www.prestige-inet.com", 
+        "website": "http://www.prestige-inet.com", 
         "company": "Prestige Software", 
         "bookSuccess": 99.8, 
         "system": "Prestige - Pierre & Vacances", 
@@ -3271,7 +3180,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "PRIMAL-RES.GR", 
+        "website": "http://PRIMAL-RES.GR", 
         "company": "Primal-RES", 
         "bookSuccess": 99.8, 
         "system": "Channels Easy", 
@@ -3321,7 +3230,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.protel.net", 
+        "website": "http://www.protel.net", 
         "company": "Protel Hotel Software", 
         "bookSuccess": 98.2, 
         "system": "Protel - PMS", 
@@ -3335,7 +3244,7 @@ define({allProviders:
         "availSuccess": 90.4
     }, 
     {
-        "website": "pynbooking.com", 
+        "website": "http://pynbooking.com", 
         "company": "Pyn Booking", 
         "bookSuccess": 94.4, 
         "system": "Pyn Booking", 
@@ -3364,7 +3273,7 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "www.quickyield.com", 
+        "website": "http://www.quickyield.com", 
         "company": "QuickYield", 
         "bookSuccess": 99.9, 
         "system": "QuickManager", 
@@ -3381,7 +3290,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "www.erevmax.com", 
+        "website": "http://www.erevmax.com", 
         "company": "Rate Tiger", 
         "bookSuccess": 95.1, 
         "system": "Rate Tiger Connect", 
@@ -3398,7 +3307,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.erevmax.com", 
+        "website": "http://www.erevmax.com", 
         "company": "Rate Tiger", 
         "bookSuccess": 99.5, 
         "system": "Rate Tiger Suite", 
@@ -3449,7 +3358,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "redawning.com", 
+        "website": "http://redawning.com", 
         "company": "Redawning", 
         "bookSuccess": 100.0, 
         "system": "Redawning", 
@@ -3466,7 +3375,7 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "rentalsunited.com", 
+        "website": "http://rentalsunited.com", 
         "company": "Rentals United Integration (formerly Holiday Velvet)", 
         "bookSuccess": 96.4, 
         "system": "Rentals United", 
@@ -3482,7 +3391,7 @@ define({allProviders:
         "availSuccess": 91.0
     }, 
     {
-        "website": "www.gastrodat.com", 
+        "website": "http://www.gastrodat.com", 
         "company": "RESCON24", 
         "bookSuccess": 84.7, 
         "system": "Gastrodat", 
@@ -3497,7 +3406,7 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "www.reservhotel.com", 
+        "website": "http://www.reservhotel.com", 
         "company": "ReservHOTEL International", 
         "bookSuccess": 98.3, 
         "system": "Global Connection", 
@@ -3525,7 +3434,7 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "www.resonline.ru", 
+        "website": "http://www.resonline.ru", 
         "company": "Resonline LLC", 
         "bookSuccess": 98.7, 
         "system": "Resonline LLC Europe", 
@@ -3554,7 +3463,7 @@ define({allProviders:
         "availSuccess": 83.4
     }, 
     {
-        "website": "www.resrequest.com", 
+        "website": "http://www.resrequest.com", 
         "company": "ResRequest", 
         "bookSuccess": 85.0, 
         "system": "ResRequest", 
@@ -3564,7 +3473,7 @@ define({allProviders:
         "availSuccess": null
     }, 
     {
-        "website": "www.revparguru.com", 
+        "website": "http://www.revparguru.com", 
         "company": "Revparguru", 
         "bookSuccess": null, 
         "system": "Revparguru Channel Manager for EQC", 
@@ -3606,7 +3515,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.bukly.com", 
+        "website": "http://www.bukly.com", 
         "company": "Rio Tera - Ag\u00eancia Web Ltda", 
         "bookSuccess": 97.4, 
         "system": "Bukly CM", 
@@ -3650,7 +3559,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.mghworld.net", 
+        "website": "http://www.mghworld.net", 
         "company": "Roomito Online Pvt Ltd", 
         "bookSuccess": 88.2, 
         "system": "Roomito Channel Manager", 
@@ -3677,7 +3586,7 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "www.roomsy.com", 
+        "website": "http://www.roomsy.com", 
         "company": "Roomsy", 
         "bookSuccess": 95.1, 
         "system": "Roomsy PMS", 
@@ -3687,7 +3596,7 @@ define({allProviders:
         "availSuccess": 94.9
     }, 
     {
-        "website": "www.roomkeypms.com", 
+        "website": "http://www.roomkeypms.com", 
         "company": "RSI International", 
         "bookSuccess": 98.5, 
         "system": "RoomKey", 
@@ -3701,7 +3610,7 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "www.ruralgest.com", 
+        "website": "http://www.ruralgest.com", 
         "company": "RuralGest Sistemas de Reservas S.L", 
         "bookSuccess": 93.7, 
         "system": "RuralGest", 
@@ -3713,7 +3622,7 @@ define({allProviders:
         "availSuccess": 93.0
     }, 
     {
-        "website": "www.sabeeapp.com", 
+        "website": "http://www.sabeeapp.com", 
         "company": "SabeeApp", 
         "bookSuccess": 99.7, 
         "system": "SabeeApp", 
@@ -4024,7 +3933,7 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "www.sanhait.co.kr", 
+        "website": "http://www.sanhait.co.kr", 
         "company": "Sanha Information Technology INC", 
         "bookSuccess": 99.6, 
         "system": "Sanha", 
@@ -4091,7 +4000,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "www.syha.org.uk", 
+        "website": "http://www.syha.org.uk", 
         "company": "Scottish Youth Hostels Association", 
         "bookSuccess": 99.0, 
         "system": "SYHA", 
@@ -4137,7 +4046,7 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "web.seekom.com", 
+        "website": "http://web.seekom.com", 
         "company": "Seekom", 
         "bookSuccess": 99.4, 
         "system": "iBex Accommodation", 
@@ -4153,7 +4062,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.selena.net", 
+        "website": "http://www.selena.net", 
         "company": "Selena", 
         "bookSuccess": 79.4, 
         "system": "Hera Net Manager", 
@@ -4215,7 +4124,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.sinergiasoluciones.com.ar", 
+        "website": "http://www.sinergiasoluciones.com.ar", 
         "company": "Sinergia Soluciones", 
         "bookSuccess": 90.1, 
         "system": "Todoalojamiento.com", 
@@ -4225,7 +4134,7 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "www.sirvoy.com", 
+        "website": "http://www.sirvoy.com", 
         "company": "Sirvoy", 
         "bookSuccess": 99.8, 
         "system": "Sirvoy Reservation System", 
@@ -4307,7 +4216,7 @@ define({allProviders:
         "availSuccess": 67.0
     }, 
     {
-        "website": "www.slimtrader.com", 
+        "website": "http://www.slimtrader.com", 
         "company": "Slimtrader", 
         "bookSuccess": null, 
         "system": "MoBiashara", 
@@ -4347,7 +4256,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "www.smoobu.com", 
+        "website": "http://www.smoobu.com", 
         "company": "Smoobu GmbH", 
         "bookSuccess": 88.4, 
         "system": "Smoobu Channel Manager", 
@@ -4370,7 +4279,7 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "www.krossbooking.com", 
+        "website": "http://www.krossbooking.com", 
         "company": "Solutions Plus s.r.l.", 
         "bookSuccess": 86.6, 
         "system": "Kross Booking Suite", 
@@ -4380,7 +4289,7 @@ define({allProviders:
         "availSuccess": 84.1
     }, 
     {
-        "website": "www.sonder.com", 
+        "website": "http://www.sonder.com", 
         "company": "Sonder", 
         "bookSuccess": 99.8, 
         "system": "Sonder Channel Manager", 
@@ -4390,7 +4299,7 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "www.staah.com", 
+        "website": "http://www.staah.com", 
         "company": "STAAH", 
         "bookSuccess": 99.4, 
         "system": "STAAH", 
@@ -4408,7 +4317,7 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "www.cubilis.com", 
+        "website": "http://www.cubilis.com", 
         "company": "Stardekk", 
         "bookSuccess": 99.8, 
         "system": "Cubilis by Stardekk", 
@@ -4426,7 +4335,7 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "www.startnow.kr", 
+        "website": "http://www.startnow.kr", 
         "company": "Startnow", 
         "bookSuccess": 82.6, 
         "system": "All Inn", 
@@ -4439,7 +4348,7 @@ define({allProviders:
         "availSuccess": 50.5
     }, 
     {
-        "website": "www.stays.net", 
+        "website": "http://www.stays.net", 
         "company": "Stays Solutions Limited", 
         "bookSuccess": 88.3, 
         "system": "stays\u2122", 
@@ -4451,7 +4360,7 @@ define({allProviders:
         "availSuccess": 98.5
     }, 
     {
-        "website": "www.straitpms.com", 
+        "website": "http://www.straitpms.com", 
         "company": "Strait Solutions", 
         "bookSuccess": 97.3, 
         "system": "MyUkTravel", 
@@ -4467,7 +4376,7 @@ define({allProviders:
         "availSuccess": 85.1
     }, 
     {
-        "website": "www.straitpms.com", 
+        "website": "http://www.straitpms.com", 
         "company": "Strait Solutions", 
         "bookSuccess": 99.1, 
         "system": "Strait PMS", 
@@ -4515,17 +4424,7 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "NULL", 
-        "company": "Synthense LSI Software", 
-        "bookSuccess": 36.3, 
-        "system": "Hotel In", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 90.1
-    }, 
-    {
-        "website": "www.colibripms.com", 
+        "website": "http://www.colibripms.com", 
         "company": "TDS Network International", 
         "bookSuccess": 99.6, 
         "system": "WebPMSpro/ColibriPMS", 
@@ -4542,7 +4441,7 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "www.parityrate.com", 
+        "website": "http://www.parityrate.com", 
         "company": "Tecnes Milano s.r.l", 
         "bookSuccess": 97.9, 
         "system": "RoomCloud/ParityRate", 
@@ -4573,7 +4472,7 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "www.temairazu.com", 
+        "website": "http://www.temairazu.com", 
         "company": "Temairazu", 
         "bookSuccess": 100.0, 
         "system": "Temairazu Channel Manager", 
@@ -4605,7 +4504,7 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "www.the-ascott.com", 
+        "website": "http://www.the-ascott.com", 
         "company": "The Ascott Limited", 
         "bookSuccess": 97.1, 
         "system": "Capitaland (Ascott) ODX", 
@@ -4622,7 +4521,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.tokeet.com", 
+        "website": "http://www.tokeet.com", 
         "company": "Tokeet", 
         "bookSuccess": 95.1, 
         "system": "Tokeet Channel Manager", 
@@ -4635,7 +4534,7 @@ define({allProviders:
         "availSuccess": 95.3
     }, 
     {
-        "website": "www.bookingevolution.com", 
+        "website": "http://www.bookingevolution.com", 
         "company": "Tosom srl", 
         "bookSuccess": 100.0, 
         "system": "Booking Evolution", 
@@ -4686,7 +4585,7 @@ define({allProviders:
         "availSuccess": 91.9
     }, 
     {
-        "website": "www.tomas.travel", 
+        "website": "http://www.tomas.travel", 
         "company": "Tourist Data Shop Ltd", 
         "bookSuccess": 96.9, 
         "system": "TOMAS", 
@@ -4731,7 +4630,7 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "www.vrbookings.com", 
+        "website": "http://www.vrbookings.com", 
         "company": "Trading Estate Service srl", 
         "bookSuccess": 99.7, 
         "system": "VRBookings", 
@@ -4773,7 +4672,7 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "www.travelclick.com", 
+        "website": "http://www.travelclick.com", 
         "company": "TravelClick", 
         "bookSuccess": 98.1, 
         "system": "TravelClick iHotelier CRS", 
@@ -4805,7 +4704,7 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "www.hoteratus.com", 
+        "website": "http://www.hoteratus.com", 
         "company": "Trypid, Inc", 
         "bookSuccess": 95.8, 
         "system": "Hoteratus", 
@@ -4820,16 +4719,6 @@ define({allProviders:
         ], 
         "type": "CRS", 
         "availSuccess": 90.7
-    }, 
-    {
-        "website": "NULL", 
-        "company": "UAB GTI SOLUTIONS", 
-        "bookSuccess": null, 
-        "system": "YieldPartner Channel Manager", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 100.0
     }, 
     {
         "website": "http://www.univisit.net", 
@@ -4847,7 +4736,7 @@ define({allProviders:
         "availSuccess": 97.0
     }, 
     {
-        "website": "www.update247.com.au", 
+        "website": "http://www.update247.com.au", 
         "company": "Update247", 
         "bookSuccess": 99.7, 
         "system": "Update247 CM", 
@@ -4887,23 +4776,6 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "NULL", 
-        "company": "Vertical Booking", 
-        "bookSuccess": 99.7, 
-        "system": "Booking Blastness", 
-        "featuresSupported": [
-            "Value Add Promotions"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 99.1
-    }, 
-    {
         "website": "https://www.verticalbooking.com/en", 
         "company": "Vertical Booking", 
         "bookSuccess": 99.6, 
@@ -4939,7 +4811,7 @@ define({allProviders:
         "availSuccess": 96.0
     }, 
     {
-        "website": "www.bookvisit.com", 
+        "website": "http://www.bookvisit.com", 
         "company": "Visit Technology", 
         "bookSuccess": 99.8, 
         "system": "BookVisit", 
@@ -4969,7 +4841,7 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "www.wealthywalker.com", 
+        "website": "http://www.wealthywalker.com", 
         "company": "Wealthywalker", 
         "bookSuccess": 88.1, 
         "system": "Wealthywalker", 
@@ -4989,7 +4861,7 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "www.webres.de", 
+        "website": "http://www.webres.de", 
         "company": "webres GmbH", 
         "bookSuccess": 99.9, 
         "system": "Web.res", 
@@ -5111,7 +4983,7 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "www.xyzt.pt", 
+        "website": "http://www.xyzt.pt", 
         "company": "XYZT", 
         "bookSuccess": 98.5, 
         "system": "e-GDS Channel Manager", 
