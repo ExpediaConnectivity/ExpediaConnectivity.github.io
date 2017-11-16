@@ -23,7 +23,7 @@ function login(form) {
         },
         beforeSend: function(xhr) {
             if (username) {
-                xhr.setRequestHeader("Authorization", "Basic " + btoa(username + ":" + password));
+                xhr.setRequestHeader("Authorization", "Basic " + btoa(unescape(encodeURIComponent(username + ":" + password))));
             }
             loadStart();
         }
