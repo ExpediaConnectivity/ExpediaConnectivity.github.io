@@ -185,6 +185,12 @@ body,
   border-color: #616161;
   color: #393939;
 }
+.disclaimer {
+  margin: .5em 1em;
+}
+.disclaimer a {
+  text-decoration: underline;
+}
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .systems.reveal {
     width: 70%;
