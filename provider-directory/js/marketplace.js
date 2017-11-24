@@ -9,12 +9,13 @@ define(function() {
             website: '',
             arRate: 0,
             bcRate: 0,
+
             availableFeatures: [
-                "PCI Attestation Supplied",
-                "Property API",
-                "Product API",
-                "Value Add Promotions",
-                "Displays All Point of Sale Brands"
+                "Eligible to receive Expedia guest cardholder data",
+                "Property content synced with Expedia",
+                "Room type and rate plan synced with Expedia",
+                "Bookings include Expedia value add promotion details",
+                "Bookings include Expedia brand that traveler used"
             ],
             availableRestrictions: [
                 "Full Pattern Length of Stays: Arrival",

@@ -52,6 +52,10 @@ body,
   letter-spacing: 0.1em;
   cursor: pointer;
 }
+.link-button img {
+  height: 0.9em;
+  width: 0.9em;
+}
 .filter input[type="checkbox"],
 .filter input[type="radio"] {
   margin: 0.6rem 0.3rem;
