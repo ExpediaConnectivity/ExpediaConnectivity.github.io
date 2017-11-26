@@ -61,6 +61,7 @@ define(function() {
                 }
                 this.featuresSupported = p['featuresSupported'];
                 this.restrictionsSupported = p['restrictionsSupported'];
+                ga('send', 'event', 'directory', 'detail', this.company + '.' + this.system);
                 $(this.$el).foundation('open');
                 Foundation.reInit('equalizer');
             },
@@ -71,6 +72,7 @@ define(function() {
                 return this.restrictionsSupported && this.restrictionsSupported.indexOf(r) >= 0;
             },
             openWebsite: function() {
+                ga('send', 'event', 'directory', 'website', this.company + '.' + this.system);
                 window.open(this.website);
             }
         },
@@ -167,6 +169,12 @@ define(function() {
                     if (Math.abs(d - h) > 1) {
                         fill.height(d);
                     }
+                },
+                filterClick: function () {
+                    ga('send', 'event', 'directory', 'filter', "CM." + this.typeCM + ".PMS." + this.typePMS + ".CRS." + this.typeCRS);
+                },
+                surveyClick: function(useful) {
+                    ga('send', 'event', 'directory', 'survey', useful);
                 }
             },
             computed: {
