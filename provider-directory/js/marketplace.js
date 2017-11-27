@@ -1,5 +1,27 @@
 define(function() {
 
+    var info = new Vue({
+        el: '#system-info',
+        data: {
+            heading: "",
+            blurb: ""
+        },
+        computed: {},
+        methods: {
+            open: function(h, b) {
+                $(this.$el).foundation('close');
+                this.heading = h
+                this.blurb = b;
+                $(this.$el).foundation('open');
+                Foundation.reInit('equalizer');
+            }
+        },
+        mounted: function() {
+            $(this.$el).foundation();
+        }
+    });
+
+
     var details = new Vue({
         el: '#system-details',
         data: {
@@ -16,6 +38,13 @@ define(function() {
                 "Room type and rate plan synced with Expedia",
                 "Bookings include Expedia value add promotion details",
                 "Bookings include Expedia brand that traveler used"
+            ],
+            availableFeaturesBlurb: [
+                "We take the security of traveler credit card details seriously. Only providers that have supplied us with their Payment Card Industry (PCI) certification are eligible to receive actual guest cardholder details. Properties using a provider that has not provided us with their PCI certificate must access Expedia PartnerCentral in order to retrieve the credit card for the booking.",
+                "This feature allows properties to make changes to their property attributes, images, policies, and fees directly within the provider system, and have this information directly synchronise on the Expedia Marketplace. This saves time and duplication of having to update the information in Expedia PartnerCentral.",
+                "This feature allows properties to create and update their room types and rate plans directly within the provider system and have this information directly synchronise on the Expedia Marketplace.",
+                "This feature allows properties to receive the details of any Expedia Value Add Promotions within the booking.  This means that front desk staff will be fully informed if they need to provide these promotions to the Expedia traveller on check-in.",
+                "Properties using a provider that supports this will be able to see the exact brand that the traveller booked on. This extra insight helps the front desk personalise their greeting to travellers. It may also help properties analyse the effectiveness of their marketing."
             ],
             availableRestrictions: [
                 "Full Pattern Length of Stays: Arrival",
@@ -62,7 +91,7 @@ define(function() {
                 this.featuresSupported = p['featuresSupported'];
                 this.restrictionsSupported = p['restrictionsSupported'];
                 ga('send', 'event', 'directory', 'detail', this.company + '.' + this.system);
-                $(this.$el).foundation('open');
+                $(this.$el).foundation('open', {dataMultipleOpened: true});
                 Foundation.reInit('equalizer');
             },
             featureSupported: function(f) {
@@ -74,6 +103,15 @@ define(function() {
             openWebsite: function() {
                 ga('send', 'event', 'directory', 'website', this.company + '.' + this.system);
                 window.open(this.website);
+            },
+            showInfo: function(i) {
+                info.open(this.availableFeatures[i], this.availableFeaturesBlurb[i]);
+            },
+            showARIInfo: function(i) {
+                info.open("Availability and Rate update success", "Availability and Rate update success measures the likelihood of changes made in the provider system making it to Expedia. If an update doesn't make it, this may mean that your availability and rates on Expedia are out of date, potentially resulting in stale rates and overbookings. A success of 100% means that all updates flow through to Expedia.");
+            },
+            showBCRInfo: function(i) {
+                info.open("Booking confirmation success", "Booking confirmation success measures the likelihood of a booking made on Expedia making it to the provider system.  If a booking doesn't make it to your system, it could mean that you're not aware when guest will be staying with you. It could also result in you overselling your inventory. A success rate of 100% means that all bookings flow through to your system.");
             }
         },
         mounted: function() {

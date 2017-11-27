@@ -56,6 +56,31 @@ body,
   height: 0.9em;
   width: 0.9em;
 }
+@font-face {
+  font-family: UITKIcons;
+  src: url('/fonts/UITKIcons.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+.icon::before,
+.icon:after {
+  display: inline-block;
+  position: relative;
+  font-family: UITKIcons;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  speak: none;
+}
+.icon-toggle90:after {
+  content: "\e025";
+}
+.icon-info:after {
+  content: "\e00c";
+}
+.icon-info:hover {
+  cursor: pointer;
+}
 .filter input[type="checkbox"],
 .filter input[type="radio"] {
   margin: 0.6rem 0.3rem;
