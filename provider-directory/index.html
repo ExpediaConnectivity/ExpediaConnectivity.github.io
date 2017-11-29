@@ -154,6 +154,34 @@ function googleTranslateElementInit() {
   </button>
 </div>
 
+<div class="systems small reveal" id="system-login" data-reveal >
+  <h3>EPC Login</h3>
+  <p class="announce">
+    Please enter your Expedia Partner Central (EPC) login details below.
+  </p>
+  <form id="loginform" class="announce">
+    <div class="formline row">
+      <span class="small-5 text-right columns">Username: </span>
+      <span class="small-6 text-right columns"><input id="username" placeholder=""/></span>
+    </div>
+    <div class="formline row">
+      <span class="small-5 text-right columns">Password: </span>
+      <span class="small-6 text-right columns"><input id="password" type="password" placeholder="" autocomplete="off" /></span>
+    </div>
+    <div id="result" class="formline center row"></div>
+    <div class="row">
+      <div class="formline small-6 small-offset-6 columns">
+        <input class="submit" type="button" value="Login" v-on:click="showSystem()"/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="forgot formline center small-6 small-offset-6 columns">
+        <a href="/provider-directory">Forgot Password</a> | <a href="/provider-directory">Forgot Username</a>
+      </div>
+    </div>
+  </form>
+</div>
+
 <script src="/js/vue.min.js"></script>
 <script data-main="/provider-directory/js/app.js" src="/js/require.js"></script>
 
