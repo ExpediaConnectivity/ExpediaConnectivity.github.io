@@ -167,7 +167,7 @@ define(function() {
                 },
                 filteredByCountry: function (p) {
                     if (this.country && this.country.length > 0 && p.country) {
-                        return !p.country.toLowerCase().startsWith(this.country);
+                        return !p.country.startsWith(this.country.toLowerCase());
                     }
                     return false;
                 },
