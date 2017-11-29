@@ -37,12 +37,14 @@ function googleTranslateElementInit() {
       <button class="close-button" aria-label="Close menu" type="button" data-close>
         <span aria-hidden="true">&times;</span>
       </button>
-      <div class="filter"></div>
+      <div class="off-canvas-filter"></div>
     </div>
 
     <div class="off-canvas-content row column" id="systems-list" data-off-canvas-content>
       <div class="hide-for-small-only medium-3 column">
-        <div class="filter">
+        <div data-sticky-container>
+        <div class="filter sticky" data-sticky
+             data-top-anchor="systems-list-content:top" data-btm-anchor="systems-list-content:bottom">
           <h5>Filter by:</h5>
           <dl>
             <dt>Country</dt>
@@ -66,8 +68,9 @@ function googleTranslateElementInit() {
             <div class="text-right"><a v-on:click="surveyClick(true)" class="button">Yes</a> <a v-on:click="surveyClick(false)" class="button" >No</a></div>
           </div>
         </div>
+        </div>
       </div>
-      <div class="small-12 medium-9 column list">
+      <div class="small-12 medium-9 column list" id="systems-list-content">
         <p>You have many options for connecting your property to the Expedia Global Marketplace.</p>
         <div class="sort-bar">
           <div class="show-for-small-only clearfix">

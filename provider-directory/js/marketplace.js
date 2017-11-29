@@ -179,7 +179,7 @@ define(function() {
                 },
                 onResize: function () {
                     var main = $('#systems-list .filter');
-                    var side = $('#off-canvas .filter');
+                    var side = $('#off-canvas .off-canvas-filter');
 
                     if (main.is(":visible")) {
                         $('#off-canvas').foundation('close');
@@ -191,21 +191,33 @@ define(function() {
                             main.children().detach().appendTo(side);
                         }
                     }
+                    this.resizeFilterForm();
                 },
                 onScroll: function () {
+                    this.resizeFilterForm();
+                },
+                resizeFilterForm: function() {
+                    var target = $('.systems .filter');
+                    var fill = target.find('.fill');
+                    fill.height(0);
+
                     // Can be in off-canvas
-                    var fill = $('.systems .filter .fill');
-                    var h = fill.height();
-                    var d = 0;
                     if (fill.parents('#off-canvas').length == 0) {
                         var ref = $(this.$el).find('.list');
-                        d = ref.height() - (fill.parent().height() - h);
-                        if (d < 1) {
-                            d = 0;
+                        var top = ref.offset().top - $(window).scrollTop();
+                        var btm = $(document).scrollTop() + $(window).height() - ref.offset().top - ref.height();
+
+                        var margin = $(window).height() - target.height();
+                        if (top > 0) {
+                            margin -= top;
                         }
-                    }
-                    if (Math.abs(d - h) > 1) {
-                        fill.height(d);
+                        if (btm > 0) {
+                            margin -= btm;
+                        }
+                        if (margin > 0) {
+                            fill.height(margin);
+                        }
+                        target.parent().foundation('_calc', true);
                     }
                 },
                 filterClick: function () {
@@ -247,11 +259,11 @@ define(function() {
             app.setProviders(data.allProviders);
             $(window).resize(function() {
                 clearTimeout(app.resizeTimer);
-                app.resizeTimer = setTimeout(function() { app.onResize(); }, 100);
+                app.resizeTimer = setTimeout(function() { app.onResize(); }, 25);
             });
             $(window).scroll(function() {
                 clearTimeout(app.scrollTimer);
-                app.scrollTimer = setTimeout(function() { app.onScroll(); }, 100);
+                app.scrollTimer = setTimeout(function() { app.onScroll(); }, 25);
             });
         }
     }
