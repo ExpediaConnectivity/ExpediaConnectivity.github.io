@@ -165,6 +165,12 @@ define(function() {
                     }
                     return false;
                 },
+                filteredByCountry: function (p) {
+                    if (this.country && this.country.length > 0 && p.country) {
+                        return !p.country.toLowerCase().startsWith(this.country);
+                    }
+                    return false;
+                },
                 sortBySystem: function (a, b) {
                     var x = a['system'].toLowerCase();
                     var y = b['system'].toLowerCase();
@@ -261,7 +267,7 @@ define(function() {
                     var results = [];
                     for (i in this.providers) {
                         var p = this.providers[i];
-                        if (this.filteredByType(p)) {
+                        if (this.filteredByType(p) || this.filteredByCountry(p)) {
                             continue;
                         }
                         results.push(p);
