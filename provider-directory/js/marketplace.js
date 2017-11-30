@@ -43,6 +43,32 @@ define(function() {
         }
     });
 
+    var survey = new Vue({
+        el: '#system-survey',
+        data: {
+            useful: false,
+            comment: '',
+            submitDisabled: false
+        },
+        methods: {
+            open: function(useful) {
+                this.submitDisabled = false;
+                this.useful = useful;
+                this.comment = '';
+                $(this.$el).foundation('open');
+                $(this.$el).find('input').first().focus();
+            },
+            send: function() {
+                this.submitDisabled = true;
+                ga('send', 'event', 'directory', 'survey', this.comment, this.useful ? 1 : 0);
+                var el = $(this.$el);
+                setTimeout(function() { el.foundation('close'); }, 1000);
+            }
+        },
+        mounted: function() {
+            $(this.$el).foundation();
+        }
+    });
 
     var details = new Vue({
         el: '#system-details',
@@ -259,7 +285,7 @@ define(function() {
                     ga('send', 'event', 'directory', 'filter', "CM." + this.typeCM + ".PMS." + this.typePMS + ".CRS." + this.typeCRS);
                 },
                 surveyClick: function(useful) {
-                    ga('send', 'event', 'directory', 'survey', useful);
+                    survey.open(useful);
                 }
             },
             computed: {

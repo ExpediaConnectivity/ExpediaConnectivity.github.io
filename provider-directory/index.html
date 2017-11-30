@@ -44,7 +44,7 @@ function googleTranslateElementInit() {
       <div class="hide-for-small-only medium-3 column">
         <div data-sticky-container>
         <div class="filter sticky" data-sticky
-             data-top-anchor="systems-list-content:top" data-btm-anchor="systems-list-content:bottom">
+             data-top-anchor="systems-list:top" data-btm-anchor="systems-list:bottom">
           <h5>Filter by:</h5>
           <dl>
             <dt>Country</dt>
@@ -70,7 +70,7 @@ function googleTranslateElementInit() {
         </div>
         </div>
       </div>
-      <div class="small-12 medium-9 column list" id="systems-list-content">
+      <div class="small-12 medium-9 column list">
         <p>You have many options for connecting your property to the Expedia Global Marketplace.</p>
         <div class="sort-bar">
           <div class="show-for-small-only clearfix">
@@ -179,6 +179,22 @@ function googleTranslateElementInit() {
         <a href="/provider-directory">Forgot Password</a> | <a href="/provider-directory">Forgot Username</a>
       </div>
     </div>
+  </form>
+</div>
+
+<div class="systems small reveal" id="system-survey" data-reveal >
+  <form v-on:submit.prevent="send">
+    <p class="lead">Feedback</p>
+    <div class="row">
+      <input type="text" v-model="comment" placeholder="Optional comments" />
+    </div>
+    <div class="row">
+      <input type="submit" class="button" value="Send" v-bind:disabled="submitDisabled"/>
+      <span v-show="submitDisabled">Thank you for your feedback!</span>
+    </div>
+    <button class="close-button" data-close aria-label="Close modal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </form>
 </div>
 
