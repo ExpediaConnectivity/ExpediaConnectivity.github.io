@@ -94,7 +94,10 @@ function googleTranslateElementInit() {
           <ul class="vertical menu" data-accordion-menu>
             <li v-for="p in filteredProviders">
               <a v-bind:class="[p.type]" v-on:click="show(p)">
-                <span class="system-type"><span class="label">{{p.type}}</span> &gt;</span>
+                <span class="system-type">
+                  <span class="label">{{p.type}}</span>
+                  <span class="icon icon-toggle90"></span>
+                </span>
                 <div class="system-name">{{p.system}}</div>
                 <div class="company-name">by {{p.company}}</div>
               </a>
