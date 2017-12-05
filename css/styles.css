@@ -441,9 +441,13 @@ body {
   text-align: center;
 }
 .circuit-board h2 {
-  margin-top: 3em;
+  margin-top: 1em;
   font-weight: 700;
   color: #3f3f3e;
+}
+.circuit-board .inner {
+  max-width: 610px;
+  padding: 0 !important;
 }
 #contactus {
   max-width: 540px;
@@ -525,11 +529,6 @@ body {
 .vimeo-wrapper {
   max-width: 650px;
   height: 360px;
-}
-@media screen and (min-width: 64em) {
-  .primary-box .inner {
-    padding: 4em 0 2em 0;
-  }
 }
 .primary-box {
   box-shadow: none !important;
@@ -627,6 +626,9 @@ body {
 }
 #yellow-ribbon .ribbon-element {
   background: transparent;
+}
+#yellow-ribbon .ribbon-element p {
+  max-width: 410px;
 }
 #lowest-box h4 {
   font-weight: 700 !important;
@@ -900,13 +902,56 @@ footer .footer-logo {
   margin-top: 40px;
   margin-bottom: 40px;
 }
-@media (max-width: 64em) {
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  .primary-box {
+    margin-bottom: -4.5rem !important;
+  }
+  .developers-image {
+    background-position: center;
+  }
+  .properties-image {
+    background-position: center;
+  }
+  .systems-image {
+    background-position: center;
+  }
   footer .links .link-item {
     margin-right: 0px;
   }
   footer .links a:hover,
   footer .links a:active {
     border-bottom: none;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .primary-box {
+    margin-bottom: 0 !important;
+  }
+  .developers-image {
+    background-position: center;
+  }
+  .properties-image {
+    background-position: center;
+  }
+  .systems-image {
+    background-position: center;
+  }
+  footer .links .link-item {
+    margin-right: 0px;
+  }
+  footer .links a:hover,
+  footer .links a:active {
+    border-bottom: none;
+  }
+  .lowest-box .six {
+    height: 235px !important;
+  }
+}
+@media screen and (min-width: 64em) {
+  .primary-box .inner {
+    padding: 4em 0 2em 0;
   }
 }
 
@@ -1139,7 +1184,7 @@ section.hero .inner h1 {
 section.hero .inner h2 {
   font-family: "Open Sans", sans-serif;
   color: #FFF;
-  max-width: 600px;
+  max-width: 610px;
   font-size: 1.5rem;
 }
 section.hero .inner p {
@@ -1204,9 +1249,22 @@ section.hero .inner p {
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
 }
-@media (max-width: 64em) {
+/* Small only */
+@media screen and (max-width: 39.9375em) {
+  section.hero .inner h1 {
+    font-size: 36px;
+  }
   section.hero .inner p {
-    font-size: 0.9rem;
+    font-size: 16px;
+  }
+}
+/* Medium only */
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  section.hero .inner h1 {
+    font-size: 42px;
+  }
+  section.hero .inner p {
+    font-size: 18px;
   }
 }
 

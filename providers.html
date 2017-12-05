@@ -108,20 +108,22 @@ function googleTranslateElementInit() {
     </section>
     <section class="primary-box circuit-board">
         <div class="twelve small-centered columns center he-waypoint he-animate he-delay_100">
-            <h2>Ready to start working with Expedia?</h2>
-            <p>Please contact us using the form and we'll get in touch. In the meantime, head over<br>to our <a href="developer">developer section</a> to see what APIs we currently offer.</p>
-            <form id="contactus" onsubmit="sendmail(this); return false;">
-                <div class="formline">
-                    <input id="name" placeholder="Name" type="text" required/>
-                    <input id="email" placeholder="Email" type="email" required/>
-                    <input id="phone" placeholder="Phone Number" type="tel"/>
-                    <input id="company" placeholder="Company" type="text"/>
-                    <textarea id="message" placeholder="Type your message here" required></textarea>
-                    <div class="g-recaptcha" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
-                    <input type="submit" value="Send" class="btn-send"/>
-                </div>
-                <div id="result" class="formline right"></div>
-            </form>
+            <div class="inner">
+                <h2>Ready to start working with Expedia?</h2>
+                <p>Please contact us using the form and we'll get in touch. In the meantime, head overto our <a href="developer">developer section</a> to see what APIs we currently offer.</p>
+                <form id="contactus" onsubmit="sendmail(this); return false;">
+                    <div class="formline">
+                        <input id="name" placeholder="Name" type="text" required/>
+                        <input id="email" placeholder="Email" type="email" required/>
+                        <input id="phone" placeholder="Phone Number" type="tel"/>
+                        <input id="company" placeholder="Company" type="text"/>
+                        <textarea id="message" placeholder="Type your message here" required></textarea>
+                        <div class="g-recaptcha" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
+                        <input type="submit" value="Send" class="btn-send"/>
+                    </div>
+                    <div id="result" class="formline right"></div>
+                </form>
+            </div>
         </div>
     </section>
 </div>
