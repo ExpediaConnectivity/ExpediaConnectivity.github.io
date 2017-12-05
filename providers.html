@@ -1,4 +1,8 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Providers - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery-3.2.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script>$(document).ready(function() {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Providers - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/he-animate.css"><script src="/js/jquery-3.2.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script src="/js/suga-slider.js"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><script>WebFont.load({
+    google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+            }
+});</script><script>$(document).ready(function() {
     $('.api-content pre>code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
@@ -12,94 +16,150 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">Systems</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width">    <link rel="stylesheet" href="/css/he-main.css">
-    <section class='hero hero-climb'>
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now he-animate he-fade_in no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/DevLogo_40k.png"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div></div></nav></header><div class="full-width"><link rel="stylesheet" href="/css/he-main.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<section class='hero hero-hotelroom'>
     <div class='inner'>
-        <h1>Expedia Connectivity for Providers</h1>
-        <h2>Expand your opportunities with the Expedia Global marketplace.</h2>
+        <h1>Connectivity Provider Solutions</h1>
+        <p>Access our dynamic portfolio of brands to help your customers reach a global audience and generate more bookings.</p>
     </div>
 </section>
-    <div id="page-partners" class="he-active_now he-animate he-fade_in">
-        <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <section id="section-intro_paragraph">
-            <div class="inner">
-                <div class="row" style="margin-bottom: 0px;">
-                    <div class="twelve columns" style="margin-bottom: 0px;">
-                        <h6>
-                            Help your customers simplify reservations, marketing, promotions, and analytics processes. Expedia Connectivity optimizes your service offerings, allowing you to deliver:
-                        </h6>
-                    </div>
+<div id="page-partners" class="he-active_now he-animate">
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <section id="section-intro_paragraph">
+        <div class="inner">
+            <div class="row full-width"">
+                <div class="twelve columns intro-left">
+                    <h2>Expand Your Reach</h2>
+                    <p>As an Expedia technology partner, help your customers simplify inventory management, reservations processing and property content management. Our proven automated solutions reduce manual work and minimize the risk of errors.</p>
                 </div>
             </div>
-        </section>
-        
-        
-        
-        <section id="section-large_image_pods">
-            <div class="inner">
-                <div class="row">
-                    <div class="six columns he-waypoint he-animate he-fade_in">
-                       <img class="pod-image show-for-medium" src="/images/image-man_at_laptop.jpg" />
-                        <div class="pod-text">
-                            <h2>
-                                Total Availability
-                            </h2>
-                            <p>
-                                <span>Proven APIs</span> that  automate the management of property availability, rates, and reservations.
-                            </p>
-                        </div>
-                        <div class="show-for-small-only yellow-seperator">&nbsp;</div>
-                    </div><!--
-                 --><div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
-                       <img class="pod-image show-for-medium" src="/images/image-canyon_phone.jpg" />
-                        <div class="pod-text">
-                            <h2>
-                                Total Impression
-                            </h2>
-                            <p>
-                                <span>Powerful APIs</span> that automate the process of updating property descriptions and images.
-                            </p>
-                        </div>
-                        <div class="show-for-small-only yellow-seperator">&nbsp;</div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="six columns he-waypoint he-animate he-fade_in">
-                       <img class="pod-image show-for-medium" src="/images/image-airport_scene.jpg" />
-                        <div class="pod-text">
-                            <h2>
-                                Total Publicity
-                            </h2>
-                            <p>
-                                <span>Flexible APIs</span> that automate the creation of promotions for maximum property exposure.
-                            </p>
-                        </div>
-                        <div class="show-for-small-only yellow-seperator">&nbsp;</div>
-                    </div><!--
-                 --><div class="six columns he-waypoint he-animate he-delay_200 he-fade_in">
-                       <img class="pod-image show-for-medium" src="/images/image-woman_at_desk.jpg" />
-                        <div class="pod-text">
-                            <h2>
-                                Total Insight
-                            </h2>
-                            <p>
-                                <span>Advanced APIs</span> that automate the discovery of actionable intelligence and customer feedback.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        <div class="section-spacer"></div>
-        <section id="section-lower_links" class="row">
-            <a href="/developer">
-                Get Started With Expedia Connectivity APIs
-            </a>
-        </section>
         </div>
-</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a> | <a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a> | <a class="link-item" href="/terms">Terms and Conditions</a> | <a class="link-item" href="/privacy">Privacy Policy</a> | <a class="link-item" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Providers"/></body></html>
+    </section>
+    <section id="section-large_image_pods">
+        <div class="inner">
+            <div class="row full-width">
+                <div class="four columns he-waypoint he-animate">
+                    <img class="pod-image show-for-medium" src="/images/global-reach.png" />
+                    <div class="pod-text">
+                        <h3>
+                        Global Reach
+                        </h3>
+                        <p>
+                            Reach travelers on over 200 travel booking sites<br>in more than 75 countries and 35 languages.
+                        </p>
+                    </div>
+                    <div class="show-for-small-only yellow-seperator">&nbsp;</div>
+                </div>
+                <div class="four columns he-waypoint he-animate he-delay_200">
+                    <img class="pod-image show-for-medium" src="/images/dynamic-reservations.png" />
+                    <div class="pod-text">
+                        <h3>
+                        Dynamic Reservations
+                        </h3>
+                        <p>
+                            Integrate with our flexible APIs to offer the right automated services to your customers.
+                        </p>
+                    </div>
+                    <div class="show-for-small-only yellow-seperator">&nbsp;</div>
+                </div>
+                <div class="four columns he-waypoint he-animate he-delay_200">
+                    <img class="pod-image show-for-medium" src="/images/greater-visibility.png" />
+                    <div class="pod-text">
+                        <h3>
+                        Greater Visibility
+                        </h3>
+                        <p>
+                            Take advantage of a dynamic two-way service to help ensure a seamless distribution process.
+                        </p>
+                    </div>
+                    <div class="show-for-small-only yellow-seperator">&nbsp;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="primary-box bluish-box">
+        <div class="inner">
+            <div class="row">
+                <div class="six columns he-waypoint he-animate he-delay_100">
+                    <h2>Powerful APIs</h2>
+                    <span>Optimize your properties' experience.</span><br><br>
+                    <p>Our advanced APIs provide flexible automation solutions for property inventory distribution and management.</p>
+                    <br>
+                    <i class="fi-check"></i><p class="secondary">Connect with flexible APIs to optimize your service offerings</p><br>
+                    <i class="fi-check"></i><p class="secondary">Get up-and-running with self-service APIs and test property assignment</p>
+                    <br>
+                    <p><a class="homepage-box-main-link" href="/developer">View Connectivity API reference &rarr;</a></p>
+                </div>
+                <div class="six columns he-waypoint he-animate he-delay_100">
+                    <h2>Dedicated Connectivity Support</h2>
+                    <span>Join our world-class Connectivity community.</span><br><br>
+                    <p>As a valued partner, you can rely on an expert account and technical support team to help maintain a quality connection.</p>
+                    <br>
+                    <i class="fi-check"></i><p class="secondary">Receive regular status updates on the quality of your connection</p><br>
+                    <i class="fi-check"></i><p class="secondary">Stay informed about new features, services, and events</p>
+                    <br>
+                    <p><a class="homepage-box-main-link" href="/contact-us">Contact us to start working with Expedia &rarr;</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="primary-box circuit-board">
+        <div class="twelve small-centered columns center he-waypoint he-animate he-delay_100">
+            <h2>Ready to start working with Expedia?</h2>
+            <p>Please contact us using the form and we'll get in touch. In the meantime, head over<br>to our <a href="developer">developer section</a> to see what APIs we currently offer.</p>
+            <form id="contactus" onsubmit="sendmail(this); return false;">
+                <div class="formline">
+                    <input id="name" placeholder="Name" type="text" required/>
+                    <input id="email" placeholder="Email" type="email" required/>
+                    <input id="phone" placeholder="Phone Number" type="tel"/>
+                    <input id="company" placeholder="Company" type="text"/>
+                    <textarea id="message" placeholder="Type your message here" required></textarea>
+                    <div class="g-recaptcha" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
+                    <input type="submit" value="Send" class="btn-send"/>
+                </div>
+                <div id="result" class="formline right"></div>
+            </form>
+        </div>
+    </section>
+</div>
+<script>
+    var captchaResponse = null;
+    function captcha(response) {
+        captchaResponse = response;
+        console.log("Captcha Response: " + response);
+    }
+    function sendmail(form) {
+        var data = {};
+        data.name = $(form).find("#name").val();
+        data.email = $(form).find("#email").val();
+        data.phone = $(form).find("#phone").val();
+        data.company = $(form).find("#company").val();
+        data.message = $(form).find("#message").val();
+        data.subject = "Connectivity for Providers Contact Us Form";
+        data.captchaResponse = captchaResponse;
+        if (data.subject == "unknown") {
+            alert("Please select an appropriate subject.");
+            return;
+        }
+        $.ajax({
+            method: "POST",
+            url: "https://hotel-assignment-service.prod-p.expedia.com/v1/sendmail",
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json; charset=UTF-8'
+        }).done(function(response, textStatus, jqxhr) {
+            console.log(response);
+            $("form#contactus").html("Thank you for contacting Expedia!");
+            ga('send', 'event', 'contactus', data.subject);
+        }).fail(function(jqxhr){
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
+        });
+    }
+    function ajaxError(jqxhr, humanError) {
+        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        $("#result").addClass("error").html(humanError);
+    }
+</script></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Expedia PartnerCentral</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/terms">Terms and Conditions</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2017 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Providers"/></body></html>
