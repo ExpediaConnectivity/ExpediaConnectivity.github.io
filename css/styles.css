@@ -1144,9 +1144,9 @@ section.hero .inner h2 {
 }
 section.hero .inner p {
   color: #FFF;
-  width: 610px;
   font-size: 20px;
   letter-spacing: 1px;
+  max-width: 610px;
   line-height: 1.2;
   text-align: center;
 }
