@@ -13,9 +13,9 @@ $.fn.suga = function(options) {
 
   // caching $$$
   var $slide = $('.suga-slide'),
-            $firstEl = $('.suga-slide:first'),
-      $group = $('.suga-slider-group'),
-      $wrap = $('.suga-slider-wrap');
+    $firstEl = $('.suga-slide:first'),
+    $group = $('.suga-slider-group'),
+    $wrap = $('.suga-slider-wrap');
 
   var slideWidth = $slide.outerWidth(),
       slideHeight = $('.suga-slide').height(),

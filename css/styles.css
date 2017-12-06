@@ -471,9 +471,11 @@ body {
 }
 #contactus .g-recaptcha {
   float: left;
-  margin-top: -1em;
 }
-.homepage-box-main-link {
+#contactus .pull-up {
+  margin-top: -1em !important;
+}
+#contactus > div:nth-child(1) > div .homepage-box-main-link {
   font-weight: 700;
   font-family: Tahoma, sans-serif;
   font-color: blue;
@@ -594,20 +596,52 @@ body {
   background-color: #fff !important;
 }
 .slider-logo-wrap {
+  height: 80px;
+  overflow: hidden;
+  position: relative;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 80px;
-  -webkit-justify-content: space-around;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
+  flex-direction: column;
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
+}
+.suga-container {
+  background: #fff;
+}
+.suga-slider-wrap {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin: 1em;
+  position: absolute;
+  left: 0px;
+}
+.suga-slider-group {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.suga-slider-group:before,
+.suga-slider-group:after {
+  content: " ";
+  display: table;
+}
+.suga-slider-group:after {
+  clear: both;
+}
+.suga-slide {
   position: relative;
+  margin-left: 0;
+  padding: 0px 40px;
+}
+.suga-slide img {
+  display: block;
+  min-width: 150px;
+  max-width: 150px;
+  width: 150px;
 }
 #yellow-ribbon {
   background-color: #FECB2F;
@@ -648,31 +682,6 @@ body {
 li {
   list-style-type: none;
   display: inline;
-}
-.suga-container {
-  background: #fff;
-}
-.suga-slider-wrap {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin: 1em;
-}
-.suga-slider-group {
-  position: absolute;
-}
-.suga-slider-group:before,
-.suga-slider-group:after {
-  content: " ";
-  display: table;
-}
-.suga-slider-group:after {
-  clear: both;
-}
-.suga-slide {
-  float: left;
-  position: relative;
-  margin-left: 0;
-  padding: 0px 40px;
 }
 .card-section {
   padding: 0 !important;
@@ -901,6 +910,16 @@ footer .footer-logo {
   display: inline-block;
   margin-top: 40px;
   margin-bottom: 40px;
+}
+/* Contact Us */
+@media screen and (max-width: 540px) {
+  #contactus input.btn-send {
+    float: none;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    margin-bottom: -2.5rem;
+  }
 }
 /* Small only */
 @media screen and (max-width: 39.9375em) {
