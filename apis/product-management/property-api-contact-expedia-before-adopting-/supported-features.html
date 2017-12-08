@@ -58,12 +58,13 @@ function googleTranslateElementInit() {
 </thead>
 <tbody>
 <tr>
-<td>Centralized</td>
+<td>Centralized &amp; DeCentralized</td>
 <td>Billing for independent properties</td>
 </tr>
 </tbody>
 </table>
-</div><p>Property API supports clients that can centrally handle billing for its associated properties.  For Expedia Collect products, this would require that the API partner send invoices to ExpediaPay for any properties it onboards via the Property API.  Individual properties can not invoice Expedia directly.</p>
+</div><p>Property API supports clients that can centrally handle billing for its associated properties.  For Expedia Collect products, this would require that the API partner send invoices to ExpediaPay for any properties it onboards via the Property API.  DeCentralized billing is also supported - This means a Connectivity Provider can onboard multiple Property Managers on their behalf and Expedia can maintain Financial relationships with these Property Managers. </p>
+<p>Individual properties can not invoice Expedia directly. These properties cannot be onboarded via the API. </p>
 <h2 id="updating-property-content-or-attributes-via-api" data-magellan-destination="updating-property-content-or-attributes-via-api">Updating property content or attributes via API</h2>
 <div><table>
 <thead>
@@ -87,7 +88,7 @@ function googleTranslateElementInit() {
 </tr>
 </tbody>
 </table>
-</div><p>After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  The Property API cannot be used to update properties that were onboarded by methods other than the Property API.  After initial onboarding by the Property API some settings some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.</p>
+</div><p>After onboarding a property using the Property API, many of the attributes submitted via onboarding can be updated by sending a full overlay update to the Property API.  The Property API cannot be used to update properties that were onboarded by methods other than the Property API.  After initial onboarding by the Property API some updates, such as latitude/longitude, will be accepted by the Property API but not processed.  See the SetPropertyDetails documentation for a listing of attributes that are not updatable via the Property API.</p>
 <h2 id="retrieving-some-types-of-property-info-via-api" data-magellan-destination="retrieving-some-types-of-property-info-via-api">Retrieving Some Types of Property Info via API</h2>
 <div><table>
 <thead>
