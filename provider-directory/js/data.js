@@ -1,11 +1,11 @@
 define({allProviders:  
 [
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7859", 
+        "website": "http://www.1hotelrez.com", 
+        "country": "united states", 
+        "company": "1HotelSolution.com Co., Ltd.", 
         "bookSuccess": 86.8, 
-        "system": "Coral Red Electric Cyan", 
+        "system": "1HotelRez", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -17,11 +17,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5132", 
+        "website": "http://www.beds-to-web.de/", 
+        "country": "canada", 
+        "company": "Aaron Hotels and Hostels Holding GmbH", 
         "bookSuccess": 99.1, 
-        "system": "Eucalyptus Ash Gray", 
+        "system": "Autoupdate", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -35,11 +35,11 @@ define({allProviders:
         "availSuccess": 97.5
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7284", 
+        "website": "http://accubook.net", 
+        "country": "canada", 
+        "company": "Accubook", 
         "bookSuccess": 99.2, 
-        "system": "Burnt Umber Blue-Violet (Color Wheel)", 
+        "system": "AccuSell", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -53,11 +53,11 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2228", 
+        "website": "http://acigrup.com/v3/", 
+        "country": "canada", 
+        "company": "AciGrup S.L", 
         "bookSuccess": 99.2, 
-        "system": "Deep Aquamarine Android Green", 
+        "system": "Acinet", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -68,11 +68,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.activemetrics.com", 
         "country": "argentina", 
-        "company": "Provider 4593", 
+        "company": "Active Metrics", 
         "bookSuccess": 97.2, 
-        "system": "Caput Mortuum Cornflower Blue", 
+        "system": "Synergy", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -82,11 +82,11 @@ define({allProviders:
         "availSuccess": 94.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7051", 
+        "website": "http://www.dormproject.ch", 
+        "country": "australia", 
+        "company": "alixon gmbh", 
         "bookSuccess": 98.4, 
-        "system": "Dandelion (Crayola) Catalina Blue", 
+        "system": "HostelOffice / DormProject", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -98,11 +98,11 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1205", 
+        "website": "http://www.allotz.com", 
+        "country": "australia", 
+        "company": "Allotz", 
         "bookSuccess": 66.0, 
-        "system": "Ash Gray Deep Carmine", 
+        "system": "Allotz Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -116,11 +116,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
+        "website": "https://www.cityexpress.com/", 
         "country": "canada", 
-        "company": "Provider 7034", 
+        "company": "ALTABIX", 
         "bookSuccess": 94.9, 
-        "system": "Bright Pink Cadmium Red", 
+        "system": "FlowLink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -132,11 +132,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1800", 
+        "website": "http://www.AnandSystems.com", 
+        "country": "united states", 
+        "company": "Anand Systems Inc", 
         "bookSuccess": 99.8, 
-        "system": "Eminence Alloy Orange", 
+        "system": "ASI Front Desk (v5.3+)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -151,11 +151,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.ratewizz.com", 
         "country": "canada", 
-        "company": "Provider 7989", 
+        "company": "AROBS Transilvania Software", 
         "bookSuccess": 97.8, 
-        "system": "Bright Cerulean Ash Gray", 
+        "system": "RateWizz", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -167,11 +167,11 @@ define({allProviders:
         "availSuccess": 90.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5823", 
+        "website": "http://www.sistemhotelsoftware.com/Home/ChannelManager", 
+        "country": "argentina", 
+        "company": "Arpies Yazlm Bilgisayar Danmanlk Turizm Tic. Ltd", 
         "bookSuccess": 98.2, 
-        "system": "Battleship Grey Blue Yonder", 
+        "system": "Arpies Yazilim", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -183,11 +183,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7676", 
+        "website": "https://www.asiatech.in", 
+        "country": "austria", 
+        "company": "AsiaTech Hospitality Solution Pvt Ltd", 
         "bookSuccess": 69.6, 
-        "system": "Blueberry Dark Vanilla", 
+        "system": "AsiaTech", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -200,11 +200,11 @@ define({allProviders:
         "availSuccess": 91.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1434", 
+        "website": "http://www.athena.com.tw", 
+        "country": "argentina", 
+        "company": "Athena Information Systems", 
         "bookSuccess": 99.6, 
-        "system": "Deep Space Sparkle Folly", 
+        "system": "TravelLink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -216,11 +216,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9235", 
+        "website": "http://www.hermeshotels.it/", 
+        "country": "argentina", 
+        "company": "Athena Solutions", 
         "bookSuccess": 99.4, 
-        "system": "Amaranth Deep Purple Deep Lilac", 
+        "system": "HermesHotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -233,22 +233,11 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3397", 
-        "bookSuccess": 95.4, 
-        "system": "Chrome Yellow Fallow", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CRS", 
-        "availSuccess": 100.0
-    }, 
-    {
-        "website": "/systems", 
+        "website": "http://www.avaibook.com", 
         "country": "argentina", 
-        "company": "Provider 8454", 
+        "company": "AvaiBook", 
         "bookSuccess": 97.7, 
-        "system": "Bright Cerulean Bole", 
+        "system": "AvaiBook", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -261,11 +250,11 @@ define({allProviders:
         "availSuccess": 95.7
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1405", 
+        "website": "http://site.availpro.com/", 
+        "country": "argentina", 
+        "company": "Availpro", 
         "bookSuccess": 99.1, 
-        "system": "Deep Green Amaranth", 
+        "system": "Availpro", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -279,11 +268,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2945", 
+        "website": "http://www.availroom.com", 
+        "country": "argentina", 
+        "company": "AVAILROOM S.L.", 
         "bookSuccess": 99.8, 
-        "system": "Fire Opal Cornsilk", 
+        "system": "AVAILROOM", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -298,11 +287,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2312", 
+        "website": "http://www.avantio.es", 
+        "country": "argentina", 
+        "company": "Avantio VRMS", 
         "bookSuccess": 41.7, 
-        "system": "Electric Crimson Dark Red", 
+        "system": "Avantio", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -314,11 +303,11 @@ define({allProviders:
         "availSuccess": 97.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1498", 
+        "website": "http://www.resavenue.com", 
+        "country": "argentina", 
+        "company": "Avenues South Asias", 
         "bookSuccess": 97.8, 
-        "system": "Deep Pink Cerise", 
+        "system": "ResAvenue Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -330,22 +319,22 @@ define({allProviders:
         "availSuccess": 95.7
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4645", 
+        "website": "http://www.avirato.com", 
+        "country": "austria", 
+        "company": "Avirato", 
         "bookSuccess": 96.9, 
-        "system": "Electric Yellow Fresh Air", 
+        "system": "Avirato", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 93.5
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1419", 
+        "website": "http://www.axisrooms.com", 
+        "country": "austria", 
+        "company": "AxisRooms Travel Distribution Solutions Pvt. Ltd.", 
         "bookSuccess": 97.2, 
-        "system": "Dark Pink Deep Fuchsia", 
+        "system": "AxisRooms", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -360,11 +349,11 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7585", 
+        "website": "http://www.b4checkin.com", 
+        "country": "united states", 
+        "company": "b4checkin", 
         "bookSuccess": 95.2, 
-        "system": "Brilliant Rose Dodie Yellow", 
+        "system": "B4Checkin", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -379,11 +368,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9338", 
+        "website": "http://www.octorate.com", 
+        "country": "united states", 
+        "company": "BBliverate Octorate", 
         "bookSuccess": 87.3, 
-        "system": "Dust Storm British Racing Green", 
+        "system": "Octorate", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -396,11 +385,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.beds24.com", 
         "country": "canada", 
-        "company": "Provider 5976", 
+        "company": "beds24", 
         "bookSuccess": 99.1, 
-        "system": "Cadmium Purple Battery Charged Blue", 
+        "system": "Beds24 PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -415,11 +404,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8433", 
+        "website": "http://www.begenius.it", 
+        "country": "austria", 
+        "company": "BeGenius", 
         "bookSuccess": 92.9, 
-        "system": "Violet Dark Jungle Green", 
+        "system": "BookinGenius", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -433,11 +422,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.360pms.com", 
         "country": "australia", 
-        "company": "Provider 9089", 
+        "company": "Beijing Miot. Ltd.", 
         "bookSuccess": 98.9, 
-        "system": "Cadmium Yellow Dark Powder Blue", 
+        "system": "Yunzhanggui", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -448,11 +437,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9330", 
+        "website": "http://www.igems.co.za", 
+        "country": "canada", 
+        "company": "Berry Software", 
         "bookSuccess": 93.5, 
-        "system": "Camel Blackberry", 
+        "system": "iGems", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -464,11 +453,11 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bookingmanager.com/", 
         "country": "argentina", 
-        "company": "Provider 4260", 
+        "company": "BillyPDS", 
         "bookSuccess": 80.1, 
-        "system": "Fuchsia Amaranth Purple", 
+        "system": "BillyPDS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -478,22 +467,11 @@ define({allProviders:
         "availSuccess": 89.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bookandlink.com", 
         "country": "australia", 
-        "company": "Provider 2900", 
-        "bookSuccess": 84.3, 
-        "system": "Fuchsia (Crayola) Cadmium Orange", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 97.2
-    }, 
-    {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3198", 
+        "company": "BookandLink", 
         "bookSuccess": 92.6, 
-        "system": "Dark Salmon Copper", 
+        "system": "BookandLink", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -502,11 +480,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7734", 
+        "website": "http://bookassist.com", 
+        "country": "austria", 
+        "company": "Bookassist", 
         "bookSuccess": 92.8, 
-        "system": "Cosmic Latte Cosmic Latte", 
+        "system": "Channel Connect", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -518,11 +496,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1160", 
+        "website": "https://cm.bookitech.com", 
+        "country": "argentina", 
+        "company": "Booki Tech S.r.l.s", 
         "bookSuccess": 99.5, 
-        "system": "Aureolin Dark Olive Green", 
+        "system": "Booki Tech", 
         "featuresSupported": [
             "Bookings include Expedia brand that traveler used"
         ], 
@@ -531,11 +509,11 @@ define({allProviders:
         "availSuccess": 94.2
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1395", 
+        "website": "http://BookingAutomation.com", 
+        "country": "canada", 
+        "company": "Booking Automation Inc", 
         "bookSuccess": 95.1, 
-        "system": "Dark Yellow Fawn", 
+        "system": "BookingAutomation", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -547,11 +525,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bookingexperts.com", 
         "country": "austria", 
-        "company": "Provider 5801", 
+        "company": "Booking Experts", 
         "bookSuccess": 92.3, 
-        "system": "Dark Tangerine Burnt Umber", 
+        "system": "Booking Experts", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -563,11 +541,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bookingcenter.com", 
         "country": "canada", 
-        "company": "Provider 9330", 
+        "company": "BookingCenter", 
         "bookSuccess": 99.8, 
-        "system": "Burnt Sienna Blast-Off Bronze", 
+        "system": "BookingCenter", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -578,11 +556,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5940", 
+        "website": "https://bookinglite.ru", 
+        "country": "australia", 
+        "company": "BookingLite", 
         "bookSuccess": 100.0, 
-        "system": "Diamond Dark Pastel Green", 
+        "system": "BookingLite", 
         "featuresSupported": [
             "Bookings include Expedia brand that traveler used"
         ], 
@@ -596,11 +574,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://IMPORTANT", 
         "country": "australia", 
-        "company": "Provider 1557", 
+        "company": "BookingPal", 
         "bookSuccess": 95.5, 
-        "system": "Cosmic Cobalt Cherry", 
+        "system": "BookingPal", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -616,22 +594,22 @@ define({allProviders:
         "availSuccess": 95.4
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6283", 
+        "website": "http://www.BookLogic.net", 
+        "country": "austria", 
+        "company": "BookLogic", 
         "bookSuccess": 86.6, 
-        "system": "Carmine Dark Turquoise", 
+        "system": "MaxiChannel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 88.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3664", 
+        "website": "http://www.brasilbookings.com.br", 
+        "country": "austria", 
+        "company": "Brasil Bookings", 
         "bookSuccess": 95.9, 
-        "system": "Eton Blue Dark Slate Gray", 
+        "system": "Brasil Bookings", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -644,11 +622,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4759", 
+        "website": "http://www.busy-rooms.com", 
+        "country": "australia", 
+        "company": "BusyRooms", 
         "bookSuccess": 98.9, 
-        "system": "Arctic Lime Deep Red", 
+        "system": "BusyRooms", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -662,11 +640,11 @@ define({allProviders:
         "availSuccess": 97.4
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4984", 
+        "website": "http://SwissQualityHotels.com", 
+        "country": "united states", 
+        "company": "CE Computer Engineering AG", 
         "bookSuccess": 99.5, 
-        "system": "Fallow Carmine Red", 
+        "system": "QOnline CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -679,11 +657,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://channelmanager.com.au", 
         "country": "united states", 
-        "company": "Provider 9871", 
+        "company": "ChannelManager.com.au", 
         "bookSuccess": 86.5, 
-        "system": "Apricot Burnt Umber", 
+        "system": "ChannelManager.com.au", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -692,11 +670,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5272", 
+        "website": "http://www.channelrush.com", 
+        "country": "argentina", 
+        "company": "ChannelRUSH", 
         "bookSuccess": 85.2, 
-        "system": "Azure Brass", 
+        "system": "ChannelRUSH Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -711,44 +689,44 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.chelagarto.com", 
         "country": "united states", 
-        "company": "Provider 4336", 
+        "company": "Che Lagarto Hostel", 
         "bookSuccess": 19.4, 
-        "system": "Arylide Yellow Dark Red", 
+        "system": "Che Lagarto", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8822", 
-        "bookSuccess": 90.7, 
-        "system": "Asparagus Dark Green", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 99.9
-    }, 
-    {
-        "website": "/systems", 
+        "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp", 
         "country": "australia", 
-        "company": "Provider 9342", 
-        "bookSuccess": 95.3, 
-        "system": "Bubble Gum Citrine Brown", 
+        "company": "CHINAOnline", 
+        "bookSuccess": 90.7, 
+        "system": "COL switch - Green Tree Chain", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2485", 
+        "website": "http://www.chinaonline.net.cn/home_new_eng/index.asp", 
+        "country": "australia", 
+        "company": "CHINAOnline", 
+        "bookSuccess": 95.3, 
+        "system": "COL switch - Jin Jiang Chain", 
+        "featuresSupported": [], 
+        "restrictionsSupported": [], 
+        "type": "CM", 
+        "availSuccess": 99.9
+    }, 
+    {
+        "website": "http://www.clips.co.jp/", 
+        "country": "canada", 
+        "company": "Clips", 
         "bookSuccess": 99.8, 
-        "system": "Apple Green Dollar Bill", 
+        "system": "Neppan", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -759,22 +737,22 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4031", 
+        "website": "http://www.clubmahindra.com", 
+        "country": "australia", 
+        "company": "Club Mahindra Hotels & Resorts", 
         "bookSuccess": null, 
-        "system": "Crystal Dark Sienna", 
+        "system": "Crest CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 77.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2755", 
+        "website": "http://www.compusoft.dk", 
+        "country": "australia", 
+        "company": "Compusoft", 
         "bookSuccess": 97.0, 
-        "system": "Brunswick Green Dark Pastel Purple", 
+        "system": "Compusoft", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -788,11 +766,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2513", 
+        "website": "http://www.elloha.com/", 
+        "country": "argentina", 
+        "company": "Constellation", 
         "bookSuccess": 94.6, 
-        "system": "Ferrari Red Cetacean Blue", 
+        "system": "Elloha/Constellation", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -803,11 +781,11 @@ define({allProviders:
         "availSuccess": 97.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5241", 
+        "website": "http://www.coral-technologies.com/en/orbe/acerca-de-orbe.html", 
+        "country": "argentina", 
+        "company": "Coral-Technologies", 
         "bookSuccess": 99.2, 
-        "system": "Fallow Dark Cerulean", 
+        "system": "ORBE (ONLINE RESERVATION BOOKING ENGINE)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -821,11 +799,11 @@ define({allProviders:
         "availSuccess": 98.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8838", 
+        "website": "http://www.cultuzz.de", 
+        "country": "argentina", 
+        "company": "Cultuzz", 
         "bookSuccess": 96.6, 
-        "system": "Brown Chocolate Brilliant Azure", 
+        "system": "Cultuzz Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -836,11 +814,11 @@ define({allProviders:
         "availSuccess": 96.2
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bookon.org", 
         "country": "argentina", 
-        "company": "Provider 1268", 
+        "company": "CWD S.r.l", 
         "bookSuccess": 99.9, 
-        "system": "Alice Blue Violet", 
+        "system": "BookOn", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -854,11 +832,11 @@ define({allProviders:
         "availSuccess": 94.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5705", 
+        "website": "http://www.thinkreservations.com", 
+        "country": "united states", 
+        "company": "DeepThink LLC", 
         "bookSuccess": 98.2, 
-        "system": "Auburn Desaturated Cyan", 
+        "system": "ThinkReservations", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -870,22 +848,22 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.derbysoft.com/", 
         "country": "canada", 
-        "company": "Provider 6423", 
+        "company": "DerbySoft", 
         "bookSuccess": 94.7, 
-        "system": "Dark Silver Cadet Grey", 
+        "system": "DHotelier", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 95.6
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3340", 
+        "website": "http://www.dsone.com/", 
+        "country": "united states", 
+        "company": "DerbySoft", 
         "bookSuccess": 80.0, 
-        "system": "Electric Red Cornell Red", 
+        "system": "One by DerbySoft", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -898,11 +876,11 @@ define({allProviders:
         "availSuccess": 94.5
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7345", 
+        "website": "https://www.myallocator.com/", 
+        "country": "united states", 
+        "company": "Digital Arbitrage", 
         "bookSuccess": 99.5, 
-        "system": "Congo Pink Brass", 
+        "system": "My Allocator", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -916,11 +894,11 @@ define({allProviders:
         "availSuccess": 96.7
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hoteldruid.com", 
         "country": "australia", 
-        "company": "Provider 2520", 
+        "company": "DigitalDruid", 
         "bookSuccess": 96.7, 
-        "system": "Cardinal Desert", 
+        "system": "HotelDruid", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -934,11 +912,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4940", 
+        "website": "http://www.dingus-services.com/", 
+        "country": "australia", 
+        "company": "Dingus Services", 
         "bookSuccess": 98.8, 
-        "system": "Burlywood Blackberry", 
+        "system": "Dingus CM", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -951,11 +929,11 @@ define({allProviders:
         "availSuccess": 91.7
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4811", 
+        "website": "http://eglobe-solutions.com/", 
+        "country": "austria", 
+        "company": "Direct Hotels Pvt Ltd", 
         "bookSuccess": 89.1, 
-        "system": "Flavescent Flattery", 
+        "system": "eGlobe Solutions", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -969,11 +947,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8933", 
+        "website": "http://www.directwithhotels.com/", 
+        "country": "united states", 
+        "company": "DirectWithHotels", 
         "bookSuccess": 93.9, 
-        "system": "Cetacean Blue Deep Green", 
+        "system": "DirectWithHotels System", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -984,11 +962,11 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
+        "website": "https://e4jconnect.com", 
         "country": "australia", 
-        "company": "Provider 1413", 
+        "company": "e4jConnect", 
         "bookSuccess": 86.1, 
-        "system": "Bole Dark Spring Green", 
+        "system": "e4j - Extensionsforjoomla.com", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1003,11 +981,11 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6410", 
+        "website": "http://cabovillas.com", 
+        "country": "united states", 
+        "company": "Earth, Sea & Sky Vacations", 
         "bookSuccess": null, 
-        "system": "Coral Congo Pink", 
+        "system": "V12/ISILink", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -1016,22 +994,22 @@ define({allProviders:
         "availSuccess": null
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 2221", 
+        "website": "https://www.easeroom.com/", 
+        "country": "united states", 
+        "company": "EASEROOM (Unit of GI Hospitalities Private Limited)", 
         "bookSuccess": 95.8, 
-        "system": "Amaranth Deep Purple Battery Charged Blue", 
+        "system": "EaseRoom Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 53.1
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1119", 
+        "website": "https://www.easy-rez.com", 
+        "country": "canada", 
+        "company": "Easy-Rez", 
         "bookSuccess": 93.0, 
-        "system": "Alizarin Crimson Desert Sand", 
+        "system": "Easy-Rez CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1042,11 +1020,11 @@ define({allProviders:
         "availSuccess": 95.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9684", 
+        "website": "http://www.obehotel.com", 
+        "country": "australia", 
+        "company": "Efimatica", 
         "bookSuccess": 95.4, 
-        "system": "Dim Gray Camel", 
+        "system": "Obehotel", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1058,26 +1036,11 @@ define({allProviders:
         "availSuccess": 96.3
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.engisoft.com", 
         "country": "united states", 
-        "company": "Provider 4371", 
-        "bookSuccess": 96.7, 
-        "system": "Dark Pastel Green Blue Sapphire", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "PMS", 
-        "availSuccess": 99.8
-    }, 
-    {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7660", 
+        "company": "Engisoft", 
         "bookSuccess": 97.9, 
-        "system": "Dark Cornflower Blue Orchid", 
+        "system": "Bird iCRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1092,11 +1055,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.engisoft.com", 
         "country": "argentina", 
-        "company": "Provider 6366", 
+        "company": "Engisoft", 
         "bookSuccess": 98.4, 
-        "system": "Earth Yellow Cyan Azure", 
+        "system": "Bird iCRS - Acta Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1111,11 +1074,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3283", 
+        "website": "https://admin.12go.co.kr", 
+        "country": "argentina", 
+        "company": "EpicBrain", 
         "bookSuccess": 98.1, 
-        "system": "Blue-Gray Cadmium Red", 
+        "system": "Octopus", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1125,11 +1088,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3335", 
+        "website": "http://www.ericsoft.com", 
+        "country": "united states", 
+        "company": "Ericsoft", 
         "bookSuccess": 99.2, 
-        "system": "Dark Terra Cotta Dark Cerulean", 
+        "system": "Ericsoft ChannelManager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1143,11 +1106,11 @@ define({allProviders:
         "availSuccess": 93.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6417", 
+        "website": "http://www.estargroup.it", 
+        "country": "austria", 
+        "company": "Estar Group", 
         "bookSuccess": 85.7, 
-        "system": "Chartreuse (Web) Dark Tangerine", 
+        "system": "BookingEstar", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1158,11 +1121,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9966", 
+        "website": "http://www.ezeeabsolute.com", 
+        "country": "austria", 
+        "company": "eZee Technosys", 
         "bookSuccess": 98.0, 
-        "system": "Aero Deep Spring Bud", 
+        "system": "eZee Absolute", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1175,11 +1138,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3359", 
+        "website": "http://www.ezeecentrix.com", 
+        "country": "united states", 
+        "company": "eZee Technosys", 
         "bookSuccess": 97.4, 
-        "system": "Dark Goldenrod Candy Apple Red", 
+        "system": "eZee Centrix", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1192,33 +1155,22 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.ezyrez.com.au", 
         "country": "argentina", 
-        "company": "Provider 6673", 
+        "company": "EzyRez", 
         "bookSuccess": 99.3, 
-        "system": "Flame Eggplant", 
+        "system": "EzyChannel", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7375", 
-        "bookSuccess": 96.0, 
-        "system": "Alizarin Crimson Fire Opal", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "PMS", 
-        "availSuccess": 94.6
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4219", 
+        "website": "http://www.xmitter.com", 
+        "country": "canada", 
+        "company": "Fairbridge Inns EQC", 
         "bookSuccess": 36.5, 
-        "system": "Cornflower Fashion Fuchsia", 
+        "system": "xMitter", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1228,11 +1180,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3253", 
+        "website": "http://www.fastbooking.com/", 
+        "country": "australia", 
+        "company": "Fastbooking", 
         "bookSuccess": 99.3, 
-        "system": "Earth Yellow Black", 
+        "system": "FastBooking Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1246,11 +1198,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7394", 
+        "website": "http://www.evols.it", 
+        "country": "austria", 
+        "company": "Figaro", 
         "bookSuccess": 98.2, 
-        "system": "Cerulean Frost Castleton Green", 
+        "system": "Figaro - Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1261,11 +1213,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8444", 
+        "website": "http://www.finite-soft.com", 
+        "country": "argentina", 
+        "company": "Finite-Systems", 
         "bookSuccess": 99.9, 
-        "system": "Cerise Coral Pink", 
+        "system": "Finite Software Systems CM", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -1281,22 +1233,22 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3286", 
+        "website": "http://www.fivestarhotelsystems.com/products_services/products_services.htm", 
+        "country": "canada", 
+        "company": "Five Star Hotel Systems Corporation", 
         "bookSuccess": 95.3, 
-        "system": "Bronze Yellow Electric Lime", 
+        "system": "Five Star Software", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 94.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8196", 
+        "website": "http://www.freetobook.com", 
+        "country": "austria", 
+        "company": "Freetobook", 
         "bookSuccess": 98.6, 
-        "system": "Bright Yellow (Crayola) Baby Powder", 
+        "system": "Freetobook System", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Property content synced with Expedia", 
@@ -1312,22 +1264,22 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7286", 
+        "website": "http://frontdeskanywhere.com", 
+        "country": "canada", 
+        "company": "Frontdesk Anywhere", 
         "bookSuccess": 96.2, 
-        "system": "Copper Calamansi", 
+        "system": "Frontdesk Anywhere PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 84.8
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1024", 
+        "website": "http://frontdesk24.ru", 
+        "country": "argentina", 
+        "company": "Frontdesk24", 
         "bookSuccess": 85.9, 
-        "system": "Celadon Green Feldgrau", 
+        "system": "Frontdesk24", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1339,11 +1291,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9735", 
+        "website": "http://galaxy-hotels.fr", 
+        "country": "united states", 
+        "company": "Galaxy H\u00f4tels", 
         "bookSuccess": 99.5, 
-        "system": "Fallow Flavescent", 
+        "system": "Galaxy H\u00f4tels", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1355,11 +1307,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3430", 
+        "website": "http://www.gestionealbergo.it", 
+        "country": "austria", 
+        "company": "Gestione Albergo Srl", 
         "bookSuccess": 97.5, 
-        "system": "Alloy Orange Forest Green (Crayola)", 
+        "system": "LeoPortals Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -1372,11 +1324,11 @@ define({allProviders:
         "availSuccess": 93.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.gimh.es/", 
         "country": "canada", 
-        "company": "Provider 5318", 
+        "company": "GIMH", 
         "bookSuccess": 33.9, 
-        "system": "Boston University Red Cameo Pink", 
+        "system": "GIMH Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1387,22 +1339,22 @@ define({allProviders:
         "availSuccess": 91.6
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1204", 
+        "website": "http://www.ezsitecontroller.jp/", 
+        "country": "united states", 
+        "company": "Global Network Connection", 
         "bookSuccess": 99.2, 
-        "system": "Black Olive Forest Green (Crayola)", 
+        "system": "EZ Site Controller", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://globalservicedapts.com", 
         "country": "australia", 
-        "company": "Provider 8639", 
+        "company": "Global Serviced Apartments", 
         "bookSuccess": 99.8, 
-        "system": "Baby Pink Burnt Umber", 
+        "system": "Global Serviced Apartments, LLC", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1414,11 +1366,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6218", 
+        "website": "https://www.gms.info/", 
+        "country": "argentina", 
+        "company": "GMS", 
         "bookSuccess": 95.6, 
-        "system": "Brown Yellow Cerise", 
+        "system": "GMS Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1428,11 +1380,11 @@ define({allProviders:
         "availSuccess": 89.2
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2856", 
+        "website": "http://www.gna.es", 
+        "country": "argentina", 
+        "company": "GNA", 
         "bookSuccess": 99.4, 
-        "system": "Calamansi Copper Rose", 
+        "system": "GnaHS Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1445,11 +1397,11 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2572", 
+        "website": "http://gracesoft.com/", 
+        "country": "australia", 
+        "company": "Gracesoft Software", 
         "bookSuccess": 94.5, 
-        "system": "Eggplant Coral Pink", 
+        "system": "Easy InnKeeping", 
         "featuresSupported": [
             "Eligible to receive Expedia guest cardholder data"
         ], 
@@ -1458,11 +1410,11 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5337", 
+        "website": "http://www.syncrez.com", 
+        "country": "united states", 
+        "company": "Greeka / Syncrez", 
         "bookSuccess": 85.4, 
-        "system": "Antique Brass Dark Jungle Green", 
+        "system": "Syncrez", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1474,11 +1426,11 @@ define({allProviders:
         "availSuccess": 96.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2888", 
+        "website": "http://www.altiuspar.com/", 
+        "country": "argentina", 
+        "company": "Grupo Posadas", 
         "bookSuccess": 99.5, 
-        "system": "Egyptian Blue Copper", 
+        "system": "AltiusPar", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1494,11 +1446,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9954", 
+        "website": "https://www.yieldplanet.com/", 
+        "country": "canada", 
+        "company": "GTH Solutions YieldPlanet", 
         "bookSuccess": 97.2, 
-        "system": "Apple Davy's Grey", 
+        "system": "YieldPlanet", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1512,11 +1464,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8289", 
+        "website": "https://www.sihot.com/en/modules/sihotpms", 
+        "country": "canada", 
+        "company": "Gubse AG", 
         "bookSuccess": 98.9, 
-        "system": "Dark Red China Pink", 
+        "system": "Sihot PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1528,11 +1480,11 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7234", 
+        "website": "http://www.guestcentric.com", 
+        "country": "australia", 
+        "company": "GuestCentric Systems", 
         "bookSuccess": 99.5, 
-        "system": "Cadet Blue Atomic Tangerine", 
+        "system": "Evolution CRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1547,11 +1499,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7419", 
+        "website": "http://www.guestcentric.com/features/channel-management/", 
+        "country": "argentina", 
+        "company": "GuestCentric Systems", 
         "bookSuccess": 98.6, 
-        "system": "Chestnut Deep Cerise", 
+        "system": "GuestCentric Systems Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1565,11 +1517,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9697", 
+        "website": "http://www.guestline.com", 
+        "country": "australia", 
+        "company": "Guestline Ltd", 
         "bookSuccess": 99.9, 
-        "system": "Banana Yellow Dark Yellow", 
+        "system": "Roomlynx", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1584,11 +1536,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8676", 
+        "website": "https://EffectiveTours.com", 
+        "country": "united states", 
+        "company": "Harizma Holdings Lanka", 
         "bookSuccess": 98.9, 
-        "system": "Cyan Bright Turquoise", 
+        "system": "Effective Tours", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1598,11 +1550,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hdnglobal.com/", 
         "country": "united states", 
-        "company": "Provider 4027", 
+        "company": "HDN Global", 
         "bookSuccess": 98.8, 
-        "system": "Dark Imperial Blue Dodie Yellow", 
+        "system": "HDN Global", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1611,11 +1563,11 @@ define({allProviders:
         "availSuccess": 97.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.high-level-software.com/", 
         "country": "australia", 
-        "company": "Provider 4040", 
+        "company": "High Level Software", 
         "bookSuccess": 98.2, 
-        "system": "Chlorophyll Green Burnished Brown", 
+        "system": "High Level PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1626,11 +1578,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.highlandvision.com", 
         "country": "australia", 
-        "company": "Provider 3347", 
+        "company": "Highland Vision", 
         "bookSuccess": 81.8, 
-        "system": "Cyber Grape Dark Lava", 
+        "system": "Highland Vision Bookings", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1640,11 +1592,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hirum.com.au", 
         "country": "australia", 
-        "company": "Provider 5692", 
+        "company": "Hirum", 
         "bookSuccess": 99.8, 
-        "system": "Deep Lemon Blue Sapphire", 
+        "system": "Hisite", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1655,11 +1607,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hti-systems.co.za/", 
         "country": "australia", 
-        "company": "Provider 4114", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
         "bookSuccess": 89.9, 
-        "system": "Chocolate Cosmos Deep Fuchsia", 
+        "system": "eRes", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1671,11 +1623,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1594", 
+        "website": "http://www.hti-systems.co.za/", 
+        "country": "canada", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
         "bookSuccess": 88.5, 
-        "system": "Desaturated Cyan Blue-Gray", 
+        "system": "eRes - ThornyBush", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1687,11 +1639,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hti-systems.co.za/", 
         "country": "australia", 
-        "company": "Provider 9078", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
         "bookSuccess": 92.6, 
-        "system": "Charm Pink Denim", 
+        "system": "eRes\u00a0- Apollo Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1703,11 +1655,11 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7921", 
+        "website": "http://www.hti-systems.co.za/", 
+        "country": "austria", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
         "bookSuccess": 94.8, 
-        "system": "Eminence Blue Bolt", 
+        "system": "eRes\u00a0- Legend Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1719,11 +1671,11 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1840", 
+        "website": "http://www.hti-systems.co.za/", 
+        "country": "canada", 
+        "company": "Hospitality Technology International (Pty) Ltd", 
         "bookSuccess": 97.3, 
-        "system": "Bubble Gum Cornflower Blue", 
+        "system": "eRes\u00a0- Tsogo Sun Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1735,11 +1687,11 @@ define({allProviders:
         "availSuccess": 96.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2488", 
+        "website": "http://www.hostpms.com", 
+        "country": "australia", 
+        "company": "Host Hotel Systems", 
         "bookSuccess": 99.1, 
-        "system": "Deep Koamaru Deep Koamaru", 
+        "system": "Host PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1751,11 +1703,11 @@ define({allProviders:
         "availSuccess": 98.2
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hostaway.com", 
         "country": "argentina", 
-        "company": "Provider 9019", 
+        "company": "Hostaway", 
         "bookSuccess": 85.4, 
-        "system": "Dark Powder Blue Electric Crimson", 
+        "system": "Hostaway", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -1766,22 +1718,22 @@ define({allProviders:
         "availSuccess": 82.7
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5420", 
+        "website": "https:// www.hosteeva.com", 
+        "country": "canada", 
+        "company": "Hosteeva LLC", 
         "bookSuccess": 98.4, 
-        "system": "Coral Red Aero", 
+        "system": "Hosteeva", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 98.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3333", 
+        "website": "http://www.frontdeskmaster.com", 
+        "country": "australia", 
+        "company": "Hostel System", 
         "bookSuccess": 98.1, 
-        "system": "Deep Spring Bud Citron", 
+        "system": "FrontDesk Master", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1794,11 +1746,11 @@ define({allProviders:
         "availSuccess": 98.9
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7766", 
+        "website": "https://hotelavailabilities.com", 
+        "country": "argentina", 
+        "company": "Hotel Availabilities LTD", 
         "bookSuccess": 99.9, 
-        "system": "Orange Alabama Crimson", 
+        "system": "HotelAvailabilities", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1810,11 +1762,11 @@ define({allProviders:
         "availSuccess": 93.3
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5478", 
+        "website": "https://amadeus-hospitality.com/central-reservations-system/rezexchange/", 
+        "country": "australia", 
+        "company": "Hotel Concepts", 
         "bookSuccess": 98.7, 
-        "system": "Cal Poly Pomona Green Dark Spring Green", 
+        "system": "Rezexchange", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1828,11 +1780,11 @@ define({allProviders:
         "availSuccess": 93.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3077", 
+        "website": "http://www.hotellinksolutions.com", 
+        "country": "united states", 
+        "company": "Hotel Link Solutions", 
         "bookSuccess": 95.0, 
-        "system": "Deep Pink Dark Silver", 
+        "system": "Hotel Link Solutions", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1846,11 +1798,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7489", 
+        "website": "http://www.hotel-profi.de", 
+        "country": "austria", 
+        "company": "Hotel Profi", 
         "bookSuccess": 87.7, 
-        "system": "Crystal Blue Carmine Red", 
+        "system": "Hotel Profi", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1861,11 +1813,11 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8055", 
+        "website": "http://www.hotelstory.com", 
+        "country": "australia", 
+        "company": "Hotel Story", 
         "bookSuccess": 85.5, 
-        "system": "Electric Purple Chartreuse", 
+        "system": "Hotelstory", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1877,11 +1829,11 @@ define({allProviders:
         "availSuccess": 89.5
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3694", 
+        "website": "http://travelaps.com", 
+        "country": "united states", 
+        "company": "Hoteladvisor.net", 
         "bookSuccess": 80.9, 
-        "system": "Canary Cal Poly Pomona Green", 
+        "system": "Hoteladvisor", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1893,22 +1845,22 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotelan.com", 
         "country": "austria", 
-        "company": "Provider 3968", 
+        "company": "Hotelan", 
         "bookSuccess": null, 
-        "system": "Chocolate Brown Bright Gray", 
+        "system": "ComHotel", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 94.5
     }, 
     {
-        "website": "/systems", 
+        "website": "https://www.hoteliers.guru", 
         "country": "canada", 
-        "company": "Provider 4103", 
+        "company": "Hoteliers Dot Guru Pte. Ltd.", 
         "bookSuccess": 96.6, 
-        "system": "Fern Green Dark Pastel Green", 
+        "system": "Hoteliers.Guru Channel Management", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1922,22 +1874,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4980", 
-        "bookSuccess": 98.0, 
-        "system": "Bright Ube Blue Sapphire", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 99.9
-    }, 
-    {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7262", 
+        "website": "http://www.hoteliga.com", 
+        "country": "australia", 
+        "company": "Hoteliga", 
         "bookSuccess": 99.1, 
-        "system": "Crystal Cool Black", 
+        "system": "Hoteliga", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1951,11 +1892,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotel-net.it", 
         "country": "united states", 
-        "company": "Provider 1183", 
+        "company": "HotelNet", 
         "bookSuccess": 99.3, 
-        "system": "Bondi Blue Black Bean", 
+        "system": "HotelNet CRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -1970,11 +1911,11 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9305", 
+        "website": "http://www.hotelnetsolutions.de", 
+        "country": "australia", 
+        "company": "HotelNetSolutions", 
         "bookSuccess": 98.7, 
-        "system": "Baby Blue Eyes Eminence", 
+        "system": "HotelNetSolutions", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -1987,11 +1928,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hoteloga.com", 
         "country": "canada", 
-        "company": "Provider 8356", 
+        "company": "Hoteloga", 
         "bookSuccess": 15.8, 
-        "system": "Antique Brass Blue-Gray", 
+        "system": "HotelOga", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Property content synced with Expedia", 
@@ -2002,11 +1943,11 @@ define({allProviders:
         "availSuccess": null
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7066", 
+        "website": "http://hotelpartner-ym.com", 
+        "country": "united states", 
+        "company": "HotelPartner", 
         "bookSuccess": 99.6, 
-        "system": "Blue-Green (Color Wheel) Army Green", 
+        "system": "HotelPartner CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2017,11 +1958,11 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2821", 
+        "website": "http://www.hotelrunner.com", 
+        "country": "austria", 
+        "company": "HotelRunner", 
         "bookSuccess": 98.0, 
-        "system": "Deep Green-Cyan Turquoise Coral", 
+        "system": "HotelRunner", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2036,11 +1977,11 @@ define({allProviders:
         "availSuccess": 96.7
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotelwebservice.com", 
         "country": "argentina", 
-        "company": "Provider 4718", 
+        "company": "HotelWebservice GMBH", 
         "bookSuccess": 96.6, 
-        "system": "Fire Engine Red Deep Lemon", 
+        "system": "HotelWebservice Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2053,22 +1994,22 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3109", 
+        "website": "http://www.travelopenapps.org/", 
+        "country": "canada", 
+        "company": "Hotetec Accomodation SL", 
         "bookSuccess": 86.8, 
-        "system": "Calamansi Bulgarian Rose", 
+        "system": "Hotetec", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 97.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4180", 
+        "website": "http://www.hsystem.com.br", 
+        "country": "canada", 
+        "company": "HSystem", 
         "bookSuccess": 97.8, 
-        "system": "Dark Lavender Bistre Brown", 
+        "system": "HUNIT", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2079,22 +2020,22 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5712", 
+        "website": "http://www.hubs1.net", 
+        "country": "united states", 
+        "company": "Hubs1", 
         "bookSuccess": 86.2, 
-        "system": "Blue-Gray Fresh Air", 
+        "system": "Hubs1", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1864", 
+        "website": "http://www.idosell.com/", 
+        "country": "united states", 
+        "company": "IAI S.A", 
         "bookSuccess": 86.2, 
-        "system": "Dark Electric Blue Antique Ruby", 
+        "system": "IdoSell Booking", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2105,11 +2046,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4017", 
+        "website": "http://www.ibsplc.com/products/hospitality-solutions/demand-gateway", 
+        "country": "canada", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
         "bookSuccess": 97.3, 
-        "system": "Fuchsia (Crayola) Deep Carrot Orange", 
+        "system": "Demand Gateway", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -2127,11 +2068,11 @@ define({allProviders:
         "availSuccess": 82.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8341", 
+        "website": "http://www.hotelbookingsolutions.com/", 
+        "country": "argentina", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
         "bookSuccess": 97.5, 
-        "system": "Baby Blue Eyes Deep Tuscan Red", 
+        "system": "Demand Gateway - Disney", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2146,11 +2087,11 @@ define({allProviders:
         "availSuccess": 95.1
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6413", 
+        "website": "http://www.hotelbookingsolutions.com/", 
+        "country": "austria", 
+        "company": "IBS Hospitality Solutions (Formerly HBSi)", 
         "bookSuccess": 99.1, 
-        "system": "Cadmium Purple Cameo Pink", 
+        "system": "Demand Gateway - Fairmont", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2159,11 +2100,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2813", 
+        "website": "http://www.TOURWOODS.com", 
+        "country": "argentina", 
+        "company": "Icewoods Digital Technology", 
         "bookSuccess": 91.6, 
-        "system": "Emerald Green Champagne", 
+        "system": "Tour Echo", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2175,11 +2116,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3194", 
+        "website": "http://icnea.com", 
+        "country": "argentina", 
+        "company": "Icnea Tecnologia S.L.", 
         "bookSuccess": 84.0, 
-        "system": "Flame Caribbean Green", 
+        "system": "Icnea", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2192,11 +2133,11 @@ define({allProviders:
         "availSuccess": 61.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6555", 
+        "website": "http://www.idiso.com", 
+        "country": "canada", 
+        "company": "Idiso", 
         "bookSuccess": 99.4, 
-        "system": "Electric Violet Cherry", 
+        "system": "Idiso", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2211,11 +2152,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.idiso.com", 
         "country": "australia", 
-        "company": "Provider 2802", 
+        "company": "Idiso", 
         "bookSuccess": 99.6, 
-        "system": "Blue-Green (Color Wheel) Dark Purple", 
+        "system": "Sirius", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2230,11 +2171,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.roomleader.com/", 
         "country": "argentina", 
-        "company": "Provider 7828", 
+        "company": "IGM", 
         "bookSuccess": 97.5, 
-        "system": "Cheese Dark Sea Green", 
+        "system": "IGM Synergy Hotel CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2247,11 +2188,11 @@ define({allProviders:
         "availSuccess": 98.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2684", 
+        "website": "https://vmpms.com/", 
+        "country": "united states", 
+        "company": "Image Technology Systems", 
         "bookSuccess": 87.9, 
-        "system": "Dark Olive Green Fandango Pink", 
+        "system": "VisualMatrix", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2261,11 +2202,11 @@ define({allProviders:
         "availSuccess": 88.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.my-bookings.org/", 
         "country": "united states", 
-        "company": "Provider 8487", 
+        "company": "IMS Media", 
         "bookSuccess": 98.8, 
-        "system": "Cyan Cobalt Blue Drab", 
+        "system": "My Bookings", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2275,11 +2216,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8060", 
+        "website": "http://www.tmsforhotels.com/", 
+        "country": "united states", 
+        "company": "Indra", 
         "bookSuccess": 98.3, 
-        "system": "Dark Moss Green Cerise", 
+        "system": "TMS for Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2293,11 +2234,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.tmsforhotels.com/", 
         "country": "australia", 
-        "company": "Provider 4944", 
+        "company": "Indra", 
         "bookSuccess": 98.2, 
-        "system": "Dark Powder Blue Cyan Cornflower Blue", 
+        "system": "TMS for Hotels -  nhHotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2311,11 +2252,11 @@ define({allProviders:
         "availSuccess": 94.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.innstyle.co.uk", 
         "country": "australia", 
-        "company": "Provider 5047", 
+        "company": "Inn Style", 
         "bookSuccess": 99.5, 
-        "system": "Dark Moss Green Bronze (Metallic)", 
+        "system": "Inn Style", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2329,11 +2270,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5060", 
+        "website": "http://www.innfinity.com", 
+        "country": "argentina", 
+        "company": "INNfinity Hospitality", 
         "bookSuccess": 96.4, 
-        "system": "Coral Reef Columbia Blue", 
+        "system": "INNfinity V2", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -2342,11 +2283,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3888", 
+        "website": "http://www.inngeniuspms.com/", 
+        "country": "australia", 
+        "company": "InnGenius Property Management Solutions", 
         "bookSuccess": 98.4, 
-        "system": "Black Coffee Charcoal", 
+        "system": "Inn-Connect Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2360,11 +2301,11 @@ define({allProviders:
         "availSuccess": 95.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7804", 
+        "website": "http://www.innquest.com", 
+        "country": "canada", 
+        "company": "InnQuest Software", 
         "bookSuccess": 97.0, 
-        "system": "Desaturated Cyan Bistre Brown", 
+        "system": "roomMaster", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2378,11 +2319,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3428", 
+        "website": "http://www.innroad.com", 
+        "country": "canada", 
+        "company": "innRoad", 
         "bookSuccess": 99.1, 
-        "system": "Acajou Cyclamen", 
+        "system": "innRoad PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2395,11 +2336,11 @@ define({allProviders:
         "availSuccess": 93.6
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4545", 
+        "website": "http://www.innsoft.com", 
+        "country": "austria", 
+        "company": "Innsoft, Incorporated", 
         "bookSuccess": 94.9, 
-        "system": "Debian Red Bisque", 
+        "system": "Check-Inn PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2413,11 +2354,11 @@ define({allProviders:
         "availSuccess": 64.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9245", 
+        "website": "http://www.interalp-touristik.com/de/channel-manager.html", 
+        "country": "austria", 
+        "company": "Interalp Touristik", 
         "bookSuccess": 99.5, 
-        "system": "Citrine Brown Electric Purple", 
+        "system": "Interalp", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2428,11 +2369,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8187", 
+        "website": "http://www.reservit.com", 
+        "country": "united states", 
+        "company": "Interface Technologies", 
         "bookSuccess": 99.4, 
-        "system": "Charm Pink Cal Poly Pomona Green", 
+        "system": "Reservit", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2446,11 +2387,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1339", 
+        "website": "http://www.reservit.com", 
+        "country": "argentina", 
+        "company": "Interface Technologies", 
         "bookSuccess": 99.3, 
-        "system": "Forest Green (Crayola) Desire", 
+        "system": "Reservit - Brithotel", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2464,11 +2405,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6542", 
+        "website": "http://www.reservit.com", 
+        "country": "united states", 
+        "company": "Interface Technologies", 
         "bookSuccess": 99.8, 
-        "system": "Bright Pink Blackberry", 
+        "system": "Reservit - Citotel", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2482,65 +2423,65 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8211", 
-        "bookSuccess": 99.0, 
-        "system": "Blue-Gray Amethyst", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Advanced Purchase"
-        ], 
-        "type": "CRS", 
-        "availSuccess": 99.7
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8126", 
-        "bookSuccess": 99.5, 
-        "system": "Dark Pastel Green Crimson", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Advanced Purchase"
-        ], 
-        "type": "CRS", 
-        "availSuccess": 99.7
-    }, 
-    {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2494", 
-        "bookSuccess": 99.7, 
-        "system": "Deep Amethyst Dark Violet", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Advanced Purchase"
-        ], 
-        "type": "CRS", 
-        "availSuccess": 99.7
-    }, 
-    {
-        "website": "/systems", 
+        "website": "http://www.reservit.com", 
         "country": "argentina", 
-        "company": "Provider 1248", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.0, 
+        "system": "Reservit - FastHotel", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "country": "canada", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.5, 
+        "system": "Reservit - Logis Hotels", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "country": "austria", 
+        "company": "Interface Technologies", 
+        "bookSuccess": 99.7, 
+        "system": "Reservit - SEH Hotels", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Advanced Purchase"
+        ], 
+        "type": "CRS", 
+        "availSuccess": 99.7
+    }, 
+    {
+        "website": "http://www.reservit.com", 
+        "country": "austria", 
+        "company": "Interface Technologies", 
         "bookSuccess": 97.7, 
-        "system": "Azure Mist Dark Tan", 
+        "system": "Reservit - Zenitude", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2554,11 +2495,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2129", 
+        "website": "http://www.softbooker.com", 
+        "country": "argentina", 
+        "company": "Interface Technologies", 
         "bookSuccess": 99.6, 
-        "system": "Dark Khaki Black Coffee", 
+        "system": "ReservIT Softbooker Canada", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2572,11 +2513,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6387", 
+        "website": "http://www.easyram.it", 
+        "country": "australia", 
+        "company": "Internettare", 
         "bookSuccess": 79.3, 
-        "system": "Electric Green Copper Penny", 
+        "system": "Easyram", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2587,11 +2528,11 @@ define({allProviders:
         "availSuccess": 95.2
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3035", 
+        "website": "http://www.iperbooking.com", 
+        "country": "canada", 
+        "company": "Ipernet", 
         "bookSuccess": 99.9, 
-        "system": "Desert Chocolate Cosmos", 
+        "system": "Iperbooking channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2602,11 +2543,11 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4417", 
+        "website": "http://www.hotelboss.dk", 
+        "country": "argentina", 
+        "company": "Ipnordic A/S", 
         "bookSuccess": 100.0, 
-        "system": "Deep Lemon China Pink", 
+        "system": "HotelBoss", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2618,22 +2559,22 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1228", 
+        "website": "http://www.iqwareinc.com/", 
+        "country": "argentina", 
+        "company": "IQWARE", 
         "bookSuccess": 85.2, 
-        "system": "Cotton Candy Eerie Black", 
+        "system": "IQWare PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 85.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4790", 
+        "website": "http://rabbitjets.com", 
+        "country": "argentina", 
+        "company": "ITF CROUP CO.", 
         "bookSuccess": 87.6, 
-        "system": "Amaranth Purple Banana Mania", 
+        "system": "RabbitJetsPMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2644,11 +2585,11 @@ define({allProviders:
         "availSuccess": 92.7
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3788", 
+        "website": "http://www.raku-2.jp/", 
+        "country": "united states", 
+        "company": "JR Systems", 
         "bookSuccess": 100.0, 
-        "system": "Dark Puce CG Red", 
+        "system": "Rakutsu", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2662,11 +2603,11 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.ke-booking.com", 
         "country": "argentina", 
-        "company": "Provider 5753", 
+        "company": "KE-Booking", 
         "bookSuccess": 80.4, 
-        "system": "Begonia Cinnamon[Citation Needed]", 
+        "system": "KE-Booking CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2678,11 +2619,11 @@ define({allProviders:
         "availSuccess": 94.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8389", 
+        "website": "http://www.hotres.pl", 
+        "country": "canada", 
+        "company": "LemonPixel.pl", 
         "bookSuccess": 98.6, 
-        "system": "Cyan Azure Antique Ruby", 
+        "system": "Hotres.pl", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2694,11 +2635,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2821", 
+        "website": "http://www.levartdistributionsystems.com.au/", 
+        "country": "austria", 
+        "company": "Levart", 
         "bookSuccess": 99.5, 
-        "system": "Egyptian Blue Byzantium", 
+        "system": "Levart Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2711,11 +2652,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.lodgegate.com", 
         "country": "austria", 
-        "company": "Provider 6705", 
+        "company": "Lodgegate", 
         "bookSuccess": 99.4, 
-        "system": "Bright Maroon Dim Gray", 
+        "system": "Lodgegate PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2728,11 +2669,11 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8984", 
+        "website": "http://www.luxuryres.com", 
+        "country": "argentina", 
+        "company": "LuxuryRes", 
         "bookSuccess": 97.2, 
-        "system": "Blue Yonder Begonia", 
+        "system": "EzRes", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2746,11 +2687,11 @@ define({allProviders:
         "availSuccess": 90.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7858", 
+        "website": "http://www.madeep.com", 
+        "country": "austria", 
+        "company": "Madeep", 
         "bookSuccess": 99.1, 
-        "system": "Coquelicot China Rose", 
+        "system": "Mad Booking", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2761,11 +2702,11 @@ define({allProviders:
         "availSuccess": 60.5
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1561", 
+        "website": "https://www.magarental.com/en/software/magarental", 
+        "country": "australia", 
+        "company": "Magarental AG", 
         "bookSuccess": 90.2, 
-        "system": "Bulgarian Rose Electric Indigo", 
+        "system": "MAGARENTAL", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2777,11 +2718,11 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8456", 
+        "website": "http://www.mallorcasoft.es", 
+        "country": "united states", 
+        "company": "Mallorca Soft", 
         "bookSuccess": 69.1, 
-        "system": "Cerise Pink Cinnamon Satin", 
+        "system": "Astro Hotel", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2792,11 +2733,11 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2550", 
+        "website": "http://www.maximojo.com", 
+        "country": "united states", 
+        "company": "MaxiMojo Software (Pvt.) Ltd", 
         "bookSuccess": 100.0, 
-        "system": "Bright Maroon Chlorophyll Green", 
+        "system": "Hospitality Solutions Mantra", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2810,29 +2751,11 @@ define({allProviders:
         "availSuccess": 90.6
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1572", 
-        "bookSuccess": 85.3, 
-        "system": "Black Blanched Almond", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 92.3
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8218", 
+        "website": "http://www.maxxton.com", 
+        "country": "united states", 
+        "company": "Maxxton India Technologies Pvt. Ltd.", 
         "bookSuccess": 92.1, 
-        "system": "Amaranth Pink Catawba", 
+        "system": "Newyse", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2844,11 +2767,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6885", 
+        "website": "http://www.magellano.info", 
+        "country": "australia", 
+        "company": "MediaLab Sofware Engineering S.N.C.", 
         "bookSuccess": 91.2, 
-        "system": "Chlorophyll Green Dark Slate Blue", 
+        "system": "MainApps - Magellano", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2861,22 +2784,22 @@ define({allProviders:
         "availSuccess": 94.6
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8223", 
+        "website": "http://www.reservationsystems.com/", 
+        "country": "united states", 
+        "company": "Meridian", 
         "bookSuccess": 99.8, 
-        "system": "Black Ferrari Red", 
+        "system": "Meridian Reservation Systems", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 98.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.mingus.biz/en/index.htm", 
         "country": "austria", 
-        "company": "Provider 1262", 
+        "company": "Mingus Software", 
         "bookSuccess": 99.2, 
-        "system": "Deep Amethyst Blueberry", 
+        "system": "Hotello", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2888,11 +2811,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2316", 
+        "website": "https://www.misterbooking.com", 
+        "country": "united states", 
+        "company": "Misterbooking", 
         "bookSuccess": 99.0, 
-        "system": "Dark Powder Blue Dutch White", 
+        "system": "Misterbooking CM", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -2906,11 +2829,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1107", 
+        "website": "http://www.mm-one.com/", 
+        "country": "austria", 
+        "company": "MM-One Group Srl", 
         "bookSuccess": 82.4, 
-        "system": "Electric Lavender Bright Lavender", 
+        "system": "BookingOne Connect", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2922,11 +2845,11 @@ define({allProviders:
         "availSuccess": 92.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8970", 
+        "website": "http://www.minihotelpms.com", 
+        "country": "argentina", 
+        "company": "Motel Software Solutions", 
         "bookSuccess": 98.3, 
-        "system": "Dark Blue Dark Red", 
+        "system": "Mini Hotel", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2937,11 +2860,11 @@ define({allProviders:
         "availSuccess": 92.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.booknowhotel.com", 
         "country": "australia", 
-        "company": "Provider 4682", 
+        "company": "MR Group SAS", 
         "bookSuccess": 99.2, 
-        "system": "Cyber Yellow Bulgarian Rose", 
+        "system": "MRGroup", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2954,11 +2877,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotelxp.it", 
         "country": "united states", 
-        "company": "Provider 6460", 
+        "company": "Nebiz", 
         "bookSuccess": 97.5, 
-        "system": "Dark Lemon Lime Maroon", 
+        "system": "HotelXP", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -2969,11 +2892,11 @@ define({allProviders:
         "availSuccess": 97.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5766", 
+        "website": "http://www.netroomz.com.au", 
+        "country": "argentina", 
+        "company": "Netroomz", 
         "bookSuccess": 79.7, 
-        "system": "Apricot Dark Chestnut", 
+        "system": "Freeloader", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -2982,11 +2905,11 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1109", 
+        "website": "https://www.hotel.bb/", 
+        "country": "argentina", 
+        "company": "Netskin.net", 
         "bookSuccess": 99.4, 
-        "system": "Dark Violet Brown", 
+        "system": "Hotel.BB", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3000,11 +2923,11 @@ define({allProviders:
         "availSuccess": 98.2
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3659", 
+        "website": "http://www.newbook.cloud", 
+        "country": "argentina", 
+        "company": "NewBook Pty Ltd", 
         "bookSuccess": 99.8, 
-        "system": "Deep Lemon Emerald", 
+        "system": "NewBook", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3017,11 +2940,11 @@ define({allProviders:
         "availSuccess": 73.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2765", 
+        "website": "http://www.bookingexpert.it", 
+        "country": "canada", 
+        "company": "Nexteam SRL", 
         "bookSuccess": 99.6, 
-        "system": "Cerise Cadet Blue", 
+        "system": "BookingExpert Italy", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3030,11 +2953,11 @@ define({allProviders:
         "availSuccess": 89.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6790", 
+        "website": "http://www.nextpax.com", 
+        "country": "canada", 
+        "company": "NextPax", 
         "bookSuccess": 99.5, 
-        "system": "Cal Poly Pomona Green Blood Orange", 
+        "system": "Lodgix Property Management System", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3046,11 +2969,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3783", 
+        "website": "http://site.nightsbridge.com/pms-connector/", 
+        "country": "united states", 
+        "company": "Nightsbridge", 
         "bookSuccess": 99.5, 
-        "system": "Candy Pink Amaranth Pink", 
+        "system": "NightsBridge PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3061,11 +2984,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6451", 
+        "website": "http://www.reseliva.com", 
+        "country": "australia", 
+        "company": "Nivera Technologies", 
         "bookSuccess": 99.6, 
-        "system": "Blue Bole", 
+        "system": "Reseliva", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3080,11 +3003,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8928", 
+        "website": "http://www.maestropms.com", 
+        "country": "canada", 
+        "company": "NORTHWIND", 
         "bookSuccess": 97.8, 
-        "system": "Maroon Deep Amethyst", 
+        "system": "Maestro Property Management-PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3096,11 +3019,11 @@ define({allProviders:
         "availSuccess": 81.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7980", 
+        "website": "http://www.novaxs.com.br", 
+        "country": "united states", 
+        "company": "Nova XS Tecnologia da Informa\u00e7\u00e3o LTDA.", 
         "bookSuccess": 99.2, 
-        "system": "Dark Medium Gray Brandeis Blue", 
+        "system": "Nova XS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3112,11 +3035,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
+        "website": "http://Http://ostays.com", 
         "country": "austria", 
-        "company": "Provider 4437", 
+        "company": "O Hotel Suites Ltd", 
         "bookSuccess": 88.9, 
-        "system": "Carnelian Dark Taupe", 
+        "system": "Ostays", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3130,22 +3053,11 @@ define({allProviders:
         "availSuccess": 75.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.apartmentsapart.com", 
         "country": "austria", 
-        "company": "Provider 8622", 
-        "bookSuccess": 96.0, 
-        "system": "Blue-Green (Color Wheel) Cool Black", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CRS", 
-        "availSuccess": 99.9
-    }, 
-    {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7712", 
+        "company": "Old Town Apartments", 
         "bookSuccess": 99.6, 
-        "system": "Cadet Grey Chocolate Kisses", 
+        "system": "Old Town Apartments System", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3155,11 +3067,11 @@ define({allProviders:
         "availSuccess": 98.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 9276", 
+        "website": "http://www.omnibees.com", 
+        "country": "austria", 
+        "company": "Omnibees CRS", 
         "bookSuccess": 97.4, 
-        "system": "AuroMetalSaurus Dark Olive Green", 
+        "system": "Omnibees (HoteisNet)", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3173,11 +3085,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5131", 
+        "website": "http://www.1-up.co.uk", 
+        "country": "argentina", 
+        "company": "one UP", 
         "bookSuccess": 99.7, 
-        "system": "Cerulean Blood Orange", 
+        "system": "one UP", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3190,22 +3102,22 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2786", 
+        "website": "http://www.onetechsolution.com", 
+        "country": "united states", 
+        "company": "ONETECH solution", 
         "bookSuccess": 81.4, 
-        "system": "Brandeis Blue Deep Moss Green", 
+        "system": "ONETECH PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 0.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5854", 
+        "website": "http://www.online-int.com.au", 
+        "country": "austria", 
+        "company": "Online Systems", 
         "bookSuccess": 99.6, 
-        "system": "CG Blue Cambridge Blue", 
+        "system": "Chart PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3214,11 +3126,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8850", 
+        "website": "http://software.onressystems.com/", 
+        "country": "argentina", 
+        "company": "OnRes Systems Inc", 
         "bookSuccess": 99.1, 
-        "system": "Deep Lemon Bistre", 
+        "system": "AccomPro", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3230,11 +3142,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9720", 
+        "website": "http://www.openhotel.com", 
+        "country": "austria", 
+        "company": "Open Hotel Inc", 
         "bookSuccess": 99.1, 
-        "system": "Dark Cerulean Bistre", 
+        "system": "Open Hotel PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3246,66 +3158,66 @@ define({allProviders:
         "availSuccess": 96.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2776", 
+        "website": "http://www.micros.com", 
+        "country": "canada", 
+        "company": "Oracle Hospitality", 
         "bookSuccess": 99.8, 
-        "system": "Antique Ruby Celestial Blue", 
+        "system": "Micros Channel Manager Europe", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6519", 
+        "website": "http://www.micros.com", 
+        "country": "australia", 
+        "company": "Oracle Hospitality", 
         "bookSuccess": 99.3, 
-        "system": "Cerise Crimson Red", 
+        "system": "Micros Channel Manager USA/Canada", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5477", 
+        "website": "http://www.micros.com", 
+        "country": "united states", 
+        "company": "Oracle Hospitality", 
         "bookSuccess": 99.9, 
-        "system": "Amazon Deep Carmine Pink", 
+        "system": "Micros Suite 8 EMEA", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7463", 
+        "website": "http://www.oyorooms.com", 
+        "country": "austria", 
+        "company": "Oravel Stays Pvt. Ltd.", 
         "bookSuccess": 86.8, 
-        "system": "Battleship Grey Bleu De France", 
+        "system": "OYORooms", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 88.3
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2092", 
+        "website": "http://www.oreve-technologies.com/index.php", 
+        "country": "australia", 
+        "company": "Oreve Technologies", 
         "bookSuccess": 41.0, 
-        "system": "Battery Charged Blue Celadon Blue", 
+        "system": "Room online", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 87.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3242", 
+        "website": "https://otelia.io/", 
+        "country": "united states", 
+        "company": "Otelia.it", 
         "bookSuccess": 99.8, 
-        "system": "Fuchsia Pink Army Green", 
+        "system": "Otelia Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3317,22 +3229,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.passepartout.net", 
         "country": "canada", 
-        "company": "Provider 2342", 
-        "bookSuccess": 98.0, 
-        "system": "Cameo Pink Dollar Bill", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 99.1
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2697", 
+        "company": "Passepartout", 
         "bookSuccess": 96.9, 
-        "system": "Deep Carmine Cream", 
+        "system": "Passepartout Welcome", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3346,22 +3247,22 @@ define({allProviders:
         "availSuccess": 95.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7536", 
+        "website": "http://www.perfecthandssolutions.com", 
+        "country": "australia", 
+        "company": "Perfect Hands Solutions Pvt. Ltd", 
         "bookSuccess": 96.9, 
-        "system": "Carmine Pink Aquamarine", 
+        "system": "Perfect Hands Solutions", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 94.3
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7778", 
+        "website": "http://www.phobs.net", 
+        "country": "canada", 
+        "company": "PHOBS", 
         "bookSuccess": 99.6, 
-        "system": "Antique Bronze Eminence", 
+        "system": "PHOBS CRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3376,11 +3277,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3707", 
+        "website": "https://www.pierreetvacances.com/", 
+        "country": "united states", 
+        "company": "Pierre et Vacances - EQC", 
         "bookSuccess": 87.1, 
-        "system": "Avocado Candy Pink", 
+        "system": "Pierre et Vacances - CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3391,11 +3292,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9967", 
+        "website": "http://www.winner-hotelsoftware.com/en", 
+        "country": "united states", 
+        "company": "Planet Winner", 
         "bookSuccess": 99.7, 
-        "system": "African Violet Bright Lavender", 
+        "system": "Planet Winner", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3406,11 +3307,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9278", 
+        "website": "http://www.pmscloud.com", 
+        "country": "austria", 
+        "company": "PMS Cloud LP", 
         "bookSuccess": 95.5, 
-        "system": "Copper Penny Bisque", 
+        "system": "PMS Cloud", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3422,11 +3323,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3883", 
+        "website": "http://www.cloudhospitality.es", 
+        "country": "argentina", 
+        "company": "Prestige Software", 
         "bookSuccess": 97.1, 
-        "system": "Dark Terra Cotta Coconut", 
+        "system": "Prestige", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3441,11 +3342,11 @@ define({allProviders:
         "availSuccess": 96.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2007", 
+        "website": "http://www.prestige-inet.com", 
+        "country": "argentina", 
+        "company": "Prestige Software", 
         "bookSuccess": 97.3, 
-        "system": "Brunswick Green Cornsilk", 
+        "system": "Prestige - AGA Hotels", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3454,11 +3355,11 @@ define({allProviders:
         "availSuccess": 97.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3055", 
+        "website": "http://www.prestige-inet.com", 
+        "country": "united states", 
+        "company": "Prestige Software", 
         "bookSuccess": 99.7, 
-        "system": "Electric Brown Champagne Pink", 
+        "system": "Prestige - Iberostar", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3467,11 +3368,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3243", 
+        "website": "http://www.prestige-inet.com", 
+        "country": "australia", 
+        "company": "Prestige Software", 
         "bookSuccess": null, 
-        "system": "Forest Green Bronze", 
+        "system": "Prestige - Magic Costa Blanca", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3480,11 +3381,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.prestige-inet.com", 
         "country": "austria", 
-        "company": "Provider 4534", 
+        "company": "Prestige Software", 
         "bookSuccess": 99.8, 
-        "system": "Dark Scarlet Cream", 
+        "system": "Prestige - Pierre & Vacances", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3493,11 +3394,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://PRIMAL-RES.GR", 
         "country": "united states", 
-        "company": "Provider 4102", 
+        "company": "Primal-RES", 
         "bookSuccess": 99.8, 
-        "system": "Flame Celadon", 
+        "system": "Channels Easy", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3512,11 +3413,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6257", 
+        "website": "http://www.profitroom.com/", 
+        "country": "australia", 
+        "company": "Profit Room", 
         "bookSuccess": 98.2, 
-        "system": "Dark Taupe Black Shadows", 
+        "system": "Profitroom", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3528,11 +3429,11 @@ define({allProviders:
         "availSuccess": 86.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6555", 
+        "website": "http://www.roomerpms.com", 
+        "country": "austria", 
+        "company": "Promoir BV", 
         "bookSuccess": 99.9, 
-        "system": "Atomic Tangerine Cetacean Blue", 
+        "system": "Roomer PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3546,11 +3447,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7262", 
+        "website": "http://www.protel.net", 
+        "country": "argentina", 
+        "company": "Protel Hotel Software", 
         "bookSuccess": 98.2, 
-        "system": "Blue-Violet Cadmium Red", 
+        "system": "Protel - PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3561,11 +3462,11 @@ define({allProviders:
         "availSuccess": 90.4
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6382", 
+        "website": "http://pynbooking.com", 
+        "country": "australia", 
+        "company": "Pyn Booking", 
         "bookSuccess": 94.4, 
-        "system": "Apple Blue Lagoon", 
+        "system": "Pyn Booking", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3575,11 +3476,11 @@ define({allProviders:
         "availSuccess": 91.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.simplebooking.it/", 
         "country": "argentina", 
-        "company": "Provider 5061", 
+        "company": "QNT S.r.l", 
         "bookSuccess": 98.1, 
-        "system": "Cherry Fandango Pink", 
+        "system": "Simple Booking Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3592,11 +3493,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9378", 
+        "website": "http://www.quickyield.com", 
+        "country": "united states", 
+        "company": "QuickYield", 
         "bookSuccess": 99.9, 
-        "system": "Blush Cookies And Cream", 
+        "system": "QuickManager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3610,11 +3511,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.erevmax.com", 
         "country": "canada", 
-        "company": "Provider 9647", 
+        "company": "Rate Tiger", 
         "bookSuccess": 95.1, 
-        "system": "Deep Fuchsia Dark Chestnut", 
+        "system": "Rate Tiger Connect", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3628,11 +3529,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9781", 
+        "website": "http://www.erevmax.com", 
+        "country": "australia", 
+        "company": "Rate Tiger", 
         "bookSuccess": 99.5, 
-        "system": "Cerulean Celadon", 
+        "system": "Rate Tiger Suite", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3646,47 +3547,47 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3293", 
-        "bookSuccess": 99.5, 
-        "system": "Army Green Conditioner", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 99.6
-    }, 
-    {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 6124", 
-        "bookSuccess": null, 
-        "system": "Deep Jungle Green Citrine Brown", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 99.6
-    }, 
-    {
-        "website": "/systems", 
+        "website": "http://www.rategain.com/yieldgain_hotels.htm", 
         "country": "austria", 
-        "company": "Provider 6078", 
+        "company": "RateGain", 
+        "bookSuccess": 99.5, 
+        "system": "RateGain", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://www.rategain.com/yieldgain_hotels.htm", 
+        "country": "australia", 
+        "company": "RateGain", 
+        "bookSuccess": null, 
+        "system": "RateGain AR-Only", 
+        "featuresSupported": [
+            "Bookings include Expedia value add promotion details"
+        ], 
+        "restrictionsSupported": [
+            "Minimum Length of Stay", 
+            "Maximum Length of Stay", 
+            "Closed to Arrival", 
+            "Closed to Departure"
+        ], 
+        "type": "CM", 
+        "availSuccess": 99.6
+    }, 
+    {
+        "website": "http://redawning.com", 
+        "country": "united states", 
+        "company": "Redawning", 
         "bookSuccess": 100.0, 
-        "system": "Fluorescent Yellow Chocolate Brown", 
+        "system": "Redawning", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -3700,11 +3601,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9504", 
+        "website": "http://rentalsunited.com", 
+        "country": "austria", 
+        "company": "Rentals United Integration (formerly Holiday Velvet)", 
         "bookSuccess": 96.4, 
-        "system": "Ebony Cadmium Violet", 
+        "system": "Rentals United", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -3717,11 +3618,11 @@ define({allProviders:
         "availSuccess": 91.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6282", 
+        "website": "http://www.gastrodat.com", 
+        "country": "canada", 
+        "company": "RESCON24", 
         "bookSuccess": 84.7, 
-        "system": "Brown Chocolate Electric Violet", 
+        "system": "Gastrodat", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3733,11 +3634,11 @@ define({allProviders:
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 5253", 
+        "website": "http://www.reservhotel.com", 
+        "country": "canada", 
+        "company": "ReservHOTEL International", 
         "bookSuccess": 98.3, 
-        "system": "Brink Pink Cornsilk", 
+        "system": "Global Connection", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3747,11 +3648,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4442", 
+        "website": "http://www.resonline.com/", 
+        "country": "canada", 
+        "company": "ResOnline", 
         "bookSuccess": 98.9, 
-        "system": "Black Leather Jacket Bleu De France", 
+        "system": "ResOnline Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3763,11 +3664,11 @@ define({allProviders:
         "availSuccess": 99.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9606", 
+        "website": "http://www.resonline.ru", 
+        "country": "canada", 
+        "company": "Resonline LLC", 
         "bookSuccess": 98.7, 
-        "system": "Deep Green Bisque", 
+        "system": "Resonline LLC Europe", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3776,11 +3677,11 @@ define({allProviders:
         "availSuccess": 98.2
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7475", 
+        "website": "http://www.resortdata.com/", 
+        "country": "australia", 
+        "company": "Resort Data Processing, Inc.", 
         "bookSuccess": 89.5, 
-        "system": "Crimson Deep Maroon", 
+        "system": "RDPWin", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3794,33 +3695,33 @@ define({allProviders:
         "availSuccess": 83.4
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7713", 
+        "website": "http://www.resrequest.com", 
+        "country": "argentina", 
+        "company": "ResRequest", 
         "bookSuccess": 85.0, 
-        "system": "Columbia Blue Dark Slate Blue", 
+        "system": "ResRequest", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": null
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4158", 
+        "website": "http://www.revparguru.com", 
+        "country": "united states", 
+        "company": "Revparguru", 
         "bookSuccess": null, 
-        "system": "Cadet Blue Cyan Cobalt Blue", 
+        "system": "Revparguru Channel Manager for EQC", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 97.3
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8282", 
+        "website": "http://www.reznext.com/", 
+        "country": "canada", 
+        "company": "RezNext Global Solutions", 
         "bookSuccess": 99.8, 
-        "system": "Aero Blue Chestnut", 
+        "system": "RezNext", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3834,11 +3735,11 @@ define({allProviders:
         "availSuccess": 96.7
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7750", 
+        "website": "http://www.r-h-n.net", 
+        "country": "canada", 
+        "company": "RHN", 
         "bookSuccess": null, 
-        "system": "Dark Byzantium Electric Lavender", 
+        "system": "Rez Online", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3850,11 +3751,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.bukly.com", 
         "country": "austria", 
-        "company": "Provider 4126", 
+        "company": "Rio Tera - Ag\u00eancia Web Ltda", 
         "bookSuccess": 97.4, 
-        "system": "Auburn Brilliant Lavender", 
+        "system": "Bukly CM", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3865,11 +3766,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3780", 
+        "website": "https://www.rmscloud.com/", 
+        "country": "canada", 
+        "company": "RMS (Aust) Pty Ltd", 
         "bookSuccess": 98.0, 
-        "system": "Barn Red Button Blue", 
+        "system": "RMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3881,11 +3782,11 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4225", 
+        "website": "http://www.roiback.com/", 
+        "country": "canada", 
+        "company": "ROIBACK", 
         "bookSuccess": 99.7, 
-        "system": "Copper Fern Green", 
+        "system": "ROIBACK CRS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3897,11 +3798,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1130", 
+        "website": "http://www.mghworld.net", 
+        "country": "austria", 
+        "company": "Roomito Online Pvt Ltd", 
         "bookSuccess": 88.2, 
-        "system": "Brown Coffee Bright Lavender", 
+        "system": "Roomito Channel Manager", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia"
         ], 
@@ -3910,11 +3811,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7034", 
+        "website": "https://www.roomraccoon.com/en/all-in-one/pms/page", 
+        "country": "australia", 
+        "company": "RoomRaccoon", 
         "bookSuccess": 98.3, 
-        "system": "Aztec Gold Blue-Green (Color Wheel)", 
+        "system": "RoomRaccoon", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3926,22 +3827,22 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 2547", 
+        "website": "http://www.roomsy.com", 
+        "country": "australia", 
+        "company": "Roomsy", 
         "bookSuccess": 95.1, 
-        "system": "Dust Storm Field Drab", 
+        "system": "Roomsy PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 94.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7928", 
+        "website": "http://www.roomkeypms.com", 
+        "country": "australia", 
+        "company": "RSI International", 
         "bookSuccess": 98.5, 
-        "system": "Bitter Lime Chocolate Kisses", 
+        "system": "RoomKey", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3952,11 +3853,11 @@ define({allProviders:
         "availSuccess": 97.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.ruralgest.com", 
         "country": "austria", 
-        "company": "Provider 5163", 
+        "company": "RuralGest Sistemas de Reservas S.L", 
         "bookSuccess": 93.7, 
-        "system": "Cinnamon Satin Chocolate Cosmos", 
+        "system": "RuralGest", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3965,11 +3866,11 @@ define({allProviders:
         "availSuccess": 93.0
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9749", 
+        "website": "http://www.sabeeapp.com", 
+        "country": "united states", 
+        "company": "SabeeApp", 
         "bookSuccess": 99.7, 
-        "system": "Chocolate (Web) Dark Turquoise", 
+        "system": "SabeeApp", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -3980,11 +3881,11 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8870", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "austria", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 96.6, 
-        "system": "Caramel Copper Red", 
+        "system": "InnLink CRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -3993,11 +3894,11 @@ define({allProviders:
         "availSuccess": 63.5
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9162", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "canada", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.2, 
-        "system": "Black Olive Conditioner", 
+        "system": "SynXis CRS  - Morgans", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4013,11 +3914,11 @@ define({allProviders:
         "availSuccess": 93.7
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1996", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "argentina", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.4, 
-        "system": "Bright Ube Dark Turquoise", 
+        "system": "SynXis CRS - Club Quarters", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4033,11 +3934,11 @@ define({allProviders:
         "availSuccess": 89.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.sabrehospitality.com/", 
         "country": "argentina", 
-        "company": "Provider 9735", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.9, 
-        "system": "Cadmium Violet Blue-Violet", 
+        "system": "SynXis CRS - Commune", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4053,11 +3954,11 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7319", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "united states", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.1, 
-        "system": "Brink Pink Deep Space Sparkle", 
+        "system": "SynXis CRS - Kimpton", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4073,11 +3974,11 @@ define({allProviders:
         "availSuccess": 97.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 3901", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "argentina", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.1, 
-        "system": "Electric Lavender Dark Charcoal", 
+        "system": "SynXis CRS - Loews", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4093,11 +3994,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1287", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "australia", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.8, 
-        "system": "Citron Dutch White", 
+        "system": "SynXis CRS - Noble House", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4113,11 +4014,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9743", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "argentina", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.6, 
-        "system": "Champagne Pink Bazaar", 
+        "system": "SynXis CRS - Northland", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4133,11 +4034,11 @@ define({allProviders:
         "availSuccess": 98.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2211", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "austria", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.1, 
-        "system": "Cyber Grape Cherry Blossom Pink", 
+        "system": "SynXis CRS - Pacifica", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4153,11 +4054,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1892", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "united states", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.6, 
-        "system": "Cyan Azure Dark Turquoise", 
+        "system": "SynXis CRS - Rosewood", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4173,11 +4074,11 @@ define({allProviders:
         "availSuccess": 95.6
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.sabrehospitality.com/", 
         "country": "austria", 
-        "company": "Provider 5252", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.9, 
-        "system": "Auburn Brown Yellow", 
+        "system": "SynXis CRS - Shilo Inn", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4193,11 +4094,11 @@ define({allProviders:
         "availSuccess": 87.4
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1978", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "canada", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.8, 
-        "system": "Electric Violet Bazaar", 
+        "system": "SynXis CRS - Sonesta", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4213,11 +4114,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5994", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "canada", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.2, 
-        "system": "Dark Khaki Denim", 
+        "system": "SynXis CRS - Trump International", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4233,11 +4134,11 @@ define({allProviders:
         "availSuccess": 97.6
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3256", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "argentina", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 99.6, 
-        "system": "Flamingo Pink Black Shadows", 
+        "system": "SynXis CRS - Vantage Hospitality", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4253,11 +4154,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1482", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "austria", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.4, 
-        "system": "Dodie Yellow Carrot Orange", 
+        "system": "SynXis CRS - Viceroy", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4273,11 +4174,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3057", 
+        "website": "http://www.sabrehospitality.com/", 
+        "country": "austria", 
+        "company": "Sabre Hospitality Solutions (SynXis)", 
         "bookSuccess": 98.6, 
-        "system": "Cyan Cerise", 
+        "system": "SynXis CRS - Westmont", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4293,11 +4194,11 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4478", 
+        "website": "http://www.sanhait.co.kr", 
+        "country": "united states", 
+        "company": "Sanha Information Technology INC", 
         "bookSuccess": 99.6, 
-        "system": "Cinereous Conditioner", 
+        "system": "Sanha", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4309,11 +4210,11 @@ define({allProviders:
         "availSuccess": 98.5
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5347", 
+        "website": "http://www.sceptrehospitality.com/", 
+        "country": "united states", 
+        "company": "Sceptre Hospitality Resources", 
         "bookSuccess": null, 
-        "system": "Chestnut Blue Bell", 
+        "system": "Value Place EQC", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4327,11 +4228,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 8225", 
+        "website": "http://www.sceptrehospitality.com/", 
+        "country": "canada", 
+        "company": "Sceptre Hospitality Resources", 
         "bookSuccess": null, 
-        "system": "Fresh Air Cherry", 
+        "system": "Value Place EQC - HMC", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4345,11 +4246,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
+        "website": "https://shr.global/", 
         "country": "australia", 
-        "company": "Provider 3545", 
+        "company": "Sceptre Hospitality Resources", 
         "bookSuccess": 97.1, 
-        "system": "Arctic Lime Cultured", 
+        "system": "Windsurfer CRS", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -4364,11 +4265,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 2797", 
+        "website": "http://www.syha.org.uk", 
+        "country": "australia", 
+        "company": "Scottish Youth Hostels Association", 
         "bookSuccess": 99.0, 
-        "system": "Beau Blue Orchid", 
+        "system": "SYHA", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4377,11 +4278,11 @@ define({allProviders:
         "availSuccess": 97.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1132", 
+        "website": "https://www.seanuts.co.jp/", 
+        "country": "united states", 
+        "company": "Seanuts Co., Ltd", 
         "bookSuccess": 99.9, 
-        "system": "Falu Red Dark Medium Gray", 
+        "system": "TL Lincoln", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4395,11 +4296,11 @@ define({allProviders:
         "availSuccess": 96.4
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8260", 
+        "website": "https://seekda.com/en/", 
+        "country": "united states", 
+        "company": "Seekda Gmbh", 
         "bookSuccess": 99.9, 
-        "system": "Deep Taupe Black Leather Jacket", 
+        "system": "Seekda Channel Connect", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4413,11 +4314,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7604", 
+        "website": "http://web.seekom.com", 
+        "country": "canada", 
+        "company": "Seekom", 
         "bookSuccess": 99.4, 
-        "system": "Fawn Cedar Chest", 
+        "system": "iBex Accommodation", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4430,22 +4331,22 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 9519", 
+        "website": "http://www.selena.net", 
+        "country": "united states", 
+        "company": "Selena", 
         "bookSuccess": 79.4, 
-        "system": "Dark Raspberry Dark Midnight Blue", 
+        "system": "Hera Net Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 98.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4961", 
+        "website": "https://www.semper.co.za/", 
+        "country": "austria", 
+        "company": "Semper", 
         "bookSuccess": 99.5, 
-        "system": "Chocolate Army Green", 
+        "system": "Semper", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4459,11 +4360,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.sysdat-turismo.it/", 
         "country": "australia", 
-        "company": "Provider 5364", 
+        "company": "Sigesgroup", 
         "bookSuccess": 99.9, 
-        "system": "Dark Scarlet Cream", 
+        "system": "Sysdat", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4477,11 +4378,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 6065", 
+        "website": "http://www.silverbyte.com/index.html", 
+        "country": "argentina", 
+        "company": "Silverbyte", 
         "bookSuccess": 97.6, 
-        "system": "Canary Forest Green (Crayola)", 
+        "system": "Optima PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4496,22 +4397,22 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 8577", 
+        "website": "http://www.sinergiasoluciones.com.ar", 
+        "country": "united states", 
+        "company": "Sinergia Soluciones", 
         "bookSuccess": 90.1, 
-        "system": "Cambridge Blue Dark Medium Gray", 
+        "system": "Todoalojamiento.com", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 98.7
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.sirvoy.com", 
         "country": "australia", 
-        "company": "Provider 8929", 
+        "company": "Sirvoy", 
         "bookSuccess": 99.8, 
-        "system": "Forest Green (Web) Carmine (M&P)", 
+        "system": "Sirvoy Reservation System", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4525,11 +4426,11 @@ define({allProviders:
         "availSuccess": 98.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1890", 
+        "website": "http://www.siteminder.com.au", 
+        "country": "austria", 
+        "company": "Siteminder", 
         "bookSuccess": 99.3, 
-        "system": "Brown Coffee Floral White", 
+        "system": "Siteminder RDXAmerica", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4542,11 +4443,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 3998", 
+        "website": "http://www.siteminder.com.au", 
+        "country": "united states", 
+        "company": "Siteminder", 
         "bookSuccess": 98.5, 
-        "system": "Champagne Electric Ultramarine", 
+        "system": "Siteminder RDXAPAC", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4559,11 +4460,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 5488", 
+        "website": "http://www.siteminder.com.au", 
+        "country": "canada", 
+        "company": "Siteminder", 
         "bookSuccess": 99.6, 
-        "system": "Aztec Gold Dark Cornflower Blue", 
+        "system": "Siteminder RDXEurope", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4576,11 +4477,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 8814", 
+        "website": "http://www.fnsrooms.com/", 
+        "country": "united states", 
+        "company": "Sleep and Go S.L", 
         "bookSuccess": 98.2, 
-        "system": "FulvousGreen Blue-Violet (Color Wheel)", 
+        "system": "fnsManager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4594,22 +4495,22 @@ define({allProviders:
         "availSuccess": 67.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1376", 
+        "website": "http://www.slimtrader.com", 
+        "country": "austria", 
+        "company": "Slimtrader", 
         "bookSuccess": null, 
-        "system": "Dark Violet Bright Lavender", 
+        "system": "MoBiashara", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 77.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 4309", 
+        "website": "http://www.smarthotel.nl", 
+        "country": "austria", 
+        "company": "smartHOTEL.nl", 
         "bookSuccess": 97.9, 
-        "system": "Black Leather Jacket Deer", 
+        "system": "smartHOTEL.nl", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4624,11 +4525,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://yado.smijp.com/", 
         "country": "australia", 
-        "company": "Provider 7292", 
+        "company": "SMI Co.,Ltd.", 
         "bookSuccess": 96.3, 
-        "system": "Blood Orange Cyclamen", 
+        "system": "Yadochokun", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4637,22 +4538,22 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 9486", 
+        "website": "http://www.smoobu.com", 
+        "country": "australia", 
+        "company": "Smoobu GmbH", 
         "bookSuccess": 88.4, 
-        "system": "Beer Bright Yellow (Crayola)", 
+        "system": "Smoobu Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1167", 
+        "website": "http://www.infor.com/", 
+        "country": "australia", 
+        "company": "Softbrands INFOR", 
         "bookSuccess": 96.2, 
-        "system": "Cyan Cornflower Blue Fluorescent Blue", 
+        "system": "HMS by Softbrands", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4662,33 +4563,33 @@ define({allProviders:
         "availSuccess": 97.2
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1315", 
+        "website": "http://www.krossbooking.com", 
+        "country": "united states", 
+        "company": "Solutions Plus s.r.l.", 
         "bookSuccess": 86.6, 
-        "system": "Blackberry Deep Koamaru", 
+        "system": "Kross Booking Suite", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CRS", 
         "availSuccess": 84.1
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7397", 
+        "website": "http://www.sonder.com", 
+        "country": "united states", 
+        "company": "Sonder", 
         "bookSuccess": 99.8, 
-        "system": "Blue Cinnamon[Citation Needed]", 
+        "system": "Sonder Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1204", 
+        "website": "http://www.staah.com", 
+        "country": "austria", 
+        "company": "STAAH", 
         "bookSuccess": 99.4, 
-        "system": "Maroon Dark Electric Blue", 
+        "system": "STAAH", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4703,11 +4604,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1093", 
+        "website": "http://www.cubilis.com", 
+        "country": "australia", 
+        "company": "Stardekk", 
         "bookSuccess": 99.8, 
-        "system": "Dark Byzantium Ecru", 
+        "system": "Cubilis by Stardekk", 
         "featuresSupported": [
             "Room type and rate plan synced with Expedia", 
             "Bookings include Expedia value add promotion details"
@@ -4722,11 +4623,11 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 7364", 
+        "website": "http://www.startnow.kr", 
+        "country": "canada", 
+        "company": "Startnow", 
         "bookSuccess": 82.6, 
-        "system": "Almond Bright Ube", 
+        "system": "All Inn", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4736,11 +4637,11 @@ define({allProviders:
         "availSuccess": 50.5
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 2902", 
+        "website": "http://www.stays.net", 
+        "country": "canada", 
+        "company": "Stays Solutions Limited", 
         "bookSuccess": 88.3, 
-        "system": "Deep Magenta Eggshell", 
+        "system": "stays\u2122", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay"
@@ -4749,11 +4650,11 @@ define({allProviders:
         "availSuccess": 98.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6494", 
+        "website": "http://www.straitpms.com", 
+        "country": "canada", 
+        "company": "Strait Solutions", 
         "bookSuccess": 97.3, 
-        "system": "Indigo Chocolate", 
+        "system": "MyUkTravel", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4766,11 +4667,11 @@ define({allProviders:
         "availSuccess": 85.1
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 6592", 
+        "website": "http://www.straitpms.com", 
+        "country": "united states", 
+        "company": "Strait Solutions", 
         "bookSuccess": 99.1, 
-        "system": "Dark Pastel Red Bright Pink", 
+        "system": "Strait PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4784,11 +4685,11 @@ define({allProviders:
         "availSuccess": 85.3
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3176", 
+        "website": "http://www.surehigh.com.tw/hotelnabe/", 
+        "country": "united states", 
+        "company": "Surehigh International Technology Group", 
         "bookSuccess": 97.6, 
-        "system": "Cyan (Process) Bronze", 
+        "system": "Hotelnabe Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4800,11 +4701,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 4741", 
+        "website": "http://switch.cm/", 
+        "country": "australia", 
+        "company": "SWITCHBOARD", 
         "bookSuccess": 98.5, 
-        "system": "Alabaster Flattery", 
+        "system": "SWITCH.CM", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4817,22 +4718,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 3970", 
-        "bookSuccess": 36.3, 
-        "system": "Castleton Green Cyan Azure", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 90.1
-    }, 
-    {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 8989", 
+        "website": "http://www.colibripms.com", 
+        "country": "united states", 
+        "company": "TDS Network International", 
         "bookSuccess": 99.6, 
-        "system": "Fire Opal Bronze Yellow", 
+        "system": "WebPMSpro/ColibriPMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4846,11 +4736,11 @@ define({allProviders:
         "availSuccess": 99.7
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 1549", 
+        "website": "http://www.parityrate.com", 
+        "country": "united states", 
+        "company": "Tecnes Milano s.r.l", 
         "bookSuccess": 97.9, 
-        "system": "Avocado Baby Blue Eyes", 
+        "system": "RoomCloud/ParityRate", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4863,11 +4753,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3756", 
+        "website": "http://telicom.ca/", 
+        "country": "argentina", 
+        "company": "Telicom", 
         "bookSuccess": 98.4, 
-        "system": "Celadon Green Cerise Pink", 
+        "system": "Hotelia PMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4879,11 +4769,11 @@ define({allProviders:
         "availSuccess": 96.5
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.temairazu.com", 
         "country": "united states", 
-        "company": "Provider 9431", 
+        "company": "Temairazu", 
         "bookSuccess": 100.0, 
-        "system": "Deep Aquamarine Dark Red", 
+        "system": "Temairazu Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4897,11 +4787,11 @@ define({allProviders:
         "availSuccess": 97.5
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1842", 
+        "website": "http://www.tesipro.com/", 
+        "country": "austria", 
+        "company": "Tesipro", 
         "bookSuccess": 96.2, 
-        "system": "Burnt Umber Dark Goldenrod", 
+        "system": "Sigh Ulyses", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4913,11 +4803,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 2337", 
+        "website": "http://www.the-ascott.com", 
+        "country": "united states", 
+        "company": "The Ascott Limited", 
         "bookSuccess": 97.1, 
-        "system": "Deep Chestnut Cornell Red", 
+        "system": "Capitaland (Ascott) ODX", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4931,11 +4821,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.tokeet.com", 
         "country": "argentina", 
-        "company": "Provider 5853", 
+        "company": "Tokeet", 
         "bookSuccess": 95.1, 
-        "system": "Celadon Barn Red", 
+        "system": "Tokeet Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -4945,11 +4835,11 @@ define({allProviders:
         "availSuccess": 95.3
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7448", 
+        "website": "http://www.bookingevolution.com", 
+        "country": "canada", 
+        "company": "Tosom srl", 
         "bookSuccess": 100.0, 
-        "system": "Dark Goldenrod Cyan (Process)", 
+        "system": "Booking Evolution", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4963,11 +4853,11 @@ define({allProviders:
         "availSuccess": 94.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotel-spider.com", 
         "country": "united states", 
-        "company": "Provider 1996", 
+        "company": "Tourisoft", 
         "bookSuccess": 91.0, 
-        "system": "Dark Moss Green Calamansi", 
+        "system": "Globres", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4981,11 +4871,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.hotel-spider.com/", 
         "country": "austria", 
-        "company": "Provider 8317", 
+        "company": "Tourisoft", 
         "bookSuccess": 97.5, 
-        "system": "Black Chocolate Cosmic Latte", 
+        "system": "Hotel-Spider", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -4999,11 +4889,11 @@ define({allProviders:
         "availSuccess": 91.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6894", 
+        "website": "http://www.tomas.travel", 
+        "country": "argentina", 
+        "company": "Tourist Data Shop Ltd", 
         "bookSuccess": 96.9, 
-        "system": "Bright Maroon Electric Crimson", 
+        "system": "TOMAS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5015,11 +4905,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.dirs21.de/", 
         "country": "argentina", 
-        "company": "Provider 3430", 
+        "company": "TourOnline AG", 
         "bookSuccess": 99.6, 
-        "system": "Fawn Dark Coral", 
+        "system": "DIRS21", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5033,11 +4923,11 @@ define({allProviders:
         "availSuccess": 98.3
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 9860", 
+        "website": "https://www.toyoko-inn.com/eng/", 
+        "country": "canada", 
+        "company": "Toyoko Inn Co., Ltd", 
         "bookSuccess": 96.9, 
-        "system": "Brandy Cinnamon[Citation Needed]", 
+        "system": "Toyoko Inn Connectivity", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5047,11 +4937,11 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 4124", 
+        "website": "http://www.vrbookings.com", 
+        "country": "austria", 
+        "company": "Trading Estate Service srl", 
         "bookSuccess": 99.7, 
-        "system": "Apple Green Bright Maroon", 
+        "system": "VRBookings", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details", 
             "Bookings include Expedia brand that traveler used"
@@ -5065,22 +4955,22 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1122", 
+        "website": "https://traiwan.com/", 
+        "country": "australia", 
+        "company": "Traiwan", 
         "bookSuccess": 97.8, 
-        "system": "Deep Green Battery Charged Blue", 
+        "system": "Traiwan", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 97.2
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1489", 
+        "website": "http://www.travelclick.com/en/homepage", 
+        "country": "argentina", 
+        "company": "TravelClick", 
         "bookSuccess": 97.7, 
-        "system": "Burgundy Beige", 
+        "system": "TravelClick Channel Management", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5092,11 +4982,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
+        "website": "http://www.travelclick.com", 
         "country": "austria", 
-        "company": "Provider 6423", 
+        "company": "TravelClick", 
         "bookSuccess": 98.1, 
-        "system": "Boysenberry Deep Fuchsia", 
+        "system": "TravelClick iHotelier CRS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5108,11 +4998,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 1236", 
+        "website": "http://travellineus.com", 
+        "country": "australia", 
+        "company": "Travelline", 
         "bookSuccess": 99.3, 
-        "system": "Deep Chestnut Dark Brown", 
+        "system": "Travelline Channel Manager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5126,11 +5016,11 @@ define({allProviders:
         "availSuccess": 99.5
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 8171", 
+        "website": "http://www.hoteratus.com", 
+        "country": "argentina", 
+        "company": "Trypid, Inc", 
         "bookSuccess": 95.8, 
-        "system": "Arylide Yellow Bright Yellow (Crayola)", 
+        "system": "Hoteratus", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5144,22 +5034,11 @@ define({allProviders:
         "availSuccess": 90.7
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 4685", 
-        "bookSuccess": null, 
-        "system": "Dark Cerulean Dark Green", 
-        "featuresSupported": [], 
-        "restrictionsSupported": [], 
-        "type": "CM", 
-        "availSuccess": 100.0
-    }, 
-    {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 9497", 
+        "website": "http://www.univisit.net", 
+        "country": "argentina", 
+        "company": "UniVisit", 
         "bookSuccess": 72.7, 
-        "system": "Begonia Charm", 
+        "system": "UniVisit CDMS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5171,11 +5050,11 @@ define({allProviders:
         "availSuccess": 97.0
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 6442", 
+        "website": "http://www.update247.com.au", 
+        "country": "australia", 
+        "company": "Update247", 
         "bookSuccess": 99.7, 
-        "system": "Fallow Calamansi", 
+        "system": "Update247 CM", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5189,11 +5068,11 @@ define({allProviders:
         "availSuccess": 98.8
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1747", 
+        "website": "http://useross.com.au/", 
+        "country": "united states", 
+        "company": "UseRoss", 
         "bookSuccess": 99.6, 
-        "system": "Antique Bronze Catalina Blue", 
+        "system": "UseRoss EQC", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5203,40 +5082,22 @@ define({allProviders:
         "availSuccess": 100.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 1957", 
+        "website": "http://www.vacationspal.com/", 
+        "country": "australia", 
+        "company": "Vacationspal", 
         "bookSuccess": 96.0, 
-        "system": "Asparagus Dark Pastel Blue", 
+        "system": "Vacationspal", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "austria", 
-        "company": "Provider 7931", 
-        "bookSuccess": 99.7, 
-        "system": "Electric Indigo Bondi Blue", 
-        "featuresSupported": [
-            "Bookings include Expedia value add promotion details"
-        ], 
-        "restrictionsSupported": [
-            "Minimum Length of Stay", 
-            "Maximum Length of Stay", 
-            "Closed to Arrival", 
-            "Closed to Departure"
-        ], 
-        "type": "CM", 
-        "availSuccess": 99.1
-    }, 
-    {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7860", 
+        "website": "https://www.verticalbooking.com/en", 
+        "country": "australia", 
+        "company": "Vertical Booking", 
         "bookSuccess": 99.6, 
-        "system": "Electric Brown Beige", 
+        "system": "Vertical Booking", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5250,11 +5111,11 @@ define({allProviders:
         "availSuccess": 98.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 7235", 
+        "website": "http://viato.travel", 
+        "country": "united states", 
+        "company": "Viato Travel", 
         "bookSuccess": 99.8, 
-        "system": "Baby Powder Dark Gunmetal", 
+        "system": "Viato ChannelManager", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5269,11 +5130,11 @@ define({allProviders:
         "availSuccess": 96.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7703", 
+        "website": "http://www.bookvisit.com", 
+        "country": "argentina", 
+        "company": "Visit Technology", 
         "bookSuccess": 99.8, 
-        "system": "Electric Indigo Apple Green", 
+        "system": "BookVisit", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5285,11 +5146,11 @@ define({allProviders:
         "availSuccess": 97.7
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 5400", 
+        "website": "https://www.wanda.cn/", 
+        "country": "austria", 
+        "company": "Wanda Hotels & Resorts", 
         "bookSuccess": 93.6, 
-        "system": "Bole Cadet Grey", 
+        "system": "KWS", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5301,33 +5162,33 @@ define({allProviders:
         "availSuccess": 98.6
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5598", 
+        "website": "http://www.wealthywalker.com", 
+        "country": "australia", 
+        "company": "Wealthywalker", 
         "bookSuccess": 88.1, 
-        "system": "Amazon Burgundy", 
+        "system": "Wealthywalker", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "CM", 
         "availSuccess": 97.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 1265", 
+        "website": "http://www.webdatasoftware.com/", 
+        "country": "austria", 
+        "company": "Web Data Software, LLC", 
         "bookSuccess": null, 
-        "system": "Fern Green Cocoa Brown", 
+        "system": "Elliott Realty PMS for EQC", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6547", 
+        "website": "http://www.webres.de", 
+        "country": "argentina", 
+        "company": "webres GmbH", 
         "bookSuccess": 99.9, 
-        "system": "Electric Lime Deep Space Sparkle", 
+        "system": "Web.res", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5339,11 +5200,11 @@ define({allProviders:
         "availSuccess": 99.2
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7123", 
+        "website": "http://welcome-systems.uk", 
+        "country": "united states", 
+        "company": "Welcome Computer Systems", 
         "bookSuccess": 99.7, 
-        "system": "Burnt Sienna Electric Lavender", 
+        "system": "Welcome Connect", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5355,11 +5216,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 5230", 
+        "website": "https://www.webrezpro.com/", 
+        "country": "austria", 
+        "company": "World Web Technologies", 
         "bookSuccess": 97.2, 
-        "system": "Dark Chocolate Eggshell", 
+        "system": "WebRezPro-PMS", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5373,11 +5234,11 @@ define({allProviders:
         "availSuccess": 99.9
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 5292", 
+        "website": "http://wubook.net", 
+        "country": "austria", 
+        "company": "Wubook Srl", 
         "bookSuccess": 98.6, 
-        "system": "Carmine (M&P) Alloy Orange", 
+        "system": "WooDoo", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5391,11 +5252,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "united states", 
-        "company": "Provider 3488", 
+        "website": "http://www.channelmessenger.com/", 
+        "country": "austria", 
+        "company": "Xmedia", 
         "bookSuccess": 78.3, 
-        "system": "Classic Rose Corn", 
+        "system": "Channel Messenger", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5407,11 +5268,11 @@ define({allProviders:
         "availSuccess": 99.1
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3869", 
+        "website": "http://www.xnprotel.com/", 
+        "country": "austria", 
+        "company": "XN Hotel Systems", 
         "bookSuccess": 90.6, 
-        "system": "Dark Gray (X11) Duke Blue", 
+        "system": "XN Hotel Systems", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5422,11 +5283,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 4754", 
+        "website": "https://www.xotelia.com/", 
+        "country": "austria", 
+        "company": "Xotelia", 
         "bookSuccess": 98.3, 
-        "system": "Battery Charged Blue Dark Lavender", 
+        "system": "Xotelia", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5440,11 +5301,11 @@ define({allProviders:
         "availSuccess": 99.6
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 7615", 
+        "website": "https://www.planyo.com", 
+        "country": "austria", 
+        "company": "Xtreeme GmbH", 
         "bookSuccess": 100.0, 
-        "system": "Bright Green Daffodil", 
+        "system": "Planyo", 
         "featuresSupported": [
             "Bookings include Expedia value add promotion details"
         ], 
@@ -5453,11 +5314,11 @@ define({allProviders:
         "availSuccess": 99.4
     }, 
     {
-        "website": "/systems", 
-        "country": "argentina", 
-        "company": "Provider 3515", 
+        "website": "http://www.xyzt.pt", 
+        "country": "austria", 
+        "company": "XYZT", 
         "bookSuccess": 98.5, 
-        "system": "Caput Mortuum Coral Pink", 
+        "system": "e-GDS Channel Manager", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5469,11 +5330,11 @@ define({allProviders:
         "availSuccess": 99.0
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 7378", 
+        "website": "http://www.yadoken.net/", 
+        "country": "argentina", 
+        "company": "Yadoken", 
         "bookSuccess": null, 
-        "system": "Bitter Lemon Dark Brown-Tangelo", 
+        "system": "Yadoken", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5485,11 +5346,11 @@ define({allProviders:
         "availSuccess": 99.8
     }, 
     {
-        "website": "/systems", 
-        "country": "canada", 
-        "company": "Provider 1892", 
+        "website": "https://www.easybooking.at/en/", 
+        "country": "austria", 
+        "company": "Zadego GmbH", 
         "bookSuccess": 98.9, 
-        "system": "Eton Blue Electric Red", 
+        "system": "easybooking / zadego GmbH", 
         "featuresSupported": [], 
         "restrictionsSupported": [
             "Minimum Length of Stay", 
@@ -5501,11 +5362,11 @@ define({allProviders:
         "availSuccess": 96.8
     }, 
     {
-        "website": "/systems", 
-        "country": "australia", 
-        "company": "Provider 6572", 
+        "website": "http://zari.me", 
+        "country": "austria", 
+        "company": "ZARI (Yellotravel Inc.)", 
         "bookSuccess": 95.3, 
-        "system": "Carmine Red Coffee", 
+        "system": "ZARI", 
         "featuresSupported": [], 
         "restrictionsSupported": [], 
         "type": "PMS", 
