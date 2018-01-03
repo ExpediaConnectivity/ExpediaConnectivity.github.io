@@ -68,6 +68,10 @@
 .cb-container {
     cursor: pointer;
 }
+.blog-post li {
+    display: list-item !important;
+    list-style: square !important;
+}
 
 
 h1 {
