@@ -52,31 +52,37 @@ function googleTranslateElementInit() {
 <tr>
 <td>Set Property Details</td>
 <td>PUT</td>
-<td>/properties/v1/{EQC account id}</td>
+<td>/properties/v1/{provider name}</td>
 <td>PUT property information to initiate onboarding.</td>
 </tr>
 <tr>
 <td>Get Property Details</td>
 <td>GET</td>
-<td>/properties/v1/{EQC account id}/{provider property ID}</td>
+<td>/properties/v1/{provider name}/{provider property ID}</td>
 <td>GET property information</td>
 </tr>
 <tr>
 <td>Update a Property</td>
 <td>PUT</td>
-<td>/properties/v1/{EQC account id}</td>
-<td>Update an existing property by sending a full overlay. PATCH is not supported.</td>
+<td>/properties/v1/{provider name}</td>
+<td>Update a property by sending a full overlay. PATCH is not supported.</td>
 </tr>
 <tr>
 <td>Get Property Status</td>
 <td>GET</td>
-<td>/properties/v1/{EQC account id}/{provider property ID}/status</td>
+<td>/properties/v1/{provider name}/{provider property ID}/status</td>
 <td>GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.)</td>
+</tr>
+<tr>
+<td>Update by ExpediaID</td>
+<td>PUT</td>
+<td>/properties/v1/{ExpediaHotelID}</td>
+<td>This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)</td>
 </tr>
 <tr>
 <td>Deactivate Property</td>
 <td>DELETE</td>
-<td>/properties/v1/{EQC account id}/{provider property ID}</td>
+<td>/properties/v1/{provider name}/{provider property ID}</td>
 <td>De-activates property in Expedia system</td>
 </tr>
 </tbody>
@@ -519,12 +525,12 @@ function googleTranslateElementInit() {
 <tr>
 <td>ReservationManager</td>
 <td>Yes</td>
-<td>firstName, lastName, and <strong>either</strong> an email or fax number is required.  Property will fail onboarding if this information is not submitted.</td>
+<td>firstName, lastName, and <strong>either</strong> an email or fax number is required.  Property will fail onboarding if this information is not submitted.The firstName, lastName must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode.</td>
 </tr>
 <tr>
 <td>AlternateReservationManager</td>
 <td>Yes</td>
-<td>Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of &quot;24hr- &quot; is added to FirstName if field is not provided.</td>
+<td>Phone number required - used as emergency (24hour) contact for customer booking issues. Property will fail onboarding if this information is not submitted. FirstName and LastName values are obtained from ReservationManager, if not provided. Prefix of &quot;24hr- &quot; is added to FirstName if field is not provided. The firstName, lastName must be between 2 and 25 characters, inclusive, without whitespace-padding. Cannot contain Unicode.</td>
 </tr>
 <tr>
 <td>GeneralManager</td>
@@ -738,7 +744,7 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#paragraph">code list</a> Paragraph text may require review by Expedia prior to publishing.</td>
+<td>See <a href="./code-list.html#paragraph">code list</a> Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead.</td>
 </tr>
 <tr>
 <td>value</td>
