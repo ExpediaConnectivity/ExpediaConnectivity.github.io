@@ -240,6 +240,10 @@ define(function() {
                 position = "&nbsp;" + position;
             }
 
+            var providerTitle = topProvider.name;
+            if (topProvider.system) {
+                providerTitle =  "<b>" + topProvider.system + "</b> by " + providerTitle; 
+            }
             var topProviderHtml = $("<div>")
                 .addClass("top-performer")
                 .append($("<div>")
@@ -247,7 +251,7 @@ define(function() {
                     .html(position + ".")
                 ).append($("<div>")
                     .addClass("name")
-                    .text(topProvider.name)
+                    .html(providerTitle)
                 );
 
             if (showValues) {
