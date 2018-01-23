@@ -81,6 +81,7 @@ body {
   cursor: pointer;
 }
 .scorecard-row .scorecard-cards {
+  background: #f8f8f8;
   padding: 0;
 }
 .scorecard-row .scorecard-cards .checkmark {
@@ -89,6 +90,7 @@ body {
   padding-top: 1em;
 }
 .scorecard-row .scorecard-cards .border {
+  flex-direction: row;
   border-top: 10px solid #f8f8f8;
   border-right: 10px solid #f8f8f8;
   border-bottom: none;
@@ -131,19 +133,16 @@ body {
   line-height: 1.25em;
 }
 .scorecard-row .scorecard-cards .state {
-  display: inline-block;
   vertical-align: middle;
   margin-right: 0.5em;
 }
 .scorecard-row .scorecard-cards .feature {
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.5em;
+  flex-grow: 10;
+  margin: auto 0.5em auto 0;
 }
 .scorecard-row .scorecard-cards .icon-toggle90 {
-  display: inline-block;
+  align-self: flex-end;
   vertical-align: middle;
-  float: right;
   font-size: 1.5em;
 }
 .scorecard-row .scorecard-cards .toggle90-mod {
@@ -234,6 +233,7 @@ hr {
   white-space: nowrap;
   overflow-x: hidden;
   background: white;
+  display: flex;
 }
 #enhance .improve-thanks {
   text-align: left;
