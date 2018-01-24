@@ -13,6 +13,12 @@ function login(form) {
     var username = $(form).find("#username").val();
     var password = $(form).find("#password").val();
 
+    var emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+    if (emailRegex.test(username)) {
+        $("#result").addClass("error").html("Please use your EPC Username instead of your email address.");
+        return;
+    }
+
     ga('send', 'event', 'login', 'request', username);
     $.ajax({
         method: "POST",
