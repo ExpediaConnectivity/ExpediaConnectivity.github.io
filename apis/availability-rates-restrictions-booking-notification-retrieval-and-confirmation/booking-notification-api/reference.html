@@ -1016,7 +1016,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@CardCode</td>
-<td>PaymentCardType UpperCaseAlphaLength1to2</td>
+<td>PaymentCardType</td>
 <td>1</td>
 <td>AX, DN, DS, JC, MC, VI</td>
 <td>2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa. Note this is not a finite list and new codes maybe added or changed in the future.</td>
@@ -1024,7 +1024,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@CardNumber</td>
-<td>NumericStringLength1to19</td>
+<td>Numeric String Length 1 to 19</td>
 <td>1</td>
 <td></td>
 <td>The 16 digit card number.</td>
@@ -1048,7 +1048,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@SeriesCode</td>
-<td>NumericStringLength1to8</td>
+<td>Numeric String Length 1 to 8</td>
 <td>0..1</td>
 <td></td>
 <td>CSV or CVV. Not used currently by EVC, but can be available to Hotel Collect bookings.</td>
@@ -1056,7 +1056,7 @@ Content-Length: 2291</p>
 <tr>
 <td>9</td>
 <td>CardHolderName</td>
-<td>StringLength1to64</td>
+<td>String Length 1 to 64</td>
 <td>0..1</td>
 <td></td>
 <td>Container element that holds the card holder name. For EVC bookings, value will be set to &quot;Expedia VirtualCard&quot;. For Hotel Collect bookings, value will be set to the actual card holder name.</td>
@@ -1080,7 +1080,7 @@ Content-Length: 2291</p>
 <tr>
 <td>10</td>
 <td>AddressLine</td>
-<td>StringLength1to64</td>
+<td>String Length 1 to 64</td>
 <td>1</td>
 <td></td>
 <td>Street number and street name. Set to: 333 108th Avenue NE</td>
@@ -1088,7 +1088,7 @@ Content-Length: 2291</p>
 <tr>
 <td>10</td>
 <td>CityName</td>
-<td>StringLength1to64</td>
+<td>String Length 1 to 64</td>
 <td>1</td>
 <td></td>
 <td>City name. Set to: Bellevue</td>
@@ -1096,7 +1096,7 @@ Content-Length: 2291</p>
 <tr>
 <td>10</td>
 <td>PostalCode</td>
-<td>StringLength1to16</td>
+<td>String Length 1 to 16</td>
 <td>1</td>
 <td></td>
 <td>Zip or postal code. Set to: 98004</td>
@@ -1104,7 +1104,7 @@ Content-Length: 2291</p>
 <tr>
 <td>10</td>
 <td>StateProv</td>
-<td>StateProvType Length0to64</td>
+<td>StateProvType Length 0 to 64</td>
 <td>1</td>
 <td></td>
 <td>State or province name; .</td>
@@ -1112,7 +1112,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@StateCode</td>
-<td>StringLength8</td>
+<td>String Length 8</td>
 <td>1</td>
 <td></td>
 <td>State/Province codes. set to: WA</td>
@@ -1120,7 +1120,7 @@ Content-Length: 2291</p>
 <tr>
 <td>10</td>
 <td>CountryName</td>
-<td>CountryNameType Length0to64</td>
+<td>CountryNameType Length 0 to 64</td>
 <td>1</td>
 <td></td>
 <td>Country name.</td>
@@ -1128,7 +1128,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@Code</td>
-<td>StringLenght2</td>
+<td>String Length 2</td>
 <td>1</td>
 <td></td>
 <td>Two letter country codes from the ISO 3166 code list. Set to: US</td>
@@ -1523,7 +1523,7 @@ Content-Length: 2291</p>
 <td></td>
 <td>1..2</td>
 <td></td>
-<td>For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HortelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system&#39;s confirmation number.</td>
+<td>For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system&#39;s confirmation number.</td>
 </tr>
 <tr>
 <td></td>
@@ -1531,7 +1531,7 @@ Content-Length: 2291</p>
 <td>Numeric 1</td>
 <td>1</td>
 <td>3 8</td>
-<td>Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses &quot;8&quot; to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses &quot;3&quot; for the Holelier&#39;s confirmation number and &quot;8&quot; for the Expedia reservation number.</td>
+<td>Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses &quot;8&quot; to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses &quot;3&quot; for the Hotelier&#39;s confirmation number and &quot;8&quot; for the Expedia reservation number.</td>
 </tr>
 <tr>
 <td></td>
@@ -1539,7 +1539,7 @@ Content-Length: 2291</p>
 <td>String 64</td>
 <td>1</td>
 <td></td>
-<td>This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. NOTE: HotelReservations/HotelReservation/UniqueId/@Id= HotelReservationID/@ResID_Value. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier&#39;s confirmation number. The Expedia reservation number is associated with ResID_Type=&quot;8&quot; and the Hotelier&#39;s confirmation number is associated with ResID_Type=&quot;3&quot;. The hotel confirmation number can be alpha numeric and should not exceed 50 characters.</td>
+<td>This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier&#39;s confirmation number. The Expedia reservation number is associated with ResID_Type=&quot;8&quot; and the Hotelier&#39;s confirmation number is associated with ResID_Type=&quot;3&quot;. The hotel confirmation number can be alpha numeric and should not exceed 50 characters.</td>
 </tr>
 <tr>
 <td></td>
@@ -1565,7 +1565,7 @@ Content-Length: 2291</p>
 <li>A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response.</li>
 <li>An error response is to be returned when the notification failed to be processed by the partner system. In this case partner must include an explicit error code and a detail error message in the error response. The list of error codes are defined in the API spec.</li>
 </ul>
-<h4 id="detailed-definition-of-a-successul-response" data-magellan-destination="detailed-definition-of-a-successul-response">Detailed definition of a successul response</h4>
+<h4 id="detailed-definition-of-a-successful-response" data-magellan-destination="detailed-definition-of-a-successful-response">Detailed definition of a successful response</h4>
 <div><table>
 <thead>
 <tr>

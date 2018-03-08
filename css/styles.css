@@ -21,7 +21,6 @@
 .api-content table {
   display: inline-block;
   max-width: 100%;
-  overflow-x: auto;
 }
 .api-content table td a {
   word-break: break-all;
@@ -30,6 +29,7 @@
 .api-content table td {
   color: #5E5E5E;
   line-height: 1.4em;
+  word-break: break-word;
 }
 .api-content table th {
   color: #5E5E5E;
@@ -148,6 +148,23 @@
 }
 .off-canvas .sidebar-nav header {
   margin-top: 5px;
+}
+@media screen and (min-width: 64em) {
+  .large-8,
+  .xlarge-8,
+  .xxlarge-8 {
+    width: 75%;
+  }
+}
+@media print, screen and (min-width: 40em) and (max-width: 63.9em) {
+  .medium-10 {
+    width: 100%;
+  }
+}
+@media print, screen and (min-width: 40em) and (max-width: 63.9em) {
+  .medium-offset-1 {
+    margin-left: 0;
+  }
 }
 .demo {
   color: #FFF;
@@ -1248,8 +1265,8 @@ section.hero .inner p {
   background-repeat: repeat, no-repeat;
 }
 .hero-meeting {
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-meeting.jpg');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-meeting.jpg');
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/bg-hero-meeting.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/bg-hero-meeting.jpg');
   background-position: 0px 0px, 50% 33%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
@@ -1262,8 +1279,8 @@ section.hero .inner p {
   background-repeat: repeat, no-repeat;
 }
 .hero-climb {
-  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-climb.png');
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-climb.png');
+  background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-climb.jpg');
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.5)), url('../images/hero-climb.jpg');
   background-position: 0px 0px, 50% 33%;
   background-size: auto, cover;
   background-repeat: repeat, no-repeat;
