@@ -22,6 +22,11 @@ $.fn.suga = function(options) {
       slideCount = $slide.length,
       totalWidth = slideWidth * slideCount;
 
+  // Calculate and set width, adding padding for even to keep centered
+  if (slideCount % 2 === 0) {
+    $group.css('padding-right', slideWidth + 'px');
+  }
+
   // set width on group element
   $group.width(totalWidth);
   $wrap.height(slideHeight);
