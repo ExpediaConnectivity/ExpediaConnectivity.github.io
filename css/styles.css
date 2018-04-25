@@ -924,6 +924,7 @@ footer .links a:active {
 }
 footer .footer-logo {
   background: url(../images/Brands_Lockup_2line_white_RGB.svg) no-repeat scroll 0;
+  background-size: 1000px;
   width: 600px;
   height: 68px;
   display: inline-block;
