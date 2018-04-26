@@ -642,6 +642,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   align-items: center;
+  height: 80px;
 }
 .suga-slider-group:before,
 .suga-slider-group:after {
