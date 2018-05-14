@@ -256,7 +256,7 @@ If EQC partners need to use this feature, Expedia recommends specifying all seve
 <td>@totalInventoryAvailable</td>
 <td>Integer</td>
 <td>O</td>
-<td>Total number of rooms made available via Expedia for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation. <strong>Note:</strong> In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, the Integer value will be <strong>changed</strong> by Expedia QuickConnect to equal the current base allocation amount and a warning (7013) will be returned.</td>
+<td>Total number of rooms made available via Expedia for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation. <strong>Note:</strong> In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, it will be rejected with warning code 7013.</td>
 <td>Minimum value: 0, Maximum value: 4999</td>
 </tr>
 <tr>

@@ -130,7 +130,7 @@ In the case of a hotel not on base allocation: total number of rooms available f
 					<xs:attribute name="totalInventoryAvailable" use="optional">
 						<xs:annotation>
 							<xs:documentation>Total number of rooms available for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation.
-Note: In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, the Integer value will be changed by Expedia QuickConnect to equal the current base allocation amount and a warning (7013) will be returned.</xs:documentation>
+Note: In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, Expedia QuickConnect will reject the update and warning code 7013 will be returned.</xs:documentation>
 						</xs:annotation>
 						<xs:simpleType>
 							<xs:restriction base="xs:int">
