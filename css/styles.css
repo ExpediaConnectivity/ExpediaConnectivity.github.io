@@ -849,6 +849,15 @@ a {
   float: right;
   margin-right: 100px;
 }
+#cookies-alert {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#cookies-link {
+  font-size: x-small !important;
+  text-transform: none !important;
+}
 .full-width {
   max-width: 100%;
   width: 100%;
