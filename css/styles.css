@@ -853,10 +853,12 @@ a {
   position: absolute;
   bottom: 0;
   right: 0;
+  padding-right: 1rem;
 }
 #cookies-link {
   font-size: x-small !important;
   text-transform: none !important;
+  padding-right: 0 !important;
 }
 .full-width {
   max-width: 100%;
