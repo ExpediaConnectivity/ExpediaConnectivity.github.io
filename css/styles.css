@@ -935,8 +935,8 @@ footer .links a:active {
   border-bottom: 1px solid #c3c3c3;
 }
 footer .footer-logo {
-  background: url(../images/Brands_Lockup_2line_white_RGB.png) no-repeat scroll 0;
-  background-size: 1000px;
+  background: url(../images/Brands_Lockup_2line_white_RGB.png) no-repeat scroll center;
+  background-size: contain;
   width: 1000px;
   height: 84px;
   display: inline-block;
@@ -1157,7 +1157,7 @@ nav li:hover a {
     width: 100%;
     text-align: left;
     position: static;
-    margin-left: 58px;
+    padding-left: 58px;
   }
   #menu-wrap div {
     width: 15%;
