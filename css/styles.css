@@ -39,6 +39,8 @@
 .api-content ul li {
   color: #5E5E5E;
   line-height: 1.4em;
+  list-style-type: disc !important;
+  display: list-item;
   margin-bottom: 0.5em;
 }
 .api-content p {
