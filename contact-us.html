@@ -103,30 +103,41 @@ function googleTranslateElementInit() {
 <script>
     var captchaResponse = null;
 
-    $("#partner-type").val("unknown");
-    $('#partner-type').on('change', function() {
-        if (this.value == "hotel" || this.value == "provider") {
+    $('#partner-type').on('change', function(){
+        toggleGoButton()
+    });
 
-            $('#contact-go').on('click', function() {
-                showContact();
-            });
+    function toggleGoButton() {
+        var value = $('#partner-type').val();
+
+        if (value == "hotel" || value == "provider") {
             $('#contact-go').removeClass("hidden");
         } else {
-
+            $('#contact-go').addClass("hidden");
         }
-    })
+
+    }
+
+    // toggle for back button
+    toggleGoButton();
+
+    $('#contact-go').on('click', function() {
+        showContact();
+        ga('send', 'event', 'contactus', 'partnerType', $('#partner-type').val());
+    });
 
 
     function showContact() {
         var partnerType = $('#partner-type').val();
-        console.log(partnerType);
         $("#contact-router").addClass("hidden");
+
         if (partnerType === "provider") {
             $("#provider-contact").removeClass("hidden");
             $("#contact-form").removeClass("hidden");
         } else {
             $("#hotel-contact").removeClass("hidden")
         }
+
     }
 
     function captcha(response) {
