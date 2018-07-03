@@ -459,7 +459,7 @@ Content-Length: 2291</p>
 <td>String 32</td>
 <td>1</td>
 <td></td>
-<td>Identifier of the requestor. For @Type=18, the ID value is within the value set provided under <a href="#POSBrandList">Point of Sale Brand List</a>. For @Type=5, when applicable, the ID value is equal to the TIDS ID defined for the property.</td>
+<td>Identifier of the requestor. For @Type=18, the ID value is within the value set provided under <a href="reference.html#/point-of-sale-brand-list">Point of Sale Brand List</a>. For @Type=5, when applicable, the ID value is equal to the TIDS ID defined for the property.</td>
 </tr>
 <tr>
 <td>4</td>
@@ -723,7 +723,7 @@ Content-Length: 2291</p>
 <td>String 32</td>
 <td>0..1</td>
 <td></td>
-<td>A code that identifies a special promotion. Promotions can be set via EPC to offer special discounts to Expedia customers. Another type of promotion is called an Accelerator. The string will show &quot;EFR&quot; when an Accelerator is applied to a stay date. The presence of an Accelerator will signify a rate change. Note: If both a promotion and Accelerator apply to the stay date, the promotion code will begin with &quot;EFR*&quot; and the code that follows is truncated to 28 characters.</td>
+<td>A code that identifies a special promotion. Promotions can be set via Partner Central to offer special discounts to Expedia customers. Another type of promotion is called an Accelerator. The string will show &quot;EFR&quot; when an Accelerator is applied to a stay date. The presence of an Accelerator will signify a rate change. Note: If both a promotion and Accelerator apply to the stay date, the promotion code will begin with &quot;EFR*&quot; and the code that follows is truncated to 28 characters.</td>
 </tr>
 <tr>
 <td>7</td>
@@ -1018,8 +1018,8 @@ Content-Length: 2291</p>
 <td>@CardCode</td>
 <td>PaymentCardType</td>
 <td>1</td>
-<td>AX, DN, DS, JC, MC, VI</td>
-<td>2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa. Note this is not a finite list and new codes maybe added or changed in the future.</td>
+<td>AX, DN, DS, JC, MC, VI, UP, CB</td>
+<td>2-letter code for the type of credit card. AX: American Express, DN: Diners Club, DS: Discover Card, JC: JCB International, MC: MasterCard, VI: Visa, UP: China Union Pay, CB: Carte Blanche. Note this is not a finite list and new codes maybe added or changed in the future.</td>
 </tr>
 <tr>
 <td></td>
