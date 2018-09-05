@@ -939,7 +939,7 @@ footer .links a:active {
 footer .footer-logo {
   background: url(../images/Brands_Lockup_2line_white_RGB.png) no-repeat scroll center;
   background-size: contain;
-  width: 100%;
+  width: 1000px;
   height: 84px;
   display: inline-block;
   margin-top: 40px;
