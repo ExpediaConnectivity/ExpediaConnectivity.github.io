@@ -362,7 +362,7 @@ define(function() {
             if (element.delta) {
                 var deltasuccess = (element.deltaSuccess != null) ? element.deltaSuccess : element.success;
                 var delta = $("<span/>").html(element.delta < 0 ? "&#x25BC;" : "&#x25B2;");
-                $(elementSelector + " .rate-change").addClass(deltasuccess ? "green" : "red").html(delta).append(" " + Math.abs(element.delta) + "%");
+                $(elementSelector + " .rate-change").addClass(deltasuccess ? "green" : "red").html(delta).append(" " + Math.abs(element.delta) + (element.unit == "days"?"%":"\&nbsp;bps"));
             } else {
                 $(elementSelector + " .rate-change").remove();
                 $(elementSelector + " .rate-period").remove();
