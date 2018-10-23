@@ -376,8 +376,13 @@ define(function() {
             if (key == "score") continue;
             var elementSelector = "#" + id + " #" + key;
             var state = category["attributes"][key];
-            $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
-            $(elementSelector).addClass(state ? "green" : "red");
+            if (key == "pci" && state == null) {
+                $(elementSelector).addClass("light-grey");
+                $(elementSelector + " .feature").text("PCI Attestation not required");
+            } else {
+                $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
+                $(elementSelector).addClass(state ? "green" : "red");
+            }
         }
     }
 

@@ -198,6 +198,20 @@ body {
 .scorecard-row .scorecard-cards > .red .standard {
   color: #a92216;
 }
+.scorecard-row .scorecard-cards > .light-grey .value {
+  color: #8a8a8a;
+}
+.scorecard-row .scorecard-cards > .light-grey .state {
+  color: #8a8a8a;
+  font-size: 1.5em;
+  margin-right: 0em;
+}
+.scorecard-row .scorecard-cards > .light-grey .feature {
+  color: #8a8a8a;
+}
+.scorecard-row .scorecard-cards > .light-grey .standard {
+  color: #8a8a8a;
+}
 .scorecard-row .scorecard-improve {
   margin-bottom: 1em;
   border-top: 10px solid #f8f8f8;
