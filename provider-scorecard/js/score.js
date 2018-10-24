@@ -376,13 +376,14 @@ define(function() {
             if (key == "score") continue;
             var elementSelector = "#" + id + " #" + key;
             var state = category["attributes"][key];
-            if (key == "pci" && state == null) {
-                $(elementSelector).addClass("light-grey");
-                $(elementSelector + " .feature").text("PCI Attestation not required");
-            } else {
-                $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
-                $(elementSelector).addClass(state ? "green" : "red");
-            }
+            $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
+            $(elementSelector).addClass(state ? "green" : "red");
+        }
+        if (!("pci" in category["attributes"])){
+            // PCI attribute not included in json
+            var elementSelector = "#" + id + " #pci";
+            $(elementSelector).addClass("light-grey");
+            $(elementSelector + " .feature").text("PCI Attestation not required");
         }
     }
 
