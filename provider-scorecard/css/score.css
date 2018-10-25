@@ -29,6 +29,12 @@ body {
   font-size: 38px;
   margin-bottom: 0;
 }
+.simple-content .scorecard-header h1 {
+  display: inline-block;
+}
+.simple-content .scorecard-header .feedback-link {
+  float: right;
+}
 .simple-content .provider {
   padding: 0;
   margin-top: 2rem;

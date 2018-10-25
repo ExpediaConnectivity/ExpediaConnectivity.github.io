@@ -125,7 +125,12 @@ define(function() {
         $("#optimise .border").click(metricClickCallback);
         $("#enhance .border").click(enhanceClickCallback);
         $(".scorecard-rank").click(overallClickCallback);
+        $(".feedback-link").click(feedbackClickCallback);
     });
+
+    function feedbackClickCallback(event) {
+        ga('send', 'event', 'scorecard', 'click', 'feedback');
+    }
 
     function overallClickCallback(event) {
         var hash = getParameterByName("id");
