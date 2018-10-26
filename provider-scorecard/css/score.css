@@ -34,6 +34,7 @@ body {
 }
 .simple-content .scorecard-header .feedback-link {
   float: right;
+  font-size: x-large;
 }
 .simple-content .provider {
   padding: 0;
