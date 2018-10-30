@@ -147,6 +147,9 @@ body {
   flex-grow: 10;
   margin: auto 0.5em auto 0;
 }
+.scorecard-row .scorecard-cards .no-toggle {
+  height: 1.5em;
+}
 .scorecard-row .scorecard-cards .icon-toggle90 {
   align-self: flex-end;
   vertical-align: middle;

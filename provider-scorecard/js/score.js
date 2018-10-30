@@ -384,11 +384,14 @@ define(function() {
             $(elementSelector + " .state").addClass(state ? "icon-success" : "icon-close");
             $(elementSelector).addClass(state ? "green" : "red");
         }
-        if (!("pci" in category["attributes"])){
+        if (!("pci" in category["attributes"])) {
             // PCI attribute not included in json
             var elementSelector = "#" + id + " #pci";
             $(elementSelector).addClass("light-grey");
             $(elementSelector + " .feature").text("PCI Attestation not required");
+            $(elementSelector + " .icon.icon-toggle90").removeClass("icon-toggle90").addClass("no-toggle");
+            $(elementSelector).unbind("click");
+            $(elementSelector).css({pointerEvents : "none"});
         }
     }
 
