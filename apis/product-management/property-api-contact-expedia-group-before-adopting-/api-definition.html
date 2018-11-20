@@ -260,6 +260,14 @@ function googleTranslateElementInit() {
             &quot;value&quot;: 25.99,
             &quot;startDate&quot;: null,
             &quot;endDate&quot;: null
+        },
+        {
+            &quot;code&quot;: &quot;DEPOSIT_OTHER&quot;,
+            &quot;scope&quot;: &quot;BREAKAGE&quot;,
+            &quot;duration&quot;: &quot;PER_DAY&quot;,
+            &quot;startDate&quot;: &quot;2019-09-20&quot;,
+            &quot;endDate&quot;: &quot;2019-09-28&quot;,
+            &quot;value&quot;: &quot;14.77&quot;
         }
     ],
     &quot;taxes&quot;: [
@@ -273,11 +281,22 @@ function googleTranslateElementInit() {
         {
             &quot;code&quot;: &quot;MINIMUM_CHECKIN_AGE&quot;,
             &quot;value&quot;: &quot;18&quot;
+        },
+        {
+            &quot;code&quot;: &quot;FORMS_OF_DEPOSIT_ACCEPTED&quot;,
+            &quot;detailCode&quot;: &quot;CREDIT_CARDS_ONLY&quot;,
+            &quot;value&quot;: null
+        },
+        {
+            &quot;code&quot;: &quot;DEPOSIT_OTHER&quot;,
+            &quot;detailCode&quot;: &quot;CASH_ONLY&quot;,
+            &quot;value&quot;: null
         }
     ],
     &quot;inventorySettings&quot;: {
         &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;,
         &quot;pricingModel&quot;: &quot;PER_DAY&quot;
+        &quot;virtualCardEnabled&quot;:false
     },
     &quot;attributes&quot;: [
         {
@@ -859,6 +878,17 @@ function googleTranslateElementInit() {
 <td>String</td>
 <td>No</td>
 <td>See <a href="./code-list.html#property-inventorysetting-pricingmodel">code list</a></td>
+</tr>
+<tr>
+<td>distributionModels</td>
+<td>String</td>
+<td>No</td>
+<td>See <a href="./code-list.html#property-inventorysetting-distributionModels">code list</a></td>
+</tr>
+<tr>
+<td>virtualCardEnabled</td>
+<td>Boolean</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
