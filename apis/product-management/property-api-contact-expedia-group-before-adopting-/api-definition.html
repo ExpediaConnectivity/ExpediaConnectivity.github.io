@@ -295,8 +295,9 @@ function googleTranslateElementInit() {
     ],
     &quot;inventorySettings&quot;: {
         &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;,
-        &quot;pricingModel&quot;: &quot;PER_DAY&quot;
-        &quot;virtualCardEnabled&quot;:false
+        &quot;pricingModel&quot;: &quot;PER_DAY&quot;,
+        &quot;virtualCardEnabled&quot;:false,
+        &quot;taxInclusive&quot;:false
     },
     &quot;attributes&quot;: [
         {
@@ -889,6 +890,13 @@ function googleTranslateElementInit() {
 <td>virtualCardEnabled</td>
 <td>Boolean</td>
 <td>No</td>
+<td></td>
+</tr>
+<tr>
+<td>taxInclusive</td>
+<td>Boolean</td>
+<td>No</td>
+<td>Please note, you would have to specify this at Rateplan level as well when you create them using Product API.</td>
 </tr>
 </tbody>
 </table>
@@ -1132,7 +1140,9 @@ function googleTranslateElementInit() {
             ],
             &quot;inventorySettings&quot;: {
                 &quot;rateAcquisitionType&quot;: &quot;NET_RATE&quot;,
-                &quot;pricingModel&quot;: &quot;PER_DAY&quot;
+                &quot;pricingModel&quot;: &quot;PER_DAY&quot;,
+                &quot;virtualCardEnabled&quot;:false,
+                &quot;taxInclusive&quot;:false
             },
             &quot;attributes&quot;: [
                  {
