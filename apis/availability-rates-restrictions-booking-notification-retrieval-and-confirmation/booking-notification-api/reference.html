@@ -1299,267 +1299,45 @@ Content-Length: 2291</p>
 <td>String 256</td>
 <td>0..1</td>
 <td></td>
-<td>Textual description of special request. In the case of RequestCode=4, this element will contain the free-form text entered by the consumer (guest). <br/> For RequestCode=5, this element will contain a special instruction for payment by credit card depending on Expedia Collect EVC or Hotel Collect. Text for EVC: &quot;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid.&quot; Text for Hotel Collect: &quot;Hotel Collect Booking - Collect Payment From Guest&quot;. <br/> For RequestCode=6, this element will contain the details of the Value Add Promotion, and should be stored in the partner PMS system.</td>
-</tr>
-<tr>
-<td></td>
-<td>@Formatted</td>
-<td>boolean</td>
-<td>0..1</td>
-<td></td>
-<td>Indicates if text is formatted.</td>
-</tr>
-<tr>
-<td></td>
-<td>@Language</td>
-<td>String 5</td>
-<td>0..1</td>
-<td></td>
-<td>Language of the Text element, as described above.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ResGuests</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Collection of reservation guests. Container element.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>ResGuest</td>
-<td></td>
-<td>1..n</td>
-<td></td>
-<td>An individual reservation guest. Single occurrence. Only one guest name will be included with a reservation.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ResGuestRPH</td>
-<td>Numeric 1</td>
-<td>1</td>
-<td>1</td>
-<td>The reservation guest Reference Place Holder. Used to link the reservation guest to the room stay. Fixed value=1, as there is only one room stay per reservation and a single guest name.</td>
-</tr>
-<tr>
-<td></td>
-<td>@AgeQualifyingCode</td>
-<td>Numeric 1</td>
-<td>1</td>
-<td>10</td>
-<td>Age category. Expedia only collect information about the primary guest, and it will always be an adult (code=10)</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Profiles</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Container element for profiles.</td>
-</tr>
-<tr>
-<td>6</td>
-<td>ProfileInfo</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Collection of profile elements. Container element.</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Profile</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Individual profile. Single occurrence as a ResGuest will have only one associated profile.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ProfileType</td>
-<td>Numeric 1</td>
-<td>1</td>
-<td>1</td>
-<td>Profile type. Fixed value. 1=Customer.</td>
-</tr>
-<tr>
-<td>8</td>
-<td>Customer</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Customer profile element.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>PersonName</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Container element for full guest name.</td>
-</tr>
-<tr>
-<td>10</td>
-<td>GivenName</td>
-<td>String 60</td>
-<td>1</td>
-<td></td>
-<td>Guest first name.</td>
-</tr>
-<tr>
-<td>10</td>
-<td>MiddleName</td>
-<td>String 60</td>
-<td>0..1</td>
-<td></td>
-<td>Guest middle name.</td>
-</tr>
-<tr>
-<td>10</td>
-<td>Surname</td>
-<td>String 60</td>
-<td>1</td>
-<td></td>
-<td>Guest surname.</td>
-</tr>
-<tr>
-<td>9</td>
-<td>Telephone</td>
-<td></td>
-<td>0..1</td>
-<td></td>
-<td>Element that contains the customer phone number.</td>
-</tr>
-<tr>
-<td></td>
-<td>@CountryAccessCode</td>
-<td>Numeric 3</td>
-<td>0..1</td>
-<td></td>
-<td>Country Code.</td>
-</tr>
-<tr>
-<td></td>
-<td>@AreaCityCode</td>
-<td>Numeric 8</td>
-<td>0..1</td>
-<td></td>
-<td>Area/city code.</td>
-</tr>
-<tr>
-<td></td>
-<td>@PhoneNumber</td>
-<td>String 32</td>
-<td>0..1</td>
-<td></td>
-<td>Telephone number.</td>
-</tr>
-<tr>
-<td></td>
-<td>@Extension</td>
-<td>Numeric 5</td>
-<td>0..1</td>
-<td></td>
-<td>Extension to reach a specific party at the phone number.</td>
-</tr>
-<tr>
-<td>3</td>
-<td>ResGlobalInfo</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>A collection of objects which are common to the entire reservation. Container element.</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Memberships</td>
-<td></td>
-<td>0..1</td>
-<td></td>
-<td>A collection of Membership objects. The <Memberships> element provides a list of reward programs which may be credited with points accrued from the guest&#39;s activity. Container element. The <Memberships> element optional since only corporate reservations will include membership information</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Membership</td>
-<td></td>
-<td>1..n</td>
-<td></td>
-<td>The Membership object identifies the frequent customer reward program and (optionally) indicates points awarded for stay activity. Expedia usually uses up to 2 occurrences: one for the hotel loyalty membership program and another for the frequent flyer membership number.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ProgramCode</td>
-<td>String 6</td>
-<td>1</td>
-<td></td>
-<td>The code or name of the membership program. See <Expedia codes for Hotel Loyalty programs> and <Expedia codes for Airline Frequent Flyer Memberships> at the end of this document for complete list.</td>
-</tr>
-<tr>
-<td></td>
-<td>@AccountID</td>
-<td>String 32</td>
-<td>1</td>
-<td></td>
-<td>The account identification number for this particular member in this particular program.</td>
-</tr>
-<tr>
-<td></td>
-<td>@TravelSector</td>
-<td>Numeric 1</td>
-<td>0..1</td>
-<td>1 3</td>
-<td>Expedia uses the following OTA codes for travel sector: 1 for Air, 3 for Hotel</td>
-</tr>
-<tr>
-<td>4</td>
-<td>HotelReservationIDs</td>
-<td></td>
-<td>1</td>
-<td></td>
-<td>Collection of hotel reservation and confirmation IDs. Container element.</td>
-</tr>
-<tr>
-<td>5</td>
-<td>HotelReservationID</td>
-<td></td>
-<td>1..2</td>
-<td></td>
-<td>For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system&#39;s confirmation number.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ResID_Type</td>
-<td>Numeric 1</td>
-<td>1</td>
-<td>3 8</td>
-<td>Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses &quot;8&quot; to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses &quot;3&quot; for the Hotelier&#39;s confirmation number and &quot;8&quot; for the Expedia reservation number.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ResID_Value</td>
-<td>String 64</td>
-<td>1</td>
-<td></td>
-<td>This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier&#39;s confirmation number. The Expedia reservation number is associated with ResID_Type=&quot;8&quot; and the Hotelier&#39;s confirmation number is associated with ResID_Type=&quot;3&quot;. The hotel confirmation number can be alpha numeric and should not exceed 50 characters.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ResID_Source</td>
-<td>String 64</td>
-<td>1</td>
-<td></td>
-<td>A unique identifier to indicate the source system that generated the ResID_Value. For the Expedia reservation number, this value will be set to &quot;Expedia&quot;. For the Hotelier&#39;s confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system. This value should be the same as the ResponderId.</td>
-</tr>
-<tr>
-<td></td>
-<td>@ResID_Date</td>
-<td>dateTime</td>
-<td>1</td>
-<td></td>
-<td>The creation date and time of this reservation ID as the local date and time. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.</td>
+<td>Textual description of special request. In the case of RequestCode=4, this element will contain the free-form text entered by the consumer (guest). <br/> For RequestCode=5, this element will contain a special instruction for payment by credit card depending on Expedia Collect EVC or Hotel Collect. Text for EVC: &quot;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid.&quot; Text for Hotel Collect: &quot;Hotel Collect Booking - Collect Payment From Guest&quot;. </td>
 </tr>
 </tbody>
 </table>
-</div><h3 id="ota_hotelresnotifrs" data-magellan-destination="ota_hotelresnotifrs">OTA_HotelResNotifRS</h3>
+</div><p>Text for No Credit Card bookings: &quot;This guest booked without a credit card and will pay upon arrival. Be sure to reconcile this reservation and waive the cancellation fee to avoid paying unnecessary compensation if the guest cancels or doesn’t show up.&quot;<br><br/> For RequestCode=6, this element will contain the details of the Value Add Promotion, and should be stored in the partner PMS system.
+ | @Formatted | boolean | 0..1 |  | Indicates if text is formatted.
+ | @Language | String 5 | 0..1 |  | Language of the Text element, as described above.
+3 | ResGuests |  | 1 |  | Collection of reservation guests. Container element.
+4 | ResGuest |  | 1..n |  | An individual reservation guest. Single occurrence. Only one guest name will be included with a reservation.
+ | @ResGuestRPH | Numeric 1 | 1 | 1 | The reservation guest Reference Place Holder. Used to link the reservation guest to the room stay. Fixed value=1, as there is only one room stay per reservation and a single guest name.
+ | @AgeQualifyingCode | Numeric 1 | 1 | 10 | Age category. Expedia only collect information about the primary guest, and it will always be an adult (code=10)
+5 | Profiles |  | 1 |  | Container element for profiles.
+6 | ProfileInfo |  | 1 |  | Collection of profile elements. Container element.
+7 | Profile |  | 1 |  | Individual profile. Single occurrence as a ResGuest will have only one associated profile.
+ | @ProfileType | Numeric 1 | 1 | 1 | Profile type. Fixed value. 1=Customer.
+8 | Customer |  | 1 |  | Customer profile element.
+9 | PersonName |  | 1 |  | Container element for full guest name.
+10 | GivenName | String 60 | 1 |  | Guest first name.
+10 | MiddleName | String 60 | 0..1 |  | Guest middle name.
+10 | Surname | String 60 | 1 |  | Guest surname.
+9 | Telephone |  | 0..1 |  | Element that contains the customer phone number.
+ | @CountryAccessCode | Numeric 3 | 0..1 |  | Country Code.
+ | @AreaCityCode | Numeric 8 | 0..1 |  | Area/city code.
+ | @PhoneNumber | String 32 | 0..1 |  | Telephone number.
+ | @Extension | Numeric 5 | 0..1 |  | Extension to reach a specific party at the phone number.
+9 | Email |  | 0..1 |  | Element that contains the customer email address.This information is not included by default. Hotels that need to provide special check-in instructions to their guests should discuss enabling email address with their Market Manager.
+3 | ResGlobalInfo |  | 1 |  | A collection of objects which are common to the entire reservation. Container element.
+4 | Memberships |  | 0..1 |  | A collection of Membership objects. The <Memberships> element provides a list of reward programs which may be credited with points accrued from the guest&#39;s activity. Container element. The <Memberships> element optional since only corporate reservations will include membership information
+5 | Membership |  | 1..n |  | The Membership object identifies the frequent customer reward program and (optionally) indicates points awarded for stay activity. Expedia usually uses up to 2 occurrences: one for the hotel loyalty membership program and another for the frequent flyer membership number.
+ | @ProgramCode | String 6 | 1 |  | The code or name of the membership program. See <Expedia codes for Hotel Loyalty programs> and <Expedia codes for Airline Frequent Flyer Memberships> at the end of this document for complete list.
+ | @AccountID | String 32 | 1 |  | The account identification number for this particular member in this particular program.
+ | @TravelSector | Numeric 1 | 0..1 | 1 3 | Expedia uses the following OTA codes for travel sector: 1 for Air, 3 for Hotel
+4 | HotelReservationIDs |  | 1 |  | Collection of hotel reservation and confirmation IDs. Container element.
+5 | HotelReservationID |  | 1..2 |  | For reservation (OTA_HotelResNotifRQ), there will be a single occurrence of the HotelReservationID element and it will contain the information on the Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), there will be 2 occurrences, one for the Expedia booking number and another for the hotelier system&#39;s confirmation number.
+ | @ResID_Type | Numeric 1 | 1 | 3 8 | Reservation ID Type. See <Confirmation Number Types> at the end of this document. Expedia uses the two following values: 3 for Confirmation, 8 for Reservation. For reservation (OTA_HotelResNotifRQ), Expedia uses &quot;8&quot; to send its reservation number. For modification (OTA_HotelResModifyNotifRQ), Expedia uses &quot;3&quot; for the Hotelier&#39;s confirmation number and &quot;8&quot; for the Expedia reservation number.
+ | @ResID_Value | String 64 | 1 |  | This is the actual value associated with the ResID_Type. For reservation (OTA_HotelResNotifRQ), this will be the actual Expedia reservation number. For modification (OTA_HotelResModifyNotifRQ), it will be the original Expedia reservation number or the Hotelier&#39;s confirmation number. The Expedia reservation number is associated with ResID_Type=&quot;8&quot; and the Hotelier&#39;s confirmation number is associated with ResID_Type=&quot;3&quot;. The hotel confirmation number can be alpha numeric and should not exceed 50 characters.
+ | @ResID_Source | String 64 | 1 |  | A unique identifier to indicate the source system that generated the ResID_Value. For the Expedia reservation number, this value will be set to &quot;Expedia&quot;. For the Hotelier&#39;s confirmation number, Expedia and the Hotelier will determine what identifier should be for the Hotelier system. This value should be the same as the ResponderId.
+ | @ResID_Date | dateTime | 1 |  | The creation date and time of this reservation ID as the local date and time. Format: YYYY-MM-DDThh:mm:ss[+/-]hh:mm.</p>
+<h3 id="ota_hotelresnotifrs" data-magellan-destination="ota_hotelresnotifrs">OTA_HotelResNotifRS</h3>
 <p>There are 2 types of responses that can be returned by the hotel partner.</p>
 <ul>
 <li>A success response is to be returned when the notification is processed successfully by the partner system. Expedia expects to get a confirmation number from a success response.</li>
