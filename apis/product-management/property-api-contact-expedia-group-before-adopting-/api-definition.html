@@ -313,6 +313,17 @@ function googleTranslateElementInit() {
             &quot;value&quot;: &quot;3&quot;
         }
     ]
+    &quot;registrations&quot;: [{
+        &quot;startDate&quot;: &quot;2019-03-10&quot;,
+        &quot;endDate&quot;: &quot;2019-09-10&quot;,
+        &quot;type&quot;: &quot;RENTAL_REGISTRATION&quot;,
+        &quot;code&quot;: &quot;1234-6&quot;
+        },{
+        &quot;startDate&quot;: &quot;2019-09-11&quot;,
+        &quot;endDate&quot;: &quot;2020-07-10&quot;,
+        &quot;type&quot;: &quot;RENTAL_REGISTRATION&quot;,
+        &quot;code&quot;: &quot;1222-6&quot;
+        }]
 }]
 </code></pre>
 <p>The property API can be utilized by both our Expedia Quick Connect (EQC) partners as well as our Direct Connect (ARI) partners. If you are a Direct Connect ARI partner, there is a small addition to the Onboarding Request - You would need to define the Brand Code and Chain Code of the property as well. You can find details <a href="/files/SetPropertyARIChain.pdf">here</a>.</p>
@@ -425,6 +436,13 @@ function googleTranslateElementInit() {
 <td>No</td>
 <td>Yes</td>
 <td>See SupplierCollectedMandatoryFee below.</td>
+</tr>
+<tr>
+<td>registrations</td>
+<td>Array of Registration/License IDs for the property</td>
+<td>No</td>
+<td>Yes</td>
+<td>See registrations below.</td>
 </tr>
 <tr>
 <td>policies</td>
@@ -824,12 +842,49 @@ function googleTranslateElementInit() {
 <td>startDate</td>
 <td>String</td>
 <td>No</td>
-<td>If fee is only offered on specific days during the year, provide a recurring start and end date.</td>
+<td>If fee is only offered on specific days during the year, provide a recurring start &amp; end date.</td>
 </tr>
 <tr>
 <td>endDate</td>
 <td>String</td>
 <td>No</td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>registrations</strong></p>
+<div><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Required</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startDate</td>
+<td>String</td>
+<td>No</td>
+<td>Enter the date in yyyy-mm-dd format</td>
+</tr>
+<tr>
+<td>endDate</td>
+<td>String</td>
+<td>No</td>
+<td>Enter the date in yyyy-mm-dd format</td>
+</tr>
+<tr>
+<td>type</td>
+<td>String</td>
+<td>No</td>
+<td>type is RENTAL_REGISTRATION</td>
+</tr>
+<tr>
+<td>code</td>
+<td>String</td>
+<td>No</td>
+<td>Please enter the registration ID/license ID for the property. Mostly used for Vacation Rental properties</td>
 </tr>
 </tbody>
 </table>
@@ -1158,6 +1213,17 @@ function googleTranslateElementInit() {
                 &quot;value&quot;: &quot;3&quot;
                 }
             ],
+            &quot;registrations&quot;: [{
+            &quot;startDate&quot;: &quot;2019-03-10&quot;,
+            &quot;endDate&quot;: &quot;2019-09-10&quot;,
+            &quot;type&quot;: &quot;RENTAL_REGISTRATION&quot;,
+            &quot;code&quot;: &quot;1234-6&quot;
+            },{
+            &quot;startDate&quot;: &quot;2019-09-11&quot;,
+            &quot;endDate&quot;: &quot;2020-07-10&quot;,
+            &quot;type&quot;: &quot;RENTAL_REGISTRATION&quot;,
+            &quot;code&quot;: &quot;1222-6&quot;
+            }]
             &quot;status&quot;: {
                 &quot;href&quot;: &quot;/properties/v1/provider-a/1/status&quot;
             }
