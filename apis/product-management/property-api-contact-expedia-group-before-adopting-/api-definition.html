@@ -488,7 +488,7 @@ function googleTranslateElementInit() {
 <td>line 1</td>
 <td>String</td>
 <td>Yes</td>
-<td><ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li></td>
+<td><ul><li>Number and Civic address.</li><li>This is the address used by travelers to reach your property.</li><li>Refrain from using informal instructions like “(across from the mall)”.</li><li>Minimum 5 Characters Required. If your address is longer than 40 characters, we recommend you continue with Line2.</li><li>You will not produce a validation error for longer addresses, but the value may be parsed inaccurately.</li></td>
 </tr>
 <tr>
 <td>line 2</td>
@@ -736,7 +736,7 @@ function googleTranslateElementInit() {
 <td>categoryCode</td>
 <td>String</td>
 <td>No</td>
-<td>See <a href="./code-list.html#categoryCode">code list</a>.  If none provided, Expedia will provide categorization.</td>
+<td>See <a href="./code-list.html#image-categories">code list</a>.  If none provided, Expedia will provide categorization.</td>
 </tr>
 <tr>
 <td>name</td>
@@ -761,19 +761,19 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#amenityCode">code list</a>. Expedia requires atleast 10 amenities to be sent per Property</td>
+<td>See <a href="./code-list.html#property-amenities">code list</a>. Expedia requires atleast 10 amenities to be sent per Property</td>
 </tr>
 <tr>
 <td>detailCode</td>
 <td>String</td>
-<td>See <a href="./code-list.html#amenityCode">code list</a></td>
-<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+<td>See <a href="./code-list.html#property-amenities">code list</a></td>
+<td>See <a href="./code-list.html#property-amenities">code list</a></td>
 </tr>
 <tr>
 <td>value</td>
 <td>Numeric</td>
-<td>See <a href="./code-list.html#amenityCode">code list</a></td>
-<td>See <a href="./code-list.html#amenityCode">code list</a></td>
+<td>See <a href="./code-list.html#property-amenities">code list</a></td>
+<td>See <a href="./code-list.html#property-amenities">code list</a></td>
 </tr>
 </tbody>
 </table>
@@ -792,7 +792,7 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#paragraph">code list</a> Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead.</td>
+<td>See <a href="./code-list.html#paragraph-text">code list</a> Paragraph text may require review by Expedia prior to publishing. Please refrain from using Paragraphs to call out Property Amenties. Use the Amenity codes instead.</td>
 </tr>
 <tr>
 <td>value</td>
@@ -817,19 +817,19 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#mandatoryfees">code list</a> . Used to define Fees collected at the time of guest check-in. Please refrain from using this Property level fee attribute for fees that are to be collected at the time of Booking. If there are fees collected at the time of booking, please utilize the Rateplan level Service Fees (Refer Product API documentation for further details).</td>
+<td>See <a href="./code-list.html#mandatory-fees">code list</a> . Used to define Fees collected at the time of guest check-in. Please refrain from using this Property level fee attribute for fees that are to be collected at the time of Booking. If there are fees collected at the time of booking, please utilize the Rateplan level Service Fees (Refer Product API documentation for further details).</td>
 </tr>
 <tr>
 <td>scope</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#mandatoryfees">code list</a></td>
+<td>See <a href="./code-list.html#mandatory-fees">code list</a></td>
 </tr>
 <tr>
 <td>duration</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#mandatoryfees">code list</a></td>
+<td>See <a href="./code-list.html#mandatory-fees">code list</a></td>
 </tr>
 <tr>
 <td>value</td>
@@ -902,7 +902,7 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#policy">code list</a></td>
+<td>See <a href="./code-list.html#policies">code list</a></td>
 </tr>
 <tr>
 <td>value</td>
@@ -938,7 +938,7 @@ function googleTranslateElementInit() {
 <td>distributionModels</td>
 <td>String</td>
 <td>No</td>
-<td>See <a href="./code-list.html#property-inventorysetting-distributionModels">code list</a></td>
+<td>See <a href="./code-list.html#property-inventorysetting-distributionmodels">code list</a></td>
 </tr>
 <tr>
 <td>taxInclusive</td>
@@ -963,13 +963,13 @@ function googleTranslateElementInit() {
 <td>code</td>
 <td>String</td>
 <td>Yes</td>
-<td>See <a href="./code-list.html#tax">code list</a></td>
+<td>See <a href="./code-list.html#taxes">code list</a></td>
 </tr>
 <tr>
 <td>detailCode</td>
 <td>String</td>
-<td>See <a href="./code-list.html#tax">code list</a></td>
-<td>See <a href="./code-list.html#tax">code list</a></td>
+<td>See <a href="./code-list.html#taxes">code list</a></td>
+<td>See <a href="./code-list.html#taxes">code list</a></td>
 </tr>
 <tr>
 <td>value</td>
@@ -1014,7 +1014,7 @@ function googleTranslateElementInit() {
 <tr>
 <td>status</td>
 <td>String</td>
-<td>callback URL to get property status.  See <a href="./api-definition.html#GetPropertyStatus">GetPropertyStatus</a> for more information.</td>
+<td>callback URL to get property status.  See <a href="./api-definition.html#getpropertystatus">GetPropertyStatus</a> for more information.</td>
 </tr>
 </tbody>
 </table>
@@ -1694,4 +1694,4 @@ function googleTranslateElementInit() {
   ]
 }
 </code></pre>
-</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/terms">Terms and Conditions</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2018 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
+</div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/terms">Terms and Conditions</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2019 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
