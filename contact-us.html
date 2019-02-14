@@ -87,7 +87,6 @@ function googleTranslateElementInit() {
                     <option value="unknown">Please select an appropriate subject</option>
                     <option value="interested">I'm interested in adopting Expedia APIs</option>
                     <option value="technical">I have a technical question about an API</option>
-                    <option value="test">I'm ready to test my API connection and want a test property</option>
                     <option value="vendor">I'm a Vendor and my details have changed</option>
                     <option value="scorecard">I have a question about my provider scorecard</option>
                 </select>
@@ -171,7 +170,7 @@ function googleTranslateElementInit() {
             $("form#contactus").html("Thank you for contacting Expedia!");
             ga('send', 'event', 'contactus', data.subject);
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:LodgingConnectivityLeads@expedia.com'>LodgingConnectivityLeads@expedia.com</a>.");
         });
     }
 
