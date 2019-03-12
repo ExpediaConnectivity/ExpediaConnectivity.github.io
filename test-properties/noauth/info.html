@@ -24,15 +24,19 @@ function googleTranslateElementInit() {
 <script src="/js/jwtAuthentication.js"></script>
 <script src="/test-properties/js/urls.js"></script>
 <style>
-    ol>li {
+    .simple-content ol>li {
         line-height: 2em;
         margin-bottom: 20px;
         margin-left: 20px;
         padding-left: 20px;
+        display: list-item;
+        list-style-type: decimal;
     }
-    ul>li {
+    .simple-content ul>li {
         margin-left: 20px;
         padding-left: 20px;
+        display: list-item;
+        list-style-type: disc;
     }
     .simple-content p>img,.simple-content li>img {
         display: block;
@@ -45,89 +49,145 @@ function googleTranslateElementInit() {
 </style>
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
     <h1>Next Steps</h1>
-    <hr/>
-    <br/>
+    <hr />
     <div>
         <p><a href="#find">Finding your Test hotel on Expedia</a></p>
         <p><a href="#book">Booking your Test hotel on Expedia</a></p>
         <p><a href="#cancel">Cancelling your Test hotel on Expedia</a></p>
-        <p><a href="#urls">Common API URLs</a></p>
+        <p><a href="#faqs">Frequently Asked Questions</a></p>
     </div>
-    <hr/>
-    <br/>
+    <hr />
+    <br />
     <h2 id="find">Finding your Test hotel on Expedia</h2>
     <p>
-        From the home page www.expedia.com:
-
-        <ol>
-            <li>Select the Hotels icon in the booking wizard box</li>
-            <li>Under Going To type <b>Region Test</b> which will auto correct to <b>Region Test (and vicinity)</b></li>
-            <li>Enter dates in the future that you are sure have been updated with rates and availability.  Update number of rooms, adults and children per your test preference</li>
+        In your browser, navigate to <a href="www.expedia.com">www.expedia.com</a>
+        <ol type="1">
+            <li>Select the <strong><em>Hotels</em></strong> icon in the booking wizard box.</li>
+            <li>Under <strong><em>Going To</em></strong> type <strong><em>Region Test</em></strong>.</li>
             <li>
-                Enter <b>Search</b>
-                <img src="/images/test-properties/info-search.png"/>
-                The next page is called the Search Results.
+                Choose the <strong>check in / check out</strong> dates in the future (for the selected dates, make
+                sure that the property has rates and inventory loaded and no restrictions).
+                Update the <strong>number of rooms</strong>, <strong>adults</strong>, and <strong>children</strong>
+                per your test preference.
             </li>
-            <li>
-                To narrow the results use the <b>“Search by hotel name”</b> feature, enter all or some of your test hotel name, <b>select your hotel</b> from list and <b>select Go</b>
-                <br/>
-                If you have not sent over rates and inventory your hotel will not appear, if you just sent over rates and availability allow approximately 30 minutes for the cache to update
-                <img src="/images/test-properties/info-results.png"/>
+            <li>Click on <strong><em>Search</em></strong>.
             </li>
         </ol>
+        <img src="/images/test-properties/info-search.png" />
     </p>
-    <hr/>
-    <br/>
+    <p>
+        The next page is called the Search Results.
+        To narrow down the results, use the <strong><em>Search by property name</em></strong> search box,
+        and type the name of your property, then select the property from the suggested properties and
+        click on <strong><em></em>Go</em></strong>.
+        <img src="/images/test-properties/info-results.png" />
+    </p>
+    <p>
+        <em>*If you have not sent over rates and inventory your hotel will not appear, if you just sent over rates
+            and availability allow approximately 30 minutes for the cache to update.</em>
+    </p>
+    <hr />
+    <br />
     <h2 id="book">Booking your Test hotel on Expedia</h2>
     <p>
-        Once you find your test hotel, click on the price to make a booking.
-        <img src="/images/test-properties/info-booking.png"/>
-        On the hotel rooms and rates page, select the book button <span><img src="/images/test-properties/info-book.png" style="height: 2em;"></span> to begin the booking process.  We suggest you code and test for both Pay Now/Expedia Collect and Pay at Hotel/Hotel Collect.
+        <ol type="1">
+            <li>
+                Once you find your test hotel, verify that the check in / check out dates, number of rooms, number
+                of adults and number of children have the desired values
+            </li>
+            <li>
+                Select the desired Room Type and Rate Plan that you like to book, by clicking on <strong><em>Reserve</em></strong>.
+            </li>
+        </ol>
+        <img src="/images/test-properties/info-booking.png" />
     </p>
     <p>
-        To complete the booking you will need to enter a valid form of payment that will be charged for the Pay Now option.  Your booking will be refundable as long as you cancel it prior to the date of check-in.  Here are the items needed to complete the booking.
+        To complete the booking, you will need to enter a valid form of payment which will be charged if you chose
+        the Pay Now option on the previous page.
+        Your booking will be refundable based on the cancelation policy for that rate plan (You can see the
+        cancelation policy for each rate plan in Partner Central - Rooms and Rates - Rooms, Rates and Policies).
+        Here are the mandatory items needed to complete the booking.
         <ul>
-            <li>First/Last Name</li>
-            <li>Phone</li>
-            <li>Debit/Credit Card Number</li>
-            <li>Expiration Month/Year</li>
-            <li>Security Code</li>
-            <li>Cardholder Name</li>
-            <li>Email</li>
-            <li>Password to create account</li>
+            <li>First/Last Name;</li>
+            <li>Phone #;</li>
+            <li>Cardholder name;</li>
+            <li>Debit/Credit Card #;</li>
+            <li>Expiration date of the card, security code and ZIP code;</li>
+            <li>Email address.</li>
         </ul>
     </p>
-    <p>A booking confirmation will be sent to the email you enter and that email will also include a link for cancelling the booking.</p>
-    <p>At this point we recommend that you create an account.  Once you create an account you can find all your bookings under the “My Trips” section which may make it easier to cancel all test bookings.</p>
-    <hr/>
-    <br/>
+    <p>A booking confirmation will be delivered to the email you entered, and that email will also include a link
+        for canceling the booking.</p>
+    <p>At this point, we recommend that you create an account. Once you create an account, you can find all your
+        bookings under the "My Trips" section which may make it easier to cancel all test bookings.</p>
+    <hr />
+    <br />
     <h2 id="cancel">Cancelling your Test hotel on Expedia</h2>
-    <h3>Option 1: Includes both Pay Now and Pay Later Bookings</h3>
-    <ol>
-        <li>Log into your account and select <b>My Trips</b> from the upper right corner</li>
-        <li>Under <b>Upcoming</b>, choose the itinerary you wish to cancel</li>
-        <li>Under <b>Manage Booking</b> select <b>Cancel Room</b></li>
+    <h3>Option 1 - applies to both, Pay Now and Pay Later Bookings:</h3>
+    <ol type="1">
+        <li>Log into your account and select <strong><em>My Trips</em></strong> from the upper right corner.</li>
+        <li>Under <strong><em>Upcoming</em></strong>, choose the itinerary you wish to cancel.</li>
+        <li>Under <strong><em>Manage Booking</em></strong> select <strong><em>Cancel Room</em></strong>.</li>
     </ol>
-    <h3>Option 2: Only applies for Pay Now Bookings</h3>
-    <ol>
-        <li>To view your itinerary without signing in select <b>Support/Customer Support</b> in upper right corner</li>
-        <li>Select <b>View your hotel booking</b></li>
-        <li>Select <b>find your itinerary</b></li>
-        <li>Enter email address associated with booking and Itinerary Number</li>
-        <li>Select <b>Find Itinerary</b></li>
-        <li>Under <b>Manage Booking</b> select <b>Cancel Room</b></li>
+    <img src="/images/test-properties/info-cancelling.png" />
+    <h3>Option 2 - only applies for Pay Now Bookings:</h3>
+    <ol type="1">
+        <li>Navigate to <a href="https://www.expedia.com/user/itin?ckoflag=0&selc=0&uurl=qscr%3Dreds%26rurl%3D%252Ftrips">View your itinerary</a> in your web browser</li>
+        <li>Enter the email address that you used for the booking in combination with the Itinerary Number.</li>
+        <li>Under <strong><em>Manage Booking</em></strong> Select <strong><em>Cancel Room</em></strong>.</li>
     </ol>
-    <p>All test bookings should be cancelled immediately after testing and before check-in to ensure a full refund.</p>
-    <hr/>
-    <br/>
-    <h2 id="urls">Common API URLs</h2>
-    <ul>
-        <li>Rates and availability: <a href="https://services.expediapartnercentral.com/eqc/ar">https://services.expediapartnercentral.com/eqc/ar</a></li>
-        <li>Retrieve bookings: <a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a></li>
-        <li>Confirm bookings: <a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a></li>
-        <li>Product API: <a href="https://services.expediapartnercentral.com/products/properties">https://services.expediapartnercentral.com/products/properties</a></li>
-        <li>Promo API: <a href="#">https://services.expediapartnercentral.com/promotions/v1/hotels/{your_hotel_id}/promos</a></li>
-        <li><a href="/developer">All Developer APIs</a></li>
-    </ul>
+    <p>All test bookings should be canceled immediately after testing and before check-in to ensure a full refund.</p>
+    <hr />
+    <br />
+    <h2 id="faqs">Frequently Asked Questions</h2>
+    <p>
+        <strong>Q</strong>: For how long I can use the test property.
+    </p>
+    <p>
+        <strong>A</strong>: The test property will be assigned to your account for 2 weeks. You can extend the
+        period for additional 2 weeks, after you assign a test property to your account.
+        Do the following to extend the period (make sure you do this before the "Valid To" date):
+        <img src="/images/test-properties/info-extend.png" />
+        After the 2 weeks / 4 weeks, you will no longer be able to use the property, but you can still log in to
+        the self-service tool and assign new property.
+    </p>
+    <p>
+        <strong>Q</strong>: My property shows as sold out. What should I do?
+    </p>
+    <p>
+        <strong>A</strong>: You have to ensure that the property have at least one active room type by having at
+        least one active Standalone rate plan.
+        If yes, you have to ensure that for this room type and rate plan, there are no restrictions applied for the
+        period you are trying to make reservation and more important, there is inventory and rates loaded for the
+        same period.
+        To verify this, log in to <a href="https://www.expediapartnercentral.com/">Partner Central</a> and use
+        Rooms, Rates and Policies & Manage Rates and Availability under Rooms and Rates drop down.
+    </p>
+    <p>
+        <strong>Q</strong>: Mistakenly I booked a non-refundable Expedia Collect reservation. Can I request refund?
+    </p>
+    <p>
+        <strong>A</strong>: Prior booking, it is important to check the cancelation policy of the rate plan and
+        ensure that you are booking refundable rate plan.
+        However, if you mistakenly booked non-refundable reservation, you can contact us at <a href="mailto:eqcss@expedia.com">eqcss@expedia.com</a>
+        and we will initiate refund.
+    </p>
+    <p>
+        <strong>Q</strong>: Can Expedia provide me with a test Credit/Debit Card (CC)?
+    </p>
+    <p>
+        <strong>A</strong>: No, Expedia does not provide test CC. For Expedia Collect reservations, you must use
+        real CC with enough funds.
+        For Hotel Collect reservations, you can use dummy card as we do not validate the CC for this type of
+        reservations.
+    </p>
+    <p>
+        <strong>Q</strong>: I just pushed Availability and Rates, but I don't see it updated on the live site.
+    </p>
+    <p>
+        <strong>A</strong>: The update will reflect immediately in Partner Central, however due to our caching, for
+        the rate on the live site, it might take up to 30 minutes to update.
+        Note: The rate on the Check-out page (the last page during the booking process) should update immediately.
+    </p>
 </div>
 </div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/terms">Terms and Conditions</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2019 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Info"/></body></html>
