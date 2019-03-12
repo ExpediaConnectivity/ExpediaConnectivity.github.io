@@ -248,13 +248,7 @@ We recommend that EQC partners be careful when making use of long date ranges wi
 <h3 id="minimum-and-maximum-lengths-of-stay" data-magellan-destination="minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</h3>
 <h4 id="arrival-vs-stay-through" data-magellan-destination="arrival-vs-stay-through">Arrival VS stay-through</h4>
 <p>Expedia supports two different methods to apply minimum and maximum length of stay restrictions.
-Arrival-based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading the LOS configured for the requested arrival date.
-Stay-through based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading all days of the requested stay and applying the most restrictive values from any of those days.
-This is a hotel-level setting in Expedia system, and any Expedia market managers can modify this setting. If you are not sure which setting applies to your hotel, please contact:</p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
+Arrival-based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading the LOS configured for the requested arrival date.Stay-through based restrictions: Minimum and maximum length of a hotel stay which the system calculates by reading all days of the requested stay and applying the most restrictive values from any of those days.This is a hotel-level setting in Expedia system, and any Expedia market managers can modify this setting. </p>
 <h4 id="restricting-updates-beyond-a-certain-minimum-length-of-stay-value" data-magellan-destination="restricting-updates-beyond-a-certain-minimum-length-of-stay-value">Restricting updates beyond a certain Minimum length of stay value</h4>
 <p>Expedia will not accept updates past a certain minimum length of stay value. When a hotel exceeds the maximum value allowed per Expedia configuration, it will receive the following error:
 3135: MinLOS value ([value specified in message]) exceeds Extranet auto-approval threshold ([configuration for this hotel in Expedia system]) for length of stay.
@@ -361,21 +355,13 @@ Currently Expedia offers three different pricing models. The table below provide
 </tbody>
 </table>
 </div><p>Expedia recommends EQC partners to use occupancy-based pricing as this pricing model offers the most flexible solution for pricing. A simple migration process can also convert a property currently on the per-day pricing model to occupancy-based pricing (the property can request this from their Market Manager). Note that migration from per-person to occupancy-based pricing involves a manual transfer of information which requires scheduling with the property’s Market Manager.
-Please make sure the pricing model you specify when sending rate updates is the right one pre-configured for your property on Expedia Partner Central. You can obtain pricing model information through a PARR request for product details, including the “returnRatePlanAttributes” attribute. Alternatively, you can access Expedia Partner Central and confirm, from the Inventory Grid page, which pricing model is set for your property.  Should a property be using a pricing model you have not developed please contact:</p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
+Please make sure the pricing model you specify when sending rate updates is the right one pre-configured for your property on Expedia Partner Central. You can obtain pricing model information through a PARR request for product details, including the “returnRatePlanAttributes” attribute. Alternatively, you can access Expedia Partner Central and confirm, from the Inventory Grid page, which pricing model is set for your property.  Should a property be using a pricing model you have not developed please contact your account manager. </p>
 <h3 id="managing-rates-for-a-property-using-occupancy-based-pricing" data-magellan-destination="managing-rates-for-a-property-using-occupancy-based-pricing">Managing Rates for a Property Using Occupancy-based Pricing</h3>
 <p>If an EQC partner now wants to change the number of occupancy levels in the room, it has first to contact its Market Manager to change the configuration of the room type (thereby updating the property’s settings on Expedia Partner Central), and then it has to send Expedia the new rates for those occupancy levels. Occupancy-based pricing also requires the rate to be set to the total amount charged for that occupancy level.
 For example, if a property already has occupancy level 4 newly configured for it on Expedia Partner Central and wants to set the rate for occupancy level 4 of a room type to $160.00, then it should include the following input in the AR RQ message:</p>
 <pre><code class="lang-xml">&lt;PerOccupancy rate=&quot;160.00&quot; occupancy=&quot;4&quot;/&gt;
 </code></pre>
-<p>The AR API currently doesn’t support removal of occupancies. If occupancies need to be removed, please contact: </p>
-<ul>
-<li>eqcss@expedia.com for new activations</li>
-<li>hothelp@expedia.com for existing connections</li>
-</ul>
+<p>The AR API currently doesn’t support removal of occupancies. </p>
 <h3 id="ar-responses-containing-more-than-20-warnings" data-magellan-destination="ar-responses-containing-more-than-20-warnings">AR Responses Containing more than 20 Warnings</h3>
 <p>When messages fail various Expedia validations, Expedia will return up to 20 warnings per type of problem. For example, if a supplier attempts to close remaining base allocation for 120 days, it will get the following response back:</p>
 <pre><code class="lang-xml">&lt;AvailRateUpdateRS xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2007/02&quot;&gt;
@@ -663,12 +649,12 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 <tr>
 <td>1001</td>
 <td>Authentication error: invalid username or password.</td>
-<td>This message should not be retried. Verify username and password configured in your EQC interface. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>This message should not be retried. Verify username and password configured in your EQC interface. </td>
 </tr>
 <tr>
 <td>1003</td>
 <td>The user account provided doesn’t have the right access level</td>
-<td>This message should not be retried. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>This message should not be retried. </td>
 </tr>
 </tbody>
 </table>
@@ -718,7 +704,7 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 <tr>
 <td>3015</td>
 <td>Business validation error, such as but not limited to: No updates provided in ICPRUpdateMessage, MaxLOS value (X) smaller than the MinLOS value(Y), The NumberOfGuests attribute may not be 0, etc.</td>
-<td>This error can happen for various reasons: The AR RQ sent contained no updates - only room or rate IDs and dates, Contradictory Min and Max LOS were included in the message (Min &gt; Max), For an OBP rate update, occupancy=0 was specified, which is not allowed/impossible, etc. EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>This error can happen for various reasons: The AR RQ sent contained no updates - only room or rate IDs and dates, Contradictory Min and Max LOS were included in the message (Min &gt; Max), For an OBP rate update, occupancy=0 was specified, which is not allowed/impossible, etc. EQC partner needs to capture the description returned along with this code and should advise affected hotel or property of the error to verify if there is a problem with its system or the implementation of Expedia QuickConnect. </td>
 </tr>
 <tr>
 <td>3020</td>
@@ -743,7 +729,7 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 <tr>
 <td>3090</td>
 <td>Pricing models mismatch: you tried to update a price for <name of pricing model>, but your property is configured to use <name of other pricing model>.</td>
-<td>Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on Expedia Partner Central for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on Expedia Partner Central for your property. </td>
 </tr>
 <tr>
 <td>3103</td>
@@ -763,22 +749,22 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 <tr>
 <td>3123</td>
 <td>Length of stay has to be provided for the Rate Plans with LOS enabled</td>
-<td>The message didn’t include the Rate/@lengthOfStay attribute for a rate plan that is length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>The message didn’t include the Rate/@lengthOfStay attribute for a rate plan that is length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. </td>
 </tr>
 <tr>
 <td>3124</td>
 <td>Length of stay attribute can only be set on Rate Plans with LOS enabled</td>
-<td>The message included the Rate/@lengthOfStay attribute for a rate plan that is not length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>The message included the Rate/@lengthOfStay attribute for a rate plan that is not length of stay pricing enabled. Review your implementation of Expedia QuickConnect and make sure the pricing model you use is in line with what is configured on the HotelExtranet for your property. </td>
 </tr>
 <tr>
 <td>3125</td>
 <td>Field not accessible for edit for this hotel and source  - [Exact field not accessible]</td>
-<td>The message sent contains updates that cannot be accepted for the hotel specified. The sources may vary: Rate change edit not allowed: the rate change indicator is used in request but product isn’t enabled for day of arrival pricing. Please correct the problem in the message. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>The message sent contains updates that cannot be accepted for the hotel specified. The sources may vary: Rate change edit not allowed: the rate change indicator is used in request but product isn’t enabled for day of arrival pricing. Please correct the problem in the message.</td>
 </tr>
 <tr>
 <td>3128</td>
 <td>Invalid data in request</td>
-<td>For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td></td>
 </tr>
 <tr>
 <td>3129</td>
@@ -798,22 +784,22 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 <tr>
 <td>3145</td>
 <td>Not available for updates. Hotel undergoing business model conversion.</td>
-<td>Verify if hotel has completed business model conversion for ETP and resubmit updates. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Verify if hotel has completed business model conversion for ETP and resubmit updates. F</td>
 </tr>
 <tr>
 <td>3202</td>
 <td>Hotel ID not found. You either specified an invalid hotel ID or your account is not linked to this hotel.</td>
-<td>Verify if there is a mapping issue in EQC partner’s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to update through Expedia Partner Central). For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Verify if there is a mapping issue in EQC partner’s system. If the mapping is correct, please verify that the user configured for Expedia QuickConnect has access to update this property (i.e. the user is able to update through Expedia Partner Central). </td>
 </tr>
 <tr>
 <td>3203</td>
 <td>The following RoomTypeIDs do not belong to the given hotel : room_type_ID</td>
-<td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Fix mapping in EQC partner’s system. </td>
 </tr>
 <tr>
 <td>3204</td>
 <td>The following RatePlanIDs do not belong to the given hotel : rate_plan_ID</td>
-<td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Fix mapping in EQC partner’s system. For EQC partners building new products, Expedia Market manager must be notified ahead of time to create the new product in Expedia systems. </td>
 </tr>
 <tr>
 <td>3405</td>
@@ -843,7 +829,7 @@ A request can potentially contain dozens of warnings. If a request generated too
 <tr>
 <td>7009</td>
 <td>Occupancy exceeds maximum allowed value</td>
-<td>Applicable to occupancy-based pricing hotels only. The EQC partner requested to update an occupancy level that exceeds the room’s maximum occupancy defined in Expedia system. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>Applicable to occupancy-based pricing hotels only. The EQC partner requested to update an occupancy level that exceeds the room’s maximum occupancy defined in Expedia system. </td>
 </tr>
 <tr>
 <td>7010</td>
@@ -873,17 +859,17 @@ A request can potentially contain dozens of warnings. If a request generated too
 <tr>
 <td>7019</td>
 <td>Net rate must be within Rate Verification threshold.</td>
-<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. </td>
 </tr>
 <tr>
 <td>7021</td>
 <td>Sell/LAR rate must be within Rate Verification threshold.</td>
-<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. Please correct the rate value. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>As per Expedia rate validation &amp; verification rules (based off recent bookings), the rate you provided is either too high or too low. </td>
 </tr>
 <tr>
 <td>7022</td>
 <td>Inactive Rate Plan Updated.</td>
-<td>The update was processed; however this product will never be sold until an Expedia Market Manager activates this product. For assistance, please contact eqcss@expedia.com for new activations and/or hothelp@expedia.com for existing connections.</td>
+<td>The update was processed; however this product will never be sold until an Expedia Market Manager activates this product. </td>
 </tr>
 <tr>
 <td>7023</td>
