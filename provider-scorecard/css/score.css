@@ -70,11 +70,11 @@ body {
   cursor: pointer;
 }
 .scorecard-row {
-  margin-left: 35px;
-  margin-right: 35px;
+  margin-left: 35px !important;
+  margin-right: 35px !important;
   max-width: none;
   background: #f8f8f8;
-  margin-bottom: 50px;
+  margin-bottom: 50px !important;
 }
 .scorecard-row .scorecard-category {
   font-size: 2em;
