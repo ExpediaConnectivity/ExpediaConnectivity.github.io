@@ -878,6 +878,10 @@ a {
 .index-content h3 {
   color: initial;
 }
+section#section-lower_links {
+  text-align: center;
+  margin-left: 0;
+}
 section#section-lower_links a {
   background-color: #FECB2F;
   color: #1f1f1f;
@@ -1482,6 +1486,9 @@ form .request-hotel {
   }
 }
 
+#systems {
+  margin-left: 0;
+}
 #systems .card-content {
   margin-left: 15px;
   margin-right: 15px;
