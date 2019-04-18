@@ -59,37 +59,37 @@ function googleTranslateElementInit() {
 <td>Get Property Details</td>
 <td>GET</td>
 <td>/properties/v1/{provider name}/{provider property ID}</td>
-<td>GET property information</td>
+<td>GET a property&#39;s information by its provider property ID</td>
 </tr>
 <tr>
-<td>Update a Property</td>
+<td>Update Properties</td>
 <td>PUT</td>
 <td>/properties/v1/{provider name}</td>
-<td>Update a property by sending a full overlay. PATCH is not supported.</td>
+<td>Update one or more properties by sending a full overlay. PATCH is not supported.</td>
 </tr>
 <tr>
 <td>Get Property Status</td>
 <td>GET</td>
 <td>/properties/v1/{provider name}/{provider property ID}/status</td>
-<td>GET current state of the specified property (Onboarding Successful, Onboarding Failed, etc.)</td>
+<td>GET current onboarding status of the specified property</td>
 </tr>
 <tr>
 <td>Get by ExpediaID</td>
 <td>GET</td>
-<td>/properties/v1/{ExpediaHotelID}</td>
-<td>This method can be used to GET Property Information for properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)</td>
+<td>/properties/v1/{ExpediaPropertyID}</td>
+<td>GET a property&#39;s information by specifying its Expedia Property ID (assigned during onboarding)</td>
 </tr>
 <tr>
 <td>Update by ExpediaID</td>
 <td>PUT</td>
-<td>/properties/v1/{ExpediaHotelID}</td>
-<td>This method can be used to update Properties that were onboarded via means other than the API (By specifying the Expedia Hotel ID)</td>
+<td>/properties/v1/{ExpediaPropertyID}</td>
+<td>Update a property by specifying its Expedia Property ID (assigned during onboarding)</td>
 </tr>
 <tr>
 <td>Deactivate Property</td>
 <td>DELETE</td>
 <td>/properties/v1/{provider name}/{provider property ID}</td>
-<td>De-activates property in Expedia system</td>
+<td>Deactivate a property in the Expedia system</td>
 </tr>
 <tr>
 <td>Property Manager Readiness</td>
@@ -1494,7 +1494,7 @@ function googleTranslateElementInit() {
 }
 </code></pre>
 <h2 id="getpropertystatus" data-magellan-destination="getpropertystatus">GetPropertyStatus</h2>
-<p>The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached &#39;OnboardingSucceed&#39; status.</p>
+<p>The onboarding process is an asynchronous workflow, so this endpoint should be polled no more than once an hour to retrieve the latest status of the property and its assigned Expedia ID.  Please note that the Product API cannot be called to add new room types/rate plans until after a property has reached &#39;OnboardingSucceeded&#39; status.</p>
 <p><strong>Example Request</strong></p>
 <p>GET /properties/v1/mycompany/1234/status</p>
 <h3 id="getpropertystatus-response" data-magellan-destination="getpropertystatus-response">GetPropertyStatus Response</h3>
