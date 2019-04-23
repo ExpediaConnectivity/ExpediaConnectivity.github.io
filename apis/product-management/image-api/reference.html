@@ -373,7 +373,8 @@ Simple entity response:</p>
       &quot;categoryCode&quot;: &quot;SUNDECK&quot;,
       &quot;propertyFeatured&quot;: true,
       &quot;lastUpdateDateTime&quot;: &quot;2016-08-19 15:29:00.000 GMT&quot;,
-      &quot;originalImageUrl&quot;: &quot;https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg&quot;
+      &quot;originalImageUrl&quot;: &quot;https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg&quot;,
+      &quot;fileName&quot;: &quot;98765_14733432ABC.jpg&quot;
     }
   ]
 }
@@ -567,7 +568,8 @@ Simple entity response:</p>
     &quot;categoryCode&quot;: &quot;SUNDECK&quot;,
     &quot;propertyFeatured&quot;: true,
     &quot;lastUpdateDateTime&quot;: &quot;2016-08-19 15:29:00.000 GMT&quot;,
-    &quot;originalImageUrl&quot;: &quot;https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg&quot;
+    &quot;originalImageUrl&quot;: &quot;https://some_url_that_expedia_whitelisted_for_our_partner.com/highresimage.jpg&quot;,
+    &quot;fileName&quot;: &quot;98766_1473342ABC.jpg&quot;
   }
 }
 </code></pre><h4 id="parameters-5" data-magellan-destination="parameters-5">Parameters</h4>
@@ -711,6 +713,12 @@ Simple entity response:</p>
 <td>URL string</td>
 <td>Cannot be provided in Create.</td>
 <td>The URL of one of the derivatives Expedia created with the image that was provided.</td>
+</tr>
+<tr>
+<td>fileName</td>
+<td>string</td>
+<td>Cannot be provided in Create or Update.</td>
+<td>The original filename of the Image.</td>
 </tr>
 <tr>
 <td>resourceId</td>
