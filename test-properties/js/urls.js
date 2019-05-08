@@ -1,6 +1,6 @@
 function hotelAssignmentServiceBaseUrl() {
     switch (environment.env) {
-        case "prod": return "https://hotel-assignment-service.prod-p.expedia.com";
+        case "prod": return "https://api.expediapartnercentral.com/hotel-assignment";
         case "dev":  return "http://localhost:8082";
         default:     return "https://hotel-assignment-service.test.expedia.com";
     }

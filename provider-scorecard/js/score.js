@@ -3,7 +3,7 @@ define(function() {
     function providerPortalServiceBaseUrl() {
         switch (environment.env) {
             case "prod":
-                return "https://provider-portal-service.prod-p.expedia.com";
+                return "https://api.expediapartnercentral.com/provider-portal";
             case "dev":
                 return "https://provider-portal-service.us-west-2.test.expedia.com";
             default:
@@ -247,7 +247,7 @@ define(function() {
 
             var providerTitle = topProvider.name;
             if (topProvider.system) {
-                providerTitle =  "<b>" + topProvider.system + "</b> by " + providerTitle; 
+                providerTitle =  "<b>" + topProvider.system + "</b> by " + providerTitle;
             }
             var topProviderHtml = $("<div>")
                 .addClass("top-performer")

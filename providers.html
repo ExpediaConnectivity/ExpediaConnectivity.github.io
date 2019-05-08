@@ -226,7 +226,7 @@ function googleTranslateElementInit() {
         data.captchaResponse = captchaResponse;
         $.ajax({
             method: "POST",
-            url: "https://hotel-assignment-service.prod-p.expedia.com/v1/sendmail",
+            url: "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail",
             data: JSON.stringify(data),
             dataType: 'json',
             contentType: 'application/json; charset=UTF-8'
