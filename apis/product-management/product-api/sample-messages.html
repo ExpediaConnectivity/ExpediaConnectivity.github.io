@@ -59,7 +59,12 @@ Authorization: Basic [your encoded username:password in base64]
       &quot;reservationCutOff&quot;: {
         &quot;time&quot;: &quot;05:00&quot;,
         &quot;day&quot;: &quot;nextDay&quot;
-      }
+      },
+      &quot;allowedAgeCategories&quot;: [
+        &quot;Adult&quot;,
+        &quot;ChildAgeA&quot;,
+        &quot;Infant&quot;
+      ]
     }, {
       &quot;resourceId&quot;: 2268141,
       &quot;name&quot;: &quot;Hotel Downtown&quot;,
@@ -86,7 +91,12 @@ Authorization: Basic [your encoded username:password in base64]
       &quot;reservationCutOff&quot;: {
         &quot;time&quot;: &quot;23:59&quot;,
         &quot;day&quot;: &quot;sameDay&quot;
-      }
+      },
+      &quot;allowedAgeCategories&quot;: [
+        &quot;Adult&quot;,
+        &quot;ChildAgeA&quot;,
+        &quot;Infant&quot;
+      ]
     }, {
       &quot;resourceId&quot;: 2268140,
       &quot;name&quot;: &quot;Villa by the Sea&quot;,
@@ -111,7 +121,12 @@ Authorization: Basic [your encoded username:password in base64]
       &quot;reservationCutOff&quot;: {
         &quot;time&quot;: &quot;05:00&quot;,
         &quot;day&quot;: &quot;nextDay&quot;
-      }
+      },
+      &quot;allowedAgeCategories&quot;: [
+        &quot;Adult&quot;,
+        &quot;ChildAgeA&quot;,
+        &quot;Infant&quot;
+      ]
     }
   ]
 }
@@ -157,7 +172,12 @@ Authorization: Basic [your encoded username:password in base64]
     &quot;reservationCutOff&quot;: {
       &quot;time&quot;: &quot;05:00&quot;,
       &quot;day&quot;: &quot;nextDay&quot;
-    }
+    },
+    &quot;allowedAgeCategories&quot;: [
+        &quot;Adult&quot;,
+        &quot;ChildAgeA&quot;,
+        &quot;Infant&quot;
+      ]
   }
 }
 </code></pre>
@@ -354,6 +374,7 @@ Authorization: Basic [your encoded username:password in Base64]
                         &quot;type&quot;:&quot;Sofa Bed&quot;,
                         &quot;size&quot;:&quot;Full&quot;
                     }
+                ]
             },
             {
                 &quot;option&quot;: [
@@ -1404,7 +1425,7 @@ Authorization: Basic [your encoded username:password in Base64]
       },
       {
        &quot;isTaxable&quot;: true,
-       &quot;amountPerNight&quot;: 10.0,
+       &quot;amountPerNight&quot;: 10.0
       }
     ],
       &quot;minLOSDefault&quot;: 1,

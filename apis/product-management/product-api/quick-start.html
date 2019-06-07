@@ -60,7 +60,12 @@ password: ew67nk33
             &quot;reservationCutOff&quot;: {
                 &quot;time&quot;: &quot;23:59&quot;,
                 &quot;day&quot;: &quot;sameDay&quot;
-            }
+            },
+            &quot;allowedAgeCategories&quot;: [
+                &quot;Adult&quot;,
+                &quot;ChildAgeA&quot;,
+                &quot;Infant&quot;
+            ]
         }
     ]
 }
@@ -349,14 +354,14 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
             }
         ],
         &quot;serviceFeesPerStay&quot;: [
-        {
-        &quot;isTaxable&quot;: false,
-        &quot;percent&quot;: 0.2
-        },
-        {
-        &quot;isTaxable&quot;: true,
-        &quot;amountPerNight&quot;: 10.0,
-        }
+            {
+                &quot;isTaxable&quot;: false,
+                &quot;percent&quot;: 0.2
+            },
+            {
+                &quot;isTaxable&quot;: true,
+                &quot;amountPerNight&quot;: 10.0
+            }
         ],
         &quot;minLOSDefault&quot;: 1,
         &quot;maxLOSDefault&quot;: 28,
