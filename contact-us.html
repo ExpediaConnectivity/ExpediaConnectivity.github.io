@@ -28,9 +28,11 @@ function googleTranslateElementInit() {
     <div class="six columns text-left contactus-info">
         <div id="contact-router">
             <h5>Which best describes your organisation?</h5><br/>
-            <input type="radio" name="partner-type" id="partner-type-1" value="hotel"><label for="partner-type-1">Hotel/Property</label><br>
-            <input type="radio" name="partner-type" id="partner-type-2" value="affiliate"><label for="partner-type-2">Travel affiliate provider</label><br>
-            <input type="radio" name="partner-type" id="partner-type-3" value="provider"><label for="partner-type-3">Lodging connectivity provider e.g. Channel Manager that handles rates, availability, inventory or reservations on behalf of a property</label><br>
+            <select id="partner-type" name="subject" placeholder="What type of business do you represent?" required="">
+                <option value="unknown" selected="selected">Please select the type of business you represent</option>
+                <option value="hotel">Hotel/Property</option>
+                <option value="provider">Connectivity Provider e.g. CM/PMS/CRS</option>
+            </select>
             <div class="button-wrapper">
                 <p id = "contact-go" class="yellow-button hidden" style="float: left"><a>Go</a></p>
             </div>
@@ -73,31 +75,17 @@ function googleTranslateElementInit() {
         If you're experiencing issues, please reach out to us on <a href="https://apps.expediapartnercentral.com/lodging/help/contactus.html">Partner Central</a>.
         <br><br>
         </div>
-
-        <div id="travel-affiliate" class="hidden">
-                <h3>For Travel Affiliate Providers</h3>
-                <br>
-                Please visit <a href="https://expediapartnersolutions.com/">Expedia Partner Solutions (EPS)</a> for more information.
-        </div>
     </div>
     <div id="contact-form" class="six columns hidden">
         <form id="contactus" onsubmit="sendmail(this); return false;">
             <div class="formline">
                 <input id="name" placeholder="Name" type="text" required/>
-                <input id="company" placeholder="Company" type="text" required/>
-                <input id="website" placeholder="Company website" type="text" required/>
-                <input id="email" placeholder="Company email" type="email" required/>
+                <input id="email" placeholder="Email" type="email" required/>
                 <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
-                <select id="region" name="region" placeholder="Which region is your company based from" required>
-                    <option value="unknown">Please select which region is your company based from</option>
-                    <option value="ap">Asia-Pacific</option>
-                    <option value="emea">Europe, Middle East and Africa</option>
-                    <option value="la">Latin America</option>
-                    <option value="na">North America</option>
-                </select>
+                <input id="company" placeholder="Company" type="text" required/>
                 <select id="subject" name="subject"  placeholder="Please select an appropriate subject" required>
                     <option value="unknown">Please select an appropriate subject</option>
-                    <option value="interested">I'm interested in adopting Expedia Group lodging APIs</option>
+                    <option value="interested">I'm interested in adopting Expedia APIs</option>
                     <option value="technical">I have a technical question about an API</option>
                     <option value="vendor">I'm a Vendor and my details have changed</option>
                     <option value="scorecard">I have a question about my provider scorecard</option>
@@ -111,30 +99,17 @@ function googleTranslateElementInit() {
     </div>
 </section>
 <div class="contactus-end"></div>
-<style>
-    input[type=radio] {
-        float: left;
-        margin-top: 5px;
-    }
-    label {
-        margin-left: 24px !important;
-        display: block !important;
-    }
-    form select {
-        font-size: 0.8rem;
-    }
-</style>
 <script>
     var captchaResponse = null;
 
-    $('input[type=radio][name=partner-type]').change(function(){
+    $('#partner-type').on('change', function(){
         toggleGoButton()
     });
 
     function toggleGoButton() {
-        var value = $('input[type=radio][name=partner-type]:checked').val();
+        var value = $('#partner-type').val();
 
-        if (value == "hotel" || value == "provider" || value == "affiliate") {
+        if (value == "hotel" || value == "provider") {
             $('#contact-go').removeClass("hidden");
         } else {
             $('#contact-go').addClass("hidden");
@@ -147,19 +122,17 @@ function googleTranslateElementInit() {
 
     $('#contact-go').on('click', function() {
         showContact();
-        ga('send', 'event', 'contactus', 'partnerType', $('input[type=radio][name=partner-type]:checked').val());
+        ga('send', 'event', 'contactus', 'partnerType', $('#partner-type').val());
     });
 
 
     function showContact() {
-        var partnerType = $('input[type=radio][name=partner-type]:checked').val();
+        var partnerType = $('#partner-type').val();
         $("#contact-router").addClass("hidden");
 
         if (partnerType === "provider") {
             $("#provider-contact").removeClass("hidden");
             $("#contact-form").removeClass("hidden");
-        } else if (partnerType === "affiliate") {
-            $("#travel-affiliate").removeClass("hidden")
         } else {
             $("#hotel-contact").removeClass("hidden")
         }
@@ -177,16 +150,10 @@ function googleTranslateElementInit() {
         data.email = $(form).find("#email").val();
         data.phone = $(form).find("#phone").val();
         data.company = $(form).find("#company").val();
-        data.webiste = $(form).find("#website").val();
         data.message = $(form).find("#message").val();
         data.subject = $(form).find("#subject").val();
-        data.region = $(form).find("#region").val();
         data.captchaResponse = captchaResponse;
 
-        if (data.region == "unknown") {
-            alert("Please select an appropriate region.");
-            return;
-        }
         if (data.subject == "unknown") {
             alert("Please select an appropriate subject.");
             return;
@@ -203,7 +170,7 @@ function googleTranslateElementInit() {
             $("form#contactus").html("Thank you for contacting Expedia!");
             ga('send', 'event', 'contactus', data.subject);
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:LodgingConnectivityLeads@expedia.com'>LodgingConnectivityLeads@expedia.com</a>.");
         });
     }
 

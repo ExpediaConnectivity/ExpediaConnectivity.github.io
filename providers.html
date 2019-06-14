@@ -196,17 +196,9 @@ function googleTranslateElementInit() {
                 <form id="contactus" onsubmit="sendmail(this); return false;">
                     <div class="formline">
                         <input id="name" placeholder="Name" type="text" required/>
-                        <input id="company" placeholder="Company" type="text" required/>
-                        <input id="website" placeholder="Company website" type="text" required/>
-                        <input id="email" placeholder="Company email" type="email" required/>
+                        <input id="email" placeholder="Email" type="email" required/>
                         <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
-                        <select id="region" name="region" placeholder="Which region is your company based from" required>
-                            <option value="unknown">Please select which region is your company based from</option>
-                            <option value="ap">Asia-Pacific</option>
-                            <option value="emea">Europe, Middle East and Africa</option>
-                            <option value="la">Latin America</option>
-                            <option value="na">North America</option>
-                        </select>
+                        <input id="company" placeholder="Company" type="text" required/>
                         <textarea id="message" placeholder="Type your message here" required></textarea>
                         <div class="g-recaptcha pull-up" data-sitekey="6LeWuSITAAAAAKFaizi12CYfmpGhi47DsF3Ggmct" data-callback="captcha"></div>
                         <input type="submit" value="Send" class="btn-send"/>
@@ -217,11 +209,6 @@ function googleTranslateElementInit() {
         </div>
     </section>
 </div>
-<style>
-    form select {
-        font-size: 0.8rem;
-    }
-</style>
 <script>
     var captchaResponse = null;
     function captcha(response) {
@@ -234,8 +221,6 @@ function googleTranslateElementInit() {
         data.email = $(form).find("#email").val();
         data.phone = $(form).find("#phone").val();
         data.company = $(form).find("#company").val();
-        data.website = $(form).find("#webiste").val();
-        data.region = $(form).find("#region").val();
         data.message = $(form).find("#message").val();
         data.subject = "providerspage";
         data.captchaResponse = captchaResponse;
@@ -250,7 +235,7 @@ function googleTranslateElementInit() {
             $("form#contactus").html("Thank you for contacting Expedia!");
             ga('send', 'event', 'contactus', data.subject);
         }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:eqcss@expedia.com'>eqcss@expedia.com</a>.");
         });
     }
     function ajaxError(jqxhr, humanError) {
