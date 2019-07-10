@@ -126,6 +126,13 @@ function googleTranslateElementInit() {
     }
 </style>
 <script>
+    function sendEmailUrl() {
+        switch (environment.env) {
+            case "prod": return "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail";
+            case "test": return "http://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
+            default: return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
+        }
+    }
     var captchaResponse = null;
 
     $('input[type=radio][name=partner-type]').change(function(){
@@ -195,7 +202,7 @@ function googleTranslateElementInit() {
 
         $.ajax({
             method: "POST",
-            url: "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail",
+            url: sendEmailUrl(),
             data: JSON.stringify(data),
             dataType: 'json',
             contentType: 'application/json; charset=UTF-8'
