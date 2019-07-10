@@ -129,7 +129,7 @@ function googleTranslateElementInit() {
     function sendEmailUrl() {
         switch (environment.env) {
             case "prod": return "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail";
-            case "test": return "http://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
+            case "test": return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
             default: return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
         }
     }
