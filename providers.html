@@ -234,7 +234,7 @@ function googleTranslateElementInit() {
         data.email = $(form).find("#email").val();
         data.phone = $(form).find("#phone").val();
         data.company = $(form).find("#company").val();
-        data.website = $(form).find("#webiste").val();
+        data.website = $(form).find("#website").val();
         data.region = $(form).find("#region").val();
         data.message = $(form).find("#message").val();
         data.subject = "providerspage";
@@ -247,7 +247,7 @@ function googleTranslateElementInit() {
             contentType: 'application/json; charset=UTF-8'
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
-            $("form#contactus").html("Thank you for contacting Expedia!");
+            $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 7 business days for us to process your query.");
             ga('send', 'event', 'contactus', data.subject);
         }).fail(function(jqxhr){
             ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
