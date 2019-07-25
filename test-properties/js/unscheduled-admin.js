@@ -168,8 +168,8 @@ define(["./features"], function(features) {
             return "You must specify a password to use for API calls.";
         }
 
-        if (password.length < 8) {
-            return "Password must be 8 characters or longer";
+        if (password.length < 16) {
+            return "Password must be 16 characters or longer";
         }
 
         if (!password.match(/[A-Z]/) || !password.match(/[a-z]/)) {
