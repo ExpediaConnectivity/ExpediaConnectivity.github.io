@@ -2,7 +2,7 @@ function hotelAssignmentServiceBaseUrl() {
     switch (environment.env) {
         case "prod": return "https://api.expediapartnercentral.com/hotel-assignment";
         case "dev":  return "http://localhost:8082";
-        default:     return "https://hotel-assignment-service.test.expedia.com";
+        default:     return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment";
     }
 }
 

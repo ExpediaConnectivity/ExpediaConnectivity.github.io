@@ -4,10 +4,8 @@ define(function() {
         switch (environment.env) {
             case "prod":
                 return "https://api.expediapartnercentral.com/provider-portal";
-            case "dev":
-                return "https://provider-portal-service.us-west-2.test.expedia.com";
             default:
-                return "https://provider-portal-service.us-west-2.test.expedia.com";
+                return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/provider-portal";
         }
     }
 

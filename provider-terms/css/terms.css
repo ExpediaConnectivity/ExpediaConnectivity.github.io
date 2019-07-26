@@ -1,0 +1,80 @@
+.loading {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  margin-top: 10%;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.api-content #accepted-on,
+.api-content #provider-name {
+  font-weight: bold;
+}
+.api-content #provider-name,
+.api-content #tandc-title {
+  margin-bottom: 0;
+}
+.api-content ul li {
+  list-style-type: none !important;
+}
+.api-content #accept-btn {
+  width: 100%;
+}
+.api-content #accept-btn.disabled {
+  background-color: #f3f3f3;
+  pointer-events: none;
+  cursor: default;
+}
+.api-content #accept-error {
+  color: red;
+  float: right;
+  clear: right;
+}
+.api-content #tandc-text {
+  padding: 12px;
+}
+.api-content #tandc-text-box {
+  border: 1px solid black;
+  border-radius: 2px;
+  height: 500px;
+  overflow: auto;
+}
+.api-content #tandc-text-box p {
+  padding: 12px;
+}
+.api-content #accept-text {
+  margin-bottom: 1rem;
+}
+.api-content .accept-row {
+  margin: 1rem 0;
+  max-width: 100%;
+}
+.api-content .tc-row {
+  max-width: 100%;
+  margin: 0;
+}
+.api-content #download-btn {
+  text-align: right;
+  padding: 0;
+}
+@media screen and (max-width: 40em) {
+  .api-content #download-btn {
+    text-align: left;
+    width: 100%;
+  }
+}
+.api-content #last-modified {
+  padding: 0;
+}
