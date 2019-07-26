@@ -15,6 +15,10 @@ var hotelAssignmentServiceUrls = {
         return hotelAssignmentServiceUrls.users() + "/login";
     },
 
+    epcLogin: function() {
+        return hotelAssignmentServiceUrls.users() + "/epc-login";
+    },
+
     register: function() {
         return hotelAssignmentServiceUrls.users() + "/register";
     },
