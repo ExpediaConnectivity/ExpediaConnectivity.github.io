@@ -14,7 +14,7 @@ function loadEnd() {
 function checkAuth() {
     $.ajax({
         method: "POST",
-        url: hotelAssignmentServiceUrls.epcLogin(),
+        url: hotelAssignmentServiceUrls.users() + "/epc-login",
         xhrFields: {
             withCredentials: true,
             XDomainRequest: true
@@ -50,6 +50,7 @@ function checkAuth() {
         if (jqxhr.status == 403 || jqxhr.status == 401) {
             $('#loginFailed').show();
         } else {
+            $('#loginFailed').show();
             $("#result").addClass("error").html("Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
         }
     });
