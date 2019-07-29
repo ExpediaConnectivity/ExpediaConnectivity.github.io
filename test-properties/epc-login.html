@@ -16,26 +16,38 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EGLPS_logo_white_RGB.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><script src="/test-properties/js/urls.js"></script>
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now no-js" id="page-index"><div id="google_translate_element" style="display: none"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EGLPS_logo_white_RGB.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><script src="/test-properties/js/urls.js?t=1564369081"></script>
 <!--[if lte IE 9]>
 <script src="/js/base64.js"></script>
 <!--<![endif]-->
 <link rel="stylesheet" href="/test-properties/css/index.css">
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>EPC Login</h1>
-    <p id="loggingIn" class="announce" style="display: none;">
-      Checking EPC session...
-    </p>
-    <p id="loginFailed" class="formline center row" style="display: none;">
-      Please <a href="https://www.expediapartnercentral.com/Account/Logon" target="_blank">log in to EPC</a> in another tab, and then <a href="javascript:checkAuth();">try again</a>.
-    </p>
-    <div id="result" class="formline center row"></div>
+    <h1>Expedia PartnerCentral Login</h1>
+
+    <div id="authState-checkingEpcSession" class="announce authState" style="display: none;">
+      Checking Expedia PartnerCentral Session...
+    </div>
+
+    <div id="authState-noSessionRedirectingToEpcLogin" class="announce authState" style="display: none;">
+      Redirecting to Expedia PartnerCentral Login...
+    </div>
+
+    <div id="authState-haveSessionRedirectingToTestProperties" class="announce authState" style="display: none;">
+      Authenticated.  Redirecting...
+    </div>
+
+    <div id="authState-error" class="announce authState" style="display: none;">
+      <div>Error: <span id="authState-errorMessage"></span></div>
+      <div><a href="javascript:location.reload(false);">Try again.</a></div>
+    </div>
+
     <div class="loader" style="display: none;">
         <div class="background">&nbsp;</div>
         <svg class="circular">
             <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
         </svg>
     </div>
+
 </div>
-<script src="/test-properties/js/epc-login.js"></script>
+<script src="/test-properties/js/epc-login.js?t=1564369081"></script>
 </div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/terms">Terms and Conditions</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2019 Expedia, Inc. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Epc Login"/></body></html>

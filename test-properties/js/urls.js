@@ -6,6 +6,19 @@ function hotelAssignmentServiceBaseUrl() {
     }
 }
 
+function expediaPartnerCentralBaseUrl() {
+    switch (environment.env) {
+        case "prod": return "https://www.expediapartnercentral.com";
+        default:     return "https://www.expediapartnercentral.com.lisqa7.sb.karmalab.net";
+    }
+}
+
+var expediaPartnerCentralUrls = {
+    login: function(returnUrl) {
+        return expediaPartnerCentralBaseUrl() + "/Account/Logon?returnUrl=" + encodeURIComponent(returnUrl);
+    },
+}
+
 var hotelAssignmentServiceUrls = {
     users: function() {
         return hotelAssignmentServiceBaseUrl() + "/v1/users";
@@ -17,6 +30,10 @@ var hotelAssignmentServiceUrls = {
 
     epcLogin: function() {
         return hotelAssignmentServiceUrls.users() + "/epc-login";
+    },
+
+    epcRedirect: function() {
+        return hotelAssignmentServiceUrls.epcLogin() + "/redirect";
     },
 
     register: function() {
