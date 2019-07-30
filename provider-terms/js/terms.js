@@ -36,7 +36,7 @@ define(function () {
             $("#accept").addClass("hidden");
         } else {
             $("#tandc-intro").text("We have updated the terms and conditions governing the connection between " +
-                companyName + " and Expedia Group. Please review and accept these changes before the 31st of May.");
+                companyName + " and Expedia Group. Please review and accept these changes before the 30th of September.");
         }
         $(".loading").addClass("hidden");
         $("#tandc").removeClass("hidden");
