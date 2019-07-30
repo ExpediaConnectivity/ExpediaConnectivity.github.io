@@ -1,3 +1,3 @@
-requirejs(['terms'], function (terms) {
+requirejs(['termsv1'], function (terms) {
     terms.init();
 });
