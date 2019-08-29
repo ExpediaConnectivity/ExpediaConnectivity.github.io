@@ -104,7 +104,7 @@ function googleTranslateElementInit() {
                     <option value="scorecard">I have a question about my provider scorecard</option>
                 </select>
                 <textarea id="message" placeholder="Type your message here" required></textarea>
-                <div class="g-recaptcha" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha"></div>
+                <div class="g-recaptcha" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha" data-expired-callback="captchaExpired"></div>
                 <input type="submit" value="Send" class="btn-send"/>
             </div>
             <div id="result" class="formline right"></div>
@@ -179,6 +179,11 @@ function googleTranslateElementInit() {
         console.log("Captcha Response: " + response);
     }
 
+    function captchaExpired(response) {
+        captchaResponse = response;
+        console.log("Captcha Response expired: " + response);
+    }
+
     function sendmail(form) {
         var data = {};
         data.name = $(form).find("#name").val();
@@ -195,8 +200,14 @@ function googleTranslateElementInit() {
             alert("Please select an appropriate region.");
             return;
         }
+
         if (data.subject == "unknown") {
             alert("Please select an appropriate subject.");
+            return;
+        }
+
+        if (!captchaResponse) {
+            alert("Please complete the reCAPTCHA.");
             return;
         }
 

@@ -217,7 +217,7 @@ function googleTranslateElementInit() {
                             <option value="na">North America</option>
                         </select>
                         <textarea id="message" placeholder="Type your message here" required></textarea>
-                        <div class="g-recaptcha pull-up" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha"></div>
+                        <div class="g-recaptcha pull-up" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha" data-expired-callback="captchaExpired"></div>
                         <input type="submit" value="Send" class="btn-send"/>
                     </div>
                     <div id="result" class="formline right"></div>
@@ -232,11 +232,25 @@ function googleTranslateElementInit() {
     }
 </style>
 <script>
+    function sendEmailUrl() {
+        switch (environment.env) {
+            case "prod": return "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail";
+            default: return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/hotel-assignment/v1/sendmail";
+        }
+    }
+
     var captchaResponse = null;
+
     function captcha(response) {
         captchaResponse = response;
         console.log("Captcha Response: " + response);
     }
+
+    function captchaExpired(response) {
+        captchaResponse = response;
+        console.log("Captcha Response expired: " + response);
+    }
+
     function sendmail(form) {
         var data = {};
         data.name = $(form).find("#name").val();
@@ -248,9 +262,15 @@ function googleTranslateElementInit() {
         data.message = $(form).find("#message").val();
         data.subject = "providerspage";
         data.captchaResponse = captchaResponse;
+
+        if (!captchaResponse) {
+            alert("Please complete the reCAPTCHA.");
+            return;
+        }
+
         $.ajax({
             method: "POST",
-            url: "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail",
+            url: sendEmailUrl(),
             data: JSON.stringify(data),
             dataType: 'json',
             contentType: 'application/json; charset=UTF-8'
