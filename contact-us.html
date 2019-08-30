@@ -90,14 +90,14 @@ function googleTranslateElementInit() {
                 <input id="email" placeholder="Company email" type="email" required/>
                 <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
                 <select id="region" name="region" placeholder="Which region is your company based in" required>
-                    <option value="unknown">Please select the region your company is based in</option>
+                    <option value="" selected disabled>Please select the region your company is based in</option>
                     <option value="ap">Asia-Pacific</option>
                     <option value="emea">Europe, Middle East and Africa</option>
                     <option value="la">Latin America</option>
                     <option value="na">North America</option>
                 </select>
                 <select id="subject" name="subject"  placeholder="Please select an appropriate subject" required>
-                    <option value="unknown">Please select an appropriate subject</option>
+                    <option value="" selected disabled>Please select an appropriate subject</option>
                     <option value="interested">I'm interested in adopting Expedia Group lodging APIs</option>
                     <option value="technical">I have a technical question about an API</option>
                     <option value="vendor">I'm a Vendor and my details have changed</option>
@@ -123,6 +123,9 @@ function googleTranslateElementInit() {
     }
     form select {
         font-size: 0.8rem;
+    }
+    select:required, select:invalid {
+        box-shadow: none;
     }
 </style>
 <script>
@@ -195,16 +198,6 @@ function googleTranslateElementInit() {
         data.subject = $(form).find("#subject").val();
         data.region = $(form).find("#region").val();
         data.captchaResponse = captchaResponse;
-
-        if (data.region == "unknown") {
-            alert("Please select an appropriate region.");
-            return;
-        }
-
-        if (data.subject == "unknown") {
-            alert("Please select an appropriate subject.");
-            return;
-        }
 
         if (!captchaResponse) {
             alert("Please complete the reCAPTCHA.");

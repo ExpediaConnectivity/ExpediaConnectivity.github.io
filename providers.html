@@ -210,7 +210,7 @@ function googleTranslateElementInit() {
                         <input id="email" placeholder="Company email" type="email" required/>
                         <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
                         <select id="region" name="region" placeholder="Which region is your company based in" required>
-                            <option value="unknown">Please select the region your company is based in</option>
+                            <option value="" selected disabled>Please select the region your company is based in</option>
                             <option value="ap">Asia-Pacific</option>
                             <option value="emea">Europe, Middle East and Africa</option>
                             <option value="la">Latin America</option>
@@ -229,6 +229,9 @@ function googleTranslateElementInit() {
 <style>
     form select {
         font-size: 0.8rem;
+    }
+    select:required, select:invalid {
+        box-shadow: none;
     }
 </style>
 <script>
