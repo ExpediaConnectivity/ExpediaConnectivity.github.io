@@ -59,7 +59,7 @@ function googleTranslateElementInit() {
 <td>Get Property Details</td>
 <td>GET</td>
 <td>/properties/v1/{provider name}/{provider property ID}</td>
-<td>GET a property&#39;s information by its provider property ID</td>
+<td>GET a property&#39;s information by its provider property ID. Returns a copy of the information sent by the partner to Expedia and is used to verify what was sent to Expedia systems. Note that this may differ from what is actually saved in the system due to business rule conflicts or updates made from other tools like Partner Central. To retrieve the saved settings within Expedia, please use the GET by ExpediaID method listed below.</td>
 </tr>
 <tr>
 <td>Update Properties</td>
@@ -77,7 +77,7 @@ function googleTranslateElementInit() {
 <td>Get by ExpediaID</td>
 <td>GET</td>
 <td>/properties/v1/{ExpediaPropertyID}</td>
-<td>GET a property&#39;s information by specifying its Expedia Property ID (assigned during onboarding)</td>
+<td>GET a property&#39;s information by specifying its Expedia Property ID (assigned during onboarding).  Returns a copy of the information saved in Expedia systems. Note that this may differ from information sent by the partner in the Set Property Details in case of conflicts with business rules or updates made from other tools like Partner Central.</td>
 </tr>
 <tr>
 <td>Update by ExpediaID</td>
