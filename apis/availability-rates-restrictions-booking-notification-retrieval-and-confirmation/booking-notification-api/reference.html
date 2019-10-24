@@ -696,7 +696,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@RoomTypeCode</td>
-<td>String 16</td>
+<td>String 40</td>
 <td>1</td>
 <td></td>
 <td>Room type code: will contain the Expedia room type ID.</td>
@@ -1432,18 +1432,18 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@CountryAccessCode</td>
-<td>Numeric 3</td>
+<td>String 10</td>
 <td>0..1</td>
 <td></td>
-<td>Country Code.</td>
+<td>Country Code. Supports numbers, letters and the following special chars: &#39;+&#39;, &#39;-&#39;, &#39;.&#39;, &#39; &#39;, &#39;(&#39; and &#39;)&#39;.</td>
 </tr>
 <tr>
 <td></td>
 <td>@AreaCityCode</td>
-<td>Numeric 8</td>
+<td>String 10</td>
 <td>0..1</td>
 <td></td>
-<td>Area/city code.</td>
+<td>Area/city code. Supports numbers, letters and the following special chars: &#39;+&#39;, &#39;-&#39;, &#39;.&#39;, &#39; &#39;, &#39;(&#39; and &#39;)&#39;.</td>
 </tr>
 <tr>
 <td></td>

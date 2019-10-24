@@ -104,14 +104,6 @@
       <xs:pattern value="[0-9]{1,19}"/>
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="NumericStringLength1to3">
-    <xs:annotation>
-      <xs:documentation xml:lang="en">Used for Numeric Strings, length 1 to 3</xs:documentation>
-    </xs:annotation>
-    <xs:restriction base="xs:string">
-      <xs:pattern value="[0-9]{1,3}"/>
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="NumericStringLength1to5">
     <xs:annotation>
       <xs:documentation xml:lang="en">Used for Numeric Strings, maximum length 5</xs:documentation>
@@ -239,6 +231,19 @@
       <xs:maxInclusive value="1.0000"/>
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="PhoneAccessCodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for phone access codes String (e.g. CountryAccessCode and
+        AreaCityCode), i.e. 1 to 10 characters, with support for letters and special chars: '+', '-', '.', ' ',
+        '(' and ')'.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+      <xs:pattern value="[0-9+\- .()a-zA-Z]*"/>
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="RPH_Type">
     <xs:annotation>
       <xs:documentation>(Reference Place Holder) - an index code to identify an instance in a collection of like items.. For example,  used to assign individual passengers or clients to particular itinerary items.</xs:documentation>
@@ -280,6 +285,15 @@
     <xs:restriction base="xs:string">
       <xs:minLength value="1"/>
       <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength1to40">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 1 to 40</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="40"/>
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="StringLength1to64">
@@ -526,12 +540,12 @@ to be added to the OTA specification per trading partner agreement.</xs:document
     </xs:attribute>
   </xs:attributeGroup>
   <xs:attributeGroup name="TelephoneAttributesGroup">
-    <xs:attribute name="CountryAccessCode" type="NumericStringLength1to3" use="optional">
+    <xs:attribute name="CountryAccessCode" type="PhoneAccessCodeType" use="optional">
       <xs:annotation>
         <xs:documentation xml:lang="en">Code assigned by telecommunications authorities for international country access identifier.</xs:documentation>
       </xs:annotation>
     </xs:attribute>
-    <xs:attribute name="AreaCityCode" type="NumericStringLength1to8" use="optional">
+    <xs:attribute name="AreaCityCode" type="PhoneAccessCodeType" use="optional">
       <xs:annotation>
         <xs:documentation xml:lang="en">Code assigned for telephones in a specific region, city, or area.</xs:documentation>
       </xs:annotation>
@@ -1185,7 +1199,7 @@ to be added to the OTA specification per trading partner agreement.</xs:document
     <xs:annotation>
       <xs:documentation xml:lang="en">A collection of AdditionalDetail elements.</xs:documentation>
     </xs:annotation>
-    <xs:attribute name="RoomTypeCode" type="StringLength1to16" use="optional">
+    <xs:attribute name="RoomTypeCode" type="StringLength1to40" use="optional">
       <xs:annotation>
         <xs:documentation xml:lang="en">Specfic system room type code, ex: A1K, A1Q etc.</xs:documentation>
       </xs:annotation>
