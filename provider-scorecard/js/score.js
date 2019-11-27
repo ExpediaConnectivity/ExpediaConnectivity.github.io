@@ -5,7 +5,7 @@ define(function() {
             case "prod":
                 return "https://api.expediapartnercentral.com/provider-portal";
             default:
-                return "https://api.expediapartnercentral.com.lisqa7.sb.karmalab.net/provider-portal";
+                return "https://api.expediapartnercentral.com.integration.sb.karmalab.net/provider-portal";
         }
     }
 
