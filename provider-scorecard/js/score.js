@@ -17,7 +17,7 @@ define(function() {
 
     var demo = {
         "provider": {
-            "name": "ExpediaProvider",
+            "name": "ExpediaGroupProvider",
             "rank": 13,
             "total": 297,
             "score": 0.92780685
@@ -167,7 +167,7 @@ define(function() {
             $("p#extra").html("");
             $("div.adopt").html('<a href="https://expediaconnectivity.com/apis/product-management/product-api/quick-start.html" target=\"_blank\"" >Help me adopt this feature</a>');
         } else if (section == 'valueAddPromo') {
-            $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
+            $("p#extra").html("Value Add Promotions information is being passed to you in bookings in a new Special Request field. Expedia Group previously sent 5 Special Request fields already, and we are simply adding a 6th Special Request field for Value Adds information. Many Connectivity Partners who support Value Adds have found either no work or very limited work was required.");
             $("div.adopt").html('<p class="adopt-message">Adopt Value Add Promo on</p><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/expedia-quickconnect-booking-retrieval-confirmation-api/reference-br.html#booking-retrieval-response-complete-schema-definition"  target=\"_blank\">Expedia QuickConnect (EQC)</a><br><a href="https://expediaconnectivity.com/apis/availability-rates-restrictions-booking-notification-retrieval-and-confirmation/booking-notification-api/reference.html#ota_hotelresnotifrq" target=\"_blank\">Booking Notification</a>');
         } else if (section == 'etp') {
             $("p#extra").html("");
@@ -180,7 +180,7 @@ define(function() {
             $("div.adopt").html('<a href="https://expediaconnectivity.com/blog#enhanced-pos-branding" target=\"_blank\">Help me adopt this feature</a>');
         } else if (section == 'pci') {
             $("p#extra").html("");
-            $("div.adopt").html('<a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">Email my AOC to Expedia</a>');
+            $("div.adopt").html('<a href="mailto:eqcss@expedia.com?Subject=My%20PCI%20Attestation%20of%20Compliance" target=\"_blank\">Email my AOC to Expedia Group</a>');
         }
 
         $("#enhanceModal").foundation('open');
@@ -296,7 +296,7 @@ define(function() {
                     .html(value)
                 );
             }
-            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml).append("<div class='gap'></div><h5 style='margin-right: 1rem; margin-left: 1rem;    '>Have you signed up to Expedia's error connectivity reports?</h5><p>Our connectivity error reports provide a wealth of additional information that can help you determine the root causes of connectivity issues and improve your overall success rate.</p><p style='margin-bottom: 10px;'>Please email <a href='eqcss@expedia.com?Subject=Report%20request' target='_blank'>eqcss@expedia.com</a> requesting your report and desired frequency (daily or weekly).");
+            $("#top-metrics .top-metric-cards").append("<div class='gap'></div>").append(givenProviderHtml).append("<div class='gap'></div><h5 style='margin-right: 1rem; margin-left: 1rem;    '>Have you signed up to Expedia Group's error connectivity reports?</h5><p>Our connectivity error reports provide a wealth of additional information that can help you determine the root causes of connectivity issues and improve your overall success rate.</p><p style='margin-bottom: 10px;'>Please email your account manager requesting your report and desired frequency (daily or weekly).");
         }
     }
 
