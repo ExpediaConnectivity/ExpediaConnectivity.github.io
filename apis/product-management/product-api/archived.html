@@ -1,0 +1,902 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Room Type V2 - Product API</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><!-- for jQuery >= 3.2.0 there is a strange bug that cause .outerWidth() in Safari returns wrong value when page first load. It will break our logo slider. Last checked on jQuery 3.3.1--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script src="/js/suga-slider.js"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><script>WebFont.load({
+    google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+            }
+});</script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><link rel="stylesheet" href="/css/api-content.css"><body><div id="google_translate_element" style="display: none;"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EGLPS_logo_white_RGB.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none;" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu api-menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/guides.html">FAQ & Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/video.html">Video Tutorial</a></li><li class="pagename" data-magellan-arrival="room-type-v2"><a class="sidebar-nav-item" href="#room-type-v2">Room Type V2</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth3" data-magellan-arrival="roomtype-resource-definition"><a class="sidebar-nav-item" href="#roomtype-resource-definition">RoomType Resource Definition</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><p>#Archived</p>
+<p>This section includes documentation for API references for our older versions of Product API. While this documentation can be used for reference, we would recommend partners to update to the newer versions of these calls to ensure the latest additions and functionalities are captured. </p>
+<p><a name="/roomtypev2"></a></p>
+<h2 id="room-type-v2" data-magellan-destination="room-type-v2">Room type V2</h2>
+<h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes</a></li>
+<li>Consumes: <code>HTTP Request (GET)</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+</ul>
+<h4 id="parameters" data-magellan-destination="parameters">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64]</td>
+<td>Yes</td>
+<td>Base64 encoded auth token </td>
+</tr>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>Yes</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>status</td>
+<td>query</td>
+<td>Status filter. String. Only supported value is &quot;all&quot;.</td>
+<td>false</td>
+<td>string</td>
+<td>If not provided, API will only return active room types (meaning room type with at least one active rate plan, as room type status can&#39;t be directly controlled, but is rather inferred from its rate plans statuses).</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses" data-magellan-destination="success-responses">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="creates-a-new-room-type" data-magellan-destination="creates-a-new-room-type">Creates a new room type</h3>
+<ul>
+<li>Method: <code>POST</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes</a></li>
+<li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+</ul>
+<h4 id="parameters-2" data-magellan-destination="parameters-2">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64]</td>
+<td>Yes</td>
+<td>Base64 encoded auth token </td>
+</tr>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property Id</td>
+<td>Yes</td>
+<td>string  </td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message describing the new room type</td>
+<td>Yes</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a> </td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Examples</strong></p>
+<pre><code>{
+        &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
+        &quot;name&quot;: {
+            &quot;attributes&quot;: {
+                &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
+                &quot;roomClass&quot;: &quot;Executive&quot;,
+                &quot;includeBedType&quot;: true,
+                &quot;view&quot;: &quot;City View&quot;,
+                &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
+            }
+        },
+        &quot;ageCategories&quot;: [
+            {
+                &quot;category&quot;: &quot;Adult&quot;, 
+                &quot;minAge&quot;: 18
+            }, 
+            {
+                &quot;category&quot;: &quot;ChildAgeA&quot;, 
+                &quot;minAge&quot;: 6
+            }, 
+            {
+                &quot;category&quot;: &quot;Infant&quot;, 
+                &quot;minAge&quot;: 0
+            }
+        ], 
+        &quot;maxOccupancy&quot;: {
+            &quot;adults&quot;: 2, 
+            &quot;children&quot;: 1, 
+            &quot;total&quot;: 3
+        }, 
+        &quot;standardBedding&quot;: [
+            {
+                &quot;option&quot;: [
+                    {
+                        &quot;quantity&quot;: 1,
+                        &quot;type&quot;: &quot;King Bed&quot;
+                    }
+                ]
+            }
+        ], 
+        &quot;extraBedding&quot;: [
+            {
+                &quot;quantity&quot;: 1,
+                &quot;type&quot;: &quot;Rollaway Bed&quot;,
+                &quot;size&quot;: &quot;Full&quot;,
+                &quot;surcharge&quot;: {
+                    &quot;type&quot;: &quot;Per Day&quot;,
+                    &quot;amount&quot;: 20
+                }
+            }
+        ],
+        &quot;smokingPreferences&quot;: [
+            &quot;Non-Smoking&quot;
+        ],
+        &quot;roomSize&quot;: {
+            &quot;squareFeet&quot;: 300,
+            &quot;squareMeters&quot;: 14
+        },
+        &quot;views&quot;: [
+            &quot;Ocean View&quot;,
+            &quot;Beach View&quot;
+        ]
+}
+</code></pre><h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>201</td>
+<td>Created</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="read-a-single-room-type" data-magellan-destination="read-a-single-room-type">Read a single room type</h3>
+<ul>
+<li>Method: <code>GET</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Consumes: <code>HTTP Request (GET)</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+</ul>
+<h4 id="parameters-3" data-magellan-destination="parameters-3">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64]</td>
+<td>Yes</td>
+<td>Base64 encoded auth token </td>
+</tr>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>Yes</td>
+<td>string  </td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID. Integer</td>
+<td>Yes</td>
+<td>string  </td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-3" data-magellan-destination="success-responses-3">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><h3 id="modify-an-existing-room-type" data-magellan-destination="modify-an-existing-room-type">Modify an existing room type</h3>
+<p>Expedia offers 2 ways to modify a room type.</p>
+<p>Using the PUT verb, partners can perform a full overlay change of the room type resource. It means that all elements of a room type need to be provided, and any optional element not provided will be erased/removed.</p>
+<p>Using the PATCH verb, partners can perform a partial update of a room type. Expedia implemented the Merge-Patch RFC.</p>
+<h4 id="room-type-modify-full-overlay-put-" data-magellan-destination="room-type-modify-full-overlay-put-">Room Type Modify - Full Overlay (PUT)</h4>
+<ul>
+<li>Method: <code>PUT</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+</ul>
+<h4 id="parameters-4" data-magellan-destination="parameters-4">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64]</td>
+<td>Yes</td>
+<td>Base64 encoded auth token </td>
+</tr>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property Id</td>
+<td>Yes</td>
+<td>string  </td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>Yes</td>
+<td>string  </td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message with modified room type</td>
+<td>Yes</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a>  </td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Examples</strong></p>
+<pre><code>{
+        &quot;resourceId&quot;: 200142893,
+        &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
+        &quot;name&quot;: {
+            &quot;attributes&quot;: {
+                &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
+                &quot;roomClass&quot;: &quot;Executive&quot;,
+                &quot;includeBedType&quot;: true,
+                &quot;view&quot;: &quot;City View&quot;,
+                &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
+            },
+            &quot;value&quot;: &quot;Executive Penthouse, 1 King Bed, Jetted Tub, City View (Rooftop Terrace)&quot;
+        },
+        &quot;status&quot;: &quot;Active&quot;,
+        &quot;ageCategories&quot;: [
+            {
+                &quot;category&quot;: &quot;Adult&quot;, 
+                &quot;minAge&quot;: 18
+            }, 
+            {
+                &quot;category&quot;: &quot;ChildAgeA&quot;, 
+                &quot;minAge&quot;: 6
+            }, 
+            {
+                &quot;category&quot;: &quot;Infant&quot;, 
+                &quot;minAge&quot;: 0
+            }
+        ], 
+        &quot;maxOccupancy&quot;: {
+            &quot;adults&quot;: 2, 
+            &quot;children&quot;: 1, 
+            &quot;total&quot;: 3
+        }, 
+        &quot;standardBedding&quot;: [
+            {
+                &quot;option&quot;: [
+                    {
+                        &quot;quantity&quot;: 1, 
+                        &quot;type&quot;: &quot;King Bed&quot;,
+                        &quot;size&quot;: &quot;King&quot;
+                    }
+                ]
+            }
+        ], 
+        &quot;extraBedding&quot;: [
+            {
+                &quot;quantity&quot;: 1,
+                &quot;type&quot;: &quot;Sofa Bed&quot;,
+                &quot;size&quot;: &quot;Full&quot;,
+                &quot;surcharge&quot;: {
+                    &quot;type&quot;: &quot;Per Day&quot;,
+                    &quot;amount&quot;: 20
+                }
+            }
+        ],
+        &quot;smokingPreferences&quot;: [
+            &quot;Non-Smoking&quot;
+        ],
+        &quot;roomSize&quot;: {
+            &quot;squareFeet&quot;: 300,
+            &quot;squareMeters&quot;: 14
+        },
+        &quot;views&quot;: [
+            &quot;Ocean View&quot;,
+            &quot;Beach View&quot;
+        ],
+        &quot;wheelchairAccessibility&quot;: true
+}
+</code></pre><h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/PatchRoomType"></a></p>
+<h4 id="room-type-modify-partial-update-patch-" data-magellan-destination="room-type-modify-partial-update-patch-">Room Type Modify - Partial Update (PATCH)</h4>
+<p>Expedia chose the merge-patch method for partial update, as described in <a href="https://tools.ietf.org/html/rfc7396">IETF RFC</a>.</p>
+<p>This method allows partners to update a room type by providing only the fields/values they need to change. This saves partners from having to first read the room type before updating it. If partners provide the complete room type data, this method essentially behaves just like the <a href="#modify-an-existing-room-type">update</a> method.</p>
+<p>The response will always be the complete image of the room type after changes have been applied.</p>
+<p><strong>Important</strong></p>
+<p>The PATCH logic only applies to first (top) level elements/objects of the <a href="#/definitions/RoomTypeDTO">room type</a>. Partners can decide to include any number of these top level elements/objects, and any elements/objects not included will be ignored/untouched.  If a partner includes any array or complex object (such as name, age categories or max occupancy), these objects will need to be fully specified with all the desired elements/attributes/object changes, as they are treated as full overlay.</p>
+<p>First-level elements/objects not provided in the input will remain unchanged. Some top-level elements can be removed. To do so, you have to explicitly specify it in the JSON message, as null. For array types, you need to provide a &quot;null&quot; or empty array value.</p>
+<p>Also note that all validation rules are applied on the complete updated room type data. For instance, only providing a <code>ageCategories</code> that has no &quot;Adult&quot; category will yield the appropriate error response.</p>
+<ul>
+<li>Method: <code>PATCH</code></li>
+<li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
+<li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+</ul>
+<h4 id="parameters-5" data-magellan-destination="parameters-5">Parameters</h4>
+<div><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Parameter Type</th>
+<th>Description</th>
+<th>Required</th>
+<th>Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization</td>
+<td>header</td>
+<td>Authorization token in http header. Format: Authorization: Basic [username:password encoded by Base64]</td>
+<td>Yes</td>
+<td>Base64 encoded auth token</td>
+</tr>
+<tr>
+<td>propertyId</td>
+<td>path</td>
+<td>Expedia Property ID</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>roomTypeId</td>
+<td>path</td>
+<td>Room type resource ID</td>
+<td>Yes</td>
+<td>string</td>
+</tr>
+<tr>
+<td>body</td>
+<td>body</td>
+<td>JSON message of partially updated room type</td>
+<td>Yes</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><p><strong>Examples</strong></p>
+<p>Updating both the partner code and the name attributes:</p>
+<pre><code>{
+  &quot;partnerCode&quot;: &quot;PatchedPartnerCode&quot;,
+  &quot;name&quot;: {
+      &quot;attributes&quot;: {
+        &quot;typeOfRoom&quot;: &quot;Loft&quot;,
+        &quot;roomClass&quot;: &quot;Deluxe&quot;,
+        &quot;area&quot;: &quot;Poolside&quot;
+      }
+    }
+}
+</code></pre><p>Updating only the maximum occupancy:</p>
+<pre><code>{
+  &quot;maxOccupancy&quot;: {
+      &quot;total&quot;: 3,
+      &quot;adults&quot;: 2
+    }
+}
+</code></pre><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Status Code</th>
+<th>Description</th>
+<th>Response Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>OK</td>
+<td><a href="#/definitions/RoomTypeDTO">RoomType</a></td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RoomTypeDTO"></a></p>
+<h3 id="roomtype-resource-definition" data-magellan-destination="roomtype-resource-definition">RoomType Resource Definition</h3>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required for POST</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resourceId</td>
+<td>integer</td>
+<td>No</td>
+<td>Integer. Required for modify, and cannot be changed. This resource ID is what will be used to manage availability and rates, and also what Expedia specifies in booking messages to identify the room booked.</td>
+</tr>
+<tr>
+<td>partnerCode</td>
+<td>string</td>
+<td>Yes</td>
+<td>Partner room type code/identifier. Max. 40 characters. Has to be unique across all room types for this hotel. This is used as a unique key to ensure partners do not duplicate room types in Expedia system.</td>
+</tr>
+<tr>
+<td>name</td>
+<td><a href="#/definitions/RoomTypeNameDTO">RoomTypeName</a></td>
+<td>Yes</td>
+<td>Name object. Collection of elements/attributes related the name of a room.</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>No</td>
+<td>Possible values are (Active, Inactive). Room type status is derived from the rate plans associated with the room type: if at least one rate plan is active, the room type status will be active. If all rate plans are inactive, then the room type becomes inactive as well. This value can be omitted in a create request. If provided during create, it will be ignored. This value cannot be edited in an update message. If modified, an error will be returned.</td>
+</tr>
+<tr>
+<td>ageCategories</td>
+<td>Array[<a href="#/definitions/RoomTypeAgeCategoryDTO">RoomTypeAgeCategory</a>]</td>
+<td>Yes</td>
+<td>Array of age categories. Defines the different age categories supported by the room type. At the very least, the &#39;Adult&#39; category must be defined.</td>
+</tr>
+<tr>
+<td>maxOccupancy</td>
+<td><a href="#/definitions/OccupancyDTO">Occupancy</a></td>
+<td>No</td>
+<td>Defines the maximum occupancy of the room in total and by age category. Always returned by room type GET. Optional for room type create and update. When not provided the Product API will calculate the occuancy based on bedding options. </td>
+</tr>
+<tr>
+<td>standardBedding</td>
+<td><a href="#/definitions/BeddingOptionDTO">BeddingOption</a></td>
+<td>Yes</td>
+<td>Minimum 1 maxium 2 bedding options a room may have. Each bedding option can be with a combination of beds (type, size and quality).</td>
+</tr>
+<tr>
+<td>extraBedding</td>
+<td>Array[<a href="#/definitions/ExtraBedDTO">ExtraBed</a>]</td>
+<td>No</td>
+<td>Defines the extra bed combination (type, size and quality) the room type may have.</td>
+</tr>
+<tr>
+<td>smokingPreferences</td>
+<td>Array[<a href="#/definitions/smokingPreferenceEnum">smokingPreferenceEnum</a>]</td>
+<td>Yes</td>
+<td>Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner.</td>
+</tr>
+<tr>
+<td>roomSize</td>
+<td><a href="#/definitions/RoomSizeDTO">RoomSize</a></td>
+<td>No</td>
+<td>Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
+</tr>
+<tr>
+<td>views</td>
+<td>Array[<a href="#/definitions/viewEnum">viewEnum</a>]</td>
+<td>No</td>
+<td>Used to define view(s) from the room. There can be up to 2 different views defined per room type.</td>
+</tr>
+<tr>
+<td>wheelchairAccessibility</td>
+<td>boolean</td>
+<td>No</td>
+<td>Used to indicate whether the room is configured to be wheelchair accessible or not.</td>
+</tr>
+<tr>
+<td>_links</td>
+<td><a href="#/definitions/RoomTypeDTOLinks">RoomTypeLinks</a></td>
+<td>No</td>
+<td>Collection of URLs that point to various resources related to the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RoomTypeNameDTO"></a></p>
+<h4 id="roomtypename" data-magellan-destination="roomtypename">RoomTypeName</h4>
+<p>More information can be found on room type names in the &quot;FAQ and Guides&quot; section, under &quot;Understanding Expedia&#39;s Logic Around Room Names&quot; section.</p>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attributes</td>
+<td><a href="#/definitions/RnsAttributesDTO">RoomNameAttributes</a></td>
+<td>Collection of attributes that can be used to build a room type name. Should only be provided if partner doesn’t want to use one of the predefined names Expedia supports.</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>For create and modify requests, optional and ignored if name attributes are used. Required if name attributes are not provided. When provided in create or update requests, without any name attributes, value provided needs to be one of the predefined room names found in  <a href="#/definitions/PredefinedRoomNamesEnum">PredefinedRoomNamesEnum</a> section. For read, create and modify responses, if partner is making use of room name attributes, this field will contain the auto-generated name based off the attributes that were provided, in English-US language. If partner is using a predefined name, this field will contain the predefined name value, as provided in the create or update request.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RnsAttributesDTO"></a></p>
+<h4 id="roomnameattributes" data-magellan-destination="roomnameattributes">RoomNameAttributes</h4>
+<p>More information can be found on room type names in the &quot;FAQ and Guides&quot; section, under &quot;Understanding Expedia&#39;s Logic Around Room Names&quot; section.</p>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeOfRoom</td>
+<td><a href="#/definitions/typeOfRoomEnum">typeOfRoomEnum</a></td>
+<td>Yes</td>
+<td>Attribute that determines the type of room, which is used to compose the name</td>
+</tr>
+<tr>
+<td>roomClass</td>
+<td><a href="#/definitions/roomClassEnum">roomClassEnum</a></td>
+<td>No</td>
+<td>Attribute that described the class of room, which is used to compose the name</td>
+</tr>
+<tr>
+<td>includeBedType</td>
+<td>boolean</td>
+<td>No</td>
+<td>Attribute that determines whether or not to include bed type on the room name</td>
+</tr>
+<tr>
+<td>bedroomDetails</td>
+<td><a href="#/definitions/bedroomDetailsEnum">bedroomDetailsEnum</a></td>
+<td>No</td>
+<td>Attribute that describes details of the bedroom used to compose the name of the room</td>
+</tr>
+<tr>
+<td>includeSmokingPref</td>
+<td>boolean</td>
+<td>No</td>
+<td>Attribute that determines if room has smoking preference</td>
+</tr>
+<tr>
+<td>accessibility</td>
+<td>boolean</td>
+<td>No</td>
+<td>Attribute that determines if room is considered wheelchair accessible</td>
+</tr>
+<tr>
+<td>view</td>
+<td><a href="#/definitions/viewEnum">viewEnum</a></td>
+<td>No</td>
+<td>Attribute that gives additional information about the view of the room</td>
+</tr>
+<tr>
+<td>featuredAmenity</td>
+<td><a href="#/definitions/featuredAmenityEnum">featuredAmenityEnum</a></td>
+<td>No</td>
+<td>Attribute used to highlight a feature of the room on its name</td>
+</tr>
+<tr>
+<td>area</td>
+<td><a href="#/definitions/areaEnum">areaEnum</a></td>
+<td>No</td>
+<td>Attributed used to highlight the location of the room</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RoomTypeAgeCategoryDTO"></a></p>
+<h4 id="roomtypeagecategory" data-magellan-destination="roomtypeagecategory">RoomTypeAgeCategory</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td><a href="#/definitions/categoryEnum">categoryEnum</a></td>
+<td>Yes</td>
+<td>Defines which category of age is being defined. </td>
+</tr>
+<tr>
+<td>minAge</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Defines what is the minimum age for a person to belong in the given age category.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/OccupancyDTO"></a></p>
+<h4 id="occupancy" data-magellan-destination="occupancy">Occupancy</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Total count of person that can reside in the room.</td>
+</tr>
+<tr>
+<td>adults</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Max number of adults that can reside in the room.</td>
+</tr>
+<tr>
+<td>children</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Max number of children that can reside in the room.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/BeddingOptionDTO"></a></p>
+<h4 id="beddingoption" data-magellan-destination="beddingoption">BeddingOption</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>option</td>
+<td>Array[<a href="#/definitions/BedDTO">Bed</a>]</td>
+<td>Yes</td>
+<td>Each bedding option can be with a combination of beds (type, size and quality). </td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/BedDTO"></a></p>
+<h4 id="bed" data-magellan-destination="bed">Bed</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Number of beds.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#/definitions/bedTypeEnum">bedTypeEnum</a></td>
+<td>Yes</td>
+<td>Defines the bed type. Example: &quot;King Bed&quot;, &quot;Sofa Bed&quot;.</td>
+</tr>
+<tr>
+<td>size</td>
+<td><a href="#/definitions/bedSizeEnum">bedSizeEnum</a></td>
+<td>No</td>
+<td>Defines the size of the bed. Example: &quot;King&quot;, &quot;Queen&quot;. When specified, <a href="#/definitions/bedTypeAndSize">only certain sizes can be used for each type</a>. For bed types where Expedia accepts different sizes, when the size is not specific, Expedia will default to the smallest size possbile for the bed type.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/ExtraBedDTO"></a></p>
+<h4 id="extra-bed" data-magellan-destination="extra-bed">Extra Bed</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>quantity</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Number of beds.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#/definitions/bedTypeEnum">bedTypeEnum</a></td>
+<td>Yes</td>
+<td>Defines the bed type. Example: &quot;King Bed&quot;, &quot;Sofa Bed&quot;.</td>
+</tr>
+<tr>
+<td>size</td>
+<td><a href="#/definitions/bedSizeEnum">bedSizeEnum</a></td>
+<td>No</td>
+<td>Defines the size of the bed. Example: &quot;King&quot;, &quot;Queen&quot;. When specified, <a href="#/definitions/bedTypeAndSize">only certain sizes can be used for each type</a>. For bed types where Expedia accepts different sizes, when the size is not specific, Expedia will default to the smallest size possible for the bed type.</td>
+</tr>
+<tr>
+<td>surcharge</td>
+<td><a href="#/definitions/SurchargeDTO">surcharge</a></td>
+<td>No</td>
+<td>Defines the surcharge of the bed. Only extra beds of type &quot;Crib&quot; and &quot;Rollaway Bed&quot; can have a surcharge defined.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/SurchargeDTO"></a></p>
+<h4 id="surcharge" data-magellan-destination="surcharge">Surcharge</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="#/definitions/surchargeTypeEnum">surchargeTypeEnum</a></td>
+<td>Yes</td>
+<td>Defines the surcharge type. Example: &quot;Free&quot;, &quot;Per Day&quot;.</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>No</td>
+<td>Defines the amount of the surcharge. Must be defined if type is not &quot;Free&quot;.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RoomSizeDTO"></a></p>
+<h4 id="roomsize" data-magellan-destination="roomsize">RoomSize</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>squareFeet</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Room size in square feet.</td>
+</tr>
+<tr>
+<td>squareMeters</td>
+<td>integer</td>
+<td>Yes</td>
+<td>Room size in square meters.</td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/RoomTypeDTOLinks"></a></p>
+<h4 id="roomtypelinks" data-magellan-destination="roomtypelinks">RoomTypeLinks</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>self</td>
+<td><a href="#/definitions/LinkDTO">Link</a></td>
+<td>URL of the current resource. Cannot be provided in create requests. Cannot be changed via partial (PATCH) or full overlay (PUT) updates.</td>
+</tr>
+</tbody>
+</table>
+</div></div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2019 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
