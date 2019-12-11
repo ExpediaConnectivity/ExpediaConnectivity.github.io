@@ -72,6 +72,8 @@ password: ew67nk33
 </code></pre>
 <p>Partners can then navigate down to room types and rate plans. To find room types assigned to a specific property, add the property resource ID and /roomTypes to the URL:
 <a href="https://services.expediapartnercentral.com/properties/12933870/roomTypes">https://services.expediapartnercentral.com/properties/12933870/roomTypes</a></p>
+<p>By specifying the below Accept request header, the v3 version for Room details would be returned.
+Accept: application/vnd.expedia.eps.product-v3+json</p>
 <p>The result will be an array of active room types under this property. For example:</p>
 <pre><code class="lang-JSON">{
     &quot;entity&quot;: [
@@ -90,6 +92,43 @@ password: ew67nk33
                 {
                     &quot;category&quot;: &quot;Infant&quot;,
                     &quot;minAge&quot;: 0
+                }
+            ],
+            &quot;bedrooms&quot;:[
+                {
+                    &quot;count&quot;:2,
+                    &quot;bedding&quot;:[
+                       {
+                          &quot;option&quot;:[
+                             {
+                                &quot;quantity&quot;:1,
+                                &quot;type&quot;:&quot;Full Bed&quot;,
+                                &quot;size&quot;:&quot;Full&quot;
+                             },
+                             {
+                                &quot;quantity&quot;:2,
+                                &quot;type&quot;:&quot;Bunk Bed&quot;,
+                                &quot;size&quot;:&quot;Twin&quot;
+                             }
+                          ]
+                       }
+                    ]
+                }
+            ],
+            &quot;livingRooms&quot;:[
+                {
+                    &quot;count&quot;:1,
+                    &quot;bedding&quot;:[
+                       {
+                          &quot;option&quot;:[
+                             {
+                                &quot;quantity&quot;:1,
+                                &quot;type&quot;:&quot;Queen Bed&quot;,
+                                &quot;size&quot;:&quot;Queen&quot;
+                             }
+                          ]
+                       }
+                    ]
                 }
             ],
             &quot;maxOccupancy&quot;: {
