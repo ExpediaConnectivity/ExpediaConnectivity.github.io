@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Room Type V2 - Product API</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><!-- for jQuery >= 3.2.0 there is a strange bug that cause .outerWidth() in Safari returns wrong value when page first load. It will break our logo slider. Last checked on jQuery 3.3.1--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script src="/js/suga-slider.js"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><script>WebFont.load({
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Archived - Product API</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><!-- for jQuery >= 3.2.0 there is a strange bug that cause .outerWidth() in Safari returns wrong value when page first load. It will break our logo slider. Last checked on jQuery 3.3.1--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script src="/js/suga-slider.js"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><script>WebFont.load({
     google: {
         families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
             }
@@ -16,9 +16,8 @@ ga('create', 'UA-79394707-1', 'auto');
 ga('send', 'pageview');
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
-}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><link rel="stylesheet" href="/css/api-content.css"><body><div id="google_translate_element" style="display: none;"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EGLPS_logo_white_RGB.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none;" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu api-menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/guides.html">FAQ & Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/video.html">Video Tutorial</a></li><li class="pagename" data-magellan-arrival="room-type-v2"><a class="sidebar-nav-item" href="#room-type-v2">Room Type V2</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth3" data-magellan-arrival="roomtype-resource-definition"><a class="sidebar-nav-item" href="#roomtype-resource-definition">RoomType Resource Definition</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><p>#Archived</p>
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><link rel="stylesheet" href="/css/api-content.css"><body><div id="google_translate_element" style="display: none;"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout();">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EGLPS_logo_white_RGB.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><div class="off-canvas-nav-bar sticky" id="mobileMenuBar"><nav class="title-bar hide-for-large" data-topbar="" role="navigation"><section class="title-bar-left"><button class="menu-icon" type="button" style="outline: none;" data-toggle="mobileMenu"><span></span></button></section><span class="title-bar-title"></span></nav></div></div><div class="row full-width"><div class="show-for-large large-3 columns menu api-menu"><nav role="navigation" class="sidebar-nav"><header>Product API</header><ul class="sidebar-nav-items columns" data-magellan-expedition><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/quick-start.html">Quick Start</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/reference.html">API Definition</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/guides.html">FAQ & Guides</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/sample-messages.html">Sample Messages</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/try-it.html">Try It</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/revision-history.html">Revision History</a></li><li class="pagename"><a class="sidebar-nav-item" href="/apis/product-management/product-api/video.html">Video Tutorial</a></li><li class="pagename" data-magellan-arrival="archived"><a class="sidebar-nav-item" href="#archived">Archived</a></li><li class="depth2" data-magellan-arrival="room-type-v2"><a class="sidebar-nav-item" href="#room-type-v2">Room type V2</a></li><li class="depth3" data-magellan-arrival="obtain-a-list-of-room-types"><a class="sidebar-nav-item" href="#obtain-a-list-of-room-types">Obtain a list of room types</a></li><li class="depth3" data-magellan-arrival="creates-a-new-room-type"><a class="sidebar-nav-item" href="#creates-a-new-room-type">Creates a new room type</a></li><li class="depth3" data-magellan-arrival="read-a-single-room-type"><a class="sidebar-nav-item" href="#read-a-single-room-type">Read a single room type</a></li><li class="depth3" data-magellan-arrival="modify-an-existing-room-type"><a class="sidebar-nav-item" href="#modify-an-existing-room-type">Modify an existing room type</a></li><li class="depth3" data-magellan-arrival="roomtype-resource-definition"><a class="sidebar-nav-item" href="#roomtype-resource-definition">RoomType Resource Definition</a></li></ul></nav></div><div class="off-canvas-wrapper"><div class="off-canvas-wrapper-inner" data-off-canvas-wrapper=""><div class="off-canvas position-left hide-for-large" id="mobileMenu" data-off-canvas="" data-auto-focus="false"></div><div class="off-canvas-content" data-off-canvas-content=""><div class="small-12 medium-10 medium-offset-1 large-8 large-offset-3 xlarge-8 xxlarge-6 columns end api-content"><h1 id="archived" data-magellan-destination="archived">Archived</h1>
 <p>This section includes documentation for API references for our older versions of Product API. While this documentation can be used for reference, we would recommend partners to update to the newer versions of these calls to ensure the latest additions and functionalities are captured. </p>
-<p><a name="/roomtypev2"></a></p>
 <h2 id="room-type-v2" data-magellan-destination="room-type-v2">Room type V2</h2>
 <h3 id="obtain-a-list-of-room-types" data-magellan-destination="obtain-a-list-of-room-types">Obtain a list of room types</h3>
 <ul>
@@ -125,70 +124,81 @@ function googleTranslateElementInit() {
 </tbody>
 </table>
 </div><p><strong>Examples</strong></p>
-<pre><code>{
-        &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
-        &quot;name&quot;: {
-            &quot;attributes&quot;: {
-                &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
-                &quot;roomClass&quot;: &quot;Executive&quot;,
-                &quot;includeBedType&quot;: true,
-                &quot;view&quot;: &quot;City View&quot;,
-                &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
-            }
-        },
-        &quot;ageCategories&quot;: [
-            {
-                &quot;category&quot;: &quot;Adult&quot;, 
-                &quot;minAge&quot;: 18
-            }, 
-            {
-                &quot;category&quot;: &quot;ChildAgeA&quot;, 
-                &quot;minAge&quot;: 6
-            }, 
-            {
-                &quot;category&quot;: &quot;Infant&quot;, 
-                &quot;minAge&quot;: 0
-            }
-        ], 
-        &quot;maxOccupancy&quot;: {
-            &quot;adults&quot;: 2, 
-            &quot;children&quot;: 1, 
-            &quot;total&quot;: 3
-        }, 
-        &quot;standardBedding&quot;: [
-            {
-                &quot;option&quot;: [
-                    {
-                        &quot;quantity&quot;: 1,
-                        &quot;type&quot;: &quot;King Bed&quot;
-                    }
-                ]
-            }
-        ], 
-        &quot;extraBedding&quot;: [
-            {
-                &quot;quantity&quot;: 1,
-                &quot;type&quot;: &quot;Rollaway Bed&quot;,
-                &quot;size&quot;: &quot;Full&quot;,
-                &quot;surcharge&quot;: {
-                    &quot;type&quot;: &quot;Per Day&quot;,
-                    &quot;amount&quot;: 20
-                }
-            }
-        ],
-        &quot;smokingPreferences&quot;: [
-            &quot;Non-Smoking&quot;
-        ],
-        &quot;roomSize&quot;: {
-            &quot;squareFeet&quot;: 300,
-            &quot;squareMeters&quot;: 14
-        },
-        &quot;views&quot;: [
-            &quot;Ocean View&quot;,
-            &quot;Beach View&quot;
-        ]
+<pre><code class="lang-json">{
+  &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
+      &quot;roomClass&quot;: &quot;Executive&quot;,
+      &quot;includeBedType&quot;: true,
+      &quot;view&quot;: &quot;City View&quot;,
+      &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
+    }
+  },
+  &quot;ageCategories&quot;: [
+    {
+      &quot;category&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18
+    },
+    {
+      &quot;category&quot;: &quot;ChildAgeA&quot;,
+      &quot;minAge&quot;: 6
+    },
+    {
+      &quot;category&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0
+    }
+  ],
+  &quot;maxOccupancy&quot;: {
+    &quot;adults&quot;: 2,
+    &quot;children&quot;: 1,
+    &quot;total&quot;: 3
+  },
+  &quot;standardBedding&quot;: [
+    {
+      &quot;option&quot;: [
+        {
+          &quot;quantity&quot;: 1,
+          &quot;type&quot;: &quot;King Bed&quot;
+        }
+      ]
+    }
+  ],
+  &quot;extraBedding&quot;: [
+    {
+      &quot;quantity&quot;: 1,
+      &quot;type&quot;: &quot;Rollaway Bed&quot;,
+      &quot;size&quot;: &quot;Full&quot;,
+      &quot;surcharge&quot;: {
+        &quot;type&quot;: &quot;Per Day&quot;,
+        &quot;amount&quot;: 20
+      }
+    }
+  ],
+  &quot;regulatoryRecords&quot;: {
+    &quot;category&quot;: &quot;HOTEL&quot;,
+    &quot;records&quot;: [
+      {
+        &quot;registrationNumber&quot;: &quot;STR321321321&quot;,
+        &quot;registrationNumberType&quot;: &quot;License&quot;,
+        &quot;expiry&quot;: &quot;2022-12-12&quot;
+      }
+    ]
+  },
+  &quot;smokingPreferences&quot;: [
+    &quot;Non-Smoking&quot;
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 300,
+    &quot;squareMeters&quot;: 14
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ]
 }
-</code></pre><h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
+</code></pre>
+<h4 id="success-responses-2" data-magellan-destination="success-responses-2">Success Responses</h4>
 <div><table>
 <thead>
 <tr>
@@ -318,75 +328,86 @@ function googleTranslateElementInit() {
 </tbody>
 </table>
 </div><p><strong>Examples</strong></p>
-<pre><code>{
-        &quot;resourceId&quot;: 200142893,
-        &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
-        &quot;name&quot;: {
-            &quot;attributes&quot;: {
-                &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
-                &quot;roomClass&quot;: &quot;Executive&quot;,
-                &quot;includeBedType&quot;: true,
-                &quot;view&quot;: &quot;City View&quot;,
-                &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
-            },
-            &quot;value&quot;: &quot;Executive Penthouse, 1 King Bed, Jetted Tub, City View (Rooftop Terrace)&quot;
-        },
-        &quot;status&quot;: &quot;Active&quot;,
-        &quot;ageCategories&quot;: [
-            {
-                &quot;category&quot;: &quot;Adult&quot;, 
-                &quot;minAge&quot;: 18
-            }, 
-            {
-                &quot;category&quot;: &quot;ChildAgeA&quot;, 
-                &quot;minAge&quot;: 6
-            }, 
-            {
-                &quot;category&quot;: &quot;Infant&quot;, 
-                &quot;minAge&quot;: 0
-            }
-        ], 
-        &quot;maxOccupancy&quot;: {
-            &quot;adults&quot;: 2, 
-            &quot;children&quot;: 1, 
-            &quot;total&quot;: 3
-        }, 
-        &quot;standardBedding&quot;: [
-            {
-                &quot;option&quot;: [
-                    {
-                        &quot;quantity&quot;: 1, 
-                        &quot;type&quot;: &quot;King Bed&quot;,
-                        &quot;size&quot;: &quot;King&quot;
-                    }
-                ]
-            }
-        ], 
-        &quot;extraBedding&quot;: [
-            {
-                &quot;quantity&quot;: 1,
-                &quot;type&quot;: &quot;Sofa Bed&quot;,
-                &quot;size&quot;: &quot;Full&quot;,
-                &quot;surcharge&quot;: {
-                    &quot;type&quot;: &quot;Per Day&quot;,
-                    &quot;amount&quot;: 20
-                }
-            }
-        ],
-        &quot;smokingPreferences&quot;: [
-            &quot;Non-Smoking&quot;
-        ],
-        &quot;roomSize&quot;: {
-            &quot;squareFeet&quot;: 300,
-            &quot;squareMeters&quot;: 14
-        },
-        &quot;views&quot;: [
-            &quot;Ocean View&quot;,
-            &quot;Beach View&quot;
-        ],
-        &quot;wheelchairAccessibility&quot;: true
+<pre><code class="lang-json">{
+  &quot;resourceId&quot;: 200142893,
+  &quot;partnerCode&quot;: &quot;MyStringCode&quot;,
+  &quot;name&quot;: {
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Penthouse&quot;,
+      &quot;roomClass&quot;: &quot;Executive&quot;,
+      &quot;includeBedType&quot;: true,
+      &quot;view&quot;: &quot;City View&quot;,
+      &quot;featuredAmenity&quot;: &quot;Jetted Tub&quot;
+    },
+    &quot;value&quot;: &quot;Executive Penthouse, 1 King Bed, Jetted Tub, City View (Rooftop Terrace)&quot;
+  },
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;ageCategories&quot;: [
+    {
+      &quot;category&quot;: &quot;Adult&quot;,
+      &quot;minAge&quot;: 18
+    },
+    {
+      &quot;category&quot;: &quot;ChildAgeA&quot;,
+      &quot;minAge&quot;: 6
+    },
+    {
+      &quot;category&quot;: &quot;Infant&quot;,
+      &quot;minAge&quot;: 0
+    }
+  ],
+  &quot;maxOccupancy&quot;: {
+    &quot;adults&quot;: 2,
+    &quot;children&quot;: 1,
+    &quot;total&quot;: 3
+  },
+  &quot;standardBedding&quot;: [
+    {
+      &quot;option&quot;: [
+        {
+          &quot;quantity&quot;: 1,
+          &quot;type&quot;: &quot;King Bed&quot;,
+          &quot;size&quot;: &quot;King&quot;
+        }
+      ]
+    }
+  ],
+  &quot;extraBedding&quot;: [
+    {
+      &quot;quantity&quot;: 1,
+      &quot;type&quot;: &quot;Sofa Bed&quot;,
+      &quot;size&quot;: &quot;Full&quot;,
+      &quot;surcharge&quot;: {
+        &quot;type&quot;: &quot;Per Day&quot;,
+        &quot;amount&quot;: 20
+      }
+    }
+  ],
+  &quot;regulatoryRecords&quot;: {
+    &quot;category&quot;: &quot;HOTEL&quot;,
+    &quot;records&quot;: [
+      {
+        &quot;registrationNumber&quot;: &quot;STR321321321&quot;,
+        &quot;registrationNumberType&quot;: &quot;License&quot;,
+        &quot;expiry&quot;: &quot;2022-12-12&quot;
+      }
+    ]
+  },
+  &quot;smokingPreferences&quot;: [
+    &quot;Non-Smoking&quot;
+  ],
+  &quot;roomSize&quot;: {
+    &quot;squareFeet&quot;: 300,
+    &quot;squareMeters&quot;: 14
+  },
+  &quot;views&quot;: [
+    &quot;Ocean View&quot;,
+    &quot;Beach View&quot;
+  ],
+  &quot;wheelchairAccessibility&quot;: true
 }
-</code></pre><h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
+</code></pre>
+<h4 id="success-responses-4" data-magellan-destination="success-responses-4">Success Responses</h4>
 <div><table>
 <thead>
 <tr>
@@ -462,24 +483,26 @@ function googleTranslateElementInit() {
 </table>
 </div><p><strong>Examples</strong></p>
 <p>Updating both the partner code and the name attributes:</p>
-<pre><code>{
+<pre><code class="lang-json">{
   &quot;partnerCode&quot;: &quot;PatchedPartnerCode&quot;,
   &quot;name&quot;: {
-      &quot;attributes&quot;: {
-        &quot;typeOfRoom&quot;: &quot;Loft&quot;,
-        &quot;roomClass&quot;: &quot;Deluxe&quot;,
-        &quot;area&quot;: &quot;Poolside&quot;
-      }
+    &quot;attributes&quot;: {
+      &quot;typeOfRoom&quot;: &quot;Loft&quot;,
+      &quot;roomClass&quot;: &quot;Deluxe&quot;,
+      &quot;area&quot;: &quot;Poolside&quot;
     }
+  }
 }
-</code></pre><p>Updating only the maximum occupancy:</p>
-<pre><code>{
+</code></pre>
+<p>Updating only the maximum occupancy:</p>
+<pre><code class="lang-json">{
   &quot;maxOccupancy&quot;: {
-      &quot;total&quot;: 3,
-      &quot;adults&quot;: 2
-    }
+    &quot;total&quot;: 3,
+    &quot;adults&quot;: 2
+  }
 }
-</code></pre><h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
+</code></pre>
+<h4 id="success-responses-5" data-magellan-destination="success-responses-5">Success Responses</h4>
 <div><table>
 <thead>
 <tr>
@@ -852,6 +875,63 @@ function googleTranslateElementInit() {
 <td>number</td>
 <td>No</td>
 <td>Defines the amount of the surcharge. Must be defined if type is not &quot;Free&quot;.</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="regulatoryrecords" data-magellan-destination="regulatoryrecords">regulatoryRecords</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>category</td>
+<td><a href="#/definitions/categoryEnum">categoryEnum</a></td>
+<td>Yes</td>
+<td>Used to specify the category of property as per jurisdiction requirements. Utilized for regulatory validation purposes.</td>
+</tr>
+<tr>
+<td>records</td>
+<td><a href="#/definitions/recordsDTO">records</a></td>
+<td>Yes</td>
+<td>Lists the regaulatory data attributes Expedia is collecting. </td>
+</tr>
+</tbody>
+</table>
+</div><p><a name="/definitions/recordsDTO"></a></p>
+<h4 id="records" data-magellan-destination="records">records</h4>
+<div><table>
+<thead>
+<tr>
+<th>Property Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>registrationNumber</td>
+<td>string</td>
+<td>Yes</td>
+<td>Used to specify the license/registration number of the property/room type that is registered with the city&#39;s regulators. Could be required for certain jurisdictions depending on property type.</td>
+</tr>
+<tr>
+<td>registrationNumberType</td>
+<td><a href="#/definitions/registrationNumberTypeEnum">registrationNumberTypeEnum</a></td>
+<td>Yes</td>
+<td>Type of license/registration number that is registered with the city&#39;s regulator. Could be required for certain jurisdictions depending on property type.</td>
+</tr>
+<tr>
+<td>expiry</td>
+<td>date</td>
+<td>No</td>
+<td>Date of expiration of the license/registration number in YYYY-MM-DD format.</td>
 </tr>
 </tbody>
 </table>
