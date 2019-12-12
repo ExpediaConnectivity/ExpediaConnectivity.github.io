@@ -158,10 +158,19 @@ Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
 </div><p><a name="/versioning"></a></p>
 <h2 id="versioning" data-magellan-destination="versioning">Versioning</h2>
 <p>Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independently. </p>
-<p>Starting with version 2, it is now required to provide a content-type header including the version with any POST or PUT request. For example:</p>
+<p>Starting with version 2, the Accept header is used to specify the version of the resource that is expected in the response. Although it is good practice to always specify it, the system will default to version 2 when not specified. </p>
+<p>Example of a valid Accept header for version 2:
+``` http request
+Accept: application/vnd.expedia.eps.product-v2+json</p>
+<pre><code>Example of a valid Accept header for version 3:
+``` http request
+Accept: application/vnd.expedia.eps.product-v3+json
+</code></pre><p>When providing a body, as is the case for POST, PUT and PATCH requests, The Content-Type header must be specified to indicate the version of the specified content. Starting with version 3, both Accept and Content type headers are mandatory. It is also important that the Accept and Content-Type headers match.
+Example for version 2:</p>
 <pre><code>Content-Type: application/vnd.expedia.eps.product-v2+json
-</code></pre><p>The Accept header also now indicates which version is expected to be returned. Accept header is optional. If ommitted, Expedia will default to return the latest version. If provided, Expedia will validate that the version requested for the response is a valid one. Example of a valid Accept header:</p>
-<pre><code>Accept: application/vnd.expedia.eps.product-v2+json
+</code></pre><p>Example for version 3:</p>
+<pre><code>Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre><h2 id="http-status-code" data-magellan-destination="http-status-code">HTTP Status Code</h2>
 <p>The API will leverage HTTP status codes as defined by RFC 2616, Section 10. More specifically, users should expect the following from the API: </p>
 <div><table>

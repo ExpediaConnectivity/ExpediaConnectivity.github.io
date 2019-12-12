@@ -626,6 +626,7 @@ Expedia picks a cancel policy to apply based on arrival date. For example:</p>
 <p>With the introduction of the <a href="/apis/product-management/deposit-api/quick-start.html">Deposit API</a>, some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:
 ```http request
 PATCH <a href="https://services.expediapartnercentral.com/properties/{Expedia">https://services.expediapartnercentral.com/properties/{Expedia</a> Property ID}/roomTypes/{room type ID of the rate plan to be patched}/ratePlans/{rate plan ID to be update}
+Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json</p>
 <pre><code>
 ```json

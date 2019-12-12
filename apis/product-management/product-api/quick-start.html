@@ -329,6 +329,7 @@ Accept: application/vnd.expedia.eps.product-v3+json</p>
 <p>To add a new rate plan on an existing room type, partners can send a minimal payload, and Expedia will default everything. For example, doing a POST on <a href="https://services.expediapartnercentral.com/properties/12933873/roomTypes/201357991/ratePlans">https://services.expediapartnercentral.com/properties/12933873/roomTypes/201357991/ratePlans</a> with this payload to create an ExpediaTravelerPreference-enabled rate plan. When doing a POST, it is required to specify which version of the API you are attempting to do a create for, by providing the right content-type header. For example:</p>
 <p>```http request
 POST <a href="https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans">https://services.expediapartnercentral.com/properties/12933870/roomTypes/201357986/ratePlans</a>
+Accept: application/vnd.expedia.eps.product-v2+json
 Content-Type: application/vnd.expedia.eps.product-v2+json</p>
 <pre><code>
 ```json
