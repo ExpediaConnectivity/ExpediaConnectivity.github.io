@@ -869,7 +869,7 @@ Simple entity response:</p>
   &quot;smokingPreferences&quot;: [
     &quot;Non-Smoking&quot;
   ],
-  &quot;roomSize&quot;: {
+  &quot;floorSize&quot;: {
     &quot;squareFeet&quot;: 300,
     &quot;squareMeters&quot;: 14
   },
@@ -1098,7 +1098,7 @@ Simple entity response:</p>
   &quot;smokingPreferences&quot;: [
     &quot;Non-Smoking&quot;
   ],
-  &quot;roomSize&quot;: {
+  &quot;floorSize&quot;: {
     &quot;squareFeet&quot;: 300,
     &quot;squareMeters&quot;: 14
   },
@@ -1278,7 +1278,7 @@ Simple entity response:</p>
 <tr>
 <td>livingRooms</td>
 <td><a href="#/definitions/livingRoomOptionDTO">livingRoomOption</a></td>
-<td>Yes</td>
+<td>No</td>
 <td>A count of living rooms can be specified. A bedding option can be with a combination of beds (type, size and quantity).</td>
 </tr>
 <tr>
@@ -1300,8 +1300,8 @@ Simple entity response:</p>
 <td>Used to define whether the room type is smoking, nonsmoking, or if both options are available on request. If a single smoking option is provided, then the room is, by default, only available in this configuration. If both options are provided, then a choice will be offered to the customer at the time he makes a reservation, and the customer preference will be sent in electronic booking messages to the partner.</td>
 </tr>
 <tr>
-<td>roomSize</td>
-<td><a href="#/definitions/RoomSizeDTO">RoomSize</a></td>
+<td>floorSize</td>
+<td><a href="#/definitions/floorSizeDTO">floorSize</a></td>
 <td>No</td>
 <td>Used to define room size. When used, both size in square feet and in square meters must be specified.</td>
 </tr>
@@ -1754,8 +1754,8 @@ Simple entity response:</p>
 </tr>
 </tbody>
 </table>
-</div><p><a name="/definitions/RoomSizeDTO"></a></p>
-<h4 id="roomsize" data-magellan-destination="roomsize">RoomSize</h4>
+</div><p><a name="/definitions/floorSizeDTO"></a></p>
+<h4 id="floorsize" data-magellan-destination="floorsize">floorSize</h4>
 <div><table>
 <thead>
 <tr>
