@@ -407,14 +407,14 @@ function googleTranslateElementInit() {
 <td>String</td>
 <td>Yes</td>
 <td>No</td>
-<td>Legacy attribute.  Expedia uses the billingCurrencyCode for pricing and invoicing, please submit an ISO4217 code for both currencyCode and billingCurrencyCode.  This attribute may be retired in the next major API version.</td>
+<td>Expedia uses the currencyCode for pricing purposes, please submit an ISO4217 code for both currencyCode. Note that if the property is on Expedia Collect or Expedia Traveler Preference business model, currencyCode and billingCurrencyCode must match or onboarding will fail.</td>
 </tr>
 <tr>
 <td>billingCurrencyCode</td>
 <td>String</td>
 <td>Yes</td>
 <td>No</td>
-<td>Use ISO4217.  Currency code to be used for pricing and billing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding.</td>
+<td>Use ISO4217.  billingCurrencyCode is used for invoicing and has to be one of the currencies set up by your Account Manager for billing. Cannot be updated after initial onboarding. Note that if the property is on Expedia Collect or Expedia Traveler Preference business model, currencyCode and billingCurrencyCode must match or onboarding will fail.</td>
 </tr>
 <tr>
 <td>timeZone</td>
