@@ -266,13 +266,12 @@ The Product API enables partners to first create a room type, and subsequently c
 <p>Partners that use 2 distinct rate plans to support the ExpediaTravelerPreference program will need to combine these into 1 rate plan creation request to Expedia. Partners should provide us the codes for their ExpediaCollect and HotelCollect versions under the appropriate distribution rules. They should then consume our responses and map the Expedia IDs returned as part of each distribution rule to obtain the IDs that will later have to be used to interpret booking messages or push avail/rate messages to Expedia.</p>
 <h2 id="getting-active-or-all-resources-when-calling-a-list-endpoint" data-magellan-destination="getting-active-or-all-resources-when-calling-a-list-endpoint">Getting Active or All resources when calling a list endpoint</h2>
 <p>By default, when partners call one of the list endpoints (properties, room types or rate plans), only active resources are returned. To get all resources including ones that might not be active at the moment, an optional status parameter can be added, with value all. Example for the properties list:</p>
-<p>```http request
-/products/properties?status=all</p>
-<pre><code>
-This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:
-```http request
-/properties/123/roomTypes?status=all
-</code></pre><p><a name="/update"></a></p>
+<pre><code class="lang-http">/products/properties?status=all
+</code></pre>
+<p>This becomes quite important to understand when partners are in the process of creating new room types. By default, room types are created as inactive in Expedia system, and will only become active once the first active rate plan is added. Therefore, if a partner successfully creates a room type, and then attempts to call the /roomTypes endpoint with no parameters, the partner will not receive the room type back in the response, unless they add ?status=all:</p>
+<pre><code class="lang-http">/properties/123/roomTypes?status=all
+</code></pre>
+<p><a name="/update"></a></p>
 <h2 id="modify-partial-or-full-overlay-" data-magellan-destination="modify-partial-or-full-overlay-">Modify: partial or full overlay?</h2>
 <p>Expedia offers 2 different methods to make changes to products: PUT or PATCH. This guide intends to give an overview of both options. Partners interested in learning more should refer to the <a href="reference.html#modify-an-existing-rate-plan">API Definition</a>.</p>
 <p>Partners unsure of which operation to use should always favor the PATCH (partial) update feature. </p>
@@ -623,26 +622,24 @@ Expedia picks a cancel policy to apply based on arrival date. For example:</p>
 <p>The outcome of this request would be that any guest aged from 0 to 17 would be considered an Infant, and anyone 18 or above would be considered an adult.</p>
 <p><a name="/patchdepositrequired"></a></p>
 <h2 id="how-can-i-use-product-api-to-update-rate-plans-requiring-deposit-" data-magellan-destination="how-can-i-use-product-api-to-update-rate-plans-requiring-deposit-">How Can I Use Product API to Update Rate Plans Requiring Deposit?</h2>
-<p>With the introduction of the <a href="/apis/product-management/deposit-api/quick-start.html">Deposit API</a>, some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:
-```http request
-PATCH <a href="https://services.expediapartnercentral.com/properties/{Expedia">https://services.expediapartnercentral.com/properties/{Expedia</a> Property ID}/roomTypes/{room type ID of the rate plan to be patched}/ratePlans/{rate plan ID to be update}
+<p>With the introduction of the <a href="/apis/product-management/deposit-api/quick-start.html">Deposit API</a>, some partners might be interested in managing only the depositRequired flag of rate plans, in order to indicate which rate plans should make use of a deposit policy. If a partner knows which rate plans (and corresponding room type IDs) should make use of the policy, they can be PATCHed with the following operation:</p>
+<pre><code class="lang-http">PATCH https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes/{room type ID of the rate plan to be patched}/ratePlans/{rate plan ID to be update}
 Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json</p>
-<pre><code>
-```json
-{
+Content-Type: application/vnd.expedia.eps.product-v2+json
+</code></pre>
+<pre><code class="lang-json">{
   &quot;depositRequired&quot;: true
 }
-</code></pre><p>The same operation needs to be repeated for all rate plans requiring a deposit.</p>
-<p>If a partner doesn&#39;t know the room type or rate plan IDs, they can be discovered by using our GET roomTypes and GET ratePlans calls. For example, to list all room types of a property:
-```http request
-GET <a href="https://services.expediapartnercentral.com/properties/{Expedia">https://services.expediapartnercentral.com/properties/{Expedia</a> Property ID}/roomTypes</p>
-<pre><code>This will give back a list of active roomTypes. A query parameter (?status=all) could be added to return all room types, both active and inactive. This shouldn&#39;t be needed since inactive room types wouldn&#39;t be available to our customers, therefore updating the depositRequired flag would have no visible effect for them.
-
-Then, to get the rate plans, partner can iterate on each room type, and request all rate plans for each room types, using:
-```http request
-GET https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes/{Expedia room type ID}/ratePlans
-</code></pre><p>This will give back a list of active rate plans. A query parameter (?status=all) could again be added, to return active and inactive rate plans.</p>
+</code></pre>
+<p>The same operation needs to be repeated for all rate plans requiring a deposit.</p>
+<p>If a partner doesn&#39;t know the room type or rate plan IDs, they can be discovered by using our GET roomTypes and GET ratePlans calls. For example, to list all room types of a property:</p>
+<pre><code class="lang-http">GET https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes
+</code></pre>
+<p>This will give back a list of active roomTypes. A query parameter (?status=all) could be added to return all room types, both active and inactive. This shouldn&#39;t be needed since inactive room types wouldn&#39;t be available to our customers, therefore updating the depositRequired flag would have no visible effect for them.</p>
+<p>Then, to get the rate plans, partner can iterate on each room type, and request all rate plans for each room types, using:</p>
+<pre><code class="lang-http">GET https://services.expediapartnercentral.com/properties/{Expedia Property ID}/roomTypes/{Expedia room type ID}/ratePlans
+</code></pre>
+<p>This will give back a list of active rate plans. A query parameter (?status=all) could again be added, to return active and inactive rate plans.</p>
 <p>Once all room types/rate plans have been identified, the ones requiring a deposit could be updated with the same PATCH call as above.</p>
 <p>It is important to know that only HotelCollect or Expedia Traveler Preference (HotelCollect/ExpediaCollect) rate plans can be updated to require a deposit.</p>
 </div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2020 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>

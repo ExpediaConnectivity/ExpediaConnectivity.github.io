@@ -20,13 +20,13 @@ function googleTranslateElementInit() {
 <p>The Product API will enable our hotels partners to create and edit their room types and rate plans via APIs, without having to use EPC or contact their market manager. The API also enables our partners to read the definition of the room types and rate plans created in the system.</p>
 <p><a name="/authentication"></a></p>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
-<p>Partner must include a valid username/password in the HTTP header of the request using the below format: 
-```http request
-Authorization: Basic <username and password encoded by Base64></p>
-<pre><code>Example: 
-```http request
-Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
-</code></pre><p>Where &quot;RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&quot; is the string &quot;EQCtest12933870:ew67nk33&quot; (username:password) Base64-encoded.</p>
+<p>Partner must include a valid username/password in the HTTP header of the request using the below format: </p>
+<pre><code class="lang-http">Authorization: Basic &lt;username and password encoded by Base64&gt;
+</code></pre>
+<p>Example: </p>
+<pre><code class="lang-http">Authorization: Basic RVFDdGVzdDEyOTMzODcwOmV3NjduazMz
+</code></pre>
+<p>Where &quot;RVFDdGVzdDEyOTMzODcwOmV3NjduazMz&quot; is the string &quot;EQCtest12933870:ew67nk33&quot; (username:password) Base64-encoded.</p>
 <p>For more information about getting started for the first time, and authorization, please refer to the <a href="guides.html#/howtogetstarted">FAQ &amp; Guides section</a></p>
 <h2 id="swagger-json-file-for-product-api" data-magellan-destination="swagger-json-file-for-product-api">Swagger.json File for Product API</h2>
 <p>To facilitate integrating with the Product API, Expedia offers a <a href="https://services.expediapartnercentral.com/products/swagger.json">Swagger.json</a> file documenting the Product API model and operations. Please watch our <a href="/apis/product-management/product-api/video.html">Video Tutorial</a> for more information on how developers can leverage this file to kick start development.</p>
@@ -963,8 +963,8 @@ Simple entity response:</p>
 <ul>
 <li>Method: <code>PUT</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
-<li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
-<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+<li>Consumes: <code>application/vnd.expedia.eps.product-v3+json</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v3+json</code></li>
 </ul>
 <h4 id="parameters-6" data-magellan-destination="parameters-6">Parameters</h4>
 <div><table>
@@ -1138,8 +1138,8 @@ Simple entity response:</p>
 <ul>
 <li>Method: <code>PATCH</code></li>
 <li>Url: <a href="https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}">https://services.expediapartnercentral.com/properties/{propertyId}/roomTypes/{roomTypeId}</a></li>
-<li>Consumes: <code>application/vnd.expedia.eps.product-v2+json</code></li>
-<li>Produces: <code>application/vnd.expedia.eps.product-v2+json</code></li>
+<li>Consumes: <code>application/vnd.expedia.eps.product-v3+json</code></li>
+<li>Produces: <code>application/vnd.expedia.eps.product-v3+json</code></li>
 </ul>
 <h4 id="parameters-7" data-magellan-destination="parameters-7">Parameters</h4>
 <div><table>
