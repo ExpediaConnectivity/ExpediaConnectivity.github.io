@@ -1836,7 +1836,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@ Type</td>
-<td>OTA_CodeType</td>
+<td>String 16</td>
 <td>1</td>
 <td>3</td>
 <td>OTA error type. The DC interface uses a generic error type for all errors. Type 3 = Business error</td>
@@ -1844,7 +1844,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@ Code</td>
-<td>OTA_CodeType</td>
+<td>String 16</td>
 <td>1</td>
 <td>450</td>
 <td>OTA error code. The DC interface uses a generic code for all errors. Code 450 = Unable to process</td>
@@ -1852,7 +1852,7 @@ Content-Length: 2291</p>
 <tr>
 <td></td>
 <td>@ ShortText</td>
-<td>String 4</td>
+<td>String 64</td>
 <td>1</td>
 <td></td>
 <td>The 4 digit error code defined by the Direct Connect API. See <a href="#ErrorCodes">Error Codes for Responses</a> for all supported error codes that can be specified here.</td>
@@ -1919,7 +1919,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ Target</td>
-<td>NMTOKEN</td>
+<td>String</td>
 <td>1</td>
 <td>Production</td>
 <td>Indicates the message is a production message.</td>
@@ -2406,7 +2406,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ Target</td>
-<td>NMTOKEN</td>
+<td>String</td>
 <td>1</td>
 <td>Production</td>
 <td>Indicates the message is a production message.</td>
@@ -2454,7 +2454,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@Type</td>
-<td>Numeric 2</td>
+<td>OTA_CodeType</td>
 <td>1</td>
 <td>10, 14</td>
 <td>A reference to the type of object defined by the UniqueID element. 10=Hotel, to be used to specify the hotel confirmation number. 14=Reservation, to be used to specify the Expedia booking ID.</td>
@@ -2462,7 +2462,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ID</td>
-<td>String 32</td>
+<td>String 64</td>
 <td>1</td>
 <td></td>
 <td>A unique identifying value assigned by the creating system to the reservation. This will be either the hotel confirmation number or the Expedia booking ID.</td>
@@ -2494,7 +2494,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td>2</td>
 <td>@Type</td>
-<td>Numeric 2</td>
+<td>OTA_CodeType</td>
 <td>1</td>
 <td>10</td>
 <td>A reference to the type of object defined by the UniqueID element. 10=Hotel, to be used to specify the hotel cancellation number.</td>
@@ -2502,7 +2502,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ID</td>
-<td>String 32</td>
+<td>String 64</td>
 <td>1</td>
 <td></td>
 <td>The primary hotel cancellation number as returned by the supplier system.</td>
@@ -2565,7 +2565,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ Target</td>
-<td>NMTOKEN</td>
+<td>String</td>
 <td>1</td>
 <td>Production</td>
 <td>Indicates the message is a production message.</td>
@@ -2621,7 +2621,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ Type</td>
-<td>OTA_CodeType</td>
+<td>String 16</td>
 <td>1</td>
 <td>3</td>
 <td>OTA error type. The DC interface uses a generic error type for all errors. Type 3 = Business error</td>
@@ -2629,7 +2629,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ Code</td>
-<td>OTA_CodeType</td>
+<td>String 16</td>
 <td>1</td>
 <td>450</td>
 <td>OTA error code. The DC interface uses a generic code for all errors. Code 450 = Unable to process</td>
@@ -2637,7 +2637,7 @@ Furthermore the free-form text special request (RequestCode=&quot;4&quot;) in a 
 <tr>
 <td></td>
 <td>@ ShortText</td>
-<td>String 4</td>
+<td>String 64</td>
 <td>1</td>
 <td></td>
 <td>The 4 digit error code defined by the Direct Connect API. See the API spec on BN Message Set - Error Handling for a complete list of error codes used by the booking notification interface.</td>
