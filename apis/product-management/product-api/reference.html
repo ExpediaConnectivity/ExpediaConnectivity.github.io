@@ -158,6 +158,8 @@ function googleTranslateElementInit() {
 </div><p><a name="/versioning"></a></p>
 <h2 id="versioning" data-magellan-destination="versioning">Versioning</h2>
 <p>Expedia chose to version this API by making use of different content types per version. This gives Expedia the flexibility to version each resource (property, room type, rate plan) independently. </p>
+<p>For Room management (only), we now have a V3 version as well. We prefer partners adopt the latest version. All Property and Rateplan level management continues on the V2 version. With the V3 version, partners can now specify the bedding configurations they have for the rooms for both the Bedroom and the Living Room area within the RoomType entity. </p>
+<p>For more details, please refer to the <a href="https://expediaconnectivity.com/apis/product-management/product-api/guides.html">FAQ and Guides</a> section - &quot;Changes between Product API V2 and V3&quot;.</p>
 <p>Starting with version 2, the Accept header is used to specify the version of the resource that is expected in the response. Although it is good practice to always specify it, the system will default to version 2 when not specified. </p>
 <p>Example of a valid Accept header for version 2:
 ``` http request
