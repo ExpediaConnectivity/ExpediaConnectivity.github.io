@@ -800,6 +800,36 @@ function googleTranslateElementInit() {
 <td></td>
 </tr>
 <tr>
+<td>ACCESSIBLE_PARKING</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ACCESSIBLE_BATHROOM</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>GUEST_WHEELCHAIR</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HANDRAILS_IN_HALLWAYS</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>HANDRAILS_IN_STAIRWAYS</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
 <td>PROPERTY_ACCESS</td>
 <td>Yes</td>
 <td>CAR_NOT_REQUIRED</td>
@@ -12332,7 +12362,7 @@ function googleTranslateElementInit() {
 </table>
 </div><p><a name="/definitions/policies"></a></p>
 <h2 id="policies" data-magellan-destination="policies">Policies</h2>
-<p>The Policy codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. </p>
+<p>The Policy codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding.</p>
 <p><a name="/definitions/checkin-checkout"></a></p>
 <h3 id="check-in-check-out" data-magellan-destination="check-in-check-out">Check-in Check-Out</h3>
 <div><table>
@@ -13677,7 +13707,7 @@ function googleTranslateElementInit() {
 </table>
 </div><p><a name="/definitions/attributes"></a></p>
 <h2 id="attributes" data-magellan-destination="attributes">Attributes</h2>
-<p>The attribute codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding. </p>
+<p>The attribute codes/detail codes and values have been split into sub sections with names to facilitate discovery and understanding.</p>
 <div><table>
 <thead>
 <tr>
@@ -13873,7 +13903,19 @@ discovery and understanding. Please note, these are fees collected at the time o
 <tr>
 <td>CLUB_CARD_FEE_CHILD</td>
 <td>PER_ACCOMODATION_CHILD</td>
+<td>PER_NIGHT</td>
+<td>Send VALUE</td>
+</tr>
+<tr>
 <td></td>
+<td>PER_PERSON_CHILD</td>
+<td>PER_WEEK</td>
+<td>Send VALUE</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>PER_STAY</td>
 <td>Send VALUE</td>
 </tr>
 <tr>
@@ -13940,25 +13982,13 @@ discovery and understanding. Please note, these are fees collected at the time o
 <td></td>
 <td>START_DATE</td>
 <td>PER_WEEK</td>
-<td>Send VALUE</td>
-</tr>
-<tr>
-<td></td>
-<td>START_MONTH_RANGE</td>
-<td>PER_WEEK</td>
-<td>Send VALUE</td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
 </tr>
 <tr>
 <td></td>
 <td>END_DATE</td>
 <td></td>
-<td>Send VALUE</td>
-</tr>
-<tr>
-<td></td>
-<td>END_MONTH_RANGE</td>
-<td></td>
-<td>Send VALUE</td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
 </tr>
 <tr>
 <td>EQUIPMENT_FEES</td>
@@ -14117,6 +14147,12 @@ discovery and understanding. Please note, these are fees collected at the time o
 <td>Send VALUE</td>
 </tr>
 <tr>
+<td>LOCAL_CITY_TAX_MAX_NIGHTS</td>
+<td>NO</td>
+<td></td>
+<td>Send VALUE</td>
+</tr>
+<tr>
 <td>LOCAL_CITY_TAX</td>
 <td>PERCENTAGE</td>
 <td>PER_NIGHT</td>
@@ -14131,7 +14167,25 @@ discovery and understanding. Please note, these are fees collected at the time o
 <tr>
 <td></td>
 <td>AMOUNT_PER_ACCOMMODATION</td>
+<td>PER_WEEK</td>
+<td>Send VALUE</td>
+</tr>
+<tr>
+<td>LOCAL_CITY_TAX_CHILD</td>
+<td>AMOUNT_PER_PERSON</td>
+<td>PER_NIGHT</td>
+<td>Send VALUE</td>
+</tr>
+<tr>
 <td></td>
+<td></td>
+<td>PER_STAY</td>
+<td>Send VALUE</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>PER_WEEK</td>
 <td>Send VALUE</td>
 </tr>
 <tr>
@@ -14244,56 +14298,38 @@ discovery and understanding. Please note, these are fees collected at the time o
 </tr>
 <tr>
 <td></td>
-<td></td>
+<td>SURCHARGE_PER_ACCOMMODATION</td>
 <td>SURCHARGE_PER_NIGHT</td>
 <td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
+<td>SURCHARGE_PER_APARTMENT</td>
 <td>SURCHARGE_PER_STAY</td>
 <td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
+<td>SURCHARGE_PER_HOUSE</td>
 <td>SURCHARGE_PER_WEEK</td>
 <td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
-<td>SURCHARGE_PER_ACCOMMODATION</td>
-<td>Send VALUE</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SURCHARGE_PER_APARTMENT</td>
-<td>Send VALUE</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td>SURCHARGE_PER_HOUSE</td>
-<td>Send VALUE</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 <td>SURCHARGE_PER_PET</td>
+<td></td>
 <td>Send VALUE</td>
 </tr>
 <tr>
-<td></td>
 <td></td>
 <td>SURCHARGE_PER_ROOM</td>
+<td></td>
 <td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
-<td></td>
 <td>SURCHARGE_PER_SUITE</td>
+<td></td>
 <td>Send VALUE</td>
 </tr>
 <tr>
@@ -14397,6 +14433,18 @@ discovery and understanding. Please note, these are fees collected at the time o
 <td>AMOUNT_PER_ACCOMMODATION</td>
 <td></td>
 <td>Send VALUE</td>
+</tr>
+<tr>
+<td></td>
+<td>START_DATE</td>
+<td></td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+</tr>
+<tr>
+<td></td>
+<td>END_DATE</td>
+<td></td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
 </tr>
 <tr>
 <td></td>
@@ -15060,9 +15108,15 @@ discovery and understanding. Please note, these are fees collected at the time o
 </tr>
 <tr>
 <td></td>
-<td></td>
+<td>START_DATE</td>
 <td>PER_STAY</td>
-<td>Send VALUE</td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+</tr>
+<tr>
+<td></td>
+<td>END_DATE</td>
+<td></td>
+<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
 </tr>
 <tr>
 <td>TOURISM_FEE</td>
@@ -15164,49 +15218,49 @@ discovery and understanding. Please note, these are fees collected at the time o
 <td>DEPOSIT_OTHER</td>
 <td>BREAKAGE</td>
 <td>PER_DAY</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_NIGHT</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_STAY</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_WEEK</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td>DEPOSIT_OTHER</td>
 <td>CLEANING</td>
 <td>PER_DAY</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_NIGHT</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_STAY</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td></td>
 <td></td>
 <td>PER_WEEK</td>
-<td>Send VALUE. If no dates are provided, it would be considered for Year round.The date range (yyyy-mm-dd format) can only be for 365 days and startDate year should be current year</td>
+<td>Send VALUE</td>
 </tr>
 <tr>
 <td>DIRHAM_TOURISM_FEE</td>
@@ -17875,6 +17929,18 @@ discovery and understanding. Please note, these are fees collected at the time o
 </tr>
 <tr>
 <td>GENKAN_ENTRYWAY</td>
+</tr>
+<tr>
+<td>WHEELCHAIR_ACCESSIBLE_VAN_PARKING</td>
+</tr>
+<tr>
+<td>ELECTRIC_VEHICLE_CHARGING_STATION</td>
+</tr>
+<tr>
+<td>JAPANESE_GARDEN</td>
+</tr>
+<tr>
+<td>ROOFTOP_TERRACE</td>
 </tr>
 </tbody>
 </table>
