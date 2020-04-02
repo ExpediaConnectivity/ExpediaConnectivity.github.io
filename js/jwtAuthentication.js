@@ -30,7 +30,13 @@ function checkTokenExpiration() {
 
 function logout() {
     localStorage.removeItem("AuthToken");
-    window.location.href = "/test-properties/";
+    localStorage.removeItem("username");
+    localStorage.removeItem("admin");
+    if (window.hotelAssignmentServiceUrls) { // depends on urls.json having been loaded
+        window.location.href = hotelAssignmentServiceUrls.users() + '/oidc/logout';
+    } else { // oh no someone forgot to include urls.js
+        window.location.href = "/test-properties/";
+    }
     ga('send', 'event', 'logout', 'success');
 }
 

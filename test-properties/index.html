@@ -23,36 +23,13 @@ function googleTranslateElementInit() {
 <!--<![endif]-->
 <link rel="stylesheet" href="/test-properties/css/index.css">
 <div class="large-6 large-centered medium-10 medium-centered columns simple-content">
-    <h1>EPC Login</h1>
-    <p class="announce">
-        Please enter your Expedia Partner Central (EPC) login details below.
-    </p>
-    <form id="loginform" class="announce" style="margin-bottom: 200px;" onsubmit="login(this); return false;">
-        <div class="formline row">
-            <span class="small-5 text-right columns">Username: </span>
-            <span class="small-6 text-right columns"><input id="username" placeholder=""/></span>
-        </div>
-        <div class="formline row">
-            <span class="small-5 text-right columns">Password: </span>
-            <span class="small-6 text-right columns"><input id="password" type="password" placeholder="" autocomplete="off" /></span>
-        </div>
-        <div id="result" class="formline center row"></div>
+    <form id="loginform" class="announce" action="/test-properties/openid" method="get">
         <div class="row">
-            <div class="formline small-6 small-offset-6 columns">
-                <input class="submit" type="submit" value="Login"/>
-            </div>
-        </div>
-        <div class="row">
-            <div class="forgot formline center small-6 small-offset-6 columns">
-                <a href="https://www.expediapartnercentral.com/Account/ForgotPassword">Forgot Password</a> | <a href="mailto:hothelp@expedia.com?subject=Forgotten Username">Forgot Username</a>
+            <div class="formline columns">
+                <input class="submit" type="submit" value="Log in with Expedia Partner Central"/>
             </div>
         </div>
     </form>
-    <div class="loader" style="display: none;">
-        <div class="background">&nbsp;</div>
-        <svg class="circular">
-            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
-        </svg>
-    </div>
 </div>
-<script src="/test-properties/js/index.js"></script></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2020 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"/></body></html>
+<script src="/test-properties/js/index.js?t=1585799907"></script>
+</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="/privacy">Privacy Policy</a><a class="link-item" href="/cookies">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2020 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Index"/></body></html>
