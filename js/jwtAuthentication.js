@@ -3,6 +3,7 @@ function checkTokenExpiration() {
     if (token === null) {
         if (window.location.pathname.indexOf("/test-properties") == 0
                 && window.location.pathname != "/test-properties/"
+                && window.location.pathname != "/test-properties/openid"
                 && window.location.pathname.indexOf("/test-properties/noauth") != 0) {
             window.location.href = "/test-properties/";
         }
