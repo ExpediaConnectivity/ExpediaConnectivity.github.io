@@ -13,12 +13,6 @@ function expediaPartnerCentralBaseUrl() {
     }
 }
 
-var expediaPartnerCentralUrls = {
-    login: function(returnUrl) {
-        return expediaPartnerCentralBaseUrl() + "/Account/Logon?returnUrl=" + encodeURIComponent(returnUrl);
-    },
-}
-
 var hotelAssignmentServiceUrls = {
     users: function() {
         return hotelAssignmentServiceBaseUrl() + "/v1/users";
@@ -26,14 +20,6 @@ var hotelAssignmentServiceUrls = {
 
     login: function() {
         return hotelAssignmentServiceUrls.users() + "/login";
-    },
-
-    epcLogin: function() {
-        return hotelAssignmentServiceUrls.users() + "/epc-login";
-    },
-
-    epcRedirect: function() {
-        return hotelAssignmentServiceUrls.epcLogin() + "/redirect";
     },
 
     register: function() {
