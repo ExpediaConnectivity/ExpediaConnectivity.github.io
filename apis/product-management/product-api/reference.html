@@ -264,13 +264,13 @@ Content-Type: application/vnd.expedia.eps.product-v3+json
 <td>Content-Type</td>
 <td>String</td>
 <td>Required*</td>
-<td>Content-Type: application/vnd.expedia.eps.product-v2+json</td>
+<td>Content-Type: application/vnd.expedia.eps.product-v2+json. For Room level actions (except for the /amenities and /rateThresholds endpoints), the Content-Type should be application/vnd.expedia.eps.product-v3+json</td>
 </tr>
 <tr>
 <td>Accept</td>
 <td>String</td>
 <td>Required</td>
-<td>Accept: application/vnd.expedia.eps.product-v2+json</td>
+<td>Accept: application/vnd.expedia.eps.product-v2+json. For Room level actions (except for the /amenities and /rateThresholds endpoints), the Accept header should be application/vnd.expedia.eps.product-v3+json</td>
 </tr>
 <tr>
 <td>Request-ID</td>
@@ -294,7 +294,7 @@ Content-Type: application/vnd.expedia.eps.product-v3+json
 <tr>
 <td>Content-Type</td>
 <td>String</td>
-<td>Content-Type: application/vnd.expedia.eps.product-v2+json</td>
+<td>Content-Type: application/vnd.expedia.eps.product-v2+json. For Room level actions (except for the /amenities and /rateThresholds endpoints), the Content-Type will be application/vnd.expedia.eps.product-v3+json</td>
 </tr>
 <tr>
 <td>Request-ID</td>

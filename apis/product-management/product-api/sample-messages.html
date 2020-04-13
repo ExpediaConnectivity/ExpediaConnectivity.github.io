@@ -381,8 +381,8 @@ Authorization: Basic [your encoded username:password in Base64]
 <p>This example shows how to do a read request for a single room type with 2 age categories, a choice of 2 bedding options, and supporting both smoking and non-smoking</p>
 <p>Request:</p>
 <pre><code class="lang-http">GET https://services.expediapartnercentral.com/properties/1780044/roomTypes/200192910
-Content-Type: application/vnd.expedia.eps.product-v2+json
-Accept: application/vnd.expedia.eps.product-v2+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
+Accept: application/vnd.expedia.eps.product-v3+json
 Authorization: Basic [your encoded username:password in Base64]
 </code></pre>
 <p>Response:</p>
@@ -500,8 +500,8 @@ Authorization: Basic [your encoded username:password in Base64]
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a predefined name, 3 age categories, a single bedding configuration and non-smoking</p>
 <pre><code class="lang-http">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
-Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre>
 <pre><code class="lang-json">{
   &quot;partnerCode&quot;: &quot;JS001&quot;,
@@ -715,8 +715,8 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <p>When creating a new room type, partners have the choice to pick a predefined name, or provide a set of attributes that can be included in the room name.</p>
 <p>This example creates a room type with a set of name attributes, 3 age categories, a single bedding configuration and non-smoking</p>
 <pre><code class="lang-http">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
-Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre>
 <pre><code class="lang-json">{
   &quot;partnerCode&quot;: &quot;JS001&quot;,
@@ -889,8 +889,8 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <p>When using room name attributes to generate a name, Expedia has specific rules around how many attributes can be used. To abstract this complexity from our partners, the API will accept that partners specify more attributes than Expedia would actually use to generate the name. The selection logic and ranking of attributes are described in details in our API Definition section. The example below shows what would happen if a partner was to send all possible room name attributes in a create request. The Product API would respond back with the attributes it used, and the name that was generated.</p>
 <p>Request:</p>
 <pre><code class="lang-http">POST https://services.expediapartnercentral.com/properties/1780041/roomTypes
-Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre>
 <pre><code class="lang-json">{
   &quot;partnerCode&quot;: &quot;JS001&quot;,
@@ -1043,8 +1043,8 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <h3 id="room-type-modify-predefined-name-code-and-age-categories-" data-magellan-destination="room-type-modify-predefined-name-code-and-age-categories-">Room Type Modify (Predefined Name, Code and Age Categories)</h3>
 <p>Leveraging the Create example from above, the name is modified to Executive Suite, child age category is removed, and partner code is changed.</p>
 <pre><code class="lang-http">PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
-Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre>
 <pre><code class="lang-json">{
   &quot;resourceId&quot;: 201171339,
@@ -1208,8 +1208,8 @@ Content-Type: application/vnd.expedia.eps.product-v2+json
 <p>Leveraging the Create example from above, predefined name is modified to a new room name built from attributes, child age category is removed, and partner code is changed.</p>
 <p>The name field is kept with its old value but will be overridden by the room name attributes, as name attributes always take precedence over predefined names.</p>
 <pre><code class="lang-http">PUT https://services.expediapartnercentral.com/properties/1780041/roomTypes/201171339
-Accept: application/vnd.expedia.eps.product-v2+json
-Content-Type: application/vnd.expedia.eps.product-v2+json
+Accept: application/vnd.expedia.eps.product-v3+json
+Content-Type: application/vnd.expedia.eps.product-v3+json
 </code></pre>
 <pre><code class="lang-json">{
   &quot;resourceId&quot;: 201171339,
