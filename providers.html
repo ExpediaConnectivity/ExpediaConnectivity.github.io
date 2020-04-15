@@ -202,93 +202,10 @@ function googleTranslateElementInit() {
         <div class="twelve small-centered columns center he-waypoint he-animate he-delay_100">
             <div class="inner">
                 <h2>Ready to start working with Expedia?</h2>
-                <p>Please contact us using the form and we'll get in touch. In the meantime, head over to our <a href="developer">developer section</a> to see what APIs we currently offer.</p>
-                <form id="contactus" onsubmit="sendmail(this); return false;">
-                    <div class="formline">
-                        <input id="name" placeholder="Name" type="text" required/>
-                        <input id="company" placeholder="Company" type="text" required/>
-                        <input id="website" placeholder="Company website" type="text" required/>
-                        <input id="email" placeholder="Company email" type="email" required/>
-                        <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
-                        <select id="region" name="region" placeholder="Which region is your company based in" required>
-                            <option value="" selected disabled>Please select the region your company is based in</option>
-                            <option value="ap">Asia-Pacific</option>
-                            <option value="emea">Europe, Middle East and Africa</option>
-                            <option value="la">Latin America</option>
-                            <option value="na">North America</option>
-                        </select>
-                        <textarea id="message" placeholder="Type your message here" required></textarea>
-                        <div class="g-recaptcha pull-up" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha" data-expired-callback="captchaExpired"></div>
-                        <input type="submit" value="Send" class="btn-send"/>
-                    </div>
-                    <div id="result" class="formline right"></div>
-                </form>
+                <p>Please <a href="contact-us.html">contact us</a> and we'll get in touch. In the meantime, head over to our <a href="developer">developer section</a> to see what APIs we currently offer.</p>
             </div>
         </div>
     </section>
 </div>
-<style>
-    form select {
-        font-size: 0.8rem;
-    }
-    select:required, select:invalid {
-        box-shadow: none;
-    }
-</style>
-<script>
-    function sendEmailUrl() {
-        switch (environment.env) {
-            case "prod": return "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail";
-            default: return "https://api.expediapartnercentral.com.integration.sb.karmalab.net/hotel-assignment/v1/sendmail";
-        }
-    }
 
-    var captchaResponse = null;
-
-    function captcha(response) {
-        captchaResponse = response;
-        console.log("Captcha Response: " + response);
-    }
-
-    function captchaExpired(response) {
-        captchaResponse = response;
-        console.log("Captcha Response expired: " + response);
-    }
-
-    function sendmail(form) {
-        var data = {};
-        data.name = $(form).find("#name").val();
-        data.email = $(form).find("#email").val();
-        data.phone = $(form).find("#phone").val();
-        data.company = $(form).find("#company").val();
-        data.website = $(form).find("#website").val();
-        data.region = $(form).find("#region").val();
-        data.message = $(form).find("#message").val();
-        data.subject = "providerspage";
-        data.captchaResponse = captchaResponse;
-
-        if (!captchaResponse) {
-            alert("Please complete the reCAPTCHA.");
-            return;
-        }
-
-        $.ajax({
-            method: "POST",
-            url: sendEmailUrl(),
-            data: JSON.stringify(data),
-            dataType: 'json',
-            contentType: 'application/json; charset=UTF-8'
-        }).done(function(response, textStatus, jqxhr) {
-            console.log(response);
-            $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 7 business days for us to process your query.");
-            ga('send', 'event', 'contactus', data.subject);
-        }).fail(function(jqxhr){
-            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
-        });
-    }
-    function ajaxError(jqxhr, humanError) {
-        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
-        $("#result").addClass("error").html(humanError);
-    }
-</script>
 </div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="https://welcome.expediagroup.com/en/privacy-policy">Privacy Policy</a><a class="link-item" href="https://welcome.expediagroup.com/en/expedia-group-cookie-policy">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2020 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Providers"/></body></html>

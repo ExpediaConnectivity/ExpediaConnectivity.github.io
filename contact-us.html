@@ -24,13 +24,20 @@ function googleTranslateElementInit() {
         <p>Have a question about integrating with our APIs?</p>
     </div>
 </section>
+<section class='inner' id='intro'>
+    <p>Expedia Group is the world’s travel platform, with an extensive brand portfolio that includes some of the world’s leading online travel brands. Collectively, Expedia Group brands cover virtually every aspect of researching, planning, and booking travel, from choosing the best airplane seat, to reading personal travel reviews of hotels, to planning what to do in a destination once you arrive. The Expedia Group portfolio serves both leisure and business travellers with tastes and budgets ranging from modest to luxury.</p>
+</section>
+
 <section class="row">
-    <div class="six columns text-left contactus-info">
+    <div class="eleven columns text-left contactus-info" id="mainpart">
         <div id="contact-router">
-            <h5>Which best describes your organisation?</h5><br/>
-            <input type="radio" name="partner-type" id="partner-type-1" value="hotel"><label for="partner-type-1">Hotel/Property</label><br>
-            <input type="radio" name="partner-type" id="partner-type-2" value="affiliate"><label for="partner-type-2">Travel affiliate provider</label><br>
-            <input type="radio" name="partner-type" id="partner-type-3" value="provider"><label for="partner-type-3">Lodging connectivity provider e.g. Channel Manager that handles rates, availability, inventory or reservations on behalf of a property</label><br>
+            <h5>Please select what best describes what you are looking for</h5><br/>
+            <input type="radio" name="partner-type" id="partner-type-3" value="provider"><label for="partner-type-3">Adoption of Expedia Group's lodging supply APIs (For Channel Managers, Property Management Systems and Central Reservation Systems)</label><br>
+            <input type="radio" name="partner-type" id="partner-type-2" value="affiliate"><label for="partner-type-2">Integration with Expedia Group’s booking experience and access to supply</label><br>
+            <input type="radio" name="partner-type" id="partner-type-1" value="airline"><label for="partner-type-1">Integration of Airline on Expedia Group or Integration of Car Rental on Expedia Group</label><br>
+            <input type="radio" name="partner-type" id="partner-type-4" value="activities"><label for="partner-type-4">Integration of Expedia Group's activities and ground transportation via APIs</label><br>
+            <input type="radio" name="partner-type" id="partner-type-5" value="hotel"><label for="partner-type-5">I'm a property and I would like help</label><br>
+
             <div class="button-wrapper">
                 <p id = "contact-go" class="yellow-button hidden" style="float: left"><a>Go</a></p>
             </div>
@@ -47,9 +54,8 @@ function googleTranslateElementInit() {
 
             <br>
             All of our API documentation can be found in our <a href="/developer">developer section</a>.
-
             <br>
-            Still have questions? Use the form to contact us.
+            If you are new to the Expedia Group, use the form to contact us. Alternatively, if you currently partner with us, please contact your Connectivity Account Manager directly.
         </div>
 
         <div id="hotel-contact" class="hidden">
@@ -75,10 +81,18 @@ function googleTranslateElementInit() {
         </div>
 
         <div id="travel-affiliate" class="hidden">
-                <h3>For Travel Affiliate Providers</h3>
                 <br>
                 Please visit <a href="https://expediapartnersolutions.com/">Expedia Partner Solutions (EPS)</a> for more information.
         </div>
+
+        <div id="travel-airline" class="hidden">
+                Please contact <a href="mailto:transcon@expediagroup.com">transcon@expediagroup.com.</a>
+        </div>
+
+        <div id="travel-activities" class="hidden">
+                Please contact <a href="mailto:LXAPI@expedia.com">LXAPI@expedia.com.</a>
+        </div>
+
     </div>
     <!-- When adding new fields, Remember to also change the send email logic in hotel-assignment-service -->
     <div id="contact-form" class="six columns hidden">
@@ -89,6 +103,8 @@ function googleTranslateElementInit() {
                 <input id="website" placeholder="Company website" type="text" required/>
                 <input id="email" placeholder="Company email" type="email" required/>
                 <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
+                <input id="accommodations" placeholder="How many accommodations use your solution?" type="text" required/>
+                <input id="otas" placeholder="Who are the other online distributors/OTAs you work with?" type="text" required/>
                 <select id="region" name="region" placeholder="Which region is your company based in" required>
                     <option value="" selected disabled>Please select the region your company is based in</option>
                     <option value="ap">Asia-Pacific</option>
@@ -96,12 +112,11 @@ function googleTranslateElementInit() {
                     <option value="la">Latin America</option>
                     <option value="na">North America</option>
                 </select>
-                <select id="subject" name="subject"  placeholder="Please select an appropriate subject" required>
-                    <option value="" selected disabled>Please select an appropriate subject</option>
-                    <option value="interested">I'm interested in adopting Expedia Group lodging APIs</option>
-                    <option value="technical">I have a technical question about an API</option>
-                    <option value="vendor">I'm a Vendor and my details have changed</option>
-                    <option value="scorecard">I have a question about my provider scorecard</option>
+                <select id="subject" name="subject"  placeholder="What solution best describes the product you wish to connect?" required>
+                    <option value="" selected disabled>What solution best describes the product you wish to connect?</option>
+                    <option value="cm">Channel Manager</option>
+                    <option value="pms">Property Management System</option>
+                    <option value="crs">Central Reservation System</option>
                 </select>
                 <textarea id="message" placeholder="Type your message here" required></textarea>
                 <div class="g-recaptcha" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha" data-expired-callback="captchaExpired"></div>
@@ -145,7 +160,7 @@ function googleTranslateElementInit() {
     function toggleGoButton() {
         var value = $('input[type=radio][name=partner-type]:checked').val();
 
-        if (value == "hotel" || value == "provider" || value == "affiliate") {
+        if (value == "hotel" || value == "provider" || value == "affiliate" || value == "airline" || value == "activities") {
             $('#contact-go').removeClass("hidden");
         } else {
             $('#contact-go').addClass("hidden");
@@ -169,10 +184,22 @@ function googleTranslateElementInit() {
         if (partnerType === "provider") {
             $("#provider-contact").removeClass("hidden");
             $("#contact-form").removeClass("hidden");
+            $("#mainpart").removeClass("eleven columns");
+            $("#mainpart").addClass("six columns");
         } else if (partnerType === "affiliate") {
-            $("#travel-affiliate").removeClass("hidden")
+            $("#travel-affiliate").removeClass("hidden");
+            $("#intro").addClass("hidden");
+        } else if (partnerType === "airline") {
+            $("#travel-airline").removeClass("hidden");
+            $("#travel-airline").addClass("inner");
+            $("#intro").addClass("hidden");
+        } else if (partnerType === "activities") {
+            $("#travel-activities").removeClass("hidden");
+            $("#travel-activities").addClass("inner");
+            $("#intro").addClass("hidden");
         } else {
-            $("#hotel-contact").removeClass("hidden")
+            $("#hotel-contact").removeClass("hidden"); // left this here incase we add hotel option back
+            $("#intro").addClass("hidden");
         }
 
     }
@@ -194,6 +221,8 @@ function googleTranslateElementInit() {
         data.phone = $(form).find("#phone").val();
         data.company = $(form).find("#company").val();
         data.website = $(form).find("#website").val();
+        data.accommodations = $(form).find("#accommodations").val();
+        data.otas = $(form).find("#otas").val();
         data.message = $(form).find("#message").val();
         data.subject = $(form).find("#subject").val();
         data.region = $(form).find("#region").val();
