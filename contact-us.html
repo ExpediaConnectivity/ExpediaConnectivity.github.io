@@ -112,7 +112,7 @@ function googleTranslateElementInit() {
                     <option value="la">Latin America</option>
                     <option value="na">North America</option>
                 </select>
-                <select id="subject" name="subject"  placeholder="What solution best describes the product you wish to connect?" required>
+                <select id="solution" name="solution" placeholder="What solution best describes the product you wish to connect?" required>
                     <option value="" selected disabled>What solution best describes the product you wish to connect?</option>
                     <option value="cm">Channel Manager</option>
                     <option value="pms">Property Management System</option>
@@ -224,7 +224,7 @@ function googleTranslateElementInit() {
         data.accommodations = $(form).find("#accommodations").val();
         data.otas = $(form).find("#otas").val();
         data.message = $(form).find("#message").val();
-        data.subject = $(form).find("#subject").val();
+        data.solution = $(form).find("#solution").val();
         data.region = $(form).find("#region").val();
         data.captchaResponse = captchaResponse;
 
@@ -242,7 +242,7 @@ function googleTranslateElementInit() {
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
             $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 7 business days for us to process your query.");
-            ga('send', 'event', 'contactus', data.subject);
+            ga('send', 'event', 'contactus', data.solution);
         }).fail(function(jqxhr){
             ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
         });
