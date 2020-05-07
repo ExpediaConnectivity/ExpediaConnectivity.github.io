@@ -23,7 +23,7 @@ function googleTranslateElementInit() {
 <hr>
 <h2 id="authentication" data-magellan-destination="authentication">Authentication</h2>
 <p>To perform authentication, Expedia QuickConnect tries to extract the username and password information that should be included in XML messages for AR. An element called “Authentication” is found under the root element of any type of request, and contains an attribute for username, and an attribute for password.</p>
-<pre><code class="lang-xml">&lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;ew67nk33&quot;/&gt;
+<pre><code class="lang-xml">&lt;Authentication username=&quot;&lt;username&gt;&quot; password=&quot;&lt;password&gt;&quot;/&gt;
 </code></pre>
 <p>Both the username and the password must be in clear text in the XML message for Expedia QuickConnect to read them, and grant access to the property.</p>
 <hr>
@@ -32,7 +32,7 @@ function googleTranslateElementInit() {
 <p><strong>RQ</strong></p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;AvailRateUpdateRQ xmlns=&quot;http://www.expediaconnect.com/EQC/AR/2011/06&quot;&gt;
-  &lt;Authentication username=&quot;EQCtest12933870&quot; password=&quot;ew67nk33&quot;/&gt;
+  &lt;Authentication username=&quot;&lt;username&gt;&quot; password=&quot;&lt;password&gt;&quot;/&gt;
   &lt;Hotel id=&quot;12933870&quot;/&gt;
   &lt;AvailRateUpdate&gt;
     &lt;DateRange from=&quot;2017-01-01&quot; to=&quot;2017-01-15&quot;/&gt;
