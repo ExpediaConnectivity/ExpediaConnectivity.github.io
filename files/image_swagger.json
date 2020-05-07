@@ -1,7 +1,7 @@
 {
 	"swagger": "2.0",
 	"info": {
-		"description": "The EPS Image API manages images for properties and rooms, allowing for different operations to list, create, update or remove image metadata. </br><br/>To start experimenting, please use your existing EQC credentials and properties. We've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 12933870.\n",
+		"description": "The EPS Image API manages images for properties and rooms, allowing for different operations to list, create, update or remove image metadata. </br><br/>To start experimenting, please use your existing EQC credentials and properties.\n",
 		"version": "1.0",
 		"title": "EPS Image API",
 		"contact": {

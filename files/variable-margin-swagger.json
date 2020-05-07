@@ -5,7 +5,7 @@
     "https"
   ],
   "info": {
-    "description": "The Accelerator API enables Expedia partners to read, create, edit and delete accelerators via an API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.</br><br/>To start experimenting, please use your existing EQC credentials and properties. We've also made the following test credentials available: EQCtest12933870 / ew67nk33 assigned to test property ID 3856296.",
+    "description": "The Accelerator API enables Expedia partners to read, create, edit and delete accelerators via an API, without having to use Expedia PartnerCentral (EPC) or contact their market manager.</br><br/>To start experimenting, please use your existing EQC credentials and properties.",
     "title": "Accelerator API",
     "version": "0.0.1"
   },

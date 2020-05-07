@@ -1,7 +1,7 @@
 {
 	"swagger": "2.0",
 	"info": {
-		"description": "The Gaia API allows you to interact with the Expedia geo-location database. </br><br/>To start experimenting, please use your existing EQC credentials and properties. We've also made the following test credentials available: EQCtest12933870 / ew67nk33.\n",
+		"description": "The Gaia API allows you to interact with the Expedia geo-location database. </br><br/>To start experimenting, please use your existing EQC credentials and properties. \n",
 		"version": "1.0",
 		"title": "Gaia API",
 		"contact": {
