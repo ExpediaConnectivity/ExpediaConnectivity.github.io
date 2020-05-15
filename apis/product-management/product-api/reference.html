@@ -47,12 +47,14 @@ function googleTranslateElementInit() {
 <li>Rate plans can be accessed as part of a room type (they belong to a room type): <code>/properties/{propertyResourceId}/roomTypes/{roomTypeResourceId}/ratePlans/{ratePlanResourceId}</code>. Rate plan resource ID is optional. If omitted, the list of active rate plans for that room type will be returned.</li>
 </ul>
 <h2 id="operations-required-to-certify-with-expedia-group" data-magellan-destination="operations-required-to-certify-with-expedia-group">Operations required to certify with Expedia Group</h2>
-<p>Partners certifying with Expedia Group will be required to support the following operations within Product API:</p>
+<p>Partners wanting to adopt Product API are required to successfully complete end to end certification with Expedia Group teams. Please see the below features which are mandatory for Product API certification:</p>
 <ul>
-<li>Single and/or multiple Room Type and Rate Plan GET (read) </li>
-<li>Single and/or multiple Room Type and Rate Plan POST (create)</li>
-<li>Room Type and Rate Plan update via PUT (full overlay) and/or PATCH (partial update)</li>
-<li>Rate Plan DEACTIVATE via PUT and/or PATCH and/or Rate Plan DELETE</li>
+<li>Ability to read (GET) data for multiple Room Types &amp; Rate Plans within a property</li>
+<li>Ability to read (GET) data for single Room Type &amp; Rate Plan (by ID) </li>
+<li>Ability to create (POST) single Room Type &amp; Rate Plan </li>
+<li>Ability to update/modify Room Type and Rate Plan via full overlay (PUT) and/or partial update (PATCH) </li>
+<li>Ability to set Rate Plan Status = inactive via PUT and/or PATCH </li>
+<li>Ability to DELETE Rate Plans</li>
 </ul>
 <hr>
 <div><table>

@@ -25,12 +25,14 @@ function googleTranslateElementInit() {
 <p>In order to be able to manage properties in production, partners need to be authorized by either Expedia, or the properties that chose to do business with their system.</p>
 <p>After a partner successfully registered with Expedia (see <a href="#/howtogetstarted">above section</a> for details on how to get started), properties can decide to select the partner and authorize them via Expedia PartnerCentral. When this happens, the partner will get an email notification. The email will contain the confirmation that the partner is now authorized to manage this hotel via API calls. It will also either contain a specific set of credentials for this property, or will indicate that the partner&#39;s unique account was authorized to manage this additional property. Whether a partner is given a unique account, or one per property, is decided at time of registration with Expedia.</p>
 <h2 id="understanding-expedia-s-minimum-requirements-to-certify" data-magellan-destination="understanding-expedia-s-minimum-requirements-to-certify">Understanding Expedia&#39;s minimum requirements to certify</h2>
-<p>Partners certifying with Expedia Group will be required to support the following operations within Product API:</p>
+<p>Partners wanting to adopt Product API are required to successfully complete end to end certification with Expedia Group teams. Please see the below features which are mandatory for Product API certification:</p>
 <ul>
-<li>Single and/or multiple Room Type and Rate Plan GET (read) </li>
-<li>Single and/or multiple Room Type and Rate Plan POST (create)</li>
-<li>Room Type and Rate Plan update via PUT (full overlay) and/or PATCH (partial update)</li>
-<li>Rate Plan DEACTIVATE via PUT and/or PATCH and/or Rate Plan DELETE</li>
+<li>Ability to read (GET) data for multiple Room Types &amp; Rate Plans within a property</li>
+<li>Ability to read (GET) data for single Room Type &amp; Rate Plan (by ID) </li>
+<li>Ability to create (POST) single Room Type &amp; Rate Plan </li>
+<li>Ability to update/modify Room Type and Rate Plan via full overlay (PUT) and/or partial update (PATCH) </li>
+<li>Ability to set Rate Plan Status = inactive via PUT and/or PATCH </li>
+<li>Ability to DELETE Rate Plans</li>
 </ul>
 <h2 id="understanding-expedia-lodging-data-model" data-magellan-destination="understanding-expedia-lodging-data-model">Understanding Expedia Lodging Data Model</h2>
 <p>In the Expedia lodging data model, properties, room types and rate plans are stored according to the following hierarchy:</p>
