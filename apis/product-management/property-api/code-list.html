@@ -327,8 +327,136 @@ function googleTranslateElementInit() {
 </tbody>
 </table>
 </div><h2 id="get-property-status-error-codes" data-magellan-destination="get-property-status-error-codes">Get Property Status Error Codes</h2>
-<p>None</p>
-<h2 id="get-property-details-codes" data-magellan-destination="get-property-details-codes">Get Property Details Codes</h2>
+<div><table>
+<thead>
+<tr>
+<th>Public Code</th>
+<th>Reason Code</th>
+<th>Messages</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidPropertyName</td>
+<td>Property name must be more than 3 characters. Submitted value:</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidCoordinates</td>
+<td>Latitude/longitude cannot be 0/0 OR an invalid range. Submitted values are:</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>NoValidAddresses</td>
+<td>No valid addresses found (line 1, city, and country code required)</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>NoValidPhoneNumbers</td>
+<td>At least 1 phone number is invalid for contacts, value cannot be NULL. Submitted value:</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidEmailAddress</td>
+<td>At least 1 email address is invalid for contacts, value cannot be NULL or contain multiple \&quot;@\&quot;. Submitted value</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingContactInfo</td>
+<td>Values for &#39;First&#39; and &#39;Last&#39; Names must be at least 2 characters. Submitted values:</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>NoContentImages</td>
+<td>Content image urls are not specified as absolute addresses (e.g. <a href="http://example.com/image/123.jpg">http://example.com/image/123.jpg</a>).</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>CurrencyCodeMismatch</td>
+<td>For Expedia Collect or Expedia Traveler Preference properties, the CurrencyCode and BillingCurrencyCode must match.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingContactInfo</td>
+<td>Required contact information is missing. ReservationManager must be present with a valid email or fax number.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingBillingCurrencyCode</td>
+<td>Billing currency code is required</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>UnsupportedLocation</td>
+<td>Unsupported location. Please contact your account manager for more details.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Finance profile with the appropriate country and currency cannot be found, please confirm this is set up properly.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Postal code is missing from this property. Please provide postal code to continue onboarding.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>State cannot be null for this property. Please provide a State to continue onboarding.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>The currency supplied in the finance profile does not match the currency set on the property.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Invalid characters have been entered for State. Please refer to the accepted characters list.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Finance profile is not configured. Please work with Expedia support to address this.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Address or Postal code is configured with characters that are not accepted. Please refer to the list of accepted characters.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>This currency is not supported for the finance profile configured. Please work with Expedia support to address this.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Finance profile with the appropriate country cannot be found, please confirm this is set up properly.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Finance profile with the appropriate country and currency cannot be found, please confirm this is set up properly.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidProperty</td>
+<td>Currency supplied at property level does not match the currency set on the finance profile.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Property not found: ExpediaId XX</td>
+</tr>
+<tr>
+<td>1014</td>
+<td>Property XX has already been submitted as expedia Id: XX.</td>
+</tr>
+</tbody>
+</table>
+</div><h2 id="get-property-details-codes" data-magellan-destination="get-property-details-codes">Get Property Details Codes</h2>
 <p>None</p>
 <h2 id="get-property-details-error-codes" data-magellan-destination="get-property-details-error-codes">Get Property Details Error Codes</h2>
 <p>None</p>
@@ -10853,6 +10981,12 @@ function googleTranslateElementInit() {
 </tr>
 <tr>
 <td>SHOJI_ROOM_DIVIDER</td>
+<td>No</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>WARDROBE_OR_CLOSET</td>
 <td>No</td>
 <td></td>
 </tr>
