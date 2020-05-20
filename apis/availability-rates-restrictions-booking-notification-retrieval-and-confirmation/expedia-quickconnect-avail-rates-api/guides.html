@@ -237,14 +237,14 @@ Multiple updates can be bundled into one single AR message by making use of the 
 &lt;/AvailRateUpdateRQ&gt;
 </code></pre>
 <h4 id="restricting-the-maximum-number-of-updates-per-message" data-magellan-destination="restricting-the-maximum-number-of-updates-per-message">Restricting the maximum number of updates per message</h4>
-<p>Expedia will restrict the max number of updates allowed in one message. Any request containing more than 3000 updates will be rejected by Expedia and no update will be applied. The error message returned will be:
-3107: Update exceeds allowable size - Maximum allowable size is 3000 updates.
-If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 3000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
-Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 3,000, Expedia doesn’t expect to see many messages coming close to this limit. 
+<p>Expedia will restrict the max number of updates allowed in one message. Any request containing more than 5000 updates will be rejected by Expedia and no update will be applied. The error message returned will be:
+3107: Update exceeds allowable size - Maximum allowable size is 5000 updates.
+If this happens, the EQC partner needs to make sure to revise its implementation of Expedia QuickConnect interface to prevent it from sending messages containing more than 5000 updates. Different strategies can be followed to break down messages into smaller sizes, such as breaking it down by date range or limiting the number of products included per message. 
+Expedia recommends designing a system that properly balances between number of messages generated and number of updates included in one message. While the limit of updates per message is 5,000, Expedia doesn’t expect to see many messages coming close to this limit. 
 If you are unsure on how to proceed, we recommend requesting help from Expedia through your Connectivity Account Manager.</p>
 <h3 id="date-ranges" data-magellan-destination="date-ranges">Date Ranges</h3>
 <p>Properties can manage their rates and availabilty for up to 2 years in the future. 
-We recommend that EQC partners be careful when making use of long date ranges within one AR RQ. Long date ranges imply many updates per message, and Expedia limits one message to 3,000 updates at most.</p>
+We recommend that EQC partners be careful when making use of long date ranges within one AR RQ. Long date ranges imply many updates per message, and Expedia limits one message to 5,000 updates at most.</p>
 <h3 id="minimum-and-maximum-lengths-of-stay" data-magellan-destination="minimum-and-maximum-lengths-of-stay">Minimum and Maximum Lengths of Stay</h3>
 <h4 id="arrival-vs-stay-through" data-magellan-destination="arrival-vs-stay-through">Arrival VS stay-through</h4>
 <p>Expedia supports two different methods to apply minimum and maximum length of stay restrictions.
@@ -738,8 +738,8 @@ Before looking for assistance on the Expedia QuickConnect discussion forum, the 
 </tr>
 <tr>
 <td>3107</td>
-<td>Update exceeds allowable size  - Maximum allowable size is 3000 updates</td>
-<td>The message contains too many different updates. Expedia limits the number of distinct updates in one message to 3000. Please refer to <a href="guides.html#/sendingupdatestoexpedia">Sending Updates To Expedia</a> and its sub sections for detailed information about Expedia recommendation for maximum number of updates per messages.</td>
+<td>Update exceeds allowable size  - Maximum allowable size is 5000 updates</td>
+<td>The message contains too many different updates. Expedia limits the number of distinct updates in one message to 5000. Please refer to <a href="guides.html#/sendingupdatestoexpedia">Sending Updates To Expedia</a> and its sub sections for detailed information about Expedia recommendation for maximum number of updates per messages.</td>
 </tr>
 <tr>
 <td>3108</td>
