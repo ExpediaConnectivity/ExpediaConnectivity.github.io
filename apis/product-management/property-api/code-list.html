@@ -339,12 +339,12 @@ function googleTranslateElementInit() {
 <tr>
 <td>OnboardingFailed</td>
 <td>InvalidPropertyName</td>
-<td>Property name must be more than 3 characters. Submitted value:</td>
+<td>Property name must be more than 3 characters. Submitted value:<example></td>
 </tr>
 <tr>
 <td>OnboardingFailed</td>
 <td>InvalidCoordinates</td>
-<td>Latitude/longitude cannot be 0/0 OR an invalid range. Submitted values are:</td>
+<td>Latitude/longitude cannot be 0/0 OR an invalid range. Submitted values are:<example></td>
 </tr>
 <tr>
 <td>OnboardingFailed</td>
@@ -354,17 +354,17 @@ function googleTranslateElementInit() {
 <tr>
 <td>OnboardingFailed</td>
 <td>NoValidPhoneNumbers</td>
-<td>At least 1 phone number is invalid for contacts, value cannot be NULL. Submitted value:</td>
+<td>At least 1 phone number is invalid for contacts, value cannot be NULL. Submitted value:<example></td>
 </tr>
 <tr>
 <td>OnboardingFailed</td>
 <td>InvalidEmailAddress</td>
-<td>At least 1 email address is invalid for contacts, value cannot be NULL or contain multiple \&quot;@\&quot;. Submitted value</td>
+<td>At least 1 email address is invalid for contacts, value cannot be NULL or contain multiple \&quot;@\&quot;. Submitted value:<example></td>
 </tr>
 <tr>
 <td>OnboardingFailed</td>
 <td>MissingContactInfo</td>
-<td>Values for &#39;First&#39; and &#39;Last&#39; Names must be at least 2 characters. Submitted values:</td>
+<td>Values for &#39;First&#39; and &#39;Last&#39; Names must be at least 2 characters. Submitted values:<example></td>
 </tr>
 <tr>
 <td>OnboardingFailed</td>
@@ -447,12 +447,108 @@ function googleTranslateElementInit() {
 <td>Currency supplied at property level does not match the currency set on the finance profile.</td>
 </tr>
 <tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredContactType</td>
+<td>[Reservation Manager, Alternate Reservation Manager] contact types are required. Please, provide a [Alternate Reservation Manager] contact type.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredContactType</td>
+<td>Could not map any CONTACT fields for property <example> since it has no Contacts!</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>LatLongNotMatched</td>
+<td>Lat/Long (<example>,<example>) do not match with the country code (<example>) sent in the request. Please ensure that the lat/long sent matches the country code sent.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>Duplicated</td>
+<td>Property <example> from <example> is marked as duplicate because you have provided another property <example> which appears to be the same with EID: <example>. If you think this is an error, please contact your Connectivity Account Manager.</td>
+</tr>
+<tr>
+<td>ContentValidationFailed</td>
+<td>InvalidPropertyName</td>
+<td>Hotel Name is too long and we support up to 255 characters</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredInfo</td>
+<td>Missing mandatory information addressLine1. The value (<example>) is either null or less than (5) characters! Cannot provide shell creation information</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>NoValidAddresses</td>
+<td>ADDRESS_COUNTRY_CODE mapping failed, COUNTRY_CODE is missing in RFD</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredInfo</td>
+<td>Onboarding failed. Please provide at least 3 images to onboard this property.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredInfo</td>
+<td>Onboarding failed, structure type must be present. Please provide a structure type.</td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>MissingRequiredInfo</td>
+<td>Number of bedrooms and Number of bathrooms are mandatory info. Please provide them.</td>
+</tr>
+<tr>
+<td>PropertyOnboardValidationFailed</td>
+<td>InvalidProperty</td>
+<td>Property is marked as not valid: HomeAwayBookable Property Id: <example>, Expedia Property Id: <example>.</td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>BookableProvidersExist, MultisourceNotSupported</td>
+<td></td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>BookableProvidersExist, NonbookableLocalInventoryNotSupported</td>
+<td></td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>BookableProvidersExist, NotApproved</td>
+<td></td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>PropertySuspended</td>
+<td></td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>PropertySuspended, BookableProvidersExist, NotApproved</td>
+<td></td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>PropertySuspended, BookableProvidersExist, MultisourceNotSupported</td>
+<td></td>
+</tr>
+<tr>
+<td>PendingReview</td>
+<td>PropertySuspended, BookableProvidersExist, NonbookableLocalInventoryNotSupported</td>
+<td></td>
+</tr>
+<tr>
+<td>OnboardingFailed</td>
+<td>InvalidPropertySettings</td>
+<td>Distribution models must be specified</td>
+</tr>
+<tr>
 <td>404</td>
-<td>Property not found: ExpediaId XX</td>
+<td>Property not found: ExpediaId <example></td>
+<td></td>
 </tr>
 <tr>
 <td>1014</td>
-<td>Property XX has already been submitted as expedia Id: XX.</td>
+<td>Property <example> has already been submitted as expedia Id: <example>.</td>
 </tr>
 </tbody>
 </table>
