@@ -34,7 +34,6 @@ function googleTranslateElementInit() {
             <h5>Please select what best describes what you are looking for</h5><br/>
             <input type="radio" name="partner-type" id="partner-type-3" value="provider"><label for="partner-type-3">Adoption of Expedia Group's lodging supply APIs (For Channel Managers, Property Management Systems and Central Reservation Systems)</label><br>
             <input type="radio" name="partner-type" id="partner-type-2" value="affiliate"><label for="partner-type-2">Integration with Expedia Group’s booking experience and access to supply</label><br>
-            <input type="radio" name="partner-type" id="partner-type-1" value="airline"><label for="partner-type-1">Integration of Airline on Expedia Group or Integration of Car Rental on Expedia Group</label><br>
             <input type="radio" name="partner-type" id="partner-type-4" value="activities"><label for="partner-type-4">Integration of Expedia Group's activities and ground transportation via APIs</label><br>
             <input type="radio" name="partner-type" id="partner-type-5" value="hotel"><label for="partner-type-5">I'm a property and I would like help</label><br>
 
@@ -83,10 +82,6 @@ function googleTranslateElementInit() {
         <div id="travel-affiliate" class="hidden">
                 <br>
                 Please visit <a href="https://expediapartnersolutions.com/">Expedia Partner Solutions (EPS)</a> for more information.
-        </div>
-
-        <div id="travel-airline" class="hidden">
-                Please contact <a href="mailto:transcon@expediagroup.com">transcon@expediagroup.com.</a>
         </div>
 
         <div id="travel-activities" class="hidden">
@@ -160,7 +155,7 @@ function googleTranslateElementInit() {
     function toggleGoButton() {
         var value = $('input[type=radio][name=partner-type]:checked').val();
 
-        if (value == "hotel" || value == "provider" || value == "affiliate" || value == "airline" || value == "activities") {
+        if (value == "hotel" || value == "provider" || value == "affiliate" || value == "activities") {
             $('#contact-go').removeClass("hidden");
         } else {
             $('#contact-go').addClass("hidden");
@@ -188,10 +183,6 @@ function googleTranslateElementInit() {
             $("#mainpart").addClass("six columns");
         } else if (partnerType === "affiliate") {
             $("#travel-affiliate").removeClass("hidden");
-            $("#intro").addClass("hidden");
-        } else if (partnerType === "airline") {
-            $("#travel-airline").removeClass("hidden");
-            $("#travel-airline").addClass("inner");
             $("#intro").addClass("hidden");
         } else if (partnerType === "activities") {
             $("#travel-activities").removeClass("hidden");
