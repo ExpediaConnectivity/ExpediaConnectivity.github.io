@@ -55,6 +55,10 @@ function googleTranslateElementInit() {
             All of our API documentation can be found in our <a href="/developer">developer section</a>.
             <br>
             If you are new to the Expedia Group, use the form to contact us. Alternatively, if you currently partner with us, please contact your Connectivity Account Manager directly.
+            <br>
+            <h5>Update:</h5>
+            <br>
+            Thank you for your interest in partnering with Expedia. We are currently unable to accept new registrations within EMEA. However, please register your interest and when we are able to accept new registrations we will be in contact. We apologize for any inconvenience this may cause.
         </div>
 
         <div id="hotel-contact" class="hidden">
@@ -232,7 +236,7 @@ function googleTranslateElementInit() {
             contentType: 'application/json; charset=UTF-8'
         }).done(function(response, textStatus, jqxhr) {
             console.log(response);
-            $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 7 business days for us to process your query.");
+            $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 14 business days for us to process your query.<br>For EMEA applications, your interest has been received. When partnerships reopen in this region, you will be contacted directly by a member of our team.");
             ga('send', 'event', 'contactus', data.solution);
         }).fail(function(jqxhr){
             ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
