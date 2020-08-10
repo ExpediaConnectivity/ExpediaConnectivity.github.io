@@ -3520,14 +3520,1292 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 </table>
 </div><p><a name="/definitions/ErrorCodes"></a></p>
 <h2 id="error-codes" data-magellan-destination="error-codes">Error codes</h2>
-<p>Renders the page describing the business error codes used by the API</p>
-<ul>
-<li>Method: <code>GET</code></li>
-<li>Url: <a href="https://services.expediapartnercentral.com/products/documentation/api/errors">https://services.expediapartnercentral.com/products/documentation/api/errors</a></li>
-<li>Consumes: <code>HTTP Request (GET)</code></li>
-<li>Produces: <code>text/html</code></li>
-</ul>
-<h4 id="success-responses-16" data-magellan-destination="success-responses-16">Success Responses</h4>
+<div><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Error Code</th>
+<th>Error Description</th>
+<th>Error &quot;Translation&quot;</th>
+<th>Partner Recommended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Auth</td>
+<td>1000</td>
+<td>Access denied: your account is not authorized to manage this property.</td>
+<td>Master User (required for Product API only, not ARI) is either not attached to the property or there is a cache delay on Expedia&#39;s end.</td>
+<td>Contact Expedia Central Ops team (Engagement and Integration) to confirm that Master User is attached to the property.</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>1001</td>
+<td>Missing or Invalid Username or Password.</td>
+<td>Master User (required for Product API only, not ARI) either does not have correct password in place, is not attached to the property or there is a cache delay on Expedia&#39;s end.</td>
+<td>Contact Expedia Central Ops team (Engagement and Integration) to confirm that Master User is attached to the property. If Expedia confirmed that the user is attached yet the error persists, confirm internally that password was not changed.</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>1003</td>
+<td>Access to this API with a non-API account is forbidden. Please use an API account.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2002</td>
+<td>There is a problem with the submitted payload. Please make sure it&#39;s a valid JSON message.</td>
+<td>This error means that the format of Product API Request message is incorrect. Such errors should not occur in post-certification as the format and all the supported values are hard coded and dependent on User Interface.</td>
+<td>Please contact your DEV/TECH team to confirm JSON formatting.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2003</td>
+<td>The property or element [] is or contains data that is invalid/unrecognizable in this model.</td>
+<td>This error means that the format of Product API Request message is incorrect. Such errors should not occur in post-certification as the format and all the supported values are hard coded and dependent on User Interface.</td>
+<td>Please contact your DEV team to confirm specified element against Expedia Public specification.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2004</td>
+<td>Invalid format: details.</td>
+<td>This error means that the format of Product API Request message is incorrect. Such errors should not occur in post-certification as the format and all the supported values are hard coded and dependent on User Interface.</td>
+<td>Please contact your DEV/TECH team to confirm JSON formatting.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2404</td>
+<td>Resource not found: the server has not found anything matching the Request-URI.</td>
+<td>This error means that the endpoint used by Product API to connect to Expedia is incorrect. Such error should not occur in Production Environment as endpoints are not frequently changed.</td>
+<td>Please contact your DEV team to verify the endpoint used in Product Automation; Contact Central Ops Integration team to confirm the correct URL</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2405</td>
+<td>Method not allowed: the method specified in the Request-Line is not allowed for the resource identified by the Request-URI. Allowed method(s):[]</td>
+<td>This error means that the action (create, read, modify) is not supported.</td>
+<td>Verify if it occurred on Create or Modify; Verify if occured on Room, Rate or Room amenities;</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2406</td>
+<td>Requested response media type unsupported: the resource identified by the request is unable to generate response entities of the media type requested by the Accept header attribute in the request.</td>
+<td>This error means that the format of the response message is unexpected/unsupported.</td>
+<td>Please contact your DEV team to verify configuration for Product Automation; Contact Central Ops Integration team to confirm the correct format.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2407</td>
+<td>The HTTP header field &quot;Accept&quot; with value &quot;text/html, application/rss+xml, application/atom+xml, text/xml, text/rss+xml&quot; could not be parsed.</td>
+<td></td>
+<td>Please contact your DEV team to verify configuration for Product Automation; Contact Central Ops Integration team to confirm the correct format.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2415</td>
+<td>Request media type unsupported: the server is refusing to service the request because the media type specified in request under the Content-Type header attribute is not supported by the requested resource for the requested method.</td>
+<td>This error means that the format of the request message is unexpected/unsupported.</td>
+<td>Please Contact your DEV team to verify configuration for Product Automation; Contact Central Ops Integration team to confirm the correct format.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2420</td>
+<td>Element <element name> has to be a valid date formatted as YYYY-MM-DD.</td>
+<td>This error means that one of the elements that require date ranges (Extra Person Fees, Booking/Travel Window, Service Fee, etc) utilizes incorrect/unsupported date format</td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2421</td>
+<td>Element <element> name has to be an integer.</td>
+<td>This error occurs when specified value is not a full number. This error could occur for various elements.</td>
+<td>Adjust specified in the error description element to be a full number.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2422</td>
+<td>Element <element name> has to be a double.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2423</td>
+<td>Invalid boolean value for element <element name>, has to be true or false.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2424</td>
+<td>Invalid value &lt;&gt; for the element &lt;&gt;</td>
+<td>This error indicates that an unsupported value has been included on an element that requires a specific list of values.</td>
+<td>Ensure that selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2425</td>
+<td>Invalid CORS request.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2426</td>
+<td>Value &#39;null&#39; can not be specified in Array: <element name>.</td>
+<td>This error indicates that blank value has been included on an element that requires a specific list of values.</td>
+<td>Ensure that selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>2993</td>
+<td>The API cannot be used for properties on per person pricing.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>4000</td>
+<td>Internal system error, please try again in a few minutes.</td>
+<td>This error can occur both on rate level and room level mapping, and can be due to various factors.</td>
+<td>Contact Expedia Central Ops team for Integration specialist to verify internal logs and confirm the source of error, advising you on the further actions.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>4002</td>
+<td>Internal system error, please try again in a few minutes.</td>
+<td>This error can occur both on rate level and room level mapping, and can be due to various factors.</td>
+<td>Contact Expedia Central Ops team for Integration specialist to verify internal logs and confirm the source of error, advising you on the further actions.</td>
+</tr>
+<tr>
+<td>Generic</td>
+<td>4100</td>
+<td>Internal System Error. Do not retry this request. Our support team was notified of the problem.</td>
+<td>This error can occur both on rate level and room level mapping, and can be due to various factors.</td>
+<td>Contact Expedia Central Ops team for Integration specialist to verify internal logs and confirm the source of error, advising you on the further actions.</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>3102</td>
+<td>Limit must be a number between 1 and 200</td>
+<td>This error occurs on GET (READ) requests only for the properties associated with Product API Account. Limit refers to the number of returned properties. Therefore, this error occurs when limit is below 0 or above 200.</td>
+<td>Ensure that the read request is set for less than 500 properties.</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>3103</td>
+<td>Offset must be a number greater or equal to 0</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Property</td>
+<td>3104</td>
+<td>Offset exceeds total number of properties that meet the search criteria.</td>
+<td>This error occurs on GET (READ) requests only for the properties associated with Product API Account. Limit refers to the number of returned properties,  this error occurs when offset exceeds the number of properties associated with the account.</td>
+<td>Ensure that the read request is set for the number of properties that does not exceed the total number of properties associated with Product API account.</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>3901</td>
+<td>Invalid status value: &lt;&gt;</td>
+<td>This error occurs on GET (READ) requests only for the properties associated with Product API Account. &quot;Status&quot; element can only be set to &quot;all&quot;. Therefore, this error occurs when &quot;status&quot; is set any other value but &quot;all&quot;.</td>
+<td></td>
+</tr>
+<tr>
+<td>Property</td>
+<td>3202</td>
+<td>Property not found. You specified a Property ID that does not exist or is inactive.</td>
+<td>This error occurs when request (READ, CREATE or MODIFY) is submitted with incorrect EID.</td>
+<td>Please contact Central Ops Engagement specialist to confirm Expedia ID for the affected property.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3300</td>
+<td>Unable to create rate plan, contract not available.</td>
+<td>This error occurs on the Properties connected via Product but not Property API when there are no active rate plans. For the properties connected on Product API only, first rate plan should be created manually as compensation is attached based on the last active rate plan of the specific type (Standalone, Package or Corporate).</td>
+<td>Contact Expedia or Create one rate plan manually for each rate plan type (Standalone, Corporate, Package).</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>2996</td>
+<td>Only Expedia Traveler Preference rate plans can be created for this property</td>
+<td>This error occurs only on properties set to Expedia Traveler Preference (ETP) and occurs when Standalone or Corporate rate plans are being created as ExpediaCollect or HotelCollect only.</td>
+<td>Ensure that failed rate plan is set as Expedia Traveler Preference (i.e. has Expedia Collect and Hotel Collect models).</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3026</td>
+<td>Age category [] is currently not defined as supported by your property. If you feel you got this error by mistake, please contact Expedia to resolve.</td>
+<td>This error is caused by the Age Category disparity between the room and its property settings.</td>
+<td>Contact Expedia Central Ops team (Engagement) to adjust Age Categories at Property Level.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3028</td>
+<td>Unsupported value add inclusion &#39;<value>&#39; for rate plan of type &#39;<rate plan type>&#39;</td>
+<td>This error occurs when Corporate-only Value Adds are sent on the Standalone/Package rate or the other way around.</td>
+<td>Please consult <a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html#valueaddinclusionsenum">https://expediaconnectivity.com/apis/product-management/product-api/reference.html#valueaddinclusionsenum</a> to verify which Rate Level Value adds are accepted for Standalone/Package rate and which Value Adds are accepted for Corporate rate.Access rate level setting and adjust Value Add.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3029</td>
+<td>The limit of <limit> Value Add Inclusions has been exceeded</td>
+<td>On Expedia, each rate plan is allowed only 3 Value Adds.</td>
+<td>Access rate level setting and adjust Value Add.Please consider utilizing some of the room amenities.<a href="https://expediaconnectivity.com/apis/product-management/product-api/reference.html#amenitycodes-detailcodes-and-values">https://expediaconnectivity.com/apis/product-management/product-api/reference.html#amenitycodes-detailcodes-and-values</a></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3030</td>
+<td>Incorrect setting provided in your input request: the requested rate plan configuration (&quot;TaxInclusive=false&quot;) doesn&#39;t match with the configuration of your property in Expedia system (TaxInclusive=true). If this is not an error from your part, please contact Expedia to address this issue</td>
+<td>This error only occurs on SELL properties. On SELL properties, Tax Inclusivity is configured both on property and product level (on NET properties, only on rate level). Therefore, pushed rate plan should have the same Tax Inclusivity status as property at Expedia.</td>
+<td>Verify results of PROPERTY READ (GET) message (taxInclusive will be listed as True).Ensure that rate plan level tax inclusivity is enabled.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3031</td>
+<td>AdditionalGuestAmounts should have at least one AdditionalGuestAmount defined.</td>
+<td>This error occurs when &quot;AdditionalGuestAmounts&quot; (i.e. Extra Person Fees) collection is included in the message without any values.</td>
+<td>However, if this error occurs, please contact your DEV/Tech support.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3032</td>
+<td>Missing age category on <count> age category(ies). It has to be set to &#39;Adult&#39;, &#39;ChildAgeA&#39;, &#39;ChildAgeB&#39;, &#39;ChildAgeC&#39;, &#39;ChildAgeD&#39; or &#39;Infant&#39;</td>
+<td>This error occurs when Extra Person Fees collection includes the value but does not specify the age category for said value.</td>
+<td>Access rate level settings and adjust Extra Person Fee to be specify age category for every defined fee.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3033</td>
+<td>AdditionalGuestAmount value must be between0.000 and 12000000.000 inclusively, with up to 3 decimal places.</td>
+<td>This error occurs when the value set for Extra Person Fees is outside of the allowed by Expedia range.</td>
+<td>Access rate level settings and adjust Extra Person Fee to be within the allowed range and decimal count.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3034</td>
+<td>AdditionalGuestAmount must provide both start and end dates if the date range is provided</td>
+<td>This error occurs when the date range for the Extra Person Fees is specified specified incorrectly.</td>
+<td>Access rate level settings and adjust Extra Person Fee to have both start and end date.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3035</td>
+<td>End date is not after start date for AdditionalGuestAmount</td>
+<td>This error occurs when the start date for Extra Person Fees is set after the end date.</td>
+<td>Access rate level settings and adjust Extra Person Fee to have both start and end date.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3036</td>
+<td>AdditionalGuestAmount computed Sell-Rate value exceeds max allowed value of 12000000.000. Sell Rate value is computed by adding compensation to the net rate provided.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3037</td>
+<td>Element distributionRules[].expediaId cannot be specified in a create request.</td>
+<td>distributionRules[].expediaId is Expedia Rate Plan ID and cannot be included in the CREATE messages.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the room already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3037</td>
+<td>Element <element name> cannot be specified in a create request.</td>
+<td>Certain elements (URL, compensation, manageable, etc.) are generated after rate is created and cannot be included in the CREATE message, only in UPDATE.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the room already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3037</td>
+<td>Element resourceId cannot be specified in a create request.</td>
+<td>This error occurs when CREATE message includes a rate plan ID, which means that (1) either CREATE is sent instead of the MODIFY or (2) ID of another rate is included in the message.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the room already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3038</td>
+<td>AdditionalGuestAmount percent must be between0.000 and 1.000 inclusively, with up to 3 decimal places.</td>
+<td>This error occurs when Extra Person Fees are set as percentage and the value is passed as % instead of the decimal: 50 (or 50%) instead of 0.5.</td>
+<td>If this error is encountered, please contact your DEV/TECH support.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3039</td>
+<td>Only one of &#39;Percent&#39; and &#39;Amount&#39; can be specified for additionalGuestAmounts for a particular age category.</td>
+<td>This error occurs when Extra Person Fee has both amount and percentage set up for the same age category.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3040</td>
+<td>AdditionalGuestAmount date ranges cannot overlap for the same age category.</td>
+<td>This error occurs when multiple Extra Person Fees are configured for the same age category, varying per date range.However, date ranges overlap.</td>
+<td>Ensure that the date ranges do not overlap.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3057</td>
+<td>Rate Plan name [] contains more than the maximum number of characters: 40.</td>
+<td>This error occurs when the rate plan name exceeds limitation set by Expedia (40 characters).</td>
+<td>Adjust rate plan name to be 40 characters or less.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3060</td>
+<td>Value add inclusion not provided</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3063</td>
+<td>Missing Cancel Policy</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3065</td>
+<td>Cancel Policy must specify 1 or 2 default penalties.</td>
+<td>This error occurs when no cancellation policy is selected yet &#39;cancelPolicy&#39; nod is included in the message.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3066</td>
+<td>Missing Penalty</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3067</td>
+<td>Deadline must be a number between 0 and 32767</td>
+<td>This error occurs when deadline (i.e. cancellation window) is set to be more than 32767 hours (approximately 1365 days).</td>
+<td>Adjust cancellation window to be less than 32767 hours.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3068</td>
+<td>Missing cancel policy penalty perStayFee</td>
+<td>This error occurs when rate plan message includes cancelPolicy but does not include perStayFee element. perStayFee can remain undefined and passed to Expedia as &quot;none&quot;; however, it cannot be omitted.</td>
+<td>However, if this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3069</td>
+<td>Cancel policy exception dates for different exceptions cannot overlap. Exception with startDate [] overlap with exception having startDate [].</td>
+<td>This error occurs when cancellation policy with exceptions is used. This error occurs when cancellation policy exceptions overlap.</td>
+<td>If this error occurs, ensure that cancellation exceptions do not overlap.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3070</td>
+<td>Cancel policy exception dates with endDate in the past cannot be provided. Cancel policy exception with endDate [null] should be changed or removed.</td>
+<td>This error occurs when cancellation policy was defined in the past and the update/create message does not translate the dates into the present range. Expedia does not allow creation of the rate plan with outdated cancellation policy exception.</td>
+<td>Access Cancellation Policy Settings.Ensure that cancellation policy exception applied to the rate plan in question is set to cover a present date range or remove outdated exception for the rate.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3071</td>
+<td>Missing mandatory element: distributionRules[].expediaId</td>
+<td>This message occurs when Expedia ID (i.e. rate plan ID) is missing from the update (PUT) message.</td>
+<td>Verify request message to see if rate plan ID is listed for both EC and HC pieces (if ETP rate). If not, perform a READ (GET) action and ensure that Rate Plan Exists and Rate ID is stored. If rate plan ID is not stored in your system and continuously is not included in the modify message:— Attempt to delete the rate plan and re-create.— Please notify your TECH/DEV team. If rate plan does not exist, send CREATE instead of the MODIFY.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3071</td>
+<td>Missing mandatory element: distributionRules[].compensation</td>
+<td>This error occurs on rate update message done in full overlay mode (PUT).When using full overlay mode (PUT), all information listed in read (GET) message should be returned with adjustments.Compensation is returned in read (GET) message. Compensation should not be adjusted.Therefore, this message occurs when Compensation is missing from the update (PUT) message.</td>
+<td>Verify request message to see if rate plan compensation is listed for both EC and HC pieces (if ETP rate). If not, perform a READ (GET) action and ensure that Rate Plan Exists. If compensation continuously is not included in the modify message:— Attempt to delete the rate plan and re-create.— Please notify your TECH/DEV team. If rate plan does not exist, send CREATE instead of the MODIFY.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3072</td>
+<td>Unsupported modification to element: distributionRules[].expediaId</td>
+<td>This message occurs when Expedia ID (i.e. rate plan ID) is missing from the update (PUT) message.</td>
+<td>Verify request message to see if rate plan ID is listed for both EC and HC pieces (if ETP rate). If not, perform a READ (GET) action and ensure that Rate Plan Exists and Rate ID is stored.— Ensure that stored ID belong to the failed rate plan; If rate plan ID is not stored in your system or continuously is modified in the modify message:— Attempt to delete the rate plan and re-create.— Please notify your TECH/DEV team. If rate plan does not exist, send CREATE instead of the MODIFY, excluding rate plan ID.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3072</td>
+<td>Unsupported modification to element: distributionRules[0].compensation</td>
+<td>Please see 3072.</td>
+<td>Please see 3072.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3073</td>
+<td>Too many cancel policy exceptions included (null). Maximum number of exceptions supported is 500.</td>
+<td>This error occurs when cancellation policy includes more than 500 cancellation exception ranges.Each range is defined by the start and end date.Please see error 3075 for the details of Cancellation Policy application Logic.</td>
+<td>Ensure that 500 exception ranges or less are set up for the failed rate.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3074</td>
+<td>End date is not after start date for CancelPolicy exception</td>
+<td>This error occurs when cancellation exception range is out of order: end date precedes start date.</td>
+<td>Ensure that Date Range of cancellation policy is in chronological order.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3075</td>
+<td>Exactly one penalty with deadline 0 should be provided in cancel policy default penalties list</td>
+<td>This error occurs when Cancellation Policy does not specify &quot;Inside Policy Window&quot;. Expedia always requires inside window policy (“deadline” set to 0) to be specified. When only “deadline” set to 0 is listed, the same penalty will be applied to the inside and outside window.</td>
+<td>Please contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3076</td>
+<td>Cancellation policy amount (<amount>) must be greater or equals to 0.000 with a maximum of 3 decimals.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3077</td>
+<td>Exactly one penalty with deadline 0 should be provided in each cancel policy exception</td>
+<td>Please see 3075 for the cancellation policy application logic.This error is caused by the same issue as in 3075 just occuring in &quot;exceptions&quot; instead of &quot;default&quot;.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3078</td>
+<td>Missing Distribution Rule Distribution Model</td>
+<td>This error occurs when &quot;partnerCode&quot; (i.e. rate plan code) is specified in the message, however, its &quot;distributionModel&quot; (i.e. Business Model) is not specified.Distribution Rule (a.k.a. Business Model) refers to Hotel or Expedia Collect model of the rate plan.On Expedia, Rate Plan cannot exist without having Distribution Rule associated with it.</td>
+<td>Ensure that Distribution (Business) model of the rate plan is specified.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3079</td>
+<td>Cancel Policy exceptions must specify 1 or 2 penalties.</td>
+<td>Please see 3065 error.  This error is caused by the same issue as in 3065 just occuring in &quot;exceptions&quot; instead of &quot;default&quot;. P lease see 3075 for the cancellation policy application logic.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3080</td>
+<td>Rate plan must specify a Distribution Rule.</td>
+<td>Distribution Rule (a.k.a. Business Model) refers to Hotel or Expedia Collect model of the rate plan.On Expedia, Rate Plan cannot exist without having Distribution Rule associated with it.Therefore, this error occurs when the rate plan is being created or updated (in full overlay mode) without Distribution Rules in place.</td>
+<td>Ensure that Distribution (Business) model of the rate plan is specified.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3081</td>
+<td>Rate plan distribution model does not match the property&#39;s distribution model</td>
+<td>This error occurs when rate plan model is not allowed per the property settings.</td>
+<td>Contact Expedia CentralOps Engagement specialist to confirm Property Distribution (a.k.a. Business) model.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3082</td>
+<td>Duplicate Distribution Model not accepted.</td>
+<td>This error can only occur on properties set to ExpediaTravelerPreference. This error occurs when rate plan has two codes defined with the same distribution model.</td>
+<td>Ensure that Distribution (Business) model of the rate plan is specified in a way that Expedia Collect and Hotel Collect are listed once.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3084</td>
+<td>Expedia Collect partner code is required and must not exceed <element name> characters</td>
+<td>This error occurs when rate is being created without rate plan code.</td>
+<td>Ensure that rate plan code is defined for the rate in question.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3085</td>
+<td>Hotel Collect partner code is required and must not exceed <element name> characters</td>
+<td>This error occurs when rate is being created without rate plan code.</td>
+<td>Ensure that rate plan code is defined for the rate in question.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3086</td>
+<td>Occupants for base rate can only be set for PerDayPricing rate plans, and its value should be greater than 0 and less than the room&#39;s maximum occupants</td>
+<td>For properties with Per Day Pricing, Occupants for base rate define the occupancy levels in the rate - remaining occupancy level would require Extra Person Fee.Therefore, &quot;Occupants for base rate&quot; can only be used for Per Day Pricing properties.Therefore, this error occurs when this setting is used on the property with Occupancy Based Pricing.</td>
+<td>Verify Pricing Model of the property to ensure that it is correct (perform Property READ (GET)); Verify Pricing Model of the rate plan;— If Property should be Per Day Pricing, adjust Pricing model of the rate; If Property should be Occupancy Based, remove &quot;occupants for base rate&quot;.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3087</td>
+<td>Rate Plan Partner code &#39;<element name>&#39; contains unsupported character(s). Accepted characters are a-z, A-Z, 0-9, &#39;.&#39;, &#39;_&#39; and &#39;-&#39;.</td>
+<td>This error occurs when rate plan code utilizes unsupported characters (special characters).</td>
+<td>Ensure that rate plan code utilizes only characters indicated in the Error Description.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3088</td>
+<td>Expedia Traveler Preference (ETP) requires the manageable flag being set to the <distribution model> Distribution Rule</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3090</td>
+<td>ExpediaCollect and HotelCollect Rate plans must define only one distribution rule. Expedia Traveler Preference Rate plans require two: one of each distribution model</td>
+<td>This error occurs only on properties set to Expedia Traveler Preference.This error only occurs when more than two rate plan codes are listed in the rate plan message.On Expedia, rate plans are only allowed to have two codes: one set to Expedia Collect and one - to Hotel Collect.Including 3rd rate plan code for the same rate with the duplicated distribution rule will trigger such error.</td>
+<td>Ensure that only two rates are paired for the rate plan in question.If that&#39;s the case, contact your DEV team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3091</td>
+<td>Current rate plan distribution model is ExpediaCollect and HotelCollect and cannot be modified</td>
+<td>This error occurs when distribution model of the rate is being modified by the Product API call.Modifications of the distribution model are not supported via Product Automation.</td>
+<td>Verify if rate plan is PAIRED or EC only in CRS/PMS; Contact Expedia Engagement specialist to confirm that distribution model (a.k.a. business model) in Expedia matches CRS</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3092</td>
+<td>Current rate plan distribution model is ExpediaCollect and cannot be modified</td>
+<td>Please see 3091.</td>
+<td>Please see 3091.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3093</td>
+<td>Compensation provided in request does not correspond to your property contract.</td>
+<td>This error occurs when compensation is included in the message and does not match Property&#39;s contract. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3094</td>
+<td>Compensation percent is required and must be equal to or greater than null and smaller than 0.99.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message but compensation information is omitted. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3095</td>
+<td>Compensation minAmount must be greater or equal to 0 for ExpediaCollect distribution model and must be empty for HotelCollect distribution model.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when minimum compensation amount is included for Hotel Collect distribution model. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3096</td>
+<td>Compensation exception dateStart is required.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception start date is not included in the call. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3097</td>
+<td>Compensation exception dateEnd is required and must not be prior to dateStart.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception end date is not included in the call. Compensation should not be included in POST (Create) message at all.When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3098</td>
+<td>Compensation exception percent is required and must be between 0 and 1.0.</td>
+<td>See error 3094. Error 3098 occurs because of the same behaviour as in 3094 when it occurs in &quot;exceptions&quot; collection instead of the default.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3099</td>
+<td>Compensation exception minAmount must be greater or equal to 0 for ExpediaCollect distribution model and must be empty for HotelCollect distribution model.</td>
+<td>See error 3095.Error 3099 occurs because of the same behaviour as in 3094 when it occurs in &quot;exceptions&#39;&quot; collection instead of the default.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3100</td>
+<td>Compensation exception day of week: &#39;day&#39; is required and must be &#39;true&#39; or &#39;false&#39;.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception collection does not include all 7 days of the week. Compensation should not be included in POST (Create) message at all.W hen compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3101</td>
+<td>Compensation exception date ranges must not overlap.</td>
+<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exceptions ranges have overlapping dates. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>If this error is encountered, contact your DEV/TECH team.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3105</td>
+<td>Invalid Room Type/Rate Plan association specified. Rate Plan ID [] does not belong to room type ID []; it belongs to room type ID [].</td>
+<td>This error occurs when Expedia Rate Plan ID stored in CRS/PMS Mapping Table does not belong to the Expedia room type ID stored in CRS/PMS mapping table</td>
+<td>Trigger a FETCH to update CRS Mapping table with accurate Expedia IDs. Verify that ID was updated for the product in question. Trigger MODIFY. If this did not help, contact Expedia Engagement specialist to confirm product IDs.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3106</td>
+<td>Element minLOSDefault has to be a number between 1 and 28.</td>
+<td>Expedia does not support Length of Stay longer than 28 nights.Length of stay should be defined by the full number (i.e. without decimals).Therefore, this error occurs when minimum Length of Stay setting is set to 0 or 29+.</td>
+<td>Adjust minimum Length of Stay to be the value between 1 and 28.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3107</td>
+<td>Element maxLOSDefault has to be a number between 1 and 28.</td>
+<td>Expedia does not support Length of Stay longer than 28 nights.Length of stay should be defined by the full number (i.e. without decimals).Therefore, this error occurs when maximum Length of Stay setting is set to 0 or 29+.</td>
+<td>Adjust maximum Length of Stay to be the value between 1 and 28.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3108</td>
+<td>minLOSDefault cannot be greater than maxLOSDefault.</td>
+<td>Expedia does not support Length of Stay longer than 28 nights.Length of stay should be defined by the full number (i.e. without decimals).Therefore, this error occurs when minimum Length of Stay exceeds maximum Length of Stay.</td>
+<td>Adjust minimum and/or maximum Length of Stay for the minimum LOS to be smaller than maximum LOS.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3110</td>
+<td>You reached the maximum number of active rate plans for your property.</td>
+<td>On Expedia, by default, property can have up to 200 active rates.This error occurs when Create attempt is sent to 201 rate.</td>
+<td>Inactivate or Delete unused rates (removed their association to Expedia Channel). If all rates must remain active, contact CentralOps Engagement specialist to increase product limit.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3111</td>
+<td>Rate plan cannot be deleted because it is the child of rate plan [parent rate plan id].</td>
+<td>This error only occurs on the properties utilizing Rate Plan Linkage.Each Rate Plan Linkage requires one parent rate and at least one child rate.In this pairing, child rate is in sync with the parent rate and therefore cannot be deleted first.</td>
+<td>Deactivate parent rate to deactivate child. If only child rate should be removed, contact Expedia to disable rate plan linkage, and then send delete the rate in question.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3112</td>
+<td>Rate plan cannot be updated because it is the child of rate plan [], and must be kept in sync with it. To make change to this rate plan, modify its parent and changes will be cascaded down automatically.</td>
+<td>This error only occurs on the properties utilizing Rate Plan Linkage.Each Rate Plan Linkage requires one parent rate and at least one child rate.In this pairing, child rate is in sync with the parent rate.</td>
+<td>Modify parent rate to modify child.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3204</td>
+<td>Rate plan ID not found. You specified a rate plan ID that does not exist for this property.</td>
+<td>Similarly to the error 3105, 3204 is triggered when rate plan Expedia ID is stored in CRS/PMS mapping table under an incorrect, in this case, hotel.For instance: in CRS/PMS, hotel code ABC has rate DEF; In Expedia, hote code ABC got assigned ID 123 and rate DEF under this hotel got assigned ID 456. However, in CRS/PMS mapping table, ID 456 got saved for rate DEF under the hotel XYZ which has an ID 789. Therefore, update call is sent to hotelID-789/roomID1/rateID-456 instead of hotelID-123/roomID2/rateID-456.</td>
+<td>Trigger a FETCH to update CRS Mapping table with accurate Expedia IDs. Verify that ID was updated for the product in question. Trigger MODIFY. If this did not help, contact Expedia Engagement specialist to confirm product IDs.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3235</td>
+<td>OccupancyBasedPricingByLengthOfStay cannot be used for non-ARI properties.</td>
+<td>EQC AR properties only offer Occupancy Based, Per Day, Per Day with Day of Arrival or Per Day with Length of Stay pricing.Occupancy Based Pricing with Length of Stay cannot be enabled on EQC AR properties but only ARI.</td>
+<td>Contact Expedia to confirm if the property is EQC or ARi;— If the property is EQC and this is the correct setting, adjust rate to be Occupancy Based;— If the property is EQC but should be ARI, work with Expedia to change property settings.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3236</td>
+<td>Incompatible pricing models. <Rate plan pricing model> rate plans cannot be created for <Property pricing model> properties.</td>
+<td>On Expedia, Property Level pricing model dictates which rate level pricing models are supported. Properties set to Per Day Pricing allow rate plans with PerDayPricing, PerDayPricingByDayOfArrival or PerDayPricingByLengthOfStay model. Properties set to OccupancyBasedPricing, OccupancyBasedPricingByDayOfArrival or OccupancyBasedPricingByLengthOfStay model.(OccupancyBasedPricingByLengthOfStay is not allowed for EQC AR properties).Therefore, this error occurs when Per Day Pricing rates are being created on Occupancy Based properties or the other way around.</td>
+<td>Perform a property READ to confirm Property Level Pricing Model. If the model is incorrect, contact Expedia perform the conversion.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3237</td>
+<td><bookDate> must be between 1900-01-01 and 2079-06-06.</td>
+<td>Travel Window is defined by Travel Start Date and Travel End Date. Booking Window is defined by Booking Start Date and Travel End Date.Both windows cannot start before 1900-01-01 and end after 2079-06-06.</td>
+<td>Adjust booking start or end date, depending on the date noted in Error Description, to be within the specified range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3238</td>
+<td>bookDateEnd has to be on the same day or after bookDateStart.</td>
+<td>This error occurs when rate plan level Booking Window dates are out of order. Travel Window is defined by Travel Start Date and Travel End Date.</td>
+<td>Adjust booking window for the booking start date to occur before booking end date.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3239</td>
+<td><travelDate> must be between 1900-01-01 and 2079-06-06.</td>
+<td>Travel Window is defined by Travel Start Date and Travel End Date. Booking Window is defined by Booking Start Date and Travel End Date.Both windows cannot start before 1900-01-01 and end after 2079-06-06.</td>
+<td>Adjust travel start or end date, depending on the date noted in Error Description, to be within the specified range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3240</td>
+<td>travelDateEnd has to be on the same day or after travelDateStart.</td>
+<td>This error occurs when rate plan level Booking Window dates are out of order. Travel Window is defined by Travel Start Date and Travel End Date.</td>
+<td>Adjust travel window for the travel start date to occur before booking end date.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3241</td>
+<td>travelDateEnd has to be on the same day or after bookDateEnd.</td>
+<td>This error occurs when rate plan level Travel Window ends before the Booking Window. Travel Window is defined by Travel Start Date and Travel End Date.</td>
+<td>Verify Travel Window for the rate in question; Verify Booking Window for the rate in question; Adjust the end dates in order for Booking End Date to be before or on the same date as Travel End Date.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3242</td>
+<td>Element maxAdvBookDays has to be a number between 0 and 500.</td>
+<td>This error occurs when Advance Booking window is incorrectly set.Expedia has a limit on Advance Booking Window - the minimum accepted value is 0 days and maximum - 500 days.</td>
+<td>Adjust &quot;Maximum Advance Booking&quot; setting to be within the 0 - 500 days range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3243</td>
+<td>minAdvBookDays cannot be greater than maxAdvBookDays.</td>
+<td>&quot;AdvBookDays&quot; defines Advance Purchase restriction, i.e. how far into the future the rate can be booked.Minimum Advance Purchase cannot be a higher value than Maximum Advance Purchase.The lowest acceptable value is 0, the highest - 500.</td>
+<td>Adjust minimum and/or maximum Advance Purchase settings for the min. value to be lower than max. value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3250</td>
+<td>Only 1 taxable and 1 non-taxable Per Stay Service Fees can be specified.</td>
+<td>On Expedia, Per Stay service fees can have both taxable and non-taxable charges. However, the same message cannot include more than one taxable and more than one non-taxable value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3251</td>
+<td>amountPerNight must not be negative.</td>
+<td>This error occurs when Service Fee value for Per Night charge is set to a negative value.Service Fees should only be positive numbers.</td>
+<td>Adjust Per Night Service Fee Charge to be a positive value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3252</td>
+<td>amountPerNight must not be greater than 12000000.</td>
+<td>This error occurs when Service Fee for Per Night charge exceeds maximum allowed value.</td>
+<td>Adjust Per Night Service Fee Charge to be within specified, allowed range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3253</td>
+<td>amountPerStay must not be negative.</td>
+<td>This error occurs when Service Fee value for Per Stay charge is set to a negative value.Service Fees should only be positive numbers.</td>
+<td>Adjust Per Stay Service Fee Charge to be a positive value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3254</td>
+<td>amountPerStay must not be greater than 12000000.</td>
+<td>This error occurs when Service Fee for Per Stay charge exceeds maximum allowed value.</td>
+<td>Adjust Per Stay Service Fee Charge to be within specified, allowed range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3255</td>
+<td>percent per stay must not be negative.</td>
+<td>This error occurs when Service Fee for Per Stay charge is set to percentage and the value is negative.Per Stay Fee does not support negative values.</td>
+<td>Adjust Per Stay Service Fee Charge to be a positive value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3256</td>
+<td>Percent per stay must not be greater than 1.</td>
+<td>This error occurs when Service Fee is set as percentage and the value is passed as % instead of the decimal: 50 (or 50%) instead of 0.5.</td>
+<td>Ensure that percentage value is entered.If this error is encountered, please contact your DEV/TECH support to confirm why the value was not translated correctly.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3258</td>
+<td>Per Person service fees &#39;amountPerNight&#39; must not be negative.</td>
+<td>This error occurs when Service Fee for Per Person charge is set to the negative value. Fees do not support negative values.</td>
+<td>Adjust Per Person Fees to be a positive value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3259</td>
+<td>Per Person service fees &#39;amountPerNight&#39; must not be greater than 12000000.</td>
+<td>This error occurs when Service Fee for Per Person charge exceeds maximum allowed value.</td>
+<td>Adjust Per Person Service Fee Charge to be within specified, allowed range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3260</td>
+<td>Per Person service fees &#39;amountPerStay&#39; must not be negative.</td>
+<td>This error occurs when Service Fee for Per Person charge is set to the negative value. Fees do not support negative values.</td>
+<td>Adjust Per Person Fees to be a positive value.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3261</td>
+<td>Per Person service fees &#39;amountPerStay&#39; must not be greater than 12000000.</td>
+<td>This error occurs when Service Fee for Per Person charge exceeds maximum allowed value.</td>
+<td>Adjust Per Person Service Fee Charge to be within specified, allowed range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3262</td>
+<td>Per Person service fees must define an age category.</td>
+<td>This error occurs when at least one Per Person Service Fee is missing Age Category.</td>
+<td>Ensure that each Service Fee Per Person is set for a specific age category.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3263</td>
+<td>Per Person service fees must define both start and end dates.</td>
+<td>This error occurs when at least one Per Person Service Fee is missing date ranges.</td>
+<td>Ensure that each Service Fee Per Person is set for a specific date range.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3264</td>
+<td>Per Person service fees must define an end date that is after or equal to the start date.</td>
+<td>This error occurs when at least one Per Person Service Fee is set for out of order date range, for instance, with Start Date set to October and End Date set to September of the same year.</td>
+<td>Ensure that each Service Fee Per Person is set for a specific date range specified in chronological order.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3265</td>
+<td>Per Person service fees start date cannot be after or equal to 2079-06-06.</td>
+<td>This error occurs when Per Person Service Fee is used. The maximum allowed date for both Start and End date is 2079-06-06.</td>
+<td>Ensure that Per Person Service Fee start date is before 2079-06-06.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3729</td>
+<td>Expedia Collect partner code is already used under this room type by rate plan ID: []</td>
+<td>This error occurs when the rate plan that already exists on EPC under the specified room is being mapped anew under the same room.</td>
+<td>Perform read (GET); Verify if Expedia Rate Plan ID was saved in CRS/PMS the Mapping Table; If Expedia Rate Plan ID was saved, rate modified will be triggered instead of create;— If Expedia Rate Plan ID was not saved, reach out to Central Ops Engagement specialist at Expedia to provide you with the rate plan ID. Enter this ID in the Mapping table manually.Once ID was saved in the mapping table, modify message can be triggered.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3730</td>
+<td>Hotel Collect partner code is already used under this room type by rate plan ID: []</td>
+<td>This error occurs when the rate plan that already exists on EPC under the specified room is being mapped anew under the same room.</td>
+<td>Perform read (GET); Verify if Expedia Rate Plan ID was saved in CRS/PMS the Mapping Table; Verify if Expedia Rate Plan ID was saved in Channel Code in the Mapping Table;— If Expedia Rate Plan ID was saved, rate modified will be triggered instead of create;— If Expedia Rate Plan ID was not saved, reach out to Central Ops Engagement specialist at Expedia to provide you with the rate plan ID. Enter this ID in the Mapping table manually.Once ID was saved in the mapping table, modify message can be triggered.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3732</td>
+<td>You must have at least one active standalone rate plan before you may create/enable an active NON- standalone rate plan.</td>
+<td>This error occurs when a different rate type (Corporate, Package) is being activated before the standalone rate.</td>
+<td>Verify the rate plan type of the failed rate; If this rate should be NON-standalone, create a standalone rate first.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3733</td>
+<td>Standalone rate plan could not be deactivated or deleted. A room type having active Package or Corporate rate plans should have at least one active standalone rate plan.</td>
+<td>This error occurs when standalone rate is being deactivated before all other rate types (Corporate, Package) are inactivated under the same room.</td>
+<td>Verify the rate plan type of the failed rate; If this rate should be standalone rate, set other NON-Standalone rates under the indicated room to inactive first. If NON-Standalone rates should remain active:— first create new standalone rate,— then, deactivate failed standalone rate.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3734</td>
+<td>Package rate plan cannot have HotelCollect business model.</td>
+<td>Package Rates can only have Expedia Collect (a.k.a. Merchant) distribution (i.e. business) model.</td>
+<td>Ensure that Package Rate is not set as Expedia Traveler Preference rate (i.e. does not have Hotel Collect model).</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3735</td>
+<td>Cannot enable Corporate or Package rate plan until the room type has at least one active Standalone rate plan.</td>
+<td>This error occurs when Corporate or Package rates are attempting to be mapped without Standalone rate being mapped first.</td>
+<td>in CRS/PMS mapping table, verify that Standalone rate for the room in question is mapped to Expedia: If there is no rate plan ID displayed in the mapping table for this rate, trigger a create; Once standalone rate plan was created on EPC for this room, trigger a create for the Corporate/Package rate that previously failed.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3740</td>
+<td>Cannot set flag depositRequired for ExpediaCollect distribution model.</td>
+<td>This error occurs when Create/Modify rate plan message includes &quot;depositRequired&quot; set to &quot;true&quot; for Expedia Collect rate plan. On Expedia, deposit cannot be enabled for Expedia Collect rate.</td>
+<td>If it is encountered: Verify if rate is intended to be EC only; If it is not, — Either add HC code to the rate to create Expedia Traveler Preference Rate and repush;— OR convert the rate into HC rate plan. If it is, remove deposit information.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3741</td>
+<td>Cannot set flag depositRequired to &#39;true&#39; on a property that has no deposit policy.</td>
+<td>This error occurs when deposit policy is being enabled on the rate plan before it is created for the property.</td>
+<td>Ensure that property has Deposit Policy.If not:— Create Deposit Policy via Deposit API or EPC first.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3742</td>
+<td>Your property currently has active rate plans using a different pricing model than the one provided in the request. Before we can create rate plans with the provided pricing model, please either delete all existing active rate plans using the previously defined pricing model, or contact Expedia to perform a conversion.</td>
+<td>Pricing Model defined on the Property Level determines the allowed Rate Plan Level Pricing Models. This error occurs when property was converted from one model to another without deactivation of the rates. After property conversion, rates with the original Pricing Model should be deactivated and remapped.</td>
+<td>Set properties with original Pricing Model to inactive (or Delete them); Create rates with the new Pricing Model anew.or contact Expedia Engagement team to assist you with inactivation.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3902</td>
+<td>Cancel Policy penalties can&#39;t have the same deadline</td>
+<td>One penalty should be defined for the deadline 0; Multiple penalties cannot be defined for the same deadline. See error 3075 for the cancellation logic application.</td>
+<td>If this error is encountered, please contact your DEV/TECH support.</td>
+</tr>
+<tr>
+<td>Rate Plan</td>
+<td>3903</td>
+<td>Cancel Policy penalties can&#39;t have the same deadline in exceptions</td>
+<td>Please see error 3902 which refers to the &quot;default&quot; cancellation policy settings. Error 3903 occurs for the same scenario just in the cancellation exceptions.</td>
+<td>If this error is encountered, please contact your DEV/TECH support.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3113</td>
+<td>Duplicate bedding option found.</td>
+<td>This error occurs when Bedding type is listed twice. Expedia allows more than one bedding of the same type for one room but this should be defined in quantity of bedding.</td>
+<td>Please ensure that the total sum of the beds of the same type if specified. Please contact your DEV/TECH team to ensure that the &quot;translation&quot; logic from the UI to the message is correct.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3114</td>
+<td>Duplicate extra bedding found.</td>
+<td>Please see error 3113. Error 3114 applies the same logic, just to &quot;Extra Bedding&quot;.</td>
+<td>Please ensure that the total sum of the beds of the same type if specified. Please contact your DEV/TECH team to ensure that the &quot;translation&quot; logic from the UI to the message is correct.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3203</td>
+<td>Room type ID not found. You specified a room type ID that does not exist for this property.</td>
+<td>On Expedia: — Room Type ID is a unique value assigned to one specific Hotel. This error occurs when Expedia Room Type ID stored in CRS/PMS Mapping Table does not belong to the Expedia Hotel ID stored in CRS/PMS mapping table.F</td>
+<td>Trigger a FETCH to update CRS Mapping table with accurate Expedia IDs. Verify that ID was updated for the product in question. Trigger MODIFY. If the above did not help, contact Expedia Engagement specialist to confirm product IDs. Update product IDs in CRS/PMS mapping table manually.If this error is returned on CREATE message: Verify the room code is saved in CRS/PMS and included in the message;— If not, please add room code and retrigger the message.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3205</td>
+<td>Invalid common name for room type.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3206</td>
+<td>Room type partner code is required and must not exceed [] characters.</td>
+<td>This error occurs when create message does not contact room code.</td>
+<td>Ensure that new room has its code set in place.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3207</td>
+<td>Room Type ID is not associated to that Property ID.</td>
+<td>On Expedia: — Room Type ID is a unique value assigned to one specific Hotel. This error occurs when Expedia Room Type ID stored in CRS/PMS Mapping Table does not belong to the Expedia Hotel ID stored in CRS/PMS mapping table.F</td>
+<td>Trigger a FETCH to update CRS Mapping table with accurate Expedia IDs. Verify that ID was updated for the product in question.Trigger MODIFY.If the above did not help, contact Expedia Engagement specialist to confirm product IDs. Update product IDs in CRS/PMS mapping table manually.If this error is returned on CREATE message: Verify the room code is saved in CRS/PMS and included in the message;— If not, please add room code and retrigger the message.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3208</td>
+<td>Invalid smoking preference &#39;<smoking preference>&#39;.</td>
+<td>Smoking Preferences have only two options: Smoking and Non-Smoking. Therefore, this error occurs when smoking is set to a different value.</td>
+<td>Ensure that only one option is selected for the room, either smoking or non-smoking.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3210</td>
+<td>The number of adults cannot be greater than the total max occupancy.</td>
+<td>This error occurs for BTO V2 Product API format (i.e. not supporting bedrooms and living areas). Maximum Occupancy has to be equal or greater than Maximum Adults.</td>
+<td>Ensure that maximum occupancy equals or is greater than maximum adults.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3211</td>
+<td>The min age of category [] must not exceed min age of category [].</td>
+<td>This error occurs when two Age categories have overlapping ages.</td>
+<td>Ensure that each age category has its own minimum age value.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3212</td>
+<td>Age category &#39;null&#39; cannot be specified more than once.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3213</td>
+<td>Age category &#39;Adult&#39; must be specified.</td>
+<td>This error occurs when Child Age categories are specified without specifying Adult Age category.</td>
+<td>Ensure that Adults have minimum age value defined.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3215</td>
+<td>Missing mandatory smoking preferences.</td>
+<td>On Expedia, Smoking Preference should always be defined for each room type. Therefore, this error occurs if smoking preference element is not included in the message.</td>
+<td>Ensure that smoking preference is selected. Verify if your DEV/TECH team if default value can be included in the message if nothing is selected in the User Interface.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3217</td>
+<td>Room Type Resource ID cannot be specified in a create request, it must be empty or missing.</td>
+<td>Resource ID is Expedia Room Type ID.This ID is generated after the room is created. Therefore, this error occurs when CREATE message includes this ID, which means that (1) either CREATE is sent instead of the MODIFY or (2) ID of another room is included in the message.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Room ID is stored in the system. Verify if the room already exists under the specified property.— If CREATE message was intended (room does not exist under the specified room):Please verify with your DEV/TECH team why Room ID is included in the CREATE message.— If MODIFY message was intended (room does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3218</td>
+<td>The Room type name is missing.Invalid &#39;name&#39;. Must include either &#39;attributes&#39; or &#39;value&#39; for room name generation.</td>
+<td>This error occurs when room type name is not specified.</td>
+<td>Ensure that at least room type is populated.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3219</td>
+<td>Type of room is missing or invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;typeOfRoom&quot; is not included in the message or it is included but is listing unsupported value.</td>
+<td>Ensure that room type is populated for the failed room.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3220</td>
+<td>Room class is invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;roomClass&quot; is included in the message but is listing an unsupported value.</td>
+<td>Ensure that supported by Expedia Room Class is selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3221</td>
+<td>Bedroom details is missing or invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;bedroomDetails&quot; is included in the message but is listing an unsupported value.</td>
+<td>Ensure that bedroom count is set to a full value.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3222</td>
+<td>Featured amenity is invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;featuredAmenity&quot; is included in the message but is listing an unsupported value.</td>
+<td>Ensure that Featured Amenity is set to the supported by Expedia value or is not selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3223</td>
+<td>View is invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;view&quot; is included in the message but is listing an unsupported value.</td>
+<td>Ensure that View is set to the supported by Expedia value or is not selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3224</td>
+<td>Area is invalid, please provide a value defined by the API specification.</td>
+<td>This error occurs when &quot;area&quot; is included in the message but is listing an unsupported value.</td>
+<td>Ensure that area is set to the supported by Expedia value or is not selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3225</td>
+<td>Custom label cannot exceed 37 characters.</td>
+<td>Custom Label is a free text and cannot exceed 37 characters.</td>
+<td>Ensure that custom label does not exceed 37 characters.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3226</td>
+<td>The number of children has to be at most 1 less than the total max occupancy.</td>
+<td>This error occurs when the number of allowed children is higher than total allowed occupancy. For instance:Maximum occupancy (all people) is 6 yet maximum children number is set to 7.</td>
+<td>Access room level settings in CRS/PMS; Verify maximum allowed occupants; Adjust maximum allowed children to be at least 1 occupant less than the max. total occupancy.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3227</td>
+<td>Age category &#39;Adult&#39; maximum occupants must be at least 1.</td>
+<td>This error occurs when Adult occupancy category is specified without a value or with &quot;0&quot;.</td>
+<td>Ensure that maximum occupancy for Adults is specified.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3228</td>
+<td>When providing room size/floor size, both squareFeet and squareMeters values have to be provided.</td>
+<td>This error occurs when room/floor size is only listed in sq. meters or sq. feets, both formats should be included.</td>
+<td>Ensure that room size is either not utilized or both sq. meters and sq. feet are specified.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3229</td>
+<td>RoomSize squareMeters should be a whole number between 1 and 100000</td>
+<td>This error occurs when sq. feet identifying room size are sent with decimals.</td>
+<td>• Access room level settings in CRS/PMS; Verify room size; Adjust square feet to be a whole number.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3230</td>
+<td>A maximum of <maximum room views> views can be specified for a room type.</td>
+<td>This error occurs when more than 2 views are provided for the room.</td>
+<td>Ensure that only 2 room views are selected for the failed room.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3231</td>
+<td>Total Max Occupancy must not be lower than the number of people included in the base rate of any rate plans for this room type.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3244</td>
+<td>Age category [] is currently not defined as supported by your property. If you feel you got this error by mistake, please contact Expedia to resolve.</td>
+<td>This error is caused by the Age Category disparity between the room and its property settings.</td>
+<td>Contact Expedia Central Ops team (Engagement) to adjust Age Categories at Property Level.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3245</td>
+<td>Standard bedding must have at least 1 or at most 2 bedding options.<strong><strong><strong><strong><strong><strong>__</strong></strong></strong></strong></strong></strong>Bedrooms and living rooms cannot define more than 2 &#39;bedding&#39; groups.</td>
+<td>This error occurs when there are more than 2 bedding options selected for the room.</td>
+<td>Ensure that only 2 bedding options are selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3246</td>
+<td>Child age category is not specified.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3257</td>
+<td>A property can have up to 99 active room types. This property has reached this limit.</td>
+<td>This error occurs when the limit of active rooms is reached.</td>
+<td>• Deactivate/Delete rates on the room types that should no longer be active.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3268</td>
+<td>Max Occupants provided in request exceeds the permissible limit of 20.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3269</td>
+<td>Room Type requires at least 1 bedroom.</td>
+<td>This error occurs for BTO V3 only (i.e. for the configuration where bedroom and livingroom spaces are supported). This error occurs when bedding and occupancy are not included in the message for the new room type.</td>
+<td>Ensure that bedding and occupancy are specified at the room create.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3277</td>
+<td>Maximum Occupancy Total count cannot be less than the Adult or Children count</td>
+<td>This error occurs for BTO V3 Product API format (i.e. supporting bedrooms and living areas). Maximum Occupancy has to be equal or greater than Maximum Adults.</td>
+<td>Ensure that maximum occupancy equals or is greater than maximum adults.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3278</td>
+<td>Room Name cannot use &#39;includeBedType&#39; when &#39;standardBedding&#39; is not provided. Remove the usage of &#39;includeBedType&#39; from the Room Name &#39;attributes&#39; or define &#39;standardBedding&#39;.</td>
+<td>This error occurs when room is created without any &quot;Bed Type&quot; selected in &quot;Bed Type Assignment&quot;.</td>
+<td>Verify room level settings; Assign &quot;Bed Type&quot; to &quot;Beding Type Assignment&quot; section.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3279</td>
+<td>maxOccupancy&#39; is required when &#39;standardBedding&#39; is not provided.</td>
+<td>This error occurs for BTO V2 only (i.e. configuration that does not support bedrooms/living room spaces) andoccurs when bedding and occupancy are not included in the message for the new room type.</td>
+<td>Ensure that bedding and occupancy are specified at the room create.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3301</td>
+<td>Standard bedding is missing.<strong><strong><strong><strong><strong><strong>__</strong></strong></strong></strong></strong></strong>Bedroom must define at least 1 &#39;bedding&#39; group.</td>
+<td>This error occurs when bedding is not specified.</td>
+<td>Ensure that bedding is specified.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3302</td>
+<td>Bedding is incomplete or has invalid elements. It is defined as a list of options. Each option must have a quantity greater or equals to 1, a type of bed and, optionally, a bed size.</td>
+<td>This error occurs when Bedding Information in the message is incomplete.</td>
+<td>Ensure that bedding is selected for the failed room type.Ensure that all of the required elements (count, type and size) are selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3303</td>
+<td>Extra bedding is incomplete or has invalid elements.It must have a quantity greater or equal to 1, a type of bed and, optionally, a bed size.</td>
+<td>This error occurs when not all required information is provided for Extra Bedding configuration.</td>
+<td>Ensure that all required information is provided for the extra bedding.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3304</td>
+<td>Invalid extra bed type for a surcharge.</td>
+<td>This error occurs when an unsupported bed type is listed with the surcharge.</td>
+<td>Ensure that surcharge is defined for Crib or Rollaway bed only.Remove surcharge for any other bed type.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3305</td>
+<td>Extra bedding type of &#39;Free&#39; cannot have an amount specified.</td>
+<td>This error occurs when contradictory information is provided for the surcharge of the extra bedding.</td>
+<td>Ensure that— If extra bedding is free, there is no amount selected for the surcharge and no surcharge type;— If extra bedding requires a surcharge, its type is not set to &quot;Free&quot;.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3306</td>
+<td>Non Free Extra bedding type must have an amount specified.</td>
+<td>This error occurs when contradictory information is provided for the surcharge of the extra bedding.</td>
+<td>Ensure that— If extra bedding is free, there is no amount selected for the surcharge and no surcharge type;— If extra bedding requires a surcharge, its type is not set to &quot;Free&quot;.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3307</td>
+<td>Non Free Extra bedding type must have an amount greater than 0.</td>
+<td>This error occurs when contradictory information is provided for the surcharge of the extra bedding.</td>
+<td>Ensure that— If extra bedding is free, there is no amount selected for the surcharge and no surcharge type;— If extra bedding requires a surcharge, its type is not set to &quot;Free&quot;.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3308</td>
+<td>Extra bedding type of &#39;Unknown&#39; is not supported for the creation of a room type.</td>
+<td>This error occurs when charge for Extra Bedding is set to &quot;Unknown&quot; type (as opposed to Free, Per DayPer Night, etc.) during creation.&quot;Unknown&quot; cannot be set as a charge type during creation.</td>
+<td>Ensure that if Extra Bedding Type is required for this new room, surcharge type is either specified or set to free.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3309</td>
+<td>Extra bedding surcharge of type &#39;Unknown&#39; is not supported. It may have been returned by the GET operation. It means the surcharge information is incomplete and must be fixed as part of this PUT.</td>
+<td>This error occurs when charge for Extra Bedding is set to &quot;Unknown&quot; type (as opposed to Free, Per DayPer Night, etc.) during creation.&quot;Unknown&quot; cannot be set as a charge type during creation.</td>
+<td>Ensure that if Extra Bedding Type is required for this new room, surcharge type is either specified or set to free.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3310</td>
+<td>Extra bedding surcharge of type &#39;Unknown&#39; is not supported. It may have been returned by the GET operation. It means the surcharge information is incomplete and must be fixed as part of this PATCH, before any other update can be applied to this room type.</td>
+<td>This error occurs when charge for Extra Bedding is set to &quot;Unknown&quot; type (as opposed to Free, Per DayPer Night, etc.) during creation.&quot;Unknown&quot; cannot be set as a charge type during creation.</td>
+<td>Ensure that if Extra Bedding Type is required for this new room, surcharge type is either specified or set to free.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3400</td>
+<td>Unrecognized amenity code: []</td>
+<td>This error occurs when Room Amenities message (as opposed to Room or Rate message) contains unsupported amenities.</td>
+<td>Please contact your DEV/TECH team if this error is encountered.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3401</td>
+<td>Amenity code [null] cannot be specified more than once.</td>
+<td>This error occurs on Room Amenities Call and occurs when amenities are used twice, with different options.</td>
+<td>Ensure that only one amenity is used.Ensure that contradicting amenities are not selected.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3404</td>
+<td>Unrecognized amenity detailCode [] provided for code [].</td>
+<td>This error occurs when Room Amenities message (as opposed to Room or Rate message) contains unsupported amenities.</td>
+<td>Please contact your DEV/TECH team if this error is encountered.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3405</td>
+<td>Missing required value for amenity code [].</td>
+<td>This error occurs on Room Amenities Call and occurs when amenities are listed without the value.</td>
+<td>Ensure that correct amenity (i.e. amenity mapped to Expedia) is selected.If correct amenity is used, please verify with your TECH/DEV team why the amenity option (value) is not being passed correctly.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3406</td>
+<td>A value was provided for amenity code [] but this amenity doesn’t support value.</td>
+<td>This error occurs on Room Amenities Call and occurs when amenities that do not offer value selection are listed with the value.</td>
+<td>Ensure that correct amenity (i.e. amenity mapped to Expedia) is selected.Ensure that its selected value matches Expedia specifications.If correct amenity is used, please verify with your TECH/DEV team why the amenity option (value) is not being passed correctly.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3407</td>
+<td>Invalid value received for amenity code []. Value needs to be between [0.5] and [20.0].</td>
+<td>This error occurs when numerical value of the specified amenity is outside of the allowed range.</td>
+<td>Ensure that value for the amenity specified in the Error Description has values within the allowed range.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3408</td>
+<td>Invalid value received for amenity code []. Value needs to be in increments of [].</td>
+<td>This error occurs when amenities values do not match defined by Expedia limits (For instance, when Bathroom count exceeds 20).</td>
+<td>Ensure that correct amenity (i.e. amenity mapped to Expedia) is selected.Ensure that its selected value matches Expedia specifications.If correct amenity is used, please verify with your TECH/DEV team why the amenity option (value) is not being passed correctly.</td>
+</tr>
+<tr>
+<td>Room Type</td>
+<td>3731</td>
+<td>Room type partner code is already used under this property by room type ID: []</td>
+<td>This error occurs when a room already under the hotel is being mapped anew under the same hotel. At Expedia, room type code can only be used under the hotel once.</td>
+<td>Perform read (GET); Verify if Expedia Rate Plan ID was saved in CRS/PMS the Mapping Table; Verify if Expedia Room ID was saved in Channel Code in the Mapping Table;— If Expedia Room ID was saved, room modified will be triggered instead of create;— If Expedia Room ID was not saved, reach out to Central Ops Engagement specialist at Expedia to provide you with the room ID. Enter this ID in the Mapping table manually.Once ID was saved in the mapping table, modify message can be triggered.</td>
+</tr>
+</tbody>
+</table>
+</div><h4 id="success-responses-16" data-magellan-destination="success-responses-16">Success Responses</h4>
 <div><table>
 <thead>
 <tr>
