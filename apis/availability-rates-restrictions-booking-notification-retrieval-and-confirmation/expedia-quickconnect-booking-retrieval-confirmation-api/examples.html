@@ -38,11 +38,11 @@ function googleTranslateElementInit() {
     &lt;/ParamSet&gt;
 &lt;/BookingRetrievalRQ&gt;
 </code></pre>
-<p>Note that if a specific booking expired and reverted to alternate delivery method (fax or email), it will not be possible to retrieve it, even when using the booking ID.</p>
+<p>Note that if a specific booking expired and reverted to alternate delivery method (email), it will not be possible to retrieve it, even when using the booking ID.</p>
 <h3 id="booking-retrieval-request-all-the-bookings-of-the-past-5-days" data-magellan-destination="booking-retrieval-request-all-the-bookings-of-the-past-5-days">Booking Retrieval Request: all the bookings of the past 5 days</h3>
 <p>The following is a sample booking retrieval request where the hotel requests all the bookings that were generated in the past 5 days, including already retrieved and pending bookings. </p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!--Sample booking retrieval request where partner requests all the bookings that were generated in the past 5 days (note that bookings that expired and reverted to fax won&#39;t be returned by this call)--&gt;
+&lt;!--Sample booking retrieval request where partner requests all the bookings that were generated in the past 5 days (note that bookings that expired and reverted to email won&#39;t be returned by this call)--&gt;
 &lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
     &lt;Authentication username=&quot;testuser&quot; password=&quot;testpass&quot;/&gt;
     &lt;ParamSet&gt;
@@ -52,7 +52,7 @@ function googleTranslateElementInit() {
 </code></pre>
 <p>Notes:</p>
 <ul>
-<li>Bookings that reverted to fax will not be returned by this call.</li>
+<li>Bookings that reverted to email will not be returned by this call.</li>
 <li>A hotel parameter (e.g. <Hotel id="3546"/>) may also be added in this request.</li>
 <li>Expedia VirtualCard payment information is not included in the response after 48 hours of the initial booking or modification (the information can only be retrieved afterward by contacting Expedia).</li>
 </ul>
