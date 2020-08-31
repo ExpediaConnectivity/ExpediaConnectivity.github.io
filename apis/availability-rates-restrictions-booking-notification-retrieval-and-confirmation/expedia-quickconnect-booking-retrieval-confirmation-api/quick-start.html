@@ -28,7 +28,7 @@ function googleTranslateElementInit() {
 <hr>
 <h2 id="booking-retrieval-request-and-response" data-magellan-destination="booking-retrieval-request-and-response">Booking Retrieval Request and Response</h2>
 <p>Expedia provides a program interface for EQC partners to retrieve bookings made on any Expedia Inc. Points of sale. EQC partners can retrieve pending bookings (reservations, modifications, or cancellations) as frequently as they want.
-If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by email.</p>
+If an EQC partner does not retrieve the booking information electronically, Expedia sends the information to the hotel by fax or email.</p>
 <p>Below is a pair of sample request/response. The Request can be attempted against the production endpoint of EQC BR API at <a href="https://services.expediapartnercentral.com/eqc/br">https://services.expediapartnercentral.com/eqc/br</a>, however it will likely not return any bookings since our test hotels rarely have bookings awaiting retrieval.</p>
 <p><strong>Request</strong></p>
 <pre><code class="lang-xml">&lt;BookingRetrievalRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
@@ -115,7 +115,7 @@ If an EQC partner does not retrieve the booking information electronically, Expe
 </code></pre>
 <hr>
 <h2 id="booking-confirmation-request-and-response" data-magellan-destination="booking-confirmation-request-and-response">Booking Confirmation Request and Response</h2>
-<p>The Booking Confirmation (BC) API is the mechanism EQC partners are required to implement to provide Expedia with the hotel’s confirmation number for all bookings retrieved via the BR interface. Unconfirmed bookings will revert to email once the booking expiration time is reached. </p>
+<p>The Booking Confirmation (BC) API is the mechanism EQC partners are required to implement to provide Expedia with the hotel’s confirmation number for all bookings retrieved via the BR interface. Unconfirmed bookings will revert to fax or email once the booking expiration time is reached. </p>
 <p>Below is a pair of sample request/response messages for booking confirmation. It could be sent to production at <a href="https://services.expediapartnercentral.com/eqc/bc">https://services.expediapartnercentral.com/eqc/bc</a> if a partner has a valid test booking to confirm and changes the IDs in the sample below.</p>
 <p><strong>RQ</strong></p>
 <pre><code class="lang-xml">&lt;BookingConfirmRQ xmlns=&quot;http://www.expediaconnect.com/EQC/BC/2007/09&quot;&gt;
