@@ -3591,7 +3591,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Generic</td>
 <td>2406</td>
 <td>Requested response media type unsupported: the resource identified by the request is unable to generate response entities of the media type requested by the Accept header attribute in the request.</td>
-<td>This error means that the format of the response message is unexpected/unsupported.</td>
+<td>This error means that the media type on the response message is unexpected/unsupported.</td>
 <td>Please contact your DEV team to verify configuration for Product Automation; Contact Central Ops Integration team to confirm the correct format.</td>
 </tr>
 <tr>
@@ -3605,7 +3605,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Generic</td>
 <td>2415</td>
 <td>Request media type unsupported: the server is refusing to service the request because the media type specified in request under the Content-Type header attribute is not supported by the requested resource for the requested method.</td>
-<td>This error means that the format of the request message is unexpected/unsupported.</td>
+<td>This error means that the media type on the request message is unexpected/unsupported.</td>
 <td>Please Contact your DEV team to verify configuration for Product Automation; Contact Central Ops Integration team to confirm the correct format.</td>
 </tr>
 <tr>
@@ -3641,7 +3641,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>2424</td>
 <td>Invalid value &lt;&gt; for the element &lt;&gt;</td>
 <td>This error indicates that an unsupported value has been included on an element that requires a specific list of values.</td>
-<td>Ensure that selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
+<td>Ensure that the value selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
 </tr>
 <tr>
 <td>Generic</td>
@@ -3655,7 +3655,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>2426</td>
 <td>Value &#39;null&#39; can not be specified in Array: <element name>.</td>
 <td>This error indicates that blank value has been included on an element that requires a specific list of values.</td>
-<td>Ensure that selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
+<td>Ensure that the value selected in the UI value for the element indicated in &quot;Error Description&quot; is supported by Expedia.</td>
 </tr>
 <tr>
 <td>Generic</td>
@@ -3676,7 +3676,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>4002</td>
 <td>Internal system error, please try again in a few minutes.</td>
 <td>This error can occur both on rate level and room level mapping, and can be due to various factors.</td>
-<td>Contact Expedia Central Ops team for Integration specialist to verify internal logs and confirm the source of error, advising you on the further actions.</td>
+<td>Retry request, if still seeing an error contact Expedia Central Ops team for Integration specialist to verify internal logs and confirm the source of error, advising you on the further actions.</td>
 </tr>
 <tr>
 <td>Generic</td>
@@ -3759,7 +3759,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Rate Plan</td>
 <td>3030</td>
 <td>Incorrect setting provided in your input request: the requested rate plan configuration (&quot;TaxInclusive=false&quot;) doesn&#39;t match with the configuration of your property in Expedia system (TaxInclusive=true). If this is not an error from your part, please contact Expedia to address this issue</td>
-<td>This error only occurs on SELL properties. On SELL properties, Tax Inclusivity is configured both on property and product level (on NET properties, only on rate level). Therefore, pushed rate plan should have the same Tax Inclusivity status as property at Expedia.</td>
+<td>This error occurs for Properties on rate acquisition type = SellLAR. On SELL properties, Tax Inclusivity is configured both on property and product level (on NET properties, only on rate level). Therefore, pushed rate plan should have the same Tax Inclusivity status as property at Expedia.</td>
 <td>Verify results of PROPERTY READ (GET) message (taxInclusive will be listed as True).Ensure that rate plan level tax inclusivity is enabled.</td>
 </tr>
 <tr>
@@ -3787,7 +3787,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Rate Plan</td>
 <td>3034</td>
 <td>AdditionalGuestAmount must provide both start and end dates if the date range is provided</td>
-<td>This error occurs when the date range for the Extra Person Fees is specified specified incorrectly.</td>
+<td>This error occurs when the date range for the Extra Person Fees is specified incorrectly.</td>
 <td>Access rate level settings and adjust Extra Person Fee to have both start and end date.</td>
 </tr>
 <tr>
@@ -3816,14 +3816,14 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>3037</td>
 <td>Element <element name> cannot be specified in a create request.</td>
 <td>Certain elements (URL, compensation, manageable, etc.) are generated after rate is created and cannot be included in the CREATE message, only in UPDATE.</td>
-<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the room already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the rate plan already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3037</td>
 <td>Element resourceId cannot be specified in a create request.</td>
-<td>This error occurs when CREATE message includes a rate plan ID, which means that (1) either CREATE is sent instead of the MODIFY or (2) ID of another rate is included in the message.</td>
-<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the room already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
+<td>This error occurs when CREATE message includes a rate plan ID, which means that (1) either CREATE is sent instead of the MODIFY or (2) ID of an already existing Rate Plan was included in the message.</td>
+<td>Verify if the intended action is CREATE or UPDATE. Verify if Expedia Rate ID is stored in the system. Verify if the rate plan already exists under the specified room.— If CREATE message was intended (rate does not exist under the specified room):Please verify with your DEV/TECH team why Rate ID is included in the CREATE message.— If MODIFY message was intended (rate does exist under the specified room):Please verify with your DEV/TECH team why CREATE message was sent instead of MODIFY.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
@@ -3925,16 +3925,9 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <tr>
 <td>Rate Plan</td>
 <td>3072</td>
-<td>Unsupported modification to element: distributionRules[].expediaId</td>
-<td>This message occurs when Expedia ID (i.e. rate plan ID) is missing from the update (PUT) message.</td>
-<td>Verify request message to see if rate plan ID is listed for both EC and HC pieces (if ETP rate). If not, perform a READ (GET) action and ensure that Rate Plan Exists and Rate ID is stored.— Ensure that stored ID belong to the failed rate plan; If rate plan ID is not stored in your system or continuously is modified in the modify message:— Attempt to delete the rate plan and re-create.— Please notify your TECH/DEV team. If rate plan does not exist, send CREATE instead of the MODIFY, excluding rate plan ID.</td>
-</tr>
-<tr>
-<td>Rate Plan</td>
-<td>3072</td>
-<td>Unsupported modification to element: distributionRules[0].compensation</td>
-<td>Please see 3072.</td>
-<td>Please see 3072.</td>
+<td>Unsupported modification to element &quot;attribute&quot;</td>
+<td>This message occurs when a change is made to an attribute that cannot be modified via the API.</td>
+<td>Verify request message to ensure you provide the same value for these as you received in the GET Response.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
@@ -4045,7 +4038,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Rate Plan</td>
 <td>3090</td>
 <td>ExpediaCollect and HotelCollect Rate plans must define only one distribution rule. Expedia Traveler Preference Rate plans require two: one of each distribution model</td>
-<td>This error occurs only on properties set to Expedia Traveler Preference.This error only occurs when more than two rate plan codes are listed in the rate plan message.On Expedia, rate plans are only allowed to have two codes: one set to Expedia Collect and one - to Hotel Collect.Including 3rd rate plan code for the same rate with the duplicated distribution rule will trigger such error.</td>
+<td>This error occurs only on properties set to Expedia Traveler Preference.This error only occurs when more than two rate plan codes are listed in the rate plan message. On Expedia, rate plans are only allowed to have up to two codes: one set to Expedia Collect and one - to Hotel Collect.Including 3rd rate plan code for the same rate with the duplicated distribution rule will trigger such error.</td>
 <td>Ensure that only two rates are paired for the rate plan in question.If that&#39;s the case, contact your DEV team.</td>
 </tr>
 <tr>
@@ -4066,35 +4059,35 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Rate Plan</td>
 <td>3093</td>
 <td>Compensation provided in request does not correspond to your property contract.</td>
-<td>This error occurs when compensation is included in the message and does not match Property&#39;s contract. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>This error occurs when compensation is included in the message and does not match Property&#39;s contract. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, ensure the value is the same as that returned in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3094</td>
 <td>Compensation percent is required and must be equal to or greater than null and smaller than 0.99.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message but compensation information is omitted. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>Occurs on a request message when the &quot;compensation&quot; object is included with the &quot;percent&quot; key/value pair omitted. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3095</td>
 <td>Compensation minAmount must be greater or equal to 0 for ExpediaCollect distribution model and must be empty for HotelCollect distribution model.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when minimum compensation amount is included for Hotel Collect distribution model. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>Occurs on a request message within the &quot;compensation&quot; object. Related to minAmount being included with a value on distributionModel&quot;: &quot;HotelCollect&quot;, or minAmount value missing on distributionModel&quot;: &quot;ExpediaCollect&quot;. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3096</td>
 <td>Compensation exception dateStart is required.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception start date is not included in the call. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>Occurs on a request message within the &quot;compensation&quot; object. Related to &quot;exceptions&quot; being sent without including &quot;dateStart&quot; in the array of values. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3097</td>
 <td>Compensation exception dateEnd is required and must not be prior to dateStart.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception end date is not included in the call. Compensation should not be included in POST (Create) message at all.When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>TOccurs on a request message within the &quot;compensation&quot; object. Related to &quot;exceptions&quot; being sent without including &quot;dateEnd&quot; in the array of values, or including &quot;dateEnd&quot; with a date value earlier than then the one included for &quot;dateStart&quot;. Compensation should not be included in POST (Create) message at all.When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
@@ -4115,14 +4108,14 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Rate Plan</td>
 <td>3100</td>
 <td>Compensation exception day of week: &#39;day&#39; is required and must be &#39;true&#39; or &#39;false&#39;.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exception collection does not include all 7 days of the week. Compensation should not be included in POST (Create) message at all.W hen compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>Occurs on a request message within the &quot;compensation&quot; object. Related to &quot;exceptions&quot; being sent without including values for all 7 days of the week. Compensation should not be included in POST (Create) message at all.W hen compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
 <td>Rate Plan</td>
 <td>3101</td>
 <td>Compensation exception date ranges must not overlap.</td>
-<td>This error occurs when &quot;compensation&quot; nod is included in the request message. This error occurs when compensation agreement includes exception windows. This error occurs when compensation exceptions ranges have overlapping dates. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
+<td>Occurs on a request message within the &quot;compensation&quot; object. Related to &quot;exceptions&quot; being sent with date values that overlap. Compensation should not be included in POST (Create) message at all. When compensation is included in PUT (Modify) call, it should return the same value included in GET(Read) response.</td>
 <td>If this error is encountered, contact your DEV/TECH team.</td>
 </tr>
 <tr>
@@ -4471,7 +4464,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>Room Type</td>
 <td>3208</td>
 <td>Invalid smoking preference &#39;<smoking preference>&#39;.</td>
-<td>Smoking Preferences have only two options: Smoking and Non-Smoking. Therefore, this error occurs when smoking is set to a different value.</td>
+<td>Smoking Preferences have only two options: Smoking and Non-Smoking. Therefore, this error occurs when smoking preference is set to a different value.</td>
 <td>Ensure that only one option is selected for the room, either smoking or non-smoking.</td>
 </tr>
 <tr>
@@ -4542,7 +4535,7 @@ GET <a href="https://services.expediapartnercentral.com/properties/12933870/room
 <td>3221</td>
 <td>Bedroom details is missing or invalid, please provide a value defined by the API specification.</td>
 <td>This error occurs when &quot;bedroomDetails&quot; is included in the message but is listing an unsupported value.</td>
-<td>Ensure that bedroom count is set to a full value.</td>
+<td>Ensure that the value sent is supported as documented in the bedroomDetailsEnum.</td>
 </tr>
 <tr>
 <td>Room Type</td>
