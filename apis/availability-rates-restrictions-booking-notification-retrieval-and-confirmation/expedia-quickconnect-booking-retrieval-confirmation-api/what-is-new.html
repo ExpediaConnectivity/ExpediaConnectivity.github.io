@@ -42,10 +42,13 @@ function googleTranslateElementInit() {
 <td>Sell</td>
 <td>Net rate + Expedia compensation</td>
 </tr>
+<tr>
+<td>If not present</td>
+<td>Net rate only (no compensation or taxes)</td>
+</tr>
 </tbody>
 </table>
-</div><p>If not present    Net rate only (no compensation or taxes)
-<strong>Note:</strong> if the rate plan is configured as tax-inclusive in Expedia&#39;s system, taxes will be included in the amount sent</p>
+</div><p><strong>Note:</strong> if the rate plan is configured as tax-inclusive in Expedia&#39;s system, taxes will be included in the amount sent</p>
 <p>The &quot;Payment Amount&quot; field will specify the exact amount that is available to charge on the virtual card or that can be requested for in Partner Central, and the &quot;Payment Model&quot; will indicate whether that amount is a net or gross amount. These values are configured depending on the jurisdiction and property preference. If neither of these fields are present, the net amount is paid out.</p>
 <p><strong>Payment @model:</strong></p>
 <div><table>
@@ -152,37 +155,30 @@ function googleTranslateElementInit() {
 <p>Payment amount: $200 (sell) + $32 (total taxes/fees) = <strong>$232.00*</strong></p>
 <p>Amount EG will invoice for: $40 (EG comp) + $6.40 (taxes/fees on EG comp) = $46.40 </p>
 <p><strong>*Bolded</strong> values are sent in the schema </p>
-<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
-    &lt;Bookings&gt;
-        &lt;Booking id=&quot;12345&quot; type=&quot;Book&quot; createDateTime=&quot;2020-07-23T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
-            &lt;Hotel id=&quot;123&quot;/&gt;
-            &lt;RoomStay roomTypeID=&quot;999999&quot; ratePlanID=&quot;988888&quot;&gt;
-                &lt;StayDate arrival=&quot;2020-10-01&quot; departure=&quot;2020-10-02&quot;/&gt;
-                &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
-                    &lt;Child age=&quot;1&quot;/&gt;
-                    &lt;Child age=&quot;17&quot;/&gt;
-                &lt;/GuestCount&gt;
-                &lt;PerDayRates currency=&quot;EUR&quot;&gt;
-                    &lt;PerDayRate stayDate=&quot;2020-10-01&quot; baseRate=&quot;200.00&quot;/&gt;
-                &lt;/PerDayRates&gt;
-                &lt;Total amountAfterTaxes=&quot;232.00&quot; amountOfTaxes=&quot;32.00&quot; currency=&quot;EUR&quot;/&gt;
-                &lt;BaseRateType&gt;Sell&lt;/BaseRateType&gt;
-                &lt;PaymentMethod&gt;VirtualCard&lt;/PaymentMethod&gt;
-                &lt;Payment amount=&quot;232.00&quot; currencyCode=&quot;USD&quot; model=&quot;Gross&quot;&gt;
-                    &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****23456&quot; expireDate=&quot;1206&quot; seriesCode=&quot;981&quot; cardActivation=&quot;2020-10-01T00:00:00Z&quot;/&gt;
-                    &lt;CardHolder name=&quot;ExpediaVirtualCard&quot; address=&quot;1111 Expedia Group Way W&quot; city=&quot;Seattle&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98119&quot;/&gt;
-                &lt;/PaymentCard&gt;
-            &lt;/RoomStay&gt;
-            &lt;PrimaryGuest&gt;
-                &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
-                &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
-            &lt;/PrimaryGuest&gt;
-            &lt;SpecialRequest code=&quot;5&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
-        &lt;/Booking&gt;
-    &lt;/Bookings&gt;
-&lt;/BookingRetrievalRS&gt;
+<pre><code class="lang-xml">&lt;PerDayRates currency=&quot;EUR&quot;&gt;
+    &lt;PerDayRate stayDate=&quot;2020-10-01&quot;
+                  baseRate=&quot;200.00&quot;/&gt;
+&lt;/PerDayRates&gt;
+&lt;Total amountAfterTaxes=&quot;232.00&quot;
+         amountOfTaxes=&quot;32.00&quot;
+         currency=&quot;EUR&quot;/&gt;
+&lt;BaseRateType&gt;Sell&lt;/BaseRateType&gt;
+&lt;PaymentMethod&gt;VirtualCard&lt;/PaymentMethod&gt;
+&lt;Payment amount=&quot;232.00&quot;
+           currencyCode=&quot;USD&quot;
+           model=&quot;Gross&quot;&gt;
+    &lt;PaymentCard cardCode=&quot;VI&quot;
+                   cardNumber=&quot;****23456&quot;
+                   expireDate=&quot;1206&quot;
+                   seriesCode=&quot;981&quot;
+                   cardActivation=&quot;2020-10-01T00:00:00Z&quot;
+                   &lt;CardHolder name=&quot;ExpediaVirtualCard&quot;
+                      address=&quot;1111 Expedia Group Way W&quot;
+                      city=&quot;Seattle&quot;
+                      stateProv=&quot;WA&quot;
+                      country=&quot;US&quot;
+                      postalCode=&quot;98119&quot;/&gt;
+    &lt;/PaymentCard&gt;
 </code></pre>
 <h3><strong>Expedia Collect – Net payment model with EVC</strong></h3>
 
@@ -198,37 +194,30 @@ function googleTranslateElementInit() {
 <p><strong>If EG is liable for payment of tax on compensation to the government:</strong> </p>
 <p>Payment amount: $160 (net) + $25.60 (taxes/fees on base) = <strong>$185.60*</strong> </p>
 <p><strong>*Bolded</strong> values are sent in the schema</p>
-<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
-    &lt;Bookings&gt;
-        &lt;Booking id=&quot;12345&quot; type=&quot;Book&quot; createDateTime=&quot;2020-07-23T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
-            &lt;Hotel id=&quot;123&quot;/&gt;
-            &lt;RoomStay roomTypeID=&quot;999999&quot; ratePlanID=&quot;988888&quot;&gt;
-                &lt;StayDate arrival=&quot;2020-10-01&quot; departure=&quot;2020-10-02&quot;/&gt;
-                &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
-                    &lt;Child age=&quot;1&quot;/&gt;
-                    &lt;Child age=&quot;17&quot;/&gt;
-                &lt;/GuestCount&gt;
-                &lt;PerDayRates currency=&quot;EUR&quot;&gt;
-                    &lt;PerDayRate stayDate=&quot;2020-10-01&quot; baseRate=&quot;200.00&quot;/&gt;
-                &lt;/PerDayRates&gt;
-                &lt;Total amountAfterTaxes=&quot;232.00&quot; amountOfTaxes=&quot;32.00&quot; currency=&quot;EUR&quot;/&gt;
-                &lt;BaseRateType&gt;Sell&lt;/BaseRateType&gt;
-                &lt;PaymentMethod&gt;VirtualCard&lt;/PaymentMethod&gt;
-                &lt;Payment amount=&quot;192.00 OR 185.60&quot; currencyCode=&quot;USD&quot; model=&quot;Net&quot;/&gt;
-                &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****23456&quot; expireDate=&quot;1206&quot; seriesCode=&quot;981&quot; cardActivation=&quot;2020-10-01T00:00:00Z&quot;&gt;
-                    &lt;CardHolder name=&quot;ExpediaVirtualCard&quot; address=&quot;1111 Expedia Group Way W&quot; city=&quot;Seattle&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98119&quot;/&gt;
-                &lt;/PaymentCard&gt;
-            &lt;/RoomStay&gt;
-            &lt;PrimaryGuest&gt;
-                &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
-                &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
-            &lt;/PrimaryGuest&gt;
-            &lt;SpecialRequest code=&quot;5&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
-        &lt;/Booking&gt;
-    &lt;/Bookings&gt;
-&lt;/BookingRetrievalRS&gt;
+<pre><code class="lang-xml">&lt;PerDayRates currency=&quot;EUR&quot;&gt;
+    &lt;PerDayRate stayDate=&quot;2020-10-01&quot;
+                  baseRate=&quot;200.00&quot;/&gt;
+&lt;/PerDayRates&gt;
+&lt;Total amountAfterTaxes=&quot;232.00&quot;
+         amountOfTaxes=&quot;32.00&quot;
+         currency=&quot;EUR&quot;/&gt;
+&lt;BaseRateType&gt;Sell&lt;/BaseRateType&gt;
+&lt;PaymentMethod&gt;VirtualCard&lt;/PaymentMethod&gt;
+&lt;Payment amount=&quot;192.00 OR 185.60&quot;
+           currencyCode=&quot;USD&quot;
+           model=&quot;Net&quot;&gt;
+    &lt;PaymentCard cardCode=&quot;VI&quot;
+                   cardNumber=&quot;****23456&quot;
+                   expireDate=&quot;1206&quot;
+                   seriesCode=&quot;981&quot;
+                   cardActivation=&quot;2020-10-01T00:00:00Z&quot;&gt;
+        &lt;CardHolder name=&quot;ExpediaVirtualCard&quot;
+                      address=&quot;1111 Expedia Group Way W&quot;
+                      city=&quot;Seattle&quot;
+                      stateProv=&quot;WA&quot;
+                      country=&quot;US&quot;
+                      postalCode=&quot;98119&quot;/&gt;
+    &lt;/PaymentCard&gt;
 </code></pre>
 <h3><strong>Expedia Collect – Gross payment model, without enhancements adopted</strong></h3>
 
@@ -248,34 +237,35 @@ function googleTranslateElementInit() {
 <p>Payment amount: $200 (sell) + $32 (total taxes/fees) = <strong>$232.00*</strong></p>
 <p>Amount EG will invoice for: $40 (EG comp) + $6.40 (taxes/fees on EG comp) = $46.40 </p>
 <p><strong>*Bolded values are sent in the schema</strong> </p>
-<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
-    &lt;Bookings&gt;
-        &lt;Booking id=&quot;12345&quot; type=&quot;Book&quot; createDateTime=&quot;2020-07-23T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
-            &lt;Hotel id=&quot;123&quot;/&gt;
-            &lt;RoomStay roomTypeID=&quot;999999&quot; ratePlanID=&quot;988888&quot;&gt;
-                &lt;StayDate arrival=&quot;2020-10-01&quot; departure=&quot;2020-10-02&quot;/&gt;
-                &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
-                    &lt;Child age=&quot;1&quot;/&gt;
-                    &lt;Child age=&quot;17&quot;/&gt;
-                &lt;/GuestCount&gt;
-                &lt;PerDayRates currency=&quot;EUR&quot;&gt;
-                    &lt;PerDayRate stayDate=&quot;2020-10-01&quot; baseRate=&quot;200.00&quot;/&gt;
-                &lt;/PerDayRates&gt;
-                &lt;Total amountAfterTaxes=&quot;232.00 &quot; amountOfTaxes=&quot;32.00&quot; currency=&quot;EUR&quot;/&gt;
-                &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****23456&quot; expireDate=&quot;1206&quot; seriesCode=&quot;981&quot;&gt;
-                    &lt;CardHolder name=&quot;ExpediaVirtualCard&quot; address=&quot;1111 Expedia Group Way W&quot; city=&quot;Seattle&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98119&quot;/&gt;
-                &lt;/PaymentCard&gt;
-            &lt;/RoomStay&gt;
-            &lt;PrimaryGuest&gt;
-                &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
-                &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
-            &lt;/PrimaryGuest&gt;
-            &lt;SpecialRequest code=&quot;5&quot;&gt; Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
-        &lt;/Booking&gt;
-    &lt;/Bookings&gt;
-&lt;/BookingRetrievalRS&gt;
+<pre><code class="lang-xml">&lt;PerDayRates currency=&quot;EUR&quot;&gt;
+    &lt;PerDayRate stayDate=&quot;2020-10-01&quot;
+                  baseRate=&quot;200.00&quot;/&gt;
+&lt;/PerDayRates&gt;
+&lt;Total amountAfterTaxes=&quot;232.00 &quot;
+         amountOfTaxes=&quot;32.00&quot;
+         currency=&quot;EUR&quot;/&gt;
+&lt;PaymentCard cardCode=&quot;VI&quot;
+               cardNumber=&quot;****23456&quot;
+               expireDate=&quot;1206&quot;
+               seriesCode=&quot;981&quot;
+               &lt;CardHolder name=&quot;ExpediaVirtualCard&quot;
+                  address=&quot;1111 Expedia Group Way W&quot;
+                  city=&quot;Seattle&quot;
+                  stateProv=&quot;WA&quot;
+                  country=&quot;US&quot;
+                  postalCode=&quot;98119&quot;/&gt;
+&lt;/PaymentCard&gt;
+&lt;/RoomStay&gt;
+&lt;PrimaryGuest&gt;
+    &lt;Name givenName=&quot;John&quot;
+            middleName=&quot;F.&quot;
+            surname=&quot;Smith&quot;/&gt;
+    &lt;Phone countryCode=&quot;1&quot;
+             cityAreaCode=&quot;514&quot;
+             number=&quot;5558975&quot;
+             extension=&quot;3233&quot;/&gt;
+&lt;/PrimaryGuest&gt;
+&lt;SpecialRequest code=&quot;5&quot;&gt;Remittance amt: XXX.XX CUR.  Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
 </code></pre>
 <h3><strong>Expedia Collect – regular, as-is with EVC</strong></h3>
 
@@ -291,32 +281,23 @@ function googleTranslateElementInit() {
 <p><strong>If EG is liable for payment of tax on compensation to the government:</strong> </p>
 <p>Total after tax (payment amount): $160 (net) + $25.60 (taxes/fees on base) = <strong>$185.60*</strong> </p>
 <p><strong>*Bolded</strong> values are sent in the schema</p>
-<pre><code class="lang-xml">&lt;BookingRetrievalRS xmlns=&quot;http://www.expediaconnect.com/EQC/BR/2014/01&quot;&gt;
-    &lt;Bookings&gt;
-        &lt;Booking id=&quot;12345&quot; type=&quot;Book&quot; createDateTime=&quot;2020-07-23T09:30:47Z&quot; source=&quot;Expedia&quot; status=&quot;pending&quot;&gt;
-            &lt;Hotel id=&quot;123&quot;/&gt;
-            &lt;RoomStay roomTypeID=&quot;999999&quot; ratePlanID=&quot;988888&quot;&gt;
-                &lt;StayDate arrival=&quot;2020-10-01&quot; departure=&quot;2020-10-02&quot;/&gt;
-                &lt;GuestCount adult=&quot;2&quot; child=&quot;2&quot;&gt;
-                    &lt;Child age=&quot;1&quot;/&gt;
-                    &lt;Child age=&quot;17&quot;/&gt;
-                &lt;/GuestCount&gt;
-                &lt;PerDayRates currency=&quot;EUR&quot;&gt;
-                    &lt;PerDayRate stayDate=&quot;2020-10-01&quot; baseRate=&quot;160.00&quot;/&gt;
-                &lt;/PerDayRates&gt;
-                &lt;Total amountAfterTaxes=&quot;192.00 OR 185.60&quot; amountOfTaxes=&quot;32.00 OR 25.60&quot; currency=&quot;EUR&quot;/&gt;
-                &lt;PaymentCard cardCode=&quot;VI&quot; cardNumber=&quot;****23456&quot; expireDate=&quot;1206&quot; seriesCode=&quot;981&quot;&gt; &lt;CardHolder name=&quot;ExpediaVirtualCard&quot; address=&quot;1111 Expedia Group Way W&quot; city=&quot;Seattle&quot; stateProv=&quot;WA&quot; country=&quot;US&quot; postalCode=&quot;98119&quot;/&gt;
-                &lt;/PaymentCard&gt;
-            &lt;/RoomStay&gt;
-            &lt;PrimaryGuest&gt;
-                &lt;Name givenName=&quot;John&quot; middleName=&quot;F.&quot; surname=&quot;Smith&quot;/&gt;
-                &lt;Phone countryCode=&quot;1&quot; cityAreaCode=&quot;514&quot; number=&quot;5558975&quot; extension=&quot;3233&quot;/&gt;
-            &lt;/PrimaryGuest&gt;
-            &lt;SpecialRequest code=&quot;5&quot;&gt;Bill only nghts bkd by Expedia to cc# @ ck-in  gst pays incid &lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;1.23&quot;&gt;2 Queen&lt;/SpecialRequest&gt;
-            &lt;SpecialRequest code=&quot;2.1&quot;&gt;Non-smoking&lt;/SpecialRequest&gt;
-        &lt;/Booking&gt;
-    &lt;/Bookings&gt;
-&lt;/BookingRetrievalRS&gt;
+<pre><code class="lang-xml">&lt;PerDayRates currency=&quot;EUR&quot;&gt;
+    &lt;PerDayRate stayDate=&quot;2020-10-01&quot;
+                  baseRate=&quot;160.00&quot;/&gt;
+&lt;/PerDayRates&gt;
+&lt;Total amountAfterTaxes=&quot;192.00 OR 185.60&quot;
+         amountOfTaxes=&quot;32.00 OR 25.60&quot;
+         currency=&quot;EUR&quot;/&gt;
+&lt;PaymentCard cardCode=&quot;VI&quot;
+               cardNumber=&quot;****23456&quot;
+               expireDate=&quot;1206&quot;
+               seriesCode=&quot;981&quot;
+               &lt;CardHolder name=&quot;ExpediaVirtualCard&quot;
+                  address=&quot;1111 Expedia Group Way W&quot;
+                  city=&quot;Seattle&quot;
+                  stateProv=&quot;WA&quot;
+                  country=&quot;US&quot;
+                  postalCode=&quot;98119&quot;/&gt;
+&lt;/PaymentCard&gt;
 </code></pre>
 </div></div></div></div></div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="https://welcome.expediagroup.com/en/privacy-policy">Privacy Policy</a><a class="link-item" href="https://welcome.expediagroup.com/en/expedia-group-cookie-policy">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2020 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer></body></html>
