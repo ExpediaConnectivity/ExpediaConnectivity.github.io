@@ -135,6 +135,7 @@ body {
 }
 .scorecard-row .scorecard-cards .metric {
   margin-top: 1em;
+  float: left;
 }
 .scorecard-row .scorecard-cards .rate-change {
   line-height: 1.25em;
