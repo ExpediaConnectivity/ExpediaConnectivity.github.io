@@ -120,7 +120,7 @@ define(function() {
             ga('send', 'event', 'scorecard', 'error', "code:" + jqxhr.status + ", hash:" + hash);
         });
 
-        //$("#optimise .border").click(metricClickCallback);
+        $("#optimise .border").click(metricClickCallback);
         $("#enhance .border").click(enhanceClickCallback);
         $(".scorecard-rank").click(overallClickCallback);
         $(".feedback-link").click(feedbackClickCallback);

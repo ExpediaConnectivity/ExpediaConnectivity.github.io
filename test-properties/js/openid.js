@@ -92,11 +92,7 @@ $(document).ready(function() {
     function invalid(jqxhr) {
         loadEnd();
         ga('send', 'event', 'openid', 'failure', "unknown|" + jqxhr.statusText);
-        var errorMessage = "Request failed: " + jqxhr.status + ": " + jqxhr.statusText + ".";
-        if (jqxhr.status == 403) {
-            errorMessage += "  Please use your Connectivity Vendor account to access this system.";
-        }
-        render(STATE_ERROR, errorMessage);
+        render(STATE_ERROR, "Request failed: " + jqxhr.status + ": " + jqxhr.statusText);
     }
 
     checkAuth();

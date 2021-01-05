@@ -1,0 +1,377 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.0",
+    "title": "Production"
+  },
+  "schemes": [
+    "https"
+  ],
+  "host": "services.expediapartnercentral.com",
+  "basePath": "/production-api",
+  "securityDefinitions": {
+    "epsSecurity": {
+      "type": "basic"
+    }
+  },
+  "paths": {
+    "/BookingTrends": {
+      "get": {
+        "description": "# Insights into the travelers’ booking patterns \n\nThe competitors set is calculated based on: \n* price: it contains hotels with an ADR of +/- 10% of hotel ADR in last 12 months \n* proximity: circle radius expands from 3km to 6km to 9km and stops when at least 4 hotels are included in your competitors set.  \n  If less than 4 hotels are found at the 9km radius mark, no comp set will be displayed for that hotel \n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "category": {
+                    "description": "Can be brand or travelerOrigination because this endpoint returns data by brand or traveler country.",
+                    "type": "string"
+                  },
+                  "caption": {
+                    "description": "If category:brand this property contains the name of the brand, if category:travelerOrigination this property contains the country code(3 letters)",
+                    "type": "string"
+                  },
+                  "l28d_compset_cy": {
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 28 days of current year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_compset_ly": {
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 28 days of last year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_compset_cy": {
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 90 days of current year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_compset_ly": {
+                    "description": "Brand/Country contribution to competitors production in terms of room nights for last 90 days of last year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_hotel_cy": {
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 28 days of current year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l28d_hotel_ly": {
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 28 days of last year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_hotel_cy": {
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 90 days of current year",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "l90d_hotel_ly": {
+                    "description": "Brand/Country contribution to hotel production in terms of room nights for last 90 days of last year",
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FlashReport": {
+      "get": {
+        "description": "# Hotel and competitors performance for past and future stay dates.\n\n * Year To Date Stays(ytd): represents the YOY production trend (for hotel and competitors) considering all stay dates starting beginning of the year until the report date.\n * Next Week Stays(nw): represents the YOY production trend considering all stay dates for the week following the report date.\n * Next 4 Weeks Stays(n4w): represents the YOY production trend considering all stay dates for the 4 weeks following the report date.\n * Net Room Night Count(nrn) : represents the total number of reservations the hotel will deliver (if cancellations are made, then they are considered in the calculation).\n * Average Daily Rate(adr) : base rate per room night for hotel rooms.\n\nThe competitors set is calculated based on: \n* price: it contains hotels with an ADR of +/- 10% of hotel ADR in last 12 months \n* proximity: circle radius expands from 3km to 6km to 9km and stops when at least 4 hotels are included in your competitors set.  \n  If less than 4 hotels are found at the 9km radius mark, no comp set will be displayed for that hotel\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "ytd_hotel_nrn_delta": {
+                    "description": "Year To Date Hotel Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_hotel_adr_delta": {
+                    "description": "Year To Date Hotel Average Daily Rate Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_nrn_delta": {
+                    "description": "Year To Date Competitors Set Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "ytd_compset_adr_delta": {
+                    "description": "Year To Date Competitors Set Average Daily Rate  Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_nrn_delta": {
+                    "description": "Next Week Hotel Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_hotel_adr_delta": {
+                    "description": "Next Week Hotel Average Daily Rate Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_nrn_delta": {
+                    "description": "Next Week Competitors Set Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "nw_compset_adr_delta": {
+                    "description": "Next Week Competitors Set Average Daily Rate Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_nrn_delta": {
+                    "description": "Next 4 Weeks Hotel Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_hotel_adr_delta": {
+                    "description": "Next 4 Weeks Hotel Average Daily Rate Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_nrn_delta": {
+                    "description": "Next 4 Weeks Competitors Set Net Room Night Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "n4w_compset_adr_delta": {
+                    "description": "Next 4 Weeks Competitors Set Average Daily Rate Delta",
+                    "type": "number",
+                    "format": "double"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FutureStayProduction7Days": {
+      "get": {
+        "description": "# Hotel room nights for the 4 stay weeks following the report date\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "week_start": {
+                    "description": "The date to which cy_7d_pickup_nrn and ly_7d_pickup_nrn refers to",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "cy_7d_pickup_nrn": {
+                    "description": "Hotel Room Nights for next 7 days from the week_start for the current year",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ly_7d_pickup_nrn": {
+                    "description": "Hotel Room Nights for next 7 days from the week_start for the last year",
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/FutureStayProduction28Days": {
+      "get": {
+        "description": "# Hotel production for the future 28 stay dates\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "date": {
+                    "description": "The date to which cy_future_nrn and ly_future_nrn refers to",
+                    "type": "string",
+                    "format": "date"
+                  },
+                  "cy_future_nrn": {
+                    "description": "Hotel Room Nights for next 28 days of the current year",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "ly_future_nrn": {
+                    "description": "Hotel Room Nights for next 28 days of the last year",
+                    "type": "integer",
+                    "format": "int32"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/MonthlyStays": {
+      "get": {
+        "description": "# Hotel’s production for each stay month.\n",
+        "parameters": [
+          {
+            "name": "htid",
+            "in": "query",
+            "description": "Hotel ID",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "",
+            "required": false,
+            "type": "string",
+            "default": "json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "hotel_adr": {
+                    "description": "Average Daily Rate - Base rate per room night for hotel rooms",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_adr": {
+                    "description": "ADR delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "hotel_only": {
+                    "description": "Standalone Net Room Nights",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "package": {
+                    "description": "Package Net Room Nights",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "total": {
+                    "description": "Standalone and Package Net Room Nights",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_hotel_only": {
+                    "description": "Standalone Net Room Nights - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_package": {
+                    "description": "Package Net Room Nights - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "yoy_total": {
+                    "description": "Standalone and Package Net Room Nights - Delta",
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "year_month": {
+                    "description": "YYYYMM",
+                    "type": "string",
+                    "format": "yyyymm"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
+<xs:schema targetNamespace="http://www.opentravel.org/OTA/2003/05" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.opentravel.org/OTA/2003/05" elementFormDefault="qualified" version="1.005" id="OTA2005B">
+  <xs:element name="OTA_CancelRQ">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A generic message, available as an action on several OTA services which requests a server to cancel the booking identified by the UniqueID element.</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="POS" type="POS_Type"/>
+        <xs:element name="UniqueID" type="UniqueID_Type2" maxOccurs="5">
+          <xs:annotation>
+            <xs:documentation>This allows a user to send more than one UniqueID where there is more than one UniqueID associated to a single reservation (e.g. confirmation number and PNR record locator).</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="Verification" type="VerificationType">
+          <xs:annotation>
+            <xs:documentation>This is to be used for verification that the record being canceled is the specific record requested. This is optional and is intended to provide a more secure mechanism to ensure the correct record is being canceled. </xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+      <xs:attributeGroup ref="OTA_PayloadStdAttributes"/>
+      <xs:attribute name="CancelType" type="TransactionActionType" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <!--From OTA_SimpleTypes-->
+  <xs:simpleType name="DateOrDateTimeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">A construct to validate either a date or a dateTime value.</xs:documentation>
+    </xs:annotation>
+    <xs:union memberTypes="xs:date xs:dateTime"/>
+  </xs:simpleType>
+  <xs:simpleType name="Numeric1to999">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Numeric values, from 1 to 999 inclusive</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:positiveInteger">
+      <xs:minInclusive value="1"/>
+      <xs:maxInclusive value="999"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="OTA_CodeType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for codes in the OTA code tables.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9A-Z]{1,3}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength0to64">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 0 to 64</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="0"/>
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength1to16">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 1 to 16</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="16"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength1to32">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 1 to 32</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength1to64">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 1 to 64</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="64"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="StringLength1to8">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Used for Character Strings, length 1 to 8</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="8"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TransactionActionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Book"/>
+      <xs:enumeration value="Quote"/>
+      <xs:enumeration value="Hold"/>
+      <xs:enumeration value="Initiate"/>
+      <xs:enumeration value="Ignore"/>
+      <xs:enumeration value="Modify"/>
+      <xs:enumeration value="Commit"/>
+      <xs:enumeration value="Cancel"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <!--From OTA_CommonTypes-->
+  <xs:attributeGroup name="CompanyID_AttributesGroup">
+    <xs:attribute name="Code" type="StringLength1to8" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Identifies a company by the company code.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="CodeContext" type="StringLength1to32" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Identifies the context of the identifying code, such as DUNS, IATA or internal code, etc.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="CodeListGroup">
+    <xs:attribute name="Code" type="StringLength1to8" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Any code used to specify an item, for example, type of traveler, service code, room amenity, etc.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="CodeContext" type="StringLength1to32" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Identifies the source authority for the code. </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="QuantityGroup"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="DateTimeSpanGroup">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The OTA DateTimeSpan data type is based on the W3C base data types of timeInstant and timeDuration.</xs:documentation>
+      <xs:documentation xml:lang="en">[Definition:]  The timeDuration datatype represents a combination of year, month, day and time values representing a single duration of time, encoded as a single string. </xs:documentation>
+      <xs:documentation xml:lang="en">[Lexical Representation] The lexical representation for timeDuration is the [ISO 8601] extended format PnYn MnDTnH nMnS, where nY represents the number of years, nM the number of months, nD the number of days, 'T' is the date/time separator, nH the number of hours, nM the number of minutes and nS the number of seconds. The number of seconds can include decimal digits to arbitrary precision. As an example, 7 months, 2 days, 2hours and 30 minutes would be expressed as P0Y7M2DT2H30M0S. Truncated representations are allowed provided they conform to ISO 8601 format. </xs:documentation>
+      <xs:documentation xml:lang="en">Time periods, i.e. specific durations of time, can be represented by supplying two items of information: a start instant and a duration or a start instant and an end instant or an end instant and a duration. The OTA standards use the XML mapping that provides for two elements to represent the specific period of time; a startInstant and a duration.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Start" type="DateOrDateTimeType" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">The starting value of the time span. </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="End" type="DateOrDateTimeType" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">The ending value of the time span. </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ID_Group">
+    <xs:attribute name="ID" type="StringLength1to32" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">A unique identifying value assigned by the creating system, using the XML data type ID.  The Id attribute may be used to reference a primary-key value within a database or in a particular implementation.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="OTA_PayloadStdAttributes">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">The OTA_PayloadStdAttributes defines the standard attributes that appear on the root element for all OTA payloads.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="EchoToken" type="StringLength1to64" use="optional"/>
+    <xs:attribute name="TimeStamp" type="xs:dateTime" use="optional"/>
+    <xs:attribute name="Target" use="optional" default="Production">
+      <xs:simpleType>
+        <xs:restriction base="xs:NMTOKEN">
+          <xs:enumeration value="Test"/>
+          <xs:enumeration value="Production"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+    <xs:attribute name="Version" type="xs:decimal" use="optional"/>
+    <xs:attributeGroup ref="PrimaryLangID_Group"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="PrimaryLangID_Group">
+    <xs:attribute name="PrimaryLangID" type="xs:language" use="optional">
+      <xs:annotation>
+        <xs:documentation>Identifies the primary language preference for the form of travel represented in a collection.
+				 The human language is identified by ISO 639 codes.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="QuantityGroup">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Specifies the number of items.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Quantity" type="Numeric1to999" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="UniqueID_Group">
+    <xs:attribute name="Type" type="OTA_CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">A reference to the type of object defined by the UniqueId element.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attributeGroup ref="ID_Group"/>
+  </xs:attributeGroup>
+  <xs:complexType name="AdditionalVerificationType">
+    <xs:attribute name="Type" type="OTA_CodeType" use="optional"/>
+    <xs:attribute name="Code" type="StringLength1to16" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Trading partner code associated to AdditionalVerification</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Value" type="StringLength1to32" use="optional">
+      <xs:annotation>
+        <xs:documentation xml:lang="en">Value associated to AdditionalVerification/@Code</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="BookingChannelType">
+    <xs:annotation>
+      <xs:documentation>Specifies the booking channel types and whether it is the primary means of connectivity of the source.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="Type" type="OTA_CodeType" use="required">
+      <xs:annotation>
+        <xs:documentation>The type of booking channel (e.g. Global Distribution System (GDS), Alternative Distribution System (ADS), Sales and Catering System (SCS), Property Management System (PMS), Central Reservation System (CRS), Tour Operator System (TOS), Internet and ALL).</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="Primary" type="xs:boolean" use="optional">
+      <xs:annotation>
+        <xs:documentation>Indicates whether the enumerated booking channel is the primary means of connectivity used by the source.</xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="CompanyNameType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Identifies a company by name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="StringLength0to64"/>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="CompanyNameType2">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">Identifies a company by name.</xs:documentation>
+    </xs:annotation>
+    <xs:simpleContent>
+      <xs:extension base="StringLength0to64">
+        <xs:attributeGroup ref="CompanyID_AttributesGroup"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="PersonNameType">
+    <xs:annotation>
+      <xs:documentation>This is an XML Schema representing the OTA Person Name object.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="GivenName" type="StringLength1to64">
+        <xs:annotation>
+          <xs:documentation>Given name, first name or names</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="MiddleName" type="StringLength1to64" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>The middle name of the person name</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Surname" type="StringLength1to64">
+        <xs:annotation>
+          <xs:documentation>Family name, last name. Required for identification of the individual in the profile. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="POS_Type">
+    <xs:annotation>
+      <xs:documentation>Point of Sale (POS) is the details identifying the party or connection channel making the request.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Source" type="SourceType" minOccurs="1" maxOccurs="2">
+        <xs:annotation>
+          <xs:documentation>This holds details regarding the requestor. It may be repeated to also accommodate the delivery systems.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SourceType">
+    <xs:sequence>
+      <xs:element name="RequestorID" type="UniqueID_Type">
+        <xs:annotation>
+          <xs:documentation>An identifier of the entity making the request  (e.g. ATA/IATA/ID number, Electronic Reservation Service Provider (ERSP), Association of British Travel Agents (ABTA)). </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="BookingChannel" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Specifies the booking channel type and whether it is the primary means of connectivity of the source.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:complexContent>
+            <xs:extension base="BookingChannelType">
+              <xs:sequence>
+                <xs:element name="CompanyName" type="CompanyNameType">
+                  <xs:annotation>
+                    <xs:documentation xml:lang="en">Identifies the company that is associated with the booking channel.</xs:documentation>
+                  </xs:annotation>
+                </xs:element>
+              </xs:sequence>
+            </xs:extension>
+          </xs:complexContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UniqueID_Type">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">An identifier used to uniquely reference an object in a system (e.g. an airline reservation reference, customer profile reference, booking confirmation number, or a reference to a previous availability quote). </xs:documentation>
+    </xs:annotation>
+    <xs:attributeGroup ref="UniqueID_Group"/>
+  </xs:complexType>
+  <xs:complexType name="UniqueID_Type2">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">An identifier used to uniquely reference an object in a system (e.g. an airline reservation reference, customer profile reference, booking confirmation number, or a reference to a previous availability quote). </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="CompanyName" type="CompanyNameType">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Identifies the company that is associated with the UniqueID.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attributeGroup ref="UniqueID_Group"/>
+  </xs:complexType>
+  <xs:complexType name="VerificationType">
+    <xs:annotation>
+      <xs:documentation>Collection of data used to ensure the correct reservation is canceled or modified (e.g. in the case of a hotel reservation modification, a CustLoyalty/ MembershipID would be verified as part of the reservation that you plan to modify to ensure the correct reservation is being modified).</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="PersonName" type="PersonNameType"/>
+      <xs:element name="Vendor" type="CompanyNameType2" maxOccurs="3">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Vendor or Vendors associated with the Reservation</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="ReservationTimeSpan">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The start and end day of the reservation.</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attributeGroup ref="DateTimeSpanGroup"/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="AssociatedQuantity" minOccurs="2" maxOccurs="2">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Quantity or Quantities that are associated with the reservation (e.g. number of seats, number of rooms, number of people, etc.).</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:attributeGroup ref="CodeListGroup"/>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

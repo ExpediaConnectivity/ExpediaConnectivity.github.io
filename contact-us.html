@@ -1,0 +1,256 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="x-ua-compatible" content="ie=edge"><meta name="description" content="Expedia Partner APIs for developers"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Contact Us - APIs for Expedia Partners</title><link rel="stylesheet" href="/css/normalize.css"><link rel="stylesheet" href="/css/foundation.min.css"><link rel="stylesheet" href="/css/foundation-icons.css"><link rel="stylesheet" href="/css/code/styles/github-gist.css"><link rel="stylesheet" href="/css/styles.css"><link rel="icon" href="/favicon.ico"><!-- for jQuery >= 3.2.0 there is a strange bug that cause .outerWidth() in Safari returns wrong value when page first load. It will break our logo slider. Last checked on jQuery 3.3.1--><script src="/js/jquery-3.1.1.min.js"></script><script src="/js/vendor/modernizr.js" async></script><script src="/js/highlight.pack.js"></script><script src="/js/foundation.min.js"></script><script src="/js/Core.js"></script><script src="/js/he-all.js" async></script><script src="/js/environment.js"></script><script src="/js/suga-slider.js"></script><script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script><script>WebFont.load({
+    google: {
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+            }
+});</script><script>$(document).ready(function() {
+    $('.api-content pre>code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+    Core.init();
+});
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-79394707-1', 'auto');
+ga('send', 'pageview');
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.FloatPosition.TOP_LEFT, gaTrack: true, gaId: 'UA-79394707-1'}, 'google_translate_element');
+}</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script></head><body class="he-active_now no-js" id="page-index"><div id="google_translate_element" style="display: none;"></div><header id="site-navigation"><nav class="row full-width" id="nav-top"><div class="inner"><ul><li id="adminnav" style="display:none"><a href="/test-properties/schedules-admin">Admin Schedules View</a></li><li id="hotelnav" style="display:none"><a href="/test-properties/schedules">Schedules</a></li><li id="logoutnav" style="display:none"><a href="/test-properties/" onclick="logout(); return false;">Logout</a></li></ul></div></nav><nav class="row full-width" id="nav-main"><div class="inner"><a id="logo" href="/"><img src="/images/EG-logo.svg"/></a><div class="hide-for-large" id="menu-toggle"></div><div id="menu-wrap"><div class="hide-for-large"></div><ul><li class="mainlink"><a href="/providers">Connectivity for Providers</a></li><li class="mainlink"><a href="/properties">Connectivity for Properties</a></li><li class="mainlink"><a href="/systems">System Providers</a></li><li class="mainlink"><a href="/developer">Developer APIs</a></li><li class="mainlink"><a href="/blog">Blog</a></li><li class="mainlink"><a href="/contact-us">Contact Us</a></li></ul></div><span id="cookies-alert"><a id="cookies-link" href="/cookies"><span class="fi-info">&nbsp;This site uses cookies</span></a></span></div></nav></header><div class="row full-width"><link rel="stylesheet" href="/css/he-main.css">
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<section class='hero hero-pineapple'>
+    <div class='inner'>
+        <h1>Contact Us</h1>
+        <p>Have a question about integrating with our APIs?</p>
+    </div>
+</section>
+<section class='inner' id='intro'>
+    <p>Expedia Group is the world’s travel platform, with an extensive brand portfolio that includes some of the world’s leading online travel brands. Collectively, Expedia Group brands cover virtually every aspect of researching, planning, and booking travel, from choosing the best airplane seat, to reading personal travel reviews of hotels, to planning what to do in a destination once you arrive. The Expedia Group portfolio serves both leisure and business travellers with tastes and budgets ranging from modest to luxury.</p>
+</section>
+
+<section class="row">
+    <div class="eleven columns text-left contactus-info" id="mainpart">
+        <div id="contact-router">
+            <h5>Please select what best describes what you are looking for</h5><br/>
+            <input type="radio" name="partner-type" id="partner-type-3" value="provider"><label for="partner-type-3">Adoption of Expedia Group's lodging supply APIs (For Channel Managers, Property Management Systems and Central Reservation Systems)</label><br>
+            <input type="radio" name="partner-type" id="partner-type-2" value="affiliate"><label for="partner-type-2">Integration with Expedia Group’s booking experience and access to supply</label><br>
+            <input type="radio" name="partner-type" id="partner-type-1" value="airline"><label for="partner-type-1">Integration of Airline on Expedia Group or Integration of Car Rental on Expedia Group</label><br>
+            <input type="radio" name="partner-type" id="partner-type-4" value="activities"><label for="partner-type-4">Integration of Expedia Group's activities and ground transportation via APIs</label><br>
+            <input type="radio" name="partner-type" id="partner-type-5" value="hotel"><label for="partner-type-5">I'm a property and I would like help</label><br>
+
+            <div class="button-wrapper">
+                <p id = "contact-go" class="yellow-button hidden" style="float: left"><a>Go</a></p>
+            </div>
+        </div>
+        <div id="provider-contact" class="hidden">
+            <h3>For Providers</h3>
+            <h5>I want to start working with Expedia Group</h5>
+
+            <br>
+            Please contact us using the form and we'll get in touch! In the meantime, head over to our <a href="/developer">developer section</a> to see what APIs we currently offer.
+
+            <br>
+            <h5>I want to  find out more about a new API</h5>
+
+            <br>
+            All of our API documentation can be found in our <a href="/developer">developer section</a>.
+            <br>
+            If you are new to the Expedia Group, use the form to contact us. Alternatively, if you currently partner with us, please contact your Connectivity Account Manager directly.
+        </div>
+
+        <div id="hotel-contact" class="hidden">
+        <h3>For Properties</h3>
+        <h5>I want to get my properties connected</h5>
+
+        <br>
+        Head over to our <a href="/systems">System Providers page</a> to see which connectivity providers we currently work with.
+
+        <br>
+        <h5>Something is wrong with my connection</h5>
+
+        <br>
+        In a lot of cases, your first step is to contact your connectivity provider and see if they can resolve the issue. You can also explore our <a href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843#about-reporting-problems-with-expedia-quick-connect-eqc">Help Center</a> for more troubleshooting steps.
+
+        <br>
+        <h5>I have an issue on Partner Central</h5>
+
+        <br>
+        e.g. Issues with Reservations, Rates and Inventory, Closeouts, etc.
+        If you're experiencing issues, please reach out to us on <a href="https://apps.expediapartnercentral.com/lodging/help/contactus.html">Partner Central</a>.
+        <br><br>
+        </div>
+
+        <div id="travel-affiliate" class="hidden">
+                <br>
+                Please visit <a href="https://expediapartnersolutions.com/">Expedia Partner Solutions (EPS)</a> for more information.
+        </div>
+
+        <div id="travel-airline" class="hidden">
+                Please contact <a href="mailto:transcon@expediagroup.com">transcon@expediagroup.com.</a>
+        </div>
+
+        <div id="travel-activities" class="hidden">
+                Please contact <a href="mailto:LXAPI@expedia.com">LXAPI@expedia.com.</a>
+        </div>
+
+    </div>
+    <!-- When adding new fields, Remember to also change the send email logic in hotel-assignment-service -->
+    <div id="contact-form" class="six columns hidden">
+        <form id="contactus" onsubmit="sendmail(this); return false;">
+            <div class="formline">
+                <input id="name" placeholder="Name" type="text" required/>
+                <input id="company" placeholder="Company" type="text" required/>
+                <input id="website" placeholder="Company website" type="text" required/>
+                <input id="email" placeholder="Company email" type="email" required/>
+                <input id="phone" placeholder="Phone Number (including area code)" type="tel" required/>
+                <input id="accommodations" placeholder="How many accommodations use your solution?" type="text" required/>
+                <input id="otas" placeholder="Who are the other online distributors/OTAs you work with?" type="text" required/>
+                <select id="region" name="region" placeholder="Which region is your company based in" required>
+                    <option value="" selected disabled>Please select the region your company is based in</option>
+                    <option value="ap">Asia-Pacific</option>
+                    <option value="emea">Europe, Middle East and Africa</option>
+                    <option value="la">Latin America</option>
+                    <option value="na">North America</option>
+                </select>
+                <select id="solution" name="solution" placeholder="What solution best describes the product you wish to connect?" required>
+                    <option value="" selected disabled>What solution best describes the product you wish to connect?</option>
+                    <option value="cm">Channel Manager</option>
+                    <option value="pms">Property Management System</option>
+                    <option value="crs">Central Reservation System</option>
+                </select>
+                <textarea id="message" placeholder="Type your message here" required></textarea>
+                <div class="g-recaptcha" data-sitekey="6LcGJqkUAAAAAGsW1rJFnIIrvXb1eYxVhxlclv1O" data-callback="captcha" data-expired-callback="captchaExpired"></div>
+                <input type="submit" value="Send" class="btn-send"/>
+            </div>
+            <div id="result" class="formline right"></div>
+        </form>
+    </div>
+</section>
+<div class="contactus-end"></div>
+<style>
+    input[type=radio] {
+        float: left;
+        margin-top: 5px;
+    }
+    label {
+        margin-left: 24px !important;
+        display: block !important;
+    }
+    form select {
+        font-size: 0.8rem;
+    }
+    select:required, select:invalid {
+        box-shadow: none;
+    }
+</style>
+<script>
+    function sendEmailUrl() {
+        switch (environment.env) {
+            case "prod": return "https://api.expediapartnercentral.com/hotel-assignment/v1/sendmail";
+            case "test": return "https://api.expediapartnercentral.com.integration.sb.karmalab.net/hotel-assignment/v1/sendmail";
+            default: return "https://api.expediapartnercentral.com.integration.sb.karmalab.net/hotel-assignment/v1/sendmail";
+        }
+    }
+    var captchaResponse = null;
+
+    $('input[type=radio][name=partner-type]').change(function(){
+        toggleGoButton()
+    });
+
+    function toggleGoButton() {
+        var value = $('input[type=radio][name=partner-type]:checked').val();
+
+        if (value == "hotel" || value == "provider" || value == "affiliate" || value == "airline" || value == "activities") {
+            $('#contact-go').removeClass("hidden");
+        } else {
+            $('#contact-go').addClass("hidden");
+        }
+
+    }
+
+    // toggle for back button
+    toggleGoButton();
+
+    $('#contact-go').on('click', function() {
+        showContact();
+        ga('send', 'event', 'contactus', 'partnerType', $('input[type=radio][name=partner-type]:checked').val());
+    });
+
+
+    function showContact() {
+        var partnerType = $('input[type=radio][name=partner-type]:checked').val();
+        $("#contact-router").addClass("hidden");
+
+        if (partnerType === "provider") {
+            $("#provider-contact").removeClass("hidden");
+            $("#contact-form").removeClass("hidden");
+            $("#mainpart").removeClass("eleven columns");
+            $("#mainpart").addClass("six columns");
+        } else if (partnerType === "affiliate") {
+            $("#travel-affiliate").removeClass("hidden");
+            $("#intro").addClass("hidden");
+        } else if (partnerType === "airline") {
+            $("#travel-airline").removeClass("hidden");
+            $("#travel-airline").addClass("inner");
+            $("#intro").addClass("hidden");
+        } else if (partnerType === "activities") {
+            $("#travel-activities").removeClass("hidden");
+            $("#travel-activities").addClass("inner");
+            $("#intro").addClass("hidden");
+        } else {
+            $("#hotel-contact").removeClass("hidden"); // left this here incase we add hotel option back
+            $("#intro").addClass("hidden");
+        }
+
+    }
+
+    function captcha(response) {
+        captchaResponse = response;
+        console.log("Captcha Response: " + response);
+    }
+
+    function captchaExpired(response) {
+        captchaResponse = response;
+        console.log("Captcha Response expired: " + response);
+    }
+
+    function sendmail(form) {
+        var data = {};
+        data.name = $(form).find("#name").val();
+        data.email = $(form).find("#email").val();
+        data.phone = $(form).find("#phone").val();
+        data.company = $(form).find("#company").val();
+        data.website = $(form).find("#website").val();
+        data.accommodations = $(form).find("#accommodations").val();
+        data.otas = $(form).find("#otas").val();
+        data.message = $(form).find("#message").val();
+        data.solution = $(form).find("#solution").val();
+        data.region = $(form).find("#region").val();
+        data.captchaResponse = captchaResponse;
+
+        if (!captchaResponse) {
+            alert("Please complete the reCAPTCHA.");
+            return;
+        }
+
+        $.ajax({
+            method: "POST",
+            url: sendEmailUrl(),
+            data: JSON.stringify(data),
+            dataType: 'json',
+            contentType: 'application/json; charset=UTF-8'
+        }).done(function(response, textStatus, jqxhr) {
+            console.log(response);
+            $("form#contactus").html("Thank you for contacting Expedia!<br><br>Please allow up to 7 business days for us to process your query.");
+            ga('send', 'event', 'contactus', data.solution);
+        }).fail(function(jqxhr){
+            ajaxError(jqxhr, "There was a problem sending your message. Please email us instead: <a href='mailto:expediaconnectivity@expediagroup.com'>expediaconnectivity@expediagroup.com</a>.");
+        });
+    }
+
+    function ajaxError(jqxhr, humanError) {
+        console.log("Error response for " + jqxhr.url + " : " + jqxhr.responseText);
+        $("#result").addClass("error").html(humanError);
+    }
+</script>
+</div><footer class="row full-width" id="site-footer"><div class="large-8 large-centered columns"><div class="links text-center"><a class="link-item" href="https://www.expediapartnercentral.com" target="_blank">Partner Central</a><a class="link-item" href="https://help.expediapartnercentral.com/en/your-connectivity/connectivity?hotel_id=14831843" target="_blank">Help Center</a><a class="link-item" href="https://welcome.expediagroup.com/en/privacy-policy">Privacy Policy</a><a class="link-item" href="https://welcome.expediagroup.com/en/expedia-group-cookie-policy">Cookie Policy</a><a class="link-item last" href="/license">License Agreement</a></div><div class="show-for-large"><div class="footer-logo">&nbsp;</div></div><div id="footer-copyright">&copy; 2021 Expedia Group. All rights reserved. Confidential and proprietary.</div></div></footer><input type="hidden" id="eventTrackingPageName" value="Contact Us"/></body></html>

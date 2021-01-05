@@ -1,0 +1,99 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"description": "The Gaia API allows you to interact with the Expedia geo-location database. </br><br/>To start experimenting, please use your existing EQC credentials and properties. We've also made the following test credentials available: EQCtest12933870 / ew67nk33.\n",
+		"version": "1.0",
+		"title": "Gaia API",
+		"contact": {
+			"name": "Expedia Partner Services",
+			"url": "https://expediaconnectivity.com/developer",
+			"email": "eqcss@expedia.com"
+		}
+	},
+	"host": "services.expediapartnercentral.com",
+	"basePath": "/",
+	"tags": [
+		{
+			"name": "Gaia",
+			"description": "The geo-location resource"
+		}
+	],
+	"schemes": [
+		"https"
+	],
+	"paths": {
+		"/gaia/search/name/{searchKey}": {
+			"get": {
+				"tags": [
+					"Gaia"
+				],
+				"summary": "Obtain a list of Gaia Id matching the givem search key",
+				"operationId": "searchName",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "searchKey",
+						"in": "path",
+						"description": "Search key used to find Gaia Ids",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"security": [
+					{
+						"Basic": [
+
+						]
+					}
+				]
+			}
+		},
+		"/gaia/search/id/{gaiaId}": {
+			"get": {
+				"tags": [
+					"Gaia"
+				],
+				"summary": "Obtain details for a given Gaia Id",
+				"operationId": "searchId",
+				"produces": [
+					"application/json"
+				],
+				"parameters": [
+					{
+						"name": "gaiaId",
+						"in": "path",
+						"description": "Gaia Id",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				},
+				"security": [
+					{
+						"Basic": [
+
+						]
+					}
+				]
+			}
+		}
+	},
+	"securityDefinitions": {
+		"Basic": {
+			"type": "basic"
+		}
+	},
+	"definitions": {
+	}
+}

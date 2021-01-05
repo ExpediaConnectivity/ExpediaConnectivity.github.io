@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/AR/2011/06" targetNamespace="http://www.expediaconnect.com/EQC/AR/2011/06" elementFormDefault="qualified" attributeFormDefault="unqualified" version="2.0.0">
+	<xs:element name="AvailRateUpdateRQ">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Authentication">
+					<xs:annotation>
+						<xs:documentation>Grouping of required information to grant access to Expedia QuickConnect interface. 
+Refer to Expedia QuickConnect API specification, section 4.2, for more details on how to obtain valid credentials.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="username" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="4"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="password" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="6"/>
+									<xs:maxLength value="30"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Hotel">
+					<xs:complexType>
+						<xs:attribute name="id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:choice>
+					<xs:group ref="SingleUpdateGroup">
+						<xs:annotation>
+							<xs:documentation>Provided for backward compatibility with 2007/02 AR schema version. Usage for new implementations is not recommended.</xs:documentation>
+						</xs:annotation>
+					</xs:group>
+					<xs:element name="AvailRateUpdate" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Grouping of updates for one or more room type(s) and rate plan(s), for one or a list of date ranges.</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="DateRange" type="DateRangeType" maxOccurs="unbounded">
+									<xs:annotation>
+										<xs:documentation>Specify dates on which availability and rate information provided in this message applies. A 'from' and a 'to' date must be specified. They can be equal if the Supplier wants to update only one date. 
+This element can be repeated more than once if Supplier wants to update non-consecutive dates or date ranges.
+</xs:documentation>
+									</xs:annotation>
+								</xs:element>
+								<xs:element name="RoomType" type="RoomTypeType" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="SingleUpdateGroup">
+		<xs:sequence>
+			<xs:element name="DateRange" type="DateRangeType"/>
+			<xs:element name="RoomType" type="RoomTypeType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:complexType name="DateRangeType">
+		<xs:attribute name="from" type="xs:date" use="required"/>
+		<xs:attribute name="to" type="xs:date" use="required"/>
+		<xs:attribute name="sun" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Sunday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="mon" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Monday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="tue" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Tuesday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="wed" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Wednesday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="thu" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Thursday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="fri" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Friday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sat" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If set to true or omitted, apply update for each Saturday in the specified date interval.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RoomTypeType">
+		<xs:sequence>
+			<xs:element name="Inventory" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="flexibleAllocation" use="optional">
+						<xs:annotation>
+							<xs:documentation>In the case of a hotel using base allocation: number of additional rooms available for this room type, for each day specified by "DateRange" element.
+In the case of a hotel not on base allocation: total number of rooms available for this room type, for each day specified by “DateRange” element.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:minInclusive value="0"/>
+								<xs:maxInclusive value="4999"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="totalInventoryAvailable" use="optional">
+						<xs:annotation>
+							<xs:documentation>Total number of rooms available for this room type, for each day specified by “DateRange” element, inclusive of base and flexible allocation.
+Note: In the case of a hotel using base allocation: if the value sent is lower than the current base allocation room count, Expedia QuickConnect will reject the update and warning code 7013 will be returned.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:minInclusive value="0"/>
+								<xs:maxInclusive value="4999"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="RatePlan" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Information about a rate plan. 
+This element can be repeated more than once if hotel wants to update multiple rate plans under this room type for the same set of dates.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="RatePlanType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" use="required">
+			<xs:annotation>
+				<xs:documentation>Room type ID (defined by Expedia). Note: mapping of Expedia IDs to Supplier codes has to be done by Supplier.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="50"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="closed" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If true, the room type is no longer available on Expedia for dates specified in the request. 
+If false, the room type is reopened if previously closed, or stays open if already open.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="RatePlanType">
+		<xs:sequence>
+			<xs:element name="Rate" minOccurs="0" maxOccurs="28">
+				<xs:complexType>
+					<xs:choice minOccurs="0">
+						<xs:element name="PerDay">
+							<xs:annotation>
+								<xs:documentation>To be used when property is configured with Per Day pricing on the HotelExtranet. This rate is for base occupancy of the room.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="rate" use="required">
+									<xs:annotation>
+										<xs:documentation>Rate for base occupancy.
+The type of rate (net, LAR) to include depends on the configuration for this hotel.</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:decimal">
+											<xs:minInclusive value="0.00"/>
+											<xs:fractionDigits value="3"/>
+											<xs:totalDigits value="16"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="PerOccupancy" maxOccurs="20">
+							<xs:annotation>
+								<xs:documentation>To be used when property is configured with occupancy based pricing on the HotelExtranet. The rate specified here is for the total occupancy and does not represent a per-person value. So if the occupancy is 3, and the rate specified is $200, the rate of this room when a customer books it through Expedia will be $200.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="rate" use="required">
+									<xs:annotation>
+										<xs:documentation>Rate for total occupancy. 
+The type of rate (net, LAR) to include depends on the configuration for this hotel.</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:decimal">
+											<xs:fractionDigits value="3"/>
+											<xs:minInclusive value="0.00"/>
+											<xs:totalDigits value="16"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="occupancy" use="required">
+									<xs:annotation>
+										<xs:documentation>Occupancy of the room to which the rate specified applies (not related to base occupancy).</xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:positiveInteger">
+											<xs:maxInclusive value="20"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="PerPerson">
+							<xs:annotation>
+								<xs:documentation>To be used when property is configured with per person pricing on the HotelExtranet. The rate specified here will be for one person, for double occupancy. For example, a rate of $75 means that a customer booking this room for 2 person will be charged $75x2=$150.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="rate" use="required">
+									<xs:annotation>
+										<xs:documentation>Rate for one person, based on double occupancy.
+The type of rate (net, LAR) to include depends on the configuration for this hotel. </xs:documentation>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:decimal">
+											<xs:fractionDigits value="3"/>
+											<xs:totalDigits value="16"/>
+											<xs:minInclusive value="0.00"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:choice>
+					<xs:attribute name="currency">
+						<xs:annotation>
+							<xs:documentation>3-letter currency code assigned to property in Expedia's HotelExtranet. Based on ISO 4217 specification.
+Optional only when message is for rate change indicator updates, without any rate modification.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="3"/>
+								<xs:maxLength value="3"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="rateChangeIndicator" type="xs:boolean" use="optional">
+						<xs:annotation>
+							<xs:documentation>To be used with rate plans enabled for day-of-arrival pricing only (message will be rejected if this attribute is used in conjunction with a rate plan that is not enabled for DOA pricing). Indicates that regardless of the applicable rate on the arrival date, the rate will change on this date.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="lengthOfStay">
+						<xs:annotation>
+							<xs:documentation>To be used for products configured for length-of-stay pricing. For any given update message, all lengths of stay from 1 to max length of stay supported have to be provided, even if they didn't change. Else the message will fail. Any length of stay for which no pricing informaiton is received will be considered unavailable. It is not allowed to have gaps between 2 lengths of stay (ex: it is not allowed to send LOS 1 and 3 only, LOS 2 has to be sent as well). This type of pricing is currently only available in conjunction with per day rates. It is not allowed for per occupancy and per person.</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="28"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Restrictions" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="minLOS" use="optional">
+						<xs:annotation>
+							<xs:documentation>Specifies minimum length of stay required to qualify for this rate. Guest has to stay at least this number of nights to benefit from rate.  If not specified, the minimum length of stay will be set to a default value configured in Expedia systems (1 is the default, but it can be changed).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="28"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="maxLOS" use="optional">
+						<xs:annotation>
+							<xs:documentation>Specifies maximum length of stay allowed for this product and day. If not specified, the maximum length of stay value will be set to a default value configured in Expedia systems (28 is the default, but it can be changed).</xs:documentation>
+						</xs:annotation>
+						<xs:simpleType>
+							<xs:restriction base="xs:int">
+								<xs:minInclusive value="1"/>
+								<xs:maxInclusive value="28"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="closedToArrival" type="xs:boolean" use="optional">
+						<xs:annotation>
+							<xs:documentation>Designates the rate plan as unavailable for check-in by customers. A customer’s stay must start on an earlier or later date in order to access this rate plan.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="closedToDeparture" type="xs:boolean" use="optional">
+						<xs:annotation>
+							<xs:documentation>Designates the rate plan as unavailable for check-out by customers. A customer’s stay must end on an earlier or later date in order to access this rate plan.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" use="required">
+			<xs:annotation>
+				<xs:documentation>Rate plan ID (assigned by Expedia). Unique throughout Expedia system, so the same rate plan ID cannot be associated to more than one room type.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:maxLength value="50"/>
+					<xs:minLength value="1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="closed" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>If true, the rate plan is no longer available on Expedia for dates specified under the room type. 
+If false, the rate plan is reopened if previously closed, or stays open if already open.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

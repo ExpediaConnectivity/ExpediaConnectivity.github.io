@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.newtrade.com/expedia/R14/header" targetNamespace="http://www.newtrade.com/expedia/R14/header" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:element name="Interface">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">SOAP Header structure. This is a common structure that is used both for messaging between Distributors and Newtrade and Newtrade and Suppliers. The message can either include a payload (business message) or it can be an acknowledgement. </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:choice>
+        <xs:element name="PayloadInfo">
+          <xs:annotation>
+            <xs:documentation xml:lang="en">The PayloadInfo contains the SOAP header information related to the payload (the business message).</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CommDescriptor">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Holds the communication level information about the payload being transferred.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="Authentication" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">Authentication information is used when a client is connected to a public server. Authentication must only be sent over a secure connection (HTTPS).</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="Username" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">Identifies the message sender. </xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="Password" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">Validates that the user is who it claims to be.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="SourceId" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">Identifies the message sender with respect to Newtrade's domain.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="DestinationId" type="xs:string" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">Identifies the message target with respect to Newtrade's domain. In a response, this field is used for validation purpose only, since a response message is implicitely sent back to the request originator.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                  <xs:attribute name="RetryIndicator" type="xs:boolean" use="optional" default="false">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">Indicates if this is a retransmission of the request or response payload.</xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="PayloadDescriptor">
+                <xs:annotation>
+                  <xs:documentation xml:lang="en">Holds the business level information about the payload being transferred.</xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="PayloadReference" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation xml:lang="en">Holds additional information on the payload. These fields are typically used by the receiving party to apply a certain switching logic prior to reading the message.</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:attribute name="SupplierHotelCode" type="xs:string" use="required">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">Hotel  property code, in the supplier's domain.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="DistributorHotelId" type="xs:string" use="optional">
+                          <xs:annotation>
+                            <xs:documentation xml:lang="en">HotelId represents the hotel in the distributor's domain.</xs:documentation>
+                          </xs:annotation>
+                        </xs:attribute>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                  <xs:attribute name="Name" use="required">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">Name of the message, e.g. OTA_CancelRS</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                      <xs:restriction base="xs:NMTOKENS">
+                        <xs:enumeration value="OTA_HotelResNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelResNotifRS"/>
+                        <xs:enumeration value="OTA_HotelResModifyNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelResModifyNotifRS"/>
+                        <xs:enumeration value="OTA_CancelRQ"/>
+                        <xs:enumeration value="OTA_CancelRS"/>
+                        <xs:enumeration value="OTA_PingRQ"/>
+                        <xs:enumeration value="OTA_PingRS"/>
+                        <xs:enumeration value="OTA_HotelAvailNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelAvailNotifRS"/>
+                        <xs:enumeration value="OTA_HotelRateAmountNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelRateAmountNotifRS"/>
+                        <xs:enumeration value="OTA_HotelInvCountNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelInvCountNotifRS"/>
+                        <xs:enumeration value="OTA_HotelBookingRuleNotifRQ"/>
+                        <xs:enumeration value="OTA_HotelBookingRuleNotifRS"/>
+                        <xs:enumeration value="OTA_HotelAvailRQ"/>
+                        <xs:enumeration value="OTA_HotelAvailRS"/>
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:attribute>
+                  <xs:attribute name="Version" type="xs:string" use="optional">
+                    <xs:annotation>
+                      <xs:documentation xml:lang="en">Version of the message, e.g. 2003A </xs:documentation>
+                    </xs:annotation>
+                  </xs:attribute>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="RequestId" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">End-to-end communication token linking a resquest to its response. The RequestId must be unique in the request originator's domain. The combination of the SourceId and RequestId thus represent a unique request identifier for the receiving system.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="RequestorId" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Identifier of the party that generates the RQ message.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ResponderId" type="xs:string" use="required">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Identifier of the party that generates the RS message.</xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="ExpirationDateTime" type="xs:dateTime" use="optional">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Date and time at which the sender of the request will stop waiting for a response and put the request status to "timed out". This field is thus required for request messages only.
+Used for booking notfication. Not required by ARI.  </xs:documentation>
+              </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="Location" use="optional" default="Body">
+              <xs:annotation>
+                <xs:documentation xml:lang="en">Indicates whether payload is sent in SOAP body or an attachment</xs:documentation>
+              </xs:annotation>
+              <xs:simpleType>
+                <xs:restriction base="xs:NMTOKENS">
+                  <xs:enumeration value="Body"/>
+                  <xs:enumeration value="Attachment"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+      <xs:attribute name="Name" use="required">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Interface name</xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:NMTOKENS">
+            <xs:enumeration value="ExpediaDirectConnect"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="Version" use="required">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">Interface version </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="1.0"/>
+            <xs:fractionDigits value="2"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:anyAttribute namespace="http://schemas.xmlsoap.org/soap/envelope/" processContents="strict">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">The anyAttribute is here to allow that SOAP1.1 Envelope's global attributes encodingStyle, actor and mustUnderstand can appear in Interface element.</xs:documentation>
+        </xs:annotation>
+      </xs:anyAttribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

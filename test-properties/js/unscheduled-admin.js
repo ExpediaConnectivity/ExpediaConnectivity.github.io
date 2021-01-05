@@ -150,7 +150,7 @@ define(["./features"], function(features) {
             if (jqxhr.status == 409) {
                 displayError("Hotel appears to be already assigned.");
             } else if (jqxhr.status == 404 && jqxhr.responseText.indexOf("User") >= 0) {
-                displayError("Could not find user for given tuid.");
+                displayError("Could not fine user for given tuid.");
             } else if (jqxhr.status == 400 && jqxhr.responseText.indexOf("A maximum of") >= 0) {
                 var msg = getNiceErrorText(jqxhr);
                 displayError("The test property was not assigned due to the following error: <br/> " + msg);

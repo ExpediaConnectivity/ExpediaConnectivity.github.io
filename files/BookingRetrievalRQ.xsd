@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2016 Expedia, Inc. All Rights Reserved -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.expediaconnect.com/EQC/BR/2014/01" targetNamespace="http://www.expediaconnect.com/EQC/BR/2014/01" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1.0">
+    <xs:element name="BookingRetrievalRQ">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Authentication">
+                    <xs:complexType>
+                        <xs:attribute name="username" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="4"/>
+                                    <xs:maxLength value="30"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                        <xs:attribute name="password" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:minLength value="6"/>
+                                    <xs:maxLength value="30"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Hotel" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation>If not specified, Expedia will return all the bookings linked to the username provided. If the user has access to more than one hotel, bookings for all the hotels to which the user has access will be returned.</xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:attribute name="id" use="required">
+                            <xs:annotation>
+                                <xs:documentation>Hotel ID defined by Expedia, uniquely identifying a property in Expedia system, and mapped by supplier to hotel code in supplier's system</xs:documentation>
+                            </xs:annotation>
+                            <xs:simpleType>
+                                <xs:restriction base="xs:integer">
+                                    <xs:minInclusive value="0"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ParamSet" minOccurs="0">
+                    <xs:complexType>
+                        <xs:choice minOccurs="0">
+                            <xs:element name="Booking" minOccurs="0">
+                                <xs:complexType>
+                                    <xs:attribute name="id" use="required">
+                                        <xs:annotation>
+                                            <xs:documentation>Expedia booking ID</xs:documentation>
+                                        </xs:annotation>
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:integer">
+                                                <xs:minInclusive value="0"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:sequence minOccurs="0">
+                                <xs:element name="Status" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:annotation>
+                                        <xs:documentation>As soon as this element is provided, we will only return the states explicitely set to true.
+Status "confirmed" alone cannot be use without NbOfDaysInPast, application will refuse this.
+Expired status is not yet supported.</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:complexType>
+                                        <xs:attribute name="value" use="required">
+                                            <xs:annotation>
+                                                <xs:documentation>When specified, will retrieve bookings in that state.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="pending"/>
+                                                    <xs:enumeration value="retrieved"/>
+                                                    <xs:enumeration value="confirmed"/>
+                                                    <xs:enumeration value="expired"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:attribute>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="NbDaysInPast" minOccurs="0">
+                                    <xs:annotation>
+                                        <xs:documentation>This element retrieves all bookings made in the past X days (X can be anything between 1 and 30), even if they have been retrieved previously. Bookings that are pending retrieval are also returned when this parameter is specified. But bookings that have reverted to fax are not returned. This element cannot be used at the same time as the Booking element. 
+</xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:positiveInteger">
+                                            <xs:minInclusive value="1"/>
+                                            <xs:maxInclusive value="30"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                            </xs:sequence>
+                        </xs:choice>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

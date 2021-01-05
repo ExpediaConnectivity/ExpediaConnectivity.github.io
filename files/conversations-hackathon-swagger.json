@@ -1,0 +1,104 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Unread messages API for Expedia Conversations project",
+        "title": "Conversations Count Service (CCS)",
+        "contact": {},
+        "license": {}
+    },
+    "host": "services.expediapartnercentral.com",
+    "schemes": [
+        "https"
+    ],
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "message-count-controller",
+            "description": "Message Count Controller"
+        }
+    ],
+    "paths": {
+        "/conversations/hotels/{hotelid}/unreadmessages/count": {
+            "get": {
+                "tags": [
+                    "message-count-controller"
+                ],
+                "summary": "Get the current unread message count for the hotel",
+                "operationId": "getUnreadCountUsingGET",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "name": "hotelid",
+                        "in": "path",
+                        "description": "hotelId",
+                        "required": true,
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/CountResponse"
+                        }
+                    },
+                    "400": {
+                        "description": "This response model is used for all error responses.",
+                        "schema": {
+                            "$ref": "#/definitions/ErrorResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "HotelMessageCount": {
+            "properties": {
+                "hotelId": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "unreadCount": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "CountResponse": {
+            "properties": {
+                "unreadCount": {
+                    "type": "integer",
+                    "format": "int32"
+                }
+            }
+        },
+        "SetBulkCountsRequest": {
+            "properties": {
+                "hotelMessageCounts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/HotelMessageCount"
+                    }
+                }
+            }
+        },
+        "ErrorResponse": {
+            "properties": {
+                "errorCode": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "errorMessage": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
