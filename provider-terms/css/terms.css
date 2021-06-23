@@ -28,6 +28,8 @@
 }
 .api-content ul li {
   list-style-type: none !important;
+  display: inline-block;
+  padding: 0.5em 0;
 }
 .api-content #accept-btn {
   width: 100%;
@@ -77,4 +79,13 @@
 }
 .api-content #last-modified {
   padding: 0;
+}
+.api-content .exhibit {
+  margin: 2em;
+}
+.api-content .exhibit p {
+  text-align: center;
+  margin: 0;
+  height: 0;
+  font-weight: bold;
 }
